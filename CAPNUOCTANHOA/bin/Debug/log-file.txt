@@ -1,0 +1,9 @@
+ERROR2012-03-15 08:03:48 – dsafdsa
+ERROR2012-03-15 08:04:04 – dsafdsa
+ERROR2012-03-15 08:05:01 – dsafdsa
+ERROR2012-03-15 08:21:28 – dsafdsa
+ERROR2012-03-15 08:23:04 – dsafdsa
+ERROR2012-03-15 08:26:08 – dsafdsa
+ERROR2012-03-15 08:39:13 – dsafdsa
+ERROR2012-03-15 08:49:18 – OleDbConnection getDataTableKeyword not supported: 'provider'.
+ERROR2012-03-15 08:58:45 – OleDbConnection getDataTableKeyword not supported: 'provider'.
