@@ -64,9 +64,13 @@ namespace CAPNUOCTANHOA.LayDuLieu
                 {
                     thaydhn.DHN_LOAIBANGKE = "DC";
                 }
-                else {
+                else if ("BBKT".Contains(lydo.ToUpper()))
+                {
+                    thaydhn.DHN_LOAIBANGKE = "KT";
+                }else {
                     thaydhn.DHN_LOAIBANGKE = lydo.ToUpper();
                 }
+
                 int db_sobangke = 0;
                 try
                 {
