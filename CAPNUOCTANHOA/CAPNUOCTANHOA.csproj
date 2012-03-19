@@ -58,11 +58,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Billding\BILLING.cs" />
+    <Compile Include="Billding\C_Billding.cs" />
+    <Compile Include="Billding\getDataBillding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billding\getDataBillding.Designer.cs">
+      <DependentUpon>getDataBillding.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayDuLieu\frm_baothay_lay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LayDuLieu\frm_baothay_lay.Designer.cs">
+      <DependentUpon>frm_baothay_lay.cs</DependentUpon>
     </Compile>
     <Compile Include="LinQ\CapNuocTanHoa.designer.cs">
       <AutoGen>True</AutoGen>
@@ -78,6 +92,9 @@
     </None>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayDuLieu\frm_baothay_lay.resx">
+      <DependentUpon>frm_baothay_lay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,6 +124,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
