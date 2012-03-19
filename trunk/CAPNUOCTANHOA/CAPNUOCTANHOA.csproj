@@ -66,6 +66,12 @@
     <Compile Include="Billding\getDataBillding.Designer.cs">
       <DependentUpon>getDataBillding.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\frm_BaoThayDHN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_BaoThayDHN.Designer.cs">
+      <DependentUpon>frm_BaoThayDHN.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <None Include="LinQ\CapNuocTanHoa.dbml.layout">
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Forms\QLDHN\frm_BaoThayDHN.resx">
+      <DependentUpon>frm_BaoThayDHN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +132,27 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WINWORD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MSACCESS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logocty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applications.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

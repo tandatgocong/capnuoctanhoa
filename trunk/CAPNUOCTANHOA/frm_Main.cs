@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using log4net;
 using CAPNUOCTANHOA.LinQ;
 using System.Configuration;
+using CAPNUOCTANHOA.Forms.QLDHN;
  
 
 namespace CAPNUOCTANHOA
@@ -20,8 +21,59 @@ namespace CAPNUOCTANHOA
         {
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
+            //     frm_BaoThayDHN frm = new frm_BaoThayDHN();
+            //frm.MdiParent = this;
+            //frm.Show();
            // dataGridView1.DataSource = DAL.OledbConnection.getDataTable(ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString,"SELECT * FROM LyLichDHN WHERE DOT='20'"); 
 
         }
+        private void caculator_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("calc.exe");
+        }
+
+        private void microsoftWord_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("WINWORD.EXE");
+        }
+
+        private void microsoftAccess_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("MSACCESS.EXE");
+        }
+
+        private void microsoftExcel_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("EXCEL.EXE");
+        }
+
+        private void webBrowserTool_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                WebBrowser webBrowser = new WebBrowser();
+                webBrowser.Navigate("http://office.capnuoctanhoa.com.vn/security/login.aspx?action=expired");
+                webBrowser.Dock = DockStyle.Fill;
+                this.PanelContent.Controls.Add(webBrowser);
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "Lỗi Load Dữ Liệu", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
+
+        private void cmdBaoThay_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_BaoThayDHN baothay = new frm_BaoThayDHN();
+            baothay.Height = PanelContent.Size.Height;
+            baothay.Width = PanelContent.Size.Width;
+            PanelContent.Controls.Add(baothay);
+        }
+
     }
 }
