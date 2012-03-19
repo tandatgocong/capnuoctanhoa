@@ -1,12 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CapNuocTanHoa">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.25" name="CapNuocTanHoa">
   <DataContextMoniker Name="/CapNuocTanHoaDataContext" />
   <nestedChildShapes>
-    <classShape Id="ec658b32-b27a-47cf-b461-7bc8117fa397" absoluteBounds="5.625, 1.25, 2, 1.0016910807291668">
-      <DataClassMoniker Name="/CapNuocTanHoaDataContext/Table1" />
+    <classShape Id="bd570cb4-a4df-49bd-8315-89d57b0df219" absoluteBounds="0.75, 5.625, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/CapNuocTanHoaDataContext/SYS_PHONGBANDOI" />
       <nestedChildShapes>
-        <elementListCompartment Id="edd81165-be36-4bde-98c7-2c0858f7f078" absoluteBounds="5.64, 1.71, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b1c2ad7c-b4d1-4088-8d19-0bb3cdf31cfc" absoluteBounds="0.765, 6.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="70efe6d8-42dc-4c14-85d2-2873991e72b4" absoluteBounds="3.75, 5.75, 2, 8.3091455078125023">
+      <DataClassMoniker Name="/CapNuocTanHoaDataContext/TB_THAYDHN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d66cf31-b946-4497-8534-046615a206a4" absoluteBounds="3.765, 6.21, 1.9700000000000002, 7.7491455078125009" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9c62f8f-5cbc-4a89-894f-d6dcddeb3ce4" absoluteBounds="0.75, 2, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/CapNuocTanHoaDataContext/SYS_ROLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efebc47a-e72a-48d4-9f4b-428a06935415" absoluteBounds="0.765, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf1f5ee3-4e88-49fa-b3c9-9be07227f085" absoluteBounds="3.5, 1, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/CapNuocTanHoaDataContext/SYS_USER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="933e80c7-367d-478d-b209-3d81d06dffd3" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca363da5-f34d-4e44-b7e5-ce89e12aa5c9" absoluteBounds="6.75, 0.75, 2, 12.3474755859375">
+      <DataClassMoniker Name="/CapNuocTanHoaDataContext/TB_DULIEUKHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19482788-b68d-47bc-9ce4-e07091bca5bf" absoluteBounds="6.765, 1.21, 1.9700000000000002, 11.7874755859375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.65625); (3.59375 : 5.65625); (3.59375 : 4.30930826822917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CapNuocTanHoaDataContext/SYS_PHONGBANDOI/SYS_PHONGBANDOI_SYS_USER" />
+      <nodes>
+        <classShapeMoniker Id="bd570cb4-a4df-49bd-8315-89d57b0df219" />
+        <classShapeMoniker Id="bf1f5ee3-4e88-49fa-b3c9-9be07227f085" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.59699625651042); (3.5 : 2.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CapNuocTanHoaDataContext/SYS_ROLE/SYS_ROLE_SYS_USER" />
+      <nodes>
+        <classShapeMoniker Id="a9c62f8f-5cbc-4a89-894f-d6dcddeb3ce4" />
+        <classShapeMoniker Id="bf1f5ee3-4e88-49fa-b3c9-9be07227f085" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
