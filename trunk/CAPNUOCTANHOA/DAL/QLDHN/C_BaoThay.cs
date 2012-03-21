@@ -1,0 +1,121 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using CAPNUOCTANHOA.LinQ;
+using System.Data.SqlClient;
+using log4net;
+
+namespace CAPNUOCTANHOA.DAL.QLDHN
+{
+     public static class C_BaoThay
+    {
+        
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_BaoThay).Name);
+        static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+        
+        public static DataTable getBangKeBaoThay(int sobangke) {
+             string sql = "SELECT ID_BAOTHAY,DHN_LOAIBANGKE,DHN_SOBANGKE, DHN_DANHBO,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_NGAYBAOTHAY,DHN_NGAYGAN,DHN_CHITHAN,DHN_CHIGOC,DHN_HIEUDHN,DHN_CODH,DHN_SOTHAN,DHN_CHISO,DHN_LYDOTHAY ";
+             sql += " FROM TB_THAYDHN thay,TB_DULIEUKHACHHANG kh WHERE kh.DANHBO=thay.DHN_DANHBO AND DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_STT ASC ";
+            return LinQConnection.getDataTable(sql);
+        }
+
+        public static DataTable getLoaiBangKe() {
+            string sql = "SELECT LOAIBK,TENBANGKE";
+            sql += " FROM TB_LOAIBANGKE";
+            return LinQConnection.getDataTable(sql);
+        }
+
+        public static DataTable HistoryThay(string danhbo)
+        {
+            string sql = "SELECT DHN_LANTHAY,DHN_LYDOTHAY AS 'TENBANGKE',DHN_SOBANGKE,DHN_NGAYBAOTHAY,HCT_NGAYGAN";
+            sql += " FROM  TB_THAYDHN thay WHERE DHN_DANHBO='" + danhbo + "' ORDER BY DHN_LANTHAY ASC  ";
+            return LinQConnection.getDataTable(sql);
+        }
+
+        public static void Insert(TB_THAYDHN th_dhn) {
+            try
+            {
+                db.TB_THAYDHNs.InsertOnSubmit(th_dhn);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+
+        public static TB_THAYDHN finByID_BAOTHAY(int id) {
+            try
+            {
+                var query = from q in db.TB_THAYDHNs where q.ID_BAOTHAY == id select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
+        public static bool deleteBAOTHAY(TB_THAYDHN THAY)
+        {
+            try
+            {
+                db.TB_THAYDHNs.DeleteOnSubmit(THAY);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
+       
+         public static void Update()
+        {
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+
+        public static TB_HIEUDONGHO finByHieuDH(string mahieu)
+        {
+            try
+            {
+                var query = from q in db.TB_HIEUDONGHOs where q.HIEUDH == mahieu select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+    
+         public static DataSet ReportBaoThay(string sobangke)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "select *,'" + DAL.SYS.C_USERS._tenDocSo + "' as 'TENTODS',N'" + DAL.SYS.C_USERS._fullName + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_STT ASC ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "V_DHN_BANGKE");
+
+            query = "select * FROM TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+
+            return ds;
+         }
+
+    }
+}
