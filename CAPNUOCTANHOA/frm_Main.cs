@@ -10,6 +10,8 @@ using log4net;
 using CAPNUOCTANHOA.LinQ;
 using System.Configuration;
 using CAPNUOCTANHOA.Forms.QLDHN;
+using CAPNUOCTANHOA.View.Users;
+using CAPNUOCTANHOA.Forms.DoiTCTB;
  
 
 namespace CAPNUOCTANHOA
@@ -25,8 +27,27 @@ namespace CAPNUOCTANHOA
             //frm.MdiParent = this;
             //frm.Show();
            // dataGridView1.DataSource = DAL.OledbConnection.getDataTable(ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString,"SELECT * FROM LyLichDHN WHERE DOT='20'"); 
+            
+        }
+        public static frm_Login dn = new frm_Login();
+        public void dangnhap()
+        {
+            dn.ShowDialog();
+            //if (DAL.C_USERS._roles != null)
+            //{
+            //    role(DAL.C_USERS._roles);
+            //}
+
+           // this.Text = "Tan Hoa Water Co., ltd - Nhân Viên : " + DAL.C_USERS._fullName;
+        }
+        private void frm_Main_Load(object sender, EventArgs e)
+        {
+             
+            this.Show();
+            dangnhap();
 
         }
+
         private void caculator_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("calc.exe");
@@ -70,9 +91,19 @@ namespace CAPNUOCTANHOA
         {
             PanelContent.Controls.Clear();
             frm_BaoThayDHN baothay = new frm_BaoThayDHN();
-            baothay.Height = PanelContent.Size.Height;
-            baothay.Width = PanelContent.Size.Width;
+            baothay.Height = PanelContent.Size.Height-20;
+            baothay.Width = PanelContent.Size.Width - 20;
             PanelContent.Controls.Add(baothay);
+        }
+
+        private void menuHoanCongThay_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frmHoanCongThay baothay = new frmHoanCongThay();
+            baothay.Height = PanelContent.Size.Height-20;
+            baothay.Width = PanelContent.Size.Width - 20;
+            PanelContent.Controls.Add(baothay);
+            
         }
 
     }

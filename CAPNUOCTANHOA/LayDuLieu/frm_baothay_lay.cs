@@ -64,9 +64,9 @@ namespace CAPNUOCTANHOA.LayDuLieu
                 {
                     thaydhn.DHN_LOAIBANGKE = "DC";
                 }
-                else if ("BBKT".Contains(lydo.ToUpper()))
+                else if ("BBKT".Contains(lydo.ToUpper().Substring(0,4)))
                 {
-                    thaydhn.DHN_LOAIBANGKE = "KT";
+                    thaydhn.DHN_LOAIBANGKE = "BB";
                 }else {
                     thaydhn.DHN_LOAIBANGKE = lydo.ToUpper();
                 }
