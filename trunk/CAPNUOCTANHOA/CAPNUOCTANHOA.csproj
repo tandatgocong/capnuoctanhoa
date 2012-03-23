@@ -86,6 +86,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoiTCTB\BC\rpt_BCHoanCong_A4.cs">
+      <DependentUpon>rpt_BCHoanCong_A4.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\BC\rpt_PhieuThiCongThay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_PhieuThiCongThay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\DoiTCTB\frmHoanCongThay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,6 +120,12 @@
     </Compile>
     <Compile Include="Forms\QLDHN\frm_BaoThayDHN.Designer.cs">
       <DependentUpon>frm_BaoThayDHN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_KiemTraThayDinhKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_KiemTraThayDinhKy.Designer.cs">
+      <DependentUpon>frm_KiemTraThayDinhKy.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reports\frm_Reports.cs">
       <SubType>Form</SubType>
@@ -169,6 +187,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\BC\rpt_BCHoanCong_A4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BCHoanCong_A4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\BC\rpt_PhieuThiCongThay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PhieuThiCongThay.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThay.resx">
       <DependentUpon>frmHoanCongThay.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_BaoThayDHN.resx">
       <DependentUpon>frm_BaoThayDHN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_KiemTraThayDinhKy.resx">
+      <DependentUpon>frm_KiemTraThayDinhKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\frm_Reports.resx">
       <DependentUpon>frm_Reports.cs</DependentUpon>

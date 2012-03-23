@@ -205,27 +205,33 @@
             // 
             // txtTenKH
             // 
+            this.txtTenKH.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtTenKH.Border.Class = "TextBoxBorder";
-            this.txtTenKH.Enabled = false;
+            this.txtTenKH.FocusHighlightColor = System.Drawing.Color.Transparent;
+            this.txtTenKH.ForeColor = System.Drawing.Color.Red;
             this.txtTenKH.Location = new System.Drawing.Point(155, 123);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(205, 27);
             this.txtTenKH.TabIndex = 4;
+            this.txtTenKH.WatermarkColor = System.Drawing.Color.Transparent;
             // 
             // txtDiaChi
             // 
+            this.txtDiaChi.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtDiaChi.Border.Class = "TextBoxBorder";
-            this.txtDiaChi.Enabled = false;
+            this.txtDiaChi.FocusHighlightColor = System.Drawing.Color.Transparent;
+            this.txtDiaChi.ForeColor = System.Drawing.Color.Red;
             this.txtDiaChi.Location = new System.Drawing.Point(444, 122);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(286, 27);
             this.txtDiaChi.TabIndex = 5;
+            this.txtDiaChi.WatermarkColor = System.Drawing.Color.Transparent;
             // 
             // labelX8
             // 
@@ -345,13 +351,14 @@
             this.DHN_CHITHAN,
             this.DHN_CHIGOC});
             this.dataBangKe.Location = new System.Drawing.Point(5, 290);
+            this.dataBangKe.MultiSelect = false;
             this.dataBangKe.Name = "dataBangKe";
             this.dataBangKe.ReadOnly = true;
             this.dataBangKe.RowHeadersWidth = 20;
             this.dataBangKe.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataBangKe.RowTemplate.Height = 28;
             this.dataBangKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBangKe.Size = new System.Drawing.Size(1213, 345);
+            this.dataBangKe.Size = new System.Drawing.Size(1213, 340);
             this.dataBangKe.TabIndex = 100;
             this.dataBangKe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBangKe_CellClick);
             // 
@@ -621,6 +628,7 @@
             // 
             // txtNgayGan
             // 
+            this.txtNgayGan.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -628,7 +636,8 @@
             this.txtNgayGan.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.txtNgayGan.ButtonDropDown.Visible = true;
             this.txtNgayGan.CustomFormat = "dd/MM/yyyy";
-            this.txtNgayGan.Enabled = false;
+            this.txtNgayGan.FocusHighlightColor = System.Drawing.Color.Transparent;
+            this.txtNgayGan.ForeColor = System.Drawing.Color.Red;
             this.txtNgayGan.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.txtNgayGan.Location = new System.Drawing.Point(155, 154);
             // 
@@ -663,6 +672,7 @@
             this.txtNgayGan.Name = "txtNgayGan";
             this.txtNgayGan.Size = new System.Drawing.Size(112, 27);
             this.txtNgayGan.TabIndex = 6;
+            this.txtNgayGan.WatermarkColor = System.Drawing.Color.Transparent;
             // 
             // txtSoDanhBo
             // 
@@ -690,6 +700,7 @@
             this.txtChiSoThay.Size = new System.Drawing.Size(101, 27);
             this.txtChiSoThay.TabIndex = 12;
             this.txtChiSoThay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtChiSoThay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChiSoThay_KeyPress);
             // 
             // btTaoMoi
             // 

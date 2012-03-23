@@ -28,6 +28,7 @@ namespace CAPNUOCTANHOA
             //frm.Show();
            // dataGridView1.DataSource = DAL.OledbConnection.getDataTable(ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString,"SELECT * FROM LyLichDHN WHERE DOT='20'"); 
             
+            
         }
         public static frm_Login dn = new frm_Login();
         public void dangnhap()
@@ -104,6 +105,15 @@ namespace CAPNUOCTANHOA
             baothay.Width = PanelContent.Size.Width - 20;
             PanelContent.Controls.Add(baothay);
             
+        }
+
+        private void menuKiemTra_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_KiemTraThayDinhKy baothay = new frm_KiemTraThayDinhKy();
+            baothay.Height = PanelContent.Size.Height - 20;
+            baothay.Width = PanelContent.Size.Width - 20;
+            PanelContent.Controls.Add(baothay);
         }
 
     }

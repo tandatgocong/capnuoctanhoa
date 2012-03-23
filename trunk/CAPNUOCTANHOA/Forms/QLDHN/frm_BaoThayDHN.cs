@@ -24,6 +24,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.cbLoaiBangKe.Focus(); 
             formLoad();
           //  MessageBox.Show(this, DAL.SYS.C_USERS._tenDocSo);
+         //     MessageBox.Show(this, DAL.QLDHN.C_BaoThay.getMaxBangKe() + "");
+
         }
 
         void formLoad() {
@@ -42,7 +44,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             txtHieu.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtHieu.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtHieu.AutoCompleteCustomSource = namesCollection;
-
+            try
+            {
+                txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1)+"";
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
         }
         public void setSTT() {
             for (int i = 0; i < dataBangKe.Rows.Count; i++) {
@@ -68,8 +77,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void cbLoaiBangKe_SelectedValueChanged(object sender, EventArgs e)
         {
-            title.Text = "BẢNG KÊ BÁO THAY ĐỒNG HỒ NƯỚC " + this.cbLoaiBangKe.Text;
-            txtSoBangKe.Focus();
+            if ("HC".Equals(this.cbLoaiBangKe.SelectedValue + ""))
+            {
+                title.Text = "BẢNG KÊ BÁO THAY HẠ CỞ ĐỒNG HỒ NƯỚC ";
+            }
+            else
+            {
+                title.Text = "BẢNG KÊ BÁO THAY ĐỒNG HỒ NƯỚC " + this.cbLoaiBangKe.Text;
+            }
+          //  txtSoBangKe.Focus();
             txtLyDo.Text = this.cbLoaiBangKe.Text.Replace("THEO","");
         }
 
@@ -156,7 +172,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             btcapNhat.Enabled = false;
             btXoa.Enabled = false;
             btIn.Enabled = false;
+            this.histotyThay.Visible = false;
             txtSoBangKe.Focus();
+            this.dataBangKe.DataSource = DAL.QLDHN.C_BaoThay.getBangKeBaoThay(999999);
+            try
+            {
+                txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1) + "";
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
         }
 
         void LoadThongTinDB() {
@@ -181,7 +207,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
                     txtTenKH.Text = khachhang.HOTEN;
                     txtDiaChi.Text = khachhang.SONHA + " " + khachhang.TENDUONG;
-                    txtNgayGan.ValueObject = Utilities.Strings.stringToDate(khachhang.NGAYGANDH, "dd/MM/yyyy");
+                    txtNgayGan.ValueObject = khachhang.NGAYTHAY;
                     TB_HIEUDONGHO hieudh = DAL.QLDHN.C_BaoThay.finByHieuDH(khachhang.HIEUDH);
                     txtHieu.Text = hieudh != null ? hieudh.TENDONGHO : khachhang.HIEUDH;
                     txtCo.Text = khachhang.CODH;
@@ -227,7 +253,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             thaydh.DHN_NGAYGAN = txtNgayGan.Value;
             thaydh.DHN_SOBANGKE = int.Parse(this.txtSoBangKe.Text);
             thaydh.DHN_SOTHAN = this.txtSoThan.Text.ToUpper();
-            thaydh.DHN_STT=histotyThay.Rows.Count + 1;
+            thaydh.DHN_STT=dataBangKe.Rows.Count + 1;
+            thaydh.DHN_LYDOTHAY = this.txtLyDo.Text;
             thaydh.DHN_TODS = DAL.SYS.C_USERS._toDocSo;
             thaydh.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
             thaydh.DHN_CREATEDATE = DateTime.Now;
@@ -251,6 +278,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             btcapNhat.Enabled = false;
             btXoa.Enabled = false;
             txtSoDanhBo.Focus();
+            try
+            {
+                txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1) + "";
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
         }
         private void btThem_Click(object sender, EventArgs e)
         {
@@ -307,7 +342,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string ID_BAOTHAY = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID_BAOTHAY"].Value + "";
                 TB_THAYDHN thaydh = DAL.QLDHN.C_BaoThay.finByID_BAOTHAY(int.Parse(ID_BAOTHAY));
                 string mess = "Cập Nhật Báo Thay Cho Danh Bộ  " + Utilities.FormatSoHoSoDanhBo.sodanhbo(thaydh.DHN_DANHBO, "-") + " ?";
-                if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && thaydh!=null)
                 {
                     thaydh.DHN_CHIGOC = this.txtChiGoc.Text;
                     thaydh.DHN_CHISO = int.Parse(this.txtChiSoThay.Text);
@@ -332,6 +367,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 log.Error(ex.Message);
             }
             
+        }
+
+        private void txtChiSoThay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
