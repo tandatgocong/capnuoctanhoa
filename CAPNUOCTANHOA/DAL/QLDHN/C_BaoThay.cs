@@ -20,6 +20,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
              sql += " FROM TB_THAYDHN thay,TB_DULIEUKHACHHANG kh WHERE kh.DANHBO=thay.DHN_DANHBO AND DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_STT ASC ";
             return LinQConnection.getDataTable(sql);
         }
+        public static int getMaxBangKe() {
+            string sql = "SELECT MAX(DHN_SOBANGKE)  FROM TB_THAYDHN where DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "'";
+            return LinQConnection.ExecuteCommand(sql);
+        }
 
         public static DataTable getLoaiBangKe() {
             string sql = "SELECT LOAIBK,TENBANGKE";
@@ -73,17 +77,19 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
             return false;
         }
-       
-         public static void Update()
+
+        public static bool Update()
         {
             try
             {
                 db.SubmitChanges();
+                return true;
             }
             catch (Exception ex)
             {
                 log.Error(ex.Message);
             }
+            return false;
         }
 
         public static TB_HIEUDONGHO finByHieuDH(string mahieu)
@@ -100,12 +106,12 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return null;
         }
     
-         public static DataSet ReportBaoThay(string sobangke)
+        public static DataSet ReportBaoThay(string sobangke)
         {
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string query = "select *,'" + DAL.SYS.C_USERS._tenDocSo + "' as 'TENTODS',N'" + DAL.SYS.C_USERS._fullName + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_STT ASC ";
+            string query = "select *, N'" + DAL.SYS.C_USERS._fullName + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_STT ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "V_DHN_BANGKE");
@@ -116,6 +122,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
             return ds;
          }
+
+        public static DataTable getBaoThayDinhKy() {
+            string sql = " SELECT TOP(300) DANHBO, HOTEN, (SONHA +''+ TENDUONG) AS 'DIACHI',NGAYTHAY FROM  TB_DULIEUKHACHHANG ";
+            return LinQConnection.getDataTable(sql);
+        }
 
     }
 }

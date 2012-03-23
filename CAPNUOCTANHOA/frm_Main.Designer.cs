@@ -65,13 +65,13 @@
             this.mainLayout = new System.Windows.Forms.Panel();
             this.PanelContent = new System.Windows.Forms.Panel();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuKiemTra = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmdBaoThay = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.menuHoanCongThay = new System.Windows.Forms.ToolStripMenuItem();
-            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmdBaoThay = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoiQLDHN = new DevComponents.DotNetBar.RibbonTabItem();
             this.menuDTCTB = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
@@ -81,10 +81,10 @@
             this.menuStrip4.SuspendLayout();
             this.mainLayout.SuspendLayout();
             this.ribbonControl1.SuspendLayout();
-            this.ribbonPanel3.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.ribbonPanel3.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuHeThong
@@ -438,6 +438,49 @@
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
             // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel2.Controls.Add(this.menuStrip1);
+            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 32);
+            this.ribbonPanel2.Name = "ribbonPanel2";
+            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel2.Size = new System.Drawing.Size(1038, 30);
+            this.ribbonPanel2.TabIndex = 5;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuKiemTra,
+            this.cmdBaoThay});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1032, 27);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuKiemTra
+            // 
+            this.menuKiemTra.ForeColor = System.Drawing.Color.Black;
+            this.menuKiemTra.Image = global::CAPNUOCTANHOA.Properties.Resources.Ok;
+            this.menuKiemTra.Name = "menuKiemTra";
+            this.menuKiemTra.ShowShortcutKeys = false;
+            this.menuKiemTra.Size = new System.Drawing.Size(198, 23);
+            this.menuKiemTra.Text = "Kiểm Tra Thay Định Kỳ";
+            this.menuKiemTra.Click += new System.EventHandler(this.menuKiemTra_Click);
+            // 
+            // cmdBaoThay
+            // 
+            this.cmdBaoThay.ForeColor = System.Drawing.Color.Black;
+            this.cmdBaoThay.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
+            this.cmdBaoThay.Name = "cmdBaoThay";
+            this.cmdBaoThay.Size = new System.Drawing.Size(142, 23);
+            this.cmdBaoThay.Text = "Báo Thay ĐHN";
+            this.cmdBaoThay.Click += new System.EventHandler(this.cmdBaoThay_Click);
+            // 
             // ribbonPanel3
             // 
             this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -470,47 +513,6 @@
             this.menuHoanCongThay.Size = new System.Drawing.Size(190, 23);
             this.menuHoanCongThay.Text = "Hoàn Công Thay ĐHN";
             this.menuHoanCongThay.Click += new System.EventHandler(this.menuHoanCongThay_Click);
-            // 
-            // ribbonPanel2
-            // 
-            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel2.Controls.Add(this.menuStrip1);
-            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 32);
-            this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(1038, 30);
-            this.ribbonPanel2.TabIndex = 5;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.cmdBaoThay});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1032, 27);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
-            this.toolStripMenuItem1.Image = global::CAPNUOCTANHOA.Properties.Resources.Ok;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(198, 23);
-            this.toolStripMenuItem1.Text = "Kiểm Tra Thay Định Kỳ";
-            // 
-            // cmdBaoThay
-            // 
-            this.cmdBaoThay.ForeColor = System.Drawing.Color.Black;
-            this.cmdBaoThay.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
-            this.cmdBaoThay.Name = "cmdBaoThay";
-            this.cmdBaoThay.Size = new System.Drawing.Size(142, 23);
-            this.cmdBaoThay.Text = "Báo Thay ĐHN";
-            this.cmdBaoThay.Click += new System.EventHandler(this.cmdBaoThay_Click);
             // 
             // menuDoiQLDHN
             // 
@@ -554,14 +556,14 @@
             this.mainLayout.ResumeLayout(false);
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
-            this.ribbonPanel3.ResumeLayout(false);
-            this.ribbonPanel3.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.ribbonPanel3.ResumeLayout(false);
+            this.ribbonPanel3.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -609,7 +611,7 @@
         private System.Windows.Forms.Panel PanelContent;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cmdBaoThay;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem menuKiemTra;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem menuHoanCongThay;

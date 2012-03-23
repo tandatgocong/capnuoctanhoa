@@ -13,7 +13,7 @@ namespace CAPNUOCTANHOA.DAL
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(LinQConnection).Name);
 
-        public static int ExecuteCommand(string connectionSting, string sql)
+        public static int ExecuteCommand( string sql)
         {
             int result=0;
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
