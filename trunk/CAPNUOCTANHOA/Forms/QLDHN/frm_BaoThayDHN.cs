@@ -254,11 +254,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             thaydh.DHN_SOBANGKE = int.Parse(this.txtSoBangKe.Text);
             thaydh.DHN_SOTHAN = this.txtSoThan.Text.ToUpper();
             thaydh.DHN_STT=dataBangKe.Rows.Count + 1;
-            thaydh.DHN_LYDOTHAY = this.txtLyDo.Text;
+            thaydh.DHN_LYDOTHAY = this.txtLyDo.Text;            
             thaydh.DHN_TODS = DAL.SYS.C_USERS._toDocSo;
             thaydh.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
             thaydh.DHN_CREATEDATE = DateTime.Now;
             DAL.QLDHN.C_BaoThay.Insert(thaydh);
+            DAL.DULIEUKH.C_DuLieuKhachHang.UpdateBaoThay(this.txtSoDanhBo.Text.Replace("-", ""), "True");
             LoadData();
         }
 
@@ -278,35 +279,36 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             btcapNhat.Enabled = false;
             btXoa.Enabled = false;
             txtSoDanhBo.Focus();
-            try
-            {
-                txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1) + "";
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
+           
         }
         private void btThem_Click(object sender, EventArgs e)
         {
             try
             {
-                 string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
-                 if ("".Equals(this.txtSoBangKe.Text)) {
-                     MessageBox.Show(this, "Cần nhập số bảng kê .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     this.txtSoBangKe.Focus();
-                 }
-                 else if (sodanhbo.Length != 11)
-                 {
-                     MessageBox.Show(this, "Cần nhập số danh bộ .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     this.txtSoDanhBo.Focus();
+                if (dataBangKe.Rows.Count <= 9)
+                {
+                    string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+                    if ("".Equals(this.txtSoBangKe.Text))
+                    {
+                        MessageBox.Show(this, "Cần nhập số bảng kê .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.txtSoBangKe.Focus();
+                    }
+                    else if (sodanhbo.Length != 11)
+                    {
+                        MessageBox.Show(this, "Cần nhập số danh bộ .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.txtSoDanhBo.Focus();
 
-                 }
-                 else {
-                     Add();
-                     refeshInser();
-                 }
-               
+                    }
+                    else
+                    {
+                        Add();
+                        
+                        refeshInser();
+                    }
+                }
+                else {
+                    MessageBox.Show(this, "Bảng Kê Báo Thay <= 10 Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {

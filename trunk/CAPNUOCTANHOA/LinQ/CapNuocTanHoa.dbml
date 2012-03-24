@@ -1,34 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CAPNUOCTANHOA" Class="CapNuocTanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="ConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.HdTH02" Member="HdTH02s">
-    <Type Name="HdTH02">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="KHU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="DOT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="DANHBO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CODH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="HOPDONG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TENKH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="SONHA" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="DUONG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="GIABIEU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="DINHMUC" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="KY" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="NAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CODE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CODEFU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CSCU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CSMOI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="NGDSKT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="NDSKN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CHUKY" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="LNCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LNCT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="PLTRINH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="QUAN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="PHUONG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="NGAYGAN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+  <Table Name="dbo.[HTDS-TODS]" Member="HTDS_TODs">
+    <Type Name="HTDS_TOD">
+      <Column Name="DANHBO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.TB_VATUTHAY_DHN" Member="TB_VATUTHAY_DHNs">
@@ -46,14 +23,6 @@
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="TB_THAYDHN_TB_VATUTHAY_DHN" Member="TB_THAYDHN" ThisKey="ID_BAOTHAY" OtherKey="ID_BAOTHAY" Type="TB_THAYDHN" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[HTDS-TODS]" Member="HTDS_TODs">
-    <Type Name="HTDS_TOD">
-      <Column Name="DANHBO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DOT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.SYS_PHONGBANDOI" Member="SYS_PHONGBANDOIs">
@@ -144,6 +113,7 @@
       <Column Name="MSTHUE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="SOHO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="CHISOKYTRUOC" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BAOTHAY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
