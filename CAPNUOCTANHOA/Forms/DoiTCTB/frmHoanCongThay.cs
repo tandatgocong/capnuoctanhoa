@@ -415,9 +415,19 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
 
         private void btPhieuThiCong_Click(object sender, EventArgs e)
         {
-            ReportDocument rp = new rpt_PhieuThiCongThay();
-            frm_Reports frm = new frm_Reports(rp);
-            frm.ShowDialog();
+            if ("".Equals(this.txtSoBangKe.Text))
+            {
+                MessageBox.Show(this, "Cần nhập số bảng kê .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtSoBangKe.Focus();
+            }
+            else
+            {
+                ReportDocument rp = new rpt_PhieuThiCongThay();
+                rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.ReportHoanCongThay(txtSoBangKe.Text));
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
+
         }
     }
 }
