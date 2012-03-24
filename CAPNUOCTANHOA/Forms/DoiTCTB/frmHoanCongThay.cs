@@ -303,6 +303,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                 kh.CAP = txtCapGan.Text.ToUpper();
                                 kh.CHITHAN = txtChiThan.Text.ToUpper();
                                 kh.CHIGOC = txtChiGoc.Text.ToUpper();
+                                kh.BAOTHAY = false;
                                 DAL.DULIEUKH.C_DuLieuKhachHang.Update();
                             }
                         }

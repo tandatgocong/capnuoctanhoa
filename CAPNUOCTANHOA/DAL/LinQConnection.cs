@@ -24,6 +24,8 @@ namespace CAPNUOCTANHOA.DAL
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 result = Convert.ToInt32(cmd.ExecuteScalar());
                 conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
                 return result;
             }
             catch (Exception ex)
@@ -34,6 +36,7 @@ namespace CAPNUOCTANHOA.DAL
             {
                 db.Connection.Close();
             }
+            db.SubmitChanges();
             return result;
         }
 

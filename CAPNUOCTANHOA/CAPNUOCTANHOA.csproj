@@ -127,6 +127,12 @@
     <Compile Include="Forms\QLDHN\frm_KiemTraThayDinhKy.Designer.cs">
       <DependentUpon>frm_KiemTraThayDinhKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\frm_Option_BT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_Option_BT.Designer.cs">
+      <DependentUpon>frm_Option_BT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\frm_Reports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_KiemTraThayDinhKy.resx">
       <DependentUpon>frm_KiemTraThayDinhKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_Option_BT.resx">
+      <DependentUpon>frm_Option_BT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\frm_Reports.resx">
       <DependentUpon>frm_Reports.cs</DependentUpon>

@@ -14,7 +14,18 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
         private static readonly ILog log = LogManager.GetLogger(typeof(C_DuLieuKhachHang).Name);
        
         static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
-        
+
+        public static void UpdateBaoThay(string danhbo,string result) {
+            try
+            {
+                string sql = "UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='"+result+"',  MODIFYBY='" + DAL.SYS.C_USERS._userName + "', MODIFYDATE='"+DateTime.Now+"' WHERE DANHBO='" + danhbo + "' ";
+                DAL.LinQConnection.ExecuteCommand(sql);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
         public static TB_DULIEUKHACHHANG finByDanhBo(string danhbo) {
             try
             {
