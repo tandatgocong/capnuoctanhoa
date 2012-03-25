@@ -425,8 +425,10 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             {
                 ReportDocument rp = new rpt_PhieuThiCongThay();
                 rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.ReportHoanCongThay(txtSoBangKe.Text));
-                frm_Reports frm = new frm_Reports(rp);
-                frm.ShowDialog();
+                //rp.PrintToPrinter(2, true, 0,0);
+                rp.PrintToPrinter(1, false, 0, 0);
+                //frm_Reports frm = new frm_Reports(rp);
+                //frm.ShowDialog();
             }
 
         }

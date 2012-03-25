@@ -104,6 +104,18 @@
     <Compile Include="Forms\DoiTCTB\frmHoanCongThay.Designer.cs">
       <DependentUpon>frmHoanCongThay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoiTCTB\frm_BaoCaoTCTB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\frm_BaoCaoTCTB.Designer.cs">
+      <DependentUpon>frm_BaoCaoTCTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.Designer.cs">
+      <DependentUpon>tabThongKeVatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\BC\BC_DONGHONUOC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,6 +126,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_BCBangKe_A4.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_BaoCaoTongKet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_BaoCaoTongKet.Designer.cs">
+      <DependentUpon>frm_BaoCaoTongKet.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\frm_BaoThayDHN.cs">
       <SubType>UserControl</SubType>
@@ -132,6 +150,12 @@
     </Compile>
     <Compile Include="Forms\QLDHN\frm_Option_BT.Designer.cs">
       <DependentUpon>frm_Option_BT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\tbTongKetDinhKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\tbTongKetDinhKy.Designer.cs">
+      <DependentUpon>tbTongKetDinhKy.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reports\frm_Reports.cs">
       <SubType>Form</SubType>
@@ -204,9 +228,18 @@
     <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThay.resx">
       <DependentUpon>frmHoanCongThay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\frm_BaoCaoTCTB.resx">
+      <DependentUpon>frm_BaoCaoTCTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.resx">
+      <DependentUpon>tabThongKeVatTu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_BCBangKe_A4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BCBangKe_A4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_BaoCaoTongKet.resx">
+      <DependentUpon>frm_BaoCaoTongKet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_BaoThayDHN.resx">
       <DependentUpon>frm_BaoThayDHN.cs</DependentUpon>
@@ -216,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_Option_BT.resx">
       <DependentUpon>frm_Option_BT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\tbTongKetDinhKy.resx">
+      <DependentUpon>tbTongKetDinhKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\frm_Reports.resx">
       <DependentUpon>frm_Reports.cs</DependentUpon>
@@ -282,7 +318,27 @@
   <ItemGroup>
     <None Include="Resources\Ok.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Symbol Blue Add.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mokhoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doimk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thoat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stats2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
