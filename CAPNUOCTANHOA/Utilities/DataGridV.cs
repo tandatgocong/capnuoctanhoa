@@ -18,7 +18,15 @@ namespace CAPNUOCTANHOA.Utilities
                 else {
                     dview.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.White;
                 }
-                dview.Rows[i].Cells["G_DANHBO"].Value = dview.Rows[i].Cells["G_DANHBO"].Value != null ? Utilities.FormatSoHoSoDanhBo.sodanhbo(dview.Rows[i].Cells["G_DANHBO"].Value + "") : dview.Rows[i].Cells["G_DANHBO"].Value;
+                try
+                {
+                    dview.Rows[i].Cells["G_DANHBO"].Value = dview.Rows[i].Cells["G_DANHBO"].Value != null ? Utilities.FormatSoHoSoDanhBo.sodanhbo(dview.Rows[i].Cells["G_DANHBO"].Value + "") : dview.Rows[i].Cells["G_DANHBO"].Value;
+                }
+                catch (Exception)
+                {
+                    
+                }
+               
             }
         }
         public static string sohoso(string _sohoso) {

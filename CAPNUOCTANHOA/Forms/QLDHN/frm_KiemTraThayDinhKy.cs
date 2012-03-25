@@ -28,34 +28,36 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             cbHieuDongHo.DisplayMember = "TENDONGHO";
             cbHieuDongHo.ValueMember = "HIEUDH";
         }
-
-        private void btXemThongTin_Click(object sender, EventArgs e)
-        {
-            DateTime date= dateTime.Value;
+        public void Search() {
+            DateTime date = dateTime.Value;
             string codh = "<=25";
             if (cbCoDH.SelectedIndex == 1)
             {
                 codh = ">25";
-                date=date.AddYears(-3);
+                date = date.AddYears(-3);
             }
-            else {
+            else
+            {
                 codh = "<=25";
-               date= date.AddYears(-5);
+                date = date.AddYears(-5);
             }
-            string sql="";
+            string sql = "";
 
             string quan = " != 31";
-            if (DAL.SYS.C_USERS._toDocSo.Equals("TP")) {
+            if (DAL.SYS.C_USERS._toDocSo.Equals("TP"))
+            {
                 quan = " = 31";
             }
-            if (this.ckNgayThay.Checked && this.checHieu.Checked) {
+            if (this.ckNgayThay.Checked && this.checHieu.Checked)
+            {
                 sql = "SELECT TOP(500) DANHBO, HOTEN, (SONHA +''+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) AND QUAN" + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
                 sql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ORDER BY NGAYTHAY ASC ";
                 DataTable table = DAL.LinQConnection.getDataTable(sql);
                 dataGrid.DataSource = table;
                 Utilities.DataGridV.formatRows(dataGrid);
             }
-            else if (this.ckNgayThay.Checked) {
+            else if (this.ckNgayThay.Checked)
+            {
                 sql = "SELECT TOP(500) DANHBO, HOTEN, (SONHA +''+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) AND QUAN" + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' ORDER BY NGAYTHAY ASC";
                 DataTable table = DAL.LinQConnection.getDataTable(sql);
                 dataGrid.DataSource = table;
@@ -68,6 +70,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 dataGrid.DataSource = table;
                 Utilities.DataGridV.formatRows(dataGrid);
             }
+        }
+        private void btXemThongTin_Click(object sender, EventArgs e)
+        {
+            Search();
         }
 
         private void dataGrid_MouseClick(object sender, MouseEventArgs e)
@@ -106,8 +112,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         listDanhBa += ("'" + (this.dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace("-", "") + "',");
                     }
                 }
-                frm_Option_BT frm = new frm_Option_BT();
-                frm.ShowDialog();
+                if (flag <= 10)
+                {
+                    frm_Option_BT frm = new frm_Option_BT(listDanhBa.Remove(listDanhBa.Length - 1, 1));
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        Search();
+                    }
+                }
+                else {
+                    MessageBox.Show(this, "Bảng Kê Báo Thay <= 10 Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
               //  MessageBox.Show(this,listDanhBa.Remove(listDanhBa.Length-1,1)+ "--" +flag);
                 
 
