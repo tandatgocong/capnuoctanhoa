@@ -11,6 +11,7 @@ using CAPNUOCTANHOA.LinQ;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.DoiTCTB.BC;
 using CAPNUOCTANHOA.Forms.Reports;
+using CAPNUOCTANHOA.Forms.QLDHN.BC;
 
 namespace CAPNUOCTANHOA.Forms.DoiTCTB
 {
@@ -123,7 +124,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 txtHieuDHGan.Text = HCT_HIEUDHNGAN;
 
                 string HCT_CODHNGAN = dataBangKe.Rows[i].Cells["HCT_CODHNGAN"].Value + "";
-                txtCo.Text = HCT_CODHNGAN;
+                txtGoGan.Text = HCT_CODHNGAN;
 
                 string HCT_SOTHANGAN = dataBangKe.Rows[i].Cells["HCT_SOTHANGAN"].Value + "";
                 txtSoThanGan.Text = HCT_SOTHANGAN;
@@ -237,8 +238,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         thaydh.HCT_CHISOGO = txtChiSoGo.Text != null ? int.Parse(txtChiSoGo.Text) : 0;
                         thaydh.HCT_SOTHANGO = txtSoThanGo.Text;
                         thaydh.HCT_HIEUDHNGAN = txtHieuDHGan.Text;
-                        thaydh.HCT_CODHNGAN = txtCo.Text;
                         thaydh.HCT_SOTHANGAN = txtSoThanGan.Text;
+                        thaydh.HCT_CODHNGAN = txtGoGan.Text;
                         thaydh.HCT_CAP = txtCapGan.Text.ToUpper();
                         thaydh.HCT_CHISOGAN = txtChiSoGan.Text != null ? int.Parse(txtChiSoGan.Text) : 0;
                         if (cbLoaiDHN.SelectedIndex == 0)
@@ -273,6 +274,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                 string GHICHU = dataVatTuThay.Rows[i].Cells["GHICHU"].Value + ""; ;
                                 TB_VATUTHAY_DHN vtthay = new TB_VATUTHAY_DHN();
                                 vtthay.ID_BAOTHAY = id_bt;
+                                vtthay.DOTTHAY = txtSoBangKe.Text;
                                 vtthay.STT = int.Parse(STT);
                                 vtthay.MAVT = MAVT;
                                 vtthay.TENVT = TENVT;
@@ -423,12 +425,10 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             }
             else
             {
-                ReportDocument rp = new rpt_PhieuThiCongThay();
-                rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.ReportHoanCongThay(txtSoBangKe.Text));
-                //rp.PrintToPrinter(2, true, 0,0);
-                rp.PrintToPrinter(1, false, 0, 0);
-                //frm_Reports frm = new frm_Reports(rp);
-                //frm.ShowDialog();
+                ReportDocument rp = new rpt_BCBangKe_A4();
+                rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.ReportBaoThay(txtSoBangKe.Text));
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
             }
 
         }

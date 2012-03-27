@@ -132,6 +132,7 @@
             this.labelX26 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.btInHoanCong = new DevComponents.DotNetBar.ButtonX();
+            this.btInDS = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVatTuThay)).BeginInit();
@@ -1243,6 +1244,20 @@
             this.btInHoanCong.Text = "IN HOÀN CÔNG";
             this.btInHoanCong.Click += new System.EventHandler(this.btInHoanCong_Click);
             // 
+            // btInDS
+            // 
+            this.btInDS.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btInDS.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btInDS.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInDS.ForeColor = System.Drawing.Color.Crimson;
+            this.btInDS.Location = new System.Drawing.Point(156, 101);
+            this.btInDS.Name = "btInDS";
+            this.btInDS.Size = new System.Drawing.Size(151, 23);
+            this.btInDS.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btInDS.TabIndex = 102;
+            this.btInDS.Text = "IN DS THI CÔNG";
+            this.btInDS.Click += new System.EventHandler(this.btPhieuThiCong_Click);
+            // 
             // frmHoanCongThay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1251,6 +1266,7 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.btInHoanCong);
+            this.Controls.Add(this.btInDS);
             this.Controls.Add(this.btPhieuThiCong);
             this.Controls.Add(this.dataBangKe);
             this.Controls.Add(this.txtSoBangKe);
@@ -1366,5 +1382,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn SL;
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
+        private DevComponents.DotNetBar.ButtonX btInDS;
     }
 }

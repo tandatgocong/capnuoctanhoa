@@ -65,5 +65,38 @@ namespace CAPNUOCTANHOA.DAL.DoiTCTB
 
         }
 
+        public static DataSet ReportThongKeVT(string sobangke, DateTime tungay, DateTime denngay) {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "select *, N'" + DAL.SYS.C_USERS._fullName + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_STT ASC ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "V_DHN_BANGKE");
+
+            query = "select * FROM TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+
+            return ds;        
+        }
+
+        public static DataSet ReportBaoThay(string sobangke)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "select *, N'" + DAL.SYS.C_USERS._fullName + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) = '" + sobangke + "' ORDER BY DHN_STT ASC ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "V_DHN_BANGKE");
+
+            query = "select * FROM TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+
+            return ds;
+        }
+
     }
 }

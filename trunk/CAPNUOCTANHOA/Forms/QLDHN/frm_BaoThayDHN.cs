@@ -106,7 +106,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             if (e.KeyChar == 13) {
                 LoadData();
-                btIn.Enabled = true;
+                //btIn.Enabled = true;
             }
         }
 
@@ -171,7 +171,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             txtMaLoTrinh.Text = "";
             btcapNhat.Enabled = false;
             btXoa.Enabled = false;
-            btIn.Enabled = false;
+           // btIn.Enabled = false;
             this.histotyThay.Visible = false;
             txtSoBangKe.Focus();
             this.dataBangKe.DataSource = DAL.QLDHN.C_BaoThay.getBangKeBaoThay(999999);

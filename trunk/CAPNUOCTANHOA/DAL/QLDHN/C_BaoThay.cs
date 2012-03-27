@@ -37,7 +37,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
         public static DataTable HistoryThay(string danhbo)
         {
-            string sql = "SELECT DHN_LANTHAY,DHN_LYDOTHAY AS 'TENBANGKE',DHN_SOBANGKE,DHN_NGAYBAOTHAY,HCT_NGAYGAN";
+            string sql = "SELECT DHN_LANTHAY,DHN_LYDOTHAY AS 'TENBANGKE',DHN_SOBANGKE,DHN_NGAYBAOTHAY,HCT_NGAYGAN,HCT_TRONGAI";
             sql += " FROM  TB_THAYDHN thay WHERE DHN_DANHBO='" + danhbo + "' ORDER BY DHN_LANTHAY ASC  ";
             return LinQConnection.getDataTable(sql);
         }

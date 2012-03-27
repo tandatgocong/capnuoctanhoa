@@ -98,6 +98,21 @@
       <DependentUpon>rpt_PhieuThiCongThay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\DoiTCTB\BC\rpt_ThongKeVTThay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ThongKeVTThay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\BC\THONGKEVATTU.cs">
+      <DependentUpon>THONGKEVATTU.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\BC\THONGKEVATTU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>THONGKEVATTU.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DoiTCTB\frmHoanCongThay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,6 +215,17 @@
     <Compile Include="Utilities\LogIn.cs" />
     <Compile Include="Utilities\Strings.cs" />
     <None Include="app.config" />
+    <None Include="Forms\DoiTCTB\BC\THONGKEVATTU.xsc">
+      <DependentUpon>THONGKEVATTU.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DoiTCTB\BC\THONGKEVATTU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>THONGKEVATTU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\DoiTCTB\BC\THONGKEVATTU.xss">
+      <DependentUpon>THONGKEVATTU.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\BC\BC_DONGHONUOC.xsc">
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </None>
@@ -224,6 +250,10 @@
     <EmbeddedResource Include="Forms\DoiTCTB\BC\rpt_PhieuThiCongThay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_PhieuThiCongThay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\BC\rpt_ThongKeVTThay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ThongKeVTThay.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThay.resx">
       <DependentUpon>frmHoanCongThay.cs</DependentUpon>
