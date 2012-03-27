@@ -12,6 +12,7 @@
     <Type Name="TB_VATUTHAY_DHN">
       <Column Name="ID_BC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ID_BAOTHAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOTTHAY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MAVT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="TENVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />

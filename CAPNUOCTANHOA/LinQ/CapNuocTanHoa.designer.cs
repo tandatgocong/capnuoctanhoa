@@ -280,6 +280,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private System.Nullable<int> _ID_BAOTHAY;
 		
+		private string _DOTTHAY;
+		
 		private System.Nullable<int> _STT;
 		
 		private string _MAVT;
@@ -310,6 +312,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnID_BCChanged();
     partial void OnID_BAOTHAYChanging(System.Nullable<int> value);
     partial void OnID_BAOTHAYChanged();
+    partial void OnDOTTHAYChanging(string value);
+    partial void OnDOTTHAYChanged();
     partial void OnSTTChanging(System.Nullable<int> value);
     partial void OnSTTChanged();
     partial void OnMAVTChanging(string value);
@@ -378,6 +382,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._ID_BAOTHAY = value;
 					this.SendPropertyChanged("ID_BAOTHAY");
 					this.OnID_BAOTHAYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOTTHAY", DbType="NVarChar(50)")]
+		public string DOTTHAY
+		{
+			get
+			{
+				return this._DOTTHAY;
+			}
+			set
+			{
+				if ((this._DOTTHAY != value))
+				{
+					this.OnDOTTHAYChanging(value);
+					this.SendPropertyChanging();
+					this._DOTTHAY = value;
+					this.SendPropertyChanged("DOTTHAY");
+					this.OnDOTTHAYChanged();
 				}
 			}
 		}

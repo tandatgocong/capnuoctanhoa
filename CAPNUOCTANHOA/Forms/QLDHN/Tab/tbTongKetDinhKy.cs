@@ -32,7 +32,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             if (cbCoDH.SelectedIndex == 1)
             {
                 codh = ">25";
-                date = date.AddYears(-3);
+                date = date.AddYears(-4);
             }
             else
             {

@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using log4net;
 using CAPNUOCTANHOA.LinQ;
+using CrystalDecisions.CrystalReports.Engine;
+using CAPNUOCTANHOA.Forms.Reports;
+using CAPNUOCTANHOA.Forms.QLDHN.BC;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -95,7 +98,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         public void Add()
         {
-            for (int i = 0; i < dataBangKe.Rows.Count - 1;i++ )
+            for (int i = 0; i < dataBangKe.Rows.Count;i++ )
             {
                 TB_THAYDHN thaydh = new TB_THAYDHN();
                 string sodanhbo = (dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "").Replace("-", "");
@@ -138,6 +141,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.AcceptButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             }
            
+        }
+
+        private void btIn_Click(object sender, EventArgs e)
+        {
+            if ("".Equals(this.txtSoBangKe.Text))
+            {
+                MessageBox.Show(this, "Cần nhập số bảng kê .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtSoBangKe.Focus();
+            }
+            else
+            {
+                ReportDocument rp = new rpt_BCBangKe_A4();
+                rp.SetDataSource(DAL.QLDHN.C_BaoThay.ReportBaoThay(txtSoBangKe.Text));
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
         }
     }
 }
