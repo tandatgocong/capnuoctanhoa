@@ -79,6 +79,7 @@
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.menuHoanCongThay = new System.Windows.Forms.ToolStripMenuItem();
+            this.hcThayThuDHN = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTCTB = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -118,10 +119,10 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel1.Controls.Add(this.menuStrip3);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 32);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 30);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 62);
             this.ribbonPanel1.TabIndex = 1;
             // 
             // menuStrip3
@@ -566,8 +567,8 @@
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -607,6 +608,7 @@
             this.menuStrip2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuHoanCongThay,
+            this.hcThayThuDHN,
             this.menuTCTB});
             this.menuStrip2.Location = new System.Drawing.Point(3, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -623,6 +625,15 @@
             this.menuHoanCongThay.Text = "Hoàn Công Thay ĐHN";
             this.menuHoanCongThay.Click += new System.EventHandler(this.menuHoanCongThay_Click);
             // 
+            // hcThayThuDHN
+            // 
+            this.hcThayThuDHN.ForeColor = System.Drawing.Color.Black;
+            this.hcThayThuDHN.Image = global::CAPNUOCTANHOA.Properties.Resources.daoduong;
+            this.hcThayThuDHN.Name = "hcThayThuDHN";
+            this.hcThayThuDHN.Size = new System.Drawing.Size(226, 23);
+            this.hcThayThuDHN.Text = "Hoàn Công Thay Thử  ĐHN";
+            this.hcThayThuDHN.Click += new System.EventHandler(this.hcThayThuDHN_Click);
+            // 
             // menuTCTB
             // 
             this.menuTCTB.ForeColor = System.Drawing.Color.Black;
@@ -637,10 +648,10 @@
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel2.Controls.Add(this.menuStrip1);
             this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 32);
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 0);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(1038, 30);
+            this.ribbonPanel2.Size = new System.Drawing.Size(1038, 62);
             this.ribbonPanel2.TabIndex = 5;
             this.ribbonPanel2.Visible = false;
             // 
@@ -827,6 +838,7 @@
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem menuTCTB;
+        private System.Windows.Forms.ToolStripMenuItem hcThayThuDHN;
 
 
     }

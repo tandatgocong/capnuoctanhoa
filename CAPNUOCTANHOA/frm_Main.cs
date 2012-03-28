@@ -185,8 +185,8 @@ namespace CAPNUOCTANHOA
 
         private void subDoiMatKhau_Click(object sender, EventArgs e)
         {
-            //frm_ChangePassword chang = new frm_ChangePassword();
-            //chang.ShowDialog();
+            frm_ChangePassword chang = new frm_ChangePassword();
+            chang.ShowDialog();
         }
 
         private void subdangnhap_Click(object sender, EventArgs e)
@@ -224,6 +224,16 @@ namespace CAPNUOCTANHOA
             baothay.Height = PanelContent.Size.Height - 20;
             baothay.Width = PanelContent.Size.Width - 20;
             PanelContent.Controls.Add(baothay);
+        }
+
+        private void hcThayThuDHN_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frmHoanCongThayThu baothay = new frmHoanCongThayThu();
+            baothay.Height = PanelContent.Size.Height - 20;
+            baothay.Width = PanelContent.Size.Width - 20;
+            PanelContent.Controls.Add(baothay);
+
         }
 
     }

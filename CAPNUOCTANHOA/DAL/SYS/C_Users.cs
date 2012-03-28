@@ -16,6 +16,7 @@ namespace CAPNUOCTANHOA.DAL.SYS
         public static string _maphong = null;
         public static string _toDocSo = null;
         public static string _tenDocSo = null;
+        public static string _gioihan = "";
         public bool AddNew(SYS_USER user)
         {
             try
@@ -44,6 +45,14 @@ namespace CAPNUOCTANHOA.DAL.SYS
             var data = from user in db.SYS_USERs where user.USERNAME == username select user;
             SYS_USER us = data.SingleOrDefault();     
             return us;
+        }
+        public static SYS_USER findByToDS(string tods) {
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            var data = from user in db.SYS_USERs where user.TODS == tods select user;
+            if (data.ToList().Count > 0) {
+                return data.ToList()[0];
+            }
+            return null;
         }
         public static SYS_USER findByFullName(string fullName)
         {
@@ -113,6 +122,7 @@ namespace CAPNUOCTANHOA.DAL.SYS
                 _roles = userlogin.ROLEID;
                 _maphong = userlogin.MAPHONG;
                 _toDocSo = userlogin.TODS;
+                _gioihan = userlogin.GIOIHAN;
                 return true;
             }
             return false;

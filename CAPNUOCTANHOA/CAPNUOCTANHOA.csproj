@@ -113,6 +113,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>THONGKEVATTU.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoiTCTB\frmHoanCongThayThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\frmHoanCongThayThu.Designer.cs">
+      <DependentUpon>frmHoanCongThayThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DoiTCTB\frmHoanCongThay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,6 +184,12 @@
     <Compile Include="Forms\Reports\frm_Reports.Designer.cs">
       <DependentUpon>frm_Reports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\System\frm_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frm_ChangePassword.Designer.cs">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\System\frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,7 +226,9 @@
     <Compile Include="Utilities\FormatSoHoSoDanhBo.cs" />
     <Compile Include="Utilities\LogIn.cs" />
     <Compile Include="Utilities\Strings.cs" />
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Forms\DoiTCTB\BC\THONGKEVATTU.xsc">
       <DependentUpon>THONGKEVATTU.xsd</DependentUpon>
     </None>
@@ -255,6 +269,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeVTThay.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThayThu.resx">
+      <DependentUpon>frmHoanCongThayThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThay.resx">
       <DependentUpon>frmHoanCongThay.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\frm_Reports.resx">
       <DependentUpon>frm_Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frm_ChangePassword.resx">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\System\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
@@ -368,6 +388,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Stats2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\daoduong.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

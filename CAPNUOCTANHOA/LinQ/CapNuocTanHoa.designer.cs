@@ -63,7 +63,7 @@ namespace CAPNUOCTANHOA.LinQ
     #endregion
 		
 		public CapNuocTanHoaDataContext() : 
-				base(global::CAPNUOCTANHOA.Properties.Settings.Default.ConnectionString, mappingSource)
+				base(global::CAPNUOCTANHOA.Properties.Settings.Default.CAPNUOCTANHOAConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -185,6 +185,14 @@ namespace CAPNUOCTANHOA.LinQ
 			get
 			{
 				return this.GetTable<V_DHN_BANGKE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_TCTB_TKVATTUTHAY> V_TCTB_TKVATTUTHAYs
+		{
+			get
+			{
+				return this.GetTable<V_TCTB_TKVATTUTHAY>();
 			}
 		}
 	}
@@ -1007,6 +1015,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private string _TODS;
 		
+		private string _GIOIHAN;
+		
 		private string _CREATEBY;
 		
 		private System.Nullable<System.DateTime> _CREATEDATE;
@@ -1041,6 +1051,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnMAPHONGChanged();
     partial void OnTODSChanging(string value);
     partial void OnTODSChanged();
+    partial void OnGIOIHANChanging(string value);
+    partial void OnGIOIHANChanged();
     partial void OnCREATEBYChanging(string value);
     partial void OnCREATEBYChanged();
     partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
@@ -1224,6 +1236,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._TODS = value;
 					this.SendPropertyChanged("TODS");
 					this.OnTODSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIOIHAN", DbType="NVarChar(MAX)")]
+		public string GIOIHAN
+		{
+			get
+			{
+				return this._GIOIHAN;
+			}
+			set
+			{
+				if ((this._GIOIHAN != value))
+				{
+					this.OnGIOIHANChanging(value);
+					this.SendPropertyChanging();
+					this._GIOIHAN = value;
+					this.SendPropertyChanged("GIOIHAN");
+					this.OnGIOIHANChanged();
 				}
 			}
 		}
@@ -4977,6 +5009,105 @@ namespace CAPNUOCTANHOA.LinQ
 				if ((this._HCT_MODIFYBY != value))
 				{
 					this._HCT_MODIFYBY = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_TCTB_TKVATTUTHAY")]
+	public partial class V_TCTB_TKVATTUTHAY
+	{
+		
+		private System.Nullable<int> _STT;
+		
+		private string _MAVT;
+		
+		private string _TENVT;
+		
+		private string _DVT;
+		
+		private System.Nullable<int> _TONGSL;
+		
+		public V_TCTB_TKVATTUTHAY()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="Int")]
+		public System.Nullable<int> STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this._STT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAVT", DbType="NVarChar(100)")]
+		public string MAVT
+		{
+			get
+			{
+				return this._MAVT;
+			}
+			set
+			{
+				if ((this._MAVT != value))
+				{
+					this._MAVT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENVT", DbType="NVarChar(MAX)")]
+		public string TENVT
+		{
+			get
+			{
+				return this._TENVT;
+			}
+			set
+			{
+				if ((this._TENVT != value))
+				{
+					this._TENVT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVT", DbType="NVarChar(MAX)")]
+		public string DVT
+		{
+			get
+			{
+				return this._DVT;
+			}
+			set
+			{
+				if ((this._DVT != value))
+				{
+					this._DVT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGSL", DbType="Int")]
+		public System.Nullable<int> TONGSL
+		{
+			get
+			{
+				return this._TONGSL;
+			}
+			set
+			{
+				if ((this._TONGSL != value))
+				{
+					this._TONGSL = value;
 				}
 			}
 		}
