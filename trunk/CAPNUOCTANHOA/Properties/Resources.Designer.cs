@@ -74,6 +74,13 @@ namespace CAPNUOCTANHOA.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap daoduong {
+            get {
+                object obj = ResourceManager.GetObject("daoduong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap doimk {
             get {
                 object obj = ResourceManager.GetObject("doimk", resourceCulture);

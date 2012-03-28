@@ -81,6 +81,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 title.Text = "BẢNG KÊ BÁO THAY HẠ CỞ ĐỒNG HỒ NƯỚC ";
             }
+            else if ("TH".Equals(this.cbLoaiBangKe.SelectedValue + ""))
+            {
+                title.Text = "BẢNG KÊ BÁO THAY THỬ ĐỒNG HỒ NƯỚC";
+            }
             else
             {
                 title.Text = "BẢNG KÊ BÁO THAY ĐỒNG HỒ NƯỚC " + this.cbLoaiBangKe.Text;
@@ -215,6 +219,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     txtChiThan.Text = khachhang.CHITHAN;
                     txtChiGoc.Text = khachhang.CHIGOC;
                     txtChiSoThay.Text = khachhang.CHISOKYTRUOC;
+                    
                     txtDot.Text = khachhang.DOT;
                     txtMaLoTrinh.Text = khachhang.CUON_GCS + "" + khachhang.CUON_STT;
                 }
@@ -377,6 +382,32 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtSoDanhBo_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+                DataTable table = DAL.QLDHN.C_BaoThay.HistoryThay(sodanhbo);
+                if (table.Rows.Count > 0)
+                {
+                    histotyThay.DataSource = table;
+                    histotyThay.Visible = true;
+                    resultBT.Visible = true;
+                    resultBT.Text = "CÓ " + table.Rows.Count + " LẦN THAY >>";
+                }
+                else
+                {
+                    histotyThay.Visible = false;
+                    resultBT.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            
         }
     }
 }

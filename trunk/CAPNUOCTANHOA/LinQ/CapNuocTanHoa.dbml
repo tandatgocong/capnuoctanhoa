@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CAPNUOCTANHOA" Class="CapNuocTanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="CAPNUOCTANHOAConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[HTDS-TODS]" Member="HTDS_TODs">
     <Type Name="HTDS_TOD">
       <Column Name="DANHBO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -54,6 +54,7 @@
       <Column Name="CAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MAPHONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="TODS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GIOIHAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
@@ -239,6 +240,15 @@
       <Column Name="HCT_CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="HCT_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="HCT_MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_TCTB_TKVATTUTHAY" Member="V_TCTB_TKVATTUTHAYs">
+    <Type Name="V_TCTB_TKVATTUTHAY">
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAVT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TONGSL" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

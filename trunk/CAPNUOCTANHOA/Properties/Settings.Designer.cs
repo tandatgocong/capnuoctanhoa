@@ -26,8 +26,18 @@ namespace CAPNUOCTANHOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" +
-            ";Password=sa123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\QUANLYTHAYDHN.mdb")]
+        public string AccessFile {
+            get {
+                return ((string)(this["AccessFile"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER_HP380\\SQLEXPRESS;Initial Catalog=CAPNUOCTANHOA;Persist Securit" +
+            "y Info=True;User ID=sa;Password=P@ssw0rd@123")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -37,10 +47,11 @@ namespace CAPNUOCTANHOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\QUANLYTHAYDHN.mdb")]
-        public string AccessFile {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" +
+            ";Password=sa123")]
+        public string CAPNUOCTANHOAConnectionString {
             get {
-                return ((string)(this["AccessFile"]));
+                return ((string)(this["CAPNUOCTANHOAConnectionString"]));
             }
         }
     }

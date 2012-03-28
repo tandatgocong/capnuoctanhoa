@@ -16,6 +16,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             InitializeComponent();
             LoadDataToGird();
             cbCoDH.SelectedIndex = 0;
+            dateTime.Value = DateTime.Now;
+            if ("TP".Equals(DAL.SYS.C_USERS._toDocSo)) {
+                this.checkTanPhu.Checked = true;
+            }else if ("TB01".Equals(DAL.SYS.C_USERS._toDocSo)){
+                this.checkTanBinh1.Checked = true;
+            }
+            else if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                this.checkTanBinh2.Checked = true;
+            }
+
         }
 
         private void LoadDataToGird()
@@ -40,33 +51,42 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 date = date.AddYears(-5);
             }
 
-            string quan = " != 31";
-            if (DAL.SYS.C_USERS._toDocSo.Equals("TP"))
+            string gioihan = "";
+            if (checkTanBinh1.Checked) {
+                gioihan = DAL.SYS.C_USERS.findByToDS("TB01")!=null? DAL.SYS.C_USERS.findByToDS("TB01").GIOIHAN: "" ;
+            }
+            else if (checkTanBinh2.Checked) {
+                gioihan = DAL.SYS.C_USERS.findByToDS("TB02") != null ? DAL.SYS.C_USERS.findByToDS("TB02").GIOIHAN : "";
+            }
+            else if (checkTanPhu.Checked)
             {
-                quan = " = 31";
+                gioihan = DAL.SYS.C_USERS.findByToDS("TP") != null ? DAL.SYS.C_USERS.findByToDS("TP").GIOIHAN : "";
+            }
+            else {
+                gioihan = "";
             }
 
-            string sql = "SELECT HIEUDH,CODH,COUNT(CODH) AS 'SOLUONG', YEAR(NGAYTHAY) AS 'NAM' FROM  TB_DULIEUKHACHHANG  WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) AND QUAN" + quan + " AND CODH" + codh + "   ";
+            string sql = "SELECT HIEUDH,CODH,COUNT(CODH) AS 'SOLUONG', YEAR(NGAYTHAY) AS 'NAM' FROM  TB_DULIEUKHACHHANG  WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + "   ";
             string tksql = "";
             if (this.ckNgayThay.Checked && this.checHieu.Checked)
             {
 
                 sql += " AND NGAYTHAY <= '" + date.ToShortDateString() + "' AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ";
-                
 
-                tksql = "SELECT CODH,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG  WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) AND QUAN" + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
+
+                tksql = "SELECT CODH,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG  WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)" + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
                 tksql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY CODH  ORDER BY SOLUONG DESC ";
               
             }
             else if (this.ckNgayThay.Checked)
             {
                 sql += " AND NGAYTHAY <= '" + date.ToShortDateString() + "' ";
-                tksql = "SELECT CODH,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) AND QUAN" + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' GROUP BY CODH ORDER BY SOLUONG DESC";
+                tksql = "SELECT CODH,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' GROUP BY CODH ORDER BY SOLUONG DESC";
             }
             else if (this.checHieu.Checked)
             {
                 sql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ";
-                tksql = "SELECT CODH,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) AND QUAN" + quan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY CODH  ORDER BY SOLUONG DESC";
+                tksql = "SELECT CODH,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY CODH  ORDER BY SOLUONG DESC";
             }
             sql += " GROUP BY HIEUDH,CODH,YEAR(NGAYTHAY) ORDER BY YEAR(NGAYTHAY),SOLUONG DESC ";
 
