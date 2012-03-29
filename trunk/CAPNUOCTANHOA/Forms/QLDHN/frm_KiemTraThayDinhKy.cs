@@ -51,22 +51,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             //}
             if (this.ckNgayThay.Checked && this.checHieu.Checked)
             {
-                sql = "SELECT TOP(500) DANHBO, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
-                sql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ORDER BY NGAYTHAY ASC ";
+                sql = "SELECT TOP(500) DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY, HIEUDH,CODH FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
+                sql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ORDER BY DOT,NGAYTHAY ASC ";
                 DataTable table = DAL.LinQConnection.getDataTable(sql);
                 dataGrid.DataSource = table;
                 Utilities.DataGridV.formatRows(dataGrid);
             }
             else if (this.ckNgayThay.Checked)
             {
-                sql = "SELECT TOP(500) DANHBO, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' ORDER BY NGAYTHAY ASC";
+                sql = "SELECT TOP(500) DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' ORDER BY DOT,NGAYTHAY ASC";
                 DataTable table = DAL.LinQConnection.getDataTable(sql);
                 dataGrid.DataSource = table;
                 Utilities.DataGridV.formatRows(dataGrid);
             }
             else if (this.checHieu.Checked)
             {
-                sql = "SELECT TOP(500) DANHBO, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ORDER BY NGAYTHAY ASC";
+                sql = "SELECT TOP(500) DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ORDER BY DOT,NGAYTHAY ASC";
                 DataTable table = DAL.LinQConnection.getDataTable(sql);
                 dataGrid.DataSource = table;
                 Utilities.DataGridV.formatRows(dataGrid);

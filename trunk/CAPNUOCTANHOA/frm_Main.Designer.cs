@@ -108,7 +108,6 @@
             // 
             // menuHeThong
             // 
-            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -124,6 +123,7 @@
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel1.Size = new System.Drawing.Size(1038, 62);
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip3
             // 
@@ -565,8 +565,8 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -600,7 +600,6 @@
             this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel3.Size = new System.Drawing.Size(1038, 30);
             this.ribbonPanel3.TabIndex = 6;
-            this.ribbonPanel3.Visible = false;
             // 
             // menuStrip2
             // 
@@ -632,6 +631,7 @@
             this.hcThayThuDHN.Name = "hcThayThuDHN";
             this.hcThayThuDHN.Size = new System.Drawing.Size(226, 23);
             this.hcThayThuDHN.Text = "Hoàn Công Thay Thử  ĐHN";
+            this.hcThayThuDHN.Visible = false;
             this.hcThayThuDHN.Click += new System.EventHandler(this.hcThayThuDHN_Click);
             // 
             // menuTCTB
@@ -706,6 +706,7 @@
             // 
             // menuDTCTB
             // 
+            this.menuDTCTB.Checked = true;
             this.menuDTCTB.Name = "menuDTCTB";
             this.menuDTCTB.Panel = this.ribbonPanel3;
             this.menuDTCTB.Text = "Đội TCTB";

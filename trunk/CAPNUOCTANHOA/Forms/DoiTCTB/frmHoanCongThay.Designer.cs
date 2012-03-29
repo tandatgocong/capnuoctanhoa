@@ -505,7 +505,7 @@
             this.btPhieuThiCong.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btPhieuThiCong.TabIndex = 102;
             this.btPhieuThiCong.Text = "IN PHIẾU THI CÔNG";
-            this.btPhieuThiCong.Click += new System.EventHandler(this.btPhieuThiCong_Click);
+            this.btPhieuThiCong.Click += new System.EventHandler(this.phieutc);
             // 
             // groupPanel1
             // 
