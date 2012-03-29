@@ -176,5 +176,29 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             tongket();  
         }
 
+        private void checkAll_CheckedChanged(object sender, EventArgs e)
+        {
+            Search();
+            tongket();   
+        }
+
+        private void checkTanBinh1_CheckedChanged(object sender, EventArgs e)
+        {
+            Search();
+            tongket();   
+        }
+
+        private void checkTanBinh2_CheckedChanged(object sender, EventArgs e)
+        {
+            Search();
+            tongket();   
+        }
+
+        private void checkTanPhu_CheckedChanged(object sender, EventArgs e)
+        {
+            Search();
+            tongket();   
+        }
+
     }
 }

@@ -29,8 +29,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 log.Error(ex.Message);
             }
-            string sql = "SELECT DANHBO,HOTEN,(SONHA+' '+TENDUONG) as 'DIACHI',NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHITHAN,CHIGOC,CHISOKYTRUOC,DOT,N'ĐỊNH KỲ' as 'GHICHU'";
-            sql+="FROM  TB_DULIEUKHACHHANG WHERE DANHBO IN ("+ listDanhBo +")";
+            string sql = "SELECT DANHBO,HOTEN,(SONHA+' '+TENDUONG) as 'DIACHI',NGAYTHAY,TB_HIEUDONGHO.TENDONGHO as 'HIEUDH',CODH,SOTHANDH,CHITHAN,CHIGOC,CHISOKYTRUOC,DOT,N'ĐỊNH KỲ' as 'GHICHU'";
+            sql += "FROM  TB_DULIEUKHACHHANG, TB_HIEUDONGHO WHERE TB_HIEUDONGHO.HIEUDH=TB_DULIEUKHACHHANG.HIEUDH AND DANHBO IN (" + listDanhBo + ")";
 
             dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
          
@@ -109,7 +109,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 thaydh.DHN_CHITHAN = dataBangKe.Rows[i].Cells["CHITHAN"].Value + "";
                 thaydh.DHN_CODH = dataBangKe.Rows[i].Cells["G_CODHN"].Value + "";
                 thaydh.DHN_DOT = dataBangKe.Rows[i].Cells["DOT"].Value + "";
-                thaydh.DHN_HIEUDHN = (dataBangKe.Rows[i].Cells["G_HIEUDHN"].Value + "").ToUpper();
+                thaydh.DHN_HIEUDHN =  (dataBangKe.Rows[i].Cells["G_HIEUDHN"].Value + "").ToUpper();
                 thaydh.DHN_LANTHAY = DAL.QLDHN.C_BaoThay.getMaxLanThay(sodanhbo) + 1;
                 thaydh.DHN_LOAIBANGKE = this.cbLoaiBangKe.SelectedValue + "";
                 thaydh.DHN_LYDOTHAY = dataBangKe.Rows[i].Cells["G_LYDO"].Value + "";

@@ -432,5 +432,22 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             }
 
         }
+
+        private void phieutc(object sender, EventArgs e)
+        {
+            if ("".Equals(this.txtSoBangKe.Text))
+            {
+                MessageBox.Show(this, "Cần nhập số bảng kê .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtSoBangKe.Focus();
+            }
+            else
+            {
+                ReportDocument rp = new rpt_PhieuThiCongThay();
+                rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.ReportBaoThay(txtSoBangKe.Text));
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
+             
+        }
     }
 }
