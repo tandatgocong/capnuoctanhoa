@@ -21,5 +21,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.splitContainer1.Panel2.Controls.Clear();
             this.splitContainer1.Panel2.Controls.Add(new tbTongKetDinhKy());
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

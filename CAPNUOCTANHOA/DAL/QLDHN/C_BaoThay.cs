@@ -17,7 +17,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         
         public static DataTable getBangKeBaoThay(int sobangke) {
              string sql = "SELECT ID_BAOTHAY,DHN_LOAIBANGKE,DHN_SOBANGKE, DHN_DANHBO,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_NGAYBAOTHAY,DHN_NGAYGAN,DHN_CHITHAN,DHN_CHIGOC,DHN_HIEUDHN,DHN_CODH,DHN_SOTHAN,DHN_CHISO,DHN_LYDOTHAY ";
-             sql += " FROM TB_THAYDHN thay,TB_DULIEUKHACHHANG kh WHERE kh.DANHBO=thay.DHN_DANHBO AND DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_STT ASC ";
+             sql += " FROM TB_THAYDHN thay,TB_DULIEUKHACHHANG kh WHERE kh.DANHBO=thay.DHN_DANHBO AND DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_DANHBO ASC ";
             return LinQConnection.getDataTable(sql);
         }
         public static int getMaxBangKe() {
@@ -115,7 +115,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string query = "select *, N'" + DAL.SYS.C_USERS._fullName + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_STT ASC ";
+            string query = "select *, N'" + DAL.SYS.C_USERS._fullName + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_DANHBO ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "V_DHN_BANGKE");
@@ -132,5 +132,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return LinQConnection.getDataTable(sql);
         }
 
+
+    
     }
 }

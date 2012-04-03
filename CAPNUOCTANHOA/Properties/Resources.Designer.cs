@@ -95,6 +95,13 @@ namespace CAPNUOCTANHOA.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap First {
+            get {
+                object obj = ResourceManager.GetObject("First", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icon {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
@@ -105,6 +112,13 @@ namespace CAPNUOCTANHOA.Properties {
         internal static System.Drawing.Bitmap icon1 {
             get {
                 object obj = ResourceManager.GetObject("icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Last {
+            get {
+                object obj = ResourceManager.GetObject("Last", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
