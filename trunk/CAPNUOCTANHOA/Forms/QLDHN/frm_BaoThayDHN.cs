@@ -68,6 +68,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             else {
                 ReportDocument rp = new rpt_BCBangKe_A3();
                 rp.SetDataSource(DAL.QLDHN.C_BaoThay.ReportBaoThay(txtSoBangKe.Text));
+                rp.SetParameterValue("lapbk", DAL.SYS.C_USERS._fullName);
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
             }

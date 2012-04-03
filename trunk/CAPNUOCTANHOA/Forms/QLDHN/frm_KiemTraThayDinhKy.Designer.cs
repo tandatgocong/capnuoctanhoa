@@ -54,6 +54,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkChon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.CHISOKYTRUOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MLT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DOT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -301,6 +302,7 @@
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.checkChon,
+            this.CHISOKYTRUOC,
             this.MLT,
             this.DOT,
             this.G_DANHBO,
@@ -344,6 +346,12 @@
             this.checkChon.HeaderText = "CHỌN";
             this.checkChon.Name = "checkChon";
             this.checkChon.Width = 60;
+            // 
+            // CHISOKYTRUOC
+            // 
+            this.CHISOKYTRUOC.DataPropertyName = "CHISOKYTRUOC";
+            this.CHISOKYTRUOC.HeaderText = "CHISOKYTRUOC";
+            this.CHISOKYTRUOC.Name = "CHISOKYTRUOC";
             // 
             // MLT
             // 
@@ -463,6 +471,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private DevComponents.DotNetBar.LabelX lbTongDHN;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkChon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHISOKYTRUOC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MLT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DOT;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_DANHBO;

@@ -5,11 +5,13 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using CAPNUOCTANHOA.LinQ;
+using log4net;
 
 namespace CAPNUOCTANHOA.DAL.SYS
 {
     public class C_USERS
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_USERS).Name);
         public static string _fullName = null;
         public static string _userName = null;
         public static string _roles = null;
@@ -111,20 +113,29 @@ namespace CAPNUOCTANHOA.DAL.SYS
            return table;
         }
         public bool UserLogin(string userName, string passWord) {
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
-            var data = from user in db.SYS_USERs where user.USERNAME == userName && user.PASSWORD == passWord && user.ENABLED ==true select user;
-            SYS_USER userLogin = data.SingleOrDefault();
-            if (userLogin != null)
+            try
             {
-                SYS_USER userlogin = (SYS_USER)data.SingleOrDefault();
-                _userName = userlogin.USERNAME;
-                _fullName = userlogin.FULLNAME;
-                _roles = userlogin.ROLEID;
-                _maphong = userlogin.MAPHONG;
-                _toDocSo = userlogin.TODS;
-                _gioihan = userlogin.GIOIHAN;
-                return true;
+                CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+                var data = from user in db.SYS_USERs where user.USERNAME == userName && user.PASSWORD == passWord && user.ENABLED == true select user;
+                SYS_USER userLogin = data.SingleOrDefault();
+                if (userLogin != null)
+                {
+                    SYS_USER userlogin = (SYS_USER)data.SingleOrDefault();
+                    _userName = userlogin.USERNAME;
+                    _fullName = userlogin.FULLNAME;
+                    _roles = userlogin.ROLEID;
+                    _maphong = userlogin.MAPHONG;
+                    _toDocSo = userlogin.TODS;
+                    _gioihan = userlogin.GIOIHAN;
+                    return true;
+                }
             }
+            catch (Exception ex)
+            {
+
+                log.Error("Kiem Tra Ket Noi Server" + ex.Message);
+            }
+            
             return false;
         }
 
