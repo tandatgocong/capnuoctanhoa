@@ -13,9 +13,9 @@ namespace CAPNUOCTANHOA.DAL
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(LinQConnection).Name);
 
-        public static int ExecuteCommand( string sql)
+        public static int ExecuteCommand(string sql)
         {
-            int result=0;
+            int result = 0;
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             try
             {
@@ -60,6 +60,29 @@ namespace CAPNUOCTANHOA.DAL
                 db.Connection.Close();
             }
             return table;
+        }
+
+        public static DataTable getDataTable(string sql, int FirstRow, int pageSize)
+        {
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            try
+            {
+                db.Connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                DataSet dataset = new DataSet();
+                adapter.Fill(dataset, FirstRow, pageSize, "TABLE");
+                db.Connection.Close();
+                return dataset.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            return null;
         }
     }
 }

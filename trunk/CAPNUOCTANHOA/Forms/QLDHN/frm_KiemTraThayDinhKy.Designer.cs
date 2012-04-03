@@ -37,6 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.next = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btXemThongTin = new DevComponents.DotNetBar.ButtonX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
@@ -46,6 +48,8 @@
             this.checHieu = new System.Windows.Forms.CheckBox();
             this.ckNgayThay = new System.Windows.Forms.CheckBox();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.lbPaing = new System.Windows.Forms.Label();
+            this.lbTongDHN = new DevComponents.DotNetBar.LabelX();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,9 +62,12 @@
             this.hieudh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODHN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYGAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BAOTHAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -75,6 +82,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.next);
+            this.splitContainer1.Panel1.Controls.Add(this.pictureBox2);
             this.splitContainer1.Panel1.Controls.Add(this.labelX1);
             this.splitContainer1.Panel1.Controls.Add(this.btXemThongTin);
             this.splitContainer1.Panel1.Controls.Add(this.labelX4);
@@ -84,14 +93,40 @@
             this.splitContainer1.Panel1.Controls.Add(this.checHieu);
             this.splitContainer1.Panel1.Controls.Add(this.ckNgayThay);
             this.splitContainer1.Panel1.Controls.Add(this.title);
+            this.splitContainer1.Panel1.Controls.Add(this.lbPaing);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.lbTongDHN);
             this.splitContainer1.Panel2.Controls.Add(this.dataGrid);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.splitContainer1.Size = new System.Drawing.Size(1238, 657);
             this.splitContainer1.SplitterDistance = 123;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // next
+            // 
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Last;
+            this.next.Location = new System.Drawing.Point(1205, 99);
+            this.next.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(20, 18);
+            this.next.TabIndex = 706;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::CAPNUOCTANHOA.Properties.Resources.First;
+            this.pictureBox2.Location = new System.Drawing.Point(1141, 100);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 19);
+            this.pictureBox2.TabIndex = 707;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // labelX1
             // 
@@ -207,6 +242,8 @@
             // ckNgayThay
             // 
             this.ckNgayThay.AutoSize = true;
+            this.ckNgayThay.Checked = true;
+            this.ckNgayThay.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckNgayThay.Location = new System.Drawing.Point(176, 64);
             this.ckNgayThay.Name = "ckNgayThay";
             this.ckNgayThay.Size = new System.Drawing.Size(160, 23);
@@ -225,6 +262,28 @@
             this.title.Size = new System.Drawing.Size(1064, 70);
             this.title.TabIndex = 2;
             this.title.Text = "THỐNG KÊ ĐỒNG HỒ BÁO THAY";
+            // 
+            // lbPaing
+            // 
+            this.lbPaing.AutoSize = true;
+            this.lbPaing.BackColor = System.Drawing.Color.Transparent;
+            this.lbPaing.Location = new System.Drawing.Point(1157, 98);
+            this.lbPaing.Name = "lbPaing";
+            this.lbPaing.Size = new System.Drawing.Size(50, 19);
+            this.lbPaing.TabIndex = 708;
+            this.lbPaing.Text = "20/20";
+            this.lbPaing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbTongDHN
+            // 
+            this.lbTongDHN.BackColor = System.Drawing.Color.Transparent;
+            this.lbTongDHN.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTongDHN.ForeColor = System.Drawing.Color.Red;
+            this.lbTongDHN.Location = new System.Drawing.Point(15, 474);
+            this.lbTongDHN.Name = "lbTongDHN";
+            this.lbTongDHN.Size = new System.Drawing.Size(501, 19);
+            this.lbTongDHN.TabIndex = 1;
+            this.lbTongDHN.Text = "labelX2";
             // 
             // dataGrid
             // 
@@ -249,7 +308,8 @@
             this.DIACHI,
             this.hieudh,
             this.CODHN,
-            this.NGAYGAN});
+            this.NGAYGAN,
+            this.BAOTHAY});
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.Location = new System.Drawing.Point(0, 0);
             this.dataGrid.MultiSelect = false;
@@ -258,6 +318,7 @@
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid.Size = new System.Drawing.Size(1238, 530);
             this.dataGrid.TabIndex = 0;
+            this.dataGrid.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_ColumnHeaderMouseClick);
             this.dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGrid_MouseClick);
             // 
             // contextMenuStrip1
@@ -279,6 +340,7 @@
             // 
             // checkChon
             // 
+            this.checkChon.Frozen = true;
             this.checkChon.HeaderText = "CHỌN";
             this.checkChon.Name = "checkChon";
             this.checkChon.Width = 60;
@@ -290,7 +352,6 @@
             this.MLT.DefaultCellStyle = dataGridViewCellStyle2;
             this.MLT.HeaderText = "MÃ LT";
             this.MLT.Name = "MLT";
-            this.MLT.Width = 115;
             // 
             // DOT
             // 
@@ -308,14 +369,14 @@
             this.G_DANHBO.DefaultCellStyle = dataGridViewCellStyle4;
             this.G_DANHBO.HeaderText = "DANH BỘ";
             this.G_DANHBO.Name = "G_DANHBO";
-            this.G_DANHBO.Width = 150;
+            this.G_DANHBO.Width = 145;
             // 
             // HOTEN
             // 
             this.HOTEN.DataPropertyName = "HOTEN";
             this.HOTEN.HeaderText = "HỌ TÊN";
             this.HOTEN.Name = "HOTEN";
-            this.HOTEN.Width = 230;
+            this.HOTEN.Width = 220;
             // 
             // DIACHI
             // 
@@ -331,7 +392,7 @@
             this.hieudh.DefaultCellStyle = dataGridViewCellStyle5;
             this.hieudh.HeaderText = "HIỆU ĐH";
             this.hieudh.Name = "hieudh";
-            this.hieudh.Width = 150;
+            this.hieudh.Width = 110;
             // 
             // CODHN
             // 
@@ -350,7 +411,14 @@
             this.NGAYGAN.DefaultCellStyle = dataGridViewCellStyle7;
             this.NGAYGAN.HeaderText = "NGÀY GẮN";
             this.NGAYGAN.Name = "NGAYGAN";
-            this.NGAYGAN.Width = 120;
+            this.NGAYGAN.Width = 115;
+            // 
+            // BAOTHAY
+            // 
+            this.BAOTHAY.DataPropertyName = "GBAOTHAY";
+            this.BAOTHAY.HeaderText = "BÁO THAY";
+            this.BAOTHAY.Name = "BAOTHAY";
+            this.BAOTHAY.Width = 300;
             // 
             // frm_KiemTraThayDinhKy
             // 
@@ -366,6 +434,8 @@
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -388,6 +458,10 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dafaToolStripMenuItem;
+        private System.Windows.Forms.Label lbPaing;
+        private System.Windows.Forms.PictureBox next;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private DevComponents.DotNetBar.LabelX lbTongDHN;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn MLT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DOT;
@@ -397,5 +471,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hieudh;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODHN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYGAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BAOTHAY;
     }
 }

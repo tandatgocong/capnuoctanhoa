@@ -121,6 +121,9 @@
   <data name="thoat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thoat.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="daoduong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\daoduong.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MSACCESS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSACCESS.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,6 +138,9 @@
   </data>
   <data name="mokhoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mokhoa.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="First" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\First.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WINWORD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WINWORD.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -167,7 +173,7 @@
     <value>..\Resources\logocty.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="daoduong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\daoduong.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Last" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Last.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -18,7 +18,7 @@ namespace CAPNUOCTANHOA
         public Form1()
         {
             InitializeComponent();
-            //ReportDocument rp = new rpt_BCBangKe_A4();
+           ReportDocument rp = new rpt_BCBangKe_A3();
             //DataSet ds = new DataSet();
             //CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             //db.Connection.Open();
@@ -40,9 +40,9 @@ namespace CAPNUOCTANHOA
             ////ct.Fill(ds, "KH_TC_BAOCAO");
 
             //rp.SetDataSource(ds);
-            //crystalReportViewer1.ReportSource = rp;
-            DateTime date = DateTime.Now.Date;
-            label1.Text = date.AddYears(-5).ToShortDateString();
+            crystalReportViewer1.ReportSource = rp;
+            //DateTime date = DateTime.Now.Date;
+            //label1.Text = date.AddYears(-5).ToShortDateString();
         }
     }
 }

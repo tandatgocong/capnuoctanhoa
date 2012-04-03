@@ -17,8 +17,8 @@ namespace CAPNUOCTANHOA.Utilities
         {
             if (_danhbo.Length == 11)
             {
-                _danhbo = _danhbo.Insert(4, "-");
-                _danhbo = _danhbo.Insert(8, "-");
+                _danhbo = _danhbo.Insert(4, "  ");
+                _danhbo = _danhbo.Insert(9, "  ");
                
             }
             return _danhbo;

@@ -66,7 +66,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.txtSoBangKe.Focus();
             }
             else {
-                ReportDocument rp = new rpt_BCBangKe_A4();
+                ReportDocument rp = new rpt_BCBangKe_A3();
                 rp.SetDataSource(DAL.QLDHN.C_BaoThay.ReportBaoThay(txtSoBangKe.Text));
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();

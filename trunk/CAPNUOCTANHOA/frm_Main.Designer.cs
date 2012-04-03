@@ -108,6 +108,7 @@
             // 
             // menuHeThong
             // 
+            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -118,12 +119,11 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel1.Controls.Add(this.menuStrip3);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 32);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 62);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 30);
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip3
             // 
@@ -565,10 +565,10 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -600,6 +600,7 @@
             this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel3.Size = new System.Drawing.Size(1038, 30);
             this.ribbonPanel3.TabIndex = 6;
+            this.ribbonPanel3.Visible = false;
             // 
             // menuStrip2
             // 
@@ -648,10 +649,10 @@
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel2.Controls.Add(this.menuStrip1);
             this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 32);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(1038, 62);
+            this.ribbonPanel2.Size = new System.Drawing.Size(1038, 30);
             this.ribbonPanel2.TabIndex = 5;
             this.ribbonPanel2.Visible = false;
             // 
@@ -706,7 +707,6 @@
             // 
             // menuDTCTB
             // 
-            this.menuDTCTB.Checked = true;
             this.menuDTCTB.Name = "menuDTCTB";
             this.menuDTCTB.Panel = this.ribbonPanel3;
             this.menuDTCTB.Text = "Đội TCTB";

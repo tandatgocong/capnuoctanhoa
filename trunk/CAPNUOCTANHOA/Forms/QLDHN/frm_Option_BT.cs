@@ -30,7 +30,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 log.Error(ex.Message);
             }
             string sql = "SELECT DANHBO,HOTEN,(SONHA+' '+TENDUONG) as 'DIACHI',NGAYTHAY,TB_HIEUDONGHO.TENDONGHO as 'HIEUDH',CODH,SOTHANDH,CHITHAN,CHIGOC,CHISOKYTRUOC,DOT,N'ĐỊNH KỲ' as 'GHICHU'";
-            sql += "FROM  TB_DULIEUKHACHHANG, TB_HIEUDONGHO WHERE TB_HIEUDONGHO.HIEUDH=TB_DULIEUKHACHHANG.HIEUDH AND DANHBO IN (" + listDanhBo + ")";
+            sql += "FROM  TB_DULIEUKHACHHANG, TB_HIEUDONGHO WHERE TB_HIEUDONGHO.HIEUDH=TB_DULIEUKHACHHANG.HIEUDH AND DANHBO IN (" + listDanhBo + ") ORDER BY DANHBO ASC ";
 
             dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
          
@@ -101,7 +101,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             for (int i = 0; i < dataBangKe.Rows.Count;i++ )
             {
                 TB_THAYDHN thaydh = new TB_THAYDHN();
-                string sodanhbo = (dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "").Replace("-", "");
+                string sodanhbo = (dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "");
                 thaydh.DHN_STT = int.Parse(dataBangKe.Rows[i].Cells["G_STT"].Value + "");
                 thaydh.DHN_DANHBO = sodanhbo;
                 thaydh.DHN_CHIGOC = dataBangKe.Rows[i].Cells["DHN_CHIGOC"].Value + "";
@@ -152,7 +152,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             else
             {
-                ReportDocument rp = new rpt_BCBangKe_A4();
+                ReportDocument rp = new rpt_BCBangKe_A3();
                 rp.SetDataSource(DAL.QLDHN.C_BaoThay.ReportBaoThay(txtSoBangKe.Text));
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();

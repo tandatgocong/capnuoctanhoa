@@ -102,12 +102,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         }
         public void setSTT()
         {
-            for (int i = 0; i < dataGrid.Rows.Count; i++)
+            for (int i = 0; i < dataGrid.Rows.Count-1; i++)
             {
                 dataGrid.Rows[i].Cells["STT"].Value = i + 1;
             }
 
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
             {
                 dataGridView1.Rows[i].Cells["GG_STT"].Value = i + 1;
             }
@@ -136,7 +136,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 DataGridViewCellStyle style = new DataGridViewCellStyle();
                 style.Font = new System.Drawing.Font(dataGrid.Font, FontStyle.Bold);
                 dataGrid.Rows[index].DefaultCellStyle = style;
-                dataGrid.Rows[index].DefaultCellStyle.BackColor = Color.YellowGreen;
+                dataGrid.Rows[index].DefaultCellStyle.BackColor = Color.Silver;
 
 
                 SODHN = 0;
@@ -152,7 +152,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 style.Font = new System.Drawing.Font(dataGrid.Font, FontStyle.Bold);
                 dataGridView1.Rows[index].DefaultCellStyle = style;
 
-                dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.YellowGreen;
+                dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Silver;
             }
             catch (Exception)
             {
@@ -178,26 +178,26 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void checkAll_CheckedChanged(object sender, EventArgs e)
         {
-            Search();
-            tongket();   
+            //Search();
+            //tongket();   
         }
 
         private void checkTanBinh1_CheckedChanged(object sender, EventArgs e)
         {
-            Search();
-            tongket();   
+            //Search();
+            //tongket();   
         }
 
         private void checkTanBinh2_CheckedChanged(object sender, EventArgs e)
         {
-            Search();
-            tongket();   
+            //Search();
+            //tongket();   
         }
 
         private void checkTanPhu_CheckedChanged(object sender, EventArgs e)
         {
-            Search();
-            tongket();   
+            //Search();
+            //tongket();   
         }
 
     }
