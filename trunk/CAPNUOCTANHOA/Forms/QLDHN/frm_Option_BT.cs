@@ -159,5 +159,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 frm.ShowDialog();
             }
         }
+
+        private void labelX4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
