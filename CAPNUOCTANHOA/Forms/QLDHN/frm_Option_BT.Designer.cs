@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Option_BT));
             this.cbLoaiBangKe = new System.Windows.Forms.ComboBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
@@ -59,7 +60,11 @@
             this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.btIn = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbLoaiBangKe
@@ -76,7 +81,7 @@
             "GFD",
             "SGF",
             "DSGF"});
-            this.cbLoaiBangKe.Location = new System.Drawing.Point(159, 67);
+            this.cbLoaiBangKe.Location = new System.Drawing.Point(161, 66);
             this.cbLoaiBangKe.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.cbLoaiBangKe.Name = "cbLoaiBangKe";
             this.cbLoaiBangKe.Size = new System.Drawing.Size(259, 27);
@@ -86,7 +91,7 @@
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(20, 64);
+            this.labelX1.Location = new System.Drawing.Point(31, 66);
             this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(133, 33);
@@ -96,32 +101,33 @@
             // labelX4
             // 
             this.labelX4.Font = new System.Drawing.Font("Wingdings 2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.labelX4.Location = new System.Drawing.Point(211, 30);
+            this.labelX4.Location = new System.Drawing.Point(114, 30);
             this.labelX4.Margin = new System.Windows.Forms.Padding(4);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(189, 24);
             this.labelX4.TabIndex = 7;
             this.labelX4.Text = "";
+            this.labelX4.Click += new System.EventHandler(this.labelX4_Click);
             // 
             // title
             // 
             this.title.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
             this.title.ForeColor = System.Drawing.Color.Crimson;
-            this.title.Location = new System.Drawing.Point(20, 4);
+            this.title.Location = new System.Drawing.Point(15, 0);
             this.title.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.title.Name = "title";
             this.title.ReflectionEnabled = false;
-            this.title.Size = new System.Drawing.Size(732, 49);
+            this.title.Size = new System.Drawing.Size(620, 45);
             this.title.TabIndex = 4;
             this.title.Text = "BẢNG KÊ BÁO THAY ĐỒNG HỒ NƯỚC";
             // 
             // labelX2
             // 
             this.labelX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.Location = new System.Drawing.Point(41, 105);
+            this.labelX2.Location = new System.Drawing.Point(32, 96);
             this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(190, 32);
+            this.labelX2.Size = new System.Drawing.Size(133, 32);
             this.labelX2.TabIndex = 102;
             this.labelX2.Text = "SỐ BẢNG KÊ";
             // 
@@ -132,7 +138,7 @@
             // 
             this.txtSoBangKe.Border.Class = "TextBoxBorder";
             this.txtSoBangKe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoBangKe.Location = new System.Drawing.Point(157, 105);
+            this.txtSoBangKe.Location = new System.Drawing.Point(159, 102);
             this.txtSoBangKe.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoBangKe.Name = "txtSoBangKe";
             this.txtSoBangKe.Size = new System.Drawing.Size(261, 26);
@@ -166,15 +172,15 @@
             this.G_CHISO,
             this.G_LYDO,
             this.DOT});
-            this.dataBangKe.Location = new System.Drawing.Point(20, 149);
+            this.dataBangKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataBangKe.Location = new System.Drawing.Point(0, 0);
             this.dataBangKe.Margin = new System.Windows.Forms.Padding(4);
             this.dataBangKe.MultiSelect = false;
             this.dataBangKe.Name = "dataBangKe";
             this.dataBangKe.RowHeadersWidth = 20;
             this.dataBangKe.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataBangKe.RowTemplate.Height = 28;
-            this.dataBangKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBangKe.Size = new System.Drawing.Size(1162, 375);
+            this.dataBangKe.Size = new System.Drawing.Size(1181, 391);
             this.dataBangKe.TabIndex = 101;
             this.dataBangKe.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataBangKe_EditingControlShowing);
             // 
@@ -290,7 +296,7 @@
             this.btTaoBangKe.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btTaoBangKe.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTaoBangKe.ForeColor = System.Drawing.Color.Crimson;
-            this.btTaoBangKe.Location = new System.Drawing.Point(20, 532);
+            this.btTaoBangKe.Location = new System.Drawing.Point(31, 135);
             this.btTaoBangKe.Margin = new System.Windows.Forms.Padding(4);
             this.btTaoBangKe.Name = "btTaoBangKe";
             this.btTaoBangKe.Size = new System.Drawing.Size(133, 23);
@@ -306,7 +312,7 @@
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThoat.ForeColor = System.Drawing.Color.Crimson;
-            this.btThoat.Location = new System.Drawing.Point(415, 532);
+            this.btThoat.Location = new System.Drawing.Point(426, 135);
             this.btThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(118, 23);
@@ -320,7 +326,7 @@
             this.btIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btIn.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btIn.ForeColor = System.Drawing.Color.Crimson;
-            this.btIn.Location = new System.Drawing.Point(160, 532);
+            this.btIn.Location = new System.Drawing.Point(171, 135);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(121, 23);
             this.btIn.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -335,12 +341,39 @@
             this.buttonX1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonX1.Location = new System.Drawing.Point(287, 532);
+            this.buttonX1.Location = new System.Drawing.Point(298, 135);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(121, 23);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.buttonX1.TabIndex = 107;
             this.buttonX1.Text = "HOÀN TẤT";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.txtSoBangKe);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX4);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonX1);
+            this.splitContainer1.Panel1.Controls.Add(this.btIn);
+            this.splitContainer1.Panel1.Controls.Add(this.title);
+            this.splitContainer1.Panel1.Controls.Add(this.btThoat);
+            this.splitContainer1.Panel1.Controls.Add(this.cbLoaiBangKe);
+            this.splitContainer1.Panel1.Controls.Add(this.btTaoBangKe);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX1);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX2);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dataBangKe);
+            this.splitContainer1.Size = new System.Drawing.Size(1181, 561);
+            this.splitContainer1.SplitterDistance = 166;
+            this.splitContainer1.TabIndex = 108;
             // 
             // frm_Option_BT
             // 
@@ -349,24 +382,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1181, 561);
-            this.Controls.Add(this.buttonX1);
-            this.Controls.Add(this.btIn);
-            this.Controls.Add(this.btThoat);
-            this.Controls.Add(this.btTaoBangKe);
-            this.Controls.Add(this.txtSoBangKe);
-            this.Controls.Add(this.labelX2);
-            this.Controls.Add(this.dataBangKe);
-            this.Controls.Add(this.cbLoaiBangKe);
-            this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.labelX4);
-            this.Controls.Add(this.title);
+            this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_Option_BT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Báo Thay";
             this.Load += new System.EventHandler(this.frm_Option_BT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -397,6 +424,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DOT;
         private DevComponents.DotNetBar.ButtonX btIn;
         private DevComponents.DotNetBar.ButtonX buttonX1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
 
     }
 }
