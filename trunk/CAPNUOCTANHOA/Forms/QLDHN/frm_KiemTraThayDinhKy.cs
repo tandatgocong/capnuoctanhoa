@@ -84,7 +84,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         
            for (int i = 0; i < dataGrid.Rows.Count; i++) {
                string sql = "SELECT N'LẦN ' + CONVERT(VARCHAR(10),DHN_LANTHAY) + N' BẢNG KÊ ' + CONVERT(VARCHAR(10),DHN_SOBANGKE) + N' NGÀY '+ CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) ";
-                sql+=" FROM TB_THAYDHN  WHERE DHN_DANHBO='"+(dataGrid.Rows[i].Cells["G_DANHBO"].Value+"").Replace(" ","") +"' GROUP BY DHN_LANTHAY,DHN_SOBANGKE,DHN_NGAYBAOTHAY HAVING DHN_LANTHAY=MAX(DHN_LANTHAY)";
+               sql += " FROM TB_THAYDHN  WHERE DHN_DANHBO='" + (dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "' GROUP BY DHN_LANTHAY,DHN_SOBANGKE,DHN_NGAYBAOTHAY HAVING DHN_NGAYBAOTHAY=MAX(DHN_NGAYBAOTHAY)";
                 DataTable table = DAL.LinQConnection.getDataTable(sql);
                 if (table.Rows.Count>0) {
                     dataGrid.Rows[i].Cells["BAOTHAY"].Value = "" + table.Rows[0][0];
