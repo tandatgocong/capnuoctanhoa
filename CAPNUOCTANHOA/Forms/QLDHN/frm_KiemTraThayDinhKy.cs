@@ -71,7 +71,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             else if (this.ckNgayThay.Checked)
             {
-                sql = "SELECT CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + " AND DOT IN ('06','07') AND NGAYTHAY <= '" + date.ToShortDateString() + "' ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC";
+                sql = "SELECT CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + " AND DOT IN ('08','09') AND NGAYTHAY <= '" + date.ToShortDateString() + "' ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC";
                 //DataTable table = DAL.LinQConnection.getDataTable(sql);
                 //dataGrid.DataSource = table;
                 //Utilities.DataGridV.formatRows(dataGrid);
