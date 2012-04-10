@@ -442,10 +442,21 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             }
             else
             {
-                ReportDocument rp = new rpt_PhieuThiCongThay();
-                rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.ReportBaoThay(txtSoBangKe.Text));
-                frm_Reports frm = new frm_Reports(rp);
-                frm.ShowDialog();
+                if (checkMepNgan.Checked)
+                {
+                    ReportDocument rp = new rpt_PhieuThiCongThay();
+                    rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.ReportBaoThay(txtSoBangKe.Text));
+                    frm_Reports frm = new frm_Reports(rp);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    ReportDocument rp = new rpt_PhieuThiCongThay_mepdai();
+                    rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.ReportBaoThay(txtSoBangKe.Text));
+                    frm_Reports frm = new frm_Reports(rp);
+                    frm.ShowDialog();
+                }
+                
             }
              
         }
