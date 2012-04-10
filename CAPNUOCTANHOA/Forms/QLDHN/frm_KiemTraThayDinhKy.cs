@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using log4net;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -30,7 +31,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             cbHieuDongHo.ValueMember = "HIEUDH";
         }
         int currentPageIndex = 1;
-        int pageSize = 30;
+        int pageSize = 200;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
@@ -50,6 +51,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 codh = "<=25";
                 date = date.AddYears(-5);
             }
+            //
+            //codh = "=25";
+            //
             string sql = "";
 
             string quan = DAL.SYS.C_USERS._gioihan;
@@ -67,7 +71,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             else if (this.ckNgayThay.Checked)
             {
-                sql = "SELECT CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC";
+                sql = "SELECT CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + " AND DOT IN ('06','07') AND NGAYTHAY <= '" + date.ToShortDateString() + "' ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC";
                 //DataTable table = DAL.LinQConnection.getDataTable(sql);
                 //dataGrid.DataSource = table;
                 //Utilities.DataGridV.formatRows(dataGrid);
@@ -97,7 +101,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void btXemThongTin_Click(object sender, EventArgs e)
         {
              currentPageIndex = 1;
-             pageSize = 30;
+             pageSize = 200;
              pageNumber = 0;
              FirstRow = 0;
              LastRow = 0;
@@ -138,44 +142,52 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             }
         }
-
+        private static readonly ILog log = LogManager.GetLogger(typeof(frm_KiemTraThayDinhKy).Name);
         private void dafaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string listDanhBa = "";
-            //try
-            //{
-
-            int flag = 0;
-            for (int i = 0; i < dataGrid.Rows.Count; i++)
+            try
             {
-                if ("True".Equals(this.dataGrid.Rows[i].Cells["checkChon"].Value + ""))
+                string listDanhBa = "";
+                //try
+                //{
+
+                int flag = 0;
+                for (int i = 0; i < dataGrid.Rows.Count; i++)
                 {
-                    flag++;
-                    listDanhBa += ("'" + (this.dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "',");
+                    if ("True".Equals(this.dataGrid.Rows[i].Cells["checkChon"].Value + ""))
+                    {
+                        flag++;
+                        listDanhBa += ("'" + (this.dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "',");
+                    }
                 }
-            }
-            if (flag <= 10)
-            {
-                frm_Option_BT frm = new frm_Option_BT(listDanhBa.Remove(listDanhBa.Length - 1, 1));
-                if (frm.ShowDialog() == DialogResult.OK)
+                if (flag <= 10)
                 {
-                    btXemThongTin_Click(sender,e);
+                    frm_Option_BT frm = new frm_Option_BT(listDanhBa.Remove(listDanhBa.Length - 1, 1));
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        btXemThongTin_Click(sender, e);
+                    }
                 }
+                else
+                {
+                    MessageBox.Show(this, "Bảng Kê Báo Thay <= 10 Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                //  MessageBox.Show(this,listDanhBa.Remove(listDanhBa.Length-1,1)+ "--" +flag);
+
+
+                //}
+                //catch (Exception)
+                //{
+
+
+                //}
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(this, "Bảng Kê Báo Thay <= 10 Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                log.Error(ex.Message);             
             }
-
-            //  MessageBox.Show(this,listDanhBa.Remove(listDanhBa.Length-1,1)+ "--" +flag);
-
-
-            //}
-            //catch (Exception)
-            //{
-
-
-            //}
+           
         }
 
 

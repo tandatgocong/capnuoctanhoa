@@ -133,6 +133,7 @@
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.btInHoanCong = new DevComponents.DotNetBar.ButtonX();
             this.btInDS = new DevComponents.DotNetBar.ButtonX();
+            this.checkMepNgan = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVatTuThay)).BeginInit();
@@ -1258,12 +1259,23 @@
             this.btInDS.Text = "IN DS THI CÔNG";
             this.btInDS.Click += new System.EventHandler(this.btPhieuThiCong_Click);
             // 
+            // checkMepNgan
+            // 
+            this.checkMepNgan.AutoSize = true;
+            this.checkMepNgan.Location = new System.Drawing.Point(548, 68);
+            this.checkMepNgan.Name = "checkMepNgan";
+            this.checkMepNgan.Size = new System.Drawing.Size(98, 23);
+            this.checkMepNgan.TabIndex = 104;
+            this.checkMepNgan.Text = "Mép Ngắn";
+            this.checkMepNgan.UseVisualStyleBackColor = true;
+            // 
             // frmHoanCongThay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.checkMepNgan);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.btInHoanCong);
             this.Controls.Add(this.btInDS);
@@ -1285,6 +1297,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1383,5 +1396,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SL;
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
         private DevComponents.DotNetBar.ButtonX btInDS;
+        private System.Windows.Forms.CheckBox checkMepNgan;
     }
 }

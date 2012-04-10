@@ -68,25 +68,31 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             string sql = "SELECT HIEUDH,CODH,COUNT(CODH) AS 'SOLUONG', YEAR(NGAYTHAY) AS 'NAM' FROM  TB_DULIEUKHACHHANG  WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + "   ";
             string tksql = "";
+            string theonam = "";
             if (this.ckNgayThay.Checked && this.checHieu.Checked)
             {
 
                 sql += " AND NGAYTHAY <= '" + date.ToShortDateString() + "' AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ";
 
 
-                tksql = "SELECT CODH,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG  WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)" + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
-                tksql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY CODH  ORDER BY SOLUONG DESC ";
-              
+                tksql = "SELECT CODH,DOT,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG  WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)" + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
+                tksql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY DOT,CODH  ORDER BY DOT ASC";
+
+                theonam = "SELECT CODH,DOT,YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG  WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)" + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
+                theonam += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY DOT,YEAR(NGAYTHAY),CODH  ORDER BY DOT ASC";
+           
             }
             else if (this.ckNgayThay.Checked)
             {
                 sql += " AND NGAYTHAY <= '" + date.ToShortDateString() + "' ";
-                tksql = "SELECT CODH,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' GROUP BY CODH ORDER BY SOLUONG DESC";
+                tksql = "SELECT CODH,DOT,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' GROUP BY DOT,CODH ORDER BY DOT ASC";
+                theonam = "SELECT CODH,DOT,YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' GROUP BY DOT,YEAR(NGAYTHAY),CODH ORDER BY DOT ASC";
             }
             else if (this.checHieu.Checked)
             {
                 sql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ";
-                tksql = "SELECT CODH,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY CODH  ORDER BY SOLUONG DESC";
+                tksql = "SELECT CODH,DOT,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY DOT,CODH  ORDER BY DOT ASC";
+                theonam = "SELECT CODH,DOT,YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY DOT,YEAR(NGAYTHAY),CODH  ORDER BY DOT ASC";
             }
             sql += " GROUP BY HIEUDH,CODH,YEAR(NGAYTHAY) ORDER BY YEAR(NGAYTHAY),SOLUONG DESC ";
 
@@ -96,8 +102,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             table = DAL.LinQConnection.getDataTable(tksql);
             dataGridView1.DataSource = table;
 
+            table = DAL.LinQConnection.getDataTable(theonam);
+            dataGridView2.DataSource = table;
+
             Utilities.DataGridV.formatRows(dataGrid);
             Utilities.DataGridV.formatRows(dataGridView1);
+            Utilities.DataGridV.formatRows(dataGridView2);
             setSTT();
         }
         public void setSTT()
@@ -110,6 +120,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
             {
                 dataGridView1.Rows[i].Cells["GG_STT"].Value = i + 1;
+            }
+            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            {
+                dataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn1"].Value = i + 1;
             }
 
             
@@ -153,6 +167,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 dataGridView1.Rows[index].DefaultCellStyle = style;
 
                 dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Silver;
+
+
+                SODHN = 0;
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                {
+                    SODHN += int.Parse(dataGridView2.Rows[i].Cells["gggg_sl"].Value != null ? dataGridView2.Rows[i].Cells["gggg_sl"].Value + "" : "0");
+                }
+
+                index = dataGridView2.Rows.Count - 1;
+                dataGridView2.Rows[index].Cells["gggg_sl"].Value = String.Format("{0:0,0}", SODHN);
+
+                style = new DataGridViewCellStyle();
+                style.Font = new System.Drawing.Font(dataGrid.Font, FontStyle.Bold);
+                dataGridView2.Rows[index].DefaultCellStyle = style;
+
+                dataGridView2.Rows[index].DefaultCellStyle.BackColor = Color.Silver;
             }
             catch (Exception)
             {

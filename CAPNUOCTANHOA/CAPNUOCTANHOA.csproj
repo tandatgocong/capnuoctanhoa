@@ -50,6 +50,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -85,6 +90,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\BC\rpt_PhieuThiCongThay_mepdai.cs">
+      <DependentUpon>rpt_PhieuThiCongThay_mepdai.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Forms\DoiTCTB\BC\rpt_BCHoanCong_A4.cs">
       <DependentUpon>rpt_BCHoanCong_A4.rpt</DependentUpon>
@@ -166,6 +177,12 @@
     <Compile Include="Forms\QLDHN\frm_BaoThayDHN.Designer.cs">
       <DependentUpon>frm_BaoThayDHN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\frm_GetDataGanMoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_GetDataGanMoi.Designer.cs">
+      <DependentUpon>frm_GetDataGanMoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\frm_KiemTraThayDinhKy.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +206,12 @@
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\tbTongKetDinhKy.Designer.cs">
       <DependentUpon>tbTongKetDinhKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\tb_TinhHinhBaoThay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\tb_TinhHinhBaoThay.Designer.cs">
+      <DependentUpon>tb_TinhHinhBaoThay.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reports\frm_Reports.cs">
       <SubType>Form</SubType>
@@ -269,6 +292,10 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\BC\rpt_PhieuThiCongThay_mepdai.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PhieuThiCongThay_mepdai.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\BC\rpt_BCHoanCong_A4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BCHoanCong_A4.cs</LastGenOutput>
@@ -307,6 +334,9 @@
     <EmbeddedResource Include="Forms\QLDHN\frm_BaoThayDHN.resx">
       <DependentUpon>frm_BaoThayDHN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_GetDataGanMoi.resx">
+      <DependentUpon>frm_GetDataGanMoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_KiemTraThayDinhKy.resx">
       <DependentUpon>frm_KiemTraThayDinhKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\tbTongKetDinhKy.resx">
       <DependentUpon>tbTongKetDinhKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\tb_TinhHinhBaoThay.resx">
+      <DependentUpon>tb_TinhHinhBaoThay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\frm_Reports.resx">
       <DependentUpon>frm_Reports.cs</DependentUpon>
@@ -420,6 +453,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="O %2852%29.ico" />
+    <None Include="Resources\Arrow2 Right.png" />
+    <None Include="Resources\Puzzle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

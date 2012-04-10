@@ -236,5 +236,14 @@ namespace CAPNUOCTANHOA
 
         }
 
+        private void menuLayDuLieuGanMoi_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_GetDataGanMoi baothay = new frm_GetDataGanMoi();
+            baothay.Height = PanelContent.Size.Height - 20;
+            baothay.Width = PanelContent.Size.Width - 20;
+            PanelContent.Controls.Add(baothay);
+        }
+
     }
 }

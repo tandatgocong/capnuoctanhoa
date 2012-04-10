@@ -26,8 +26,8 @@ namespace CAPNUOCTANHOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER_HP380\\SQLEXPRESS;Initial Catalog=CAPNUOCTANHOA;Persist Securit" +
-            "y Info=True;User ID=sa;Password=P@ssw0rd@123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" +
+            ";Password=P@ssw0rd@123")]
         public string CAPNUOCTANHOAConnectionString {
             get {
                 return ((string)(this["CAPNUOCTANHOAConnectionString"]));
@@ -37,7 +37,8 @@ namespace CAPNUOCTANHOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\QUANLYTHAYDHN_TB01_03.mdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\\\\192.168.90.21\\d$\\KHKT\\TC_HeQLHS-XP" +
+            "2000.mdb;Persist Security Info=True;Jet OLEDB:Database Password=25874")]
         public string AccessFile {
             get {
                 return ((string)(this["AccessFile"]));

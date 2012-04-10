@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CAPNUOCTANHOA.Forms.QLDHN.Tab;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -25,6 +26,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void radioButton1_Click(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new tb_TinhHinhBaoThay());
         }
     }
 }

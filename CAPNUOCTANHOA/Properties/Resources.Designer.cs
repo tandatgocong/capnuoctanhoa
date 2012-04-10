@@ -67,6 +67,13 @@ namespace CAPNUOCTANHOA.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Arrow2_Right {
+            get {
+                object obj = ResourceManager.GetObject("Arrow2 Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap calc {
             get {
                 object obj = ResourceManager.GetObject("calc", resourceCulture);
@@ -161,6 +168,13 @@ namespace CAPNUOCTANHOA.Properties {
         internal static System.Drawing.Bitmap Plus {
             get {
                 object obj = ResourceManager.GetObject("Plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Puzzle {
+            get {
+                object obj = ResourceManager.GetObject("Puzzle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
