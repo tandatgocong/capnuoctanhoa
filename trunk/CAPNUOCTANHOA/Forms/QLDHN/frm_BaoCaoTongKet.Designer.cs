@@ -30,8 +30,9 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
-            this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
@@ -49,21 +50,23 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1238, 657);
-            this.splitContainer1.SplitterDistance = 230;
+            this.splitContainer1.SplitterDistance = 205;
             this.splitContainer1.TabIndex = 0;
             // 
             // expandablePanel1
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.Color.AliceBlue;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.expandablePanel1.Controls.Add(this.radioButton2);
             this.expandablePanel1.Controls.Add(this.radioButton1);
             this.expandablePanel1.Controls.Add(this.radioThayDinhKy);
             this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.expandablePanel1.Location = new System.Drawing.Point(0, 0);
             this.expandablePanel1.Name = "expandablePanel1";
-            this.expandablePanel1.Size = new System.Drawing.Size(230, 657);
+            this.expandablePanel1.Size = new System.Drawing.Size(205, 657);
             this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -81,17 +84,17 @@
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "Danh Mục Báo Cáo";
             // 
-            // radioThayDinhKy
+            // radioButton2
             // 
-            this.radioThayDinhKy.AutoSize = true;
-            this.radioThayDinhKy.Location = new System.Drawing.Point(14, 35);
-            this.radioThayDinhKy.Name = "radioThayDinhKy";
-            this.radioThayDinhKy.Size = new System.Drawing.Size(171, 23);
-            this.radioThayDinhKy.TabIndex = 1;
-            this.radioThayDinhKy.TabStop = true;
-            this.radioThayDinhKy.Text = "Dự Trù Thay Định Kỳ";
-            this.radioThayDinhKy.UseVisualStyleBackColor = true;
-            this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(14, 93);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(167, 23);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Theo Dõi Sản Lượng";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -104,6 +107,18 @@
             this.radioButton1.Text = "Theo Dõi Báo Thay ĐHN";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
+            // 
+            // radioThayDinhKy
+            // 
+            this.radioThayDinhKy.AutoSize = true;
+            this.radioThayDinhKy.Location = new System.Drawing.Point(14, 35);
+            this.radioThayDinhKy.Name = "radioThayDinhKy";
+            this.radioThayDinhKy.Size = new System.Drawing.Size(171, 23);
+            this.radioThayDinhKy.TabIndex = 1;
+            this.radioThayDinhKy.TabStop = true;
+            this.radioThayDinhKy.Text = "Dự Trù Thay Định Kỳ";
+            this.radioThayDinhKy.UseVisualStyleBackColor = true;
+            this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
             // 
             // frm_BaoCaoTongKet
             // 
@@ -129,6 +144,7 @@
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel1;
         private System.Windows.Forms.RadioButton radioThayDinhKy;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
 
     }
 }

@@ -672,6 +672,7 @@
             this.txtNgayGan.Name = "txtNgayGan";
             this.txtNgayGan.Size = new System.Drawing.Size(112, 27);
             this.txtNgayGan.TabIndex = 6;
+            this.txtNgayGan.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.txtNgayGan.WatermarkColor = System.Drawing.Color.Transparent;
             // 
             // txtSoDanhBo
