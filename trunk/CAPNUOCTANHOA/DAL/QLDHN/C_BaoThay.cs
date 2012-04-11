@@ -73,6 +73,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             {
                 db.TB_THAYDHNs.DeleteOnSubmit(THAY);
                 db.SubmitChanges();
+                LinQConnection.ExecuteCommand("UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='False' WHERE DANHBO='"+ THAY.DHN_DANHBO+"'");
                 return true;
             }
             catch (Exception ex)
