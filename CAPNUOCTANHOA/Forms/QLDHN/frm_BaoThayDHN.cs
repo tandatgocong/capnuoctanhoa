@@ -138,7 +138,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                 cbLoaiBangKe.SelectedValue = DHN_LOAIBANGKE;
                 txtSoBangKe.Text = DHN_SOBANGKE;
-                txtSoDanhBo.Text = DHN_DANHBO.Replace("-", "");
+                txtSoDanhBo.Text = DHN_DANHBO.Replace(" ", "");
                 txtTenKH.Text = HOTEN;
                 txtDiaChi.Text = DIACHI;
                 txtNgayGan.ValueObject = DHN_NGAYGAN;

@@ -158,38 +158,42 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         
         private void sanluongToDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string tods = sanluongToDS.Rows[e.RowIndex].Cells["TODS"].Value + "";
-            try
+            if (sanluongToDS.CurrentCell.OwningColumn.Name == "TENTO")
             {
-                int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
-                int nam = int.Parse(txtNam.Text.Trim());
-
-                // ky hien tai
-                DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY(nam.ToString(), ky);
-                // ky truoc
-                if (ky == 1)
+                string tods = sanluongToDS.Rows[e.RowIndex].Cells["TODS"].Value + "";
+                try
                 {
-                    DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY((nam - 1) + "", 12);
+                    int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+                    int nam = int.Parse(txtNam.Text.Trim());
+
+                    // ky hien tai
+                    DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY(nam.ToString(), ky);
+                    // ky truoc
+                    if (ky == 1)
+                    {
+                        DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY((nam - 1) + "", 12);
+                    }
+                    else
+                    {
+                        DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY(nam.ToString(), ky - 1);
+                    }
+
+                    // nam truoc
+                    DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_MAY((nam - 1) + "", ky);
+
+                    // CAP NHAT SO LIEU 
+                    DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_MAY();
+
+                    tabControl2.Visible = true;
+                    detail.DataSource = DAL.QLDHN.C_BaoCaoTK.get_BAOCAO_SANLUONG_MAY(int.Parse(tods));
+                    formatdetail();
                 }
-                else
+                catch (Exception ex)
                 {
-                    DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY(nam.ToString(), ky - 1);
+                    log.Error(ex.Message);
                 }
-
-                // nam truoc
-                DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_MAY((nam - 1) + "", ky);
-
-                // CAP NHAT SO LIEU 
-                DAL.QLDHN.C_BaoCaoTK.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_MAY();
-
-                tabControl2.Visible = true;
-                detail.DataSource = DAL.QLDHN.C_BaoCaoTK.get_BAOCAO_SANLUONG_MAY(int.Parse(tods));
-                formatdetail();
             }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
+           
         }
 
         void formatdetail()
