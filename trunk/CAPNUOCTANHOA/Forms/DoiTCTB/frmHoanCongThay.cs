@@ -163,7 +163,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 }
 
               //  MessageBox.Show(this, HCT_CHITHAN + "-" + HCT_CHIGOC + "==" + HCT_NGAYGAN);
-                txtSoDanhBo.Text = DHN_DANHBO.Replace("-", "");
+                txtSoDanhBo.Text = DHN_DANHBO.Replace(" ", "");
                 txtTenKH.Text = HOTEN;
                 txtDiaChi.Text = DIACHI;                
                 txtHieuDH.Text = DHN_HIEUDHN;

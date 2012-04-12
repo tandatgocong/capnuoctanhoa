@@ -45,8 +45,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 }
                 gioihan = gioihan.Replace("DANHBO", "DHN_DANHBO");
 
-                string sql = "SELECT COUNT(DISTINCT DHN_SOBANGKE) AS 'TONG',(COUNT(*) -1)AS 'SOLUONGTHAY' ";
-                sql += " ,COUNT(*) -1 - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='True' then 1 else null end)) AS 'CHUAGAN'";
+                string sql = "SELECT COUNT(DISTINCT DHN_SOBANGKE) AS 'TONG',COUNT(*) AS 'SOLUONGTHAY' ";
+                sql += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='True' then 1 else null end)) AS 'CHUAGAN'";
                 sql += " ,count(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) AS 'HOANTAT' ";
                 sql += " ,count(case when HCT_TRONGAI ='True' then 1 else null end) AS 'TRONGAI' ";
                 sql += " FROM TB_THAYDHN WHERE DHN_DANHBO IS NOT NULL " + gioihan;

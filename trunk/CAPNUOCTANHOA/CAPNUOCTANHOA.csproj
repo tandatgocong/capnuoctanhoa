@@ -83,6 +83,7 @@
     <Compile Include="DAL\DoiTCTB\C_HoanCongThay.cs" />
     <Compile Include="DAL\DULIEUKH\C_DuLieuKhachHang.cs" />
     <Compile Include="DAL\LinQConnection.cs" />
+    <Compile Include="DAL\QLDHN\C_BC_LoaiHinhKD.cs" />
     <Compile Include="DAL\QLDHN\C_BaoCaoTieuThuThap.cs" />
     <Compile Include="DAL\QLDHN\C_BaoCaoTK.cs" />
     <Compile Include="DAL\QLDHN\C_BaoThay.cs" />
@@ -203,35 +204,53 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tab_TieuThuThap.cs">
+    <Compile Include="Forms\QLDHN\Tab\E_tab_TongKetLoaiHinhKD_Dot.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tab_TieuThuThap.Designer.cs">
-      <DependentUpon>tab_TieuThuThap.cs</DependentUpon>
+    <Compile Include="Forms\QLDHN\Tab\E_tab_TongKetLoaiHinhKD_Dot.Designer.cs">
+      <DependentUpon>E_tab_TongKetLoaiHinhKD_Dot.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tabtab_TongKetHandHeld_dot.cs">
+    <Compile Include="Forms\QLDHN\Tab\E_tab_TongKetLoaiHinhKD.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tabtab_TongKetHandHeld_dot.Designer.cs">
-      <DependentUpon>tabtab_TongKetHandHeld_dot.cs</DependentUpon>
+    <Compile Include="Forms\QLDHN\Tab\E_tab_TongKetLoaiHinhKD.Designer.cs">
+      <DependentUpon>E_tab_TongKetLoaiHinhKD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tab_TongKetHandHeld.cs">
+    <Compile Include="Forms\QLDHN\Tab\C_tab_TieuThuThap_dot.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tab_TongKetHandHeld.Designer.cs">
-      <DependentUpon>tab_TongKetHandHeld.cs</DependentUpon>
+    <Compile Include="Forms\QLDHN\Tab\C_tab_TieuThuThap_dot.Designer.cs">
+      <DependentUpon>C_tab_TieuThuThap_dot.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tbTongKetDinhKy.cs">
+    <Compile Include="Forms\QLDHN\Tab\C_tab_TieuThuThap.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tbTongKetDinhKy.Designer.cs">
-      <DependentUpon>tbTongKetDinhKy.cs</DependentUpon>
+    <Compile Include="Forms\QLDHN\Tab\C_tab_TieuThuThap.Designer.cs">
+      <DependentUpon>C_tab_TieuThuThap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tb_TinhHinhBaoThay.cs">
+    <Compile Include="Forms\QLDHN\Tab\D_tab_TongKetHandHeld_dot.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\QLDHN\Tab\tb_TinhHinhBaoThay.Designer.cs">
-      <DependentUpon>tb_TinhHinhBaoThay.cs</DependentUpon>
+    <Compile Include="Forms\QLDHN\Tab\D_tab_TongKetHandHeld_dot.Designer.cs">
+      <DependentUpon>D_tab_TongKetHandHeld_dot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\D_tab_TongKetHandHeld.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\D_tab_TongKetHandHeld.Designer.cs">
+      <DependentUpon>D_tab_TongKetHandHeld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\A_tbTongKetDinhKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\A_tbTongKetDinhKy.Designer.cs">
+      <DependentUpon>A_tbTongKetDinhKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\B_tb_TinhHinhBaoThay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\B_tb_TinhHinhBaoThay.Designer.cs">
+      <DependentUpon>B_tb_TinhHinhBaoThay.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reports\frm_Reports.cs">
       <SubType>Form</SubType>
@@ -372,20 +391,29 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BCBangKe_A3_thu.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QLDHN\Tab\tab_TieuThuThap.resx">
-      <DependentUpon>tab_TieuThuThap.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\E_tab_TongKetLoaiHinhKD_Dot.resx">
+      <DependentUpon>E_tab_TongKetLoaiHinhKD_Dot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QLDHN\Tab\tabtab_TongKetHandHeld_dot.resx">
-      <DependentUpon>tabtab_TongKetHandHeld_dot.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\E_tab_TongKetLoaiHinhKD.resx">
+      <DependentUpon>E_tab_TongKetLoaiHinhKD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QLDHN\Tab\tab_TongKetHandHeld.resx">
-      <DependentUpon>tab_TongKetHandHeld.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\C_tab_TieuThuThap_dot.resx">
+      <DependentUpon>C_tab_TieuThuThap_dot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QLDHN\Tab\tbTongKetDinhKy.resx">
-      <DependentUpon>tbTongKetDinhKy.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\C_tab_TieuThuThap.resx">
+      <DependentUpon>C_tab_TieuThuThap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QLDHN\Tab\tb_TinhHinhBaoThay.resx">
-      <DependentUpon>tb_TinhHinhBaoThay.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\D_tab_TongKetHandHeld_dot.resx">
+      <DependentUpon>D_tab_TongKetHandHeld_dot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\D_tab_TongKetHandHeld.resx">
+      <DependentUpon>D_tab_TongKetHandHeld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\A_tbTongKetDinhKy.resx">
+      <DependentUpon>A_tbTongKetDinhKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\B_tb_TinhHinhBaoThay.resx">
+      <DependentUpon>B_tb_TinhHinhBaoThay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\frm_Reports.resx">
       <DependentUpon>frm_Reports.cs</DependentUpon>

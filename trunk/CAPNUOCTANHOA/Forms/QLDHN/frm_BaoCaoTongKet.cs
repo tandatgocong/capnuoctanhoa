@@ -45,5 +45,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.splitContainer1.Panel2.Controls.Clear();
             this.splitContainer1.Panel2.Controls.Add(new tab_TieuThuThap());
         }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new tab_TongKetLoaiHinhKD());
+        }
     }
 }
