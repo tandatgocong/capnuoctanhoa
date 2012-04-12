@@ -38,13 +38,27 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
             setSTT();
             Utilities.DataGridV.formatRows(dataVATTU);
 
-            string sql_TroNgai = "SELECT COUNT(HCT_TRONGAI) FROM TB_THAYDHN WHERE (DHN_TODS+'-'+CONVERT(VARCHAR(50),DHN_SOBANGKE)) IN(" + dotBienNhan + ") AND HCT_TRONGAI='True'";
-            string sql_TongDHN = "SELECT COUNT(*) FROM TB_THAYDHN WHERE (DHN_TODS+'-'+CONVERT(VARCHAR(50),DHN_SOBANGKE)) IN(" + dotBienNhan + ") ";
-            int tongTroNgai = DAL.LinQConnection.ExecuteCommand(sql_TroNgai);
-            int tongDHYeuCau = DAL.LinQConnection.ExecuteCommand(sql_TongDHN);
-            lbTongDHN.Text = "TỔNG SỐ ĐỒNG HỒ NƯỚC YÊU CẦU THAY           " + tongDHYeuCau;
-            lbTongTroNgai.Text = "TỔNG SỐ ĐỒNG HỒ NƯỚC TRỞ NGẠI THAY         " + tongTroNgai;
-            lbTongDHNThay.Text = "TỔNG SỐ ĐỒNG HỒ NƯỚC ĐÃ THAY                       " + (tongDHYeuCau - tongTroNgai);
+            string sql_tongket = "SELECT COUNT(DISTINCT DHN_SOBANGKE) AS 'TONG',COUNT(*) AS 'SOLUONGTHAY' ";
+            sql_tongket += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) + COUNT(case when HCT_TRONGAI ='True' then 1 else null end)) AS 'CHUAGAN'";
+            sql_tongket += " ,count(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) AS 'HOANTAT' ";
+            sql_tongket += " ,count(case when HCT_TRONGAI ='True' then 1 else null end) AS 'TRONGAI' ";
+            sql_tongket += " FROM TB_THAYDHN WHERE (DHN_TODS+'-'+CONVERT(VARCHAR(50),DHN_SOBANGKE)) IN(" + dotBienNhan + ") ";
+
+            //string sql_TroNgai = "SELECT COUNT(HCT_TRONGAI) FROM TB_THAYDHN WHERE (DHN_TODS+'-'+CONVERT(VARCHAR(50),DHN_SOBANGKE)) IN(" + dotBienNhan + ") AND HCT_TRONGAI='True'";
+            //string sql_TongDHN = "SELECT COUNT(*) FROM TB_THAYDHN WHERE (DHN_TODS+'-'+CONVERT(VARCHAR(50),DHN_SOBANGKE)) IN(" + dotBienNhan + ") ";
+            //int tongTroNgai = DAL.LinQConnection.ExecuteCommand(sql_TroNgai);
+
+           // int tongDHYeuCau = DAL.LinQConnection.ExecuteCommand(sql_TongDHN);
+            try
+            {
+                table = DAL.LinQConnection.getDataTable(sql_tongket);
+                dataTongKet.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+           
         }
 
         private void dataVATTU_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

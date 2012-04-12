@@ -10,38 +10,39 @@ using log4net;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 {
-    public partial class tab_TieuThuThap : UserControl
+    public partial class tab_TieuThuThap_dot : UserControl
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(tab_TongKetHandHeld).Name);
-        public tab_TieuThuThap()
+        private static readonly ILog log = LogManager.GetLogger(typeof(tabtab_TongKetHandHeld_dot).Name);
+        public tab_TieuThuThap_dot()
         {
             InitializeComponent();
             this.txtNam.Text = DateTime.Now.Year.ToString();
             cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
-
+            cbDotDS.SelectedIndex = 1;
         }
 
         private void btThem_Click(object sender, EventArgs e)
         {
             try
             {
+                int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                 int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
                 int nam = int.Parse(txtNam.Text.Trim());
 
                 // ky hien tai
-                DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY(nam.ToString(), ky);
+                DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_DOT(nam.ToString(), ky,dot);
                 // ky truoc
                 if (ky == 1)
                 {
-                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC((nam - 1) + "", 12);
+                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT((nam - 1) + "",12,dot);
                 }
                 else
                 {
-                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC(nam.ToString(), ky - 1);
+                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_DOT(nam.ToString(), ky - 1,dot);
                 }
 
                 // nam truoc
-                DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC((nam - 1) + "", ky);
+                DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_DOT((nam - 1) + "", ky,dot);
 
                 // CAP NHAT SO LIEU 
                 DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM();
@@ -67,7 +68,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             double sum_NT_SANLUONG = 0;
             double sum_NT_TANGIAM_DHN = 0;
             double sum_NT_TANGIAM_SANLUONG = 0;
-            for (int i = 0; i < sanluongToDS.Rows.Count-1; i++)
+            for (int i = 0; i < sanluongToDS.Rows.Count - 1; i++)
             {
                 double TANGIAM_DHN = double.Parse(sanluongToDS.Rows[i].Cells["TANGIAM_DHN"].Value + "");
                 double TANGIAM_SANLUONG = double.Parse(sanluongToDS.Rows[i].Cells["TANGIAM_SANLUONG"].Value + "");
@@ -84,15 +85,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 sum_NT_SANLUONG += double.Parse(sanluongToDS.Rows[i].Cells["NT_SANLUONG"].Value + "");
                 sum_NT_TANGIAM_DHN += NT_TANGIAM_DHN;
                 sum_NT_TANGIAM_SANLUONG += NT_TANGIAM_SANLUONG;
-                
-                if (TANGIAM_DHN > 0) {
+
+                if (TANGIAM_DHN > 0)
+                {
                     sanluongToDS[6, i].Style.BackColor = Color.Lime;
                 }
-                else if (TANGIAM_DHN < 0) {
-                    sanluongToDS[6,i].Style.BackColor = Color.Red;
+                else if (TANGIAM_DHN < 0)
+                {
+                    sanluongToDS[6, i].Style.BackColor = Color.Red;
                 }
-                else if (TANGIAM_DHN == 0) {
-                    sanluongToDS[6,i].Style.BackColor = Color.Yellow;
+                else if (TANGIAM_DHN == 0)
+                {
+                    sanluongToDS[6, i].Style.BackColor = Color.Yellow;
                 }
                 /////
                 if (TANGIAM_SANLUONG > 0)
@@ -134,9 +138,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     sanluongToDS[11, i].Style.BackColor = Color.Yellow;
                 }
             }
-            
-            int index = sanluongToDS.Rows.Count-1;
-            
+
+            int index = sanluongToDS.Rows.Count - 1;
+
             sanluongToDS.Rows[index].Cells["KN_DHN"].Value = String.Format("{0:0,0}", sum_KN_DHN);
             sanluongToDS.Rows[index].Cells["KN_SANLUONG"].Value = String.Format("{0:0,0}", sum_KN_SANLUONG);
             sanluongToDS.Rows[index].Cells["KT_DHN"].Value = String.Format("{0:0,0}", sum_KT_DHN);
@@ -147,7 +151,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             sanluongToDS.Rows[index].Cells["NT_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_SANLUONG);
             sanluongToDS.Rows[index].Cells["NT_TANGIAM_DHN"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_DHN);
             sanluongToDS.Rows[index].Cells["NT_TANGIAM_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_SANLUONG);
-            
+
             DataGridViewCellStyle style = new DataGridViewCellStyle();
             style.Font = new System.Drawing.Font(sanluongToDS.Font, FontStyle.Bold);
             sanluongToDS.Rows[index].DefaultCellStyle = style;
@@ -155,7 +159,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
         }
 
-        
+
         private void sanluongToDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (sanluongToDS.CurrentCell.OwningColumn.Name == "TENTO")
@@ -163,26 +167,28 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 string tods = sanluongToDS.Rows[e.RowIndex].Cells["TODS"].Value + "";
                 try
                 {
+
+                    int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                     int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
                     int nam = int.Parse(txtNam.Text.Trim());
 
                     // ky hien tai
-                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY(nam.ToString(), ky);
+                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY_DOT(nam.ToString(), ky, dot);
                     // ky truoc
                     if (ky == 1)
                     {
-                        DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY((nam - 1) + "", 12);
+                        DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY_DOT((nam - 1) + "", 12, dot);
                     }
                     else
                     {
-                        DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY(nam.ToString(), ky - 1);
+                        DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYTRUOC_MAY_DOT(nam.ToString(), ky - 1, dot);
                     }
 
                     // nam truoc
-                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_MAY((nam - 1) + "", ky);
+                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_KY_NAMTRUOC_MAY_DOT((nam - 1) + "", ky, dot);
 
                     // CAP NHAT SO LIEU 
-                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_MAY();
+                    DAL.QLDHN.C_BaoCaoTieuThuThap.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM_MAY_DOT();
 
                     tabControl2.Visible = true;
                     detail.DataSource = DAL.QLDHN.C_BaoCaoTieuThuThap.get_BAOCAO_SANLUONG_MAY(int.Parse(tods));
@@ -193,7 +199,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     log.Error(ex.Message);
                 }
             }
-           
+            
         }
 
         void formatdetail()
@@ -208,7 +214,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             double sum_NT_SANLUONG = 0;
             double sum_NT_TANGIAM_DHN = 0;
             double sum_NT_TANGIAM_SANLUONG = 0;
-            for (int i = 0; i < detail.Rows.Count-1; i++)
+            for (int i = 0; i < detail.Rows.Count - 1; i++)
             {
                 double TANGIAM_DHN = double.Parse(detail.Rows[i].Cells["MAY_TANGIAM_DHN"].Value + "");
                 double TANGIAM_SANLUONG = double.Parse(detail.Rows[i].Cells["MAY_TANGIAM_SANLUONG"].Value + "");
@@ -312,15 +318,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             format();
         }
 
-        private void tabControl1_Click(object sender, EventArgs e)
+        private void sanluongToDS_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
         {
-           // panel12.Controls.Clear();
-            panel12.Controls.Add(new tabtab_TongKetHandHeld_dot());
+
         }
 
-        private void detail_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void detail_Click(object sender, EventArgs e)
         {
             formatdetail();
         }
+
     }
 }

@@ -165,7 +165,7 @@
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(14, 71);
+            this.labelX1.Location = new System.Drawing.Point(3, 71);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(164, 22);
             this.labelX1.TabIndex = 5;
@@ -177,7 +177,7 @@
             // 
             // 
             this.txtSoBangKe.Border.Class = "TextBoxBorder";
-            this.txtSoBangKe.Location = new System.Drawing.Point(173, 68);
+            this.txtSoBangKe.Location = new System.Drawing.Point(162, 68);
             this.txtSoBangKe.Name = "txtSoBangKe";
             this.txtSoBangKe.Size = new System.Drawing.Size(210, 27);
             this.txtSoBangKe.TabIndex = 1;
@@ -228,7 +228,7 @@
             this.HCT_TRONGAI,
             this.HCT_LYDOTRONGAI,
             this.HCT_NGAYGAN});
-            this.dataBangKe.Location = new System.Drawing.Point(14, 130);
+            this.dataBangKe.Location = new System.Drawing.Point(4, 130);
             this.dataBangKe.MultiSelect = false;
             this.dataBangKe.Name = "dataBangKe";
             this.dataBangKe.ReadOnly = true;
@@ -236,7 +236,7 @@
             this.dataBangKe.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataBangKe.RowTemplate.Height = 28;
             this.dataBangKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBangKe.Size = new System.Drawing.Size(642, 500);
+            this.dataBangKe.Size = new System.Drawing.Size(642, 481);
             this.dataBangKe.TabIndex = 101;
             this.dataBangKe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBangKe_CellClick);
             this.dataBangKe.SelectionChanged += new System.EventHandler(this.dataBangKe_SelectionChanged);
@@ -500,7 +500,7 @@
             this.btPhieuThiCong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btPhieuThiCong.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPhieuThiCong.ForeColor = System.Drawing.Color.Crimson;
-            this.btPhieuThiCong.Location = new System.Drawing.Point(322, 101);
+            this.btPhieuThiCong.Location = new System.Drawing.Point(311, 101);
             this.btPhieuThiCong.Name = "btPhieuThiCong";
             this.btPhieuThiCong.Size = new System.Drawing.Size(183, 23);
             this.btPhieuThiCong.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -541,9 +541,9 @@
             this.groupPanel1.Controls.Add(this.labelX26);
             this.groupPanel1.Controls.Add(this.labelX11);
             this.groupPanel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupPanel1.Location = new System.Drawing.Point(663, 29);
+            this.groupPanel1.Location = new System.Drawing.Point(651, 10);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(615, 601);
+            this.groupPanel1.Size = new System.Drawing.Size(611, 601);
             // 
             // 
             // 
@@ -678,6 +678,7 @@
             // labelX7
             // 
             this.labelX7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX7.Location = new System.Drawing.Point(506, 41);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(28, 22);
@@ -793,6 +794,7 @@
             // labelX10
             // 
             this.labelX10.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX10.Location = new System.Drawing.Point(381, 71);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(99, 22);
@@ -816,6 +818,7 @@
             // labelX9
             // 
             this.labelX9.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX9.Location = new System.Drawing.Point(198, 71);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(113, 22);
@@ -838,6 +841,7 @@
             // labelX8
             // 
             this.labelX8.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX8.Location = new System.Drawing.Point(5, 72);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(82, 22);
@@ -847,6 +851,7 @@
             // labelX2
             // 
             this.labelX2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX2.Location = new System.Drawing.Point(6, 42);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(75, 22);
@@ -856,6 +861,7 @@
             // labelX3
             // 
             this.labelX3.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX3.Location = new System.Drawing.Point(297, 41);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(82, 22);
@@ -865,6 +871,7 @@
             // labelX5
             // 
             this.labelX5.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX5.Location = new System.Drawing.Point(6, 13);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(137, 22);
@@ -874,6 +881,7 @@
             // labelX6
             // 
             this.labelX6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX6.Location = new System.Drawing.Point(264, 12);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(137, 22);
@@ -883,6 +891,7 @@
             // labelX14
             // 
             this.labelX14.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX14.Location = new System.Drawing.Point(252, 127);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(123, 22);
@@ -892,6 +901,7 @@
             // labelX13
             // 
             this.labelX13.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.labelX13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX13.Location = new System.Drawing.Point(25, 129);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(93, 22);
@@ -923,7 +933,7 @@
             this.groupBox1.Controls.Add(this.labelX18);
             this.groupBox1.Controls.Add(this.labelX15);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.groupBox1.Location = new System.Drawing.Point(25, 154);
+            this.groupBox1.Location = new System.Drawing.Point(20, 154);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(581, 149);
             this.groupBox1.TabIndex = 29;
@@ -1237,7 +1247,7 @@
             this.btInHoanCong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btInHoanCong.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInHoanCong.ForeColor = System.Drawing.Color.Crimson;
-            this.btInHoanCong.Location = new System.Drawing.Point(519, 101);
+            this.btInHoanCong.Location = new System.Drawing.Point(508, 101);
             this.btInHoanCong.Name = "btInHoanCong";
             this.btInHoanCong.Size = new System.Drawing.Size(134, 23);
             this.btInHoanCong.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -1251,7 +1261,7 @@
             this.btInDS.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btInDS.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInDS.ForeColor = System.Drawing.Color.Crimson;
-            this.btInDS.Location = new System.Drawing.Point(156, 101);
+            this.btInDS.Location = new System.Drawing.Point(145, 101);
             this.btInDS.Name = "btInDS";
             this.btInDS.Size = new System.Drawing.Size(151, 23);
             this.btInDS.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -1262,7 +1272,7 @@
             // checkMepNgan
             // 
             this.checkMepNgan.AutoSize = true;
-            this.checkMepNgan.Location = new System.Drawing.Point(548, 68);
+            this.checkMepNgan.Location = new System.Drawing.Point(537, 68);
             this.checkMepNgan.Name = "checkMepNgan";
             this.checkMepNgan.Size = new System.Drawing.Size(98, 23);
             this.checkMepNgan.TabIndex = 104;
@@ -1288,7 +1298,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHoanCongThay";
-            this.Size = new System.Drawing.Size(1278, 657);
+            this.Size = new System.Drawing.Size(1264, 630);
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
