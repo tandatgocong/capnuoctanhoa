@@ -83,7 +83,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 sum_NT_DHN += double.Parse(sanluongToDS.Rows[i].Cells["NT_DHN"].Value + "");
                 sum_NT_SANLUONG += double.Parse(sanluongToDS.Rows[i].Cells["NT_SANLUONG"].Value + "");
                 sum_NT_TANGIAM_DHN += NT_TANGIAM_DHN;
-                sum_NT_TANGIAM_SANLUONG += sum_NT_TANGIAM_SANLUONG;
+                sum_NT_TANGIAM_SANLUONG += NT_TANGIAM_SANLUONG;
                 
                 if (TANGIAM_DHN > 0) {
                     sanluongToDS[6, i].Style.BackColor = Color.Lime;
@@ -198,6 +198,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
         void formatdetail()
         {
+            double sum_KN_DHN = 0;
+            double sum_KN_SANLUONG = 0;
+            double sum_KT_DHN = 0;
+            double sum_KT_SANLUONG = 0;
+            double sum_TANGIAM_DHN = 0;
+            double sum_TANGIAM_SANLUONG = 0;
+            double sum_NT_DHN = 0;
+            double sum_NT_SANLUONG = 0;
+            double sum_NT_TANGIAM_DHN = 0;
+            double sum_NT_TANGIAM_SANLUONG = 0;
             for (int i = 0; i < detail.Rows.Count-1; i++)
             {
                 double TANGIAM_DHN = double.Parse(detail.Rows[i].Cells["MAY_TANGIAM_DHN"].Value + "");
@@ -257,35 +267,34 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     detail[11, i].Style.BackColor = Color.Yellow;
                 }
 
-                //sum_KN_DHN += double.Parse(detail.Rows[i].Cells["MAY_KN_DHN"].Value + "");
-                //sum_KN_SANLUONG += double.Parse(detail.Rows[i].Cells["MAY_KN_SANLUONG"].Value + "");
-                //sum_KT_DHN += double.Parse(detail.Rows[i].Cells["MAY_KT_DHN"].Value + "");
-                //sum_KT_SANLUONG += double.Parse(detail.Rows[i].Cells["MAY_KT_SANLUONG"].Value + "");
-                //sum_TANGIAM_DHN += TANGIAM_DHN;
-                //sum_TANGIAM_SANLUONG += TANGIAM_SANLUONG;
-                //sum_NT_DHN += double.Parse(detail.Rows[i].Cells["MAY_NT_DHN"].Value + "");
-                //sum_NT_SANLUONG += double.Parse(detail.Rows[i].Cells["MAY_NT_SANLUONG"].Value + "");
-                //sum_NT_TANGIAM_DHN += NT_TANGIAM_DHN;
-                //sum_NT_TANGIAM_SANLUONG += sum_NT_TANGIAM_SANLUONG;
+                sum_KN_DHN += double.Parse(detail.Rows[i].Cells["MAY_KN_DHN"].Value + "");
+                sum_KN_SANLUONG += double.Parse(detail.Rows[i].Cells["MAY_KN_SANLUONG"].Value + "");
+                sum_KT_DHN += double.Parse(detail.Rows[i].Cells["MAY_KT_DHN"].Value + "");
+                sum_KT_SANLUONG += double.Parse(detail.Rows[i].Cells["MAY_KT_SANLUONG"].Value + "");
+                sum_TANGIAM_DHN += TANGIAM_DHN;
+                sum_TANGIAM_SANLUONG += TANGIAM_SANLUONG;
+                sum_NT_DHN += double.Parse(detail.Rows[i].Cells["MAY_NT_DHN"].Value + "");
+                sum_NT_SANLUONG += double.Parse(detail.Rows[i].Cells["MAY_NT_SANLUONG"].Value + "");
+                sum_NT_TANGIAM_DHN += NT_TANGIAM_DHN;
+                sum_NT_TANGIAM_SANLUONG += NT_TANGIAM_SANLUONG;
 
-
-                //int index = detail.Rows.Count - 1;
-                //detail.Rows[index].Cells["MAY_KN_DHN"].Value = String.Format("{0:0,0}", sum_KN_DHN);
-                //detail.Rows[index].Cells["MAY_KN_SANLUONG"].Value = String.Format("{0:0,0}", sum_KN_SANLUONG);
-                //detail.Rows[index].Cells["MAY_KT_DHN"].Value = String.Format("{0:0,0}", sum_KT_DHN);
-                //detail.Rows[index].Cells["MAY_KT_SANLUONG"].Value = String.Format("{0:0,0}", sum_KT_SANLUONG);
-                //detail.Rows[index].Cells["MAY_TANGIAM_DHN"].Value = String.Format("{0:0,0}", sum_TANGIAM_DHN);
-                //detail.Rows[index].Cells["MAY_TANGIAM_SANLUONG"].Value = String.Format("{0:0,0}", sum_TANGIAM_SANLUONG);
-                //detail.Rows[index].Cells["MAY_NT_DHN"].Value = String.Format("{0:0,0}", sum_NT_DHN);
-                //detail.Rows[index].Cells["MAY_NT_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_SANLUONG);
-                //detail.Rows[index].Cells["MAY_NT_TANGIAM_DHN"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_DHN);
-                //detail.Rows[index].Cells["MAY_NT_TANGIAM_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_SANLUONG);
-
-                //DataGridViewCellStyle style = new DataGridViewCellStyle();
-                //style.Font = new System.Drawing.Font(detail.Font, FontStyle.Bold);
-                //detail.Rows[index].DefaultCellStyle = style;
-                //detail.Rows[index].DefaultCellStyle.BackColor = Color.Silver;
             }
+            int index = detail.Rows.Count - 1;
+            detail.Rows[index].Cells["MAY_KN_DHN"].Value = String.Format("{0:0,0}", sum_KN_DHN);
+            detail.Rows[index].Cells["MAY_KN_SANLUONG"].Value = String.Format("{0:0,0}", sum_KN_SANLUONG);
+            detail.Rows[index].Cells["MAY_KT_DHN"].Value = String.Format("{0:0,0}", sum_KT_DHN);
+            detail.Rows[index].Cells["MAY_KT_SANLUONG"].Value = String.Format("{0:0,0}", sum_KT_SANLUONG);
+            detail.Rows[index].Cells["MAY_TANGIAM_DHN"].Value = String.Format("{0:0,0}", sum_TANGIAM_DHN);
+            detail.Rows[index].Cells["MAY_TANGIAM_SANLUONG"].Value = String.Format("{0:0,0}", sum_TANGIAM_SANLUONG);
+            detail.Rows[index].Cells["MAY_NT_DHN"].Value = String.Format("{0:0,0}", sum_NT_DHN);
+            detail.Rows[index].Cells["MAY_NT_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_SANLUONG);
+            detail.Rows[index].Cells["MAY_NT_TANGIAM_DHN"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_DHN);
+            detail.Rows[index].Cells["MAY_NT_TANGIAM_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_SANLUONG);
+
+            DataGridViewCellStyle style = new DataGridViewCellStyle();
+            style.Font = new System.Drawing.Font(detail.Font, FontStyle.Bold);
+            detail.Rows[index].DefaultCellStyle = style;
+            detail.Rows[index].DefaultCellStyle.BackColor = Color.Silver;
         }
 
         private void sanluongToDS_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -307,6 +316,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
            // panel12.Controls.Clear();
             panel12.Controls.Add(new tabtab_TongKetHandHeld_dot());
+        }
+
+        private void detail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            formatdetail();
         }
     }
 }
