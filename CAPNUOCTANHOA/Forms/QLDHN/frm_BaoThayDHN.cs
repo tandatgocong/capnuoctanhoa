@@ -81,17 +81,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             if ("HC".Equals(this.cbLoaiBangKe.SelectedValue + ""))
             {
                 title.Text = "BẢNG KÊ BÁO THAY HẠ CỞ ĐỒNG HỒ NƯỚC ";
+                txtLyDo.Text = this.cbLoaiBangKe.Text.Replace("THEO", "");
             }
             else if ("TH".Equals(this.cbLoaiBangKe.SelectedValue + ""))
             {
                 title.Text = "BẢNG KÊ BÁO THAY THỬ ĐỒNG HỒ NƯỚC";
+                txtLyDo.Text = this.cbLoaiBangKe.Text.Replace("THEO", "");
+            }
+            else if ("BB".Equals(this.cbLoaiBangKe.SelectedValue + ""))
+            {
+                title.Text = "BẢNG KÊ BÁO THAY THỬ ĐỒNG HỒ NƯỚC";
+                txtLyDo.Text = "BBKT NGÀY ";
             }
             else
             {
                 title.Text = "BẢNG KÊ BÁO THAY ĐỒNG HỒ NƯỚC " + this.cbLoaiBangKe.Text;
+                txtLyDo.Text = this.cbLoaiBangKe.Text.Replace("THEO", "");
             }
           //  txtSoBangKe.Focus();
-            txtLyDo.Text = this.cbLoaiBangKe.Text.Replace("THEO","");
+         
         }
 
         public void LoadData() {
