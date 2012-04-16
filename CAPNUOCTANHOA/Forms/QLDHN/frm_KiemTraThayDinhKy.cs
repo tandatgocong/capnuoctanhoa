@@ -61,8 +61,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             //    quan = " = 31";
             //}
             string dot = "";
-            if (!"0".Equals(cbDot.Text)) {
-                dot = " AND DOT=" + cbDot.Text;
+            if (!"00".Equals(cbDot.Text)) {
+                dot = " AND DOT='" + cbDot.Text+"'";
             }
             
             if (this.ckNgayThay.Checked && this.checHieu.Checked)

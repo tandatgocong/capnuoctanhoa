@@ -717,7 +717,7 @@
             this.btTaoMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btTaoMoi.TabIndex = 103;
             this.btTaoMoi.Text = "TẠO MỚI (F5)";
-            this.btTaoMoi.Click += new System.EventHandler(this.btTaoMoi_Click);
+            this.btTaoMoi.Click += new System.EventHandler(this.btTaoMoi_Click_1);
             // 
             // histotyThay
             // 

@@ -38,6 +38,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cbDot = new System.Windows.Forms.ComboBox();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.lbTongDHN = new DevComponents.DotNetBar.LabelX();
             this.next = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -65,8 +67,6 @@
             this.BAOTHAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.cbDot = new System.Windows.Forms.ComboBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -109,6 +109,48 @@
             this.splitContainer1.Size = new System.Drawing.Size(1238, 657);
             this.splitContainer1.SplitterDistance = 123;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // cbDot
+            // 
+            this.cbDot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDot.FormattingEnabled = true;
+            this.cbDot.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.cbDot.Location = new System.Drawing.Point(469, 90);
+            this.cbDot.Name = "cbDot";
+            this.cbDot.Size = new System.Drawing.Size(68, 27);
+            this.cbDot.TabIndex = 710;
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.labelX2.Location = new System.Drawing.Point(478, 65);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(48, 22);
+            this.labelX2.TabIndex = 709;
+            this.labelX2.Text = "ĐỢT";
             // 
             // lbTongDHN
             // 
@@ -440,48 +482,6 @@
             this.dafaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.dafaToolStripMenuItem.Text = "Tạo Mới Bảng Kê";
             this.dafaToolStripMenuItem.Click += new System.EventHandler(this.dafaToolStripMenuItem_Click);
-            // 
-            // labelX2
-            // 
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.labelX2.Location = new System.Drawing.Point(478, 65);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(48, 22);
-            this.labelX2.TabIndex = 709;
-            this.labelX2.Text = "ĐỢT";
-            // 
-            // cbDot
-            // 
-            this.cbDot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDot.FormattingEnabled = true;
-            this.cbDot.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20"});
-            this.cbDot.Location = new System.Drawing.Point(469, 90);
-            this.cbDot.Name = "cbDot";
-            this.cbDot.Size = new System.Drawing.Size(68, 27);
-            this.cbDot.TabIndex = 710;
             // 
             // frm_KiemTraThayDinhKy
             // 

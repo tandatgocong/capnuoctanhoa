@@ -113,7 +113,7 @@
             // 
             this.title.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
             this.title.ForeColor = System.Drawing.Color.Crimson;
-            this.title.Location = new System.Drawing.Point(15, 0);
+            this.title.Location = new System.Drawing.Point(15, 2);
             this.title.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.title.Name = "title";
             this.title.ReflectionEnabled = false;
