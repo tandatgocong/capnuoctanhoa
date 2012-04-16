@@ -46,7 +46,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             txtHieu.AutoCompleteCustomSource = namesCollection;
             try
             {
-                txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1)+"";
+                string balap =  DateTime.Now.Year.ToString().Substring(2)+"001";
+                if (DAL.QLDHN.C_BaoThay.getMaxBangKe() >= int.Parse(balap))
+                {
+                    txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1) + "";
+                }
+                else {
+                    txtSoBangKe.Text = balap;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -169,33 +177,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
-            this.cbLoaiBangKe.SelectedValue = "DK";
-            txtSoBangKe.Text = "";
-            txtSoDanhBo.Text = "";
-            txtTenKH.Text = "";
-            txtDiaChi.Text = "";
-            txtNgayGan.ValueObject = null;
-            txtHieu.Text = "";
-            txtCo.Text = "";
-            txtSoThan.Text = "";
-            txtChiThan.Text = "";
-            txtChiGoc.Text = "";
-            txtChiSoThay.Text = "";
-            txtMaLoTrinh.Text = "";
-            btcapNhat.Enabled = false;
-            btXoa.Enabled = false;
-           // btIn.Enabled = false;
-            this.histotyThay.Visible = false;
-            txtSoBangKe.Focus();
-            this.dataBangKe.DataSource = DAL.QLDHN.C_BaoThay.getBangKeBaoThay(999999);
-            try
-            {
-                txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1) + "";
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
+            
         }
 
         void LoadThongTinDB() {
@@ -417,6 +399,46 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 log.Error(ex.Message);
             }
             
+        }
+
+        private void btTaoMoi_Click_1(object sender, EventArgs e)
+        {
+            this.cbLoaiBangKe.SelectedValue = "DK";
+            txtSoBangKe.Text = "";
+            txtSoDanhBo.Text = "";
+            txtTenKH.Text = "";
+            txtDiaChi.Text = "";
+            txtNgayGan.ValueObject = null;
+            txtHieu.Text = "";
+            txtCo.Text = "";
+            txtSoThan.Text = "";
+            txtChiThan.Text = "";
+            txtChiGoc.Text = "";
+            txtChiSoThay.Text = "";
+            txtMaLoTrinh.Text = "";
+            btcapNhat.Enabled = false;
+            btXoa.Enabled = false;
+            // btIn.Enabled = false;
+            this.histotyThay.Visible = false;
+            txtSoBangKe.Focus();
+            this.dataBangKe.DataSource = DAL.QLDHN.C_BaoThay.getBangKeBaoThay(999999);
+            try
+            {
+                string balap = DateTime.Now.Year.ToString().Substring(2) + "001";
+                if (DAL.QLDHN.C_BaoThay.getMaxBangKe() >= int.Parse(balap))
+                {
+                    txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1) + "";
+                }
+                else
+                {
+                    txtSoBangKe.Text = balap;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
         }
     }
 }

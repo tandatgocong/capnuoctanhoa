@@ -80,6 +80,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuKiemTra = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdBaoThay = new System.Windows.Forms.ToolStripMenuItem();
+            this.btChuyenBK = new System.Windows.Forms.ToolStripMenuItem();
             this.baocaoTongKet = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLayDuLieuGanMoi = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
@@ -610,6 +611,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuKiemTra,
             this.cmdBaoThay,
+            this.btChuyenBK,
             this.baocaoTongKet,
             this.menuLayDuLieuGanMoi});
             this.menuStrip1.Location = new System.Drawing.Point(3, 0);
@@ -636,6 +638,16 @@
             this.cmdBaoThay.Size = new System.Drawing.Size(142, 23);
             this.cmdBaoThay.Text = "Báo Thay ĐHN";
             this.cmdBaoThay.Click += new System.EventHandler(this.cmdBaoThay_Click);
+            // 
+            // btChuyenBK
+            // 
+            this.btChuyenBK.ForeColor = System.Drawing.Color.Black;
+            this.btChuyenBK.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right1;
+            this.btChuyenBK.Name = "btChuyenBK";
+            this.btChuyenBK.Size = new System.Drawing.Size(151, 23);
+            this.btChuyenBK.Text = "Chuyển Bảng Kê";
+            this.btChuyenBK.Visible = false;
+            this.btChuyenBK.Click += new System.EventHandler(this.btChuyenBK_Click);
             // 
             // baocaoTongKet
             // 
@@ -853,6 +865,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuTCTB;
         private System.Windows.Forms.ToolStripMenuItem hcThayThuDHN;
         private System.Windows.Forms.ToolStripMenuItem menuLayDuLieuGanMoi;
+        private System.Windows.Forms.ToolStripMenuItem btChuyenBK;
 
 
     }

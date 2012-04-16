@@ -23,7 +23,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             InitializeComponent();
             try
             {
-                txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1) + "";
+                string balap = DateTime.Now.Year.ToString().Substring(2) + "001";
+                if (DAL.QLDHN.C_BaoThay.getMaxBangKe() >= int.Parse(balap))
+                {
+                    txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1) + "";
+                }
+                else
+                {
+                    txtSoBangKe.Text = balap;
+                }
+
             }
             catch (Exception ex)
             {
@@ -75,6 +84,23 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void frm_Option_BT_Load(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    string balap = DateTime.Now.Year.ToString().Substring(2) + "001";
+            //    if (DAL.QLDHN.C_BaoThay.getMaxBangKe() > int.Parse(balap))
+            //    {
+            //        txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe() + 1) + "";
+            //    }
+            //    else
+            //    {
+            //        txtSoBangKe.Text = balap;
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error(ex.Message);
+            //}
             Utilities.DataGridV.formatRows(dataBangKe);
             setSTT();
         }
