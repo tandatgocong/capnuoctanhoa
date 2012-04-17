@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CAPNUOCTANHOA.Forms.DoiTCTB.Tab;
+using CAPNUOCTANHOA.Forms.QLDHN.Tab;
 
 namespace CAPNUOCTANHOA.Forms.DoiTCTB
 {
@@ -27,5 +28,13 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             this.splitContainer1.Panel2.Controls.Add(baothay);
             this.splitContainer1.Panel2.Controls.Add(new tabThongKeVatTu());
         }
+
+        private void radioButton1_Click(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new h_tab_TinhHinhBaoThay());
+        }
+
+        
     }
 }
