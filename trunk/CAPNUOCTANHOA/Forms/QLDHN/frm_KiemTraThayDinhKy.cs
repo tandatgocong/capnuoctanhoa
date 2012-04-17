@@ -67,7 +67,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             
             if (this.ckNgayThay.Checked && this.checHieu.Checked)
             {
-                sql = "SELECT CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
+                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
                 sql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') AND CHISOKYTRUOC>0 " + dot + " ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC ";
                 //DataTable table = DAL.LinQConnection.getDataTable(sql);
                 //dataGrid.DataSource = table;
@@ -75,14 +75,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             else if (this.ckNgayThay.Checked)
             {
-                sql = "SELECT CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + "  AND NGAYTHAY <= '" + date.ToShortDateString() + "' AND CHISOKYTRUOC>0 " + dot + "  ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC";
+                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + "  AND NGAYTHAY <= '" + date.ToShortDateString() + "' AND CHISOKYTRUOC>0 " + dot + "  ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC";
                 //DataTable table = DAL.LinQConnection.getDataTable(sql);
                 //dataGrid.DataSource = table;
                 //Utilities.DataGridV.formatRows(dataGrid);
             }
             else if (this.checHieu.Checked)
             {
-                sql = "SELECT CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') AND CHISOKYTRUOC>0 " + dot + "  ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC";
+                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') AND CHISOKYTRUOC>0 " + dot + "  ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC";
 
             }
             return sql;
@@ -110,7 +110,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
              FirstRow = 0;
              LastRow = 0;
 
-             string sqlCount = Search().Replace("CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY", " COUNT(*) ").Replace("ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC", " ");
+             string sqlCount = Search().Replace("CODE,CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY", " COUNT(*) ").Replace("ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC", " ");
              rows = DAL.LinQConnection.ExecuteCommand(sqlCount);
             lbTongDHN.Text = "Tổng Số " + rows + " ĐHN.";
             try

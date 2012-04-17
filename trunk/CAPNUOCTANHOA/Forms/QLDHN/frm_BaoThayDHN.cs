@@ -98,7 +98,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             else if ("BB".Equals(this.cbLoaiBangKe.SelectedValue + ""))
             {
-                title.Text = "BẢNG KÊ BÁO THAY THỬ ĐỒNG HỒ NƯỚC";
+                title.Text = "BẢNG KÊ BÁO THAY ĐỒNG HỒ NƯỚC THEO BIÊN BẢN KIỂM TRA";
                 txtLyDo.Text = "BBKT NGÀY ";
             }
             else

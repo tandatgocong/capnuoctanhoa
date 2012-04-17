@@ -61,16 +61,16 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
 
 
                 sql_chuathay = "SELECT loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI',CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' ";
-                sql_chuathay += "FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND (HCT_TRONGAI ='False' OR HCT_TRONGAI IS NULL) " + gioihan;
+                sql_chuathay += "FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND (HCT_TRONGAI ='0' OR HCT_TRONGAI IS NULL) " + gioihan;
 
                 sql_dathay = "SELECT loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI',CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO',CONVERT(VARCHAR(20),HCT_NGAYGAN,103) AS 'HCT_NGAYGAN' ,HCT_HIEUDHNGAN,HCT_CODHNGAN,HCT_SOTHANGAN,HCT_CHITHAN,HCT_CHIGOC ";
-                sql_dathay += "FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK AND HCT_NGAYGAN IS NOT NULL  AND (HCT_TRONGAI ='False' OR HCT_TRONGAI IS NULL) " + gioihan;
+                sql_dathay += "FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK AND HCT_NGAYGAN IS NOT NULL  AND (HCT_TRONGAI ='0' OR HCT_TRONGAI IS NULL) " + gioihan;
 
 
                 sql_trongai = " SELECT loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI' ";
                 sql_trongai += " , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , HCT_LYDOTRONGAI as 'TRONGAI' ";
                 sql_trongai += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh 	";
-                sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='True' " + gioihan;
+                sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' " + gioihan;
 
                 if (!"".Equals(cbLoaiBangKe.Text.Trim()))
                 {
@@ -88,7 +88,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
                 {
                     sql += " AND CONVERT(DATETIME,DHN_NGAYBAOTHAY,103) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
                     sql_chuathay += " AND CONVERT(DATETIME,DHN_NGAYBAOTHAY,103) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
-                    sql_trongai += " AND CONVERT(DATETIME,DHN_NGAYBAOTHAY,103) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
+                    sql_trongai += " AND CONVERT(DATETIME,HCT_CREATEDATE,103) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
                     sql_detail += " AND CONVERT(DATETIME,DHN_NGAYBAOTHAY,103) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
                     sql_dathay += " AND CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
                 }
@@ -101,7 +101,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
                     sql_dathay += " AND (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) = '" + txtSoBangKe.Text + "'";
                 }
                 sql_chuathay += " ORDER BY DHN_NGAYBAOTHAY  DESC ";
-                sql_trongai += " ORDER BY DHN_NGAYBAOTHAY DESC ";
+                sql_trongai += " ORDER BY HCT_CREATEDATE DESC ";
                 sql_detail += " GROUP BY (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)),DHN_LOAIBANGKE ";
                 sql_detail += " ORDER BY (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) ASC ";
                 sql_dathay += " ORDER BY HCT_NGAYGAN  DESC ";
@@ -110,6 +110,18 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
                 dataGridView1.DataSource = DAL.LinQConnection.getDataTable(sql_detail);
                 Utilities.DataGridV.formatRows(dataGridView1);
 
+                dataGridLoi.DataSource = DAL.LinQConnection.getDataTable(sql_trongai);
+                Utilities.DataGridV.formatRows(dataGridLoi, "GG_DANHBO");
+                Utilities.DataGridV.setSTT(dataGridLoi, "G_STT");
+
+
+                dataGridChuaThay.DataSource = DAL.LinQConnection.getDataTable(sql_chuathay);
+                Utilities.DataGridV.formatRows(dataGridChuaThay, "G_DANHBO");
+                Utilities.DataGridV.setSTT(dataGridChuaThay, "STT");
+
+                dataGridView2.DataSource = DAL.LinQConnection.getDataTable(sql_dathay);
+                Utilities.DataGridV.formatRows(dataGridView2, "DTDANHBO");
+                Utilities.DataGridV.setSTT(dataGridView2, "DTSTT");
             }
             catch (Exception ex)
             {
@@ -121,31 +133,26 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
 
         private void tabDaThay_Click(object sender, EventArgs e)
         {
-            if (!"".Equals(sql_dathay))
-            {
-                dataGridView2.DataSource = DAL.LinQConnection.getDataTable(sql_dathay);
+           
                 Utilities.DataGridV.formatRows(dataGridView2, "DTDANHBO");
-                Utilities.DataGridV.setSTT(dataGridView2, "DTSTT");
-            }
+                 
+            
         }
 
         private void tabChuaThay_Click(object sender, EventArgs e)
         {
-            if (!"".Equals(sql_chuathay))
-            {
-                dataGridChuaThay.DataSource = DAL.LinQConnection.getDataTable(sql_chuathay);
+           
                 Utilities.DataGridV.formatRows(dataGridChuaThay, "G_DANHBO");
-                Utilities.DataGridV.setSTT(dataGridChuaThay, "STT");
-            }
+                 
+            
         }
 
         private void tabTroNgai_Click(object sender, EventArgs e)
         {
-            if (!"".Equals(sql_trongai)) {
-                dataGridLoi.DataSource = DAL.LinQConnection.getDataTable(sql_trongai);
+           
                 Utilities.DataGridV.formatRows(dataGridLoi, "GG_DANHBO");
-                Utilities.DataGridV.setSTT(dataGridLoi, "G_STT");
-            }
+                 
+             
         }
 
        
