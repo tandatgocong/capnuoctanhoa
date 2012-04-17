@@ -146,6 +146,12 @@
     <Compile Include="Forms\DoiTCTB\frm_BaoCaoTCTB.Designer.cs">
       <DependentUpon>frm_BaoCaoTCTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoiTCTB\Tab\h_tab_TinhHinhBaoThay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\Tab\h_tab_TinhHinhBaoThay.designer.cs">
+      <DependentUpon>h_tab_TinhHinhBaoThay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\frm_BaoCaoTCTB.resx">
       <DependentUpon>frm_BaoCaoTCTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\Tab\h_tab_TinhHinhBaoThay.resx">
+      <DependentUpon>h_tab_TinhHinhBaoThay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.resx">
       <DependentUpon>tabThongKeVatTu.cs</DependentUpon>

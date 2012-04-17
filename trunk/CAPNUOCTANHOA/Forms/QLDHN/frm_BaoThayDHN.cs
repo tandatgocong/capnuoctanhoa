@@ -318,7 +318,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             try
             {
                 string ID_BAOTHAY = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID_BAOTHAY"].Value + "";
-                TB_THAYDHN thay = DAL.QLDHN.C_BaoThay.finByID_BAOTHAY(int.Parse(ID_BAOTHAY));
+                TB_THAYDHN thay = DAL.QLDHN.C_BaoThay.finByID_BAOTHAY(int.Parse(ID_BAOTHAY.Replace(" ","")));
                 string mess = "Xóa Báo Thay Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(thay.DHN_DANHBO, "-") + " ?";
                 if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

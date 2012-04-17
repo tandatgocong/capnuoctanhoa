@@ -30,6 +30,7 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.Color.AliceBlue;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.expandablePanel1.Controls.Add(this.radioButton1);
             this.expandablePanel1.Controls.Add(this.radioThayDinhKy);
             this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.expandablePanel1.Location = new System.Drawing.Point(0, 0);
@@ -80,10 +82,22 @@
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "Danh Mục Báo Cáo";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(14, 31);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(198, 23);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Theo Dõi Báo Thay ĐHN";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
+            // 
             // radioThayDinhKy
             // 
             this.radioThayDinhKy.AutoSize = true;
-            this.radioThayDinhKy.Location = new System.Drawing.Point(14, 35);
+            this.radioThayDinhKy.Location = new System.Drawing.Point(14, 60);
             this.radioThayDinhKy.Name = "radioThayDinhKy";
             this.radioThayDinhKy.Size = new System.Drawing.Size(178, 23);
             this.radioThayDinhKy.TabIndex = 1;
@@ -115,6 +129,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel1;
         private System.Windows.Forms.RadioButton radioThayDinhKy;
+        private System.Windows.Forms.RadioButton radioButton1;
 
     }
 }
