@@ -52,19 +52,19 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 sql += " FROM TB_THAYDHN WHERE DHN_DANHBO IS NOT NULL " + gioihan;
 
                 string sql_detail = "SELECT (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) AS 'TENBK',DHN_LOAIBANGKE,COUNT(*) AS 'SOLUONGTHAY' ";
-                sql_detail += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='True' then 1 else null end)) AS 'CHUAGAN'";
+                sql_detail += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='0' then 1 else null end)) AS 'CHUAGAN'";
                 sql_detail += " ,count(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) AS 'HOANTAT' ";
                 sql_detail += " ,count(case when HCT_TRONGAI ='True' then 1 else null end) AS 'TRONGAI' ";
                 sql_detail += " FROM TB_THAYDHN WHERE DHN_DANHBO IS NOT NULL " + gioihan;
                 
 
                 string sql_chuathay = "SELECT loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI',CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' ";
-                sql_chuathay += "FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND (HCT_TRONGAI ='False' OR HCT_TRONGAI IS NULL) " + gioihan;
+                sql_chuathay += "FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND (HCT_TRONGAI ='0' OR HCT_TRONGAI IS NULL) " + gioihan;
 
                 string sql_trongai = " SELECT loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI' ";
                 sql_trongai += " , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , HCT_LYDOTRONGAI as 'TRONGAI' ";
                 sql_trongai += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh 	";
-                sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='True' "+ gioihan;
+                sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' "+ gioihan;
 
                 if (!"".Equals(cbLoaiBangKe.Text.Trim()))
                 {
@@ -121,13 +121,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         private void tabItem5_Click(object sender, EventArgs e)
         {
             Utilities.DataGridV.formatRows(dataGridChuaThay, "G_DANHBO");
-            Utilities.DataGridV.setSTT(dataGridChuaThay, "STT");
+           
         }
 
         private void tabItem7_Click(object sender, EventArgs e)
         {
             Utilities.DataGridV.formatRows(dataGridLoi, "GG_DANHBO");
-            Utilities.DataGridV.setSTT(dataGridLoi, "G_STT");
+           
         }
     }
 }

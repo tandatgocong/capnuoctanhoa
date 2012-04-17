@@ -232,16 +232,18 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     {
                         thaydh.HCT_TRONGAI = true;
                         thaydh.HCT_LYDOTRONGAI = this.txtLyDoTroNgai.Text;
+                        thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
+                        thaydh.HCT_CREATEDATE = DateTime.Now.Date;
                     }
                     else
                     {
-                        thaydh.HCT_CHISOGO = txtChiSoGo.Text != null ? int.Parse(txtChiSoGo.Text) : 0;
+                        thaydh.HCT_CHISOGO = txtChiSoGo.Text != null ? int.Parse(txtChiSoGo.Text.Trim()) : 0;
                         thaydh.HCT_SOTHANGO = txtSoThanGo.Text;
                         thaydh.HCT_HIEUDHNGAN = txtHieuDHGan.Text;
                         thaydh.HCT_SOTHANGAN = txtSoThanGan.Text;
                         thaydh.HCT_CODHNGAN = txtGoGan.Text;
                         thaydh.HCT_CAP = txtCapGan.Text.ToUpper();
-                        thaydh.HCT_CHISOGAN = txtChiSoGan.Text != null ? int.Parse(txtChiSoGan.Text) : 0;
+                        thaydh.HCT_CHISOGAN = txtChiSoGan.Text != null ? int.Parse(txtChiSoGan.Text.Trim()) : 0;
                         if (cbLoaiDHN.SelectedIndex == 0)
                         {
                             thaydh.HCT_LOAIDHGAN = true;
@@ -255,6 +257,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         thaydh.HCT_CHIGOC = txtChiGoc.Text.ToUpper();
                         thaydh.HCT_TRONGAI = false;
                         thaydh.HCT_LYDOTRONGAI = "";
+                        thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
+                        thaydh.HCT_CREATEDATE = DateTime.Now;
                     }
                     if (DAL.QLDHN.C_BaoThay.Update())
                     {
@@ -279,7 +283,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                 vtthay.MAVT = MAVT;
                                 vtthay.TENVT = TENVT;
                                 vtthay.DVT = DVT;
-                                vtthay.SOLUONG = int.Parse(SOLUONG); ;
+                                vtthay.SOLUONG = int.Parse(SOLUONG.Trim()); ;
                                 vtthay.GHICHU = GHICHU;
                                 vtthay.CREATEBY = DAL.SYS.C_USERS._userName;
                                 vtthay.CREATEDATE = DateTime.Now;
