@@ -348,6 +348,54 @@
       <Column Name="SOTHAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.W_BAOCAO_CODE" Member="W_BAOCAO_CODEs">
+    <Type Name="W_BAOCAO_CODE">
+      <Column Name="TODS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENTO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KN_CODE4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODE5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODE6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODE8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODE4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODE5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODE6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODE8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.W_BAOCAO_CODE_MAY" Member="W_BAOCAO_CODE_MAYs">
+    <Type Name="W_BAOCAO_CODE_MAY">
+      <Column Name="TODS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAYDS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODE4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODE5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODE6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODE8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_CODEK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODE4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODE5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODE6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODE8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT_CODEK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.W_BAOCAO_LOAIKD" Member="W_BAOCAO_LOAIKDs">
     <Type Name="W_BAOCAO_LOAIKD">
       <Column Name="TODS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

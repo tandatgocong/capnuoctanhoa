@@ -63,6 +63,9 @@ namespace CAPNUOCTANHOA.LinQ
     partial void InsertTB_VATUTHAY_DHN(TB_VATUTHAY_DHN instance);
     partial void UpdateTB_VATUTHAY_DHN(TB_VATUTHAY_DHN instance);
     partial void DeleteTB_VATUTHAY_DHN(TB_VATUTHAY_DHN instance);
+    partial void InsertW_BAOCAO_CODE(W_BAOCAO_CODE instance);
+    partial void UpdateW_BAOCAO_CODE(W_BAOCAO_CODE instance);
+    partial void DeleteW_BAOCAO_CODE(W_BAOCAO_CODE instance);
     partial void InsertW_BAOCAO_LOAIKD(W_BAOCAO_LOAIKD instance);
     partial void UpdateW_BAOCAO_LOAIKD(W_BAOCAO_LOAIKD instance);
     partial void DeleteW_BAOCAO_LOAIKD(W_BAOCAO_LOAIKD instance);
@@ -229,6 +232,22 @@ namespace CAPNUOCTANHOA.LinQ
 			get
 			{
 				return this.GetTable<TB1>();
+			}
+		}
+		
+		public System.Data.Linq.Table<W_BAOCAO_CODE> W_BAOCAO_CODEs
+		{
+			get
+			{
+				return this.GetTable<W_BAOCAO_CODE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<W_BAOCAO_CODE_MAY> W_BAOCAO_CODE_MAYs
+		{
+			get
+			{
+				return this.GetTable<W_BAOCAO_CODE_MAY>();
 			}
 		}
 		
@@ -7006,6 +7025,893 @@ namespace CAPNUOCTANHOA.LinQ
 				if ((this._SOTHAN != value))
 				{
 					this._SOTHAN = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.W_BAOCAO_CODE")]
+	public partial class W_BAOCAO_CODE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TODS;
+		
+		private string _TENTO;
+		
+		private System.Nullable<int> _KN_CODE4;
+		
+		private System.Nullable<int> _KN_CODE5;
+		
+		private System.Nullable<int> _KN_CODE6;
+		
+		private System.Nullable<int> _KN_CODE8;
+		
+		private System.Nullable<int> _KN_CODEM;
+		
+		private System.Nullable<int> _KN_CODEN;
+		
+		private System.Nullable<int> _KN_CODEQ;
+		
+		private System.Nullable<int> _KN_CODEF;
+		
+		private System.Nullable<int> _KN_CODEK;
+		
+		private System.Nullable<int> _KT_CODE4;
+		
+		private System.Nullable<int> _KT_CODE5;
+		
+		private System.Nullable<int> _KT_CODE6;
+		
+		private System.Nullable<int> _KT_CODE8;
+		
+		private System.Nullable<int> _KT_CODEM;
+		
+		private System.Nullable<int> _KT_CODEN;
+		
+		private System.Nullable<int> _KT_CODEQ;
+		
+		private System.Nullable<int> _KT_CODEF;
+		
+		private System.Nullable<int> _KT_CODEK;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTODSChanging(int value);
+    partial void OnTODSChanged();
+    partial void OnTENTOChanging(string value);
+    partial void OnTENTOChanged();
+    partial void OnKN_CODE4Changing(System.Nullable<int> value);
+    partial void OnKN_CODE4Changed();
+    partial void OnKN_CODE5Changing(System.Nullable<int> value);
+    partial void OnKN_CODE5Changed();
+    partial void OnKN_CODE6Changing(System.Nullable<int> value);
+    partial void OnKN_CODE6Changed();
+    partial void OnKN_CODE8Changing(System.Nullable<int> value);
+    partial void OnKN_CODE8Changed();
+    partial void OnKN_CODEMChanging(System.Nullable<int> value);
+    partial void OnKN_CODEMChanged();
+    partial void OnKN_CODENChanging(System.Nullable<int> value);
+    partial void OnKN_CODENChanged();
+    partial void OnKN_CODEQChanging(System.Nullable<int> value);
+    partial void OnKN_CODEQChanged();
+    partial void OnKN_CODEFChanging(System.Nullable<int> value);
+    partial void OnKN_CODEFChanged();
+    partial void OnKN_CODEKChanging(System.Nullable<int> value);
+    partial void OnKN_CODEKChanged();
+    partial void OnKT_CODE4Changing(System.Nullable<int> value);
+    partial void OnKT_CODE4Changed();
+    partial void OnKT_CODE5Changing(System.Nullable<int> value);
+    partial void OnKT_CODE5Changed();
+    partial void OnKT_CODE6Changing(System.Nullable<int> value);
+    partial void OnKT_CODE6Changed();
+    partial void OnKT_CODE8Changing(System.Nullable<int> value);
+    partial void OnKT_CODE8Changed();
+    partial void OnKT_CODEMChanging(System.Nullable<int> value);
+    partial void OnKT_CODEMChanged();
+    partial void OnKT_CODENChanging(System.Nullable<int> value);
+    partial void OnKT_CODENChanged();
+    partial void OnKT_CODEQChanging(System.Nullable<int> value);
+    partial void OnKT_CODEQChanged();
+    partial void OnKT_CODEFChanging(System.Nullable<int> value);
+    partial void OnKT_CODEFChanged();
+    partial void OnKT_CODEKChanging(System.Nullable<int> value);
+    partial void OnKT_CODEKChanged();
+    #endregion
+		
+		public W_BAOCAO_CODE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TODS", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int TODS
+		{
+			get
+			{
+				return this._TODS;
+			}
+			set
+			{
+				if ((this._TODS != value))
+				{
+					this.OnTODSChanging(value);
+					this.SendPropertyChanging();
+					this._TODS = value;
+					this.SendPropertyChanged("TODS");
+					this.OnTODSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTO", DbType="NVarChar(MAX)")]
+		public string TENTO
+		{
+			get
+			{
+				return this._TENTO;
+			}
+			set
+			{
+				if ((this._TENTO != value))
+				{
+					this.OnTENTOChanging(value);
+					this.SendPropertyChanging();
+					this._TENTO = value;
+					this.SendPropertyChanged("TENTO");
+					this.OnTENTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODE4", DbType="Int")]
+		public System.Nullable<int> KN_CODE4
+		{
+			get
+			{
+				return this._KN_CODE4;
+			}
+			set
+			{
+				if ((this._KN_CODE4 != value))
+				{
+					this.OnKN_CODE4Changing(value);
+					this.SendPropertyChanging();
+					this._KN_CODE4 = value;
+					this.SendPropertyChanged("KN_CODE4");
+					this.OnKN_CODE4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODE5", DbType="Int")]
+		public System.Nullable<int> KN_CODE5
+		{
+			get
+			{
+				return this._KN_CODE5;
+			}
+			set
+			{
+				if ((this._KN_CODE5 != value))
+				{
+					this.OnKN_CODE5Changing(value);
+					this.SendPropertyChanging();
+					this._KN_CODE5 = value;
+					this.SendPropertyChanged("KN_CODE5");
+					this.OnKN_CODE5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODE6", DbType="Int")]
+		public System.Nullable<int> KN_CODE6
+		{
+			get
+			{
+				return this._KN_CODE6;
+			}
+			set
+			{
+				if ((this._KN_CODE6 != value))
+				{
+					this.OnKN_CODE6Changing(value);
+					this.SendPropertyChanging();
+					this._KN_CODE6 = value;
+					this.SendPropertyChanged("KN_CODE6");
+					this.OnKN_CODE6Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODE8", DbType="Int")]
+		public System.Nullable<int> KN_CODE8
+		{
+			get
+			{
+				return this._KN_CODE8;
+			}
+			set
+			{
+				if ((this._KN_CODE8 != value))
+				{
+					this.OnKN_CODE8Changing(value);
+					this.SendPropertyChanging();
+					this._KN_CODE8 = value;
+					this.SendPropertyChanged("KN_CODE8");
+					this.OnKN_CODE8Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEM", DbType="Int")]
+		public System.Nullable<int> KN_CODEM
+		{
+			get
+			{
+				return this._KN_CODEM;
+			}
+			set
+			{
+				if ((this._KN_CODEM != value))
+				{
+					this.OnKN_CODEMChanging(value);
+					this.SendPropertyChanging();
+					this._KN_CODEM = value;
+					this.SendPropertyChanged("KN_CODEM");
+					this.OnKN_CODEMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEN", DbType="Int")]
+		public System.Nullable<int> KN_CODEN
+		{
+			get
+			{
+				return this._KN_CODEN;
+			}
+			set
+			{
+				if ((this._KN_CODEN != value))
+				{
+					this.OnKN_CODENChanging(value);
+					this.SendPropertyChanging();
+					this._KN_CODEN = value;
+					this.SendPropertyChanged("KN_CODEN");
+					this.OnKN_CODENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEQ", DbType="Int")]
+		public System.Nullable<int> KN_CODEQ
+		{
+			get
+			{
+				return this._KN_CODEQ;
+			}
+			set
+			{
+				if ((this._KN_CODEQ != value))
+				{
+					this.OnKN_CODEQChanging(value);
+					this.SendPropertyChanging();
+					this._KN_CODEQ = value;
+					this.SendPropertyChanged("KN_CODEQ");
+					this.OnKN_CODEQChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEF", DbType="Int")]
+		public System.Nullable<int> KN_CODEF
+		{
+			get
+			{
+				return this._KN_CODEF;
+			}
+			set
+			{
+				if ((this._KN_CODEF != value))
+				{
+					this.OnKN_CODEFChanging(value);
+					this.SendPropertyChanging();
+					this._KN_CODEF = value;
+					this.SendPropertyChanged("KN_CODEF");
+					this.OnKN_CODEFChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEK", DbType="Int")]
+		public System.Nullable<int> KN_CODEK
+		{
+			get
+			{
+				return this._KN_CODEK;
+			}
+			set
+			{
+				if ((this._KN_CODEK != value))
+				{
+					this.OnKN_CODEKChanging(value);
+					this.SendPropertyChanging();
+					this._KN_CODEK = value;
+					this.SendPropertyChanged("KN_CODEK");
+					this.OnKN_CODEKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODE4", DbType="Int")]
+		public System.Nullable<int> KT_CODE4
+		{
+			get
+			{
+				return this._KT_CODE4;
+			}
+			set
+			{
+				if ((this._KT_CODE4 != value))
+				{
+					this.OnKT_CODE4Changing(value);
+					this.SendPropertyChanging();
+					this._KT_CODE4 = value;
+					this.SendPropertyChanged("KT_CODE4");
+					this.OnKT_CODE4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODE5", DbType="Int")]
+		public System.Nullable<int> KT_CODE5
+		{
+			get
+			{
+				return this._KT_CODE5;
+			}
+			set
+			{
+				if ((this._KT_CODE5 != value))
+				{
+					this.OnKT_CODE5Changing(value);
+					this.SendPropertyChanging();
+					this._KT_CODE5 = value;
+					this.SendPropertyChanged("KT_CODE5");
+					this.OnKT_CODE5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODE6", DbType="Int")]
+		public System.Nullable<int> KT_CODE6
+		{
+			get
+			{
+				return this._KT_CODE6;
+			}
+			set
+			{
+				if ((this._KT_CODE6 != value))
+				{
+					this.OnKT_CODE6Changing(value);
+					this.SendPropertyChanging();
+					this._KT_CODE6 = value;
+					this.SendPropertyChanged("KT_CODE6");
+					this.OnKT_CODE6Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODE8", DbType="Int")]
+		public System.Nullable<int> KT_CODE8
+		{
+			get
+			{
+				return this._KT_CODE8;
+			}
+			set
+			{
+				if ((this._KT_CODE8 != value))
+				{
+					this.OnKT_CODE8Changing(value);
+					this.SendPropertyChanging();
+					this._KT_CODE8 = value;
+					this.SendPropertyChanged("KT_CODE8");
+					this.OnKT_CODE8Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEM", DbType="Int")]
+		public System.Nullable<int> KT_CODEM
+		{
+			get
+			{
+				return this._KT_CODEM;
+			}
+			set
+			{
+				if ((this._KT_CODEM != value))
+				{
+					this.OnKT_CODEMChanging(value);
+					this.SendPropertyChanging();
+					this._KT_CODEM = value;
+					this.SendPropertyChanged("KT_CODEM");
+					this.OnKT_CODEMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEN", DbType="Int")]
+		public System.Nullable<int> KT_CODEN
+		{
+			get
+			{
+				return this._KT_CODEN;
+			}
+			set
+			{
+				if ((this._KT_CODEN != value))
+				{
+					this.OnKT_CODENChanging(value);
+					this.SendPropertyChanging();
+					this._KT_CODEN = value;
+					this.SendPropertyChanged("KT_CODEN");
+					this.OnKT_CODENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEQ", DbType="Int")]
+		public System.Nullable<int> KT_CODEQ
+		{
+			get
+			{
+				return this._KT_CODEQ;
+			}
+			set
+			{
+				if ((this._KT_CODEQ != value))
+				{
+					this.OnKT_CODEQChanging(value);
+					this.SendPropertyChanging();
+					this._KT_CODEQ = value;
+					this.SendPropertyChanged("KT_CODEQ");
+					this.OnKT_CODEQChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEF", DbType="Int")]
+		public System.Nullable<int> KT_CODEF
+		{
+			get
+			{
+				return this._KT_CODEF;
+			}
+			set
+			{
+				if ((this._KT_CODEF != value))
+				{
+					this.OnKT_CODEFChanging(value);
+					this.SendPropertyChanging();
+					this._KT_CODEF = value;
+					this.SendPropertyChanged("KT_CODEF");
+					this.OnKT_CODEFChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEK", DbType="Int")]
+		public System.Nullable<int> KT_CODEK
+		{
+			get
+			{
+				return this._KT_CODEK;
+			}
+			set
+			{
+				if ((this._KT_CODEK != value))
+				{
+					this.OnKT_CODEKChanging(value);
+					this.SendPropertyChanging();
+					this._KT_CODEK = value;
+					this.SendPropertyChanged("KT_CODEK");
+					this.OnKT_CODEKChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.W_BAOCAO_CODE_MAY")]
+	public partial class W_BAOCAO_CODE_MAY
+	{
+		
+		private System.Nullable<int> _TODS;
+		
+		private System.Nullable<int> _MAYDS;
+		
+		private System.Nullable<int> _KN_CODE4;
+		
+		private System.Nullable<int> _KN_CODE5;
+		
+		private System.Nullable<int> _KN_CODE6;
+		
+		private System.Nullable<int> _KN_CODE8;
+		
+		private System.Nullable<int> _KN_CODEM;
+		
+		private System.Nullable<int> _KN_CODEN;
+		
+		private System.Nullable<int> _KN_CODEQ;
+		
+		private System.Nullable<int> _KN_CODEF;
+		
+		private System.Nullable<int> _KN_CODEK;
+		
+		private System.Nullable<int> _KT_CODE4;
+		
+		private System.Nullable<int> _KT_CODE5;
+		
+		private System.Nullable<int> _KT_CODE6;
+		
+		private System.Nullable<int> _KT_CODE8;
+		
+		private System.Nullable<int> _KT_CODEM;
+		
+		private System.Nullable<int> _KT_CODEN;
+		
+		private System.Nullable<int> _KT_CODEQ;
+		
+		private System.Nullable<int> _KT_CODEF;
+		
+		private System.Nullable<int> _KT_CODEK;
+		
+		public W_BAOCAO_CODE_MAY()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TODS", DbType="Int")]
+		public System.Nullable<int> TODS
+		{
+			get
+			{
+				return this._TODS;
+			}
+			set
+			{
+				if ((this._TODS != value))
+				{
+					this._TODS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAYDS", DbType="Int")]
+		public System.Nullable<int> MAYDS
+		{
+			get
+			{
+				return this._MAYDS;
+			}
+			set
+			{
+				if ((this._MAYDS != value))
+				{
+					this._MAYDS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODE4", DbType="Int")]
+		public System.Nullable<int> KN_CODE4
+		{
+			get
+			{
+				return this._KN_CODE4;
+			}
+			set
+			{
+				if ((this._KN_CODE4 != value))
+				{
+					this._KN_CODE4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODE5", DbType="Int")]
+		public System.Nullable<int> KN_CODE5
+		{
+			get
+			{
+				return this._KN_CODE5;
+			}
+			set
+			{
+				if ((this._KN_CODE5 != value))
+				{
+					this._KN_CODE5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODE6", DbType="Int")]
+		public System.Nullable<int> KN_CODE6
+		{
+			get
+			{
+				return this._KN_CODE6;
+			}
+			set
+			{
+				if ((this._KN_CODE6 != value))
+				{
+					this._KN_CODE6 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODE8", DbType="Int")]
+		public System.Nullable<int> KN_CODE8
+		{
+			get
+			{
+				return this._KN_CODE8;
+			}
+			set
+			{
+				if ((this._KN_CODE8 != value))
+				{
+					this._KN_CODE8 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEM", DbType="Int")]
+		public System.Nullable<int> KN_CODEM
+		{
+			get
+			{
+				return this._KN_CODEM;
+			}
+			set
+			{
+				if ((this._KN_CODEM != value))
+				{
+					this._KN_CODEM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEN", DbType="Int")]
+		public System.Nullable<int> KN_CODEN
+		{
+			get
+			{
+				return this._KN_CODEN;
+			}
+			set
+			{
+				if ((this._KN_CODEN != value))
+				{
+					this._KN_CODEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEQ", DbType="Int")]
+		public System.Nullable<int> KN_CODEQ
+		{
+			get
+			{
+				return this._KN_CODEQ;
+			}
+			set
+			{
+				if ((this._KN_CODEQ != value))
+				{
+					this._KN_CODEQ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEF", DbType="Int")]
+		public System.Nullable<int> KN_CODEF
+		{
+			get
+			{
+				return this._KN_CODEF;
+			}
+			set
+			{
+				if ((this._KN_CODEF != value))
+				{
+					this._KN_CODEF = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KN_CODEK", DbType="Int")]
+		public System.Nullable<int> KN_CODEK
+		{
+			get
+			{
+				return this._KN_CODEK;
+			}
+			set
+			{
+				if ((this._KN_CODEK != value))
+				{
+					this._KN_CODEK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODE4", DbType="Int")]
+		public System.Nullable<int> KT_CODE4
+		{
+			get
+			{
+				return this._KT_CODE4;
+			}
+			set
+			{
+				if ((this._KT_CODE4 != value))
+				{
+					this._KT_CODE4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODE5", DbType="Int")]
+		public System.Nullable<int> KT_CODE5
+		{
+			get
+			{
+				return this._KT_CODE5;
+			}
+			set
+			{
+				if ((this._KT_CODE5 != value))
+				{
+					this._KT_CODE5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODE6", DbType="Int")]
+		public System.Nullable<int> KT_CODE6
+		{
+			get
+			{
+				return this._KT_CODE6;
+			}
+			set
+			{
+				if ((this._KT_CODE6 != value))
+				{
+					this._KT_CODE6 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODE8", DbType="Int")]
+		public System.Nullable<int> KT_CODE8
+		{
+			get
+			{
+				return this._KT_CODE8;
+			}
+			set
+			{
+				if ((this._KT_CODE8 != value))
+				{
+					this._KT_CODE8 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEM", DbType="Int")]
+		public System.Nullable<int> KT_CODEM
+		{
+			get
+			{
+				return this._KT_CODEM;
+			}
+			set
+			{
+				if ((this._KT_CODEM != value))
+				{
+					this._KT_CODEM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEN", DbType="Int")]
+		public System.Nullable<int> KT_CODEN
+		{
+			get
+			{
+				return this._KT_CODEN;
+			}
+			set
+			{
+				if ((this._KT_CODEN != value))
+				{
+					this._KT_CODEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEQ", DbType="Int")]
+		public System.Nullable<int> KT_CODEQ
+		{
+			get
+			{
+				return this._KT_CODEQ;
+			}
+			set
+			{
+				if ((this._KT_CODEQ != value))
+				{
+					this._KT_CODEQ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEF", DbType="Int")]
+		public System.Nullable<int> KT_CODEF
+		{
+			get
+			{
+				return this._KT_CODEF;
+			}
+			set
+			{
+				if ((this._KT_CODEF != value))
+				{
+					this._KT_CODEF = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KT_CODEK", DbType="Int")]
+		public System.Nullable<int> KT_CODEK
+		{
+			get
+			{
+				return this._KT_CODEK;
+			}
+			set
+			{
+				if ((this._KT_CODEK != value))
+				{
+					this._KT_CODEK = value;
 				}
 			}
 		}

@@ -236,7 +236,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             TB_THAYDHN thaydh = new TB_THAYDHN();
             thaydh.DHN_CHIGOC = this.txtChiGoc.Text.ToUpper();
-            thaydh.DHN_CHISO = int.Parse(this.txtChiSoThay.Text);
+            thaydh.DHN_CHISO = int.Parse(this.txtChiSoThay.Text.Trim());
             thaydh.DHN_CHITHAN = this.txtChiThan.Text.ToUpper();
             thaydh.DHN_CODH = this.txtCo.Text;
             thaydh.DHN_DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
@@ -247,13 +247,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             thaydh.DHN_LYDOTHAY = this.txtLyDo.Text.ToUpper();
             thaydh.DHN_NGAYBAOTHAY = DateTime.Now.Date;
             thaydh.DHN_NGAYGAN = txtNgayGan.Value;
-            thaydh.DHN_SOBANGKE = int.Parse(this.txtSoBangKe.Text);
+            thaydh.DHN_SOBANGKE = int.Parse(this.txtSoBangKe.Text.Trim());
             thaydh.DHN_SOTHAN = this.txtSoThan.Text.ToUpper();
             thaydh.DHN_STT=dataBangKe.Rows.Count + 1;
             thaydh.DHN_LYDOTHAY = this.txtLyDo.Text;            
             thaydh.DHN_TODS = DAL.SYS.C_USERS._toDocSo;
             thaydh.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
-            thaydh.DHN_CREATEDATE = DateTime.Now;
+            thaydh.DHN_CREATEDATE = DateTime.Now.Date;
+            
             DAL.QLDHN.C_BaoThay.Insert(thaydh);
             DAL.DULIEUKH.C_DuLieuKhachHang.UpdateBaoThay(this.txtSoDanhBo.Text.Replace("-", ""), "True");
             LoadData();
@@ -343,7 +344,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && thaydh!=null)
                 {
                     thaydh.DHN_CHIGOC = this.txtChiGoc.Text;
-                    thaydh.DHN_CHISO = int.Parse(this.txtChiSoThay.Text);
+                    thaydh.DHN_CHISO = int.Parse(this.txtChiSoThay.Text.Trim());
                     thaydh.DHN_CHITHAN = this.txtChiThan.Text;
                     thaydh.DHN_CODH = this.txtCo.Text;
                     thaydh.DHN_DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
