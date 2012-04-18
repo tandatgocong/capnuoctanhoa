@@ -57,6 +57,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static TB_THAYDHN finByID_BAOTHAY(int id) {
             try
             {
+                db = new CapNuocTanHoaDataContext();
                 var query = from q in db.TB_THAYDHNs where q.ID_BAOTHAY == id select q;
                 return query.SingleOrDefault();
             }

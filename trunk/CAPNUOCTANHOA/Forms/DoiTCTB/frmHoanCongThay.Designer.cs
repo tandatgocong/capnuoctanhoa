@@ -134,11 +134,15 @@
             this.btInHoanCong = new DevComponents.DotNetBar.ButtonX();
             this.btInDS = new DevComponents.DotNetBar.ButtonX();
             this.checkMepNgan = new System.Windows.Forms.CheckBox();
+            this.labelX25 = new DevComponents.DotNetBar.LabelX();
+            this.dateNgayHCNhanh = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.btXemThongTin = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVatTuThay)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayHCNhanh)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -236,7 +240,7 @@
             this.dataBangKe.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataBangKe.RowTemplate.Height = 28;
             this.dataBangKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBangKe.Size = new System.Drawing.Size(642, 481);
+            this.dataBangKe.Size = new System.Drawing.Size(642, 445);
             this.dataBangKe.TabIndex = 101;
             this.dataBangKe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBangKe_CellClick);
             this.dataBangKe.SelectionChanged += new System.EventHandler(this.dataBangKe_SelectionChanged);
@@ -1033,6 +1037,7 @@
             this.txtGoGan.Name = "txtGoGan";
             this.txtGoGan.Size = new System.Drawing.Size(51, 24);
             this.txtGoGan.TabIndex = 23;
+            this.txtGoGan.Text = "15";
             this.txtGoGan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtGoGan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGoGan_KeyPress);
             // 
@@ -1081,6 +1086,7 @@
             this.txtChiThan.Name = "txtChiThan";
             this.txtChiThan.Size = new System.Drawing.Size(88, 24);
             this.txtChiThan.TabIndex = 29;
+            this.txtChiThan.Text = "VN/217";
             // 
             // labelX21
             // 
@@ -1151,6 +1157,7 @@
             this.txtHieuDHGan.Name = "txtHieuDHGan";
             this.txtHieuDHGan.Size = new System.Drawing.Size(133, 24);
             this.txtHieuDHGan.TabIndex = 22;
+            this.txtHieuDHGan.Text = "KENT";
             // 
             // labelX19
             // 
@@ -1279,12 +1286,82 @@
             this.checkMepNgan.Text = "Mép Ngắn";
             this.checkMepNgan.UseVisualStyleBackColor = true;
             // 
+            // labelX25
+            // 
+            this.labelX25.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX25.Location = new System.Drawing.Point(4, 589);
+            this.labelX25.Name = "labelX25";
+            this.labelX25.Size = new System.Drawing.Size(232, 22);
+            this.labelX25.TabIndex = 105;
+            this.labelX25.Text = "HOÀN CÔNG NHANH NGÀY";
+            // 
+            // dateNgayHCNhanh
+            // 
+            // 
+            // 
+            // 
+            this.dateNgayHCNhanh.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateNgayHCNhanh.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateNgayHCNhanh.ButtonDropDown.Visible = true;
+            this.dateNgayHCNhanh.CustomFormat = "dd/MM/yyyy";
+            this.dateNgayHCNhanh.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dateNgayHCNhanh.Location = new System.Drawing.Point(232, 586);
+            // 
+            // 
+            // 
+            this.dateNgayHCNhanh.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateNgayHCNhanh.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateNgayHCNhanh.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateNgayHCNhanh.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateNgayHCNhanh.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayHCNhanh.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateNgayHCNhanh.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateNgayHCNhanh.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateNgayHCNhanh.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateNgayHCNhanh.MonthCalendar.DisplayMonth = new System.DateTime(2012, 4, 1, 0, 0, 0, 0);
+            this.dateNgayHCNhanh.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateNgayHCNhanh.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateNgayHCNhanh.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateNgayHCNhanh.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayHCNhanh.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateNgayHCNhanh.MonthCalendar.TodayButtonVisible = true;
+            this.dateNgayHCNhanh.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateNgayHCNhanh.Name = "dateNgayHCNhanh";
+            this.dateNgayHCNhanh.Size = new System.Drawing.Size(127, 27);
+            this.dateNgayHCNhanh.TabIndex = 106;
+            // 
+            // btXemThongTin
+            // 
+            this.btXemThongTin.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btXemThongTin.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btXemThongTin.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXemThongTin.ForeColor = System.Drawing.Color.Crimson;
+            this.btXemThongTin.Location = new System.Drawing.Point(365, 589);
+            this.btXemThongTin.Name = "btXemThongTin";
+            this.btXemThongTin.Size = new System.Drawing.Size(200, 23);
+            this.btXemThongTin.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btXemThongTin.TabIndex = 107;
+            this.btXemThongTin.Text = "XEM THÔNG TIN";
+            this.btXemThongTin.Click += new System.EventHandler(this.btXemThongTin_Click);
+            // 
             // frmHoanCongThay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.btXemThongTin);
+            this.Controls.Add(this.dateNgayHCNhanh);
+            this.Controls.Add(this.labelX25);
             this.Controls.Add(this.checkMepNgan);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.btInHoanCong);
@@ -1306,6 +1383,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayHCNhanh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1407,5 +1485,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
         private DevComponents.DotNetBar.ButtonX btInDS;
         private System.Windows.Forms.CheckBox checkMepNgan;
+        private DevComponents.DotNetBar.LabelX labelX25;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateNgayHCNhanh;
+        private DevComponents.DotNetBar.ButtonX btXemThongTin;
     }
 }

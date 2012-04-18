@@ -20,6 +20,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
             cbLoaiBangKe.ValueMember = "LOAIBK";
             cbLoaiBangKe.DisplayMember = "TENBANGKE";
             cbLoaiBangKe.SelectedValue = "DK";
+            dateTuNgay.Value = DateTime.Now.Date.AddDays(-30);
         }
         string sql_dathay = "";
         string sql_chuathay = "";
@@ -133,25 +134,25 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
 
         private void tabDaThay_Click(object sender, EventArgs e)
         {
-           
-                Utilities.DataGridV.formatRows(dataGridView2, "DTDANHBO");
-                 
+
+            Utilities.DataGridV.formatRows(dataGridView2, "DTDANHBO");
+            Utilities.DataGridV.setSTT(dataGridView2, "DTSTT");
             
         }
 
         private void tabChuaThay_Click(object sender, EventArgs e)
         {
-           
-                Utilities.DataGridV.formatRows(dataGridChuaThay, "G_DANHBO");
-                 
+
+            Utilities.DataGridV.formatRows(dataGridChuaThay, "G_DANHBO");
+            Utilities.DataGridV.setSTT(dataGridChuaThay, "STT");
             
         }
 
         private void tabTroNgai_Click(object sender, EventArgs e)
         {
-           
-                Utilities.DataGridV.formatRows(dataGridLoi, "GG_DANHBO");
-                 
+
+            Utilities.DataGridV.formatRows(dataGridLoi, "GG_DANHBO");
+            Utilities.DataGridV.setSTT(dataGridLoi, "G_STT");
              
         }
 

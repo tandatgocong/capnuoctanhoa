@@ -20,6 +20,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             cbLoaiBangKe.ValueMember = "LOAIBK";
             cbLoaiBangKe.DisplayMember = "TENBANGKE";
             cbLoaiBangKe.SelectedValue = "DK";
+            dateTuNgay.Value = DateTime.Now.Date.AddDays(-30);
         }
          
         private void btXemThongTin_Click(object sender, EventArgs e)

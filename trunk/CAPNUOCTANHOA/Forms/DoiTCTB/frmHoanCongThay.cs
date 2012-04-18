@@ -34,7 +34,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             txtHieuDHGan.AutoCompleteCustomSource = namesCollection;
             this.txtSoBangKe.Focus();
             cbLoaiDHN.SelectedIndex = 0;
-            txtCapGan.SelectedIndex = 0; 
+            txtCapGan.SelectedIndex = 0;
+            dateNgayHCNhanh.Value = DateTime.Now.Date.AddDays(-1);
         }
 
         private Control txtKeypress;
@@ -121,19 +122,19 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 txtSoThanGo.Text = HCT_SOTHANGO;
                
                 string HCT_HIEUDHNGAN = dataBangKe.Rows[i].Cells["HCT_HIEUDHNGAN"].Value + "";
-                txtHieuDHGan.Text = HCT_HIEUDHNGAN;
+                txtHieuDHGan.Text = !HCT_HIEUDHNGAN.Equals("")? HCT_HIEUDHNGAN: "KENT";
 
                 string HCT_CODHNGAN = dataBangKe.Rows[i].Cells["HCT_CODHNGAN"].Value + "";
-                txtGoGan.Text = HCT_CODHNGAN;
+                txtGoGan.Text = !HCT_CODHNGAN.Equals("") ? HCT_CODHNGAN : "15";
 
                 string HCT_SOTHANGAN = dataBangKe.Rows[i].Cells["HCT_SOTHANGAN"].Value + "";
                 txtSoThanGan.Text = HCT_SOTHANGAN;
 
                 string HCT_CAP = dataBangKe.Rows[i].Cells["HCT_CAP"].Value + "";
-                txtCapGan.Text = HCT_CAP;
+                txtCapGan.Text = !HCT_CAP.Equals("") ? HCT_CAP : "C"; 
 
                 string HCT_CHISOGAN = dataBangKe.Rows[i].Cells["HCT_CHISOGAN"].Value + "";
-                txtChiSoGan.Text = HCT_CHISOGAN;
+                txtChiSoGan.Text = !HCT_CHISOGAN.Equals("") ? HCT_CHISOGAN : "0"; ;
                
                 string HCT_LOAIDHGAN = dataBangKe.Rows[i].Cells["HCT_LOAIDHGAN"].Value + "";
                 if ("False".Equals(HCT_LOAIDHGAN))
@@ -142,9 +143,10 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     cbLoaiDHN.SelectedIndex = 0;
                 
                 string HCT_NGAYGAN = dataBangKe.Rows[i].Cells["HCT_NGAYGAN"].Value + "";
-                txtNgayGan.Value = !"".Equals(HCT_NGAYGAN) ? DateTime.Parse(HCT_NGAYGAN) : DateTime.Now;
+                txtNgayGan.Value = !"".Equals(HCT_NGAYGAN) ? DateTime.Parse(HCT_NGAYGAN) : DateTime.Now.AddDays(-1);
+              
                 string HCT_CHITHAN = dataBangKe.Rows[i].Cells["GCHITHAN"].Value + "";
-                txtChiThan.Text = dataBangKe.Rows[i].Cells["GCHITHAN"].Value + ""; 
+                txtChiThan.Text = !HCT_CHITHAN.Equals("") ? HCT_CHITHAN : "VN/217";
 
                 string HCT_CHIGOC = dataBangKe.Rows[i].Cells["GCHIGOC"].Value + "";
                 txtChiGoc.Text = dataBangKe.Rows[i].Cells["GCHIGOC"].Value + "";
@@ -231,6 +233,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     if (ckTroNgai.Checked)
                     {
                         thaydh.HCT_TRONGAI = true;
+                        thaydh.HCT_NGAYGAN = txtNgayGan.Value;
                         thaydh.HCT_LYDOTRONGAI = this.txtLyDoTroNgai.Text;
                         thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
                         thaydh.HCT_CREATEDATE = DateTime.Now.Date;
@@ -332,13 +335,13 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
 
 
                         MessageBox.Show(this, "Cập Nhật Hoàn Công Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        try
-                        {
-                            dataBangKe.CurrentCell = dataBangKe.Rows[currentRow].Cells[0];
-                        }
-                        catch (Exception)
-                        {
-                        }
+                        //try
+                        //{
+                        //    dataBangKe.CurrentCell = dataBangKe.Rows[currentRow].Cells[0];
+                        //}
+                        //catch (Exception)
+                        //{
+                        //}
                     }
                     else
                     {
@@ -464,5 +467,17 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             }
              
         }
+
+        private void btXemThongTin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataBangKe_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+
+        }
+
+         
     }
 }
