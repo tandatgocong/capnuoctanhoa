@@ -53,7 +53,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 sql += " ,count(case when HCT_TRONGAI ='True' then 1 else null end) AS 'TRONGAI' ";
                 sql += " FROM TB_THAYDHN WHERE DHN_DANHBO IS NOT NULL " + gioihan;
 
-                string sql_detail = "SELECT (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) AS 'TENBK',DHN_LOAIBANGKE,COUNT(*) AS 'SOLUONGTHAY' ";
+                string sql_detail = "SELECT DHN_NGAYBAOTHAY,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) AS 'TENBK',DHN_LOAIBANGKE,COUNT(*) AS 'SOLUONGTHAY' ";
                 sql_detail += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='0' then 1 else null end)) AS 'CHUAGAN'";
                 sql_detail += " ,count(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) AS 'HOANTAT' ";
                 sql_detail += " ,count(case when HCT_TRONGAI ='True' then 1 else null end) AS 'TRONGAI' ";
@@ -95,8 +95,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 }
                 sql_chuathay += "ORDER BY DHN_NGAYBAOTHAY  ASC ";
                 sql_trongai += " ORDER BY DHN_NGAYBAOTHAY ASC ";
-                sql_detail += " GROUP BY (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)),DHN_LOAIBANGKE ";
-                sql_detail += " ORDER BY (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) ASC ";
+                sql_detail += " GROUP BY (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)),DHN_LOAIBANGKE,DHN_NGAYBAOTHAY ";
+                sql_detail += " ORDER BY DHN_NGAYBAOTHAY  DESC ";
 
                 dataTongKet.DataSource = DAL.LinQConnection.getDataTable(sql);
                 dataGridChuaThay.DataSource = DAL.LinQConnection.getDataTable(sql_chuathay);

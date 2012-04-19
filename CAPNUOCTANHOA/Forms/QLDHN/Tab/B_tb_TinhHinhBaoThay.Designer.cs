@@ -99,6 +99,7 @@
             this.checkTanBinh1 = new System.Windows.Forms.RadioButton();
             this.checkAll = new System.Windows.Forms.RadioButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DHN_NGAYBAOTHAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LBLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -340,11 +341,11 @@
             // 
             this.tabControl3.CanReorderTabs = true;
             this.tabControl3.Controls.Add(this.tabControlPanel6);
-            this.tabControl3.Location = new System.Drawing.Point(184, 82);
+            this.tabControl3.Location = new System.Drawing.Point(37, 82);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedTabFont = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold);
             this.tabControl3.SelectedTabIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(809, 407);
+            this.tabControl3.Size = new System.Drawing.Size(985, 407);
             this.tabControl3.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Dock;
             this.tabControl3.TabIndex = 1;
             this.tabControl3.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
@@ -358,7 +359,7 @@
             this.tabControlPanel6.Location = new System.Drawing.Point(0, 28);
             this.tabControlPanel6.Name = "tabControlPanel6";
             this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel6.Size = new System.Drawing.Size(809, 379);
+            this.tabControlPanel6.Size = new System.Drawing.Size(985, 379);
             this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
             this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -387,6 +388,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
+            this.DHN_NGAYBAOTHAY,
             this.LBLOAI,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn8,
@@ -406,7 +408,7 @@
             this.dataGridView1.RowHeadersWidth = 10;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(807, 377);
+            this.dataGridView1.Size = new System.Drawing.Size(983, 377);
             this.dataGridView1.TabIndex = 1;
             // 
             // tabItem6
@@ -768,6 +770,13 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 120;
             // 
+            // DHN_NGAYBAOTHAY
+            // 
+            this.DHN_NGAYBAOTHAY.DataPropertyName = "DHN_NGAYBAOTHAY";
+            this.DHN_NGAYBAOTHAY.HeaderText = "NGÀY BÁO THAY";
+            this.DHN_NGAYBAOTHAY.Name = "DHN_NGAYBAOTHAY";
+            this.DHN_NGAYBAOTHAY.Width = 170;
+            // 
             // LBLOAI
             // 
             this.LBLOAI.DataPropertyName = "DHN_LOAIBANGKE";
@@ -912,6 +921,7 @@
         private DevComponents.DotNetBar.TabItem tabItem6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DHN_NGAYBAOTHAY;
         private System.Windows.Forms.DataGridViewTextBoxColumn LBLOAI;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
