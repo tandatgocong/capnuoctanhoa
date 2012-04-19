@@ -98,5 +98,17 @@ namespace CAPNUOCTANHOA.DAL.DoiTCTB
             return ds;
         }
 
+        public static DataSet HoanCongNhanh(string ngay)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "select *, N'" + DAL.SYS.C_USERS._fullName + "' as 'NGUOIDUYET' FROM V_TCTB_HOANCONGNHANH WHERE  HCT_NGAYGAN=CONVERT(DATETIME,'" + ngay+ "',103) ORDER BY TENBK ASC ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "V_TCTB_HOANCONGNHANH");
+
+            return ds;
+        }
     }
 }
