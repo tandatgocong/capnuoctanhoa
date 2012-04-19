@@ -121,10 +121,10 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel1.Controls.Add(this.menuStrip3);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 32);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 62);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 30);
             this.ribbonPanel1.TabIndex = 1;
             // 
             // menuStrip3
@@ -645,9 +645,8 @@
             this.btChuyenBK.ForeColor = System.Drawing.Color.Black;
             this.btChuyenBK.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right1;
             this.btChuyenBK.Name = "btChuyenBK";
-            this.btChuyenBK.Size = new System.Drawing.Size(151, 23);
-            this.btChuyenBK.Text = "Chuyển Bảng Kê";
-            this.btChuyenBK.Visible = false;
+            this.btChuyenBK.Size = new System.Drawing.Size(188, 23);
+            this.btChuyenBK.Text = "Lấy Dữ Liệu Gắn Mới";
             this.btChuyenBK.Click += new System.EventHandler(this.btChuyenBK_Click);
             // 
             // baocaoTongKet

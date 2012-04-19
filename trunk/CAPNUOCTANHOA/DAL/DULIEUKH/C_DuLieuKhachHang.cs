@@ -39,6 +39,17 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             return null;
         }
 
+        public static void Insert(TB_DULIEUKHACHHANG tb) {
+            try
+            {
+                db.TB_DULIEUKHACHHANGs.InsertOnSubmit(tb);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
         public static void Update() {
             try
             {
