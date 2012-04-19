@@ -125,11 +125,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " FROM W_BAOCAO_LOAIKD_THAP INNER JOIN";
             sql += " (";
             sql += " SELECT TODS,";
-            sql += " (COUNT(case when (GB=11 AND TIEUTHU=0) then 1 else null end)) AS KN_SH0, (COUNT(case when (GB=11 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SH4,";
-            sql += " (COUNT(case when (GB IN (12,14,34,24) AND TIEUTHU=0)  then 1 else null end)) AS KN_SX0, (COUNT(case when (GB IN (12,14,34,24) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SX4,";
-            sql += " (COUNT(case when (GB IN (15,13,33,23) AND TIEUTHU=0) then 1 else null end)) AS KN_KD0, (COUNT(case when (GB IN (15,13,33,23) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_KD4,";
-            sql += " (COUNT(case when (GB IN (21,51,52) AND TIEUTHU=0) then 1 else null end)) AS KN_CC0, (COUNT(case when (GB IN (21,51,52) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_CC4,";
-            sql += " (COUNT(case when (GB=31 AND TIEUTHU=0) then 1 else null end)) AS KN_HCSN0, (COUNT(case when (GB=31 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_HCSN4	";
+            sql += " (COUNT(case when (GB=11 AND TIEUTHU=0) then 1 else null end)) AS KT_SH0, (COUNT(case when (GB=11 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_SH4,";
+            sql += " (COUNT(case when (GB IN (12,14,34,24) AND TIEUTHU=0)  then 1 else null end)) AS KT_SX0, (COUNT(case when (GB IN (12,14,34,24) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_SX4,";
+            sql += " (COUNT(case when (GB IN (15,13,33,23) AND TIEUTHU=0) then 1 else null end)) AS KT_KD0, (COUNT(case when (GB IN (15,13,33,23) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_KD4,";
+            sql += " (COUNT(case when (GB IN (21,51,52) AND TIEUTHU=0) then 1 else null end)) AS KT_CC0, (COUNT(case when (GB IN (21,51,52) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_CC4,";
+            sql += " (COUNT(case when (GB=31 AND TIEUTHU=0) then 1 else null end)) AS KT_HCSN0, (COUNT(case when (GB=31 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_HCSN4	";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS";
