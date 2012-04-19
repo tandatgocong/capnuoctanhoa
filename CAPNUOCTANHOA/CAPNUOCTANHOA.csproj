@@ -70,6 +70,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="VniToUnicode">
+      <HintPath>lib\VniToUnicode.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Billding\BILLING.cs" />
@@ -217,6 +220,12 @@
     <Compile Include="Forms\QLDHN\frm_KiemTraThayDinhKy.Designer.cs">
       <DependentUpon>frm_KiemTraThayDinhKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\frm_LayDuLieuGanMoi_Ky.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_LayDuLieuGanMoi_Ky.Designer.cs">
+      <DependentUpon>frm_LayDuLieuGanMoi_Ky.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\frm_Option_BT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +334,7 @@
     <Compile Include="LayDuLieu\frm_baothay_lay.Designer.cs">
       <DependentUpon>frm_baothay_lay.cs</DependentUpon>
     </Compile>
+    <Compile Include="lib\app.Designer.cs" />
     <Compile Include="LinQ\CapNuocTanHoa.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -351,6 +361,11 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="bin\Debug\app.conf" />
+    <None Include="bin\Debug\CAPNUOCTANHOA.exe.config" />
+    <None Include="bin\Debug\CAPNUOCTANHOA.vshost.exe.config" />
+    <None Include="bin\Debug\News.xls" />
+    <None Include="bin\Debug\user.dat" />
     <None Include="Forms\DoiTCTB\BC\HOANCONGNHANH.xsc">
       <DependentUpon>HOANCONGNHANH.xsd</DependentUpon>
     </None>
@@ -384,6 +399,11 @@
     <None Include="Forms\QLDHN\BC\BC_DONGHONUOC.xss">
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </None>
+    <None Include="lib\app.conf" />
+    <None Include="lib\app.settings" />
+    <None Include="lib\News.xls" />
+    <None Include="lib\QuyetToanGanDHN.xls" />
+    <None Include="lib\user.dat" />
     <None Include="LinQ\CapNuocTanHoa.dbml.layout">
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </None>
@@ -447,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_KiemTraThayDinhKy.resx">
       <DependentUpon>frm_KiemTraThayDinhKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_LayDuLieuGanMoi_Ky.resx">
+      <DependentUpon>frm_LayDuLieuGanMoi_Ky.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_Option_BT.resx">
       <DependentUpon>frm_Option_BT.cs</DependentUpon>
@@ -595,9 +618,33 @@
     <None Include="Resources\Last.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\CAPNUOCTANHOA.exe" />
+    <Content Include="bin\Debug\CAPNUOCTANHOA.pdb" />
+    <Content Include="bin\Debug\CAPNUOCTANHOA.vshost.exe" />
+    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="bin\Debug\DevComponents.DotNetBar2.dll" />
+    <Content Include="bin\Debug\icon.ico" />
+    <Content Include="bin\Debug\IrisSkin2.dll" />
+    <Content Include="bin\Debug\log-file.txt" />
+    <Content Include="bin\Debug\log4net.dll" />
+    <Content Include="bin\Debug\logo.ico" />
+    <Content Include="bin\Debug\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="bin\Debug\String_Indentity.dll" />
+    <Content Include="bin\Debug\String_Indentity_.dll" />
+    <Content Include="lib\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="lib\DevComponents.DotNetBar2.dll" />
+    <Content Include="lib\icon.ico" />
+    <Content Include="lib\IrisSkin2.dll" />
+    <Content Include="lib\log4net.dll" />
+    <Content Include="lib\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="lib\String_Indentity.dll" />
+    <Content Include="lib\String_Indentity_.dll" />
     <Content Include="O %2852%29.ico" />
     <None Include="Resources\Arrow2 Right.png" />
     <None Include="Resources\Puzzle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
