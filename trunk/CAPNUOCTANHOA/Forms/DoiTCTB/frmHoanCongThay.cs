@@ -233,7 +233,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     if (ckTroNgai.Checked)
                     {
                         thaydh.HCT_TRONGAI = true;
-                        thaydh.HCT_NGAYGAN = txtNgayGan.Value;
+                        thaydh.HCT_NGAYGAN = txtNgayGan.Value.Date;
                         thaydh.HCT_LYDOTRONGAI = this.txtLyDoTroNgai.Text;
                         thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
                         thaydh.HCT_CREATEDATE = DateTime.Now.Date;

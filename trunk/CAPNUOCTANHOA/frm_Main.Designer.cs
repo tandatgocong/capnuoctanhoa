@@ -121,10 +121,10 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel1.Controls.Add(this.menuStrip3);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 32);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 30);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 62);
             this.ribbonPanel1.TabIndex = 1;
             // 
             // menuStrip3
@@ -497,8 +497,9 @@
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Blue;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(331, 17);
-            this.toolStripStatusLabel1.Text = "© Copyright  2012 - Tan Hoa Water Supply Company Limted.";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(514, 17);
+            this.toolStripStatusLabel1.Text = "© Copyright  2012 - Tan Hoa Water Supply Company Limted. Developed by Tan Hoa\'s I" +
+    "T Group.";
             // 
             // reflectionImage1
             // 
@@ -514,11 +515,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.label1.Location = new System.Drawing.Point(166, 389);
+            this.label1.Location = new System.Drawing.Point(171, 439);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(696, 40);
+            this.label1.Size = new System.Drawing.Size(674, 40);
             this.label1.TabIndex = 35;
-            this.label1.Text = "HỆ QUẢN LÝ THÔNG TIN KHÁCH HÀNG";
+            this.label1.Text = "QUẢN LÝ THÔNG TIN ĐỒNG HỒ NƯỚC";
             // 
             // labelX4
             // 

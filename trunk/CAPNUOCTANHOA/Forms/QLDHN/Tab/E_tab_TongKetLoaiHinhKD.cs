@@ -18,7 +18,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             InitializeComponent();
             this.txtNam.Text = DateTime.Now.Year.ToString();
             cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
-            panel1.Controls.Clear();
+     
             panel12.Controls.Add(new tab_tab_TongKetLoaiHinhKD());
         }
 
