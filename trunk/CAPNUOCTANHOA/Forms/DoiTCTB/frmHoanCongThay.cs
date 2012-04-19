@@ -465,17 +465,20 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 }
                 
             }
-             
-        }
-
-        private void btXemThongTin_Click(object sender, EventArgs e)
-        {
 
         }
 
         private void dataBangKe_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
 
+        }
+
+        private void btXemThongTin_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_HoanCongNhanh();
+            rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.HoanCongNhanh(Utilities.DateToString.NgayVN(dateNgayHCNhanh.Value)));
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
         }
 
          

@@ -12,20 +12,18 @@
               <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString (Settings)" DbObjectName="CAPNUOCTANHOA.dbo.V_TCTB_HOANCONGNHANH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT SOBANGKE, NGAYBAOTHAY, NGAYHOANTAT, SOLUONGTHAY, TRONGAI, QUAN, GHICHU FROM dbo.V_TCTB_HOANCONGNHANH</CommandText>
+                    <CommandText>SELECT HCT_NGAYGAN, DHN_NGAYBAOTHAY, TENBK, HOANTAT, TRONGAI FROM dbo.V_TCTB_HOANCONGNHANH</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="SOBANGKE" DataSetColumn="SOBANGKE" />
-              <Mapping SourceColumn="NGAYBAOTHAY" DataSetColumn="NGAYBAOTHAY" />
-              <Mapping SourceColumn="NGAYHOANTAT" DataSetColumn="NGAYHOANTAT" />
-              <Mapping SourceColumn="SOLUONGTHAY" DataSetColumn="SOLUONGTHAY" />
+              <Mapping SourceColumn="HCT_NGAYGAN" DataSetColumn="HCT_NGAYGAN" />
+              <Mapping SourceColumn="DHN_NGAYBAOTHAY" DataSetColumn="DHN_NGAYBAOTHAY" />
+              <Mapping SourceColumn="TENBK" DataSetColumn="TENBK" />
+              <Mapping SourceColumn="HOANTAT" DataSetColumn="HOANTAT" />
               <Mapping SourceColumn="TRONGAI" DataSetColumn="TRONGAI" />
-              <Mapping SourceColumn="QUAN" DataSetColumn="QUAN" />
-              <Mapping SourceColumn="GHICHU" DataSetColumn="GHICHU" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -40,43 +38,17 @@
         <xs:element name="V_TCTB_HOANCONGNHANH" msprop:Generator_TableClassName="V_TCTB_HOANCONGNHANHDataTable" msprop:Generator_TableVarName="tableV_TCTB_HOANCONGNHANH" msprop:Generator_TablePropName="V_TCTB_HOANCONGNHANH" msprop:Generator_RowDeletingName="V_TCTB_HOANCONGNHANHRowDeleting" msprop:Generator_UserTableName="V_TCTB_HOANCONGNHANH" msprop:Generator_RowChangingName="V_TCTB_HOANCONGNHANHRowChanging" msprop:Generator_RowEvHandlerName="V_TCTB_HOANCONGNHANHRowChangeEventHandler" msprop:Generator_RowDeletedName="V_TCTB_HOANCONGNHANHRowDeleted" msprop:Generator_RowEvArgName="V_TCTB_HOANCONGNHANHRowChangeEvent" msprop:Generator_RowChangedName="V_TCTB_HOANCONGNHANHRowChanged" msprop:Generator_RowClassName="V_TCTB_HOANCONGNHANHRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="SOBANGKE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSOBANGKE" msprop:Generator_ColumnPropNameInRow="SOBANGKE" msprop:Generator_ColumnPropNameInTable="SOBANGKEColumn" msprop:Generator_UserColumnName="SOBANGKE" minOccurs="0">
+              <xs:element name="HCT_NGAYGAN" msprop:Generator_ColumnVarNameInTable="columnHCT_NGAYGAN" msprop:Generator_ColumnPropNameInRow="HCT_NGAYGAN" msprop:Generator_ColumnPropNameInTable="HCT_NGAYGANColumn" msprop:Generator_UserColumnName="HCT_NGAYGAN" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DHN_NGAYBAOTHAY" msprop:Generator_ColumnVarNameInTable="columnDHN_NGAYBAOTHAY" msprop:Generator_ColumnPropNameInRow="DHN_NGAYBAOTHAY" msprop:Generator_ColumnPropNameInTable="DHN_NGAYBAOTHAYColumn" msprop:Generator_UserColumnName="DHN_NGAYBAOTHAY" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TENBK" msprop:Generator_ColumnVarNameInTable="columnTENBK" msprop:Generator_ColumnPropNameInRow="TENBK" msprop:Generator_ColumnPropNameInTable="TENBKColumn" msprop:Generator_UserColumnName="TENBK" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NGAYBAOTHAY" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNGAYBAOTHAY" msprop:Generator_ColumnPropNameInRow="NGAYBAOTHAY" msprop:Generator_ColumnPropNameInTable="NGAYBAOTHAYColumn" msprop:Generator_UserColumnName="NGAYBAOTHAY" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="NGAYHOANTAT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNGAYHOANTAT" msprop:Generator_ColumnPropNameInRow="NGAYHOANTAT" msprop:Generator_ColumnPropNameInTable="NGAYHOANTATColumn" msprop:Generator_UserColumnName="NGAYHOANTAT" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="SOLUONGTHAY" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSOLUONGTHAY" msprop:Generator_ColumnPropNameInRow="SOLUONGTHAY" msprop:Generator_ColumnPropNameInTable="SOLUONGTHAYColumn" msprop:Generator_UserColumnName="SOLUONGTHAY" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TRONGAI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRONGAI" msprop:Generator_ColumnPropNameInRow="TRONGAI" msprop:Generator_ColumnPropNameInTable="TRONGAIColumn" msprop:Generator_UserColumnName="TRONGAI" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="QUAN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQUAN" msprop:Generator_ColumnPropNameInRow="QUAN" msprop:Generator_ColumnPropNameInTable="QUANColumn" msprop:Generator_UserColumnName="QUAN" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="4" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="GHICHU" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGHICHU" msprop:Generator_ColumnPropNameInRow="GHICHU" msprop:Generator_ColumnPropNameInTable="GHICHUColumn" msprop:Generator_UserColumnName="GHICHU" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="HOANTAT" msprop:Generator_ColumnVarNameInTable="columnHOANTAT" msprop:Generator_ColumnPropNameInRow="HOANTAT" msprop:Generator_ColumnPropNameInTable="HOANTATColumn" msprop:Generator_UserColumnName="HOANTAT" type="xs:int" minOccurs="0" />
+              <xs:element name="TRONGAI" msprop:Generator_ColumnVarNameInTable="columnTRONGAI" msprop:Generator_ColumnPropNameInRow="TRONGAI" msprop:Generator_ColumnPropNameInTable="TRONGAIColumn" msprop:Generator_UserColumnName="TRONGAI" type="xs:int" minOccurs="0" />
               <xs:element name="NGUOIDUYET" msprop:Generator_ColumnVarNameInTable="columnNGUOIDUYET" msprop:Generator_ColumnPropNameInRow="NGUOIDUYET" msprop:Generator_ColumnPropNameInTable="NGUOIDUYETColumn" msprop:Generator_UserColumnName="NGUOIDUYET" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

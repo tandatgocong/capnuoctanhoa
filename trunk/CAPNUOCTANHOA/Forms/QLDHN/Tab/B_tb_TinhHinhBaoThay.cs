@@ -46,6 +46,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 }
                 gioihan = gioihan.Replace("DANHBO", "DHN_DANHBO");
 
+
                 string sql = "SELECT COUNT(DISTINCT (convert(varchar(20),DHN_SOBANGKE)+'-'+DHN_TODS)) AS 'TONG',COUNT(*) AS 'SOLUONGTHAY' ";
                 sql += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='True' then 1 else null end)) AS 'CHUAGAN'";
                 sql += " ,count(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) AS 'HOANTAT' ";
@@ -107,9 +108,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
                 Utilities.DataGridV.formatRows(dataGridLoi, "GG_DANHBO");
                 Utilities.DataGridV.setSTT(dataGridLoi, "G_STT");
-
-                
-                Utilities.DataGridV.formatRows(dataGridView1);
+                               
+               Utilities.DataGridV.formatRows(dataGridView1);
             }
             catch (Exception ex)
             {
