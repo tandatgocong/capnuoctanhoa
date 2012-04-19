@@ -24,9 +24,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
             int nam = int.Parse(txtNam.Text.Trim());
-            int dot = int.Parse(cbDotDS.Items[cbKyDS.SelectedIndex].ToString());
+            int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
             update(ky, nam,dot);
-            format();
+             format();
         }
         public void update(int ky, int nam, int dot)
         {
