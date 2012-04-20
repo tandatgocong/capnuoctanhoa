@@ -50,6 +50,11 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
                 log.Error(ex.Message);
             }
         }
+        public static List<TB_DULIEUKHACHHANG> getAllKHACHHANG()
+        {
+            var query = from q in db.TB_DULIEUKHACHHANGs select q;
+            return query.ToList();
+        }
         public static void Update() {
             try
             {

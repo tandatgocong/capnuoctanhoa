@@ -10,15 +10,21 @@ using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CAPNUOCTANHOA.LinQ;
 using System.Data.SqlClient;
+using System.Configuration;
+using log4net;
 
 namespace CAPNUOCTANHOA
 {
     public partial class Form1 : Form
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Form1).Name);
         public Form1()
         {
             InitializeComponent();
-           ReportDocument rp = new rpt_BCBangKe_A3();
+
+            
+           
+
             //DataSet ds = new DataSet();
             //CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             //db.Connection.Open();
@@ -40,9 +46,23 @@ namespace CAPNUOCTANHOA
             ////ct.Fill(ds, "KH_TC_BAOCAO");
 
             //rp.SetDataSource(ds);
-            crystalReportViewer1.ReportSource = rp;
+           // crystalReportViewer1.ReportSource = rp;
             //DateTime date = DateTime.Now.Date;
             //label1.Text = date.AddYears(-5).ToShortDateString();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile2"].ConnectionString;
+
+            List<TB_DULIEUKHACHHANG> list = DAL.DULIEUKH.C_DuLieuKhachHang.getAllKHACHHANG();
+            foreach (var item in list)
+            {
+               // string insert = "UPDATE HANDHELD SET HODONG='" + item.HOPDONG + "', TENKH='" + item.HOTEN + "', SONHA='" + item.SONHA + "',TENDUONG='" + item.TENDUONG + "',PHUONG='" + item.PHUONG + "',QUAN='" + item.QUAN + "' WHERE DANHBO='" + item.DANHBO + "' ";
+                log.Info(item.DANHBO + "");
+                DAL.OledbConnection.ExecuteCommand(connectionString, item.HOPDONG, item.HOTEN, item.SONHA, item.TENDUONG, item.PHUONG, item.QUAN, item.DANHBO);
+              }
         }
     }
 }
