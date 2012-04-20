@@ -35,7 +35,33 @@ namespace CAPNUOCTANHOA.DAL
             }
             return 0;
         }
-
+        public static int ExecuteCommand(string connectionSting,  string HODONG, string TENKH, string SONHA, string TENDUONG, string PHUONG, string QUAN, string  DANHBO )
+        {
+            OleDbConnection objConnection = new OleDbConnection(connectionSting);
+            try
+            {
+                objConnection.Open();
+                OleDbCommand objCmd = new OleDbCommand();
+                string insert = "UPDATE HANDHELD SET HODONG=@HOPDONG, TENKH=@TENKH, SONHA=@SONHA,TENDUONG=@TENDUONG,PHUONG=@PHUONG,QUAN=@QUAN WHERE DANHBO=@DANHBO ";
+                objCmd.CommandText =insert;
+                objCmd.Parameters.Add("@DANHBO", OleDbType.VarChar).Value = DANHBO;
+                objCmd.Parameters.Add("@HODONG", OleDbType.VarChar).Value = HODONG;
+                objCmd.Parameters.Add("@TENKH", OleDbType.VarChar).Value = TENKH;
+                objCmd.Parameters.Add("@SONHA", OleDbType.VarChar).Value = SONHA;
+                objCmd.Parameters.Add("@PHUONG", OleDbType.VarChar).Value = PHUONG;
+                objCmd.Parameters.Add("@QUAN", OleDbType.VarChar).Value = QUAN;
+                return objCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                log.Error("OleDbConnection ExecuteCommand" + ex.Message);
+            }
+            finally
+            {
+                objConnection.Close();
+            }
+            return 0;
+        }
 
         public static DataTable getDataTable(string connectionSting,string sql)
         {

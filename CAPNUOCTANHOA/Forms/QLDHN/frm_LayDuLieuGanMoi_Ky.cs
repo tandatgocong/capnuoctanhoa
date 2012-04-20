@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using CAPNUOCTANHOA.LinQ;
+using log4net;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -67,7 +68,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             dataGanMoiBK.DataSource = table;
             formatRows();
         }
-
+       
+        private static readonly ILog log = LogManager.GetLogger(typeof(frm_LayDuLieuGanMoi_Ky).Name);
+       
         private void next_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dataGanMoiBK.Rows.Count; i++)
@@ -83,20 +86,39 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string DINHMUC = dataGanMoiBK.Rows[i].Cells["DINHMUC"].Value + "";
                 string hieuluc = dataGanMoiBK.Rows[i].Cells["hieuluc"].Value + "";
                 string NGAYGANTLK = dataGanMoiBK.Rows[i].Cells["NGAYGANTLK"].Value + "";
-                string HIEU = dataGanMoiBK.Rows[i].Cells["HIEU"].Value + "";
+                string HIEU = (dataGanMoiBK.Rows[i].Cells["HIEU"].Value + "").Equals("") ? "KEN" : (dataGanMoiBK.Rows[i].Cells["HIEU"].Value + "");
                 string COTLK = dataGanMoiBK.Rows[i].Cells["COTLK"].Value + "";
                 string SOTLK = dataGanMoiBK.Rows[i].Cells["SOTLK"].Value + "";
                 string CHISOTLK = dataGanMoiBK.Rows[i].Cells["CHISOTLK"].Value + "";
                 string SoHo = dataGanMoiBK.Rows[i].Cells["SoHo"].Value + "";             
                 VniToUnicode.ClassViToUnicode vn = new VniToUnicode.ClassViToUnicode();
-                TB_DULIEUKHACHHANG tb = new TB_DULIEUKHACHHANG();
-                tb.DANHBO = DANHBO; tb.HOPDONG = HOPDONG; tb.HOTEN = vn.VniToKD(HOTEN).ToUpper().Replace("(DD "+SoHo+" HO)", "");
-                tb.SONHA = SONHA; tb.TENDUONG = DUONG; tb.QUAN = MAQP.Substring(0, 2); tb.PHUONG = MAQP.Substring(2);
-                tb.GIABIEU = GIABIEU; tb.DINHMUC = DINHMUC; tb.NGAYGANDH = NGAYGANTLK;
-                tb.NGAYTHAY = DateTime.Parse(NGAYGANTLK); tb.HIEUDH = "".Equals(HIEU) ? "KEN" : HIEU;
-                tb.CODH = COTLK; tb.SOTHANDH = SOTLK; 
-                tb.CHISOKYTRUOC = "0";
-                DAL.DULIEUKH.C_DuLieuKhachHang.Insert(tb);
+                
+                string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC) VALUES ";
+                insert += "('" + DANHBO + "','" + HOPDONG + "','" + vn.VniToKD(HOTEN).ToUpper().Replace("(DD " + SoHo + " HO)", "") + "','" + vn.VniToKD(SONHA).ToUpper() + "','" + vn.VniToKD(DUONG).ToUpper() + "','" + MAQP.Substring(0, 2) + "','" + MAQP.Substring(2) + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGANTLK + "','" + DateTime.Parse(NGAYGANTLK) + "','" + HIEU + "','" + COTLK + "','" + SOTLK.ToUpper() + "','0')";
+
+                log.Info(DANHBO + "-----" + vn.VniToKD(HOTEN).ToUpper().Replace("(DD " + SoHo + " HO)", ""));
+                DAL.LinQConnection.ExecuteCommand(insert);
+
+
+                //TB_DULIEUKHACHHANG tb = new TB_DULIEUKHACHHANG();
+                //tb.DANHBO = DANHBO; 
+                //tb.HOPDONG = HOPDONG; 
+                //tb.HOTEN =  vn.VniToKD(HOTEN).ToUpper().Replace("(DD " + SoHo + " HO)", "")
+                //tb.SONHA = SONHA;
+                //tb.TENDUONG = vn.VniToKD(DUONG).ToUpper(); 
+                //tb.QUAN = MAQP.Substring(0, 2); 
+                //tb.PHUONG = MAQP.Substring(2);
+                //tb.GIABIEU = GIABIEU; 
+                //tb.DINHMUC = DINHMUC;
+                //tb.NGAYGANDH = NGAYGANTLK;
+                //tb.NGAYTHAY = DateTime.Parse(NGAYGANTLK);
+                //tb.HIEUDH = "".Equals(HIEU) ? "KEN" : HIEU;
+                //tb.CODH = COTLK;
+                //tb.SOTHANDH = SOTLK.ToUpper(); 
+                //tb.CHISOKYTRUOC = "0";
+                //log.Info(tb.DANHBO + "----" + tb.HOTEN);
+                //DAL.DULIEUKH.C_DuLieuKhachHang.Insert(tb);
+                
               
             }
 

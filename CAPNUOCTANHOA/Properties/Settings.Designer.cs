@@ -37,17 +37,6 @@ namespace CAPNUOCTANHOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" +
-            ";Password=P@ssw0rd@123")]
-        public string CAPNUOCTANHOAConnectionString {
-            get {
-                return ((string)(this["CAPNUOCTANHOAConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER_HP380\\SQLEXPRESS;Initial Catalog=DocSo_PHT;Persist Security In" +
             "fo=True;User ID=sa;Password=P@ssw0rd@123")]
         public string DocSo_PHTConnectionString {
@@ -59,11 +48,31 @@ namespace CAPNUOCTANHOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\TC_HeQLHS-XP2000.mdb;Persist Secu" +
-            "rity Info=True;Jet OLEDB:Database Password=25874")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\TANHOA.mdb")]
         public string AccessFile2 {
             get {
                 return ((string)(this["AccessFile2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER_HP380\\SQLEXPRESS;Initial Catalog=CAPNUOCTANHOA;Persist Securit" +
+            "y Info=True;User ID=sa;Password=P@ssw0rd@123")]
+        public string CAPNUOCTANHOAConnectionString {
+            get {
+                return ((string)(this["CAPNUOCTANHOAConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\TANHOA.mdb")]
+        public string TANHOAConnectionString {
+            get {
+                return ((string)(this["TANHOAConnectionString"]));
             }
         }
     }
