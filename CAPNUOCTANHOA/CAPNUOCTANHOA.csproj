@@ -304,6 +304,17 @@
     <Compile Include="Forms\QLDHN\Tab\B_tb_TinhHinhBaoThay.Designer.cs">
       <DependentUpon>B_tb_TinhHinhBaoThay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\Tab\TabBC\rpt_tab_CodeKy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_tab_CodeKy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\TabBC\tabBaoCao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tabBaoCao.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\frm_Reports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,6 +409,17 @@
     </None>
     <None Include="Forms\QLDHN\BC\BC_DONGHONUOC.xss">
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\Tab\TabBC\tabBaoCao.xsc">
+      <DependentUpon>tabBaoCao.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\Tab\TabBC\tabBaoCao.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tabBaoCao.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\Tab\TabBC\tabBaoCao.xss">
+      <DependentUpon>tabBaoCao.xsd</DependentUpon>
     </None>
     <None Include="lib\app.conf" />
     <None Include="lib\app.settings" />
@@ -511,6 +533,10 @@
     <EmbeddedResource Include="Forms\QLDHN\Tab\B_tb_TinhHinhBaoThay.resx">
       <DependentUpon>B_tb_TinhHinhBaoThay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\rpt_tab_CodeKy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_tab_CodeKy.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\frm_Reports.resx">
       <DependentUpon>frm_Reports.cs</DependentUpon>
     </EmbeddedResource>
@@ -558,64 +584,30 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Applications.png" />
+    <None Include="Resources\Arrow2 Right.png" />
+    <None Include="Resources\calc.ico" />
+    <None Include="Resources\daoduong.png" />
+    <None Include="Resources\doimk.png" />
+    <None Include="Resources\Excel.ico" />
+    <None Include="Resources\First.png" />
+    <None Include="Resources\icon.ico" />
+    <None Include="Resources\Last.png" />
+    <None Include="Resources\Lock.png" />
+    <None Include="Resources\logocty.png" />
+    <None Include="Resources\mokhoa.png" />
+    <None Include="Resources\MSACCESS.ico" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\Plus.png" />
+    <None Include="Resources\Puzzle.png" />
+    <None Include="Resources\Stats2.png" />
+    <None Include="Resources\Symbol Blue Add.jpg" />
+    <None Include="Resources\thoat.png" />
+    <None Include="Resources\WINWORD.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\calc.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WINWORD.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Excel.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MSACCESS.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logocty.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Applications.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ok.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Symbol Blue Add.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Plus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mokhoa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doimk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Lock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\thoat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Stats2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\daoduong.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\First.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Last.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\CAPNUOCTANHOA.exe" />
@@ -640,8 +632,68 @@
     <Content Include="lib\String_Indentity.dll" />
     <Content Include="lib\String_Indentity_.dll" />
     <Content Include="O %2852%29.ico" />
-    <None Include="Resources\Arrow2 Right.png" />
-    <None Include="Resources\Puzzle.png" />
+    <Content Include="Resources\Arrow2 Left.png" />
+    <Content Include="Resources\bt_bg.png" />
+    <Content Include="Resources\calendar.gif" />
+    <Content Include="Resources\check2.ico" />
+    <Content Include="Resources\Clipboard Paste.png" />
+    <Content Include="Resources\Currency Euro.png" />
+    <Content Include="Resources\currency_dollar.ico" />
+    <Content Include="Resources\daoduong.jpg" />
+    <Content Include="Resources\delete.ico" />
+    <Content Include="Resources\delete2.ico" />
+    <Content Include="Resources\document_add.ico" />
+    <Content Include="Resources\document_edit.ico" />
+    <Content Include="Resources\document_edit1.ico" />
+    <Content Include="Resources\document_into.ico" />
+    <Content Include="Resources\document_into.png" />
+    <Content Include="Resources\document_into1.png" />
+    <Content Include="Resources\document_out.ico" />
+    <Content Include="Resources\donkh.png" />
+    <Content Include="Resources\dotnhandon.png" />
+    <Content Include="Resources\dutoan.png" />
+    <Content Include="Resources\ex.gif" />
+    <Content Include="Resources\exit Icon.jpg" />
+    <Content Include="Resources\exits.jpg" />
+    <Content Include="Resources\giaohoso.png" />
+    <Content Include="Resources\head.png" />
+    <Content Include="Resources\home.ico" />
+    <Content Include="Resources\hosokh.ico" />
+    <Content Include="Resources\icon.png" />
+    <Content Include="Resources\Icon_maps.png" />
+    <Content Include="Resources\ie.ico" />
+    <Content Include="Resources\imageres.dll_I0062_0409.ico" />
+    <Content Include="Resources\InkWatson.exe_I012c_0409.ico" />
+    <Content Include="Resources\key.ico" />
+    <Content Include="Resources\key1.ico" />
+    <Content Include="Resources\lock2.ico" />
+    <Content Include="Resources\login.png" />
+    <Content Include="Resources\logo.ico" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\Loop.png" />
+    <Content Include="Resources\Man.png" />
+    <Content Include="Resources\Next.png" />
+    <Content Include="Resources\note_add.ico" />
+    <Content Include="Resources\note_edit.ico" />
+    <Content Include="Resources\Previous.png" />
+    <Content Include="Resources\print.ico" />
+    <Content Include="Resources\ReFFlective %2810%29.ico" />
+    <Content Include="Resources\refresh.ico" />
+    <Content Include="Resources\save.ico" />
+    <Content Include="Resources\search.png" />
+    <Content Include="Resources\stop.ico" />
+    <Content Include="Resources\thicong.png" />
+    <Content Include="Resources\undo.jpg" />
+    <Content Include="Resources\update.ico" />
+    <Content Include="Resources\User.png" />
+    <Content Include="Resources\users1.ico" />
+    <Content Include="Resources\user_add.ico" />
+    <Content Include="Resources\user_delete.ico" />
+    <Content Include="Resources\user_find.ico" />
+    <Content Include="Resources\view.ico" />
+    <Content Include="Resources\Write2.png" />
+    <Content Include="Resources\Write3.png" />
+    <Content Include="Resources\x.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

@@ -102,6 +102,13 @@ namespace CAPNUOCTANHOA.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap ex {
+            get {
+                object obj = ResourceManager.GetObject("ex", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Excel {
             get {
                 object obj = ResourceManager.GetObject("Excel", resourceCulture);
