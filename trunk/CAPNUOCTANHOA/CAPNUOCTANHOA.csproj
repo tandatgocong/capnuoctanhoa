@@ -238,6 +238,23 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Forms\QLDHN\SODOCSO\frm_SoDocSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\SODOCSO\frm_SoDocSo.Designer.cs">
+      <DependentUpon>frm_SoDocSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_SoDocSo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\SODOCSO\SODOCSO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SODOCSO.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\Tab\G_tab_DiemCodeTieuThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -410,6 +427,17 @@
     <None Include="Forms\QLDHN\BC\BC_DONGHONUOC.xss">
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\SODOCSO\SODOCSO.xsc">
+      <DependentUpon>SODOCSO.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\SODOCSO\SODOCSO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SODOCSO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\SODOCSO\SODOCSO.xss">
+      <DependentUpon>SODOCSO.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\Tab\TabBC\tabBaoCao.xsc">
       <DependentUpon>tabBaoCao.xsd</DependentUpon>
     </None>
@@ -499,6 +527,13 @@
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_BCBangKe_A3_thu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BCBangKe_A3_thu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\SODOCSO\frm_SoDocSo.resx">
+      <DependentUpon>frm_SoDocSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SoDocSo.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\G_tab_DiemCodeTieuThu.resx">
       <DependentUpon>G_tab_DiemCodeTieuThu.cs</DependentUpon>
