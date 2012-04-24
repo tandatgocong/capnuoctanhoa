@@ -53,7 +53,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(306, 52);
+            this.btThem.Location = new System.Drawing.Point(296, 59);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(75, 23);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -63,15 +63,16 @@
             // 
             // txtSoBangKe
             // 
-            this.txtSoBangKe.Location = new System.Drawing.Point(102, 49);
+            this.txtSoBangKe.Location = new System.Drawing.Point(92, 56);
             this.txtSoBangKe.Name = "txtSoBangKe";
             this.txtSoBangKe.Size = new System.Drawing.Size(184, 26);
             this.txtSoBangKe.TabIndex = 18;
+            this.txtSoBangKe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoBangKe_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 52);
+            this.label1.Location = new System.Drawing.Point(26, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 19);
             this.label1.TabIndex = 17;
@@ -81,6 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(426, 191);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.txtSoBangKe);

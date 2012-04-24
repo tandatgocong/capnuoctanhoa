@@ -33,5 +33,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO
                 this.WindowState = FormWindowState.Maximized;
             }
         }
+
+        private void txtSoBangKe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+
+                if ("".Equals(this.txtSoBangKe.Text))
+                {
+                    MessageBox.Show(this, "Nhập Lộ Trình Đọc Số.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtSoBangKe.Focus();
+                }
+                else
+                {
+                    ReportDocument rp = new rpt_SoDocSo();
+                    rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo(txtSoBangKe.Text));
+                    crystalReportViewer1.ReportSource = rp;
+                    this.crystalReportViewer1.Visible = true;
+                    this.WindowState = FormWindowState.Maximized;
+                }
+            }
+        }
     }
 }

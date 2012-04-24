@@ -83,6 +83,7 @@
             this.btChuyenBK = new System.Windows.Forms.ToolStripMenuItem();
             this.baocaoTongKet = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLayDuLieuGanMoi = new System.Windows.Forms.ToolStripMenuItem();
+            this.chiso = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.menuHoanCongThay = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,7 +94,6 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.chiso = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
@@ -111,6 +111,7 @@
             // 
             // menuHeThong
             // 
+            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -121,12 +122,11 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel1.Controls.Add(this.menuStrip3);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 32);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 62);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 30);
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip3
             // 
@@ -569,8 +569,8 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -604,6 +604,7 @@
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel2.Size = new System.Drawing.Size(1038, 30);
             this.ribbonPanel2.TabIndex = 5;
+            this.ribbonPanel2.Visible = false;
             // 
             // menuStrip1
             // 
@@ -669,6 +670,15 @@
             this.menuLayDuLieuGanMoi.Visible = false;
             this.menuLayDuLieuGanMoi.Click += new System.EventHandler(this.menuLayDuLieuGanMoi_Click);
             // 
+            // chiso
+            // 
+            this.chiso.ForeColor = System.Drawing.Color.Black;
+            this.chiso.Image = global::CAPNUOCTANHOA.Properties.Resources.Puzzle;
+            this.chiso.Name = "chiso";
+            this.chiso.Size = new System.Drawing.Size(124, 23);
+            this.chiso.Text = "In Sổ Đọc Số";
+            this.chiso.Click += new System.EventHandler(this.chiso_Click);
+            // 
             // ribbonPanel3
             // 
             this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -725,7 +735,6 @@
             // 
             // menuDoiQLDHN
             // 
-            this.menuDoiQLDHN.Checked = true;
             this.menuDoiQLDHN.Name = "menuDoiQLDHN";
             this.menuDoiQLDHN.Panel = this.ribbonPanel2;
             this.menuDoiQLDHN.Text = "Đội QLĐHN";
@@ -758,15 +767,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
             this.statusStrip1.TabIndex = 36;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // chiso
-            // 
-            this.chiso.ForeColor = System.Drawing.Color.Black;
-            this.chiso.Image = global::CAPNUOCTANHOA.Properties.Resources.Puzzle;
-            this.chiso.Name = "chiso";
-            this.chiso.Size = new System.Drawing.Size(141, 23);
-            this.chiso.Text = "Chia Sổ Đọc Số";
-            this.chiso.Click += new System.EventHandler(this.chiso_Click);
             // 
             // frm_Main
             // 
