@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
+using CrystalDecisions.CrystalReports.Engine;
+using CAPNUOCTANHOA.Forms.Reports;
+using CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 {
@@ -167,12 +170,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             }
         }
 
-        
+        string tods = "";
+        string tento = "";
         private void sanluongToDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (sanluongToDS.CurrentCell.OwningColumn.Name == "TENTO")
             {
-                string tods = sanluongToDS.Rows[e.RowIndex].Cells["TODS"].Value + "";
+
+                tento = sanluongToDS.Rows[e.RowIndex].Cells["TENTO"].Value + "";
+                tods = sanluongToDS.Rows[e.RowIndex].Cells["TODS"].Value + "";
                 try
                 {
                     int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
@@ -569,6 +575,35 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             {
                 dotMayTods[i, j].Style.BackColor = Color.Yellow;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_tab_CodeKy();
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE ", "W_BAOCAO_CODE"));
+            rp.SetParameterValue("tenbk", "BÁO CÁO MÃ CODE TIÊU THỤ KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim());
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_tab_CodeKy();
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE ", "W_BAOCAO_CODE"));
+            rp.SetParameterValue("tenbk", "BÁO CÁO MÃ CODE TIÊU THỤ ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim());
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            // KY MAY
+            ReportDocument rp = new rpt_tab_CodeKy_may();
+             
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE_MAY WHERE TODS=" + tods + " ORDER BY MAYDS ASC ", "W_BAOCAO_CODE_MAY"));
+            rp.SetParameterValue("tenbk", "BÁO CÁO MÃ CODE TIÊU THỤ TỪNG MÀY ĐỌC SỐ KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim() + " TỔ " + tento);
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
         }
 
     }

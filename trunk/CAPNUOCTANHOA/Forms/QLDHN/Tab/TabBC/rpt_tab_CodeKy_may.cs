@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_tab_CodeKy : ReportClass {
+    public class rpt_tab_CodeKy_may : ReportClass {
         
-        public rpt_tab_CodeKy() {
+        public rpt_tab_CodeKy_may() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_tab_CodeKy.rpt";
+                return "rpt_tab_CodeKy_may.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC.rpt_tab_CodeKy.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC.rpt_tab_CodeKy_may.rpt";
             }
             set {
                 // Do nothing
@@ -98,9 +98,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_tab_CodeKy : Component, ICachedReport {
+    public class Cachedrpt_tab_CodeKy_may : Component, ICachedReport {
         
-        public Cachedrpt_tab_CodeKy() {
+        public Cachedrpt_tab_CodeKy_may() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_tab_CodeKy rpt = new rpt_tab_CodeKy();
+            rpt_tab_CodeKy_may rpt = new rpt_tab_CodeKy_may();
             rpt.Site = this.Site;
             return rpt;
         }

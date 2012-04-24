@@ -186,6 +186,13 @@ namespace CAPNUOCTANHOA.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap print {
+            get {
+                object obj = ResourceManager.GetObject("print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Puzzle {
             get {
                 object obj = ResourceManager.GetObject("Puzzle", resourceCulture);
