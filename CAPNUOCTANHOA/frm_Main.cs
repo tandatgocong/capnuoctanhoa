@@ -12,6 +12,7 @@ using System.Configuration;
 using CAPNUOCTANHOA.Forms.QLDHN;
 using CAPNUOCTANHOA.View.Users;
 using CAPNUOCTANHOA.Forms.DoiTCTB;
+using CAPNUOCTANHOA.Forms.QLDHN.SODOCSO;
  
 
 namespace CAPNUOCTANHOA
@@ -252,6 +253,12 @@ namespace CAPNUOCTANHOA
             baothay.Height = PanelContent.Size.Height - 20;
             baothay.Width = PanelContent.Size.Width - 20;
             PanelContent.Controls.Add(baothay);
+        }
+
+        private void chiso_Click(object sender, EventArgs e)
+        {
+            frm_SoDocSo frm = new frm_SoDocSo();
+            frm.ShowDialog();
         }
 
     }

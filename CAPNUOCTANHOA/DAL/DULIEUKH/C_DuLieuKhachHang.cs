@@ -65,5 +65,16 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
                 log.Error(ex.Message);
             }
         }
+
+        public static DataSet SoDocSo(string sobangke)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT * FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + sobangke + "' ORDER BY LOTRINH ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DULIEUKHACHHANG");
+            return ds;
+        }
     }
 }
