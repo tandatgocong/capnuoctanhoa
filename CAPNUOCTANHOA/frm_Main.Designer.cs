@@ -629,8 +629,8 @@
             this.menuKiemTra.Image = global::CAPNUOCTANHOA.Properties.Resources.Ok;
             this.menuKiemTra.Name = "menuKiemTra";
             this.menuKiemTra.ShowShortcutKeys = false;
-            this.menuKiemTra.Size = new System.Drawing.Size(198, 23);
-            this.menuKiemTra.Text = "Kiểm Tra Thay Định Kỳ";
+            this.menuKiemTra.Size = new System.Drawing.Size(131, 23);
+            this.menuKiemTra.Text = "Thay Định Kỳ";
             this.menuKiemTra.Click += new System.EventHandler(this.menuKiemTra_Click);
             // 
             // cmdBaoThay
@@ -647,8 +647,8 @@
             this.btChuyenBK.ForeColor = System.Drawing.Color.Black;
             this.btChuyenBK.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right1;
             this.btChuyenBK.Name = "btChuyenBK";
-            this.btChuyenBK.Size = new System.Drawing.Size(188, 23);
-            this.btChuyenBK.Text = "Lấy Dữ Liệu Gắn Mới";
+            this.btChuyenBK.Size = new System.Drawing.Size(158, 23);
+            this.btChuyenBK.Text = "Dữ Liệu Gắn Mới";
             this.btChuyenBK.Click += new System.EventHandler(this.btChuyenBK_Click);
             // 
             // baocaoTongKet
@@ -656,8 +656,8 @@
             this.baocaoTongKet.ForeColor = System.Drawing.Color.Black;
             this.baocaoTongKet.Image = global::CAPNUOCTANHOA.Properties.Resources.Stats2;
             this.baocaoTongKet.Name = "baocaoTongKet";
-            this.baocaoTongKet.Size = new System.Drawing.Size(162, 23);
-            this.baocaoTongKet.Text = "Báo Cáo Tổng Kết";
+            this.baocaoTongKet.Size = new System.Drawing.Size(95, 23);
+            this.baocaoTongKet.Text = "Báo Cáo";
             this.baocaoTongKet.Click += new System.EventHandler(this.baocaoTongKet_Click);
             // 
             // menuLayDuLieuGanMoi
@@ -710,8 +710,8 @@
             this.menuHoanCongThay.ForeColor = System.Drawing.Color.Black;
             this.menuHoanCongThay.Image = global::CAPNUOCTANHOA.Properties.Resources.Ok;
             this.menuHoanCongThay.Name = "menuHoanCongThay";
-            this.menuHoanCongThay.Size = new System.Drawing.Size(190, 23);
-            this.menuHoanCongThay.Text = "Hoàn Công Thay ĐHN";
+            this.menuHoanCongThay.Size = new System.Drawing.Size(150, 23);
+            this.menuHoanCongThay.Text = "Hoàn Công Thay";
             this.menuHoanCongThay.Click += new System.EventHandler(this.menuHoanCongThay_Click);
             // 
             // hcThayThuDHN

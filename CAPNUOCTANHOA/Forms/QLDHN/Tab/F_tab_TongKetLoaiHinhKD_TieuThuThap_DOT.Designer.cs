@@ -124,12 +124,14 @@
             this.KT_HCSN4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel10 = new System.Windows.Forms.Panel();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sanluongToDS)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbDotDS
@@ -837,11 +839,23 @@
             this.labelX1.Text = "TIÊU THỤ 1-> 4";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CAPNUOCTANHOA.Properties.Resources.print;
+            this.pictureBox1.Location = new System.Drawing.Point(55, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 34);
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // F_tab_TongKetLoaiHinhKD_TieuThuThap_DOT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.panel1);
@@ -867,6 +881,7 @@
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sanluongToDS)).EndInit();
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -947,5 +962,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn KT_HCSN4;
         private System.Windows.Forms.Panel panel10;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
