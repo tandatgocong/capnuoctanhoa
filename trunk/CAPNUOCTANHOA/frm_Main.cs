@@ -261,5 +261,16 @@ namespace CAPNUOCTANHOA
             frm.ShowDialog();
         }
 
+        private void menuDieuChinhKH_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_DieuChinhThongTin baothay = new frm_DieuChinhThongTin();
+            //baothay.Height = PanelContent.Size.Height - 20;
+            //baothay.Width = PanelContent.Size.Width - 20;
+            baothay.Height = PanelContent.Size.Height-5;
+            baothay.Width = PanelContent.Size.Width-5;
+            PanelContent.Controls.Add(baothay);
+        }
+
     }
 }

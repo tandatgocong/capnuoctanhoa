@@ -227,5 +227,19 @@ namespace CAPNUOCTANHOA.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap Write2 {
+            get {
+                object obj = ResourceManager.GetObject("Write2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Write3 {
+            get {
+                object obj = ResourceManager.GetObject("Write3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

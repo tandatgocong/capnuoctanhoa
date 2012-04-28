@@ -61,6 +61,7 @@
             this.btIn = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.galleryContainer1 = new DevComponents.DotNetBar.GalleryContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -317,6 +318,8 @@
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(118, 23);
             this.btThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btThoat.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.galleryContainer1});
             this.btThoat.TabIndex = 105;
             this.btThoat.Text = "THOÁT";
             // 
@@ -375,6 +378,12 @@
             this.splitContainer1.SplitterDistance = 166;
             this.splitContainer1.TabIndex = 108;
             // 
+            // galleryContainer1
+            // 
+            this.galleryContainer1.GlobalItem = false;
+            this.galleryContainer1.MinimumSize = new System.Drawing.Size(58, 58);
+            this.galleryContainer1.Name = "galleryContainer1";
+            // 
             // frm_Option_BT
             // 
             this.AcceptButton = this.btTaoBangKe;
@@ -425,6 +434,7 @@
         private DevComponents.DotNetBar.ButtonX btIn;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private DevComponents.DotNetBar.GalleryContainer galleryContainer1;
 
     }
 }

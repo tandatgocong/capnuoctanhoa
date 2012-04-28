@@ -204,7 +204,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 pageNumber = rows % pageSize != 0 ? rows / pageSize + 1 : rows / pageSize;
                 lbPaing.Text = (currentPageIndex < 10 ? ("0" + currentPageIndex) : currentPageIndex+"" )+ "/" + (pageNumber < 10 ? ("0" + pageNumber) : pageNumber+"");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
 

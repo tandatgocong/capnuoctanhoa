@@ -54,7 +54,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
                 table = DAL.LinQConnection.getDataTable(sql_tongket);
                 dataTongKet.DataSource = table;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                  
             }
