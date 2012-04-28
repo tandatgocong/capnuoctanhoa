@@ -144,6 +144,10 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 
                 string HCT_NGAYGAN = dataBangKe.Rows[i].Cells["HCT_NGAYGAN"].Value + "";
                 txtNgayGan.Value = !"".Equals(HCT_NGAYGAN) ? DateTime.Parse(HCT_NGAYGAN) : DateTime.Now.AddDays(-1);
+               
+                string HCT_NGAYKIEMDINH = dataBangKe.Rows[i].Cells["HCT_NGAYKIEMDINH"].Value + "";
+                txtngayKiemDinh.Value = !"".Equals(HCT_NGAYKIEMDINH) ? DateTime.Parse(HCT_NGAYKIEMDINH) : DateTime.Now;
+
               
                 string HCT_CHITHAN = dataBangKe.Rows[i].Cells["GCHITHAN"].Value + "";
                 txtChiThan.Text = !HCT_CHITHAN.Equals("") ? HCT_CHITHAN : "VN/217";
@@ -256,6 +260,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                             thaydh.HCT_LOAIDHGAN = false;
                         }
                         thaydh.HCT_NGAYGAN = txtNgayGan.Value;
+                        thaydh.HCT_NGAYKIEMDINH = txtngayKiemDinh.Value;
                         thaydh.HCT_CHITHAN = txtChiThan.Text.ToUpper();
                         thaydh.HCT_CHIGOC = txtChiGoc.Text.ToUpper();
                         thaydh.HCT_TRONGAI = false;
@@ -312,6 +317,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                 kh.CAP = txtCapGan.Text.ToUpper();
                                 kh.CHITHAN = txtChiThan.Text.ToUpper();
                                 kh.CHIGOC = txtChiGoc.Text.ToUpper();
+                                kh.NGAYKIEMDINH = txtngayKiemDinh.Value;
                                 kh.BAOTHAY = false;
                                 DAL.DULIEUKH.C_DuLieuKhachHang.Update();
                             }

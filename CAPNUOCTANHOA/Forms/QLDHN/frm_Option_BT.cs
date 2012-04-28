@@ -142,6 +142,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 thaydh.DHN_NGAYBAOTHAY = DateTime.Now.Date;
                 thaydh.DHN_NGAYGAN = DateTime.Parse(dataBangKe.Rows[i].Cells["NGAYTHAY"].Value + "");
                 thaydh.DHN_SOBANGKE = int.Parse(this.txtSoBangKe.Text);
+                thaydh.DHN_CAP = "";
                 thaydh.DHN_SOTHAN = dataBangKe.Rows[i].Cells["G_SOTHAN"].Value + "";                
                 thaydh.DHN_TODS = DAL.SYS.C_USERS._toDocSo;
                 thaydh.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
