@@ -55,15 +55,17 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             var query = from q in db.TB_DULIEUKHACHHANGs select q;
             return query.ToList();
         }
-        public static void Update() {
+        public static bool Update() {
             try
             {
                 db.SubmitChanges();
+                return true;
             }
             catch (Exception ex)
             {
                 log.Error(ex.Message);
             }
+            return false;
         }
 
         public static DataSet SoDocSo(string sobangke)
@@ -75,6 +77,50 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DULIEUKHACHHANG");
             return ds;
+        }
+
+        public static bool HuyDanhBo(TB_DULIEUKHACHHANG_HUYDB huy, TB_DULIEUKHACHHANG kh) {
+
+            try
+            {
+                db.TB_DULIEUKHACHHANG_HUYDBs.InsertOnSubmit(huy);
+                db.TB_DULIEUKHACHHANGs.DeleteOnSubmit(kh);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
+
+
+        public static int SoLuongHuy(string tods, string hieulucky) {
+
+            string gioihan = DAL.SYS.C_USERS.findByToDS(tods) != null ? DAL.SYS.C_USERS.findByToDS(tods).GIOIHAN : "";
+            string sql = "SELECT COUNT(*) FROM TB_DULIEUKHACHHANG_HUYDB WHERE (TAILAPDB IS NULL OR TAILAPDB='False') AND HIEULUCHUY=N'" + hieulucky + "' " + gioihan;
+            try
+            {
+                return DAL.LinQConnection.ExecuteCommand(sql);
+            }
+            catch (Exception ex)
+            { log.Error(ex.Message);      }
+            return 0;
+         
+        }
+        public static DataSet DanhSachHuyDB(string tods, string hieulucky)
+        {
+            string gioihan = DAL.SYS.C_USERS.findByToDS(tods) != null ? DAL.SYS.C_USERS.findByToDS(tods).GIOIHAN : "";
+            string query = "SELECT * FROM TB_DULIEUKHACHHANG_HUYDB WHERE (TAILAPDB IS NULL OR TAILAPDB='False') AND HIEULUCHUY=N'" + hieulucky + "' " + gioihan;
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DULIEUKHACHHANG_HUYDB");
+
+            return ds;        
+
         }
     }
 }

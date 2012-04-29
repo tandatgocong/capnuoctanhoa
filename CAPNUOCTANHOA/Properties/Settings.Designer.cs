@@ -75,5 +75,16 @@ namespace CAPNUOCTANHOA.Properties {
                 return ((string)(this["DocSo_PHTConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER_HP380\\SQLEXPRESS;Initial Catalog=CAPNUOCTANHOA;Persist Securit" +
+            "y Info=True;User ID=sa")]
+        public string CAPNUOCTANHOAConnectionString1 {
+            get {
+                return ((string)(this["CAPNUOCTANHOAConnectionString1"]));
+            }
+        }
     }
 }

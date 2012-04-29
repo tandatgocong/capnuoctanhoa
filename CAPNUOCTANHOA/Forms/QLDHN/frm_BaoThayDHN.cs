@@ -203,7 +203,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     txtTenKH.Text = khachhang.HOTEN;
                     txtDiaChi.Text = khachhang.SONHA + " " + khachhang.TENDUONG;
                     txtNgayGan.ValueObject = khachhang.NGAYTHAY;
-                    TB_HIEUDONGHO hieudh = DAL.QLDHN.C_BaoThay.finByHieuDH(khachhang.HIEUDH);
+                    TB_HIEUDONGHO hieudh=null;
+                    try
+                    {
+                        hieudh = DAL.QLDHN.C_BaoThay.finByHieuDH(khachhang.HIEUDH.Substring(0, 3));
+                    }
+                    catch (Exception)
+                    {
+                    }
                     txtHieu.Text = hieudh != null ? hieudh.TENDONGHO : khachhang.HIEUDH;
                     txtCo.Text = khachhang.CODH;
                     txtSoThan.Text = khachhang.SOTHANDH;
@@ -212,7 +219,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     txtChiSoThay.Text = khachhang.CHISOKYTRUOC;
                     
                     txtDot.Text = khachhang.DOT;
-                    txtMaLoTrinh.Text = khachhang.CUON_GCS + "" + khachhang.CUON_STT;
+                    txtMaLoTrinh.Text = khachhang.LOTRINH;
                 }
             }
         }

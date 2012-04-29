@@ -93,6 +93,8 @@
     <Compile Include="DAL\QLDHN\C_BaoCaoTK.cs" />
     <Compile Include="DAL\QLDHN\C_BaoThay.cs" />
     <Compile Include="DAL\QLDHN\C_tab_BaoCao.cs" />
+    <Compile Include="DAL\SYS\C_PHUONG.cs" />
+    <Compile Include="DAL\SYS\C_QUAN.cs" />
     <Compile Include="DAL\SYS\C_Users.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -179,6 +181,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\BC\HUYDANHBO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HUYDANHBO.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\BC\rpt_BCBangKe_A31.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +202,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_BCBangKe_A4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\BC\rpt_HuyDanhBo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_HuyDanhBo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\frm_BaoCaoTongKet.cs">
@@ -446,6 +459,17 @@
     <None Include="Forms\QLDHN\BC\BC_DONGHONUOC.xss">
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\BC\HUYDANHBO.xsc">
+      <DependentUpon>HUYDANHBO.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\BC\HUYDANHBO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HUYDANHBO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\BC\HUYDANHBO.xss">
+      <DependentUpon>HUYDANHBO.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\SODOCSO\SODOCSO.xsc">
       <DependentUpon>SODOCSO.xsd</DependentUpon>
     </None>
@@ -525,6 +549,10 @@
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_BCBangKe_A4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BCBangKe_A4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\BC\rpt_HuyDanhBo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_HuyDanhBo.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_BaoCaoTongKet.resx">
       <DependentUpon>frm_BaoCaoTongKet.cs</DependentUpon>
