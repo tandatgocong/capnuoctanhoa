@@ -281,7 +281,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
             
             private global::System.Data.DataColumn columnHCT_NGAYGAN;
             
-            private global::System.Data.DataColumn columnDHN_NGAYBAOTHAY;
+            private global::System.Data.DataColumn columnDHN_LOAIBANGKE;
             
             private global::System.Data.DataColumn columnTENBK;
             
@@ -334,9 +334,9 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DHN_NGAYBAOTHAYColumn {
+            public global::System.Data.DataColumn DHN_LOAIBANGKEColumn {
                 get {
-                    return this.columnDHN_NGAYBAOTHAY;
+                    return this.columnDHN_LOAIBANGKE;
                 }
             }
             
@@ -409,11 +409,11 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_TCTB_HOANCONGNHANHRow AddV_TCTB_HOANCONGNHANHRow(System.DateTime HCT_NGAYGAN, System.DateTime DHN_NGAYBAOTHAY, string TENBK, int HOANTAT, int TRONGAI, string NGUOIDUYET) {
+            public V_TCTB_HOANCONGNHANHRow AddV_TCTB_HOANCONGNHANHRow(System.DateTime HCT_NGAYGAN, string DHN_LOAIBANGKE, string TENBK, int HOANTAT, int TRONGAI, string NGUOIDUYET) {
                 V_TCTB_HOANCONGNHANHRow rowV_TCTB_HOANCONGNHANHRow = ((V_TCTB_HOANCONGNHANHRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         HCT_NGAYGAN,
-                        DHN_NGAYBAOTHAY,
+                        DHN_LOAIBANGKE,
                         TENBK,
                         HOANTAT,
                         TRONGAI,
@@ -441,7 +441,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnHCT_NGAYGAN = base.Columns["HCT_NGAYGAN"];
-                this.columnDHN_NGAYBAOTHAY = base.Columns["DHN_NGAYBAOTHAY"];
+                this.columnDHN_LOAIBANGKE = base.Columns["DHN_LOAIBANGKE"];
                 this.columnTENBK = base.Columns["TENBK"];
                 this.columnHOANTAT = base.Columns["HOANTAT"];
                 this.columnTRONGAI = base.Columns["TRONGAI"];
@@ -453,8 +453,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
             private void InitClass() {
                 this.columnHCT_NGAYGAN = new global::System.Data.DataColumn("HCT_NGAYGAN", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHCT_NGAYGAN);
-                this.columnDHN_NGAYBAOTHAY = new global::System.Data.DataColumn("DHN_NGAYBAOTHAY", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDHN_NGAYBAOTHAY);
+                this.columnDHN_LOAIBANGKE = new global::System.Data.DataColumn("DHN_LOAIBANGKE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDHN_LOAIBANGKE);
                 this.columnTENBK = new global::System.Data.DataColumn("TENBK", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTENBK);
                 this.columnHOANTAT = new global::System.Data.DataColumn("HOANTAT", typeof(int), null, global::System.Data.MappingType.Element);
@@ -463,6 +463,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
                 base.Columns.Add(this.columnTRONGAI);
                 this.columnNGUOIDUYET = new global::System.Data.DataColumn("NGUOIDUYET", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGUOIDUYET);
+                this.columnDHN_LOAIBANGKE.ReadOnly = true;
+                this.columnDHN_LOAIBANGKE.MaxLength = 7;
                 this.columnTENBK.MaxLength = 2147483647;
             }
             
@@ -622,18 +624,17 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DHN_NGAYBAOTHAY {
+            public string DHN_LOAIBANGKE {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableV_TCTB_HOANCONGNHANH.DHN_NGAYBAOTHAYColumn]));
+                        return ((string)(this[this.tableV_TCTB_HOANCONGNHANH.DHN_LOAIBANGKEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DHN_NGAYBAOTHAY\' in table \'V_TCTB_HOANCONGNHANH\' is DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DHN_LOAIBANGKE\' in table \'V_TCTB_HOANCONGNHANH\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_TCTB_HOANCONGNHANH.DHN_NGAYBAOTHAYColumn] = value;
+                    this[this.tableV_TCTB_HOANCONGNHANH.DHN_LOAIBANGKEColumn] = value;
                 }
             }
             
@@ -715,14 +716,14 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDHN_NGAYBAOTHAYNull() {
-                return this.IsNull(this.tableV_TCTB_HOANCONGNHANH.DHN_NGAYBAOTHAYColumn);
+            public bool IsDHN_LOAIBANGKENull() {
+                return this.IsNull(this.tableV_TCTB_HOANCONGNHANH.DHN_LOAIBANGKEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDHN_NGAYBAOTHAYNull() {
-                this[this.tableV_TCTB_HOANCONGNHANH.DHN_NGAYBAOTHAYColumn] = global::System.Convert.DBNull;
+            public void SetDHN_LOAIBANGKENull() {
+                this[this.tableV_TCTB_HOANCONGNHANH.DHN_LOAIBANGKEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -934,7 +935,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC.HOANCONGNHANHTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "V_TCTB_HOANCONGNHANH";
             tableMapping.ColumnMappings.Add("HCT_NGAYGAN", "HCT_NGAYGAN");
-            tableMapping.ColumnMappings.Add("DHN_NGAYBAOTHAY", "DHN_NGAYBAOTHAY");
+            tableMapping.ColumnMappings.Add("DHN_LOAIBANGKE", "DHN_LOAIBANGKE");
             tableMapping.ColumnMappings.Add("TENBK", "TENBK");
             tableMapping.ColumnMappings.Add("HOANTAT", "HOANTAT");
             tableMapping.ColumnMappings.Add("TRONGAI", "TRONGAI");
@@ -954,8 +955,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC.HOANCONGNHANHTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT HCT_NGAYGAN, DHN_NGAYBAOTHAY, TENBK, HOANTAT, TRONGAI FROM dbo.V_TCTB_HOAN" +
-                "CONGNHANH";
+            this._commandCollection[0].CommandText = "SELECT HCT_NGAYGAN, DHN_LOAIBANGKE, TENBK, HOANTAT, TRONGAI FROM dbo.V_TCTB_HOANC" +
+                "ONGNHANH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

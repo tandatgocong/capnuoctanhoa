@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString (Settings)" DbObjectName="CAPNUOCTANHOA.dbo.V_TCTB_HOANCONGNHANH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT HCT_NGAYGAN, DHN_NGAYBAOTHAY, TENBK, HOANTAT, TRONGAI FROM dbo.V_TCTB_HOANCONGNHANH</CommandText>
+                    <CommandText>SELECT HCT_NGAYGAN, DHN_LOAIBANGKE, TENBK, HOANTAT, TRONGAI FROM dbo.V_TCTB_HOANCONGNHANH</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -20,7 +20,7 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="HCT_NGAYGAN" DataSetColumn="HCT_NGAYGAN" />
-              <Mapping SourceColumn="DHN_NGAYBAOTHAY" DataSetColumn="DHN_NGAYBAOTHAY" />
+              <Mapping SourceColumn="DHN_LOAIBANGKE" DataSetColumn="DHN_LOAIBANGKE" />
               <Mapping SourceColumn="TENBK" DataSetColumn="TENBK" />
               <Mapping SourceColumn="HOANTAT" DataSetColumn="HOANTAT" />
               <Mapping SourceColumn="TRONGAI" DataSetColumn="TRONGAI" />
@@ -39,7 +39,13 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HCT_NGAYGAN" msprop:Generator_ColumnVarNameInTable="columnHCT_NGAYGAN" msprop:Generator_ColumnPropNameInRow="HCT_NGAYGAN" msprop:Generator_ColumnPropNameInTable="HCT_NGAYGANColumn" msprop:Generator_UserColumnName="HCT_NGAYGAN" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="DHN_NGAYBAOTHAY" msprop:Generator_ColumnVarNameInTable="columnDHN_NGAYBAOTHAY" msprop:Generator_ColumnPropNameInRow="DHN_NGAYBAOTHAY" msprop:Generator_ColumnPropNameInTable="DHN_NGAYBAOTHAYColumn" msprop:Generator_UserColumnName="DHN_NGAYBAOTHAY" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DHN_LOAIBANGKE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDHN_LOAIBANGKE" msprop:Generator_ColumnPropNameInRow="DHN_LOAIBANGKE" msprop:Generator_ColumnPropNameInTable="DHN_LOAIBANGKEColumn" msprop:Generator_UserColumnName="DHN_LOAIBANGKE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="TENBK" msprop:Generator_ColumnVarNameInTable="columnTENBK" msprop:Generator_ColumnPropNameInRow="TENBK" msprop:Generator_ColumnPropNameInTable="TENBKColumn" msprop:Generator_UserColumnName="TENBK" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
