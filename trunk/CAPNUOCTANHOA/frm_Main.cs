@@ -249,7 +249,7 @@ namespace CAPNUOCTANHOA
         private void btChuyenBK_Click(object sender, EventArgs e)
         {
             PanelContent.Controls.Clear();
-            frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
+            frm_LoTrinhDocSo baothay = new frm_LoTrinhDocSo();
             baothay.Height = PanelContent.Size.Height - 20;
             baothay.Width = PanelContent.Size.Width - 20;
             PanelContent.Controls.Add(baothay);
