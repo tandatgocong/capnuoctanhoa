@@ -86,6 +86,7 @@
     <Compile Include="DAL\DoiTCTB\C_HoanCongThay.cs" />
     <Compile Include="DAL\DULIEUKH\C_DuLieuKhachHang.cs" />
     <Compile Include="DAL\DULIEUKH\C_GanMoi.cs" />
+    <Compile Include="DAL\DULIEUKH\C_PhienLoTrinh.cs" />
     <Compile Include="DAL\LinQConnection.cs" />
     <Compile Include="DAL\QLDHN\C_BaoCaoCODE.cs" />
     <Compile Include="DAL\QLDHN\C_BC_LoaiHinhKD_Thap.cs" />
@@ -371,6 +372,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>tabBaoCao.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\tab_ChiaLoTrinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tab_ChiaLoTrinh.Designer.cs">
+      <DependentUpon>tab_ChiaLoTrinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\frm_Reports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -640,6 +647,9 @@
     <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\rpt_LoaiKHTieuThuThap.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_LoaiKHTieuThuThap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tab_ChiaLoTrinh.resx">
+      <DependentUpon>tab_ChiaLoTrinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\frm_Reports.resx">
       <DependentUpon>frm_Reports.cs</DependentUpon>

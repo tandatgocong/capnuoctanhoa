@@ -453,23 +453,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void tabItem6_Click(object sender, EventArgs e)
         {
+            this.panel3.Controls.Clear();
+            this.panel3.Controls.Add(new tab_ChiaLoTrinh());
            
-            if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
-            {
-                this.lbToDocSo.Text = "     TỔ TÂN BÌNH 02";
-            }
-            else if ("TP".Equals(TODS))
-            {
-                this.lbToDocSo.Text = "     TỔ TÂN PHÚ";
-            }
-            else if ("TB01".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
-            {
-                this.lbToDocSo.Text = "     TỔ TÂN BÌNH 01";
-            }
-            else {
-                MessageBox.Show(this,"BẠN KHÔNG CÓ QUYỀN TRUY CẬP !", "..: THÔNG BÁO :..", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                this.tabControl2.SelectedTabIndex = 3;
-            }
         }
         #endregion
 
