@@ -71,6 +71,22 @@
       <Column Name="[Column 66]" Member="Column_66" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.W_BAOCAO_SANLUONG_MAY" Member="W_BAOCAO_SANLUONG_MAYs">
+    <Type Name="W_BAOCAO_SANLUONG_MAY">
+      <Column Name="TODS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAYDS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KN_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KN_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KT_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KT_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TANGIAM_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TANGIAM_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NT_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NT_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NT_TANGIAM_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NT_TANGIAM_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.HANDHELD" Member="HANDHELDs">
     <Type Name="HANDHELD">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -341,6 +357,7 @@
       <Column Name="TODS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DOT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MAYDS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CHUYEN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -598,31 +615,6 @@
       <Column Name="NT_TANGIAM_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.W_BAOCAO_SANLUONG_MAY" Member="W_BAOCAO_SANLUONG_MAYs">
-    <Type Name="W_BAOCAO_SANLUONG_MAY">
-      <Column Name="TODS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MAYDS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="KN_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="KN_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="KT_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="KT_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TANGIAM_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TANGIAM_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NT_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NT_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NT_TANGIAM_DHN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NT_TANGIAM_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.V_TCTB_TKVATTUTHAY" Member="V_TCTB_TKVATTUTHAYs">
-    <Type Name="V_TCTB_TKVATTUTHAY">
-      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MAVT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="TENVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TONGSL" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.V_DHN_BANGKE" Member="V_DHN_BANGKEs">
     <Type Name="V_DHN_BANGKE">
       <Column Name="TENBANGKE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -672,6 +664,15 @@
       <Column Name="HCT_CREATEBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="HCT_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="HCT_MODIFYBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_TCTB_TKVATTUTHAY" Member="V_TCTB_TKVATTUTHAYs">
+    <Type Name="V_TCTB_TKVATTUTHAY">
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAVT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TONGSL" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.V_TCTB_HOANCONGNHANH" Member="V_TCTB_HOANCONGNHANHs">

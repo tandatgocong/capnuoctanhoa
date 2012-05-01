@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using CAPNUOCTANHOA.LinQ;
 using log4net;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CAPNUOCTANHOA.DAL.DULIEUKH
 {
@@ -51,6 +53,43 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
                 log.Error(ex);
             }
             return false;
+        }
+
+        public static DataTable getDataGanMoi(string tods, string dotds, string mayds) {
+            string sql = "SELECT 0 AS [CHECK],DANHBO, (SONHA+' '+ DUONG) as DIACHI, (MAQUAN+MAPHUONG) AS QUANPHUONG  FROM TB_GANMOI ";
+            sql += " WHERE (CHUYEN IS NULL  OR CHUYEN='False') AND TODS='" + tods + "' AND DOT='" + dotds + "' AND MAYDS='" + mayds + "'";
+            return LinQConnection.getDataTable(sql);
+        }
+        public static DataTable getPhienLoTrinh(string lotrinh) {
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + lotrinh + "' ORDER BY LOTRINH ASC ";
+            return LinQConnection.getDataTable(sql);
+        }
+
+        public static int InsertDocSo(string sql)
+        {
+            int result = 0;
+            DocSoDataContext db = new DocSoDataContext();
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
         }
     }
 }

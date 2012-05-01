@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGanMoiBK = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,142 +67,10 @@
             this.SOTLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHISOTLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoHo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.next = new System.Windows.Forms.PictureBox();
             this.tabControl2 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem65 = new DevComponents.Editors.ComboItem();
-            this.comboItem76 = new DevComponents.Editors.ComboItem();
-            this.comboItem77 = new DevComponents.Editors.ComboItem();
-            this.comboItem78 = new DevComponents.Editors.ComboItem();
-            this.comboItem79 = new DevComponents.Editors.ComboItem();
-            this.comboItem80 = new DevComponents.Editors.ComboItem();
-            this.comboItem81 = new DevComponents.Editors.ComboItem();
-            this.comboItem82 = new DevComponents.Editors.ComboItem();
-            this.comboItem83 = new DevComponents.Editors.ComboItem();
-            this.comboItem84 = new DevComponents.Editors.ComboItem();
-            this.comboItem85 = new DevComponents.Editors.ComboItem();
-            this.comboItem86 = new DevComponents.Editors.ComboItem();
-            this.comboItem87 = new DevComponents.Editors.ComboItem();
-            this.comboItem88 = new DevComponents.Editors.ComboItem();
-            this.comboItem89 = new DevComponents.Editors.ComboItem();
-            this.comboItem90 = new DevComponents.Editors.ComboItem();
-            this.comboItem91 = new DevComponents.Editors.ComboItem();
-            this.comboItem92 = new DevComponents.Editors.ComboItem();
-            this.comboItem93 = new DevComponents.Editors.ComboItem();
-            this.comboItem94 = new DevComponents.Editors.ComboItem();
-            this.comboItem95 = new DevComponents.Editors.ComboItem();
-            this.comboItem96 = new DevComponents.Editors.ComboItem();
-            this.comboItem97 = new DevComponents.Editors.ComboItem();
-            this.comboItem98 = new DevComponents.Editors.ComboItem();
-            this.comboItem99 = new DevComponents.Editors.ComboItem();
-            this.comboItem100 = new DevComponents.Editors.ComboItem();
-            this.comboItem101 = new DevComponents.Editors.ComboItem();
-            this.comboItem102 = new DevComponents.Editors.ComboItem();
-            this.comboItem103 = new DevComponents.Editors.ComboItem();
-            this.comboItem104 = new DevComponents.Editors.ComboItem();
-            this.comboItem105 = new DevComponents.Editors.ComboItem();
-            this.comboItem106 = new DevComponents.Editors.ComboItem();
-            this.comboItem107 = new DevComponents.Editors.ComboItem();
-            this.comboItem108 = new DevComponents.Editors.ComboItem();
-            this.comboItem109 = new DevComponents.Editors.ComboItem();
-            this.comboItem110 = new DevComponents.Editors.ComboItem();
-            this.comboItem111 = new DevComponents.Editors.ComboItem();
-            this.comboItem112 = new DevComponents.Editors.ComboItem();
-            this.comboItem113 = new DevComponents.Editors.ComboItem();
-            this.comboItem114 = new DevComponents.Editors.ComboItem();
-            this.comboItem115 = new DevComponents.Editors.ComboItem();
-            this.comboItem116 = new DevComponents.Editors.ComboItem();
-            this.comboItem117 = new DevComponents.Editors.ComboItem();
-            this.comboItem118 = new DevComponents.Editors.ComboItem();
-            this.comboItem119 = new DevComponents.Editors.ComboItem();
-            this.comboItem120 = new DevComponents.Editors.ComboItem();
-            this.comboItem121 = new DevComponents.Editors.ComboItem();
-            this.comboItem122 = new DevComponents.Editors.ComboItem();
-            this.comboItem123 = new DevComponents.Editors.ComboItem();
-            this.comboItem124 = new DevComponents.Editors.ComboItem();
-            this.comboItem125 = new DevComponents.Editors.ComboItem();
-            this.labelX24 = new DevComponents.DotNetBar.LabelX();
-            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
-            this.comboBoxEx3 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem146 = new DevComponents.Editors.ComboItem();
-            this.comboItem147 = new DevComponents.Editors.ComboItem();
-            this.comboItem148 = new DevComponents.Editors.ComboItem();
-            this.comboItem149 = new DevComponents.Editors.ComboItem();
-            this.comboItem150 = new DevComponents.Editors.ComboItem();
-            this.comboItem151 = new DevComponents.Editors.ComboItem();
-            this.comboItem152 = new DevComponents.Editors.ComboItem();
-            this.comboItem153 = new DevComponents.Editors.ComboItem();
-            this.comboItem154 = new DevComponents.Editors.ComboItem();
-            this.comboItem155 = new DevComponents.Editors.ComboItem();
-            this.comboItem156 = new DevComponents.Editors.ComboItem();
-            this.comboItem157 = new DevComponents.Editors.ComboItem();
-            this.comboItem158 = new DevComponents.Editors.ComboItem();
-            this.comboItem159 = new DevComponents.Editors.ComboItem();
-            this.comboItem160 = new DevComponents.Editors.ComboItem();
-            this.comboItem161 = new DevComponents.Editors.ComboItem();
-            this.comboItem162 = new DevComponents.Editors.ComboItem();
-            this.comboItem163 = new DevComponents.Editors.ComboItem();
-            this.comboItem164 = new DevComponents.Editors.ComboItem();
-            this.comboItem165 = new DevComponents.Editors.ComboItem();
-            this.comboItem166 = new DevComponents.Editors.ComboItem();
-            this.comboItem167 = new DevComponents.Editors.ComboItem();
-            this.comboItem168 = new DevComponents.Editors.ComboItem();
-            this.comboItem169 = new DevComponents.Editors.ComboItem();
-            this.comboItem170 = new DevComponents.Editors.ComboItem();
-            this.comboItem171 = new DevComponents.Editors.ComboItem();
-            this.comboItem172 = new DevComponents.Editors.ComboItem();
-            this.comboItem173 = new DevComponents.Editors.ComboItem();
-            this.comboItem174 = new DevComponents.Editors.ComboItem();
-            this.comboItem175 = new DevComponents.Editors.ComboItem();
-            this.comboItem176 = new DevComponents.Editors.ComboItem();
-            this.comboItem177 = new DevComponents.Editors.ComboItem();
-            this.comboItem178 = new DevComponents.Editors.ComboItem();
-            this.comboItem179 = new DevComponents.Editors.ComboItem();
-            this.comboItem180 = new DevComponents.Editors.ComboItem();
-            this.comboItem181 = new DevComponents.Editors.ComboItem();
-            this.comboItem182 = new DevComponents.Editors.ComboItem();
-            this.comboItem183 = new DevComponents.Editors.ComboItem();
-            this.comboItem184 = new DevComponents.Editors.ComboItem();
-            this.comboItem185 = new DevComponents.Editors.ComboItem();
-            this.comboItem186 = new DevComponents.Editors.ComboItem();
-            this.comboItem187 = new DevComponents.Editors.ComboItem();
-            this.comboItem188 = new DevComponents.Editors.ComboItem();
-            this.comboItem189 = new DevComponents.Editors.ComboItem();
-            this.comboItem190 = new DevComponents.Editors.ComboItem();
-            this.comboItem191 = new DevComponents.Editors.ComboItem();
-            this.comboItem192 = new DevComponents.Editors.ComboItem();
-            this.comboItem193 = new DevComponents.Editors.ComboItem();
-            this.comboItem194 = new DevComponents.Editors.ComboItem();
-            this.comboItem195 = new DevComponents.Editors.ComboItem();
-            this.comboItem196 = new DevComponents.Editors.ComboItem();
-            this.comboBoxEx2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem126 = new DevComponents.Editors.ComboItem();
-            this.comboItem127 = new DevComponents.Editors.ComboItem();
-            this.comboItem128 = new DevComponents.Editors.ComboItem();
-            this.comboItem129 = new DevComponents.Editors.ComboItem();
-            this.comboItem130 = new DevComponents.Editors.ComboItem();
-            this.comboItem131 = new DevComponents.Editors.ComboItem();
-            this.comboItem132 = new DevComponents.Editors.ComboItem();
-            this.comboItem133 = new DevComponents.Editors.ComboItem();
-            this.comboItem134 = new DevComponents.Editors.ComboItem();
-            this.comboItem135 = new DevComponents.Editors.ComboItem();
-            this.comboItem136 = new DevComponents.Editors.ComboItem();
-            this.comboItem137 = new DevComponents.Editors.ComboItem();
-            this.comboItem138 = new DevComponents.Editors.ComboItem();
-            this.comboItem139 = new DevComponents.Editors.ComboItem();
-            this.comboItem140 = new DevComponents.Editors.ComboItem();
-            this.comboItem141 = new DevComponents.Editors.ComboItem();
-            this.comboItem142 = new DevComponents.Editors.ComboItem();
-            this.comboItem143 = new DevComponents.Editors.ComboItem();
-            this.comboItem144 = new DevComponents.Editors.ComboItem();
-            this.comboItem145 = new DevComponents.Editors.ComboItem();
-            this.labelX23 = new DevComponents.DotNetBar.LabelX();
-            this.lbToDocSo = new DevComponents.DotNetBar.LabelX();
-            this.tabItem6 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabItemPhienLoTrinh = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -212,7 +80,6 @@
             this.comboItem61 = new DevComponents.Editors.ComboItem();
             this.comboItem62 = new DevComponents.Editors.ComboItem();
             this.comboItem63 = new DevComponents.Editors.ComboItem();
-            this.btChuyen = new DevComponents.DotNetBar.ButtonX();
             this.cbMayDocSo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem41 = new DevComponents.Editors.ComboItem();
             this.comboItem13 = new DevComponents.Editors.ComboItem();
@@ -337,20 +204,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tabSoDocSo = new DevComponents.DotNetBar.TabItem(this.components);
-            this.labelX20 = new DevComponents.DotNetBar.LabelX();
+            this.btChuyen = new DevComponents.DotNetBar.ButtonX();
+            this.next = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGanMoiBK)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.splitContainer4.Panel1.SuspendLayout();
-            this.splitContainer4.Panel2.SuspendLayout();
-            this.splitContainer4.SuspendLayout();
-            this.splitContainer5.Panel1.SuspendLayout();
-            this.splitContainer5.SuspendLayout();
-            this.splitContainer6.Panel1.SuspendLayout();
-            this.splitContainer6.SuspendLayout();
             this.tabCapNhatDS.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -368,6 +227,7 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGanMoiBK
@@ -379,14 +239,14 @@
             this.dataGanMoiBK.AllowUserToResizeRows = false;
             this.dataGanMoiBK.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGanMoiBK.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Times New Roman", 12.75F);
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGanMoiBK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 12.75F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGanMoiBK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGanMoiBK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGanMoiBK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -423,8 +283,8 @@
             // 
             // STT
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STT.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle18;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
@@ -433,8 +293,8 @@
             // SHS
             // 
             this.SHS.DataPropertyName = "SHS";
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SHS.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SHS.DefaultCellStyle = dataGridViewCellStyle19;
             this.SHS.HeaderText = "SHS";
             this.SHS.Name = "SHS";
             this.SHS.ReadOnly = true;
@@ -442,8 +302,8 @@
             // DANHBO
             // 
             this.DANHBO.DataPropertyName = "danhbo";
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DANHBO.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DANHBO.DefaultCellStyle = dataGridViewCellStyle20;
             this.DANHBO.HeaderText = "DANH BỘ";
             this.DANHBO.Name = "DANHBO";
             this.DANHBO.ReadOnly = true;
@@ -451,8 +311,8 @@
             // 
             // DOT
             // 
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DOT.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DOT.DefaultCellStyle = dataGridViewCellStyle21;
             this.DOT.HeaderText = "ĐỢT";
             this.DOT.Name = "DOT";
             this.DOT.ReadOnly = true;
@@ -460,8 +320,8 @@
             // 
             // TODS
             // 
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TODS.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TODS.DefaultCellStyle = dataGridViewCellStyle22;
             this.TODS.HeaderText = "TỔ DS";
             this.TODS.Name = "TODS";
             this.TODS.ReadOnly = true;
@@ -469,8 +329,8 @@
             // 
             // MAYDS
             // 
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MAYDS.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MAYDS.DefaultCellStyle = dataGridViewCellStyle23;
             this.MAYDS.HeaderText = "MÁY ĐS";
             this.MAYDS.Name = "MAYDS";
             this.MAYDS.ReadOnly = true;
@@ -478,8 +338,8 @@
             // HOPDONG
             // 
             this.HOPDONG.DataPropertyName = "hopdong";
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.HOPDONG.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.HOPDONG.DefaultCellStyle = dataGridViewCellStyle24;
             this.HOPDONG.HeaderText = "HỢP ĐỒNG";
             this.HOPDONG.Name = "HOPDONG";
             this.HOPDONG.ReadOnly = true;
@@ -488,8 +348,8 @@
             // HOTEN
             // 
             this.HOTEN.DataPropertyName = "HoTen";
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("VNI-Times", 12F);
-            this.HOTEN.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("VNI-Times", 12F);
+            this.HOTEN.DefaultCellStyle = dataGridViewCellStyle25;
             this.HOTEN.HeaderText = "HỌ TÊN";
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.ReadOnly = true;
@@ -498,8 +358,8 @@
             // SONHA
             // 
             this.SONHA.DataPropertyName = "SONHA";
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("VNI-Times", 12F);
-            this.SONHA.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("VNI-Times", 12F);
+            this.SONHA.DefaultCellStyle = dataGridViewCellStyle26;
             this.SONHA.HeaderText = "SỐ NHÀ";
             this.SONHA.Name = "SONHA";
             this.SONHA.ReadOnly = true;
@@ -508,8 +368,8 @@
             // DUONG
             // 
             this.DUONG.DataPropertyName = "DUONG";
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("VNI-Times", 12F);
-            this.DUONG.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("VNI-Times", 12F);
+            this.DUONG.DefaultCellStyle = dataGridViewCellStyle27;
             this.DUONG.HeaderText = "ĐƯỜNG";
             this.DUONG.Name = "DUONG";
             this.DUONG.ReadOnly = true;
@@ -518,9 +378,9 @@
             // MAQP
             // 
             this.MAQP.DataPropertyName = "maPQ";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("VNI-Times", 12F);
-            this.MAQP.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("VNI-Times", 12F);
+            this.MAQP.DefaultCellStyle = dataGridViewCellStyle28;
             this.MAQP.HeaderText = "MÃ QP";
             this.MAQP.Name = "MAQP";
             this.MAQP.ReadOnly = true;
@@ -535,8 +395,8 @@
             // GIABIEU
             // 
             this.GIABIEU.DataPropertyName = "giabieu";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.GIABIEU.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GIABIEU.DefaultCellStyle = dataGridViewCellStyle29;
             this.GIABIEU.HeaderText = "GB";
             this.GIABIEU.Name = "GIABIEU";
             this.GIABIEU.ReadOnly = true;
@@ -545,8 +405,8 @@
             // DINHMUC
             // 
             this.DINHMUC.DataPropertyName = "dinhmuc";
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DINHMUC.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DINHMUC.DefaultCellStyle = dataGridViewCellStyle30;
             this.DINHMUC.HeaderText = "ĐM";
             this.DINHMUC.Name = "DINHMUC";
             this.DINHMUC.ReadOnly = true;
@@ -555,8 +415,8 @@
             // hieuluc
             // 
             this.hieuluc.DataPropertyName = "hieuluc";
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.hieuluc.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.hieuluc.DefaultCellStyle = dataGridViewCellStyle31;
             this.hieuluc.HeaderText = "HIỆU LỰC";
             this.hieuluc.Name = "hieuluc";
             this.hieuluc.ReadOnly = true;
@@ -580,8 +440,8 @@
             // COTLK
             // 
             this.COTLK.DataPropertyName = "coTLK";
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.COTLK.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.COTLK.DefaultCellStyle = dataGridViewCellStyle32;
             this.COTLK.HeaderText = "CỠ";
             this.COTLK.Name = "COTLK";
             this.COTLK.ReadOnly = true;
@@ -607,16 +467,6 @@
             this.SoHo.HeaderText = "SỐ HỘ";
             this.SoHo.Name = "SoHo";
             this.SoHo.ReadOnly = true;
-            // 
-            // next
-            // 
-            this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right;
-            this.next.Location = new System.Drawing.Point(1189, 32);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(49, 50);
-            this.next.TabIndex = 30;
-            this.next.TabStop = false;
-            this.next.Click += new System.EventHandler(this.next_Click);
             // 
             // tabControl2
             // 
@@ -651,7 +501,7 @@
             this.tabControl2.TabIndex = 674;
             this.tabControl2.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl2.Tabs.Add(this.ItemGanMoi);
-            this.tabControl2.Tabs.Add(this.tabItem6);
+            this.tabControl2.Tabs.Add(this.tabItemPhienLoTrinh);
             this.tabControl2.Tabs.Add(this.tabSoDocSo);
             this.tabControl2.Text = "tabControl2";
             // 
@@ -671,997 +521,24 @@
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel3.Style.GradientAngle = 90;
             this.tabControlPanel3.TabIndex = 4;
-            this.tabControlPanel3.TabItem = this.tabItem6;
+            this.tabControlPanel3.TabItem = this.tabItemPhienLoTrinh;
             // 
             // panel3
             // 
+            this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.splitContainer4);
-            this.panel3.Controls.Add(this.comboBoxEx2);
-            this.panel3.Controls.Add(this.labelX23);
-            this.panel3.Controls.Add(this.lbToDocSo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(1, 1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1260, 584);
             this.panel3.TabIndex = 1;
             // 
-            // splitContainer4
-            // 
-            this.splitContainer4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(0, 30);
-            this.splitContainer4.Name = "splitContainer4";
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.splitContainer5);
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer4.Size = new System.Drawing.Size(1260, 554);
-            this.splitContainer4.SplitterDistance = 583;
-            this.splitContainer4.TabIndex = 115;
-            // 
-            // splitContainer5
-            // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer5.Name = "splitContainer5";
-            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer5.Panel1
-            // 
-            this.splitContainer5.Panel1.Controls.Add(this.comboBoxEx1);
-            this.splitContainer5.Panel1.Controls.Add(this.labelX24);
-            this.splitContainer5.Size = new System.Drawing.Size(579, 550);
-            this.splitContainer5.SplitterDistance = 35;
-            this.splitContainer5.TabIndex = 0;
-            // 
-            // comboBoxEx1
-            // 
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 21;
-            this.comboBoxEx1.Items.AddRange(new object[] {
-            this.comboItem65,
-            this.comboItem76,
-            this.comboItem77,
-            this.comboItem78,
-            this.comboItem79,
-            this.comboItem80,
-            this.comboItem81,
-            this.comboItem82,
-            this.comboItem83,
-            this.comboItem84,
-            this.comboItem85,
-            this.comboItem86,
-            this.comboItem87,
-            this.comboItem88,
-            this.comboItem89,
-            this.comboItem90,
-            this.comboItem91,
-            this.comboItem92,
-            this.comboItem93,
-            this.comboItem94,
-            this.comboItem95,
-            this.comboItem96,
-            this.comboItem97,
-            this.comboItem98,
-            this.comboItem99,
-            this.comboItem100,
-            this.comboItem101,
-            this.comboItem102,
-            this.comboItem103,
-            this.comboItem104,
-            this.comboItem105,
-            this.comboItem106,
-            this.comboItem107,
-            this.comboItem108,
-            this.comboItem109,
-            this.comboItem110,
-            this.comboItem111,
-            this.comboItem112,
-            this.comboItem113,
-            this.comboItem114,
-            this.comboItem115,
-            this.comboItem116,
-            this.comboItem117,
-            this.comboItem118,
-            this.comboItem119,
-            this.comboItem120,
-            this.comboItem121,
-            this.comboItem122,
-            this.comboItem123,
-            this.comboItem124,
-            this.comboItem125});
-            this.comboBoxEx1.Location = new System.Drawing.Point(253, 4);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(72, 27);
-            this.comboBoxEx1.TabIndex = 145;
-            // 
-            // comboItem65
-            // 
-            this.comboItem65.Text = "00";
-            this.comboItem65.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem65.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem76
-            // 
-            this.comboItem76.Text = "01";
-            this.comboItem76.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem76.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem77
-            // 
-            this.comboItem77.Text = "02";
-            this.comboItem77.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem77.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem78
-            // 
-            this.comboItem78.Text = "03";
-            this.comboItem78.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem78.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem79
-            // 
-            this.comboItem79.Text = "04";
-            this.comboItem79.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem79.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem80
-            // 
-            this.comboItem80.Text = "05";
-            this.comboItem80.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem80.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem81
-            // 
-            this.comboItem81.Text = "06";
-            this.comboItem81.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem81.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem82
-            // 
-            this.comboItem82.Text = "07";
-            this.comboItem82.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem82.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem83
-            // 
-            this.comboItem83.Text = "08";
-            this.comboItem83.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem83.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem84
-            // 
-            this.comboItem84.Text = "09";
-            this.comboItem84.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem84.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem85
-            // 
-            this.comboItem85.Text = "10";
-            this.comboItem85.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem85.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem86
-            // 
-            this.comboItem86.Text = "11";
-            this.comboItem86.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem86.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem87
-            // 
-            this.comboItem87.Text = "12";
-            this.comboItem87.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem87.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem88
-            // 
-            this.comboItem88.Text = "13";
-            this.comboItem88.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem88.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem89
-            // 
-            this.comboItem89.Text = "14";
-            this.comboItem89.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem89.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem90
-            // 
-            this.comboItem90.Text = "15";
-            this.comboItem90.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem90.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem91
-            // 
-            this.comboItem91.Text = "16";
-            this.comboItem91.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem91.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem92
-            // 
-            this.comboItem92.Text = "17";
-            this.comboItem92.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem92.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem93
-            // 
-            this.comboItem93.Text = "18";
-            this.comboItem93.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem93.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem94
-            // 
-            this.comboItem94.Text = "19";
-            this.comboItem94.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem94.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem95
-            // 
-            this.comboItem95.Text = "20";
-            this.comboItem95.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem95.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem96
-            // 
-            this.comboItem96.Text = "21";
-            this.comboItem96.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem96.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem97
-            // 
-            this.comboItem97.Text = "22";
-            this.comboItem97.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem97.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem98
-            // 
-            this.comboItem98.Text = "23";
-            this.comboItem98.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem98.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem99
-            // 
-            this.comboItem99.Text = "24";
-            this.comboItem99.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem99.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem100
-            // 
-            this.comboItem100.Text = "25";
-            this.comboItem100.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem100.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem101
-            // 
-            this.comboItem101.Text = "26";
-            this.comboItem101.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem101.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem102
-            // 
-            this.comboItem102.Text = "27";
-            this.comboItem102.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem102.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem103
-            // 
-            this.comboItem103.Text = "28";
-            this.comboItem103.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem103.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem104
-            // 
-            this.comboItem104.Text = "29";
-            this.comboItem104.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem104.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem105
-            // 
-            this.comboItem105.Text = "30";
-            this.comboItem105.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem105.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem106
-            // 
-            this.comboItem106.Text = "31";
-            this.comboItem106.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem106.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem107
-            // 
-            this.comboItem107.Text = "32";
-            this.comboItem107.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem107.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem108
-            // 
-            this.comboItem108.Text = "33";
-            this.comboItem108.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem108.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem109
-            // 
-            this.comboItem109.Text = "34";
-            this.comboItem109.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem109.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem110
-            // 
-            this.comboItem110.Text = "35";
-            this.comboItem110.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem110.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem111
-            // 
-            this.comboItem111.Text = "36";
-            this.comboItem111.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem111.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem112
-            // 
-            this.comboItem112.Text = "37";
-            this.comboItem112.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem112.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem113
-            // 
-            this.comboItem113.Text = "38";
-            this.comboItem113.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem113.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem114
-            // 
-            this.comboItem114.Text = "39";
-            this.comboItem114.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem114.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem115
-            // 
-            this.comboItem115.Text = "40";
-            this.comboItem115.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem115.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem116
-            // 
-            this.comboItem116.Text = "41";
-            this.comboItem116.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem116.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem117
-            // 
-            this.comboItem117.Text = "42";
-            this.comboItem117.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem117.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem118
-            // 
-            this.comboItem118.Text = "43";
-            this.comboItem118.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem118.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem119
-            // 
-            this.comboItem119.Text = "44";
-            this.comboItem119.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem119.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem120
-            // 
-            this.comboItem120.Text = "45";
-            this.comboItem120.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem120.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem121
-            // 
-            this.comboItem121.Text = "46";
-            this.comboItem121.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem121.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem122
-            // 
-            this.comboItem122.Text = "47";
-            this.comboItem122.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem122.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem123
-            // 
-            this.comboItem123.Text = "48";
-            this.comboItem123.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem123.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem124
-            // 
-            this.comboItem124.Text = "49";
-            this.comboItem124.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem124.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem125
-            // 
-            this.comboItem125.Text = "50";
-            this.comboItem125.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem125.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX24
-            // 
-            this.labelX24.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX24.Location = new System.Drawing.Point(135, 6);
-            this.labelX24.Name = "labelX24";
-            this.labelX24.Size = new System.Drawing.Size(123, 22);
-            this.labelX24.TabIndex = 142;
-            this.labelX24.Text = "MÁY  ĐỌC SỐ";
-            // 
-            // splitContainer6
-            // 
-            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer6.Name = "splitContainer6";
-            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer6.Panel1
-            // 
-            this.splitContainer6.Panel1.Controls.Add(this.comboBoxEx3);
-            this.splitContainer6.Panel1.Controls.Add(this.labelX20);
-            this.splitContainer6.Size = new System.Drawing.Size(669, 550);
-            this.splitContainer6.SplitterDistance = 69;
-            this.splitContainer6.TabIndex = 1;
-            // 
-            // comboBoxEx3
-            // 
-            this.comboBoxEx3.DisplayMember = "Text";
-            this.comboBoxEx3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEx3.FormattingEnabled = true;
-            this.comboBoxEx3.ItemHeight = 21;
-            this.comboBoxEx3.Items.AddRange(new object[] {
-            this.comboItem146,
-            this.comboItem147,
-            this.comboItem148,
-            this.comboItem149,
-            this.comboItem150,
-            this.comboItem151,
-            this.comboItem152,
-            this.comboItem153,
-            this.comboItem154,
-            this.comboItem155,
-            this.comboItem156,
-            this.comboItem157,
-            this.comboItem158,
-            this.comboItem159,
-            this.comboItem160,
-            this.comboItem161,
-            this.comboItem162,
-            this.comboItem163,
-            this.comboItem164,
-            this.comboItem165,
-            this.comboItem166,
-            this.comboItem167,
-            this.comboItem168,
-            this.comboItem169,
-            this.comboItem170,
-            this.comboItem171,
-            this.comboItem172,
-            this.comboItem173,
-            this.comboItem174,
-            this.comboItem175,
-            this.comboItem176,
-            this.comboItem177,
-            this.comboItem178,
-            this.comboItem179,
-            this.comboItem180,
-            this.comboItem181,
-            this.comboItem182,
-            this.comboItem183,
-            this.comboItem184,
-            this.comboItem185,
-            this.comboItem186,
-            this.comboItem187,
-            this.comboItem188,
-            this.comboItem189,
-            this.comboItem190,
-            this.comboItem191,
-            this.comboItem192,
-            this.comboItem193,
-            this.comboItem194,
-            this.comboItem195,
-            this.comboItem196});
-            this.comboBoxEx3.Location = new System.Drawing.Point(254, 5);
-            this.comboBoxEx3.Name = "comboBoxEx3";
-            this.comboBoxEx3.Size = new System.Drawing.Size(70, 27);
-            this.comboBoxEx3.TabIndex = 149;
-            // 
-            // comboItem146
-            // 
-            this.comboItem146.Text = "00";
-            this.comboItem146.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem146.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem147
-            // 
-            this.comboItem147.Text = "01";
-            this.comboItem147.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem147.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem148
-            // 
-            this.comboItem148.Text = "02";
-            this.comboItem148.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem148.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem149
-            // 
-            this.comboItem149.Text = "03";
-            this.comboItem149.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem149.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem150
-            // 
-            this.comboItem150.Text = "04";
-            this.comboItem150.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem150.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem151
-            // 
-            this.comboItem151.Text = "05";
-            this.comboItem151.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem151.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem152
-            // 
-            this.comboItem152.Text = "06";
-            this.comboItem152.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem152.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem153
-            // 
-            this.comboItem153.Text = "07";
-            this.comboItem153.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem153.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem154
-            // 
-            this.comboItem154.Text = "08";
-            this.comboItem154.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem154.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem155
-            // 
-            this.comboItem155.Text = "09";
-            this.comboItem155.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem155.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem156
-            // 
-            this.comboItem156.Text = "10";
-            this.comboItem156.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem156.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem157
-            // 
-            this.comboItem157.Text = "11";
-            this.comboItem157.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem157.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem158
-            // 
-            this.comboItem158.Text = "12";
-            this.comboItem158.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem158.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem159
-            // 
-            this.comboItem159.Text = "13";
-            this.comboItem159.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem159.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem160
-            // 
-            this.comboItem160.Text = "14";
-            this.comboItem160.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem160.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem161
-            // 
-            this.comboItem161.Text = "15";
-            this.comboItem161.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem161.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem162
-            // 
-            this.comboItem162.Text = "16";
-            this.comboItem162.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem162.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem163
-            // 
-            this.comboItem163.Text = "17";
-            this.comboItem163.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem163.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem164
-            // 
-            this.comboItem164.Text = "18";
-            this.comboItem164.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem164.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem165
-            // 
-            this.comboItem165.Text = "19";
-            this.comboItem165.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem165.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem166
-            // 
-            this.comboItem166.Text = "20";
-            this.comboItem166.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem166.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem167
-            // 
-            this.comboItem167.Text = "21";
-            this.comboItem167.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem167.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem168
-            // 
-            this.comboItem168.Text = "22";
-            this.comboItem168.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem168.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem169
-            // 
-            this.comboItem169.Text = "23";
-            this.comboItem169.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem169.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem170
-            // 
-            this.comboItem170.Text = "24";
-            this.comboItem170.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem170.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem171
-            // 
-            this.comboItem171.Text = "25";
-            this.comboItem171.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem171.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem172
-            // 
-            this.comboItem172.Text = "26";
-            this.comboItem172.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem172.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem173
-            // 
-            this.comboItem173.Text = "27";
-            this.comboItem173.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem173.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem174
-            // 
-            this.comboItem174.Text = "28";
-            this.comboItem174.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem174.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem175
-            // 
-            this.comboItem175.Text = "29";
-            this.comboItem175.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem175.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem176
-            // 
-            this.comboItem176.Text = "30";
-            this.comboItem176.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem176.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem177
-            // 
-            this.comboItem177.Text = "31";
-            this.comboItem177.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem177.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem178
-            // 
-            this.comboItem178.Text = "32";
-            this.comboItem178.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem178.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem179
-            // 
-            this.comboItem179.Text = "33";
-            this.comboItem179.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem179.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem180
-            // 
-            this.comboItem180.Text = "34";
-            this.comboItem180.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem180.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem181
-            // 
-            this.comboItem181.Text = "35";
-            this.comboItem181.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem181.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem182
-            // 
-            this.comboItem182.Text = "36";
-            this.comboItem182.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem182.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem183
-            // 
-            this.comboItem183.Text = "37";
-            this.comboItem183.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem183.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem184
-            // 
-            this.comboItem184.Text = "38";
-            this.comboItem184.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem184.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem185
-            // 
-            this.comboItem185.Text = "39";
-            this.comboItem185.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem185.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem186
-            // 
-            this.comboItem186.Text = "40";
-            this.comboItem186.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem186.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem187
-            // 
-            this.comboItem187.Text = "41";
-            this.comboItem187.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem187.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem188
-            // 
-            this.comboItem188.Text = "42";
-            this.comboItem188.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem188.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem189
-            // 
-            this.comboItem189.Text = "43";
-            this.comboItem189.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem189.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem190
-            // 
-            this.comboItem190.Text = "44";
-            this.comboItem190.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem190.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem191
-            // 
-            this.comboItem191.Text = "45";
-            this.comboItem191.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem191.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem192
-            // 
-            this.comboItem192.Text = "46";
-            this.comboItem192.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem192.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem193
-            // 
-            this.comboItem193.Text = "47";
-            this.comboItem193.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem193.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem194
-            // 
-            this.comboItem194.Text = "48";
-            this.comboItem194.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem194.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem195
-            // 
-            this.comboItem195.Text = "49";
-            this.comboItem195.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem195.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem196
-            // 
-            this.comboItem196.Text = "50";
-            this.comboItem196.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem196.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboBoxEx2
-            // 
-            this.comboBoxEx2.DisplayMember = "Text";
-            this.comboBoxEx2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEx2.FormattingEnabled = true;
-            this.comboBoxEx2.ItemHeight = 21;
-            this.comboBoxEx2.Items.AddRange(new object[] {
-            this.comboItem126,
-            this.comboItem127,
-            this.comboItem128,
-            this.comboItem129,
-            this.comboItem130,
-            this.comboItem131,
-            this.comboItem132,
-            this.comboItem133,
-            this.comboItem134,
-            this.comboItem135,
-            this.comboItem136,
-            this.comboItem137,
-            this.comboItem138,
-            this.comboItem139,
-            this.comboItem140,
-            this.comboItem141,
-            this.comboItem142,
-            this.comboItem143,
-            this.comboItem144,
-            this.comboItem145});
-            this.comboBoxEx2.Location = new System.Drawing.Point(302, 1);
-            this.comboBoxEx2.Name = "comboBoxEx2";
-            this.comboBoxEx2.Size = new System.Drawing.Size(86, 27);
-            this.comboBoxEx2.TabIndex = 144;
-            // 
-            // comboItem126
-            // 
-            this.comboItem126.Text = "1";
-            this.comboItem126.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem126.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem127
-            // 
-            this.comboItem127.Text = "2";
-            this.comboItem127.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem127.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem128
-            // 
-            this.comboItem128.Text = "3";
-            this.comboItem128.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem128.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem129
-            // 
-            this.comboItem129.Text = "4";
-            this.comboItem129.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem129.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem130
-            // 
-            this.comboItem130.Text = "5";
-            this.comboItem130.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem130.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem131
-            // 
-            this.comboItem131.Text = "6";
-            this.comboItem131.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem131.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem132
-            // 
-            this.comboItem132.Text = "7";
-            this.comboItem132.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem132.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem133
-            // 
-            this.comboItem133.Text = "8";
-            this.comboItem133.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem133.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem134
-            // 
-            this.comboItem134.Text = "9";
-            this.comboItem134.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem134.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem135
-            // 
-            this.comboItem135.Text = "10";
-            this.comboItem135.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem135.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem136
-            // 
-            this.comboItem136.Text = "11";
-            this.comboItem136.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem136.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem137
-            // 
-            this.comboItem137.Text = "12";
-            this.comboItem137.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem137.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem138
-            // 
-            this.comboItem138.Text = "13";
-            this.comboItem138.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem138.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem139
-            // 
-            this.comboItem139.Text = "14";
-            this.comboItem139.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem139.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem140
-            // 
-            this.comboItem140.Text = "15";
-            this.comboItem140.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem140.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem141
-            // 
-            this.comboItem141.Text = "16";
-            this.comboItem141.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem141.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem142
-            // 
-            this.comboItem142.Text = "17";
-            this.comboItem142.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem142.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem143
-            // 
-            this.comboItem143.Text = "18";
-            this.comboItem143.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem143.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem144
-            // 
-            this.comboItem144.Text = "19";
-            this.comboItem144.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem144.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem145
-            // 
-            this.comboItem145.Text = "20";
-            this.comboItem145.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem145.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX23
-            // 
-            this.labelX23.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX23.Location = new System.Drawing.Point(190, 3);
-            this.labelX23.Name = "labelX23";
-            this.labelX23.Size = new System.Drawing.Size(106, 22);
-            this.labelX23.TabIndex = 143;
-            this.labelX23.Text = "ĐỢT ĐỌC SỐ";
-            // 
-            // lbToDocSo
-            // 
-            this.lbToDocSo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbToDocSo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbToDocSo.ForeColor = System.Drawing.Color.Blue;
-            this.lbToDocSo.Location = new System.Drawing.Point(0, 0);
-            this.lbToDocSo.Name = "lbToDocSo";
-            this.lbToDocSo.Size = new System.Drawing.Size(1260, 30);
-            this.lbToDocSo.TabIndex = 114;
-            this.lbToDocSo.Text = "           TỔ TÂN BÌNH";
-            // 
-            // tabItem6
-            // 
-            this.tabItem6.AttachedControl = this.tabControlPanel3;
-            this.tabItem6.Name = "tabItem6";
-            this.tabItem6.Text = "CHO PHIÊN LỘ TRÌNH";
-            this.tabItem6.Click += new System.EventHandler(this.tabItem6_Click);
+            // tabItemPhienLoTrinh
+            // 
+            this.tabItemPhienLoTrinh.AttachedControl = this.tabControlPanel3;
+            this.tabItemPhienLoTrinh.Name = "tabItemPhienLoTrinh";
+            this.tabItemPhienLoTrinh.Text = "CHO PHIÊN LỘ TRÌNH";
+            this.tabItemPhienLoTrinh.Click += new System.EventHandler(this.tabItem6_Click);
             // 
             // tabCapNhatDS
             // 
@@ -1804,22 +681,6 @@
             // 
             this.comboItem63.Text = "TÂN PHÚ";
             // 
-            // btChuyen
-            // 
-            this.btChuyen.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btChuyen.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btChuyen.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btChuyen.ForeColor = System.Drawing.Color.Crimson;
-            this.btChuyen.Image = global::CAPNUOCTANHOA.Properties.Resources._24;
-            this.btChuyen.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.btChuyen.Location = new System.Drawing.Point(1104, 84);
-            this.btChuyen.Name = "btChuyen";
-            this.btChuyen.Size = new System.Drawing.Size(128, 27);
-            this.btChuyen.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btChuyen.TabIndex = 137;
-            this.btChuyen.Text = "CHUYỂN";
-            this.btChuyen.Click += new System.EventHandler(this.btChuyen_Click);
-            // 
             // cbMayDocSo
             // 
             this.cbMayDocSo.DisplayMember = "Text";
@@ -1886,61 +747,61 @@
             // 
             // comboItem41
             // 
-            this.comboItem41.Text = "00";
+            this.comboItem41.Text = "0";
             this.comboItem41.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem41.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem13
             // 
-            this.comboItem13.Text = "01";
+            this.comboItem13.Text = "1";
             this.comboItem13.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem13.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem14
             // 
-            this.comboItem14.Text = "02";
+            this.comboItem14.Text = "2";
             this.comboItem14.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem14.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem15
             // 
-            this.comboItem15.Text = "03";
+            this.comboItem15.Text = "3";
             this.comboItem15.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem15.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem16
             // 
-            this.comboItem16.Text = "04";
+            this.comboItem16.Text = "4";
             this.comboItem16.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem16.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem17
             // 
-            this.comboItem17.Text = "05";
+            this.comboItem17.Text = "5";
             this.comboItem17.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem17.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem18
             // 
-            this.comboItem18.Text = "06";
+            this.comboItem18.Text = "6";
             this.comboItem18.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem18.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem19
             // 
-            this.comboItem19.Text = "07";
+            this.comboItem19.Text = "7";
             this.comboItem19.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem19.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem20
             // 
-            this.comboItem20.Text = "08";
+            this.comboItem20.Text = "8";
             this.comboItem20.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem20.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem21
             // 
-            this.comboItem21.Text = "09";
+            this.comboItem21.Text = "9";
             this.comboItem21.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem21.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
@@ -3049,14 +1910,31 @@
             this.tabSoDocSo.Name = "tabSoDocSo";
             this.tabSoDocSo.Text = "SỔ ĐỌC SỐ";
             // 
-            // labelX20
+            // btChuyen
             // 
-            this.labelX20.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX20.Location = new System.Drawing.Point(136, 7);
-            this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(123, 22);
-            this.labelX20.TabIndex = 150;
-            this.labelX20.Text = "MÁY  ĐỌC SỐ";
+            this.btChuyen.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btChuyen.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btChuyen.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btChuyen.ForeColor = System.Drawing.Color.Crimson;
+            this.btChuyen.Image = global::CAPNUOCTANHOA.Properties.Resources._24;
+            this.btChuyen.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.btChuyen.Location = new System.Drawing.Point(1104, 84);
+            this.btChuyen.Name = "btChuyen";
+            this.btChuyen.Size = new System.Drawing.Size(128, 27);
+            this.btChuyen.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btChuyen.TabIndex = 137;
+            this.btChuyen.Text = "CHUYỂN";
+            this.btChuyen.Click += new System.EventHandler(this.btChuyen_Click);
+            // 
+            // next
+            // 
+            this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right;
+            this.next.Location = new System.Drawing.Point(1189, 32);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(49, 50);
+            this.next.TabIndex = 30;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
             // 
             // frm_LoTrinhDocSo
             // 
@@ -3070,18 +1948,9 @@
             this.Name = "frm_LoTrinhDocSo";
             this.Size = new System.Drawing.Size(1262, 614);
             ((System.ComponentModel.ISupportInitialize)(this.dataGanMoiBK)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabControlPanel3.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel2.ResumeLayout(false);
-            this.splitContainer4.ResumeLayout(false);
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.ResumeLayout(false);
-            this.splitContainer6.Panel1.ResumeLayout(false);
-            this.splitContainer6.ResumeLayout(false);
             this.tabCapNhatDS.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -3102,6 +1971,7 @@
             this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3113,7 +1983,7 @@
         private DevComponents.DotNetBar.TabControl tabControl2;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel3;
         private System.Windows.Forms.Panel panel3;
-        private DevComponents.DotNetBar.TabItem tabItem6;
+        private DevComponents.DotNetBar.TabItem tabItemPhienLoTrinh;
         private DevComponents.DotNetBar.TabControlPanel tabCapNhatDS;
         private DevComponents.DotNetBar.TabItem ItemGanMoi;
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -3269,137 +2139,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SOTLK;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHISOTLK;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoHo;
-        private System.Windows.Forms.SplitContainer splitContainer4;
-        private DevComponents.DotNetBar.LabelX lbToDocSo;
-        private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.SplitContainer splitContainer6;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
-        private DevComponents.Editors.ComboItem comboItem65;
-        private DevComponents.Editors.ComboItem comboItem76;
-        private DevComponents.Editors.ComboItem comboItem77;
-        private DevComponents.Editors.ComboItem comboItem78;
-        private DevComponents.Editors.ComboItem comboItem79;
-        private DevComponents.Editors.ComboItem comboItem80;
-        private DevComponents.Editors.ComboItem comboItem81;
-        private DevComponents.Editors.ComboItem comboItem82;
-        private DevComponents.Editors.ComboItem comboItem83;
-        private DevComponents.Editors.ComboItem comboItem84;
-        private DevComponents.Editors.ComboItem comboItem85;
-        private DevComponents.Editors.ComboItem comboItem86;
-        private DevComponents.Editors.ComboItem comboItem87;
-        private DevComponents.Editors.ComboItem comboItem88;
-        private DevComponents.Editors.ComboItem comboItem89;
-        private DevComponents.Editors.ComboItem comboItem90;
-        private DevComponents.Editors.ComboItem comboItem91;
-        private DevComponents.Editors.ComboItem comboItem92;
-        private DevComponents.Editors.ComboItem comboItem93;
-        private DevComponents.Editors.ComboItem comboItem94;
-        private DevComponents.Editors.ComboItem comboItem95;
-        private DevComponents.Editors.ComboItem comboItem96;
-        private DevComponents.Editors.ComboItem comboItem97;
-        private DevComponents.Editors.ComboItem comboItem98;
-        private DevComponents.Editors.ComboItem comboItem99;
-        private DevComponents.Editors.ComboItem comboItem100;
-        private DevComponents.Editors.ComboItem comboItem101;
-        private DevComponents.Editors.ComboItem comboItem102;
-        private DevComponents.Editors.ComboItem comboItem103;
-        private DevComponents.Editors.ComboItem comboItem104;
-        private DevComponents.Editors.ComboItem comboItem105;
-        private DevComponents.Editors.ComboItem comboItem106;
-        private DevComponents.Editors.ComboItem comboItem107;
-        private DevComponents.Editors.ComboItem comboItem108;
-        private DevComponents.Editors.ComboItem comboItem109;
-        private DevComponents.Editors.ComboItem comboItem110;
-        private DevComponents.Editors.ComboItem comboItem111;
-        private DevComponents.Editors.ComboItem comboItem112;
-        private DevComponents.Editors.ComboItem comboItem113;
-        private DevComponents.Editors.ComboItem comboItem114;
-        private DevComponents.Editors.ComboItem comboItem115;
-        private DevComponents.Editors.ComboItem comboItem116;
-        private DevComponents.Editors.ComboItem comboItem117;
-        private DevComponents.Editors.ComboItem comboItem118;
-        private DevComponents.Editors.ComboItem comboItem119;
-        private DevComponents.Editors.ComboItem comboItem120;
-        private DevComponents.Editors.ComboItem comboItem121;
-        private DevComponents.Editors.ComboItem comboItem122;
-        private DevComponents.Editors.ComboItem comboItem123;
-        private DevComponents.Editors.ComboItem comboItem124;
-        private DevComponents.Editors.ComboItem comboItem125;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx2;
-        private DevComponents.Editors.ComboItem comboItem126;
-        private DevComponents.Editors.ComboItem comboItem127;
-        private DevComponents.Editors.ComboItem comboItem128;
-        private DevComponents.Editors.ComboItem comboItem129;
-        private DevComponents.Editors.ComboItem comboItem130;
-        private DevComponents.Editors.ComboItem comboItem131;
-        private DevComponents.Editors.ComboItem comboItem132;
-        private DevComponents.Editors.ComboItem comboItem133;
-        private DevComponents.Editors.ComboItem comboItem134;
-        private DevComponents.Editors.ComboItem comboItem135;
-        private DevComponents.Editors.ComboItem comboItem136;
-        private DevComponents.Editors.ComboItem comboItem137;
-        private DevComponents.Editors.ComboItem comboItem138;
-        private DevComponents.Editors.ComboItem comboItem139;
-        private DevComponents.Editors.ComboItem comboItem140;
-        private DevComponents.Editors.ComboItem comboItem141;
-        private DevComponents.Editors.ComboItem comboItem142;
-        private DevComponents.Editors.ComboItem comboItem143;
-        private DevComponents.Editors.ComboItem comboItem144;
-        private DevComponents.Editors.ComboItem comboItem145;
-        private DevComponents.DotNetBar.LabelX labelX23;
-        private DevComponents.DotNetBar.LabelX labelX24;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx3;
-        private DevComponents.Editors.ComboItem comboItem146;
-        private DevComponents.Editors.ComboItem comboItem147;
-        private DevComponents.Editors.ComboItem comboItem148;
-        private DevComponents.Editors.ComboItem comboItem149;
-        private DevComponents.Editors.ComboItem comboItem150;
-        private DevComponents.Editors.ComboItem comboItem151;
-        private DevComponents.Editors.ComboItem comboItem152;
-        private DevComponents.Editors.ComboItem comboItem153;
-        private DevComponents.Editors.ComboItem comboItem154;
-        private DevComponents.Editors.ComboItem comboItem155;
-        private DevComponents.Editors.ComboItem comboItem156;
-        private DevComponents.Editors.ComboItem comboItem157;
-        private DevComponents.Editors.ComboItem comboItem158;
-        private DevComponents.Editors.ComboItem comboItem159;
-        private DevComponents.Editors.ComboItem comboItem160;
-        private DevComponents.Editors.ComboItem comboItem161;
-        private DevComponents.Editors.ComboItem comboItem162;
-        private DevComponents.Editors.ComboItem comboItem163;
-        private DevComponents.Editors.ComboItem comboItem164;
-        private DevComponents.Editors.ComboItem comboItem165;
-        private DevComponents.Editors.ComboItem comboItem166;
-        private DevComponents.Editors.ComboItem comboItem167;
-        private DevComponents.Editors.ComboItem comboItem168;
-        private DevComponents.Editors.ComboItem comboItem169;
-        private DevComponents.Editors.ComboItem comboItem170;
-        private DevComponents.Editors.ComboItem comboItem171;
-        private DevComponents.Editors.ComboItem comboItem172;
-        private DevComponents.Editors.ComboItem comboItem173;
-        private DevComponents.Editors.ComboItem comboItem174;
-        private DevComponents.Editors.ComboItem comboItem175;
-        private DevComponents.Editors.ComboItem comboItem176;
-        private DevComponents.Editors.ComboItem comboItem177;
-        private DevComponents.Editors.ComboItem comboItem178;
-        private DevComponents.Editors.ComboItem comboItem179;
-        private DevComponents.Editors.ComboItem comboItem180;
-        private DevComponents.Editors.ComboItem comboItem181;
-        private DevComponents.Editors.ComboItem comboItem182;
-        private DevComponents.Editors.ComboItem comboItem183;
-        private DevComponents.Editors.ComboItem comboItem184;
-        private DevComponents.Editors.ComboItem comboItem185;
-        private DevComponents.Editors.ComboItem comboItem186;
-        private DevComponents.Editors.ComboItem comboItem187;
-        private DevComponents.Editors.ComboItem comboItem188;
-        private DevComponents.Editors.ComboItem comboItem189;
-        private DevComponents.Editors.ComboItem comboItem190;
-        private DevComponents.Editors.ComboItem comboItem191;
-        private DevComponents.Editors.ComboItem comboItem192;
-        private DevComponents.Editors.ComboItem comboItem193;
-        private DevComponents.Editors.ComboItem comboItem194;
-        private DevComponents.Editors.ComboItem comboItem195;
-        private DevComponents.Editors.ComboItem comboItem196;
-        private DevComponents.DotNetBar.LabelX labelX20;
     }
 }
