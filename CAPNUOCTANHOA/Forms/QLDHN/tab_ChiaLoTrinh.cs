@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CAPNUOCTANHOA.LinQ;
+using log4net;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
     public partial class tab_ChiaLoTrinh : UserControl
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(tab_ChiaLoTrinh).Name);
         int tods = 0;
         public tab_ChiaLoTrinh()
         {
@@ -209,5 +211,75 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             }
         }
+
+        private void btChoLoTrinhMoi_Click(object sender, EventArgs e)
+        {
+            string dotds = cbChiLoTrinhDotDS.Items[cbChiLoTrinhDotDS.SelectedIndex].ToString();
+            string mayds = cbDenMayDocSo.Text;
+            if (int.Parse(dotds) < 10)
+            {
+                dotds = "0" + dotds;
+            }
+            if (int.Parse(mayds) < 10)
+            {
+                mayds = "0" + mayds;
+            }
+
+            String_Indentity.String_Indentity obj = new String_Indentity.String_Indentity();
+            string id ="00000";            
+            for (int i = 0; i < dataLoTrinh.Rows.Count; i++) {
+                id = obj.ID(dotds + mayds, id, "00000", int.Parse(this.txtTangBat.Text)) + "";
+                dataLoTrinh.Rows[i].Cells["M_LOTRINH"].Value = id;
+            }
+            //MessageBox.Show(this, id);
+        }
+
+        public void CapNhatLoTrinhMoi_TB_DULIEUKHACHHANG() { 
+        
+        }
+
+        public void CapNhatLoTrinhMoi_TB_KHACHHANG()
+        {
+
+        }
+
+        private void cbChiLoTrinhDotDS_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadTuMayDocSo();
+                LoadDenMayDocSo();
+            }
+            catch (Exception)
+            {
+                
+            }
+           
+        }
+
+        private void btCapNhatLoTrinhMoi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < dataLoTrinh.Rows.Count; i++)
+                {
+                    string danhbo = dataLoTrinh.Rows[i].Cells["DEN_DANHBO"].Value + "";
+                    string lotrinh = dataLoTrinh.Rows[i].Cells["M_LOTRINH"].Value + "";
+                    if (!"".Equals(danhbo) && !"".Equals(lotrinh))
+                    {
+                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatLoTrinh_DOCSO(danhbo.Replace(" ", ""), lotrinh.Replace(" ", ""));
+                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatLoTrinh_KHACHHANG(danhbo.Replace(" ", ""), lotrinh.Replace(" ", ""));
+                    }
+                }
+                MessageBox.Show(this, "Cập Nhật Lộ Trình Mới Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                MessageBox.Show(this, "Cập Nhật Lộ Trình Mới Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
     }
 }

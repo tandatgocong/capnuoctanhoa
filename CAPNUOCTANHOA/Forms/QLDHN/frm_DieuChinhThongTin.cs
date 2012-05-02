@@ -190,6 +190,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 hKhacHang.CUON_GCS = huyDanhBo.CUON_GCS;
                 hKhacHang.CUON_STT = huyDanhBo.CUON_STT;
                 hKhacHang.DANHBO = huyDanhBo.DANHBO;
+                hKhacHang.LOTRINH = huyDanhBo.LOTRINH;
                 hKhacHang.NGAYGANDH = huyDanhBo.NGAYGANDH;
                 hKhacHang.HOPDONG = huyDanhBo.HOPDONG;
                 hKhacHang.HOTEN = huyDanhBo.HOTEN;
@@ -214,6 +215,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 hKhacHang.CHIGOC = huyDanhBo.CHIGOC;
                 hKhacHang.VITRIDHN = huyDanhBo.VITRIDHN;
                 hKhacHang.NGAYTHAY = huyDanhBo.NGAYTHAY;
+                hKhacHang.NGAYKIEMDINH = huyDanhBo.NGAYKIEMDINH;
                 hKhacHang.SODHN = huyDanhBo.SODHN;
                 hKhacHang.MSTHUE = huyDanhBo.MSTHUE;
                 hKhacHang.SOHO = huyDanhBo.SOHO;
@@ -303,8 +305,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
 
-      
+       
 
-        
+        /// <summary>
+        /// Đì
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void tabItem6_Click(object sender, EventArgs e)
+        {
+            panel3.Controls.Clear();
+            panel3.Controls.Add(new tab_DieuChinhDS());
+        }
     }
 }
