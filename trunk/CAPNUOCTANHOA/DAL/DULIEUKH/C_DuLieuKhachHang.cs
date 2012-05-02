@@ -38,6 +38,19 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             }
             return null;
         }
+        public static TB_DULIEUKHACHHANG_HUYDB finByDanhBoHuy(string danhbo)
+        {
+            try
+            {
+                var query = from q in db.TB_DULIEUKHACHHANG_HUYDBs where q.DANHBO == danhbo select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
 
         public static void Insert(TB_DULIEUKHACHHANG tb) {
             try
@@ -121,6 +134,19 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
 
             return ds;        
 
+        }
+
+        public static DataSet reportHuyDB(string danhbo)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "select * from TB_DULIEUKHACHHANG_HUYDB where DANHBO='" + danhbo + "'  ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DULIEUKHACHHANG_HUYDB");
+
+            return ds;
         }
     }
 }

@@ -51,7 +51,6 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "frm_Reports";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "In Báo Cáo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

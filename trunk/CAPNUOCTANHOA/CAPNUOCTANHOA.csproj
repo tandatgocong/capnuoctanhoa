@@ -55,6 +55,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
+    <Reference Include="String_Indentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\String_Indentity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -211,6 +215,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_HuyDanhBo.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\BC\rpt_PhieuDCTLDBO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_PhieuDCTLDBO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\PHIEUTAILAPDANHBO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PHIEUTAILAPDANHBO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tab_DieuChinhDS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tab_DieuChinhDS.Designer.cs">
+      <DependentUpon>tab_DieuChinhDS.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\frm_LoTrinhDocSo.cs">
       <SubType>UserControl</SubType>
@@ -484,6 +505,17 @@
     <None Include="Forms\QLDHN\BC\HUYDANHBO.xss">
       <DependentUpon>HUYDANHBO.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\PHIEUTAILAPDANHBO.xsc">
+      <DependentUpon>PHIEUTAILAPDANHBO.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\PHIEUTAILAPDANHBO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PHIEUTAILAPDANHBO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\PHIEUTAILAPDANHBO.xss">
+      <DependentUpon>PHIEUTAILAPDANHBO.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\SODOCSO\SODOCSO.xsc">
       <DependentUpon>SODOCSO.xsd</DependentUpon>
     </None>
@@ -567,6 +599,13 @@
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_HuyDanhBo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_HuyDanhBo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\BC\rpt_PhieuDCTLDBO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PhieuDCTLDBO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tab_DieuChinhDS.resx">
+      <DependentUpon>tab_DieuChinhDS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_LoTrinhDocSo.resx">
       <DependentUpon>frm_LoTrinhDocSo.cs</DependentUpon>

@@ -91,5 +91,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             db.SubmitChanges();
             return result;
         }
+
+        
     }
 }

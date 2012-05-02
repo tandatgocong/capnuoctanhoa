@@ -27,5 +27,39 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             }
             return null;
         }
+
+        public static int CapNhatLoTrinh_KHACHHANG(string danhbo, string lotrinh)
+        {
+
+            string sql = "UPDATE TB_DULIEUKHACHHANG SET LOTRINH ='" + lotrinh + "' WHERE DANHBO='" + danhbo + "'  ";
+            return DAL.LinQConnection.ExecuteCommand(sql);
+        }
+        public static int CapNhatLoTrinh_DOCSO(string danhbo, string lotrinh)
+        {
+            int result = 0;
+            DocSoDataContext db = new DocSoDataContext();
+            try
+            {
+                string sql = "UPDATE KHACHHANG SET MALOTRINH='" + lotrinh + "',MALOTRINH2='" + lotrinh + "' WHERE DANHBA='" + danhbo + "' ";
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
+        }
     }
 }

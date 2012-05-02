@@ -5382,6 +5382,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private string _CUON_STT;
 		
+		private string _LOTRINH;
+		
 		private string _DANHBO;
 		
 		private string _NGAYGANDH;
@@ -5432,6 +5434,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private System.Nullable<System.DateTime> _NGAYTHAY;
 		
+		private System.Nullable<System.DateTime> _NGAYKIEMDINH;
+		
 		private string _SODHN;
 		
 		private string _MSTHUE;
@@ -5453,6 +5457,12 @@ namespace CAPNUOCTANHOA.LinQ
 		private System.Nullable<bool> _TAILAPDB;
 		
 		private System.Nullable<System.DateTime> _NGAYTAILAP;
+		
+		private string _TL_SOPHIEU;
+		
+		private string _TL_HIEULUC;
+		
+		private string _TL_DOT;
 		
 		private System.Nullable<System.DateTime> _CREATEDATE;
 		
@@ -5476,6 +5486,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnCUON_GCSChanged();
     partial void OnCUON_STTChanging(string value);
     partial void OnCUON_STTChanged();
+    partial void OnLOTRINHChanging(string value);
+    partial void OnLOTRINHChanged();
     partial void OnDANHBOChanging(string value);
     partial void OnDANHBOChanged();
     partial void OnNGAYGANDHChanging(string value);
@@ -5526,6 +5538,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnVITRIDHNChanged();
     partial void OnNGAYTHAYChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYTHAYChanged();
+    partial void OnNGAYKIEMDINHChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYKIEMDINHChanged();
     partial void OnSODHNChanging(string value);
     partial void OnSODHNChanged();
     partial void OnMSTHUEChanging(string value);
@@ -5548,6 +5562,12 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnTAILAPDBChanged();
     partial void OnNGAYTAILAPChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYTAILAPChanged();
+    partial void OnTL_SOPHIEUChanging(string value);
+    partial void OnTL_SOPHIEUChanged();
+    partial void OnTL_HIEULUCChanging(string value);
+    partial void OnTL_HIEULUCChanged();
+    partial void OnTL_DOTChanging(string value);
+    partial void OnTL_DOTChanged();
     partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
     partial void OnCREATEDATEChanged();
     partial void OnCREATEBYChanging(string value);
@@ -5659,6 +5679,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._CUON_STT = value;
 					this.SendPropertyChanged("CUON_STT");
 					this.OnCUON_STTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOTRINH", DbType="VarChar(255)")]
+		public string LOTRINH
+		{
+			get
+			{
+				return this._LOTRINH;
+			}
+			set
+			{
+				if ((this._LOTRINH != value))
+				{
+					this.OnLOTRINHChanging(value);
+					this.SendPropertyChanging();
+					this._LOTRINH = value;
+					this.SendPropertyChanged("LOTRINH");
+					this.OnLOTRINHChanged();
 				}
 			}
 		}
@@ -6163,6 +6203,26 @@ namespace CAPNUOCTANHOA.LinQ
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYKIEMDINH", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYKIEMDINH
+		{
+			get
+			{
+				return this._NGAYKIEMDINH;
+			}
+			set
+			{
+				if ((this._NGAYKIEMDINH != value))
+				{
+					this.OnNGAYKIEMDINHChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYKIEMDINH = value;
+					this.SendPropertyChanged("NGAYKIEMDINH");
+					this.OnNGAYKIEMDINHChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODHN", DbType="NVarChar(255)")]
 		public string SODHN
 		{
@@ -6379,6 +6439,66 @@ namespace CAPNUOCTANHOA.LinQ
 					this._NGAYTAILAP = value;
 					this.SendPropertyChanged("NGAYTAILAP");
 					this.OnNGAYTAILAPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TL_SOPHIEU", DbType="NVarChar(255)")]
+		public string TL_SOPHIEU
+		{
+			get
+			{
+				return this._TL_SOPHIEU;
+			}
+			set
+			{
+				if ((this._TL_SOPHIEU != value))
+				{
+					this.OnTL_SOPHIEUChanging(value);
+					this.SendPropertyChanging();
+					this._TL_SOPHIEU = value;
+					this.SendPropertyChanged("TL_SOPHIEU");
+					this.OnTL_SOPHIEUChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TL_HIEULUC", DbType="NVarChar(255)")]
+		public string TL_HIEULUC
+		{
+			get
+			{
+				return this._TL_HIEULUC;
+			}
+			set
+			{
+				if ((this._TL_HIEULUC != value))
+				{
+					this.OnTL_HIEULUCChanging(value);
+					this.SendPropertyChanging();
+					this._TL_HIEULUC = value;
+					this.SendPropertyChanged("TL_HIEULUC");
+					this.OnTL_HIEULUCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TL_DOT", DbType="NVarChar(255)")]
+		public string TL_DOT
+		{
+			get
+			{
+				return this._TL_DOT;
+			}
+			set
+			{
+				if ((this._TL_DOT != value))
+				{
+					this.OnTL_DOTChanging(value);
+					this.SendPropertyChanging();
+					this._TL_DOT = value;
+					this.SendPropertyChanged("TL_DOT");
+					this.OnTL_DOTChanged();
 				}
 			}
 		}
