@@ -54,6 +54,7 @@
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dataGanMoiBK = new System.Windows.Forms.DataGridView();
+            this.next = new System.Windows.Forms.PictureBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +73,7 @@
             this.SOTLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHISOTLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoHo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.next = new System.Windows.Forms.PictureBox();
+            this.DotThiCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGanMoiBK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             this.SuspendLayout();
@@ -254,12 +255,23 @@
             this.COTLK,
             this.SOTLK,
             this.CHISOTLK,
-            this.SoHo});
+            this.SoHo,
+            this.DotThiCong});
             this.dataGanMoiBK.Location = new System.Drawing.Point(11, 87);
             this.dataGanMoiBK.Name = "dataGanMoiBK";
             this.dataGanMoiBK.RowHeadersWidth = 30;
             this.dataGanMoiBK.Size = new System.Drawing.Size(1236, 524);
             this.dataGanMoiBK.TabIndex = 29;
+            // 
+            // next
+            // 
+            this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right;
+            this.next.Location = new System.Drawing.Point(1189, 32);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(49, 50);
+            this.next.TabIndex = 30;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
             // 
             // STT
             // 
@@ -390,15 +402,11 @@
             this.SoHo.HeaderText = "SoHo";
             this.SoHo.Name = "SoHo";
             // 
-            // next
+            // DotThiCong
             // 
-            this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right;
-            this.next.Location = new System.Drawing.Point(1189, 32);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(49, 50);
-            this.next.TabIndex = 30;
-            this.next.TabStop = false;
-            this.next.Click += new System.EventHandler(this.next_Click);
+            this.DotThiCong.DataPropertyName = "DotThiCong";
+            this.DotThiCong.HeaderText = "DotThiCong";
+            this.DotThiCong.Name = "DotThiCong";
             // 
             // frm_LayDuLieuGanMoi_Ky
             // 
@@ -463,5 +471,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SOTLK;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHISOTLK;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoHo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DotThiCong;
     }
 }

@@ -351,7 +351,8 @@
             this.DHN_NGAYGAN,
             this.DHN_CHITHAN,
             this.DHN_CHIGOC});
-            this.dataBangKe.Location = new System.Drawing.Point(5, 290);
+            this.dataBangKe.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataBangKe.Location = new System.Drawing.Point(0, 295);
             this.dataBangKe.MultiSelect = false;
             this.dataBangKe.Name = "dataBangKe";
             this.dataBangKe.ReadOnly = true;
@@ -359,7 +360,7 @@
             this.dataBangKe.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataBangKe.RowTemplate.Height = 28;
             this.dataBangKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBangKe.Size = new System.Drawing.Size(1213, 320);
+            this.dataBangKe.Size = new System.Drawing.Size(1238, 329);
             this.dataBangKe.TabIndex = 100;
             this.dataBangKe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBangKe_CellClick);
             // 

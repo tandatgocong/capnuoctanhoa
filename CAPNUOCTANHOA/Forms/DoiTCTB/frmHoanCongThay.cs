@@ -403,6 +403,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             {
                 ReportDocument rp = new rpt_BCHoanCong_A4();
                 rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.ReportHoanCongThay(txtSoBangKe.Text));
+                rp.SetParameterValue("hoantat", DAL.LinQConnection.ExecuteCommand("select  COUNT(*) FROM V_DHN_BANGKE where (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) = '" + txtSoBangKe.Text + "' AND HCT_TRONGAI='False'"));
                 rp.SetParameterValue("TRONGAI", DAL.LinQConnection.ExecuteCommand("select  COUNT(*) FROM V_DHN_BANGKE where (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) = '" + txtSoBangKe.Text + "' AND HCT_TRONGAI='True'"));
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();

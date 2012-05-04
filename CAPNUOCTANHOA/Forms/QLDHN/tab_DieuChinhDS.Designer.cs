@@ -154,45 +154,72 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelX24 = new DevComponents.DotNetBar.LabelX();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.labelX25 = new DevComponents.DotNetBar.LabelX();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX26 = new DevComponents.DotNetBar.LabelX();
-            this.labelX27 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX28 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX29 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX30 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX31 = new DevComponents.DotNetBar.LabelX();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX32 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX8 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX33 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX9 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX34 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX35 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX12 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX36 = new DevComponents.DotNetBar.LabelX();
-            this.labelX37 = new DevComponents.DotNetBar.LabelX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.DC_DIACHI_MOI = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX32 = new DevComponents.DotNetBar.LabelX();
+            this.DC_CO_MOI = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX33 = new DevComponents.DotNetBar.LabelX();
+            this.DC_HOPDONG_MOI = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX34 = new DevComponents.DotNetBar.LabelX();
+            this.DC_HOTENMOI = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX35 = new DevComponents.DotNetBar.LabelX();
+            this.DC_DINHMUC_MOI = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.DC_GIABIEU_MOI = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX36 = new DevComponents.DotNetBar.LabelX();
+            this.labelX37 = new DevComponents.DotNetBar.LabelX();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DC_DIACHI_CU = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX31 = new DevComponents.DotNetBar.LabelX();
+            this.DC_CO_CU = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX30 = new DevComponents.DotNetBar.LabelX();
+            this.DC_HOPDONG_CU = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX29 = new DevComponents.DotNetBar.LabelX();
+            this.DC_HOTEN_CU = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX28 = new DevComponents.DotNetBar.LabelX();
+            this.DC_DINHMUC_CU = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.DC_GIABIEU_CU = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX26 = new DevComponents.DotNetBar.LabelX();
+            this.labelX27 = new DevComponents.DotNetBar.LabelX();
+            this.DCDANHBO = new System.Windows.Forms.MaskedTextBox();
+            this.labelX25 = new DevComponents.DotNetBar.LabelX();
+            this.labelX24 = new DevComponents.DotNetBar.LabelX();
+            this.cbLoaiDieuChinh = new System.Windows.Forms.ComboBox();
+            this.DC_HIEULUC = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX38 = new DevComponents.DotNetBar.LabelX();
+            this.DC_SOPHIEU = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX39 = new DevComponents.DotNetBar.LabelX();
+            this.DC_DOT = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem65 = new DevComponents.Editors.ComboItem();
+            this.comboItem76 = new DevComponents.Editors.ComboItem();
+            this.comboItem77 = new DevComponents.Editors.ComboItem();
+            this.comboItem78 = new DevComponents.Editors.ComboItem();
+            this.comboItem79 = new DevComponents.Editors.ComboItem();
+            this.comboItem80 = new DevComponents.Editors.ComboItem();
+            this.comboItem81 = new DevComponents.Editors.ComboItem();
+            this.comboItem82 = new DevComponents.Editors.ComboItem();
+            this.comboItem83 = new DevComponents.Editors.ComboItem();
+            this.comboItem84 = new DevComponents.Editors.ComboItem();
+            this.comboItem85 = new DevComponents.Editors.ComboItem();
+            this.comboItem86 = new DevComponents.Editors.ComboItem();
+            this.comboItem87 = new DevComponents.Editors.ComboItem();
+            this.comboItem88 = new DevComponents.Editors.ComboItem();
+            this.comboItem89 = new DevComponents.Editors.ComboItem();
+            this.comboItem90 = new DevComponents.Editors.ComboItem();
+            this.comboItem91 = new DevComponents.Editors.ComboItem();
+            this.comboItem92 = new DevComponents.Editors.ComboItem();
+            this.comboItem93 = new DevComponents.Editors.ComboItem();
+            this.comboItem94 = new DevComponents.Editors.ComboItem();
+            this.labelX40 = new DevComponents.DotNetBar.LabelX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KIEMDINH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NGAYGAN)).BeginInit();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1458,11 +1485,18 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.DC_HIEULUC);
+            this.panel1.Controls.Add(this.labelX38);
+            this.panel1.Controls.Add(this.DC_SOPHIEU);
+            this.panel1.Controls.Add(this.labelX39);
+            this.panel1.Controls.Add(this.DC_DOT);
+            this.panel1.Controls.Add(this.labelX40);
+            this.panel1.Controls.Add(this.cbLoaiDieuChinh);
             this.panel1.Controls.Add(this.buttonX1);
             this.panel1.Controls.Add(this.buttonX2);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.maskedTextBox1);
+            this.panel1.Controls.Add(this.DCDANHBO);
             this.panel1.Controls.Add(this.labelX25);
             this.panel1.Controls.Add(this.labelX24);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1471,237 +1505,69 @@
             this.panel1.Size = new System.Drawing.Size(672, 570);
             this.panel1.TabIndex = 0;
             // 
-            // labelX24
+            // buttonX1
             // 
-            this.labelX24.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX24.Location = new System.Drawing.Point(14, 23);
-            this.labelX24.Name = "labelX24";
-            this.labelX24.Size = new System.Drawing.Size(160, 22);
-            this.labelX24.TabIndex = 152;
-            this.labelX24.Text = "LOẠI ĐIỀU CHỈNH";
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX1.Location = new System.Drawing.Point(278, 489);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(151, 27);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 168;
+            this.buttonX1.Text = "IN ĐIỀU CHỈNH";
             // 
-            // maskedTextBox1
+            // buttonX2
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Red;
-            this.maskedTextBox1.Location = new System.Drawing.Point(146, 62);
-            this.maskedTextBox1.Mask = "0000-000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(133, 29);
-            this.maskedTextBox1.TabIndex = 153;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelX25
-            // 
-            this.labelX25.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX25.Location = new System.Drawing.Point(32, 64);
-            this.labelX25.Name = "labelX25";
-            this.labelX25.Size = new System.Drawing.Size(125, 22);
-            this.labelX25.TabIndex = 154;
-            this.labelX25.Text = "SỐ DANH BỘ";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBoxX6);
-            this.groupBox2.Controls.Add(this.labelX31);
-            this.groupBox2.Controls.Add(this.textBoxX5);
-            this.groupBox2.Controls.Add(this.labelX30);
-            this.groupBox2.Controls.Add(this.textBoxX4);
-            this.groupBox2.Controls.Add(this.labelX29);
-            this.groupBox2.Controls.Add(this.textBoxX3);
-            this.groupBox2.Controls.Add(this.labelX28);
-            this.groupBox2.Controls.Add(this.textBoxX1);
-            this.groupBox2.Controls.Add(this.textBoxX2);
-            this.groupBox2.Controls.Add(this.labelX26);
-            this.groupBox2.Controls.Add(this.labelX27);
-            this.groupBox2.Location = new System.Drawing.Point(14, 113);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(649, 134);
-            this.groupBox2.TabIndex = 155;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "CŨ";
-            // 
-            // textBoxX1
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX1.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX1.Location = new System.Drawing.Point(574, 22);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(68, 27);
-            this.textBoxX1.TabIndex = 160;
-            this.textBoxX1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxX2
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX2.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX2.Location = new System.Drawing.Point(396, 23);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(84, 27);
-            this.textBoxX2.TabIndex = 159;
-            this.textBoxX2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelX26
-            // 
-            this.labelX26.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX26.Location = new System.Drawing.Point(482, 24);
-            this.labelX26.Name = "labelX26";
-            this.labelX26.Size = new System.Drawing.Size(103, 22);
-            this.labelX26.TabIndex = 162;
-            this.labelX26.Text = "ĐỊNH MỨC";
-            // 
-            // labelX27
-            // 
-            this.labelX27.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX27.Location = new System.Drawing.Point(318, 26);
-            this.labelX27.Name = "labelX27";
-            this.labelX27.Size = new System.Drawing.Size(104, 22);
-            this.labelX27.TabIndex = 161;
-            this.labelX27.Text = "GIÁ BIỂU";
-            // 
-            // textBoxX3
-            // 
-            this.textBoxX3.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.FocusHighlightColor = System.Drawing.Color.Transparent;
-            this.textBoxX3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX3.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX3.Location = new System.Drawing.Point(99, 56);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(332, 27);
-            this.textBoxX3.TabIndex = 163;
-            this.textBoxX3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxX3.WatermarkColor = System.Drawing.Color.Transparent;
-            // 
-            // labelX28
-            // 
-            this.labelX28.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX28.Location = new System.Drawing.Point(6, 58);
-            this.labelX28.Name = "labelX28";
-            this.labelX28.Size = new System.Drawing.Size(73, 22);
-            this.labelX28.TabIndex = 164;
-            this.labelX28.Text = "HỌ TÊN";
-            // 
-            // textBoxX4
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX4.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX4.Location = new System.Drawing.Point(99, 20);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(130, 27);
-            this.textBoxX4.TabIndex = 165;
-            this.textBoxX4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelX29
-            // 
-            this.labelX29.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX29.Location = new System.Drawing.Point(6, 22);
-            this.labelX29.Name = "labelX29";
-            this.labelX29.Size = new System.Drawing.Size(112, 22);
-            this.labelX29.TabIndex = 166;
-            this.labelX29.Text = "HỢP ĐỒNG";
-            // 
-            // textBoxX5
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX5.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX5.Location = new System.Drawing.Point(264, 22);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.Size = new System.Drawing.Size(48, 27);
-            this.textBoxX5.TabIndex = 167;
-            this.textBoxX5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelX30
-            // 
-            this.labelX30.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX30.Location = new System.Drawing.Point(235, 24);
-            this.labelX30.Name = "labelX30";
-            this.labelX30.Size = new System.Drawing.Size(36, 22);
-            this.labelX30.TabIndex = 168;
-            this.labelX30.Text = "CỠ";
-            // 
-            // textBoxX6
-            // 
-            this.textBoxX6.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.FocusHighlightColor = System.Drawing.Color.Transparent;
-            this.textBoxX6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX6.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX6.Location = new System.Drawing.Point(99, 91);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.Size = new System.Drawing.Size(332, 27);
-            this.textBoxX6.TabIndex = 169;
-            this.textBoxX6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxX6.WatermarkColor = System.Drawing.Color.Transparent;
-            // 
-            // labelX31
-            // 
-            this.labelX31.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX31.Location = new System.Drawing.Point(6, 91);
-            this.labelX31.Name = "labelX31";
-            this.labelX31.Size = new System.Drawing.Size(73, 22);
-            this.labelX31.TabIndex = 170;
-            this.labelX31.Text = "ĐỊA CHỈ";
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX2.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX2.Location = new System.Drawing.Point(106, 489);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(144, 27);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX2.TabIndex = 167;
+            this.buttonX2.Text = "ĐIỀU CHỈNH";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBoxX7);
+            this.groupBox3.Controls.Add(this.DC_DIACHI_MOI);
             this.groupBox3.Controls.Add(this.labelX32);
-            this.groupBox3.Controls.Add(this.textBoxX8);
+            this.groupBox3.Controls.Add(this.DC_CO_MOI);
             this.groupBox3.Controls.Add(this.labelX33);
-            this.groupBox3.Controls.Add(this.textBoxX9);
+            this.groupBox3.Controls.Add(this.DC_HOPDONG_MOI);
             this.groupBox3.Controls.Add(this.labelX34);
-            this.groupBox3.Controls.Add(this.textBoxX10);
+            this.groupBox3.Controls.Add(this.DC_HOTENMOI);
             this.groupBox3.Controls.Add(this.labelX35);
-            this.groupBox3.Controls.Add(this.textBoxX11);
-            this.groupBox3.Controls.Add(this.textBoxX12);
+            this.groupBox3.Controls.Add(this.DC_DINHMUC_MOI);
+            this.groupBox3.Controls.Add(this.DC_GIABIEU_MOI);
             this.groupBox3.Controls.Add(this.labelX36);
             this.groupBox3.Controls.Add(this.labelX37);
-            this.groupBox3.Location = new System.Drawing.Point(14, 264);
+            this.groupBox3.Location = new System.Drawing.Point(20, 310);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(649, 147);
+            this.groupBox3.Size = new System.Drawing.Size(649, 127);
             this.groupBox3.TabIndex = 156;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "MỚI";
             // 
-            // textBoxX7
+            // DC_DIACHI_MOI
             // 
-            this.textBoxX7.BackColor = System.Drawing.Color.White;
+            this.DC_DIACHI_MOI.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.FocusHighlightColor = System.Drawing.Color.Transparent;
-            this.textBoxX7.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX7.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX7.Location = new System.Drawing.Point(99, 91);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.Size = new System.Drawing.Size(332, 27);
-            this.textBoxX7.TabIndex = 169;
-            this.textBoxX7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxX7.WatermarkColor = System.Drawing.Color.Transparent;
+            this.DC_DIACHI_MOI.Border.Class = "TextBoxBorder";
+            this.DC_DIACHI_MOI.FocusHighlightColor = System.Drawing.Color.Transparent;
+            this.DC_DIACHI_MOI.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_DIACHI_MOI.ForeColor = System.Drawing.Color.Red;
+            this.DC_DIACHI_MOI.Location = new System.Drawing.Point(99, 91);
+            this.DC_DIACHI_MOI.Name = "DC_DIACHI_MOI";
+            this.DC_DIACHI_MOI.Size = new System.Drawing.Size(332, 27);
+            this.DC_DIACHI_MOI.TabIndex = 236;
+            this.DC_DIACHI_MOI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DC_DIACHI_MOI.WatermarkColor = System.Drawing.Color.Transparent;
             // 
             // labelX32
             // 
@@ -1712,19 +1578,19 @@
             this.labelX32.TabIndex = 170;
             this.labelX32.Text = "ĐỊA CHỈ";
             // 
-            // textBoxX8
+            // DC_CO_MOI
             // 
             // 
             // 
             // 
-            this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX8.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX8.Location = new System.Drawing.Point(264, 22);
-            this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.Size = new System.Drawing.Size(48, 27);
-            this.textBoxX8.TabIndex = 167;
-            this.textBoxX8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DC_CO_MOI.Border.Class = "TextBoxBorder";
+            this.DC_CO_MOI.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_CO_MOI.ForeColor = System.Drawing.Color.Red;
+            this.DC_CO_MOI.Location = new System.Drawing.Point(264, 22);
+            this.DC_CO_MOI.Name = "DC_CO_MOI";
+            this.DC_CO_MOI.Size = new System.Drawing.Size(48, 27);
+            this.DC_CO_MOI.TabIndex = 232;
+            this.DC_CO_MOI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelX33
             // 
@@ -1735,19 +1601,19 @@
             this.labelX33.TabIndex = 168;
             this.labelX33.Text = "CỠ";
             // 
-            // textBoxX9
+            // DC_HOPDONG_MOI
             // 
             // 
             // 
             // 
-            this.textBoxX9.Border.Class = "TextBoxBorder";
-            this.textBoxX9.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX9.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX9.Location = new System.Drawing.Point(99, 20);
-            this.textBoxX9.Name = "textBoxX9";
-            this.textBoxX9.Size = new System.Drawing.Size(130, 27);
-            this.textBoxX9.TabIndex = 165;
-            this.textBoxX9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DC_HOPDONG_MOI.Border.Class = "TextBoxBorder";
+            this.DC_HOPDONG_MOI.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_HOPDONG_MOI.ForeColor = System.Drawing.Color.Red;
+            this.DC_HOPDONG_MOI.Location = new System.Drawing.Point(99, 20);
+            this.DC_HOPDONG_MOI.Name = "DC_HOPDONG_MOI";
+            this.DC_HOPDONG_MOI.Size = new System.Drawing.Size(130, 27);
+            this.DC_HOPDONG_MOI.TabIndex = 231;
+            this.DC_HOPDONG_MOI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelX34
             // 
@@ -1758,22 +1624,22 @@
             this.labelX34.TabIndex = 166;
             this.labelX34.Text = "HỢP ĐỒNG";
             // 
-            // textBoxX10
+            // DC_HOTENMOI
             // 
-            this.textBoxX10.BackColor = System.Drawing.Color.White;
+            this.DC_HOTENMOI.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX10.Border.Class = "TextBoxBorder";
-            this.textBoxX10.FocusHighlightColor = System.Drawing.Color.Transparent;
-            this.textBoxX10.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX10.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX10.Location = new System.Drawing.Point(99, 56);
-            this.textBoxX10.Name = "textBoxX10";
-            this.textBoxX10.Size = new System.Drawing.Size(332, 27);
-            this.textBoxX10.TabIndex = 163;
-            this.textBoxX10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxX10.WatermarkColor = System.Drawing.Color.Transparent;
+            this.DC_HOTENMOI.Border.Class = "TextBoxBorder";
+            this.DC_HOTENMOI.FocusHighlightColor = System.Drawing.Color.Transparent;
+            this.DC_HOTENMOI.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_HOTENMOI.ForeColor = System.Drawing.Color.Red;
+            this.DC_HOTENMOI.Location = new System.Drawing.Point(99, 56);
+            this.DC_HOTENMOI.Name = "DC_HOTENMOI";
+            this.DC_HOTENMOI.Size = new System.Drawing.Size(332, 27);
+            this.DC_HOTENMOI.TabIndex = 235;
+            this.DC_HOTENMOI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DC_HOTENMOI.WatermarkColor = System.Drawing.Color.Transparent;
             // 
             // labelX35
             // 
@@ -1784,33 +1650,33 @@
             this.labelX35.TabIndex = 164;
             this.labelX35.Text = "HỌ TÊN";
             // 
-            // textBoxX11
+            // DC_DINHMUC_MOI
             // 
             // 
             // 
             // 
-            this.textBoxX11.Border.Class = "TextBoxBorder";
-            this.textBoxX11.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX11.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX11.Location = new System.Drawing.Point(574, 22);
-            this.textBoxX11.Name = "textBoxX11";
-            this.textBoxX11.Size = new System.Drawing.Size(68, 27);
-            this.textBoxX11.TabIndex = 160;
-            this.textBoxX11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DC_DINHMUC_MOI.Border.Class = "TextBoxBorder";
+            this.DC_DINHMUC_MOI.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_DINHMUC_MOI.ForeColor = System.Drawing.Color.Red;
+            this.DC_DINHMUC_MOI.Location = new System.Drawing.Point(574, 22);
+            this.DC_DINHMUC_MOI.Name = "DC_DINHMUC_MOI";
+            this.DC_DINHMUC_MOI.Size = new System.Drawing.Size(68, 27);
+            this.DC_DINHMUC_MOI.TabIndex = 234;
+            this.DC_DINHMUC_MOI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBoxX12
-            // 
-            // 
+            // DC_GIABIEU_MOI
             // 
             // 
-            this.textBoxX12.Border.Class = "TextBoxBorder";
-            this.textBoxX12.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX12.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX12.Location = new System.Drawing.Point(396, 23);
-            this.textBoxX12.Name = "textBoxX12";
-            this.textBoxX12.Size = new System.Drawing.Size(84, 27);
-            this.textBoxX12.TabIndex = 159;
-            this.textBoxX12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // 
+            this.DC_GIABIEU_MOI.Border.Class = "TextBoxBorder";
+            this.DC_GIABIEU_MOI.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_GIABIEU_MOI.ForeColor = System.Drawing.Color.Red;
+            this.DC_GIABIEU_MOI.Location = new System.Drawing.Point(396, 23);
+            this.DC_GIABIEU_MOI.Name = "DC_GIABIEU_MOI";
+            this.DC_GIABIEU_MOI.Size = new System.Drawing.Size(84, 27);
+            this.DC_GIABIEU_MOI.TabIndex = 233;
+            this.DC_GIABIEU_MOI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelX36
             // 
@@ -1830,31 +1696,419 @@
             this.labelX37.TabIndex = 161;
             this.labelX37.Text = "GIÁ BIỂU";
             // 
-            // buttonX1
+            // groupBox2
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonX1.Location = new System.Drawing.Point(285, 428);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(151, 27);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX1.TabIndex = 168;
-            this.buttonX1.Text = "IN ĐIỀU CHỈNH";
+            this.groupBox2.Controls.Add(this.DC_DIACHI_CU);
+            this.groupBox2.Controls.Add(this.labelX31);
+            this.groupBox2.Controls.Add(this.DC_CO_CU);
+            this.groupBox2.Controls.Add(this.labelX30);
+            this.groupBox2.Controls.Add(this.DC_HOPDONG_CU);
+            this.groupBox2.Controls.Add(this.labelX29);
+            this.groupBox2.Controls.Add(this.DC_HOTEN_CU);
+            this.groupBox2.Controls.Add(this.labelX28);
+            this.groupBox2.Controls.Add(this.DC_DINHMUC_CU);
+            this.groupBox2.Controls.Add(this.DC_GIABIEU_CU);
+            this.groupBox2.Controls.Add(this.labelX26);
+            this.groupBox2.Controls.Add(this.labelX27);
+            this.groupBox2.Location = new System.Drawing.Point(20, 155);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(649, 134);
+            this.groupBox2.TabIndex = 155;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "CŨ";
             // 
-            // buttonX2
+            // DC_DIACHI_CU
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX2.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonX2.Location = new System.Drawing.Point(113, 428);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(144, 27);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX2.TabIndex = 167;
-            this.buttonX2.Text = "ĐIỀU CHỈNH";
+            this.DC_DIACHI_CU.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.DC_DIACHI_CU.Border.Class = "TextBoxBorder";
+            this.DC_DIACHI_CU.FocusHighlightColor = System.Drawing.Color.Transparent;
+            this.DC_DIACHI_CU.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_DIACHI_CU.ForeColor = System.Drawing.Color.Red;
+            this.DC_DIACHI_CU.Location = new System.Drawing.Point(99, 91);
+            this.DC_DIACHI_CU.Name = "DC_DIACHI_CU";
+            this.DC_DIACHI_CU.Size = new System.Drawing.Size(332, 27);
+            this.DC_DIACHI_CU.TabIndex = 230;
+            this.DC_DIACHI_CU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DC_DIACHI_CU.WatermarkColor = System.Drawing.Color.Transparent;
+            // 
+            // labelX31
+            // 
+            this.labelX31.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX31.Location = new System.Drawing.Point(6, 91);
+            this.labelX31.Name = "labelX31";
+            this.labelX31.Size = new System.Drawing.Size(73, 22);
+            this.labelX31.TabIndex = 170;
+            this.labelX31.Text = "ĐỊA CHỈ";
+            // 
+            // DC_CO_CU
+            // 
+            // 
+            // 
+            // 
+            this.DC_CO_CU.Border.Class = "TextBoxBorder";
+            this.DC_CO_CU.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_CO_CU.ForeColor = System.Drawing.Color.Red;
+            this.DC_CO_CU.Location = new System.Drawing.Point(264, 22);
+            this.DC_CO_CU.Name = "DC_CO_CU";
+            this.DC_CO_CU.Size = new System.Drawing.Size(48, 27);
+            this.DC_CO_CU.TabIndex = 206;
+            this.DC_CO_CU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX30
+            // 
+            this.labelX30.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX30.Location = new System.Drawing.Point(235, 24);
+            this.labelX30.Name = "labelX30";
+            this.labelX30.Size = new System.Drawing.Size(36, 22);
+            this.labelX30.TabIndex = 168;
+            this.labelX30.Text = "CỠ";
+            // 
+            // DC_HOPDONG_CU
+            // 
+            // 
+            // 
+            // 
+            this.DC_HOPDONG_CU.Border.Class = "TextBoxBorder";
+            this.DC_HOPDONG_CU.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_HOPDONG_CU.ForeColor = System.Drawing.Color.Red;
+            this.DC_HOPDONG_CU.Location = new System.Drawing.Point(99, 20);
+            this.DC_HOPDONG_CU.Name = "DC_HOPDONG_CU";
+            this.DC_HOPDONG_CU.Size = new System.Drawing.Size(130, 27);
+            this.DC_HOPDONG_CU.TabIndex = 205;
+            this.DC_HOPDONG_CU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX29
+            // 
+            this.labelX29.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX29.Location = new System.Drawing.Point(6, 22);
+            this.labelX29.Name = "labelX29";
+            this.labelX29.Size = new System.Drawing.Size(112, 22);
+            this.labelX29.TabIndex = 166;
+            this.labelX29.Text = "HỢP ĐỒNG";
+            // 
+            // DC_HOTEN_CU
+            // 
+            this.DC_HOTEN_CU.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.DC_HOTEN_CU.Border.Class = "TextBoxBorder";
+            this.DC_HOTEN_CU.FocusHighlightColor = System.Drawing.Color.Transparent;
+            this.DC_HOTEN_CU.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_HOTEN_CU.ForeColor = System.Drawing.Color.Red;
+            this.DC_HOTEN_CU.Location = new System.Drawing.Point(99, 56);
+            this.DC_HOTEN_CU.Name = "DC_HOTEN_CU";
+            this.DC_HOTEN_CU.Size = new System.Drawing.Size(332, 27);
+            this.DC_HOTEN_CU.TabIndex = 209;
+            this.DC_HOTEN_CU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DC_HOTEN_CU.WatermarkColor = System.Drawing.Color.Transparent;
+            // 
+            // labelX28
+            // 
+            this.labelX28.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX28.Location = new System.Drawing.Point(6, 58);
+            this.labelX28.Name = "labelX28";
+            this.labelX28.Size = new System.Drawing.Size(73, 22);
+            this.labelX28.TabIndex = 164;
+            this.labelX28.Text = "HỌ TÊN";
+            // 
+            // DC_DINHMUC_CU
+            // 
+            // 
+            // 
+            // 
+            this.DC_DINHMUC_CU.Border.Class = "TextBoxBorder";
+            this.DC_DINHMUC_CU.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_DINHMUC_CU.ForeColor = System.Drawing.Color.Red;
+            this.DC_DINHMUC_CU.Location = new System.Drawing.Point(574, 22);
+            this.DC_DINHMUC_CU.Name = "DC_DINHMUC_CU";
+            this.DC_DINHMUC_CU.Size = new System.Drawing.Size(68, 27);
+            this.DC_DINHMUC_CU.TabIndex = 208;
+            this.DC_DINHMUC_CU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DC_GIABIEU_CU
+            // 
+            // 
+            // 
+            // 
+            this.DC_GIABIEU_CU.Border.Class = "TextBoxBorder";
+            this.DC_GIABIEU_CU.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_GIABIEU_CU.ForeColor = System.Drawing.Color.Red;
+            this.DC_GIABIEU_CU.Location = new System.Drawing.Point(396, 23);
+            this.DC_GIABIEU_CU.Name = "DC_GIABIEU_CU";
+            this.DC_GIABIEU_CU.Size = new System.Drawing.Size(84, 27);
+            this.DC_GIABIEU_CU.TabIndex = 207;
+            this.DC_GIABIEU_CU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX26
+            // 
+            this.labelX26.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX26.Location = new System.Drawing.Point(482, 24);
+            this.labelX26.Name = "labelX26";
+            this.labelX26.Size = new System.Drawing.Size(103, 22);
+            this.labelX26.TabIndex = 162;
+            this.labelX26.Text = "ĐỊNH MỨC";
+            // 
+            // labelX27
+            // 
+            this.labelX27.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX27.Location = new System.Drawing.Point(318, 26);
+            this.labelX27.Name = "labelX27";
+            this.labelX27.Size = new System.Drawing.Size(104, 22);
+            this.labelX27.TabIndex = 161;
+            this.labelX27.Text = "GIÁ BIỂU";
+            // 
+            // DCDANHBO
+            // 
+            this.DCDANHBO.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DCDANHBO.ForeColor = System.Drawing.Color.Red;
+            this.DCDANHBO.Location = new System.Drawing.Point(135, 108);
+            this.DCDANHBO.Mask = "0000-000-0000";
+            this.DCDANHBO.Name = "DCDANHBO";
+            this.DCDANHBO.Size = new System.Drawing.Size(133, 29);
+            this.DCDANHBO.TabIndex = 204;
+            this.DCDANHBO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX25
+            // 
+            this.labelX25.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX25.Location = new System.Drawing.Point(21, 110);
+            this.labelX25.Name = "labelX25";
+            this.labelX25.Size = new System.Drawing.Size(125, 22);
+            this.labelX25.TabIndex = 154;
+            this.labelX25.Text = "SỐ DANH BỘ";
+            // 
+            // labelX24
+            // 
+            this.labelX24.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX24.Location = new System.Drawing.Point(14, 23);
+            this.labelX24.Name = "labelX24";
+            this.labelX24.Size = new System.Drawing.Size(160, 22);
+            this.labelX24.TabIndex = 152;
+            this.labelX24.Text = "LOẠI ĐIỀU CHỈNH";
+            // 
+            // cbLoaiDieuChinh
+            // 
+            this.cbLoaiDieuChinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLoaiDieuChinh.FormattingEnabled = true;
+            this.cbLoaiDieuChinh.Items.AddRange(new object[] {
+            "Nâng Cở ĐHN",
+            "Hạ Cở ĐHN"});
+            this.cbLoaiDieuChinh.Location = new System.Drawing.Point(180, 18);
+            this.cbLoaiDieuChinh.Name = "cbLoaiDieuChinh";
+            this.cbLoaiDieuChinh.Size = new System.Drawing.Size(207, 27);
+            this.cbLoaiDieuChinh.TabIndex = 200;
+            // 
+            // DC_HIEULUC
+            // 
+            // 
+            // 
+            // 
+            this.DC_HIEULUC.Border.Class = "TextBoxBorder";
+            this.DC_HIEULUC.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_HIEULUC.ForeColor = System.Drawing.Color.Red;
+            this.DC_HIEULUC.Location = new System.Drawing.Point(324, 65);
+            this.DC_HIEULUC.Name = "DC_HIEULUC";
+            this.DC_HIEULUC.Size = new System.Drawing.Size(115, 27);
+            this.DC_HIEULUC.TabIndex = 202;
+            this.DC_HIEULUC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX38
+            // 
+            this.labelX38.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX38.Location = new System.Drawing.Point(233, 68);
+            this.labelX38.Name = "labelX38";
+            this.labelX38.Size = new System.Drawing.Size(87, 22);
+            this.labelX38.TabIndex = 181;
+            this.labelX38.Text = "HIỆU LỰC";
+            // 
+            // DC_SOPHIEU
+            // 
+            // 
+            // 
+            // 
+            this.DC_SOPHIEU.Border.Class = "TextBoxBorder";
+            this.DC_SOPHIEU.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_SOPHIEU.ForeColor = System.Drawing.Color.Red;
+            this.DC_SOPHIEU.Location = new System.Drawing.Point(106, 65);
+            this.DC_SOPHIEU.Name = "DC_SOPHIEU";
+            this.DC_SOPHIEU.Size = new System.Drawing.Size(115, 27);
+            this.DC_SOPHIEU.TabIndex = 201;
+            this.DC_SOPHIEU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX39
+            // 
+            this.labelX39.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX39.Location = new System.Drawing.Point(24, 69);
+            this.labelX39.Name = "labelX39";
+            this.labelX39.Size = new System.Drawing.Size(87, 22);
+            this.labelX39.TabIndex = 180;
+            this.labelX39.Text = "SỐ PHIẾU";
+            // 
+            // DC_DOT
+            // 
+            this.DC_DOT.DisplayMember = "Text";
+            this.DC_DOT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.DC_DOT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DC_DOT.FormattingEnabled = true;
+            this.DC_DOT.ItemHeight = 20;
+            this.DC_DOT.Items.AddRange(new object[] {
+            this.comboItem65,
+            this.comboItem76,
+            this.comboItem77,
+            this.comboItem78,
+            this.comboItem79,
+            this.comboItem80,
+            this.comboItem81,
+            this.comboItem82,
+            this.comboItem83,
+            this.comboItem84,
+            this.comboItem85,
+            this.comboItem86,
+            this.comboItem87,
+            this.comboItem88,
+            this.comboItem89,
+            this.comboItem90,
+            this.comboItem91,
+            this.comboItem92,
+            this.comboItem93,
+            this.comboItem94});
+            this.DC_DOT.Location = new System.Drawing.Point(503, 68);
+            this.DC_DOT.Name = "DC_DOT";
+            this.DC_DOT.Size = new System.Drawing.Size(57, 26);
+            this.DC_DOT.TabIndex = 203;
+            // 
+            // comboItem65
+            // 
+            this.comboItem65.Text = "01";
+            this.comboItem65.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem65.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem76
+            // 
+            this.comboItem76.Text = "02";
+            this.comboItem76.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem76.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem77
+            // 
+            this.comboItem77.Text = "03";
+            this.comboItem77.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem77.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem78
+            // 
+            this.comboItem78.Text = "04";
+            this.comboItem78.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem78.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem79
+            // 
+            this.comboItem79.Text = "05";
+            this.comboItem79.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem79.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem80
+            // 
+            this.comboItem80.Text = "06";
+            this.comboItem80.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem80.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem81
+            // 
+            this.comboItem81.Text = "07";
+            this.comboItem81.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem81.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem82
+            // 
+            this.comboItem82.Text = "08";
+            this.comboItem82.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem82.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem83
+            // 
+            this.comboItem83.Text = "09";
+            this.comboItem83.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem83.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem84
+            // 
+            this.comboItem84.Text = "10";
+            this.comboItem84.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem84.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem85
+            // 
+            this.comboItem85.Text = "11";
+            this.comboItem85.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem85.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem86
+            // 
+            this.comboItem86.Text = "12";
+            this.comboItem86.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem86.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem87
+            // 
+            this.comboItem87.Text = "13";
+            this.comboItem87.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem87.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem88
+            // 
+            this.comboItem88.Text = "14";
+            this.comboItem88.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem88.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem89
+            // 
+            this.comboItem89.Text = "15";
+            this.comboItem89.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem89.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem90
+            // 
+            this.comboItem90.Text = "16";
+            this.comboItem90.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem90.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem91
+            // 
+            this.comboItem91.Text = "17";
+            this.comboItem91.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem91.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem92
+            // 
+            this.comboItem92.Text = "18";
+            this.comboItem92.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem92.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem93
+            // 
+            this.comboItem93.Text = "19";
+            this.comboItem93.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem93.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem94
+            // 
+            this.comboItem94.Text = "20";
+            this.comboItem94.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem94.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // labelX40
+            // 
+            this.labelX40.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX40.Location = new System.Drawing.Point(459, 70);
+            this.labelX40.Name = "labelX40";
+            this.labelX40.Size = new System.Drawing.Size(59, 22);
+            this.labelX40.TabIndex = 179;
+            this.labelX40.Text = "ĐỢT";
             // 
             // tab_DieuChinhDS
             // 
@@ -1875,8 +2129,8 @@
             this.groupPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2010,36 +2264,63 @@
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.LabelX labelX24;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox DCDANHBO;
         private DevComponents.DotNetBar.LabelX labelX25;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_HOPDONG_CU;
         private DevComponents.DotNetBar.LabelX labelX29;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_HOTEN_CU;
         private DevComponents.DotNetBar.LabelX labelX28;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_DINHMUC_CU;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_GIABIEU_CU;
         private DevComponents.DotNetBar.LabelX labelX26;
         private DevComponents.DotNetBar.LabelX labelX27;
         private System.Windows.Forms.GroupBox groupBox3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX7;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_DIACHI_MOI;
         private DevComponents.DotNetBar.LabelX labelX32;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX8;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_CO_MOI;
         private DevComponents.DotNetBar.LabelX labelX33;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX9;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_HOPDONG_MOI;
         private DevComponents.DotNetBar.LabelX labelX34;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX10;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_HOTENMOI;
         private DevComponents.DotNetBar.LabelX labelX35;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX12;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_DINHMUC_MOI;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_GIABIEU_MOI;
         private DevComponents.DotNetBar.LabelX labelX36;
         private DevComponents.DotNetBar.LabelX labelX37;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_DIACHI_CU;
         private DevComponents.DotNetBar.LabelX labelX31;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_CO_CU;
         private DevComponents.DotNetBar.LabelX labelX30;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
+        private System.Windows.Forms.ComboBox cbLoaiDieuChinh;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_HIEULUC;
+        private DevComponents.DotNetBar.LabelX labelX38;
+        private DevComponents.DotNetBar.Controls.TextBoxX DC_SOPHIEU;
+        private DevComponents.DotNetBar.LabelX labelX39;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx DC_DOT;
+        private DevComponents.Editors.ComboItem comboItem65;
+        private DevComponents.Editors.ComboItem comboItem76;
+        private DevComponents.Editors.ComboItem comboItem77;
+        private DevComponents.Editors.ComboItem comboItem78;
+        private DevComponents.Editors.ComboItem comboItem79;
+        private DevComponents.Editors.ComboItem comboItem80;
+        private DevComponents.Editors.ComboItem comboItem81;
+        private DevComponents.Editors.ComboItem comboItem82;
+        private DevComponents.Editors.ComboItem comboItem83;
+        private DevComponents.Editors.ComboItem comboItem84;
+        private DevComponents.Editors.ComboItem comboItem85;
+        private DevComponents.Editors.ComboItem comboItem86;
+        private DevComponents.Editors.ComboItem comboItem87;
+        private DevComponents.Editors.ComboItem comboItem88;
+        private DevComponents.Editors.ComboItem comboItem89;
+        private DevComponents.Editors.ComboItem comboItem90;
+        private DevComponents.Editors.ComboItem comboItem91;
+        private DevComponents.Editors.ComboItem comboItem92;
+        private DevComponents.Editors.ComboItem comboItem93;
+        private DevComponents.Editors.ComboItem comboItem94;
+        private DevComponents.DotNetBar.LabelX labelX40;
 
 
     }

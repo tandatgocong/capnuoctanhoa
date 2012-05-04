@@ -12,6 +12,7 @@ using CAPNUOCTANHOA.LinQ;
 using System.Data.SqlClient;
 using System.Configuration;
 using log4net;
+using CAPNUOCTANHOA.Forms.QLDHN;
 
 namespace CAPNUOCTANHOA
 {
@@ -22,7 +23,7 @@ namespace CAPNUOCTANHOA
         {
             InitializeComponent();
 
-            
+            panel1.Controls.Add(new frm_LayDuLieuGanMoi_Ky());
            
 
             //DataSet ds = new DataSet();
@@ -54,15 +55,15 @@ namespace CAPNUOCTANHOA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile2"].ConnectionString;
+            //string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile2"].ConnectionString;
 
-            List<TB_DULIEUKHACHHANG> list = DAL.DULIEUKH.C_DuLieuKhachHang.getAllKHACHHANG();
-            foreach (var item in list)
-            {
-               // string insert = "UPDATE HANDHELD SET HODONG='" + item.HOPDONG + "', TENKH='" + item.HOTEN + "', SONHA='" + item.SONHA + "',TENDUONG='" + item.TENDUONG + "',PHUONG='" + item.PHUONG + "',QUAN='" + item.QUAN + "' WHERE DANHBO='" + item.DANHBO + "' ";
-                log.Info(item.DANHBO + "");
-                DAL.OledbConnection.ExecuteCommand(connectionString, item.HOPDONG, item.HOTEN, item.SONHA, item.TENDUONG, item.PHUONG, item.QUAN, item.DANHBO);
-              }
+            //List<TB_DULIEUKHACHHANG> list = DAL.DULIEUKH.C_DuLieuKhachHang.getAllKHACHHANG();
+            //foreach (var item in list)
+            //{
+            //   // string insert = "UPDATE HANDHELD SET HODONG='" + item.HOPDONG + "', TENKH='" + item.HOTEN + "', SONHA='" + item.SONHA + "',TENDUONG='" + item.TENDUONG + "',PHUONG='" + item.PHUONG + "',QUAN='" + item.QUAN + "' WHERE DANHBO='" + item.DANHBO + "' ";
+            //    log.Info(item.DANHBO + "");
+            //    DAL.OledbConnection.ExecuteCommand(connectionString, item.HOPDONG, item.HOTEN, item.SONHA, item.TENDUONG, item.PHUONG, item.QUAN, item.DANHBO);
+            //  }
         }
     }
 }
