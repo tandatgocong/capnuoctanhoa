@@ -88,6 +88,7 @@
       <DependentUpon>getDataBillding.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\DoiTCTB\C_HoanCongThay.cs" />
+    <Compile Include="DAL\DULIEUKH\C_DieuChinhDanhBo.cs" />
     <Compile Include="DAL\DULIEUKH\C_DuLieuKhachHang.cs" />
     <Compile Include="DAL\DULIEUKH\C_GanMoi.cs" />
     <Compile Include="DAL\DULIEUKH\C_PhienLoTrinh.cs" />

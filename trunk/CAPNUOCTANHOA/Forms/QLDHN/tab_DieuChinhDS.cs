@@ -21,6 +21,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         public tab_DieuChinhDS()
         {
             InitializeComponent();
+            cbLoaiDieuChinh.SelectedIndex = 0;
 
         }
 

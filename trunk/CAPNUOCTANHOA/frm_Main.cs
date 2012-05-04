@@ -264,6 +264,7 @@ namespace CAPNUOCTANHOA
         private void menuDieuChinhKH_Click(object sender, EventArgs e)
         {
             PanelContent.Controls.Clear();
+           // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
             frm_DieuChinhThongTin baothay = new frm_DieuChinhThongTin();
             //baothay.Height = PanelContent.Size.Height - 20;
             //baothay.Width = PanelContent.Size.Width - 20;

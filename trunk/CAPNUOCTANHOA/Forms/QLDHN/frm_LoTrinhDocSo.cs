@@ -340,7 +340,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string PHUONG = this.txtPhuong.Text;
                 string QUAN = this.txtQuan.Text;
                 string HIEU = this.txtHieuDH.Text;
-                string COTLK = this.txtSHS.Text;
+                string COTLK = this.txtCoTLK.Text;
                 string SOTLK = this.txtSoThan.Text;
                 string CHISOTLK = this.txtCHISOTLK.Text;
                 string MAYDS = cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString();
