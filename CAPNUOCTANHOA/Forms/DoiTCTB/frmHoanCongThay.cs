@@ -312,8 +312,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                             {
                                 kh.NGAYTHAY = txtNgayGan.Value;
                                 kh.SOTHANDH = txtSoThanGan.Text;
-                                kh.HIEUDH = txtHieuDH.Text;
-                                kh.CODH = txtCo.Text;
+                                kh.HIEUDH = txtHieuDHGan.Text;
+                                kh.CODH = txtGoGan.Text;
                                 kh.CAP = txtCapGan.Text.ToUpper();
                                 kh.CHITHAN = txtChiThan.Text.ToUpper();
                                 kh.CHIGOC = txtChiGoc.Text.ToUpper();
