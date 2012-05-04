@@ -16,10 +16,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 {
     public partial class frm_DieuChinhThongTin : UserControl
     {
+        AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_DieuChinhThongTin).Name);
         public frm_DieuChinhThongTin()
         {
             InitializeComponent();
+
+            DataTable table = DAL.LinQConnection.getDataTable("SELECT TENDONGHO FROM TB_HIEUDONGHO");
+            foreach (var item in table.Rows)
+            {
+                DataRow r = (DataRow)item;
+                namesCollection.Add(r["TENDONGHO"].ToString());
+            }
+            HIEUDH.AutoCompleteMode = AutoCompleteMode.Suggest;
+            HIEUDH.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            HIEUDH.AutoCompleteCustomSource = namesCollection;
+
         }
 
         private void txtDanhBo_KeyPress(object sender, KeyPressEventArgs e)
@@ -76,6 +88,30 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
 
+        public void Refesh() {
+            LOTRINH.Text ="";
+            DOT.Text = "";
+            HOPDONG.Text = "";
+            HOTEN.Text = "";
+            SONHA.Text = "";
+            TENDUONG.Text = "";
+            QUAN.Text = "";           
+            PHUONGT.Text = "";
+            GIABIEU.Text = "";
+            DINHMUC.Text = "";
+            NGAYGAN.ValueObject = DateTime.Now.Date;
+            KIEMDINH.ValueObject = DateTime.Now.Date;
+            HIEUDH.Text =  "";
+            CO.Text =  "";
+            CAP.Text =  "";
+            SOTHAN.Text  = "";
+            VITRI.Text = "";
+            CHITHAN.Text = "";
+            CHIGOC.Text = "";
+            txtDanhBo.Text = "";
+            txtDanhBo.Focus();
+        
+        }
         private void btCapNhatThongTin_Click(object sender, EventArgs e)
         {
             if (khachhang != null)
@@ -103,6 +139,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.Update())
                 {
                     MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Refesh();
                 }
                 else
                 {
@@ -230,6 +267,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.HuyDanhBo(hKhacHang, huyDanhBo))
                 {
                     MessageBox.Show(this, "Hủy Danh Bộ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.huy_danhbo.Focus();
                 }
                 else
                 {
@@ -240,7 +278,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void btXemHuyDanhBo_Click(object sender, EventArgs e)
         {
-            string hieuluc = cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + this.txtNam.Text;
+            string hieuluc = rHieuLuc.Items[rHieuLuc.SelectedIndex].ToString() + "/" + this.rNam.Text;
             DataTable table = new DataTable();
             table.Columns.Add("STT", typeof(string));
             table.Columns.Add("TODS", typeof(string));
@@ -293,7 +331,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             if (dataGridView1.CurrentCell.OwningColumn.Name == "DANHSACH")
             {
-                string hieuluc = cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + this.txtNam.Text;
+                string hieuluc = rHieuLuc.Items[rHieuLuc.SelectedIndex].ToString() + "/" + this.rNam.Text;
+
                 string tods = dataGridView1.Rows[e.RowIndex].Cells["TODS"].Value + "";
                 string tento = "".Equals((dataGridView1.Rows[e.RowIndex].Cells["TENTO"].Value + "")) ? "" : "TỔ " + (dataGridView1.Rows[e.RowIndex].Cells["TENTO"].Value + "");
 
@@ -317,6 +356,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             panel3.Controls.Clear();
             panel3.Controls.Add(new tab_DieuChinhDS());
+        }
+
+        private void huy_danhbo_Leave(object sender, EventArgs e)
+        {
+            LoadThongTinHuy();
         }
     }
 }

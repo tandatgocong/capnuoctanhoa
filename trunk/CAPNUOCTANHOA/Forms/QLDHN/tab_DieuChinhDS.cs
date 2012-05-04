@@ -17,7 +17,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
     public partial class tab_DieuChinhDS : UserControl
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(tab_DieuChinhDS).Name);
-
+        AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         public tab_DieuChinhDS()
         {
             InitializeComponent();
