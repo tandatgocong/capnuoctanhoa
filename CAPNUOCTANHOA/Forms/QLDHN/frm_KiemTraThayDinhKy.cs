@@ -41,8 +41,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
 
             DateTime date = dateTime.Value;
-            string codh = "="+ cbCoDH.Text;
-           if (cbCoDH.SelectedIndex == 1 || cbCoDH.SelectedIndex == 2)
+            string codh = "=" + cbCoDH.Text;
+            if (cbCoDH.SelectedIndex == 1 || cbCoDH.SelectedIndex == 2)
             {
                 date = date.AddYears(-4);
             }
@@ -61,10 +61,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             //    quan = " = 31";
             //}
             string dot = "";
-            if (!"00".Equals(cbDot.Text)) {
-                dot = " AND DOT='" + cbDot.Text+"'";
+            if (!"00".Equals(cbDot.Text))
+            {
+                dot = " AND DOT='" + cbDot.Text + "'";
             }
-            
+
             if (this.ckNgayThay.Checked && this.checHieu.Checked)
             {
                 sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
@@ -88,30 +89,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             return sql;
 
         }
-        public void setBaoThay() { 
-        
-           for (int i = 0; i < dataGrid.Rows.Count; i++) {
-               string sql = "SELECT N'LẦN ' + CONVERT(VARCHAR(10),DHN_LANTHAY) + N' BẢNG KÊ ' + CONVERT(VARCHAR(10),DHN_SOBANGKE) + N' NGÀY '+ CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) ";
-               sql += " FROM TB_THAYDHN  WHERE DHN_DANHBO='" + (dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "' GROUP BY DHN_LANTHAY,DHN_SOBANGKE,DHN_NGAYBAOTHAY HAVING DHN_NGAYBAOTHAY=MAX(DHN_NGAYBAOTHAY)";
+        public void setBaoThay()
+        {
+
+            for (int i = 0; i < dataGrid.Rows.Count; i++)
+            {
+                string sql = "SELECT N'LẦN ' + CONVERT(VARCHAR(10),DHN_LANTHAY) + N' BẢNG KÊ ' + CONVERT(VARCHAR(10),DHN_SOBANGKE) + N' NGÀY '+ CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) ";
+                sql += " FROM TB_THAYDHN  WHERE DHN_DANHBO='" + (dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "' GROUP BY DHN_LANTHAY,DHN_SOBANGKE,DHN_NGAYBAOTHAY HAVING DHN_NGAYBAOTHAY=MAX(DHN_NGAYBAOTHAY)";
                 DataTable table = DAL.LinQConnection.getDataTable(sql);
-                if (table.Rows.Count>0) {
+                if (table.Rows.Count > 0)
+                {
                     dataGrid.Rows[i].Cells["BAOTHAY"].Value = "" + table.Rows[0][0];
                 }
-                
+
             }
-            
-        
+
+
         }
         private void btXemThongTin_Click(object sender, EventArgs e)
         {
-             currentPageIndex = 1;
-             pageSize = 200;
-             pageNumber = 0;
-             FirstRow = 0;
-             LastRow = 0;
+            currentPageIndex = 1;
+            pageSize = 200;
+            pageNumber = 0;
+            FirstRow = 0;
+            LastRow = 0;
 
-             string sqlCount = Search().Replace("CODE,CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY", " COUNT(*) ").Replace("ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC", " ");
-             rows = DAL.LinQConnection.ExecuteCommand(sqlCount);
+            string sqlCount = Search().Replace("CODE,CHISOKYTRUOC, DANHBO,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,HIEUDH,SOTHANDH,CODH,' ' as GBAOTHAY", " COUNT(*) ").Replace("ORDER BY  NGAYTHAY ASC ,DANHBO ASC, DOT ASC", " ");
+            rows = DAL.LinQConnection.ExecuteCommand(sqlCount);
             lbTongDHN.Text = "Tổng Số " + rows + " ĐHN.";
             try
             {
@@ -125,7 +129,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 MessageBox.Show(this, ex.Message);
             }
-           
+
         }
 
         private void dataGrid_MouseClick(object sender, MouseEventArgs e)
@@ -166,7 +170,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         listDanhBa += ("'" + (this.dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "',");
                     }
                 }
-                if (flag <= 10)
+                if (flag <= int.Parse(Utilities.Files.numberRecord))
                 {
                     frm_Option_BT frm = new frm_Option_BT(listDanhBa.Remove(listDanhBa.Length - 1, 1));
                     if (frm.ShowDialog() == DialogResult.OK)
@@ -176,7 +180,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
                 else
                 {
-                    MessageBox.Show(this, "Bảng Kê Báo Thay <= 10 Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Bảng Kê Báo Thay <= " + Utilities.Files.numberRecord + " Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 //  MessageBox.Show(this,listDanhBa.Remove(listDanhBa.Length-1,1)+ "--" +flag);
@@ -191,9 +195,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message);             
+                log.Error(ex.Message);
             }
-           
+
         }
 
 
@@ -202,7 +206,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             try
             {
                 pageNumber = rows % pageSize != 0 ? rows / pageSize + 1 : rows / pageSize;
-                lbPaing.Text = (currentPageIndex < 10 ? ("0" + currentPageIndex) : currentPageIndex+"" )+ "/" + (pageNumber < 10 ? ("0" + pageNumber) : pageNumber+"");
+                lbPaing.Text = (currentPageIndex < 10 ? ("0" + currentPageIndex) : currentPageIndex + "") + "/" + (pageNumber < 10 ? ("0" + pageNumber) : pageNumber + "");
             }
             catch (Exception)
             {
@@ -250,6 +254,42 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void dataGrid_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Utilities.DataGridV.formatRows(dataGrid);
+        }
+
+        private void dataGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+
+            //int flag = 0;
+            //for (int i = 0; i < dataGrid.Rows.Count; i++)
+            //{
+            //    if ("True".Equals(this.dataGrid.Rows[i].Cells["checkChon"].Value + ""))
+            //    {
+            //        flag++;
+            //    }
+            //}
+            //if (flag >= int.Parse(Utilities.Files.numberRecord))
+            //{
+            //    MessageBox.Show(this, "Bảng Kê Báo Thay <= " + Utilities.Files.numberRecord + " Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+        }
+
+        private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGrid.CurrentCell.OwningColumn.Name == "checkChon")
+            {
+                int flag = 0;
+                for (int i = 0; i < dataGrid.Rows.Count; i++)
+                {
+                    if ("True".Equals(this.dataGrid.Rows[i].Cells["checkChon"].Value + ""))
+                    {
+                        flag++;
+                    }
+                }
+                if (flag >= int.Parse(Utilities.Files.numberRecord))
+                {
+                    MessageBox.Show(this, "Bảng Kê Báo Thay <= " + Utilities.Files.numberRecord + " Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

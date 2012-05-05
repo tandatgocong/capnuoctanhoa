@@ -19,6 +19,8 @@ namespace CAPNUOCTANHOA.Utilities
         public static string localSave = "";
         public static string createFile = "";
         public static string FileName = "";
+        public static string numberRecord = "0";
+        public static string pageSize = "A3";
         
         public static string[] getFileOnServer()
         {
@@ -39,26 +41,29 @@ namespace CAPNUOCTANHOA.Utilities
             }
             if (words != null)
             {
-                LocalDirver = words[0];
-                pathShare = words[1];
-                UserName = words[2];
-                Password = words[3];
-                fileTemplate = words[4];
-                localSave = words[5];
-                NetworkDrive oNetDrive = new aejw.Network.NetworkDrive();
-                try
-                {
-                    oNetDrive.LocalDrive = LocalDirver;
-                    oNetDrive.ShareName = pathShare;
-                    oNetDrive.MapDrive(UserName, Password);
+                numberRecord = words[0];
+                pageSize = words[1];
 
-                }
-                catch (Exception )
-                {
+                //LocalDirver = words[0];
+                //pathShare = words[1];
+                //UserName = words[2];
+                //Password = words[3];
+                //fileTemplate = words[4];
+                //localSave = words[5];
+                //NetworkDrive oNetDrive = new aejw.Network.NetworkDrive();
+                //try
+                //{
+                //    oNetDrive.LocalDrive = LocalDirver;
+                //    oNetDrive.ShareName = pathShare;
+                //    oNetDrive.MapDrive(UserName, Password);
 
-                }
-                oNetDrive = null;
-                arrFile = Directory.GetFiles(LocalDirver);
+                //}
+                //catch (Exception )
+                //{
+
+                //}
+                //oNetDrive = null;
+                //arrFile = Directory.GetFiles(LocalDirver);
             }
 
             return arrFile;

@@ -76,6 +76,7 @@
             this.lb2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.lb1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuDieuChinhKH = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,6 +92,7 @@
             this.menuTCTB = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoiQLDHN = new DevComponents.DotNetBar.RibbonTabItem();
             this.menuDTCTB = new DevComponents.DotNetBar.RibbonTabItem();
+            this.tbTraCuuThongTin = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -570,6 +572,7 @@
             // 
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
@@ -579,7 +582,8 @@
             this.menuHeThong,
             this.menuDoiQLDHN,
             this.menuDTCTB,
-            this.congcu});
+            this.congcu,
+            this.tbTraCuuThongTin});
             this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Name = "ribbonControl1";
@@ -593,6 +597,17 @@
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
+            // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel5.Location = new System.Drawing.Point(0, 32);
+            this.ribbonPanel5.Name = "ribbonPanel5";
+            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel5.Size = new System.Drawing.Size(1038, 30);
+            this.ribbonPanel5.TabIndex = 7;
+            this.ribbonPanel5.Visible = false;
             // 
             // ribbonPanel2
             // 
@@ -747,6 +762,13 @@
             this.menuDTCTB.Text = "Đội TCTB";
             this.menuDTCTB.Visible = false;
             // 
+            // tbTraCuuThongTin
+            // 
+            this.tbTraCuuThongTin.Name = "tbTraCuuThongTin";
+            this.tbTraCuuThongTin.Panel = this.ribbonPanel5;
+            this.tbTraCuuThongTin.Text = "Tra Cứu Thay ĐHN";
+            this.tbTraCuuThongTin.Click += new System.EventHandler(this.tbTraCuuThongTin_Click);
+            // 
             // qatCustomizeItem1
             // 
             this.qatCustomizeItem1.Name = "qatCustomizeItem1";
@@ -878,6 +900,8 @@
         private System.Windows.Forms.ToolStripMenuItem menuLayDuLieuGanMoi;
         private System.Windows.Forms.ToolStripMenuItem btChuyenBK;
         private System.Windows.Forms.ToolStripMenuItem menuDieuChinhKH;
+        private DevComponents.DotNetBar.RibbonPanel ribbonPanel5;
+        private DevComponents.DotNetBar.RibbonTabItem tbTraCuuThongTin;
 
 
     }
