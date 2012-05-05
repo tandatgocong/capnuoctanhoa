@@ -103,6 +103,7 @@
     <Compile Include="DAL\SYS\C_PHUONG.cs" />
     <Compile Include="DAL\SYS\C_QUAN.cs" />
     <Compile Include="DAL\SYS\C_Users.cs" />
+    <Compile Include="DAL\TimKiem\C_TimKiem.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,6 +419,18 @@
     <Compile Include="Forms\System\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TimKiem\frmTimKiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TimKiem\frmTimKiem.Designer.cs">
+      <DependentUpon>frmTimKiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimKiem\frm_TimKiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TimKiem\frm_TimKiem.Designer.cs">
+      <DependentUpon>frm_TimKiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -699,6 +712,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\System\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimKiem\frmTimKiem.resx">
+      <DependentUpon>frmTimKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimKiem\frm_TimKiem.resx">
+      <DependentUpon>frm_TimKiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>

@@ -13,6 +13,7 @@ using CAPNUOCTANHOA.Forms.QLDHN;
 using CAPNUOCTANHOA.View.Users;
 using CAPNUOCTANHOA.Forms.DoiTCTB;
 using CAPNUOCTANHOA.Forms.QLDHN.SODOCSO;
+using CAPNUOCTANHOA.Forms.TimKiem;
  
 
 namespace CAPNUOCTANHOA
@@ -24,6 +25,8 @@ namespace CAPNUOCTANHOA
         {
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
+            Utilities.Files.getFileOnServer();
+          
             //     frm_BaoThayDHN frm = new frm_BaoThayDHN();
             //frm.MdiParent = this;
             //frm.Show();
@@ -270,6 +273,18 @@ namespace CAPNUOCTANHOA
             //baothay.Width = PanelContent.Size.Width - 20;
             baothay.Height = PanelContent.Size.Height-5;
             baothay.Width = PanelContent.Size.Width-5;
+            PanelContent.Controls.Add(baothay);
+        }
+
+        private void tbTraCuuThongTin_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
+            frmTimKiem baothay = new frmTimKiem();
+            //baothay.Height = PanelContent.Size.Height - 20;
+            //baothay.Width = PanelContent.Size.Width - 20;
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
         }
 

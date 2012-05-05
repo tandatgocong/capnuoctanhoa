@@ -74,7 +74,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.txtSoBangKe.Focus();
             }
             else {
-                ReportDocument rp = new rpt_BCBangKe_A4();
+                ReportDocument rp = new rpt_BCBangKe_A3();
+                if("A4".Equals(Utilities.Files.pageSize.Trim())){
+                    rp = new rpt_BCBangKe_A4();
+                }                
                 rp.SetDataSource(DAL.QLDHN.C_BaoThay.ReportBaoThay(txtSoBangKe.Text));
                 rp.SetParameterValue("lapbk", DAL.SYS.C_USERS._fullName);
                 frm_Reports frm = new frm_Reports(rp);
@@ -289,7 +292,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             try
             {
-                if (dataBangKe.Rows.Count <= 9)
+                if (dataBangKe.Rows.Count <= (int.Parse(Utilities.Files.numberRecord)-1))
                 {
                     string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
                     if ("".Equals(this.txtSoBangKe.Text))
@@ -311,7 +314,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     }
                 }
                 else {
-                    MessageBox.Show(this, "Bảng Kê Báo Thay <= 10 Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Bảng Kê Báo Thay " + Utilities.Files.numberRecord + " Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
