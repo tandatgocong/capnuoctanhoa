@@ -508,7 +508,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupPanel1.Location = new System.Drawing.Point(651, 31);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(611, 614);
+            this.groupPanel1.Size = new System.Drawing.Size(611, 584);
             // 
             // 
             // 
@@ -805,7 +805,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.groupBox1.Location = new System.Drawing.Point(21, 170);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(581, 371);
+            this.groupBox1.Size = new System.Drawing.Size(581, 367);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đồng Hồ Nước Mới Thay";
@@ -1388,7 +1388,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTimKiem";
-            this.Size = new System.Drawing.Size(1196, 550);
+            this.Size = new System.Drawing.Size(1309, 665);
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
