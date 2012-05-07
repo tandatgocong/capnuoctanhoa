@@ -62,13 +62,13 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             return result;
         }
 
-        public static int CapNhatThongTinHandHeld(string danhbo, string hieudh, string sothan)
+        public static int CapNhatThongTinHandHeld(string danhbo, string hieudh, string sothan, string chithan, string chigoc)
         {
             int result = 0;
             DocSoDataContext db = new DocSoDataContext();
             try
             {
-                string sql = "UPDATE KHACHHANG SET HIEU='" + hieudh + "', SOTHAN='" + sothan + "' WHERE DANHBA='" + danhbo + "' ";
+                string sql = "UPDATE KHACHHANG SET HIEU='" + hieudh + "', SOTHAN='" + sothan + "', MACHITHAN='" + chithan + "', MACHIGOC='" + chigoc + "' WHERE DANHBA='" + danhbo + "' ";
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -80,7 +80,33 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             }
             catch (Exception ex)
             {
-                log.Error("LinQConnection getDataTable" + ex.Message);
+                log.Error("Cap Nhat Thong Tin Thay That Bai." + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
+        }
+        public static int InsertBaoThayHandHeld(string sql)
+        {
+            int result = 0;
+            DocSoDataContext db = new DocSoDataContext();
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Insert Thong Tin Thay That Bai" + ex.Message);
             }
             finally
             {

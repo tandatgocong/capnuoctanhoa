@@ -81,7 +81,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             }
 
         }
-        public void setData(int i) {
+        public void setData(int i)
+        {
             try
             {
                 string ID_BAOTHAY = dataBangKe.Rows[i].Cells["ID_BAOTHAY"].Value + "";
@@ -114,15 +115,14 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 string DHN_SOTHAN = dataBangKe.Rows[i].Cells["G_SOTHAN"].Value + "";
                 string DHN_CHISO = dataBangKe.Rows[i].Cells["G_CHISO"].Value + "";
                 string DHN_LYDOTHAY = dataBangKe.Rows[i].Cells["G_LYDO"].Value + "";
-               
                 string HCT_CHISOGO = dataBangKe.Rows[i].Cells["HCT_CHISOGO"].Value + "";
                 txtChiSoGo.Text = HCT_CHISOGO;
-                
+
                 string HCT_SOTHANGO = dataBangKe.Rows[i].Cells["HCT_SOTHANGO"].Value + "";
                 txtSoThanGo.Text = HCT_SOTHANGO;
-               
+
                 string HCT_HIEUDHNGAN = dataBangKe.Rows[i].Cells["HCT_HIEUDHNGAN"].Value + "";
-                txtHieuDHGan.Text = !HCT_HIEUDHNGAN.Equals("")? HCT_HIEUDHNGAN: "KENT";
+                txtHieuDHGan.Text = !HCT_HIEUDHNGAN.Equals("") ? HCT_HIEUDHNGAN : "KENT";
 
                 string HCT_CODHNGAN = dataBangKe.Rows[i].Cells["HCT_CODHNGAN"].Value + "";
                 txtGoGan.Text = !HCT_CODHNGAN.Equals("") ? HCT_CODHNGAN : "15";
@@ -131,24 +131,24 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 txtSoThanGan.Text = HCT_SOTHANGAN;
 
                 string HCT_CAP = dataBangKe.Rows[i].Cells["HCT_CAP"].Value + "";
-                txtCapGan.Text = !HCT_CAP.Equals("") ? HCT_CAP : "C"; 
+                txtCapGan.Text = !HCT_CAP.Equals("") ? HCT_CAP : "C";
 
                 string HCT_CHISOGAN = dataBangKe.Rows[i].Cells["HCT_CHISOGAN"].Value + "";
                 txtChiSoGan.Text = !HCT_CHISOGAN.Equals("") ? HCT_CHISOGAN : "0"; ;
-               
+
                 string HCT_LOAIDHGAN = dataBangKe.Rows[i].Cells["HCT_LOAIDHGAN"].Value + "";
                 if ("False".Equals(HCT_LOAIDHGAN))
                     cbLoaiDHN.SelectedIndex = 1;
                 else
                     cbLoaiDHN.SelectedIndex = 0;
-                
+
                 string HCT_NGAYGAN = dataBangKe.Rows[i].Cells["HCT_NGAYGAN"].Value + "";
                 txtNgayGan.Value = !"".Equals(HCT_NGAYGAN) ? DateTime.Parse(HCT_NGAYGAN) : DateTime.Now.AddDays(-1);
-               
+
                 string HCT_NGAYKIEMDINH = dataBangKe.Rows[i].Cells["HCT_NGAYKIEMDINH"].Value + "";
                 txtngayKiemDinh.Value = !"".Equals(HCT_NGAYKIEMDINH) ? DateTime.Parse(HCT_NGAYKIEMDINH) : DateTime.Now;
 
-              
+
                 string HCT_CHITHAN = dataBangKe.Rows[i].Cells["GCHITHAN"].Value + "";
                 txtChiThan.Text = !HCT_CHITHAN.Equals("") ? HCT_CHITHAN : "VN/217";
 
@@ -163,15 +163,16 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     string HCT_LYDOTRONGAI = dataBangKe.Rows[i].Cells["HCT_LYDOTRONGAI"].Value + "";
                     txtLyDoTroNgai.Text = HCT_LYDOTRONGAI;
                 }
-                else {
+                else
+                {
                     this.ckTroNgai.Checked = false;
                     txtLyDoTroNgai.Text = "";
                 }
-
-              //  MessageBox.Show(this, HCT_CHITHAN + "-" + HCT_CHIGOC + "==" + HCT_NGAYGAN);
+                lbLoaiBK.Text = DHN_LOAIBANGKE;
+                //  MessageBox.Show(this, HCT_CHITHAN + "-" + HCT_CHIGOC + "==" + HCT_NGAYGAN);
                 txtSoDanhBo.Text = DHN_DANHBO.Replace(" ", "");
                 txtTenKH.Text = HOTEN;
-                txtDiaChi.Text = DIACHI;                
+                txtDiaChi.Text = DIACHI;
                 txtHieuDH.Text = DHN_HIEUDHN;
                 txtCo.Text = DHN_CODH;
                 txtSoThan.Text = DHN_SOTHAN;
@@ -204,7 +205,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             {
                 e.Handled = true;
             }
-           
+
         }
 
         private void txtGoGan_KeyPress(object sender, KeyPressEventArgs e)
@@ -222,7 +223,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 e.Handled = true;
             }
         }
-        
+
         int currentRow = 0;
         private void btCapNhat_Click(object sender, EventArgs e)
         {
@@ -276,7 +277,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                             // xoa du lieu cu
                             DAL.LinQConnection.ExecuteCommand("DELETE FROM TB_VATUTHAY_DHN WHERE ID_BAOTHAY='" + ID_BAOTHAY + "'  ");
                             // Luu Vat Tu Thay
-                            for (int i = 0; i < dataVatTuThay.Rows.Count-1; i++)
+                            for (int i = 0; i < dataVatTuThay.Rows.Count - 1; i++)
                             {
                                 string STT = dataVatTuThay.Rows[i].Cells["STT"].Value + "";
                                 string MAVT = dataVatTuThay.Rows[i].Cells["MAVT"].Value + ""; ;
@@ -303,12 +304,12 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         {
                             log.Error("Loi Luu Vat Tu THay : " + ex.Message);
                         }
-                        
+
                         //Cap Nhat Ho So Khach Hang
                         try
                         {
                             TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(this.txtSoDanhBo.Text.Replace("-", ""));
-                            if (kh != null && ckTroNgai.Checked==false)
+                            if (kh != null && ckTroNgai.Checked == false)
                             {
                                 kh.NGAYTHAY = txtNgayGan.Value;
                                 kh.SOTHANDH = txtSoThanGan.Text;
@@ -320,23 +321,67 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                 kh.NGAYKIEMDINH = txtngayKiemDinh.Value;
                                 kh.BAOTHAY = false;
                                 DAL.DULIEUKH.C_DuLieuKhachHang.Update();
+
+                                //Cap Nhat Du Lieu Cho HandHeld
+                                try
+                                {
+                                    DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtSoDanhBo.Text.Replace("-", ""), txtHieuDHGan.Text.Substring(0, 3), txtSoThanGan.Text, txtChiThan.Text.ToUpper(), txtChiGoc.Text.ToUpper());
+                                    string loai = "1";
+                                    if (!"DK".Equals(this.lbLoaiBK.Text))
+                                    {
+                                        loai = "2";
+                                    }
+
+                                    string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
+                                    " VALUES     ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " +
+                                    " '" + kh.HOTEN + "', " +
+                                    " '" + kh.SONHA + "' ," +
+                                    " '" + kh.TENDUONG + "' , " +
+                                    " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
+                                    " " + kh.CODH + ", " +
+                                    " '" + txtNgayGan.Value + "', " +
+                                    " " + txtChiSoGo.Text + "," +
+                                    " " + txtChiSoGan.Text + ", " +
+                                    " '" + txtSoThanGan.Text + "'," +
+                                    " N'" + kh.VITRIDHN + "', " +
+                                    " '" + txtChiThan.Text.ToUpper() + "'," +
+                                    " '" + txtChiGoc.Text.ToUpper() + "', " +
+                                    "  " + loai + ")";
+                                    if (DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql) == 0) {
+
+                                        sql = "UPDATE  BAOTHAYDHN  " +
+                                        " SET  " +
+                                        " TENKH='" + kh.HOTEN + "', " +
+                                        " SO='" + kh.SONHA + "' ," +
+                                        " DUONG='" + kh.TENDUONG + "' , " +
+                                        " HIEUMOI='" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
+                                        " COMOI=" + kh.CODH + ", " +
+                                        " NGAYTHAY='" + txtNgayGan.Value + "', " +
+                                        " CSGO=" + txtChiSoGo.Text + "," +
+                                        " CSGAN=" + txtChiSoGan.Text + ", " +
+                                        " SOTHANMOI='" + txtSoThanGan.Text + "'," +
+                                        " VITRIMOI=N'" + kh.VITRIDHN + "', " +
+                                        " MACHITHAN='" + txtChiThan.Text.ToUpper() + "'," +
+                                        " MACHIGOC='" + txtChiGoc.Text.ToUpper() + "', " +
+                                        " LOAI=" + loai + " " +
+                                        " WHERE DANHBA='" + kh.DANHBO + "' AND CONVERT(DATETIME,NGAYTHAY,103)='" + txtNgayGan.Value.ToShortDateString()+ "'";
+                                        DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql);
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    log.Error("Cap Nhat Du Lieu Cho HandHeld : " + ex.Message);
+                                }
+                                //// END
+
                             }
                         }
                         catch (Exception ex)
                         {
                             log.Error("Cap Nhat Ho So Khach Hang : " + ex.Message);
                         }
-                       
-                        //Cap Nhat Du Lieu Cho HandHeld
-                        try
-                        {
-                            DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtSoDanhBo.Text.Replace("-", ""), txtHieuDHGan.Text.Substring(0,3), txtSoThanGan.Text);
-                        }
-                        catch (Exception ex)
-                        {
-                            log.Error("Cap Nhat Du Lieu Cho HandHeld : " + ex.Message);
-                        }
-                        //// END
+
+
                         LoadData();
 
 
@@ -358,9 +403,9 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             catch (Exception ex)
             {
                 log.Error(ex.Message);
-            }  
-            
-           
+            }
+
+
         }
 
         private void dataBangKe_SelectionChanged(object sender, EventArgs e)
@@ -384,7 +429,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 string DHN_SOTHAN = dataBangKe.Rows[currentRow].Cells["G_SOTHAN"].Value + "";
                 string DHN_CHISO = dataBangKe.Rows[currentRow].Cells["G_CHISO"].Value + "";
                 string DHN_LYDOTHAY = dataBangKe.Rows[currentRow].Cells["G_LYDO"].Value + "";
-             //  setData(currentRow);
+                //  setData(currentRow);
                 txtChiSoGo.Focus();
             }
             catch (Exception)
@@ -470,7 +515,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     frm_Reports frm = new frm_Reports(rp);
                     frm.ShowDialog();
                 }
-                
+
             }
 
         }
@@ -487,7 +532,5 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
-
-         
     }
 }
