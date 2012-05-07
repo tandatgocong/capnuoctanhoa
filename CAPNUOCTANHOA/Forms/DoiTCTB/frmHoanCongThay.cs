@@ -330,7 +330,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         //Cap Nhat Du Lieu Cho HandHeld
                         try
                         {
-
+                            DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtSoDanhBo.Text.Replace("-", ""), txtHieuDHGan.Text.Substring(0,3), txtSoThanGan.Text);
                         }
                         catch (Exception ex)
                         {

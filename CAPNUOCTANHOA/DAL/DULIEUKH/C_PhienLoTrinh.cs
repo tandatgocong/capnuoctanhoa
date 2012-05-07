@@ -61,5 +61,33 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             db.SubmitChanges();
             return result;
         }
+
+        public static int CapNhatThongTinHandHeld(string danhbo, string hieudh, string sothan)
+        {
+            int result = 0;
+            DocSoDataContext db = new DocSoDataContext();
+            try
+            {
+                string sql = "UPDATE KHACHHANG SET HIEU='" + hieudh + "', SOTHAN='" + sothan + "' WHERE DANHBA='" + danhbo + "' ";
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
+        }
     }
 }

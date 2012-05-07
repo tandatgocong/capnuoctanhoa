@@ -1,5 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DocSo_PHT" Class="DocSoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="DocSo_PHTConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP_G7;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="DocSo_PHTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BAOTHAYDHN" Member="BAOTHAYDHNs">
+    <Type Name="BAOTHAYDHN">
+      <Column Name="ID_BAOTHAY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DANHBA" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="TENKH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DUONG" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HIEUMOI" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="COMOI" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NGAYTHAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CSGO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CSGAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOTHANMOI" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="VITRIMOI" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MACHITHAN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MACHIGOC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LOAI" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NGAYCAPNHAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINH_TRANG" Member="TINH_TRANGs">
+    <Type Name="TINH_TRANG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TINH_TRANG" Member="TINH_TRANG1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MO_TA" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
+      <Column Name="CODE_TINH" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.BIENDONG_KHACHHANG" Member="BIENDONG_KHACHHANGs">
     <Type Name="BIENDONG_KHACHHANG">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -21,20 +49,12 @@
       <Column Name="TLHCSN" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HIEU" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="CO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOTHAN" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="SOTHAN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="CODE" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
       <Column Name="CSMOI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="TIEUTHU" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="NGAYGAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TINH_TRANG" Member="TINH_TRANGs">
-    <Type Name="TINH_TRANG">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TINH_TRANG" Member="TINH_TRANG1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="MO_TA" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
-      <Column Name="CODE_TINH" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.CHUYENDULIEU" Member="CHUYENDULIEUs">
@@ -347,8 +367,8 @@
       <Column Name="SO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DUONG" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="GB" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="KY" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="NAM" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="KY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CODE" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
       <Column Name="CSCU" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CSMOI" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -486,10 +506,18 @@
   </Table>
   <Table Name="dbo.HIEU_DHN" Member="HIEU_DHNs">
     <Type Name="HIEU_DHN">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="HIEU" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="MAHIEU" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
       <Column Name="CO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HioEI" Member="HioEIs">
+    <Type Name="HioEI">
+      <Column Name="[Column 0]" Member="Column_0" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Column 1]" Member="Column_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Column 2]" Member="Column_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Column 3]" Member="Column_3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.KH" Member="KHs">
@@ -525,7 +553,6 @@
       <Column Name="DM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HOPDONG" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="CO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOTHAN" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NGAYGAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CSGAN" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
@@ -584,6 +611,26 @@
       <Column Name="PHUONG" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
       <Column Name="VITRI" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="HIEU" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SOTHAN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MACHITHAN" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MACHIGOC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LENHDONGNUOC" Member="LENHDONGNUOCs">
+    <Type Name="LENHDONGNUOC">
+      <Column Name="ID_LENH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DANHBA" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="HIEU" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CO" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SOTHAN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="VITRI" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LOAI_LENH" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NGAYTHUCHIEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NChar(200)" CanBeNull="true" />
+      <Column Name="NGAYCAPNHAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SOLENH" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NAM" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CSDONG_MO" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.MALOTRINH" Member="MALOTRINHs">
