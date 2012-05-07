@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
+using CrystalDecisions.CrystalReports.Engine;
+using CAPNUOCTANHOA.Forms.Reports;
+using CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 {
@@ -326,6 +329,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         private void detail_Click(object sender, EventArgs e)
         {
             formatdetail();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_tab_SanLuong();
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_SANLUONG ", "W_BAOCAO_SANLUONG"));
+            rp.SetParameterValue("tenbk", "BÁO CÁO SẢN LƯỢNG ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ  " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam.Text.Trim());
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
         }
 
     }
