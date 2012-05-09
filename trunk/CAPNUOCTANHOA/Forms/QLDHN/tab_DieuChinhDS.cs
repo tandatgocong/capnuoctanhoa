@@ -88,7 +88,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string DUONG = this.TENDUONG.Text;
                 string PHUONG = this.PHUONGT.Text;
                 string QUAN = this.QUAN.Text;
-                string HIEU = this.QUAN.Text;
+                string HIEU = this.HIEUDH.Text;
                 string COTLK = this.CO.Text;
                 string SOTLK = this.SOTHAN.Text;
                 string CHISOTLK = "0";
@@ -144,6 +144,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
                 else
                 {
+                    tb.SHS = SHS;
+                    tb.DANHBO = DANHBO;
                     tb.HOPDONG = HOPDONG;
                     tb.HOTEN = HOTEN;
                     tb.SONHA = SONHA;

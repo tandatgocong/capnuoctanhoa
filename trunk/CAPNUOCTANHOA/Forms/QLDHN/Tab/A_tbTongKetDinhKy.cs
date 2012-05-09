@@ -37,6 +37,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             cbHieuDongHo.DisplayMember = "TENDONGHO";
             cbHieuDongHo.ValueMember = "HIEUDH";
         }
+
         public void Search() {
             DateTime date = dateTime.Value;
             string codh = "<=25";
