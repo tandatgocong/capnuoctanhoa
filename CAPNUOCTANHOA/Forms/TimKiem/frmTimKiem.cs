@@ -25,7 +25,7 @@ namespace CAPNUOCTANHOA.Forms.TimKiem
 
         }
 
-        private Control txtKeypress;
+      //  private Control txtKeypress;
         private void KeyPressHandle(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
             if (!Char.IsControl(e.KeyChar) && !Char.IsNumber(e.KeyChar))
@@ -195,9 +195,7 @@ namespace CAPNUOCTANHOA.Forms.TimKiem
             }
         }
 
-        int currentRow = 0;
-
-
+        //int currentRow = 0;
         private void btSearch_Click(object sender, EventArgs e)
         {
             LoadData();

@@ -260,8 +260,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         {
                             thaydh.HCT_LOAIDHGAN = false;
                         }
-                        thaydh.HCT_NGAYGAN = txtNgayGan.Value;
-                        thaydh.HCT_NGAYKIEMDINH = txtngayKiemDinh.Value;
+                        thaydh.HCT_NGAYGAN = txtNgayGan.Value.Date;
+                        thaydh.HCT_NGAYKIEMDINH = txtngayKiemDinh.Value.Date;
                         thaydh.HCT_CHITHAN = txtChiThan.Text.ToUpper();
                         thaydh.HCT_CHIGOC = txtChiGoc.Text.ToUpper();
                         thaydh.HCT_TRONGAI = false;
@@ -311,14 +311,14 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                             TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(this.txtSoDanhBo.Text.Replace("-", ""));
                             if (kh != null && ckTroNgai.Checked == false)
                             {
-                                kh.NGAYTHAY = txtNgayGan.Value;
+                                kh.NGAYTHAY = txtNgayGan.Value.Date;
                                 kh.SOTHANDH = txtSoThanGan.Text;
                                 kh.HIEUDH = txtHieuDHGan.Text;
                                 kh.CODH = txtGoGan.Text;
                                 kh.CAP = txtCapGan.Text.ToUpper();
                                 kh.CHITHAN = txtChiThan.Text.ToUpper();
                                 kh.CHIGOC = txtChiGoc.Text.ToUpper();
-                                kh.NGAYKIEMDINH = txtngayKiemDinh.Value;
+                                kh.NGAYKIEMDINH = txtngayKiemDinh.Value.Date;
                                 kh.BAOTHAY = false;
                                 DAL.DULIEUKH.C_DuLieuKhachHang.Update();
 
