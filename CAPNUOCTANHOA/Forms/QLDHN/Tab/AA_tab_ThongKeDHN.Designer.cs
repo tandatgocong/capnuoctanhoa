@@ -277,6 +277,7 @@
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btThem.TabIndex = 29;
             this.btThem.Text = "XEM THÔNG TIN";
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // labelX1
             // 

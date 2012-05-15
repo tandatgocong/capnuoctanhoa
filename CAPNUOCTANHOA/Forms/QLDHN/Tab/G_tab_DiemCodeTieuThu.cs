@@ -37,14 +37,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
                 // ky hien tai
                 DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY(nam.ToString(), ky);
+                DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL(nam.ToString(), ky);
                 // ky truoc
                 if (ky == 1)
                 {
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC((nam - 1) + "", 12);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL((nam - 1) + "", 12);
                 }
                 else
                 {
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC(nam.ToString(), ky - 1);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL(nam.ToString(), ky - 1);
                 }
               
                 // CAP NHAT SO LIEU 
@@ -322,14 +325,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                 // ky hien tai
                 DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DOT(nam.ToString(), ky,dot);
+                DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL_DOT(nam.ToString(), ky, dot);
                 // ky truoc
                 if (ky == 1)
                 {
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DOT((nam - 1) + "", 12, dot);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL_DOT((nam - 1) + "", 12, dot);
                 }
                 else
                 {
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DOT(nam.ToString(), ky - 1, dot);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL_DOT(nam.ToString(), ky - 1, dot);
                 }
 
                 // CAP NHAT SO LIEU 
@@ -580,7 +586,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new rpt_tab_CodeKy();
-            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE ", "W_BAOCAO_CODE"));
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE ", "W_BAOCAO_CODE", "SELECT * FROM W_BAOCAO_CODE_DETAIL ", "W_BAOCAO_CODE_DETAIL"));
             rp.SetParameterValue("tenbk", "BÁO CÁO MÃ CODE TIÊU THỤ KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim());
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
@@ -589,7 +595,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new rpt_tab_CodeKy();
-            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE ", "W_BAOCAO_CODE"));
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE ", "W_BAOCAO_CODE", "SELECT * FROM W_BAOCAO_CODE_DETAIL ", "W_BAOCAO_CODE_DETAIL"));
             rp.SetParameterValue("tenbk", "BÁO CÁO MÃ CODE TIÊU THỤ ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim());
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();

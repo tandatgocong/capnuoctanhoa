@@ -28,6 +28,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         private TB_THONGKEDHN_CUDataTable tableTB_THONGKEDHN_CU;
         
+        private TB_THONGKEDHN_SUMDataTable tableTB_THONGKEDHN_SUM;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -61,6 +63,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
                 }
                 if ((ds.Tables["TB_THONGKEDHN_CU"] != null)) {
                     base.Tables.Add(new TB_THONGKEDHN_CUDataTable(ds.Tables["TB_THONGKEDHN_CU"]));
+                }
+                if ((ds.Tables["TB_THONGKEDHN_SUM"] != null)) {
+                    base.Tables.Add(new TB_THONGKEDHN_SUMDataTable(ds.Tables["TB_THONGKEDHN_SUM"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -97,6 +102,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         public TB_THONGKEDHN_CUDataTable TB_THONGKEDHN_CU {
             get {
                 return this.tableTB_THONGKEDHN_CU;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TB_THONGKEDHN_SUMDataTable TB_THONGKEDHN_SUM {
+            get {
+                return this.tableTB_THONGKEDHN_SUM;
             }
         }
         
@@ -173,6 +188,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
                 if ((ds.Tables["TB_THONGKEDHN_CU"] != null)) {
                     base.Tables.Add(new TB_THONGKEDHN_CUDataTable(ds.Tables["TB_THONGKEDHN_CU"]));
                 }
+                if ((ds.Tables["TB_THONGKEDHN_SUM"] != null)) {
+                    base.Tables.Add(new TB_THONGKEDHN_SUMDataTable(ds.Tables["TB_THONGKEDHN_SUM"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -218,6 +236,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
                     this.tableTB_THONGKEDHN_CU.InitVars();
                 }
             }
+            this.tableTB_THONGKEDHN_SUM = ((TB_THONGKEDHN_SUMDataTable)(base.Tables["TB_THONGKEDHN_SUM"]));
+            if ((initTable == true)) {
+                if ((this.tableTB_THONGKEDHN_SUM != null)) {
+                    this.tableTB_THONGKEDHN_SUM.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -232,6 +256,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
             base.Tables.Add(this.tableTB_THONGKEDHN);
             this.tableTB_THONGKEDHN_CU = new TB_THONGKEDHN_CUDataTable();
             base.Tables.Add(this.tableTB_THONGKEDHN_CU);
+            this.tableTB_THONGKEDHN_SUM = new TB_THONGKEDHN_SUMDataTable();
+            base.Tables.Add(this.tableTB_THONGKEDHN_SUM);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -243,6 +269,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeTB_THONGKEDHN_CU() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTB_THONGKEDHN_SUM() {
             return false;
         }
         
@@ -306,6 +338,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TB_THONGKEDHN_CURowChangeEventHandler(object sender, TB_THONGKEDHN_CURowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void TB_THONGKEDHN_SUMRowChangeEventHandler(object sender, TB_THONGKEDHN_SUMRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1689,6 +1724,644 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "TB_THONGKEDHN_CUDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TB_THONGKEDHN_SUMDataTable : global::System.Data.TypedTableBase<TB_THONGKEDHN_SUMRow> {
+            
+            private global::System.Data.DataColumn columnSUM_CO15;
+            
+            private global::System.Data.DataColumn columnSUM_CO20;
+            
+            private global::System.Data.DataColumn columnSUM_CO25;
+            
+            private global::System.Data.DataColumn columnSUM_CO40;
+            
+            private global::System.Data.DataColumn columnSUM_CO50;
+            
+            private global::System.Data.DataColumn columnSUM_CO80;
+            
+            private global::System.Data.DataColumn columnSUM_CO100;
+            
+            private global::System.Data.DataColumn columnSUM_CO150;
+            
+            private global::System.Data.DataColumn columnSUM_CO200;
+            
+            private global::System.Data.DataColumn columnSUM_NHOCO15;
+            
+            private global::System.Data.DataColumn columnSUM_NHOCO20;
+            
+            private global::System.Data.DataColumn columnSUM_NHOCO25;
+            
+            private global::System.Data.DataColumn columnSUM_NHOCO40;
+            
+            private global::System.Data.DataColumn columnSUM_NHOCO50;
+            
+            private global::System.Data.DataColumn columnSUM_NHOCO80;
+            
+            private global::System.Data.DataColumn columnSUM_NHOCO100;
+            
+            private global::System.Data.DataColumn columnSUM_NHOCO150;
+            
+            private global::System.Data.DataColumn columnSUM_NHOCO200;
+            
+            private global::System.Data.DataColumn columnSUM_LONCO15;
+            
+            private global::System.Data.DataColumn columnSUM_LONCO20;
+            
+            private global::System.Data.DataColumn columnSUM_LONCO25;
+            
+            private global::System.Data.DataColumn columnSUM_LONCO40;
+            
+            private global::System.Data.DataColumn columnSUM_LONCO50;
+            
+            private global::System.Data.DataColumn columnSUM_LONCO80;
+            
+            private global::System.Data.DataColumn columnSUM_LONCO100;
+            
+            private global::System.Data.DataColumn columnSUM_LONCO150;
+            
+            private global::System.Data.DataColumn columnSUM_LONCO200;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_THONGKEDHN_SUMDataTable() {
+                this.TableName = "TB_THONGKEDHN_SUM";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TB_THONGKEDHN_SUMDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected TB_THONGKEDHN_SUMDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_CO15Column {
+                get {
+                    return this.columnSUM_CO15;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_CO20Column {
+                get {
+                    return this.columnSUM_CO20;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_CO25Column {
+                get {
+                    return this.columnSUM_CO25;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_CO40Column {
+                get {
+                    return this.columnSUM_CO40;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_CO50Column {
+                get {
+                    return this.columnSUM_CO50;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_CO80Column {
+                get {
+                    return this.columnSUM_CO80;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_CO100Column {
+                get {
+                    return this.columnSUM_CO100;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_CO150Column {
+                get {
+                    return this.columnSUM_CO150;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_CO200Column {
+                get {
+                    return this.columnSUM_CO200;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_NHOCO15Column {
+                get {
+                    return this.columnSUM_NHOCO15;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_NHOCO20Column {
+                get {
+                    return this.columnSUM_NHOCO20;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_NHOCO25Column {
+                get {
+                    return this.columnSUM_NHOCO25;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_NHOCO40Column {
+                get {
+                    return this.columnSUM_NHOCO40;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_NHOCO50Column {
+                get {
+                    return this.columnSUM_NHOCO50;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_NHOCO80Column {
+                get {
+                    return this.columnSUM_NHOCO80;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_NHOCO100Column {
+                get {
+                    return this.columnSUM_NHOCO100;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_NHOCO150Column {
+                get {
+                    return this.columnSUM_NHOCO150;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_NHOCO200Column {
+                get {
+                    return this.columnSUM_NHOCO200;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_LONCO15Column {
+                get {
+                    return this.columnSUM_LONCO15;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_LONCO20Column {
+                get {
+                    return this.columnSUM_LONCO20;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_LONCO25Column {
+                get {
+                    return this.columnSUM_LONCO25;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_LONCO40Column {
+                get {
+                    return this.columnSUM_LONCO40;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_LONCO50Column {
+                get {
+                    return this.columnSUM_LONCO50;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_LONCO80Column {
+                get {
+                    return this.columnSUM_LONCO80;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_LONCO100Column {
+                get {
+                    return this.columnSUM_LONCO100;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_LONCO150Column {
+                get {
+                    return this.columnSUM_LONCO150;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUM_LONCO200Column {
+                get {
+                    return this.columnSUM_LONCO200;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_THONGKEDHN_SUMRow this[int index] {
+                get {
+                    return ((TB_THONGKEDHN_SUMRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_THONGKEDHN_SUMRowChangeEventHandler TB_THONGKEDHN_SUMRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_THONGKEDHN_SUMRowChangeEventHandler TB_THONGKEDHN_SUMRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_THONGKEDHN_SUMRowChangeEventHandler TB_THONGKEDHN_SUMRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_THONGKEDHN_SUMRowChangeEventHandler TB_THONGKEDHN_SUMRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTB_THONGKEDHN_SUMRow(TB_THONGKEDHN_SUMRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_THONGKEDHN_SUMRow AddTB_THONGKEDHN_SUMRow(
+                        double SUM_CO15, 
+                        double SUM_CO20, 
+                        double SUM_CO25, 
+                        double SUM_CO40, 
+                        double SUM_CO50, 
+                        double SUM_CO80, 
+                        double SUM_CO100, 
+                        double SUM_CO150, 
+                        double SUM_CO200, 
+                        double SUM_NHOCO15, 
+                        double SUM_NHOCO20, 
+                        double SUM_NHOCO25, 
+                        double SUM_NHOCO40, 
+                        double SUM_NHOCO50, 
+                        double SUM_NHOCO80, 
+                        double SUM_NHOCO100, 
+                        double SUM_NHOCO150, 
+                        double SUM_NHOCO200, 
+                        double SUM_LONCO15, 
+                        double SUM_LONCO20, 
+                        double SUM_LONCO25, 
+                        double SUM_LONCO40, 
+                        double SUM_LONCO50, 
+                        double SUM_LONCO80, 
+                        double SUM_LONCO100, 
+                        double SUM_LONCO150, 
+                        double SUM_LONCO200) {
+                TB_THONGKEDHN_SUMRow rowTB_THONGKEDHN_SUMRow = ((TB_THONGKEDHN_SUMRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        SUM_CO15,
+                        SUM_CO20,
+                        SUM_CO25,
+                        SUM_CO40,
+                        SUM_CO50,
+                        SUM_CO80,
+                        SUM_CO100,
+                        SUM_CO150,
+                        SUM_CO200,
+                        SUM_NHOCO15,
+                        SUM_NHOCO20,
+                        SUM_NHOCO25,
+                        SUM_NHOCO40,
+                        SUM_NHOCO50,
+                        SUM_NHOCO80,
+                        SUM_NHOCO100,
+                        SUM_NHOCO150,
+                        SUM_NHOCO200,
+                        SUM_LONCO15,
+                        SUM_LONCO20,
+                        SUM_LONCO25,
+                        SUM_LONCO40,
+                        SUM_LONCO50,
+                        SUM_LONCO80,
+                        SUM_LONCO100,
+                        SUM_LONCO150,
+                        SUM_LONCO200};
+                rowTB_THONGKEDHN_SUMRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTB_THONGKEDHN_SUMRow);
+                return rowTB_THONGKEDHN_SUMRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TB_THONGKEDHN_SUMDataTable cln = ((TB_THONGKEDHN_SUMDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TB_THONGKEDHN_SUMDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnSUM_CO15 = base.Columns["SUM_CO15"];
+                this.columnSUM_CO20 = base.Columns["SUM_CO20"];
+                this.columnSUM_CO25 = base.Columns["SUM_CO25"];
+                this.columnSUM_CO40 = base.Columns["SUM_CO40"];
+                this.columnSUM_CO50 = base.Columns["SUM_CO50"];
+                this.columnSUM_CO80 = base.Columns["SUM_CO80"];
+                this.columnSUM_CO100 = base.Columns["SUM_CO100"];
+                this.columnSUM_CO150 = base.Columns["SUM_CO150"];
+                this.columnSUM_CO200 = base.Columns["SUM_CO200"];
+                this.columnSUM_NHOCO15 = base.Columns["SUM_NHOCO15"];
+                this.columnSUM_NHOCO20 = base.Columns["SUM_NHOCO20"];
+                this.columnSUM_NHOCO25 = base.Columns["SUM_NHOCO25"];
+                this.columnSUM_NHOCO40 = base.Columns["SUM_NHOCO40"];
+                this.columnSUM_NHOCO50 = base.Columns["SUM_NHOCO50"];
+                this.columnSUM_NHOCO80 = base.Columns["SUM_NHOCO80"];
+                this.columnSUM_NHOCO100 = base.Columns["SUM_NHOCO100"];
+                this.columnSUM_NHOCO150 = base.Columns["SUM_NHOCO150"];
+                this.columnSUM_NHOCO200 = base.Columns["SUM_NHOCO200"];
+                this.columnSUM_LONCO15 = base.Columns["SUM_LONCO15"];
+                this.columnSUM_LONCO20 = base.Columns["SUM_LONCO20"];
+                this.columnSUM_LONCO25 = base.Columns["SUM_LONCO25"];
+                this.columnSUM_LONCO40 = base.Columns["SUM_LONCO40"];
+                this.columnSUM_LONCO50 = base.Columns["SUM_LONCO50"];
+                this.columnSUM_LONCO80 = base.Columns["SUM_LONCO80"];
+                this.columnSUM_LONCO100 = base.Columns["SUM_LONCO100"];
+                this.columnSUM_LONCO150 = base.Columns["SUM_LONCO150"];
+                this.columnSUM_LONCO200 = base.Columns["SUM_LONCO200"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnSUM_CO15 = new global::System.Data.DataColumn("SUM_CO15", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_CO15);
+                this.columnSUM_CO20 = new global::System.Data.DataColumn("SUM_CO20", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_CO20);
+                this.columnSUM_CO25 = new global::System.Data.DataColumn("SUM_CO25", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_CO25);
+                this.columnSUM_CO40 = new global::System.Data.DataColumn("SUM_CO40", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_CO40);
+                this.columnSUM_CO50 = new global::System.Data.DataColumn("SUM_CO50", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_CO50);
+                this.columnSUM_CO80 = new global::System.Data.DataColumn("SUM_CO80", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_CO80);
+                this.columnSUM_CO100 = new global::System.Data.DataColumn("SUM_CO100", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_CO100);
+                this.columnSUM_CO150 = new global::System.Data.DataColumn("SUM_CO150", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_CO150);
+                this.columnSUM_CO200 = new global::System.Data.DataColumn("SUM_CO200", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_CO200);
+                this.columnSUM_NHOCO15 = new global::System.Data.DataColumn("SUM_NHOCO15", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_NHOCO15);
+                this.columnSUM_NHOCO20 = new global::System.Data.DataColumn("SUM_NHOCO20", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_NHOCO20);
+                this.columnSUM_NHOCO25 = new global::System.Data.DataColumn("SUM_NHOCO25", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_NHOCO25);
+                this.columnSUM_NHOCO40 = new global::System.Data.DataColumn("SUM_NHOCO40", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_NHOCO40);
+                this.columnSUM_NHOCO50 = new global::System.Data.DataColumn("SUM_NHOCO50", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_NHOCO50);
+                this.columnSUM_NHOCO80 = new global::System.Data.DataColumn("SUM_NHOCO80", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_NHOCO80);
+                this.columnSUM_NHOCO100 = new global::System.Data.DataColumn("SUM_NHOCO100", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_NHOCO100);
+                this.columnSUM_NHOCO150 = new global::System.Data.DataColumn("SUM_NHOCO150", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_NHOCO150);
+                this.columnSUM_NHOCO200 = new global::System.Data.DataColumn("SUM_NHOCO200", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_NHOCO200);
+                this.columnSUM_LONCO15 = new global::System.Data.DataColumn("SUM_LONCO15", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_LONCO15);
+                this.columnSUM_LONCO20 = new global::System.Data.DataColumn("SUM_LONCO20", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_LONCO20);
+                this.columnSUM_LONCO25 = new global::System.Data.DataColumn("SUM_LONCO25", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_LONCO25);
+                this.columnSUM_LONCO40 = new global::System.Data.DataColumn("SUM_LONCO40", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_LONCO40);
+                this.columnSUM_LONCO50 = new global::System.Data.DataColumn("SUM_LONCO50", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_LONCO50);
+                this.columnSUM_LONCO80 = new global::System.Data.DataColumn("SUM_LONCO80", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_LONCO80);
+                this.columnSUM_LONCO100 = new global::System.Data.DataColumn("SUM_LONCO100", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_LONCO100);
+                this.columnSUM_LONCO150 = new global::System.Data.DataColumn("SUM_LONCO150", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_LONCO150);
+                this.columnSUM_LONCO200 = new global::System.Data.DataColumn("SUM_LONCO200", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUM_LONCO200);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_THONGKEDHN_SUMRow NewTB_THONGKEDHN_SUMRow() {
+                return ((TB_THONGKEDHN_SUMRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TB_THONGKEDHN_SUMRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TB_THONGKEDHN_SUMRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TB_THONGKEDHN_SUMRowChanged != null)) {
+                    this.TB_THONGKEDHN_SUMRowChanged(this, new TB_THONGKEDHN_SUMRowChangeEvent(((TB_THONGKEDHN_SUMRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TB_THONGKEDHN_SUMRowChanging != null)) {
+                    this.TB_THONGKEDHN_SUMRowChanging(this, new TB_THONGKEDHN_SUMRowChangeEvent(((TB_THONGKEDHN_SUMRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TB_THONGKEDHN_SUMRowDeleted != null)) {
+                    this.TB_THONGKEDHN_SUMRowDeleted(this, new TB_THONGKEDHN_SUMRowChangeEvent(((TB_THONGKEDHN_SUMRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TB_THONGKEDHN_SUMRowDeleting != null)) {
+                    this.TB_THONGKEDHN_SUMRowDeleting(this, new TB_THONGKEDHN_SUMRowChangeEvent(((TB_THONGKEDHN_SUMRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTB_THONGKEDHN_SUMRow(TB_THONGKEDHN_SUMRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                THONGKEDHN ds = new THONGKEDHN();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TB_THONGKEDHN_SUMDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3462,6 +4135,777 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TB_THONGKEDHN_SUMRow : global::System.Data.DataRow {
+            
+            private TB_THONGKEDHN_SUMDataTable tableTB_THONGKEDHN_SUM;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TB_THONGKEDHN_SUMRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTB_THONGKEDHN_SUM = ((TB_THONGKEDHN_SUMDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_CO15 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_CO15Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_CO15\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_CO15Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_CO20 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_CO20Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_CO20\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_CO20Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_CO25 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_CO25Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_CO25\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_CO25Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_CO40 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_CO40Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_CO40\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_CO40Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_CO50 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_CO50Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_CO50\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_CO50Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_CO80 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_CO80Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_CO80\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_CO80Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_CO100 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_CO100Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_CO100\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_CO100Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_CO150 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_CO150Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_CO150\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_CO150Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_CO200 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_CO200Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_CO200\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_CO200Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_NHOCO15 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO15Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_NHOCO15\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO15Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_NHOCO20 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO20Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_NHOCO20\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO20Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_NHOCO25 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO25Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_NHOCO25\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO25Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_NHOCO40 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO40Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_NHOCO40\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO40Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_NHOCO50 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO50Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_NHOCO50\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO50Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_NHOCO80 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO80Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_NHOCO80\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO80Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_NHOCO100 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO100Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_NHOCO100\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO100Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_NHOCO150 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO150Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_NHOCO150\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO150Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_NHOCO200 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO200Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_NHOCO200\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO200Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_LONCO15 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO15Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_LONCO15\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO15Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_LONCO20 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO20Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_LONCO20\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO20Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_LONCO25 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO25Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_LONCO25\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO25Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_LONCO40 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO40Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_LONCO40\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO40Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_LONCO50 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO50Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_LONCO50\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO50Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_LONCO80 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO80Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_LONCO80\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO80Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_LONCO100 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO100Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_LONCO100\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO100Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_LONCO150 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO150Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_LONCO150\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO150Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SUM_LONCO200 {
+                get {
+                    try {
+                        return ((double)(this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO200Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SUM_LONCO200\' in table \'TB_THONGKEDHN_SUM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO200Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_CO15Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_CO15Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_CO15Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_CO15Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_CO20Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_CO20Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_CO20Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_CO20Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_CO25Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_CO25Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_CO25Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_CO25Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_CO40Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_CO40Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_CO40Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_CO40Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_CO50Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_CO50Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_CO50Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_CO50Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_CO80Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_CO80Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_CO80Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_CO80Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_CO100Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_CO100Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_CO100Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_CO100Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_CO150Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_CO150Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_CO150Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_CO150Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_CO200Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_CO200Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_CO200Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_CO200Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_NHOCO15Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_NHOCO15Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_NHOCO15Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO15Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_NHOCO20Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_NHOCO20Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_NHOCO20Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO20Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_NHOCO25Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_NHOCO25Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_NHOCO25Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO25Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_NHOCO40Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_NHOCO40Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_NHOCO40Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO40Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_NHOCO50Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_NHOCO50Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_NHOCO50Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO50Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_NHOCO80Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_NHOCO80Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_NHOCO80Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO80Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_NHOCO100Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_NHOCO100Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_NHOCO100Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO100Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_NHOCO150Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_NHOCO150Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_NHOCO150Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO150Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_NHOCO200Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_NHOCO200Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_NHOCO200Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_NHOCO200Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_LONCO15Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_LONCO15Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_LONCO15Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO15Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_LONCO20Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_LONCO20Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_LONCO20Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO20Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_LONCO25Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_LONCO25Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_LONCO25Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO25Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_LONCO40Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_LONCO40Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_LONCO40Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO40Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_LONCO50Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_LONCO50Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_LONCO50Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO50Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_LONCO80Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_LONCO80Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_LONCO80Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO80Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_LONCO100Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_LONCO100Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_LONCO100Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO100Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_LONCO150Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_LONCO150Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_LONCO150Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO150Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSUM_LONCO200Null() {
+                return this.IsNull(this.tableTB_THONGKEDHN_SUM.SUM_LONCO200Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSUM_LONCO200Null() {
+                this[this.tableTB_THONGKEDHN_SUM.SUM_LONCO200Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3515,6 +4959,40 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TB_THONGKEDHN_CURow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class TB_THONGKEDHN_SUMRowChangeEvent : global::System.EventArgs {
+            
+            private TB_THONGKEDHN_SUMRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_THONGKEDHN_SUMRowChangeEvent(TB_THONGKEDHN_SUMRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_THONGKEDHN_SUMRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6768,6 +8246,1553 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TB_THONGKEDHN_SUMTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public TB_THONGKEDHN_SUMTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "TB_THONGKEDHN_SUM";
+            tableMapping.ColumnMappings.Add("CO15", "SUM_CO15");
+            tableMapping.ColumnMappings.Add("CO20", "SUM_CO20");
+            tableMapping.ColumnMappings.Add("CO25", "SUM_CO25");
+            tableMapping.ColumnMappings.Add("CO40", "SUM_CO40");
+            tableMapping.ColumnMappings.Add("CO50", "SUM_CO50");
+            tableMapping.ColumnMappings.Add("CO80", "SUM_CO80");
+            tableMapping.ColumnMappings.Add("CO100", "SUM_CO100");
+            tableMapping.ColumnMappings.Add("CO150", "SUM_CO150");
+            tableMapping.ColumnMappings.Add("CO200", "SUM_CO200");
+            tableMapping.ColumnMappings.Add("NHOCO15", "SUM_NHOCO15");
+            tableMapping.ColumnMappings.Add("NHOCO20", "SUM_NHOCO20");
+            tableMapping.ColumnMappings.Add("NHOCO25", "SUM_NHOCO25");
+            tableMapping.ColumnMappings.Add("NHOCO40", "SUM_NHOCO40");
+            tableMapping.ColumnMappings.Add("NHOCO50", "SUM_NHOCO50");
+            tableMapping.ColumnMappings.Add("NHOCO80", "SUM_NHOCO80");
+            tableMapping.ColumnMappings.Add("NHOCO100", "SUM_NHOCO100");
+            tableMapping.ColumnMappings.Add("NHOCO150", "SUM_NHOCO150");
+            tableMapping.ColumnMappings.Add("NHOCO200", "SUM_NHOCO200");
+            tableMapping.ColumnMappings.Add("LONCO15", "SUM_LONCO15");
+            tableMapping.ColumnMappings.Add("LONCO20", "SUM_LONCO20");
+            tableMapping.ColumnMappings.Add("LONCO25", "SUM_LONCO25");
+            tableMapping.ColumnMappings.Add("LONCO40", "SUM_LONCO40");
+            tableMapping.ColumnMappings.Add("LONCO50", "SUM_LONCO50");
+            tableMapping.ColumnMappings.Add("LONCO80", "SUM_LONCO80");
+            tableMapping.ColumnMappings.Add("LONCO100", "SUM_LONCO100");
+            tableMapping.ColumnMappings.Add("LONCO150", "SUM_LONCO150");
+            tableMapping.ColumnMappings.Add("LONCO200", "SUM_LONCO200");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TB_THONGKEDHN] WHERE (((@IsNull_STT = 1 AND [STT] IS NULL) OR " +
+                "([STT] = @Original_STT)) AND ([MADHN] = @Original_MADHN) AND ((@IsNull_TENDHN = " +
+                "1 AND [TENDHN] IS NULL) OR ([TENDHN] = @Original_TENDHN)) AND ((@IsNull_HIEUCU =" +
+                " 1 AND [HIEUCU] IS NULL) OR ([HIEUCU] = @Original_HIEUCU)) AND ((@IsNull_CO15 = " +
+                "1 AND [CO15] IS NULL) OR ([CO15] = @Original_CO15)) AND ((@IsNull_CO20 = 1 AND [" +
+                "CO20] IS NULL) OR ([CO20] = @Original_CO20)) AND ((@IsNull_CO25 = 1 AND [CO25] I" +
+                "S NULL) OR ([CO25] = @Original_CO25)) AND ((@IsNull_CO40 = 1 AND [CO40] IS NULL)" +
+                " OR ([CO40] = @Original_CO40)) AND ((@IsNull_CO50 = 1 AND [CO50] IS NULL) OR ([C" +
+                "O50] = @Original_CO50)) AND ((@IsNull_CO80 = 1 AND [CO80] IS NULL) OR ([CO80] = " +
+                "@Original_CO80)) AND ((@IsNull_CO100 = 1 AND [CO100] IS NULL) OR ([CO100] = @Ori" +
+                "ginal_CO100)) AND ((@IsNull_CO150 = 1 AND [CO150] IS NULL) OR ([CO150] = @Origin" +
+                "al_CO150)) AND ((@IsNull_CO200 = 1 AND [CO200] IS NULL) OR ([CO200] = @Original_" +
+                "CO200)) AND ((@IsNull_NHOCO15 = 1 AND [NHOCO15] IS NULL) OR ([NHOCO15] = @Origin" +
+                "al_NHOCO15)) AND ((@IsNull_NHOCO20 = 1 AND [NHOCO20] IS NULL) OR ([NHOCO20] = @O" +
+                "riginal_NHOCO20)) AND ((@IsNull_NHOCO25 = 1 AND [NHOCO25] IS NULL) OR ([NHOCO25]" +
+                " = @Original_NHOCO25)) AND ((@IsNull_NHOCO40 = 1 AND [NHOCO40] IS NULL) OR ([NHO" +
+                "CO40] = @Original_NHOCO40)) AND ((@IsNull_NHOCO50 = 1 AND [NHOCO50] IS NULL) OR " +
+                "([NHOCO50] = @Original_NHOCO50)) AND ((@IsNull_NHOCO80 = 1 AND [NHOCO80] IS NULL" +
+                ") OR ([NHOCO80] = @Original_NHOCO80)) AND ((@IsNull_NHOCO100 = 1 AND [NHOCO100] " +
+                "IS NULL) OR ([NHOCO100] = @Original_NHOCO100)) AND ((@IsNull_NHOCO150 = 1 AND [N" +
+                "HOCO150] IS NULL) OR ([NHOCO150] = @Original_NHOCO150)) AND ((@IsNull_NHOCO200 =" +
+                " 1 AND [NHOCO200] IS NULL) OR ([NHOCO200] = @Original_NHOCO200)) AND ((@IsNull_L" +
+                "ONCO15 = 1 AND [LONCO15] IS NULL) OR ([LONCO15] = @Original_LONCO15)) AND ((@IsN" +
+                "ull_LONCO20 = 1 AND [LONCO20] IS NULL) OR ([LONCO20] = @Original_LONCO20)) AND (" +
+                "(@IsNull_LONCO25 = 1 AND [LONCO25] IS NULL) OR ([LONCO25] = @Original_LONCO25)) " +
+                "AND ((@IsNull_LONCO40 = 1 AND [LONCO40] IS NULL) OR ([LONCO40] = @Original_LONCO" +
+                "40)) AND ((@IsNull_LONCO50 = 1 AND [LONCO50] IS NULL) OR ([LONCO50] = @Original_" +
+                "LONCO50)) AND ((@IsNull_LONCO80 = 1 AND [LONCO80] IS NULL) OR ([LONCO80] = @Orig" +
+                "inal_LONCO80)) AND ((@IsNull_LONCO100 = 1 AND [LONCO100] IS NULL) OR ([LONCO100]" +
+                " = @Original_LONCO100)) AND ((@IsNull_LONCO150 = 1 AND [LONCO150] IS NULL) OR ([" +
+                "LONCO150] = @Original_LONCO150)) AND ((@IsNull_LONCO200 = 1 AND [LONCO200] IS NU" +
+                "LL) OR ([LONCO200] = @Original_LONCO200)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MADHN", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MADHN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TENDHN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENDHN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TENDHN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENDHN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HIEUCU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HIEUCU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HIEUCU", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HIEUCU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO20", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO20", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO20", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO25", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO25", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO25", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO40", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO40", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO40", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO50", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO50", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO50", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO80", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO80", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO80", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO100", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO100", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO100", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO150", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO150", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO150", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO200", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO200", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO200", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO20", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO20", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO20", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO25", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO25", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO25", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO40", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO40", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO40", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO50", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO50", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO50", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO80", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO80", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO80", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO100", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO100", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO100", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO150", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO150", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO150", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO200", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO200", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO200", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO20", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO20", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO20", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO25", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO25", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO25", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO40", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO40", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO40", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO50", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO50", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO50", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO80", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO80", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO80", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO100", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO100", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO100", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO150", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO150", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO150", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO200", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO200", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO200", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TB_THONGKEDHN] ([STT], [MADHN], [TENDHN], [HIEUCU], [CO15], [CO20], [CO25], [CO40], [CO50], [CO80], [CO100], [CO150], [CO200], [NHOCO15], [NHOCO20], [NHOCO25], [NHOCO40], [NHOCO50], [NHOCO80], [NHOCO100], [NHOCO150], [NHOCO200], [LONCO15], [LONCO20], [LONCO25], [LONCO40], [LONCO50], [LONCO80], [LONCO100], [LONCO150], [LONCO200]) VALUES (@STT, @MADHN, @TENDHN, @HIEUCU, @CO15, @CO20, @CO25, @CO40, @CO50, @CO80, @CO100, @CO150, @CO200, @NHOCO15, @NHOCO20, @NHOCO25, @NHOCO40, @NHOCO50, @NHOCO80, @NHOCO100, @NHOCO150, @NHOCO200, @LONCO15, @LONCO20, @LONCO25, @LONCO40, @LONCO50, @LONCO80, @LONCO100, @LONCO150, @LONCO200);
+SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO150, CO200, NHOCO15, NHOCO20, NHOCO25, NHOCO40, NHOCO50, NHOCO80, NHOCO100, NHOCO150, NHOCO200, LONCO15, LONCO20, LONCO25, LONCO40, LONCO50, LONCO80, LONCO100, LONCO150, LONCO200 FROM TB_THONGKEDHN WHERE (MADHN = @MADHN)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MADHN", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MADHN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TENDHN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENDHN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HIEUCU", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HIEUCU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO20", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO25", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO40", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO50", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO80", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO100", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO150", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO200", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO20", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO25", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO40", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO50", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO80", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO100", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO150", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO200", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO20", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO25", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO40", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO50", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO80", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO100", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO150", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO200", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[TB_THONGKEDHN] SET [STT] = @STT, [MADHN] = @MADHN, [TENDHN] = @TEND" +
+                "HN, [HIEUCU] = @HIEUCU, [CO15] = @CO15, [CO20] = @CO20, [CO25] = @CO25, [CO40] =" +
+                " @CO40, [CO50] = @CO50, [CO80] = @CO80, [CO100] = @CO100, [CO150] = @CO150, [CO2" +
+                "00] = @CO200, [NHOCO15] = @NHOCO15, [NHOCO20] = @NHOCO20, [NHOCO25] = @NHOCO25, " +
+                "[NHOCO40] = @NHOCO40, [NHOCO50] = @NHOCO50, [NHOCO80] = @NHOCO80, [NHOCO100] = @" +
+                "NHOCO100, [NHOCO150] = @NHOCO150, [NHOCO200] = @NHOCO200, [LONCO15] = @LONCO15, " +
+                "[LONCO20] = @LONCO20, [LONCO25] = @LONCO25, [LONCO40] = @LONCO40, [LONCO50] = @L" +
+                "ONCO50, [LONCO80] = @LONCO80, [LONCO100] = @LONCO100, [LONCO150] = @LONCO150, [L" +
+                "ONCO200] = @LONCO200 WHERE (((@IsNull_STT = 1 AND [STT] IS NULL) OR ([STT] = @Or" +
+                "iginal_STT)) AND ([MADHN] = @Original_MADHN) AND ((@IsNull_TENDHN = 1 AND [TENDH" +
+                "N] IS NULL) OR ([TENDHN] = @Original_TENDHN)) AND ((@IsNull_HIEUCU = 1 AND [HIEU" +
+                "CU] IS NULL) OR ([HIEUCU] = @Original_HIEUCU)) AND ((@IsNull_CO15 = 1 AND [CO15]" +
+                " IS NULL) OR ([CO15] = @Original_CO15)) AND ((@IsNull_CO20 = 1 AND [CO20] IS NUL" +
+                "L) OR ([CO20] = @Original_CO20)) AND ((@IsNull_CO25 = 1 AND [CO25] IS NULL) OR (" +
+                "[CO25] = @Original_CO25)) AND ((@IsNull_CO40 = 1 AND [CO40] IS NULL) OR ([CO40] " +
+                "= @Original_CO40)) AND ((@IsNull_CO50 = 1 AND [CO50] IS NULL) OR ([CO50] = @Orig" +
+                "inal_CO50)) AND ((@IsNull_CO80 = 1 AND [CO80] IS NULL) OR ([CO80] = @Original_CO" +
+                "80)) AND ((@IsNull_CO100 = 1 AND [CO100] IS NULL) OR ([CO100] = @Original_CO100)" +
+                ") AND ((@IsNull_CO150 = 1 AND [CO150] IS NULL) OR ([CO150] = @Original_CO150)) A" +
+                "ND ((@IsNull_CO200 = 1 AND [CO200] IS NULL) OR ([CO200] = @Original_CO200)) AND " +
+                "((@IsNull_NHOCO15 = 1 AND [NHOCO15] IS NULL) OR ([NHOCO15] = @Original_NHOCO15))" +
+                " AND ((@IsNull_NHOCO20 = 1 AND [NHOCO20] IS NULL) OR ([NHOCO20] = @Original_NHOC" +
+                "O20)) AND ((@IsNull_NHOCO25 = 1 AND [NHOCO25] IS NULL) OR ([NHOCO25] = @Original" +
+                "_NHOCO25)) AND ((@IsNull_NHOCO40 = 1 AND [NHOCO40] IS NULL) OR ([NHOCO40] = @Ori" +
+                "ginal_NHOCO40)) AND ((@IsNull_NHOCO50 = 1 AND [NHOCO50] IS NULL) OR ([NHOCO50] =" +
+                " @Original_NHOCO50)) AND ((@IsNull_NHOCO80 = 1 AND [NHOCO80] IS NULL) OR ([NHOCO" +
+                "80] = @Original_NHOCO80)) AND ((@IsNull_NHOCO100 = 1 AND [NHOCO100] IS NULL) OR " +
+                "([NHOCO100] = @Original_NHOCO100)) AND ((@IsNull_NHOCO150 = 1 AND [NHOCO150] IS " +
+                "NULL) OR ([NHOCO150] = @Original_NHOCO150)) AND ((@IsNull_NHOCO200 = 1 AND [NHOC" +
+                "O200] IS NULL) OR ([NHOCO200] = @Original_NHOCO200)) AND ((@IsNull_LONCO15 = 1 A" +
+                "ND [LONCO15] IS NULL) OR ([LONCO15] = @Original_LONCO15)) AND ((@IsNull_LONCO20 " +
+                "= 1 AND [LONCO20] IS NULL) OR ([LONCO20] = @Original_LONCO20)) AND ((@IsNull_LON" +
+                "CO25 = 1 AND [LONCO25] IS NULL) OR ([LONCO25] = @Original_LONCO25)) AND ((@IsNul" +
+                "l_LONCO40 = 1 AND [LONCO40] IS NULL) OR ([LONCO40] = @Original_LONCO40)) AND ((@" +
+                "IsNull_LONCO50 = 1 AND [LONCO50] IS NULL) OR ([LONCO50] = @Original_LONCO50)) AN" +
+                "D ((@IsNull_LONCO80 = 1 AND [LONCO80] IS NULL) OR ([LONCO80] = @Original_LONCO80" +
+                ")) AND ((@IsNull_LONCO100 = 1 AND [LONCO100] IS NULL) OR ([LONCO100] = @Original" +
+                "_LONCO100)) AND ((@IsNull_LONCO150 = 1 AND [LONCO150] IS NULL) OR ([LONCO150] = " +
+                "@Original_LONCO150)) AND ((@IsNull_LONCO200 = 1 AND [LONCO200] IS NULL) OR ([LON" +
+                "CO200] = @Original_LONCO200)));\r\nSELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, " +
+                "CO25, CO40, CO50, CO80, CO100, CO150, CO200, NHOCO15, NHOCO20, NHOCO25, NHOCO40," +
+                " NHOCO50, NHOCO80, NHOCO100, NHOCO150, NHOCO200, LONCO15, LONCO20, LONCO25, LONC" +
+                "O40, LONCO50, LONCO80, LONCO100, LONCO150, LONCO200 FROM TB_THONGKEDHN WHERE (MA" +
+                "DHN = @MADHN)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MADHN", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MADHN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TENDHN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENDHN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HIEUCU", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HIEUCU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO20", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO25", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO40", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO50", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO80", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO100", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO150", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO200", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO20", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO25", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO40", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO50", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO80", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO100", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO150", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NHOCO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO200", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO20", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO25", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO40", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO50", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO80", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO100", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO150", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LONCO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO200", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MADHN", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MADHN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TENDHN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENDHN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TENDHN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENDHN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HIEUCU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HIEUCU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HIEUCU", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HIEUCU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO20", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO20", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO20", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO25", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO25", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO25", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO40", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO40", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO40", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO50", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO50", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO50", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO80", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO80", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO80", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO100", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO100", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO100", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO150", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO150", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO150", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CO200", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO200", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CO200", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO20", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO20", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO20", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO25", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO25", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO25", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO40", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO40", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO40", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO50", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO50", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO50", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO80", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO80", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO80", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO100", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO100", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO100", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO150", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO150", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO150", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NHOCO200", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO200", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NHOCO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NHOCO200", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO15", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO20", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO20", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO20", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO20", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO25", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO25", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO25", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO25", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO40", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO40", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO40", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO40", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO50", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO50", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO50", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO50", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO80", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO80", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO80", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO80", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO100", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO100", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO100", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO100", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO150", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO150", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO150", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO150", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LONCO200", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO200", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LONCO200", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LONCO200", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::CAPNUOCTANHOA.Properties.Settings.Default.CAPNUOCTANHOAConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO150, CO200, NHOCO15, NHOCO20," +
+                " NHOCO25, NHOCO40, NHOCO50, NHOCO80, NHOCO100, NHOCO150, NHOCO200, LONCO15, LONC" +
+                "O20, LONCO25, LONCO40, LONCO50, LONCO80, LONCO100, LONCO150, LONCO200 FROM TB_TH" +
+                "ONGKEDHN";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(THONGKEDHN.TB_THONGKEDHN_SUMDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual THONGKEDHN.TB_THONGKEDHN_SUMDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            THONGKEDHN.TB_THONGKEDHN_SUMDataTable dataTable = new THONGKEDHN.TB_THONGKEDHN_SUMDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(THONGKEDHN.TB_THONGKEDHN_SUMDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(THONGKEDHN dataSet) {
+            return this.Adapter.Update(dataSet, "TB_THONGKEDHN_SUM");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(
+                    global::System.Nullable<int> Original_STT, 
+                    string Original_MADHN, 
+                    string Original_TENDHN, 
+                    global::System.Nullable<bool> Original_HIEUCU, 
+                    global::System.Nullable<double> Original_CO15, 
+                    global::System.Nullable<double> Original_CO20, 
+                    global::System.Nullable<double> Original_CO25, 
+                    global::System.Nullable<double> Original_CO40, 
+                    global::System.Nullable<double> Original_CO50, 
+                    global::System.Nullable<double> Original_CO80, 
+                    global::System.Nullable<double> Original_CO100, 
+                    global::System.Nullable<double> Original_CO150, 
+                    global::System.Nullable<double> Original_CO200, 
+                    global::System.Nullable<double> Original_NHOCO15, 
+                    global::System.Nullable<double> Original_NHOCO20, 
+                    global::System.Nullable<double> Original_NHOCO25, 
+                    global::System.Nullable<double> Original_NHOCO40, 
+                    global::System.Nullable<double> Original_NHOCO50, 
+                    global::System.Nullable<double> Original_NHOCO80, 
+                    global::System.Nullable<double> Original_NHOCO100, 
+                    global::System.Nullable<double> Original_NHOCO150, 
+                    global::System.Nullable<double> Original_NHOCO200, 
+                    global::System.Nullable<double> Original_LONCO15, 
+                    global::System.Nullable<double> Original_LONCO20, 
+                    global::System.Nullable<double> Original_LONCO25, 
+                    global::System.Nullable<double> Original_LONCO40, 
+                    global::System.Nullable<double> Original_LONCO50, 
+                    global::System.Nullable<double> Original_LONCO80, 
+                    global::System.Nullable<double> Original_LONCO100, 
+                    global::System.Nullable<double> Original_LONCO150, 
+                    global::System.Nullable<double> Original_LONCO200) {
+            if ((Original_STT.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_STT.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MADHN == null)) {
+                throw new global::System.ArgumentNullException("Original_MADHN");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_MADHN));
+            }
+            if ((Original_TENDHN == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_TENDHN));
+            }
+            if ((Original_HIEUCU.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_HIEUCU.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO15.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_CO15.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO20.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((double)(Original_CO20.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO25.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((double)(Original_CO25.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO40.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((double)(Original_CO40.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO50.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((double)(Original_CO50.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO80.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((double)(Original_CO80.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO100.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((double)(Original_CO100.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO150.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((double)(Original_CO150.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO200.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((double)(Original_CO200.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO15.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_NHOCO15.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO20.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((double)(Original_NHOCO20.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO25.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((double)(Original_NHOCO25.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO40.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((double)(Original_NHOCO40.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO50.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((double)(Original_NHOCO50.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO80.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((double)(Original_NHOCO80.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO100.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((double)(Original_NHOCO100.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO150.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((double)(Original_NHOCO150.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO200.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((double)(Original_NHOCO200.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO15.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((double)(Original_LONCO15.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO20.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((double)(Original_LONCO20.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO25.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((double)(Original_LONCO25.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO40.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[50].Value = ((double)(Original_LONCO40.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO50.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[52].Value = ((double)(Original_LONCO50.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO80.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[54].Value = ((double)(Original_LONCO80.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[54].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO100.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[56].Value = ((double)(Original_LONCO100.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO150.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[58].Value = ((double)(Original_LONCO150.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO200.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[60].Value = ((double)(Original_LONCO200.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    global::System.Nullable<int> STT, 
+                    string MADHN, 
+                    string TENDHN, 
+                    global::System.Nullable<bool> HIEUCU, 
+                    global::System.Nullable<double> CO15, 
+                    global::System.Nullable<double> CO20, 
+                    global::System.Nullable<double> CO25, 
+                    global::System.Nullable<double> CO40, 
+                    global::System.Nullable<double> CO50, 
+                    global::System.Nullable<double> CO80, 
+                    global::System.Nullable<double> CO100, 
+                    global::System.Nullable<double> CO150, 
+                    global::System.Nullable<double> CO200, 
+                    global::System.Nullable<double> NHOCO15, 
+                    global::System.Nullable<double> NHOCO20, 
+                    global::System.Nullable<double> NHOCO25, 
+                    global::System.Nullable<double> NHOCO40, 
+                    global::System.Nullable<double> NHOCO50, 
+                    global::System.Nullable<double> NHOCO80, 
+                    global::System.Nullable<double> NHOCO100, 
+                    global::System.Nullable<double> NHOCO150, 
+                    global::System.Nullable<double> NHOCO200, 
+                    global::System.Nullable<double> LONCO15, 
+                    global::System.Nullable<double> LONCO20, 
+                    global::System.Nullable<double> LONCO25, 
+                    global::System.Nullable<double> LONCO40, 
+                    global::System.Nullable<double> LONCO50, 
+                    global::System.Nullable<double> LONCO80, 
+                    global::System.Nullable<double> LONCO100, 
+                    global::System.Nullable<double> LONCO150, 
+                    global::System.Nullable<double> LONCO200) {
+            if ((STT.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(STT.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((MADHN == null)) {
+                throw new global::System.ArgumentNullException("MADHN");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(MADHN));
+            }
+            if ((TENDHN == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(TENDHN));
+            }
+            if ((HIEUCU.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(HIEUCU.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((CO15.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(CO15.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((CO20.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(CO20.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((CO25.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((double)(CO25.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((CO40.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(CO40.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((CO50.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(CO50.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((CO80.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(CO80.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((CO100.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((double)(CO100.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((CO150.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((double)(CO150.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((CO200.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((double)(CO200.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO15.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(NHOCO15.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO20.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(NHOCO20.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO25.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(NHOCO25.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO40.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(NHOCO40.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO50.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((double)(NHOCO50.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO80.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((double)(NHOCO80.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO100.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((double)(NHOCO100.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO150.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((double)(NHOCO150.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO200.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((double)(NHOCO200.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO15.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((double)(LONCO15.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO20.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((double)(LONCO20.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO25.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((double)(LONCO25.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO40.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((double)(LONCO40.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO50.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((double)(LONCO50.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO80.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[27].Value = ((double)(LONCO80.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO100.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((double)(LONCO100.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO150.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((double)(LONCO150.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO200.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[30].Value = ((double)(LONCO200.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    global::System.Nullable<int> STT, 
+                    string MADHN, 
+                    string TENDHN, 
+                    global::System.Nullable<bool> HIEUCU, 
+                    global::System.Nullable<double> CO15, 
+                    global::System.Nullable<double> CO20, 
+                    global::System.Nullable<double> CO25, 
+                    global::System.Nullable<double> CO40, 
+                    global::System.Nullable<double> CO50, 
+                    global::System.Nullable<double> CO80, 
+                    global::System.Nullable<double> CO100, 
+                    global::System.Nullable<double> CO150, 
+                    global::System.Nullable<double> CO200, 
+                    global::System.Nullable<double> NHOCO15, 
+                    global::System.Nullable<double> NHOCO20, 
+                    global::System.Nullable<double> NHOCO25, 
+                    global::System.Nullable<double> NHOCO40, 
+                    global::System.Nullable<double> NHOCO50, 
+                    global::System.Nullable<double> NHOCO80, 
+                    global::System.Nullable<double> NHOCO100, 
+                    global::System.Nullable<double> NHOCO150, 
+                    global::System.Nullable<double> NHOCO200, 
+                    global::System.Nullable<double> LONCO15, 
+                    global::System.Nullable<double> LONCO20, 
+                    global::System.Nullable<double> LONCO25, 
+                    global::System.Nullable<double> LONCO40, 
+                    global::System.Nullable<double> LONCO50, 
+                    global::System.Nullable<double> LONCO80, 
+                    global::System.Nullable<double> LONCO100, 
+                    global::System.Nullable<double> LONCO150, 
+                    global::System.Nullable<double> LONCO200, 
+                    global::System.Nullable<int> Original_STT, 
+                    string Original_MADHN, 
+                    string Original_TENDHN, 
+                    global::System.Nullable<bool> Original_HIEUCU, 
+                    global::System.Nullable<double> Original_CO15, 
+                    global::System.Nullable<double> Original_CO20, 
+                    global::System.Nullable<double> Original_CO25, 
+                    global::System.Nullable<double> Original_CO40, 
+                    global::System.Nullable<double> Original_CO50, 
+                    global::System.Nullable<double> Original_CO80, 
+                    global::System.Nullable<double> Original_CO100, 
+                    global::System.Nullable<double> Original_CO150, 
+                    global::System.Nullable<double> Original_CO200, 
+                    global::System.Nullable<double> Original_NHOCO15, 
+                    global::System.Nullable<double> Original_NHOCO20, 
+                    global::System.Nullable<double> Original_NHOCO25, 
+                    global::System.Nullable<double> Original_NHOCO40, 
+                    global::System.Nullable<double> Original_NHOCO50, 
+                    global::System.Nullable<double> Original_NHOCO80, 
+                    global::System.Nullable<double> Original_NHOCO100, 
+                    global::System.Nullable<double> Original_NHOCO150, 
+                    global::System.Nullable<double> Original_NHOCO200, 
+                    global::System.Nullable<double> Original_LONCO15, 
+                    global::System.Nullable<double> Original_LONCO20, 
+                    global::System.Nullable<double> Original_LONCO25, 
+                    global::System.Nullable<double> Original_LONCO40, 
+                    global::System.Nullable<double> Original_LONCO50, 
+                    global::System.Nullable<double> Original_LONCO80, 
+                    global::System.Nullable<double> Original_LONCO100, 
+                    global::System.Nullable<double> Original_LONCO150, 
+                    global::System.Nullable<double> Original_LONCO200) {
+            if ((STT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(STT.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((MADHN == null)) {
+                throw new global::System.ArgumentNullException("MADHN");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(MADHN));
+            }
+            if ((TENDHN == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(TENDHN));
+            }
+            if ((HIEUCU.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(HIEUCU.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((CO15.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(CO15.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((CO20.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(CO20.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((CO25.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(CO25.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((CO40.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(CO40.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((CO50.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(CO50.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((CO80.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(CO80.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((CO100.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(CO100.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((CO150.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(CO150.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((CO200.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(CO200.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO15.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(NHOCO15.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO20.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(NHOCO20.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO25.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(NHOCO25.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO40.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(NHOCO40.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO50.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(NHOCO50.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO80.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(NHOCO80.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO100.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(NHOCO100.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO150.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(NHOCO150.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((NHOCO200.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(NHOCO200.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO15.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(LONCO15.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO20.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((double)(LONCO20.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO25.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((double)(LONCO25.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO40.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(LONCO40.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO50.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((double)(LONCO50.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO80.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((double)(LONCO80.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO100.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((double)(LONCO100.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO150.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((double)(LONCO150.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((LONCO200.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((double)(LONCO200.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((Original_STT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_STT.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MADHN == null)) {
+                throw new global::System.ArgumentNullException("Original_MADHN");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_MADHN));
+            }
+            if ((Original_TENDHN == null)) {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_TENDHN));
+            }
+            if ((Original_HIEUCU.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((bool)(Original_HIEUCU.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO15.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((double)(Original_CO15.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO20.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((double)(Original_CO20.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO25.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((double)(Original_CO25.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO40.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((double)(Original_CO40.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO50.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((double)(Original_CO50.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO80.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((double)(Original_CO80.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO100.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((double)(Original_CO100.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO150.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((double)(Original_CO150.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CO200.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((double)(Original_CO200.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO15.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((double)(Original_NHOCO15.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO20.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((double)(Original_NHOCO20.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO25.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((double)(Original_NHOCO25.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO40.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((double)(Original_NHOCO40.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO50.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((double)(Original_NHOCO50.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO80.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((double)(Original_NHOCO80.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO100.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((double)(Original_NHOCO100.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO150.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((double)(Original_NHOCO150.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NHOCO200.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((double)(Original_NHOCO200.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO15.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((double)(Original_LONCO15.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO20.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((double)(Original_LONCO20.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO25.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((double)(Original_LONCO25.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO40.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((double)(Original_LONCO40.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO50.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((double)(Original_LONCO50.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO80.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((double)(Original_LONCO80.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO100.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((double)(Original_LONCO100.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[87].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO150.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((double)(Original_LONCO150.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[89].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LONCO200.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((double)(Original_LONCO200.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[91].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6782,6 +9807,8 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
         private TB_THONGKEDHNTableAdapter _tB_THONGKEDHNTableAdapter;
         
         private TB_THONGKEDHN_CUTableAdapter _tB_THONGKEDHN_CUTableAdapter;
+        
+        private TB_THONGKEDHN_SUMTableAdapter _tB_THONGKEDHN_SUMTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -6828,6 +9855,20 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public TB_THONGKEDHN_SUMTableAdapter TB_THONGKEDHN_SUMTableAdapter {
+            get {
+                return this._tB_THONGKEDHN_SUMTableAdapter;
+            }
+            set {
+                this._tB_THONGKEDHN_SUMTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -6853,6 +9894,10 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
                             && (this._tB_THONGKEDHN_CUTableAdapter.Connection != null))) {
                     return this._tB_THONGKEDHN_CUTableAdapter.Connection;
                 }
+                if (((this._tB_THONGKEDHN_SUMTableAdapter != null) 
+                            && (this._tB_THONGKEDHN_SUMTableAdapter.Connection != null))) {
+                    return this._tB_THONGKEDHN_SUMTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -6872,6 +9917,9 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
                 if ((this._tB_THONGKEDHN_CUTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._tB_THONGKEDHN_SUMTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -6883,6 +9931,15 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(THONGKEDHN dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._tB_THONGKEDHN_SUMTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TB_THONGKEDHN_SUM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tB_THONGKEDHN_SUMTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tB_THONGKEDHN_CUTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TB_THONGKEDHN_CU.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -6911,6 +9968,14 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(THONGKEDHN dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._tB_THONGKEDHN_SUMTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TB_THONGKEDHN_SUM.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tB_THONGKEDHN_SUMTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tB_THONGKEDHN_CUTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TB_THONGKEDHN_CU.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -6950,6 +10015,14 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tB_THONGKEDHN_CUTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tB_THONGKEDHN_SUMTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TB_THONGKEDHN_SUM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tB_THONGKEDHN_SUMTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -7002,6 +10075,11 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._tB_THONGKEDHN_SUMTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tB_THONGKEDHN_SUMTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -7050,6 +10128,15 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
                     if (this._tB_THONGKEDHN_CUTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._tB_THONGKEDHN_CUTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tB_THONGKEDHN_CUTableAdapter.Adapter);
+                    }
+                }
+                if ((this._tB_THONGKEDHN_SUMTableAdapter != null)) {
+                    revertConnections.Add(this._tB_THONGKEDHN_SUMTableAdapter, this._tB_THONGKEDHN_SUMTableAdapter.Connection);
+                    this._tB_THONGKEDHN_SUMTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tB_THONGKEDHN_SUMTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tB_THONGKEDHN_SUMTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tB_THONGKEDHN_SUMTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tB_THONGKEDHN_SUMTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -7117,6 +10204,10 @@ SELECT STT, MADHN, TENDHN, HIEUCU, CO15, CO20, CO25, CO40, CO50, CO80, CO100, CO
                 if ((this._tB_THONGKEDHN_CUTableAdapter != null)) {
                     this._tB_THONGKEDHN_CUTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tB_THONGKEDHN_CUTableAdapter]));
                     this._tB_THONGKEDHN_CUTableAdapter.Transaction = null;
+                }
+                if ((this._tB_THONGKEDHN_SUMTableAdapter != null)) {
+                    this._tB_THONGKEDHN_SUMTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tB_THONGKEDHN_SUMTableAdapter]));
+                    this._tB_THONGKEDHN_SUMTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
