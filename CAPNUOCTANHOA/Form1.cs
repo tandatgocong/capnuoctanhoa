@@ -23,20 +23,21 @@ namespace CAPNUOCTANHOA
         {
             InitializeComponent();
 
-            panel1.Controls.Add(new frm_LayDuLieuGanMoi_Ky());
-           
+            //panel1.Controls.Add(new frm_LayDuLieuGanMoi_Ky());
 
-            //DataSet ds = new DataSet();
-            //CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
-            //db.Connection.Open();
-            //string query = "select *,'" + "TB01" + "' as 'TENTODS',N'" + "Nguyễn Văn Tài" + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where DHN_SOBANGKE='44'";
 
-            //SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            //adapter.Fill(ds, "V_DHN_BANGKE");
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT * FROM TB_THONGKEDHN WHERE HIEUCU='False'";
 
-            //query = "select * FROM TB_DHN_BAOCAO";
-            //adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            //adapter.Fill(ds, "TB_DHN_BAOCAO");
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_THONGKEDHN");
+
+
+            query = "SELECT * FROM TB_THONGKEDHN  WHERE HIEUCU='True'";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_THONGKEDHN_CU");
 
             ////string user = "SELECT USERNAME, UPPER(FULLNAME) AS 'FULLNAME' FROM USERS WHERE USERNAME='" + nguoiduyet + "'";
             ////SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
@@ -45,11 +46,12 @@ namespace CAPNUOCTANHOA
             ////string bc = "SELECT * FROM KH_TC_BAOCAO ";
             ////ct = new SqlDataAdapter(bc, db.Connection.ConnectionString);
             ////ct.Fill(ds, "KH_TC_BAOCAO");
+            ReportDocument rp = new rpt_ThongKeDongHoNuoc_();
+            rp.SetDataSource(ds);
+            rp.SetParameterValue("KY",4);
+            rp.SetParameterValue("NAM",2012);
+            crystalReportViewer1.ReportSource = rp;
 
-            //rp.SetDataSource(ds);
-           // crystalReportViewer1.ReportSource = rp;
-            //DateTime date = DateTime.Now.Date;
-            //label1.Text = date.AddYears(-5).ToShortDateString();
 
         }
 

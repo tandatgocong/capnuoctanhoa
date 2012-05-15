@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
+namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_tab_SanLuong : ReportClass {
+    public class rpt_ThongKeDongHoNuoc_cu : ReportClass {
         
-        public rpt_tab_SanLuong() {
+        public rpt_ThongKeDongHoNuoc_cu() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_tab_SanLuong.rpt";
+                return "rpt_ThongKeDongHoNuoc_cu.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC.rpt_tab_SanLuong.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_ThongKeDongHoNuoc_cu.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,17 +90,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_tenbk {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
-                return this.DataDefinition.ParameterFields[0];
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[6];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_tab_SanLuong : Component, ICachedReport {
+    public class Cachedrpt_ThongKeDongHoNuoc_cu : Component, ICachedReport {
         
-        public Cachedrpt_tab_SanLuong() {
+        public Cachedrpt_ThongKeDongHoNuoc_cu() {
         }
         
         [Browsable(false)]
@@ -137,7 +145,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_tab_SanLuong rpt = new rpt_tab_SanLuong();
+            rpt_ThongKeDongHoNuoc_cu rpt = new rpt_ThongKeDongHoNuoc_cu();
             rpt.Site = this.Site;
             return rpt;
         }
