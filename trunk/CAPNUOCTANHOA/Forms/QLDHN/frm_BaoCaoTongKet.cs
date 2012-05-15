@@ -64,5 +64,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.splitContainer1.Panel2.Controls.Clear();
             this.splitContainer1.Panel2.Controls.Add(new G_tab_DiemCodeTieuThu());
         }
+
+        private void ThongKeDHN(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new AA_tab_ThongKeDHN());
+
+        }
     }
 }
