@@ -36,8 +36,8 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
             this.rtThongKeDHN = new System.Windows.Forms.RadioButton();
+            this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
@@ -167,18 +167,6 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
             // 
-            // radioThayDinhKy
-            // 
-            this.radioThayDinhKy.AutoSize = true;
-            this.radioThayDinhKy.Location = new System.Drawing.Point(10, 62);
-            this.radioThayDinhKy.Name = "radioThayDinhKy";
-            this.radioThayDinhKy.Size = new System.Drawing.Size(171, 23);
-            this.radioThayDinhKy.TabIndex = 1;
-            this.radioThayDinhKy.TabStop = true;
-            this.radioThayDinhKy.Text = "Dự Trù Thay Định Kỳ";
-            this.radioThayDinhKy.UseVisualStyleBackColor = true;
-            this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
-            // 
             // rtThongKeDHN
             // 
             this.rtThongKeDHN.AutoSize = true;
@@ -190,6 +178,18 @@
             this.rtThongKeDHN.Text = "Thống Kê ĐHN";
             this.rtThongKeDHN.UseVisualStyleBackColor = true;
             this.rtThongKeDHN.Click += new System.EventHandler(this.ThongKeDHN);
+            // 
+            // radioThayDinhKy
+            // 
+            this.radioThayDinhKy.AutoSize = true;
+            this.radioThayDinhKy.Location = new System.Drawing.Point(10, 62);
+            this.radioThayDinhKy.Name = "radioThayDinhKy";
+            this.radioThayDinhKy.Size = new System.Drawing.Size(171, 23);
+            this.radioThayDinhKy.TabIndex = 1;
+            this.radioThayDinhKy.TabStop = true;
+            this.radioThayDinhKy.Text = "Dự Trù Thay Định Kỳ";
+            this.radioThayDinhKy.UseVisualStyleBackColor = true;
+            this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
             // 
             // frm_BaoCaoTongKet
             // 

@@ -21,5 +21,18 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             adapter.Fill(ds, table);
             return ds;
         }
+        public static DataSet tb_Report(string query1, string table1, string query2, string table2)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query1, db.Connection.ConnectionString);
+            adapter.Fill(ds, table1);
+
+            adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
+            adapter.Fill(ds, table2);
+
+            return ds;
+        }
     }
 }
