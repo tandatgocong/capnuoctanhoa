@@ -23,6 +23,7 @@ namespace CAPNUOCTANHOA
         {
             InitializeComponent();
 
+           // MessageBox.Show(this, );
             //panel1.Controls.Add(new frm_LayDuLieuGanMoi_Ky());
 
 
