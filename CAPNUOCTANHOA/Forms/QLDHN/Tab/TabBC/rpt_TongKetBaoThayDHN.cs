@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
+namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_PhieuThiCongThay : ReportClass {
+    public class rpt_TongKetBaoThayDHN : ReportClass {
         
-        public rpt_PhieuThiCongThay() {
+        public rpt_TongKetBaoThayDHN() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_PhieuThiCongThay.rpt";
+                return "rpt_TongKetBaoThayDHN.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.DoiTCTB.BC.rpt_PhieuThiCongThay.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC.rpt_TongKetBaoThayDHN.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,44 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_TEN {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_TUNGAY {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_DENNGAY {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_USER {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_PhieuThiCongThay : Component, ICachedReport {
+    public class Cachedrpt_TongKetBaoThayDHN : Component, ICachedReport {
         
-        public Cachedrpt_PhieuThiCongThay() {
+        public Cachedrpt_TongKetBaoThayDHN() {
         }
         
         [Browsable(false)]
@@ -129,7 +161,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_PhieuThiCongThay rpt = new rpt_PhieuThiCongThay();
+            rpt_TongKetBaoThayDHN rpt = new rpt_TongKetBaoThayDHN();
             rpt.Site = this.Site;
             return rpt;
         }
