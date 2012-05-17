@@ -335,7 +335,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             ReportDocument rp = new rpt_tab_SanLuong();
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_SANLUONG ", "W_BAOCAO_SANLUONG"));
-            rp.SetParameterValue("tenbk", "BÁO CÁO SẢN LƯỢNG ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ  " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam.Text.Trim());
+            rp.SetParameterValue("tenbk", "THỐNG KÊ SẢN LƯỢNG ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ  " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam.Text.Trim());
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }

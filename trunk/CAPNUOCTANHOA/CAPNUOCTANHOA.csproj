@@ -253,6 +253,21 @@
     <Compile Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.Designer.cs">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODE.cs">
+      <DependentUpon>DANHSACHCODE.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DANHSACHCODE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\TabBC\rpt_DanhSachCode.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DanhSachCode.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\QLDHN\Tab\TabBC\rpt_tab_CodeKy_Detail.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -615,6 +630,17 @@
     <None Include="Forms\QLDHN\SODOCSO\SODOCSO.xss">
       <DependentUpon>SODOCSO.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODE.xsc">
+      <DependentUpon>DANHSACHCODE.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DANHSACHCODE.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODE.xss">
+      <DependentUpon>DANHSACHCODE.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\Tab\TabBC\rpt_ThongKeBaoThay.xsc">
       <DependentUpon>rpt_ThongKeBaoThay.xsd</DependentUpon>
     </None>
@@ -713,6 +739,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\rpt_DanhSachCode.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachCode.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\rpt_tab_CodeKy_Detail.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
