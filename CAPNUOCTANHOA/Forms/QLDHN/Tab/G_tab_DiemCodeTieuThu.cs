@@ -49,12 +49,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC(nam.ToString(), ky - 1);
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL(nam.ToString(), ky - 1);
                 }
-              
+
                 // CAP NHAT SO LIEU 
-           //     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM();
+                //     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM();
                 // so lieu
                 sanluongToDS.DataSource = DAL.QLDHN.C_BaoCaoCODE.get_BAOCAO_CODE();
-               format();
+                format();
             }
             catch (Exception ex)
             {
@@ -63,7 +63,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         }
 
         void format()
-        { 
+        {
             double sum_KN_CODE4 = 0; double sum_KN_CODE5 = 0;
             double sum_KN_CODE6 = 0; double sum_KN_CODE8 = 0;
             double sum_KN_CODEM = 0; double sum_KN_CODEN = 0;
@@ -140,7 +140,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             sanluongToDS.Rows[index].DefaultCellStyle.BackColor = Color.Silver;
 
         }
-    
+
         public void line(double result, int i, int j)
         {
             if (result > 0)
@@ -209,7 +209,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     log.Error(ex.Message);
                 }
             }
-           
+
         }
 
         void formatdetail()
@@ -303,12 +303,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
         private void sanluongToDS_Click(object sender, EventArgs e)
         {
-           // format();
+            // format();
         }
 
         private void tabControl1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void detail_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -324,7 +324,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 int nam = int.Parse(txtNam_dot.Text.Trim());
                 int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                 // ky hien tai
-                DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DOT(nam.ToString(), ky,dot);
+                DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DOT(nam.ToString(), ky, dot);
                 DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL_DOT(nam.ToString(), ky, dot);
                 // ky truoc
                 if (ky == 1)
@@ -342,7 +342,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 //     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_SANLUONG_TANGGIAM();
                 // so lieu
                 dotToDs.DataSource = DAL.QLDHN.C_BaoCaoCODE.get_BAOCAO_CODE();
-                 format_dot_TO();
+                format_dot_TO();
             }
             catch (Exception ex)
             {
@@ -587,7 +587,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             ReportDocument rp = new rpt_tab_CodeKy();
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE ", "W_BAOCAO_CODE", "SELECT * FROM W_BAOCAO_CODE_DETAIL ", "W_BAOCAO_CODE_DETAIL"));
-            rp.SetParameterValue("tenbk", "BÁO CÁO MÃ CODE TIÊU THỤ KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim());
+            rp.SetParameterValue("tenbk", "THỐNG KÊ MÃ CODE KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim());
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
@@ -596,7 +596,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             ReportDocument rp = new rpt_tab_CodeKy();
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE ", "W_BAOCAO_CODE", "SELECT * FROM W_BAOCAO_CODE_DETAIL ", "W_BAOCAO_CODE_DETAIL"));
-            rp.SetParameterValue("tenbk", "BÁO CÁO MÃ CODE TIÊU THỤ ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim());
+            rp.SetParameterValue("tenbk", "THỐNG KÊ MÃ CODE ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim());
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
@@ -605,12 +605,42 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             // KY MAY
             ReportDocument rp = new rpt_tab_CodeKy_may();
-             
+
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE_MAY WHERE TODS=" + tods + " ORDER BY MAYDS ASC ", "W_BAOCAO_CODE_MAY"));
-            rp.SetParameterValue("tenbk", "BÁO CÁO MÃ CODE TIÊU THỤ TỪNG MÀY ĐỌC SỐ KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim() + " TỔ " + tento);
+            rp.SetParameterValue("tenbk", "THỐNG KÊ MÃ CODE TỪNG MÀY ĐỌC SỐ KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim() + " TỔ " + tento);
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
 
+        private void btDSCode_Click(object sender, EventArgs e)
+        {
+
+            int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+            int nam = int.Parse(txtNam.Text.Trim());
+            ReportDocument rp = new rpt_DanhSachCode();
+            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
+            sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.CODE IN ('60','62','63') ";
+            sql += " ORDER BY DANHBO ASC";
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "DANHSACHCODE"));
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            int ky = int.Parse(cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString());
+            int nam = int.Parse(txtNam_dot.Text.Trim());
+            int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
+            ReportDocument rp = new rpt_DanhSachCode();
+            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
+            sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DOT =" + dot + " AND ds.CODE IN ('60','62','63') ";
+            sql += " ORDER BY DANHBO ASC";
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "DANHSACHCODE"));
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+          
+        }
     }
 }
