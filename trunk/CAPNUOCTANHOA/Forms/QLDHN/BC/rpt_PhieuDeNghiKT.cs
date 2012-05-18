@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
+namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_DanhSachCode : ReportClass {
+    public class rpt_PhieuDeNghiKT : ReportClass {
         
-        public rpt_DanhSachCode() {
+        public rpt_PhieuDeNghiKT() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_DanhSachCode.rpt";
+                return "rpt_PhieuDeNghiKT.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC.rpt_DanhSachCode.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_PhieuDeNghiKT.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,25 +90,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.Shared.IParameterField Parameter_ky {
             get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
-            get {
-                return this.ReportDefinition.Sections[6];
+                return this.DataDefinition.ParameterFields[0];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_DanhSachCode : Component, ICachedReport {
+    public class Cachedrpt_PhieuDeNghiKT : Component, ICachedReport {
         
-        public Cachedrpt_DanhSachCode() {
+        public Cachedrpt_PhieuDeNghiKT() {
         }
         
         [Browsable(false)]
@@ -145,7 +137,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_DanhSachCode rpt = new rpt_DanhSachCode();
+            rpt_PhieuDeNghiKT rpt = new rpt_PhieuDeNghiKT();
             rpt.Site = this.Site;
             return rpt;
         }

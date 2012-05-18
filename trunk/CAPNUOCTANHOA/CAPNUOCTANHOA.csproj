@@ -87,6 +87,7 @@
     <Compile Include="Billding\getDataBillding.Designer.cs">
       <DependentUpon>getDataBillding.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\LinQConnectionDS.cs" />
     <Compile Include="DAL\DoiTCTB\C_HoanCongThay.cs" />
     <Compile Include="DAL\DULIEUKH\C_DieuChinhDanhBo.cs" />
     <Compile Include="DAL\DULIEUKH\C_DuLieuKhachHang.cs" />
@@ -190,6 +191,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\BC\PHIEUDENGHI.cs">
+      <DependentUpon>PHIEUDENGHI.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\BC\PHIEUDENGHI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PHIEUDENGHI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\BC\rpt_PhieuDeNghiKT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_PhieuDeNghiKT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\QLDHN\BC\rpt_ThongKeDongHoNuoc_cu.cs">
       <DependentUpon>rpt_ThongKeDongHoNuoc_cu.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -241,6 +257,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>THONGKEDHN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_KiemTraDS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_KiemTraDS.Designer.cs">
+      <DependentUpon>frm_KiemTraDS.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\PHIEUTAILAPDANHBO.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -597,6 +619,17 @@
     <None Include="Forms\QLDHN\BC\HUYDANHBO.xss">
       <DependentUpon>HUYDANHBO.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\BC\PHIEUDENGHI.xsc">
+      <DependentUpon>PHIEUDENGHI.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\BC\PHIEUDENGHI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PHIEUDENGHI.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\BC\PHIEUDENGHI.xss">
+      <DependentUpon>PHIEUDENGHI.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\BC\THONGKEDHN.xsc">
       <DependentUpon>THONGKEDHN.xsd</DependentUpon>
     </None>
@@ -709,6 +742,10 @@
     <EmbeddedResource Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.resx">
       <DependentUpon>tabThongKeVatTu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\BC\rpt_PhieuDeNghiKT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PhieuDeNghiKT.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_ThongKeDongHoNuoc_cu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeDongHoNuoc_cu.cs</LastGenOutput>
@@ -736,6 +773,9 @@
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_ThongKeDongHoNuoc_.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeDongHoNuoc_.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_KiemTraDS.resx">
+      <DependentUpon>frm_KiemTraDS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>

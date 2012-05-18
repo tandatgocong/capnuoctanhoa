@@ -9,14 +9,14 @@ using System.Data.SqlClient;
 
 namespace CAPNUOCTANHOA.DAL
 {
-    public static class LinQConnection
+    public static class LinQConnectionDS
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(LinQConnection).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(LinQConnectionDS).Name);
 
         public static int ExecuteCommand(string sql)
         {
             int result = 0;
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            DocSoDataContext db = new DocSoDataContext();
             try
             {
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
@@ -44,7 +44,7 @@ namespace CAPNUOCTANHOA.DAL
         public static DataTable getDataTable(string sql)
         {
             DataTable table = new DataTable();
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            DocSoDataContext db = new DocSoDataContext();
             try
             {
                 db.Connection.Open();
@@ -64,7 +64,7 @@ namespace CAPNUOCTANHOA.DAL
 
         public static DataTable getDataTable(string sql, int FirstRow, int pageSize)
         {
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            DocSoDataContext db = new DocSoDataContext();
             try
             {
                 db.Connection.Open();
@@ -87,7 +87,7 @@ namespace CAPNUOCTANHOA.DAL
 
         public static void ExecuteStoredProcedure(string storedNam, int ky, int nam)
         {
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            DocSoDataContext db = new DocSoDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             try
             {
@@ -115,6 +115,5 @@ namespace CAPNUOCTANHOA.DAL
                 conn.Close();
             }
         }
-   
     }
 }
