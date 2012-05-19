@@ -75,7 +75,7 @@ namespace CAPNUOCTANHOA
             DataSet ds = new DataSet();
             string query2 = "SELECT  kh.*, ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.TENNHANVIEN  ";
             query2 += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
-            query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DANHBA='" + danhba + "' ";
+            query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DANHBA in ('" + danhba + "','13011036350') ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
             adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
