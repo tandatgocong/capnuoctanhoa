@@ -76,15 +76,16 @@
             this.lb2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.lb1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuDieuChinhKH = new System.Windows.Forms.ToolStripMenuItem();
             this.menuKiemTra = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdBaoThay = new System.Windows.Forms.ToolStripMenuItem();
             this.btChuyenBK = new System.Windows.Forms.ToolStripMenuItem();
+            this.yeucaukiemtra = new System.Windows.Forms.ToolStripMenuItem();
             this.baocaoTongKet = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLayDuLieuGanMoi = new System.Windows.Forms.ToolStripMenuItem();
+            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.menuHoanCongThay = new System.Windows.Forms.ToolStripMenuItem();
@@ -598,17 +599,6 @@
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
             // 
-            // ribbonPanel5
-            // 
-            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel5.Location = new System.Drawing.Point(0, 32);
-            this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel5.Size = new System.Drawing.Size(1038, 30);
-            this.ribbonPanel5.TabIndex = 7;
-            this.ribbonPanel5.Visible = false;
-            // 
             // ribbonPanel2
             // 
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -629,6 +619,7 @@
             this.menuKiemTra,
             this.cmdBaoThay,
             this.btChuyenBK,
+            this.yeucaukiemtra,
             this.baocaoTongKet,
             this.menuLayDuLieuGanMoi});
             this.menuStrip1.Location = new System.Drawing.Point(3, 0);
@@ -674,6 +665,15 @@
             this.btChuyenBK.Text = "Lộ Trình Đọc Số";
             this.btChuyenBK.Click += new System.EventHandler(this.btChuyenBK_Click);
             // 
+            // yeucaukiemtra
+            // 
+            this.yeucaukiemtra.ForeColor = System.Drawing.Color.Black;
+            this.yeucaukiemtra.Image = global::CAPNUOCTANHOA.Properties.Resources.Stats2;
+            this.yeucaukiemtra.Name = "yeucaukiemtra";
+            this.yeucaukiemtra.Size = new System.Drawing.Size(144, 23);
+            this.yeucaukiemtra.Text = "Y.Cầu Kiểm Tra";
+            this.yeucaukiemtra.Click += new System.EventHandler(this.yeucaukiemtra_Click);
+            // 
             // baocaoTongKet
             // 
             this.baocaoTongKet.ForeColor = System.Drawing.Color.Black;
@@ -692,6 +692,17 @@
             this.menuLayDuLieuGanMoi.Text = "Lấy Dữ Liệu Gắn Mới";
             this.menuLayDuLieuGanMoi.Visible = false;
             this.menuLayDuLieuGanMoi.Click += new System.EventHandler(this.menuLayDuLieuGanMoi_Click);
+            // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel5.Location = new System.Drawing.Point(0, 32);
+            this.ribbonPanel5.Name = "ribbonPanel5";
+            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel5.Size = new System.Drawing.Size(1038, 30);
+            this.ribbonPanel5.TabIndex = 7;
+            this.ribbonPanel5.Visible = false;
             // 
             // ribbonPanel3
             // 
@@ -902,6 +913,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuDieuChinhKH;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel5;
         private DevComponents.DotNetBar.RibbonTabItem tbTraCuuThongTin;
+        private System.Windows.Forms.ToolStripMenuItem yeucaukiemtra;
 
 
     }

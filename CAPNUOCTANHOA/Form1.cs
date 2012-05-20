@@ -65,7 +65,8 @@ namespace CAPNUOCTANHOA
             rp.SetParameterValue("ky",5);
             //rp.SetParameterValue("KY",4);
             //rp.SetParameterValue("NAM",2012);
-            crystalReportViewer1.ReportSource = rp;
+            rp.PrintToPrinter(1, false, 0, 0);
+           // crystalReportViewer1.ReportSource = rp;
             //  dataGridView1.DataSource = showCustomInformationDetail("13132164598",2012);
 
         }
@@ -75,7 +76,7 @@ namespace CAPNUOCTANHOA
             DataSet ds = new DataSet();
             string query2 = "SELECT  kh.*, ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.TENNHANVIEN  ";
             query2 += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
-            query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DANHBA in ('" + danhba + "','13011036350') ";
+            query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DANHBA='" + danhba + "' ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
             adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");

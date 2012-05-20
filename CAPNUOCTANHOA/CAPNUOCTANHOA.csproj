@@ -100,6 +100,7 @@
     <Compile Include="DAL\QLDHN\C_BaoCaoTieuThuThap.cs" />
     <Compile Include="DAL\QLDHN\C_BaoCaoTK.cs" />
     <Compile Include="DAL\QLDHN\C_BaoThay.cs" />
+    <Compile Include="DAL\QLDHN\C_PhieuKiemTra.cs" />
     <Compile Include="DAL\QLDHN\C_QuanLyDongHoNuoc.cs" />
     <Compile Include="DAL\QLDHN\C_tab_BaoCao.cs" />
     <Compile Include="DAL\SYS\C_PHUONG.cs" />
@@ -258,11 +259,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>THONGKEDHN.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QLDHN\frm_KiemTraDS.cs">
+    <Compile Include="Forms\QLDHN\frm_PhieuKiemTra.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\QLDHN\frm_KiemTraDS.Designer.cs">
-      <DependentUpon>frm_KiemTraDS.cs</DependentUpon>
+    <Compile Include="Forms\QLDHN\frm_PhieuKiemTra.Designer.cs">
+      <DependentUpon>frm_PhieuKiemTra.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\PHIEUTAILAPDANHBO.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -774,8 +775,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeDongHoNuoc_.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QLDHN\frm_KiemTraDS.resx">
-      <DependentUpon>frm_KiemTraDS.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\QLDHN\frm_PhieuKiemTra.resx">
+      <DependentUpon>frm_PhieuKiemTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
