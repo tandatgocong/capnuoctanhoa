@@ -702,6 +702,30 @@
       <Column Name="NT_TANGIAM_SANLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TB_CHUYENKIEMTRA" Member="TB_CHUYENKIEMTRAs">
+    <Type Name="TB_CHUYENKIEMTRA">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAYDS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LOTRINH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CODEKYTRUOC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CSCU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NGAYCHUYEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GIOCHUYEN" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="TRAKETQUA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KETQUA" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAYCOKQ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">
     <Parameter Name="KY" Parameter="kY" Type="System.Int32" DbType="Int" />
     <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />
