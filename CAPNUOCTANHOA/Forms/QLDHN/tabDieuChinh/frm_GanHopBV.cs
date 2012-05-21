@@ -96,7 +96,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 
                 this.txtCoDHN.Text = ID;
                 this.txtLoTrinh.Text = LOTRINH;
-                this.txtKY.Text = ky;
+               // this.txtKY.Text = ky;
                 this.txtDot.Text = DOT;
                 this.txtSoDanhBo.Text = G_DANHBO.Replace(" ","");
                 this.txtTenKH.Text = G_TENKH;
@@ -131,7 +131,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 {
                     txtDot.Text = table.Rows[0]["DOT"] + "";
                     txtLoTrinh.Text = table.Rows[0]["MALOTRINH"] + "";
-                    txtKY.Text = table.Rows[0]["KY"] + "";                     
+                   // txtKY.Text = table.Rows[0]["KY"] + "";                     
                     txtTenKH.Text = table.Rows[0]["HOTEN"] + "";
                     txtDiaChi.Text = table.Rows[0]["DIACHI"] + "";
                     txtGB.Text = table.Rows[0]["GB"] + "";
@@ -159,10 +159,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
 
             TB_CHUYENDINHMUC chuyendm = new TB_CHUYENDINHMUC();
-            chuyendm.KY = int.Parse(txtKY.Text);
+            //chuyendm.KY = int.Parse(txtKY.Text);
             chuyendm.DOT = int.Parse(txtDot.Text);
             chuyendm.NAM = DateTime.Now.Date.Year;
-            chuyendm.TODS = this.txtToDS.Text;
+           // chuyendm.TODS = this.txtToDS.Text;
             chuyendm.DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
             chuyendm.LOTRINH = this.txtLoTrinh.Text;
             chuyendm.HOTEN = this.txtTenKH.Text;
@@ -244,10 +244,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 string mess = "Cập Nhật Thay Đổi Định Mức Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
                 if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && thaydh != null)
                 {
-                    thaydh.KY = int.Parse(txtKY.Text);
+                   // thaydh.KY = int.Parse(txtKY.Text);
                     thaydh.DOT = int.Parse(txtDot.Text);
                     thaydh.NAM = DateTime.Now.Date.Year;
-                    thaydh.TODS = this.txtToDS.Text;
+                  //  thaydh.TODS = this.txtToDS.Text;
                     thaydh.DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
                     thaydh.LOTRINH = this.txtLoTrinh.Text;
                     thaydh.HOTEN = this.txtTenKH.Text;
@@ -308,7 +308,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         public void CLEAR() {
             txtDot.Text = "";
             txtLoTrinh.Text = "";
-            txtKY.Text = "";
+            //txtKY.Text = "";
             txtTenKH.Text = "";
             txtDiaChi.Text = "";
             txtGB.Text = "";

@@ -298,5 +298,138 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
         }
 
+   
+        private Rectangle dragBoxFromMouseDown;
+        private int rowIndexFromMouseDown;
+        private int rowIndexOfItemUnderMouseToDrop;
+
+        private void dataLoTrinh_MouseMove(object sender, MouseEventArgs e)
+        {
+            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+            {
+                if (dragBoxFromMouseDown != Rectangle.Empty && !dragBoxFromMouseDown.Contains(e.X, e.Y))
+                {
+                    DragDropEffects dropEffect = dataLoTrinh.DoDragDrop(dataLoTrinh.Rows[rowIndexFromMouseDown], DragDropEffects.Move);
+                }
+            }
+        }
+
+        private void dataLoTrinh_MouseDown(object sender, MouseEventArgs e)
+        {
+            rowIndexFromMouseDown = dataLoTrinh.HitTest(e.X, e.Y).RowIndex;
+            if (rowIndexFromMouseDown != -1)
+            {
+                Size dragSize = SystemInformation.DragSize;
+                dragBoxFromMouseDown = new Rectangle(new Point(e.X - (dragSize.Width / 2), e.Y - (dragSize.Height / 2)), dragSize);
+            }
+            else
+            {
+                dragBoxFromMouseDown = Rectangle.Empty;
+            }
+        }
+
+        private void dataLoTrinh_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void dataLoTrinh_DragDrop(object sender, DragEventArgs e)
+        {
+            //Point clientPoint = dataLoTrinh.PointToClient(new Point(e.X, e.Y));
+            //if (e.Effect == DragDropEffects.Move)
+            //{
+            //    DataGridViewRow rowToMove = e.Data.GetData(typeof(DataGridViewRow)) as DataGridViewRow;
+            //    dataLoTrinh.Rows.RemoveAt(rowIndexFromMouseDown);
+            //    dataLoTrinh.Rows.Insert(rowIndexOfItemUnderMouseToDrop, rowToMove);
+            //}
+            Point clientPoint = dataLoTrinh.PointToClient(new Point(e.X, e.Y));
+            rowIndexOfItemUnderMouseToDrop = dataLoTrinh.HitTest(clientPoint.X, clientPoint.Y).RowIndex;
+            DataGridView.HitTestInfo hit = dataLoTrinh.HitTest(clientPoint.X, clientPoint.Y);
+            
+            DataGridViewRow dgvr = (DataGridViewRow)e.Data.GetData(typeof(DataGridViewRow));
+            object[] celldata = new object[dgvr.Cells.Count];
+            for (int col = 0; col < dgvr.Cells.Count; col++)
+            {
+                celldata[col] = dgvr.Cells[col].Value;
+            }
+            DataRow row = table.NewRow();
+            row["DANHBO"] = celldata[1] + "";
+            row["DIACHI"] = celldata[2] + "";
+            row["QUANPHUONG"] = celldata[3] + "";
+            row["LOTRINH"] = "";
+            dgvr.DataGridView.Rows.Remove(dgvr);
+            MessageBox.Show(this, hit.RowIndex+"");
+            table.Rows.InsertAt(row, hit.RowIndex);
+            
+            dataLoTrinh.DataSource=table;
+           
+        }
+
+        string _DanhBo = "";
+        string _diachi = "";
+        string _quanPhuong = "";
+
+        private void menuCut_Click(object sender, EventArgs e)
+        {
+            
+            _DanhBo = dataLoTrinh.Rows[dataLoTrinh.CurrentRow.Index].Cells["DEN_DANHBO"].Value + "";
+            _diachi = dataLoTrinh.Rows[dataLoTrinh.CurrentRow.Index].Cells["DEN_DIACHI"].Value + "";
+            _quanPhuong = dataLoTrinh.Rows[dataLoTrinh.CurrentRow.Index].Cells["DEN_QUANPHUONG"].Value + "";
+
+            //dataLoTrinh.Rows.RemoveAt(dataLoTrinh.CurrentRow.Index);
+            table.Rows.RemoveAt(dataLoTrinh.CurrentRow.Index);
+            dataLoTrinh.DataSource = table;
+            Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
+            lbDenMayDocSo.Text = "TỔNG SỐ " + (dataLoTrinh.Rows.Count) + " DANH BỘ";
+
+            this.menuCut.Visible = false;
+            this.menuDann.Visible = true;
+        }
+
+        private void menuDann_Click(object sender, EventArgs e)
+        {
+            int index = 0;
+            try
+            {
+                index = dataLoTrinh.CurrentRow.Index;
+            }
+            catch (Exception)
+            {
+
+            }
+            if (index < dataLoTrinh.Rows.Count)
+            {
+                index = index + 1;
+            }
+
+            DataRow row = table.NewRow();
+            row["DANHBO"] = _DanhBo;
+            row["DIACHI"] = _diachi;
+            row["QUANPHUONG"] = _quanPhuong;
+            row["LOTRINH"] = "";
+            table.Rows.InsertAt(row, index);
+            dataLoTrinh.DataSource = table;
+            Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
+            lbDenMayDocSo.Text = "TỔNG SỐ " + (dataLoTrinh.Rows.Count) + " DANH BỘ";
+
+
+            DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
+            cellStyle.ForeColor = System.Drawing.Color.Blue;
+            cellStyle.Font = new Font(dataLoTrinh.Font, FontStyle.Bold); ;
+            dataLoTrinh.Rows[index].Cells["DEN_DANHBO"].Style = cellStyle;
+
+            this.menuCut.Visible = true;
+            this.menuDann.Visible = false;
+        }
+
+        private void dataLoTrinh_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(dataLoTrinh, new Point(e.X, e.Y));
+            }
+        }
+   
+    
     }
 }
