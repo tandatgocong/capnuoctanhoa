@@ -1068,6 +1068,7 @@
     <Content Include="Resources\bt_bg.png" />
     <Content Include="Resources\calendar.gif" />
     <Content Include="Resources\check2.ico" />
+    <Content Include="Resources\Clipboard Cut.png" />
     <Content Include="Resources\Clipboard Paste.png" />
     <Content Include="Resources\Currency Euro.png" />
     <Content Include="Resources\currency_dollar.ico" />
