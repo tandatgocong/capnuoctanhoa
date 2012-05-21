@@ -282,6 +282,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PHIEUTAILAPDANHBO.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\frm_GanHopBV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\frm_GanHopBV.Designer.cs">
+      <DependentUpon>frm_GanHopBV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\tabDieuChinh\DIEUCHINH.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -832,6 +838,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_PhieuKiemTra.resx">
       <DependentUpon>frm_PhieuKiemTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\frm_GanHopBV.resx">
+      <DependentUpon>frm_GanHopBV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\frm_DieuChinh.resx">
       <DependentUpon>frm_DieuChinh.cs</DependentUpon>

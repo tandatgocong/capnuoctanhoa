@@ -293,5 +293,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             
         }
 
+        private void dataLoTrinh_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
+        }
+
     }
 }
