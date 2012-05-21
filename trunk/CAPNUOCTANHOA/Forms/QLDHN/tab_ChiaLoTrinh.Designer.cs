@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
@@ -47,6 +47,7 @@
             this.TU_DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TU_QP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.btCapNhatLoTrinhMoi = new DevComponents.DotNetBar.ButtonX();
             this.btChoLoTrinhMoi = new DevComponents.DotNetBar.ButtonX();
             this.txtTangBat = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -82,7 +83,6 @@
             this.comboItem145 = new DevComponents.Editors.ComboItem();
             this.labelX23 = new DevComponents.DotNetBar.LabelX();
             this.lbToDocSo = new DevComponents.DotNetBar.LabelX();
-            this.btCapNhatLoTrinhMoi = new DevComponents.DotNetBar.ButtonX();
             this.panel3.SuspendLayout();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
@@ -224,8 +224,8 @@
             // TU_DANHBO
             // 
             this.TU_DANHBO.DataPropertyName = "DANHBO";
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TU_DANHBO.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TU_DANHBO.DefaultCellStyle = dataGridViewCellStyle1;
             this.TU_DANHBO.HeaderText = "DANH BỘ";
             this.TU_DANHBO.Name = "TU_DANHBO";
             this.TU_DANHBO.Width = 130;
@@ -240,8 +240,8 @@
             // TU_QP
             // 
             this.TU_QP.DataPropertyName = "QUANPHUONG";
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TU_QP.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TU_QP.DefaultCellStyle = dataGridViewCellStyle2;
             this.TU_QP.HeaderText = "MÃQP";
             this.TU_QP.Name = "TU_QP";
             this.TU_QP.Width = 60;
@@ -269,6 +269,20 @@
             this.splitContainer6.Size = new System.Drawing.Size(712, 550);
             this.splitContainer6.SplitterDistance = 69;
             this.splitContainer6.TabIndex = 1;
+            // 
+            // btCapNhatLoTrinhMoi
+            // 
+            this.btCapNhatLoTrinhMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btCapNhatLoTrinhMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btCapNhatLoTrinhMoi.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCapNhatLoTrinhMoi.ForeColor = System.Drawing.Color.Crimson;
+            this.btCapNhatLoTrinhMoi.Location = new System.Drawing.Point(406, 38);
+            this.btCapNhatLoTrinhMoi.Name = "btCapNhatLoTrinhMoi";
+            this.btCapNhatLoTrinhMoi.Size = new System.Drawing.Size(232, 27);
+            this.btCapNhatLoTrinhMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btCapNhatLoTrinhMoi.TabIndex = 153;
+            this.btCapNhatLoTrinhMoi.Text = "CẬP NHẬT LỘ TRÌNH MỚI";
+            this.btCapNhatLoTrinhMoi.Click += new System.EventHandler(this.btCapNhatLoTrinhMoi_Click);
             // 
             // btChoLoTrinhMoi
             // 
@@ -356,12 +370,13 @@
             this.dataLoTrinh.RowTemplate.Height = 25;
             this.dataLoTrinh.Size = new System.Drawing.Size(712, 477);
             this.dataLoTrinh.TabIndex = 1;
+            this.dataLoTrinh.Sorted += new System.EventHandler(this.dataLoTrinh_Sorted);
             // 
             // DEN_DANHBO
             // 
             this.DEN_DANHBO.DataPropertyName = "DANHBO";
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DEN_DANHBO.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DEN_DANHBO.DefaultCellStyle = dataGridViewCellStyle3;
             this.DEN_DANHBO.HeaderText = "DANH BỘ";
             this.DEN_DANHBO.Name = "DEN_DANHBO";
             this.DEN_DANHBO.Width = 130;
@@ -369,16 +384,16 @@
             // C_LOTRINH
             // 
             this.C_LOTRINH.DataPropertyName = "LOTRINH";
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.C_LOTRINH.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.C_LOTRINH.DefaultCellStyle = dataGridViewCellStyle4;
             this.C_LOTRINH.HeaderText = "LT CŨ";
             this.C_LOTRINH.Name = "C_LOTRINH";
             this.C_LOTRINH.Width = 110;
             // 
             // M_LOTRINH
             // 
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.M_LOTRINH.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.M_LOTRINH.DefaultCellStyle = dataGridViewCellStyle5;
             this.M_LOTRINH.HeaderText = "LT MỚI";
             this.M_LOTRINH.Name = "M_LOTRINH";
             this.M_LOTRINH.Width = 110;
@@ -393,8 +408,8 @@
             // DEN_QUANPHUONG
             // 
             this.DEN_QUANPHUONG.DataPropertyName = "QUANPHUONG";
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DEN_QUANPHUONG.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DEN_QUANPHUONG.DefaultCellStyle = dataGridViewCellStyle6;
             this.DEN_QUANPHUONG.HeaderText = "MÃQP";
             this.DEN_QUANPHUONG.Name = "DEN_QUANPHUONG";
             this.DEN_QUANPHUONG.Width = 60;
@@ -572,20 +587,6 @@
             this.lbToDocSo.Size = new System.Drawing.Size(1340, 30);
             this.lbToDocSo.TabIndex = 114;
             this.lbToDocSo.Text = "           TỔ TÂN BÌNH";
-            // 
-            // btCapNhatLoTrinhMoi
-            // 
-            this.btCapNhatLoTrinhMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btCapNhatLoTrinhMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btCapNhatLoTrinhMoi.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCapNhatLoTrinhMoi.ForeColor = System.Drawing.Color.Crimson;
-            this.btCapNhatLoTrinhMoi.Location = new System.Drawing.Point(406, 38);
-            this.btCapNhatLoTrinhMoi.Name = "btCapNhatLoTrinhMoi";
-            this.btCapNhatLoTrinhMoi.Size = new System.Drawing.Size(232, 27);
-            this.btCapNhatLoTrinhMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btCapNhatLoTrinhMoi.TabIndex = 153;
-            this.btCapNhatLoTrinhMoi.Text = "CẬP NHẬT LỘ TRÌNH MỚI";
-            this.btCapNhatLoTrinhMoi.Click += new System.EventHandler(this.btCapNhatLoTrinhMoi_Click);
             // 
             // tab_ChiaLoTrinh
             // 
