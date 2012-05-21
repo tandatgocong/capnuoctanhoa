@@ -12,6 +12,7 @@ using CAPNUOCTANHOA.LinQ;
 using System.Data.SqlClient;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
+using CAPNUOCTANHOA.Forms.Reports;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -24,6 +25,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.txtNam.Text = DateTime.Now.Year.ToString();
             cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
             cbDotDS.SelectedIndex = 1;
+            cbCode.SelectedIndex = 5;
             frmLoad();
 
         }
@@ -56,11 +58,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 TODS = 3;
             }
-            DG_ChuaGiao.DataSource = DAL.QLDHN.C_PhieuKiemTra.getListByCode(TODS, DOT, KY, NAM, "60");
+            DG_ChuaGiao.DataSource = DAL.QLDHN.C_PhieuKiemTra.getListByCode(TODS, DOT, KY, NAM, code);
             Utilities.DataGridV.formatRows(DG_ChuaGiao, "DANHBO", "LOTRINH");
             if (DG_ChuaGiao.Rows.Count > 0) {
 
                 btInKT.Visible = true;
+                btDanhSach.Visible = true;
             }
         }
         private void checkboxHeader_CheckedChanged(object sender, EventArgs e)
@@ -73,10 +76,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void btKiemTra_Click(object sender, EventArgs e)
         {
-            LoadData();
             btInKT.Visible = false;
+            LoadData();
+          
         }
-
+        int stt = 1;
+        string listDanhBo = "";
         private void btInKT_Click(object sender, EventArgs e)
         {
             try
@@ -97,12 +102,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         string DIACHI = (DG_ChuaGiao.Rows[i].Cells["DIACHI"].Value + "");
                         string CODEKYTRUOC = (DG_ChuaGiao.Rows[i].Cells["CODEKYTRUOC"].Value + "");
                         string CSCU = (DG_ChuaGiao.Rows[i].Cells["CSCU"].Value + "");
+                        listDanhBo += "'" + DANHBO + "',";
                         try
                         {
                             ReportDocument rp = new rpt_PhieuDeNghiKT();
                             rp.SetDataSource(DAL.QLDHN.C_PhieuKiemTra.getListHoaDonReport(DANHBO, NAM, KY, DOT));
                             rp.SetParameterValue("ky", KY);
+                            rp.SetParameterValue("stt", stt);
                             rp.PrintToPrinter(1, false, 0, 0);
+                            stt++;
                             TB_CHUYENKIEMTRA chuyenkt = new TB_CHUYENKIEMTRA();
                             chuyenkt.KY = KY;
                             chuyenkt.DOT = DOT;
@@ -119,11 +127,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             chuyenkt.CREATEBY = DAL.SYS.C_USERS._userName;
                             chuyenkt.CREATEDATE = DateTime.Now;
                             DAL.QLDHN.C_PhieuKiemTra.Insert(chuyenkt);
+                            
                         }
                         catch (Exception ex)
                         {
                             log.Error("Loi In " + ex.Message);
-                            MessageBox.Show(this, "Lỗi Khi Chuyển Kiểm Tra", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                            MessageBox.Show(this, "Lỗi Khi Chuyển Hồ Sơ Yêu Cầu Kiểm Tra. ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error );
                             break;
                         }
                         // dataT  NGAYCHUYEN DATETIME,
@@ -133,13 +142,57 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                 if (chek == false)
                 {
-                    MessageBox.Show(this, "Chưa Chọn Hồ Sơ Để Giao Cho Sơ Đồ Viên.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Chưa Chọn Hồ Sơ Để Yêu Cẩu Kiểm Tra.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else {
+                    MessageBox.Show(this, "Chuyển Hồ Sơ Thảnh Công", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                //for (int i = 0; i < DG_ChuaGiao.RowCount; i++)
+                //{
+                //    if (DG_ChuaGiao[0, i].Value != null && "True".Equals(DG_ChuaGiao[0, i].Value.ToString()))
+                //    {
+                //        DG_ChuaGiao.Rows.RemoveAt(i);
+                //    }
+                //}
             }
             catch (Exception ex)
             {
                 log.Error("--" + ex.Message);
             }
+        }
+
+        private void btDanhSach_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string listDanhBa = (listDanhBo.Remove(listDanhBo.Length - 1, 1));
+                string title = "";
+                if ("TB01".Equals(DAL.SYS.C_USERS._toDocSo))
+                {
+                    title = "TỔ :  TÂN BÌNH 1 ";
+                }
+                else if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
+                {
+                    title = "TỔ : TÂN BÌNH 2 ";
+                }
+                else
+                {
+                    title = "TỔ :  TÂN PHÚ ";
+                }
+                title += " -  KỲ: " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + " - ĐỢT : " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " - CODE : " + cbCode.Items[cbCode.SelectedIndex].ToString();
+
+                ReportDocument rp = new rpt_DanhSachYeuCauDieuChinh();
+
+                rp.SetDataSource(DAL.QLDHN.C_PhieuKiemTra.getListDanhBoReport(listDanhBa));
+                rp.SetParameterValue("title", title);
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+                
+            }
+           
         }
         /* ---------------------- */
        

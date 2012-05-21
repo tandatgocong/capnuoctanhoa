@@ -114,6 +114,7 @@
             // 
             // menuHeThong
             // 
+            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -124,12 +125,11 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel1.Controls.Add(this.menuStrip3);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 32);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 62);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 30);
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip3
             // 
@@ -572,8 +572,8 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
@@ -609,6 +609,7 @@
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel2.Size = new System.Drawing.Size(1038, 30);
             this.ribbonPanel2.TabIndex = 5;
+            this.ribbonPanel2.Visible = false;
             // 
             // menuStrip1
             // 
@@ -760,7 +761,6 @@
             // 
             // menuDoiQLDHN
             // 
-            this.menuDoiQLDHN.Checked = true;
             this.menuDoiQLDHN.Name = "menuDoiQLDHN";
             this.menuDoiQLDHN.Panel = this.ribbonPanel2;
             this.menuDoiQLDHN.Text = "Đội QLĐHN";

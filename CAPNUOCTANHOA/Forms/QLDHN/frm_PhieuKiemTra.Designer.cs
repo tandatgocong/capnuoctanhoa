@@ -32,9 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabDieuChinhKH = new DevComponents.DotNetBar.TabControlPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btInKT = new DevComponents.DotNetBar.ButtonX();
             this.DG_ChuaGiao = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.MAYDS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOTRINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODEKYTRUOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CSCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbCode = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem47 = new DevComponents.Editors.ComboItem();
             this.comboItem48 = new DevComponents.Editors.ComboItem();
@@ -42,8 +54,17 @@
             this.comboItem50 = new DevComponents.Editors.ComboItem();
             this.comboItem51 = new DevComponents.Editors.ComboItem();
             this.comboItem52 = new DevComponents.Editors.ComboItem();
+            this.comboItem33 = new DevComponents.Editors.ComboItem();
+            this.comboItem34 = new DevComponents.Editors.ComboItem();
+            this.comboItem35 = new DevComponents.Editors.ComboItem();
+            this.comboItem36 = new DevComponents.Editors.ComboItem();
+            this.comboItem37 = new DevComponents.Editors.ComboItem();
+            this.comboItem38 = new DevComponents.Editors.ComboItem();
+            this.comboItem39 = new DevComponents.Editors.ComboItem();
+            this.comboItem40 = new DevComponents.Editors.ComboItem();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cbDotDS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem41 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
@@ -89,15 +110,7 @@
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.tabControl2 = new DevComponents.DotNetBar.TabControl();
-            this.btInKT = new DevComponents.DotNetBar.ButtonX();
-            this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.MAYDS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOTRINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODEKYTRUOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CSCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btDanhSach = new DevComponents.DotNetBar.ButtonX();
             this.tabDieuChinhKH.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_ChuaGiao)).BeginInit();
@@ -128,6 +141,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btDanhSach);
             this.panel1.Controls.Add(this.btInKT);
             this.panel1.Controls.Add(this.DG_ChuaGiao);
             this.panel1.Controls.Add(this.cbCode);
@@ -144,6 +158,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1236, 627);
             this.panel1.TabIndex = 0;
+            // 
+            // btInKT
+            // 
+            this.btInKT.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btInKT.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btInKT.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInKT.ForeColor = System.Drawing.Color.Crimson;
+            this.btInKT.Location = new System.Drawing.Point(955, 28);
+            this.btInKT.Name = "btInKT";
+            this.btInKT.Size = new System.Drawing.Size(163, 27);
+            this.btInKT.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btInKT.TabIndex = 120;
+            this.btInKT.Text = "IN && CHUYỂN KT";
+            this.btInKT.Visible = false;
+            this.btInKT.Click += new System.EventHandler(this.btInKT_Click);
             // 
             // DG_ChuaGiao
             // 
@@ -171,9 +200,73 @@
             this.CSCU});
             this.DG_ChuaGiao.Location = new System.Drawing.Point(17, 61);
             this.DG_ChuaGiao.Name = "DG_ChuaGiao";
-            this.DG_ChuaGiao.RowHeadersWidth = 10;
-            this.DG_ChuaGiao.Size = new System.Drawing.Size(1085, 549);
+            this.DG_ChuaGiao.RowHeadersWidth = 30;
+            this.DG_ChuaGiao.Size = new System.Drawing.Size(1101, 549);
             this.DG_ChuaGiao.TabIndex = 119;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 20;
+            // 
+            // MAYDS
+            // 
+            this.MAYDS.DataPropertyName = "MAY";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MAYDS.DefaultCellStyle = dataGridViewCellStyle2;
+            this.MAYDS.HeaderText = "MÁY ĐS";
+            this.MAYDS.Name = "MAYDS";
+            // 
+            // DANHBO
+            // 
+            this.DANHBO.DataPropertyName = "DANHBO";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DANHBO.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DANHBO.HeaderText = "DANH BỘ";
+            this.DANHBO.Name = "DANHBO";
+            this.DANHBO.Width = 120;
+            // 
+            // LOTRINH
+            // 
+            this.LOTRINH.DataPropertyName = "MALOTRINH";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.LOTRINH.DefaultCellStyle = dataGridViewCellStyle4;
+            this.LOTRINH.HeaderText = "LỘ TRÌNH";
+            this.LOTRINH.Name = "LOTRINH";
+            this.LOTRINH.Width = 120;
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.DataPropertyName = "HOTEN";
+            this.HOTEN.HeaderText = "HỌ TÊN";
+            this.HOTEN.Name = "HOTEN";
+            this.HOTEN.Width = 200;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "ĐỊA CHỈ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.Width = 250;
+            // 
+            // CODEKYTRUOC
+            // 
+            this.CODEKYTRUOC.DataPropertyName = "CODECU";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CODEKYTRUOC.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CODEKYTRUOC.HeaderText = "CODE KT";
+            this.CODEKYTRUOC.Name = "CODEKYTRUOC";
+            this.CODEKYTRUOC.Width = 130;
+            // 
+            // CSCU
+            // 
+            this.CSCU.DataPropertyName = "CSCU";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CSCU.DefaultCellStyle = dataGridViewCellStyle6;
+            this.CSCU.HeaderText = "CS. CŨ";
+            this.CSCU.Name = "CSCU";
+            this.CSCU.Width = 110;
             // 
             // cbCode
             // 
@@ -188,7 +281,15 @@
             this.comboItem49,
             this.comboItem50,
             this.comboItem51,
-            this.comboItem52});
+            this.comboItem52,
+            this.comboItem33,
+            this.comboItem34,
+            this.comboItem35,
+            this.comboItem36,
+            this.comboItem37,
+            this.comboItem38,
+            this.comboItem39,
+            this.comboItem40});
             this.cbCode.Location = new System.Drawing.Point(69, 16);
             this.cbCode.Name = "cbCode";
             this.cbCode.Size = new System.Drawing.Size(69, 26);
@@ -196,39 +297,87 @@
             // 
             // comboItem47
             // 
-            this.comboItem47.Text = "15";
+            this.comboItem47.Text = "54";
             this.comboItem47.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem47.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem48
             // 
-            this.comboItem48.Text = "16";
+            this.comboItem48.Text = "58";
             this.comboItem48.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem48.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem49
             // 
-            this.comboItem49.Text = "17";
+            this.comboItem49.Text = "60";
             this.comboItem49.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem49.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem50
             // 
-            this.comboItem50.Text = "18";
+            this.comboItem50.Text = "61";
             this.comboItem50.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem50.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem51
             // 
-            this.comboItem51.Text = "19";
+            this.comboItem51.Text = "62";
             this.comboItem51.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem51.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem52
             // 
-            this.comboItem52.Text = "20";
+            this.comboItem52.Text = "63";
             this.comboItem52.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem52.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem33
+            // 
+            this.comboItem33.Text = "64";
+            this.comboItem33.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem33.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem34
+            // 
+            this.comboItem34.Text = "65";
+            this.comboItem34.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem34.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem35
+            // 
+            this.comboItem35.Text = "66";
+            this.comboItem35.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem35.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem36
+            // 
+            this.comboItem36.Text = "F1";
+            this.comboItem36.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem36.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem37
+            // 
+            this.comboItem37.Text = "F2";
+            this.comboItem37.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem37.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem38
+            // 
+            this.comboItem38.Text = "F3";
+            this.comboItem38.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem38.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem39
+            // 
+            this.comboItem39.Text = "F4";
+            this.comboItem39.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem39.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem40
+            // 
+            this.comboItem40.Text = "F5";
+            this.comboItem40.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem40.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // labelX3
             // 
@@ -246,6 +395,7 @@
             this.cbDotDS.FormattingEnabled = true;
             this.cbDotDS.ItemHeight = 20;
             this.cbDotDS.Items.AddRange(new object[] {
+            this.comboItem41,
             this.comboItem1,
             this.comboItem2,
             this.comboItem3,
@@ -270,6 +420,12 @@
             this.cbDotDS.Name = "cbDotDS";
             this.cbDotDS.Size = new System.Drawing.Size(69, 26);
             this.cbDotDS.TabIndex = 49;
+            // 
+            // comboItem41
+            // 
+            this.comboItem41.Text = "0";
+            this.comboItem41.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem41.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
             // comboItem1
             // 
@@ -638,78 +794,20 @@
             this.tabControl2.Tabs.Add(this.tabItem6);
             this.tabControl2.Text = "tabControl2";
             // 
-            // btInKT
+            // btDanhSach
             // 
-            this.btInKT.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btInKT.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btInKT.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btInKT.ForeColor = System.Drawing.Color.Crimson;
-            this.btInKT.Location = new System.Drawing.Point(939, 28);
-            this.btInKT.Name = "btInKT";
-            this.btInKT.Size = new System.Drawing.Size(163, 27);
-            this.btInKT.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btInKT.TabIndex = 120;
-            this.btInKT.Text = "IN && CHUYỂN KT";
-            this.btInKT.Visible = false;
-            this.btInKT.Click += new System.EventHandler(this.btInKT_Click);
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 20;
-            // 
-            // MAYDS
-            // 
-            this.MAYDS.DataPropertyName = "MAYDS";
-            this.MAYDS.HeaderText = "MÁY ĐS";
-            this.MAYDS.Name = "MAYDS";
-            // 
-            // DANHBO
-            // 
-            this.DANHBO.DataPropertyName = "DANHBO";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DANHBO.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DANHBO.HeaderText = "DANH BỘ";
-            this.DANHBO.Name = "DANHBO";
-            this.DANHBO.Width = 120;
-            // 
-            // LOTRINH
-            // 
-            this.LOTRINH.DataPropertyName = "MALOTRINH";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.LOTRINH.DefaultCellStyle = dataGridViewCellStyle3;
-            this.LOTRINH.HeaderText = "LỘ TRÌNH";
-            this.LOTRINH.Name = "LOTRINH";
-            this.LOTRINH.Width = 120;
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.DataPropertyName = "HOTEN";
-            this.HOTEN.HeaderText = "HỌ TÊN";
-            this.HOTEN.Name = "HOTEN";
-            this.HOTEN.Width = 200;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "ĐỊA CHỈ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.Width = 250;
-            // 
-            // CODEKYTRUOC
-            // 
-            this.CODEKYTRUOC.DataPropertyName = "CODECU";
-            this.CODEKYTRUOC.HeaderText = "CODE KT";
-            this.CODEKYTRUOC.Name = "CODEKYTRUOC";
-            this.CODEKYTRUOC.Width = 130;
-            // 
-            // CSCU
-            // 
-            this.CSCU.DataPropertyName = "CSCU";
-            this.CSCU.HeaderText = "CS. CŨ";
-            this.CSCU.Name = "CSCU";
-            this.CSCU.Width = 110;
+            this.btDanhSach.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btDanhSach.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btDanhSach.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDanhSach.ForeColor = System.Drawing.Color.Crimson;
+            this.btDanhSach.Location = new System.Drawing.Point(819, 28);
+            this.btDanhSach.Name = "btDanhSach";
+            this.btDanhSach.Size = new System.Drawing.Size(130, 27);
+            this.btDanhSach.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btDanhSach.TabIndex = 121;
+            this.btDanhSach.Text = "DANH SÁCH";
+            this.btDanhSach.Visible = false;
+            this.btDanhSach.Click += new System.EventHandler(this.btDanhSach_Click);
             // 
             // frm_PhieuKiemTra
             // 
@@ -791,6 +889,15 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private System.Windows.Forms.DataGridView DG_ChuaGiao;
         private DevComponents.DotNetBar.ButtonX btInKT;
+        private DevComponents.Editors.ComboItem comboItem33;
+        private DevComponents.Editors.ComboItem comboItem34;
+        private DevComponents.Editors.ComboItem comboItem35;
+        private DevComponents.Editors.ComboItem comboItem36;
+        private DevComponents.Editors.ComboItem comboItem37;
+        private DevComponents.Editors.ComboItem comboItem38;
+        private DevComponents.Editors.ComboItem comboItem39;
+        private DevComponents.Editors.ComboItem comboItem40;
+        private DevComponents.Editors.ComboItem comboItem41;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAYDS;
         private System.Windows.Forms.DataGridViewTextBoxColumn DANHBO;
@@ -799,6 +906,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODEKYTRUOC;
         private System.Windows.Forms.DataGridViewTextBoxColumn CSCU;
+        private DevComponents.DotNetBar.ButtonX btDanhSach;
 
 
     }
