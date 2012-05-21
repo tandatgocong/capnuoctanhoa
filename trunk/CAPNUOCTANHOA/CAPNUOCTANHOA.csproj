@@ -100,6 +100,7 @@
     <Compile Include="DAL\QLDHN\C_BaoCaoTieuThuThap.cs" />
     <Compile Include="DAL\QLDHN\C_BaoCaoTK.cs" />
     <Compile Include="DAL\QLDHN\C_BaoThay.cs" />
+    <Compile Include="DAL\QLDHN\C_ChuyenDinhMuc.cs" />
     <Compile Include="DAL\QLDHN\C_PhieuKiemTra.cs" />
     <Compile Include="DAL\QLDHN\C_QuanLyDongHoNuoc.cs" />
     <Compile Include="DAL\QLDHN\C_tab_BaoCao.cs" />
@@ -192,6 +193,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\BC\LISTYEUCAUDC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LISTYEUCAUDC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\BC\PHIEUDENGHI.cs">
       <DependentUpon>PHIEUDENGHI.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -200,6 +206,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PHIEUDENGHI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\BC\rpt_DanhSachYeuCauDieuChinh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DanhSachYeuCauDieuChinh.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\BC\rpt_PhieuDeNghiKT.cs">
       <AutoGen>True</AutoGen>
@@ -269,6 +281,23 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PHIEUTAILAPDANHBO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\DIEUCHINH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DIEUCHINH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\frm_DieuChinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\frm_DieuChinh.Designer.cs">
+      <DependentUpon>frm_DieuChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\rpt_PhieuChuyenDinhMuc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_PhieuChuyenDinhMuc.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.cs">
       <SubType>UserControl</SubType>
@@ -609,6 +638,17 @@
     <None Include="Forms\QLDHN\BC\BC_DONGHONUOC.xss">
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\BC\LISTYEUCAUDC.xsc">
+      <DependentUpon>LISTYEUCAUDC.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\BC\LISTYEUCAUDC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LISTYEUCAUDC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\BC\LISTYEUCAUDC.xss">
+      <DependentUpon>LISTYEUCAUDC.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\BC\HUYDANHBO.xsc">
       <DependentUpon>HUYDANHBO.xsd</DependentUpon>
     </None>
@@ -663,6 +703,17 @@
     </None>
     <None Include="Forms\QLDHN\SODOCSO\SODOCSO.xss">
       <DependentUpon>SODOCSO.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\tabDieuChinh\DIEUCHINH.xsc">
+      <DependentUpon>DIEUCHINH.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\tabDieuChinh\DIEUCHINH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DIEUCHINH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\tabDieuChinh\DIEUCHINH.xss">
+      <DependentUpon>DIEUCHINH.xsd</DependentUpon>
     </None>
     <None Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODE.xsc">
       <DependentUpon>DANHSACHCODE.xsd</DependentUpon>
@@ -743,6 +794,10 @@
     <EmbeddedResource Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.resx">
       <DependentUpon>tabThongKeVatTu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\BC\rpt_DanhSachYeuCauDieuChinh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachYeuCauDieuChinh.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_PhieuDeNghiKT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_PhieuDeNghiKT.cs</LastGenOutput>
@@ -777,6 +832,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_PhieuKiemTra.resx">
       <DependentUpon>frm_PhieuKiemTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\frm_DieuChinh.resx">
+      <DependentUpon>frm_DieuChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\rpt_PhieuChuyenDinhMuc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PhieuChuyenDinhMuc.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>

@@ -11,6 +11,7 @@ using CAPNUOCTANHOA.LinQ;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
+using CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -361,6 +362,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void huy_danhbo_Leave(object sender, EventArgs e)
         {
             LoadThongTinHuy();
+        }
+
+        private void tabDieuChinh_Click(object sender, EventArgs e)
+        {
+            panelDieuChinh.Controls.Clear();
+            panelDieuChinh.Controls.Add(new frm_DieuChinh());
+            
         }
     }
 }
