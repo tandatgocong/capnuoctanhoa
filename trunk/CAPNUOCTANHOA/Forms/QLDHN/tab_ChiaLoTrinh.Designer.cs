@@ -368,11 +368,7 @@
             this.dataLoTrinh.Size = new System.Drawing.Size(712, 477);
             this.dataLoTrinh.TabIndex = 1;
             this.dataLoTrinh.Sorted += new System.EventHandler(this.dataLoTrinh_Sorted);
-            this.dataLoTrinh.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataLoTrinh_DragDrop);
-            this.dataLoTrinh.DragOver += new System.Windows.Forms.DragEventHandler(this.dataLoTrinh_DragOver);
-            this.dataLoTrinh.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataLoTrinh_MouseClick);
-            this.dataLoTrinh.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataLoTrinh_MouseDown);
-            this.dataLoTrinh.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataLoTrinh_MouseMove);
+            this.dataLoTrinh.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataLoTrinh_MouseClick);           
             // 
             // DEN_DANHBO
             // 

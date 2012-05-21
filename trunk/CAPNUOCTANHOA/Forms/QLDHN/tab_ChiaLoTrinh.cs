@@ -298,7 +298,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
         }
 
-   
+   /*
         private Rectangle dragBoxFromMouseDown;
         private int rowIndexFromMouseDown;
         private int rowIndexOfItemUnderMouseToDrop;
@@ -364,7 +364,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             dataLoTrinh.DataSource=table;
            
         }
-
+        */
         string _DanhBo = "";
         string _diachi = "";
         string _quanPhuong = "";
