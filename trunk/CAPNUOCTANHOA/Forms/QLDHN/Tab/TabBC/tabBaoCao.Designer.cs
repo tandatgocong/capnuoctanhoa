@@ -3587,6 +3587,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             private global::System.Data.DataColumn columnKT_F5;
             
+            private global::System.Data.DataColumn columnKN_67;
+            
+            private global::System.Data.DataColumn columnKN_68;
+            
+            private global::System.Data.DataColumn columnKT_67;
+            
+            private global::System.Data.DataColumn columnKT_68;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public W_BAOCAO_CODE_DETAILDataTable() {
@@ -3846,6 +3854,38 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KN_67Column {
+                get {
+                    return this.columnKN_67;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KN_68Column {
+                get {
+                    return this.columnKN_68;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KT_67Column {
+                get {
+                    return this.columnKT_67;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KT_68Column {
+                get {
+                    return this.columnKT_68;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3909,7 +3949,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                         int KT_F1, 
                         int KT_F2, 
                         int KT_F3, 
-                        int KT_F5) {
+                        int KT_F5, 
+                        double KN_67, 
+                        double KN_68, 
+                        double KT_67, 
+                        double KT_68) {
                 W_BAOCAO_CODE_DETAILRow rowW_BAOCAO_CODE_DETAILRow = ((W_BAOCAO_CODE_DETAILRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TODS,
@@ -3939,7 +3983,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                         KT_F1,
                         KT_F2,
                         KT_F3,
-                        KT_F5};
+                        KT_F5,
+                        KN_67,
+                        KN_68,
+                        KT_67,
+                        KT_68};
                 rowW_BAOCAO_CODE_DETAILRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowW_BAOCAO_CODE_DETAILRow);
                 return rowW_BAOCAO_CODE_DETAILRow;
@@ -3997,6 +4045,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                 this.columnKT_F2 = base.Columns["KT_F2"];
                 this.columnKT_F3 = base.Columns["KT_F3"];
                 this.columnKT_F5 = base.Columns["KT_F5"];
+                this.columnKN_67 = base.Columns["KN_67"];
+                this.columnKN_68 = base.Columns["KN_68"];
+                this.columnKT_67 = base.Columns["KT_67"];
+                this.columnKT_68 = base.Columns["KT_68"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4058,11 +4110,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                 base.Columns.Add(this.columnKT_F3);
                 this.columnKT_F5 = new global::System.Data.DataColumn("KT_F5", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKT_F5);
+                this.columnKN_67 = new global::System.Data.DataColumn("KN_67", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKN_67);
+                this.columnKN_68 = new global::System.Data.DataColumn("KN_68", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKN_68);
+                this.columnKT_67 = new global::System.Data.DataColumn("KT_67", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKT_67);
+                this.columnKT_68 = new global::System.Data.DataColumn("KT_68", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKT_68);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTODS}, true));
                 this.columnTODS.AllowDBNull = false;
                 this.columnTODS.Unique = true;
                 this.columnTENTO.MaxLength = 2147483647;
+                this.columnKT_68.Caption = "KT_67";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7698,6 +7759,70 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double KN_67 {
+                get {
+                    try {
+                        return ((double)(this[this.tableW_BAOCAO_CODE_DETAIL.KN_67Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KN_67\' in table \'W_BAOCAO_CODE_DETAIL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableW_BAOCAO_CODE_DETAIL.KN_67Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double KN_68 {
+                get {
+                    try {
+                        return ((double)(this[this.tableW_BAOCAO_CODE_DETAIL.KN_68Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KN_68\' in table \'W_BAOCAO_CODE_DETAIL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableW_BAOCAO_CODE_DETAIL.KN_68Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double KT_67 {
+                get {
+                    try {
+                        return ((double)(this[this.tableW_BAOCAO_CODE_DETAIL.KT_67Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KT_67\' in table \'W_BAOCAO_CODE_DETAIL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableW_BAOCAO_CODE_DETAIL.KT_67Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double KT_68 {
+                get {
+                    try {
+                        return ((double)(this[this.tableW_BAOCAO_CODE_DETAIL.KT_68Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KT_68\' in table \'W_BAOCAO_CODE_DETAIL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableW_BAOCAO_CODE_DETAIL.KT_68Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTENTONull() {
                 return this.IsNull(this.tableW_BAOCAO_CODE_DETAIL.TENTOColumn);
             }
@@ -8018,6 +8143,54 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetKT_F5Null() {
                 this[this.tableW_BAOCAO_CODE_DETAIL.KT_F5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKN_67Null() {
+                return this.IsNull(this.tableW_BAOCAO_CODE_DETAIL.KN_67Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKN_67Null() {
+                this[this.tableW_BAOCAO_CODE_DETAIL.KN_67Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKN_68Null() {
+                return this.IsNull(this.tableW_BAOCAO_CODE_DETAIL.KN_68Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKN_68Null() {
+                this[this.tableW_BAOCAO_CODE_DETAIL.KN_68Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKT_67Null() {
+                return this.IsNull(this.tableW_BAOCAO_CODE_DETAIL.KT_67Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKT_67Null() {
+                this[this.tableW_BAOCAO_CODE_DETAIL.KT_67Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKT_68Null() {
+                return this.IsNull(this.tableW_BAOCAO_CODE_DETAIL.KT_68Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKT_68Null() {
+                this[this.tableW_BAOCAO_CODE_DETAIL.KT_68Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -13579,7 +13752,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_58" +
                 ", KN_F1, KN_F2, KN_F3, KN_F5, KT_60, KT_61, KT_62, KT_63, KT_64, KT_65, KT_66, K" +
-                "T_54, KT_58, KT_F1, KT_F2, KT_F3, KT_F5 FROM dbo.W_BAOCAO_CODE_DETAIL";
+                "T_54, KT_58, KT_F1, KT_F2, KT_F3, KT_F5 FROM W_BAOCAO_CODE_DETAIL";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

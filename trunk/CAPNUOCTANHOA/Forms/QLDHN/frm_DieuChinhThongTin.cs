@@ -370,5 +370,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             panelDieuChinh.Controls.Add(new frm_DieuChinh());
             
         }
+
+        private void ganhopBV_Click(object sender, EventArgs e)
+        {
+            panel4.Controls.Clear();
+            panel4.Controls.Add(new frm_GanHopBV());
+        }
     }
 }

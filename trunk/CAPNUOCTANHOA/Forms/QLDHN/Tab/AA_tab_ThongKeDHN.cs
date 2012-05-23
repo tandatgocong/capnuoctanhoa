@@ -33,8 +33,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             int nam = int.Parse(txtNam.Text.Trim());
             ReportDocument rp = new rpt_ThongKeDongHoNuoc_();
             rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.getThongKeDHN(ky,nam));
-            rp.SetParameterValue("KY", 4);
-            rp.SetParameterValue("NAM", 2012);
+            rp.SetParameterValue("KY", ky);
+            rp.SetParameterValue("NAM", nam);
             crystalReportViewer1.ReportSource = rp;
         }
 

@@ -15176,6 +15176,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private System.Nullable<bool> _GANHOP;
 		
+		private System.Nullable<System.DateTime> _NGAYGANHOP;
+		
 		private string _GH_GHICHU;
 		
 		private System.Nullable<System.DateTime> _CREATEDATE;
@@ -15218,6 +15220,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnNGAYLAPChanged();
     partial void OnGANHOPChanging(System.Nullable<bool> value);
     partial void OnGANHOPChanged();
+    partial void OnNGAYGANHOPChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYGANHOPChanged();
     partial void OnGH_GHICHUChanging(string value);
     partial void OnGH_GHICHUChanged();
     partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
@@ -15511,6 +15515,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._GANHOP = value;
 					this.SendPropertyChanged("GANHOP");
 					this.OnGANHOPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYGANHOP", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYGANHOP
+		{
+			get
+			{
+				return this._NGAYGANHOP;
+			}
+			set
+			{
+				if ((this._NGAYGANHOP != value))
+				{
+					this.OnNGAYGANHOPChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYGANHOP = value;
+					this.SendPropertyChanged("NGAYGANHOP");
+					this.OnNGAYGANHOPChanged();
 				}
 			}
 		}

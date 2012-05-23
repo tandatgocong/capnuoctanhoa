@@ -140,9 +140,9 @@
             this.title.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.title.Name = "title";
             this.title.ReflectionEnabled = false;
-            this.title.Size = new System.Drawing.Size(704, 54);
+            this.title.Size = new System.Drawing.Size(943, 54);
             this.title.TabIndex = 3;
-            this.title.Text = "THEO DÕI SẢN LƯỢNG THEO LOẠI KHÁCH HÀNG";
+            this.title.Text = "THỐNG KÊ TIÊU THỤ THẤP THEO ĐỐI TƯỢNG SỮ DỤNG NƯỚC";
             // 
             // tabControl1
             // 
@@ -839,7 +839,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_tab_TongKetLoaiHinhKD_TieuThuThap";
-            this.Size = new System.Drawing.Size(1766, 628);
+            this.Size = new System.Drawing.Size(1749, 611);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
