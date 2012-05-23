@@ -876,7 +876,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_58, KN_F1, KN_F2, KN_F3, KN_F5, KT_60, KT_61, KT_62, KT_63, KT_64, KT_65, KT_66, KT_54, KT_58, KT_F1, KT_F2, KT_F3, KT_F5 FROM dbo.W_BAOCAO_CODE_DETAIL</CommandText>
+                    <CommandText>SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_58, KN_F1, KN_F2, KN_F3, KN_F5, KT_60, KT_61, KT_62, KT_63, KT_64, KT_65, KT_66, KT_54, KT_58, KT_F1, KT_F2, KT_F3, KT_F5 FROM W_BAOCAO_CODE_DETAIL</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1216,6 +1216,10 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
               <xs:element name="KT_F2" msprop:Generator_ColumnVarNameInTable="columnKT_F2" msprop:Generator_ColumnPropNameInRow="KT_F2" msprop:Generator_ColumnPropNameInTable="KT_F2Column" msprop:Generator_UserColumnName="KT_F2" type="xs:int" minOccurs="0" />
               <xs:element name="KT_F3" msprop:Generator_ColumnVarNameInTable="columnKT_F3" msprop:Generator_ColumnPropNameInRow="KT_F3" msprop:Generator_ColumnPropNameInTable="KT_F3Column" msprop:Generator_UserColumnName="KT_F3" type="xs:int" minOccurs="0" />
               <xs:element name="KT_F5" msprop:Generator_ColumnVarNameInTable="columnKT_F5" msprop:Generator_ColumnPropNameInRow="KT_F5" msprop:Generator_ColumnPropNameInTable="KT_F5Column" msprop:Generator_UserColumnName="KT_F5" type="xs:int" minOccurs="0" />
+              <xs:element name="KN_67" msprop:Generator_ColumnVarNameInTable="columnKN_67" msprop:Generator_ColumnPropNameInRow="KN_67" msprop:Generator_ColumnPropNameInTable="KN_67Column" msprop:Generator_UserColumnName="KN_67" type="xs:double" minOccurs="0" />
+              <xs:element name="KN_68" msprop:Generator_ColumnVarNameInTable="columnKN_68" msprop:Generator_ColumnPropNameInRow="KN_68" msprop:Generator_ColumnPropNameInTable="KN_68Column" msprop:Generator_UserColumnName="KN_68" type="xs:double" minOccurs="0" />
+              <xs:element name="KT_67" msprop:Generator_ColumnVarNameInTable="columnKT_67" msprop:Generator_ColumnPropNameInRow="KT_67" msprop:Generator_ColumnPropNameInTable="KT_67Column" msprop:Generator_UserColumnName="KT_67" type="xs:double" minOccurs="0" />
+              <xs:element name="KT_68" msdata:Caption="KT_67" msprop:Generator_ColumnVarNameInTable="columnKT_68" msprop:Generator_ColumnPropNameInRow="KT_68" msprop:Generator_ColumnPropNameInTable="KT_68Column" msprop:Generator_UserColumnName="KT_68" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

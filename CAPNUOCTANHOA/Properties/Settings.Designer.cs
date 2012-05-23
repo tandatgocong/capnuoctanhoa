@@ -75,16 +75,5 @@ namespace CAPNUOCTANHOA.Properties {
                 return ((string)(this["CAPNUOCTANHOAConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LEDAT-PC\\MSSQLSERVER2008;Initial Catalog=CAPNUOCTANHOA;Persist Securi" +
-            "ty Info=True;User ID=sa;Password=123@tanhoa")]
-        public string CAPNUOCTANHOAConnectionString1 {
-            get {
-                return ((string)(this["CAPNUOCTANHOAConnectionString1"]));
-            }
-        }
     }
 }

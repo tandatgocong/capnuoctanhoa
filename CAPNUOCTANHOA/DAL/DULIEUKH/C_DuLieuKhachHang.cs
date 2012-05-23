@@ -97,8 +97,12 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             try
             {
                 db.TB_DULIEUKHACHHANG_HUYDBs.InsertOnSubmit(huy);
-                db.TB_DULIEUKHACHHANGs.DeleteOnSubmit(kh);
+                db.TB_DULIEUKHACHHANGs.DeleteOnSubmit(kh);               
+                // huy handheld
+                LinQConnectionDS.ExecuteCommand("DELETE FROM KHACHHANG WHERE DANHBA='"+ kh.DANHBO +"'");
                 db.SubmitChanges();
+                //
+
                 return true;
             }
             catch (Exception ex)

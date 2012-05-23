@@ -32,6 +32,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
 
             txtNgayGan.Value = DateTime.Now.Date;
+            dateNgayGan.Value = DateTime.Now.Date;
             LoadData();
         }
         public void setSTT()
@@ -43,10 +44,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         }
         private void btIn_Click(object sender, EventArgs e)
         {
-             
-                ReportDocument rp = new rpt_PhieuChuyenDinhMuc();
+
+            ReportDocument rp = new rpt_GanHopBaoVe();
                          
-                rp.SetDataSource(DAL.QLDHN.C_ChuyenDinhMuc.getReport(this.txtNgayGan.Value.ToShortDateString()));
+                rp.SetDataSource(DAL.QLDHN.C_GanHopBaoVe.getReport(this.txtNgayGan.Value.ToShortDateString()));
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
             
@@ -57,9 +58,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-                dataBangKe.DataSource = DAL.QLDHN.C_ChuyenDinhMuc.getListDCByDate(this.txtNgayGan.Value.ToShortDateString());
+                dataBangKe.DataSource = DAL.QLDHN.C_GanHopBaoVe.getListGanHopByDate(this.txtNgayGan.Value.ToShortDateString());
                 Utilities.DataGridV.formatRows(dataBangKe);
-              //  setSTT();
+                setSTT();
             }
             catch (Exception ex)
             {
@@ -82,30 +83,27 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             {
                 string ID = dataBangKe.Rows[e.RowIndex].Cells["ID"].Value + "";
                 string LOTRINH = dataBangKe.Rows[e.RowIndex].Cells["LOTRINH"].Value + "";
-                string ky = dataBangKe.Rows[e.RowIndex].Cells["ky"].Value + "";
-                string DOT = dataBangKe.Rows[e.RowIndex].Cells["DOT"].Value + "";
-                string NAM = dataBangKe.Rows[e.RowIndex].Cells["NAM"].Value + "";
                 string G_DANHBO = dataBangKe.Rows[e.RowIndex].Cells["G_DANHBO"].Value + "";
                 string G_TENKH = dataBangKe.Rows[e.RowIndex].Cells["G_TENKH"].Value + "";
                 string G_DIACHI = dataBangKe.Rows[e.RowIndex].Cells["G_DIACHI"].Value + "";
                 string HOPDONG = dataBangKe.Rows[e.RowIndex].Cells["HOPDONG"].Value + "";
                 string GB = dataBangKe.Rows[e.RowIndex].Cells["GB"].Value + "";
                 string DM = dataBangKe.Rows[e.RowIndex].Cells["DM"].Value + "";
-                string TTBQ = dataBangKe.Rows[e.RowIndex].Cells["TTBQ"].Value + "";
-                string CONGDUNG = dataBangKe.Rows[e.RowIndex].Cells["CONGDUNG"].Value + "";
-
-                this.txtCoDHN.Text = ID;
-                this.txtLoTrinh.Text = LOTRINH;
-               // this.txtKY.Text = ky;
-                this.txtDot.Text = DOT;
+                string HIEUDHN = dataBangKe.Rows[e.RowIndex].Cells["HIEUDHN"].Value + "";
+                string CO = dataBangKe.Rows[e.RowIndex].Cells["CO"].Value + "";
+                string GHICHU = dataBangKe.Rows[e.RowIndex].Cells["GHICHU"].Value + "";
+                 
+                this.txtCoDHN.Text = CO;
+                this.txtLoTrinh.Text = LOTRINH;               
                 this.txtSoDanhBo.Text = G_DANHBO.Replace(" ","");
+                HC_GanHop.Text = G_DANHBO.Replace(" ", "");
                 this.txtTenKH.Text = G_TENKH;
                 this.txtDiaChi.Text = G_DIACHI;
                 this.txtHopDong.Text = HOPDONG;
                 this.txtGB.Text = GB;
                 this.txtDM.Text = DM;
-                this.txtBQ.Text = TTBQ;
-                this.txtHieuDHN.Text = CONGDUNG;
+                this.txtHieuDHN.Text = HIEUDHN;
+                this.txtGhiChu.Text = GHICHU;                
                 btcapNhat.Enabled = true;
                 btXoa.Enabled = true;
             }
@@ -113,7 +111,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             {
 
             }
-
+            Utilities.DataGridV.formatRows(dataBangKe);
+            setSTT();
         }
 
         private void btTaoMoi_Click(object sender, EventArgs e)
@@ -126,18 +125,42 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
             if (sodanhbo.Length == 11)
             {
-                DataTable table = DAL.QLDHN.C_ChuyenDinhMuc.getThonTinDieuChinh(sodanhbo);
-                if (table.Rows.Count > 0)
+                TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
+                if (kh!=null)
                 {
-                    txtDot.Text = table.Rows[0]["DOT"] + "";
-                    txtLoTrinh.Text = table.Rows[0]["MALOTRINH"] + "";
-                   // txtKY.Text = table.Rows[0]["KY"] + "";                     
-                    txtTenKH.Text = table.Rows[0]["HOTEN"] + "";
-                    txtDiaChi.Text = table.Rows[0]["DIACHI"] + "";
-                    txtGB.Text = table.Rows[0]["GB"] + "";
-                    txtDM.Text = table.Rows[0]["DM"] + "";
-                    txtBQ.Text = table.Rows[0]["TBTHU"] + "";
-                    txtHopDong.Text = table.Rows[0]["HOPDONG"] + "";
+                   
+                    txtLoTrinh.Text = kh.LOTRINH;
+                    txtTenKH.Text = kh.HOTEN;
+                    string dc = "";
+                    
+                    try
+                    {
+                        LinQ.QUAN q = DAL.SYS.C_Quan.finByMaQuan(int.Parse(kh.QUAN));
+                        if (q != null)
+                        {
+                            LinQ.PHUONG ph = DAL.SYS.C_Phuong.finbyPhuong(q.MAQUAN, kh.PHUONG.Trim());
+                            dc = kh.SONHA + " " + kh.TENDUONG + ", P." + ph.TENPHUONG + "";
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    txtDiaChi.Text = dc; ;
+                    txtGB.Text = kh.GIABIEU;
+                    txtDM.Text = kh.DINHMUC;
+                    txtHopDong.Text = kh.HOPDONG;
+                    txtCoDHN.Text = kh.CODH;
+                    TB_HIEUDONGHO hieudh = null;
+                    try
+                    {
+                        hieudh = DAL.QLDHN.C_BaoThay.finByHieuDH(kh.HIEUDH.Substring(0, 3));
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    txtHieuDHN.Text = hieudh != null ? hieudh.TENDONGHO : kh.HIEUDH;
+                    
                 }
 
             }
@@ -157,25 +180,51 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 
         public void Add()
         {
+            string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+            //ID, , , , , , , , , HIEU, CO, GHICHU, NGAYLAP, GANHOP, GH_GHICHU, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY
+            TB_GANHOPBV chuyendm = DAL.QLDHN.C_GanHopBaoVe.findByDanhBo(sodanhbo);
+            if (chuyendm != null) {
+                string mess = "Danh Bộ Đã Gắn Hộp Ngày " + Utilities.DateToString.NgayVNVN(chuyendm.NGAYLAP.Value) +", Có Muốn Tiếp Tục Gắn Hộp ?";
+                if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                    chuyendm = new TB_GANHOPBV();
+                    chuyendm.TODS = DAL.SYS.C_USERS._toDocSo;
+                    chuyendm.DANHBO = sodanhbo;
+                    chuyendm.LOTRINH = this.txtLoTrinh.Text;
+                    chuyendm.HOTEN = this.txtTenKH.Text;
+                    chuyendm.DIACHI = this.txtDiaChi.Text;
+                    chuyendm.HOPDONG = this.txtHopDong.Text;
+                    chuyendm.GB = this.txtGB.Text;
+                    chuyendm.DM = this.txtDM.Text;
+                    chuyendm.HIEU = this.txtHieuDHN.Text;
+                    chuyendm.CO = this.txtCoDHN.Text;
+                    chuyendm.GHICHU = this.txtGhiChu.Text;
+                    chuyendm.NGAYLAP = this.txtNgayGan.Value.Date;
+                    chuyendm.CREATEDATE = DateTime.Now;
+                    chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
 
-            TB_CHUYENDINHMUC chuyendm = new TB_CHUYENDINHMUC();
-            //chuyendm.KY = int.Parse(txtKY.Text);
-            chuyendm.DOT = int.Parse(txtDot.Text);
-            chuyendm.NAM = DateTime.Now.Date.Year;
-           // chuyendm.TODS = this.txtToDS.Text;
-            chuyendm.DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
-            chuyendm.LOTRINH = this.txtLoTrinh.Text;
-            chuyendm.HOTEN = this.txtTenKH.Text;
-            chuyendm.DIACHI = this.txtDiaChi.Text;
-            chuyendm.HOPDONG = this.txtHopDong.Text;
-            chuyendm.GB = this.txtGB.Text;
-            chuyendm.DM = this.txtDM.Text;
-            chuyendm.TTBQ = int.Parse(this.txtBQ.Text);
-            chuyendm.CONGDUNG = this.txtHieuDHN.Text;
-            chuyendm.NGAYLAP = this.txtNgayGan.Value.Date;
-            chuyendm.CREATEDATE = DateTime.Now;
-            chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
-            DAL.QLDHN.C_ChuyenDinhMuc.Insert(chuyendm);
+                    DAL.QLDHN.C_GanHopBaoVe.Insert(chuyendm);
+                }
+            }
+            else
+            {
+                chuyendm = new TB_GANHOPBV();
+                chuyendm.TODS = DAL.SYS.C_USERS._toDocSo;
+                chuyendm.DANHBO = sodanhbo;
+                chuyendm.LOTRINH = this.txtLoTrinh.Text;
+                chuyendm.HOTEN = this.txtTenKH.Text;
+                chuyendm.DIACHI = this.txtDiaChi.Text;
+                chuyendm.HOPDONG = this.txtHopDong.Text;
+                chuyendm.GB = this.txtGB.Text;
+                chuyendm.DM = this.txtDM.Text;
+                chuyendm.HIEU = this.txtHieuDHN.Text;
+                chuyendm.CO = this.txtCoDHN.Text;
+                chuyendm.GHICHU = this.txtGhiChu.Text;
+                chuyendm.NGAYLAP = this.txtNgayGan.Value.Date;
+                chuyendm.CREATEDATE = DateTime.Now;
+                chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
+
+                DAL.QLDHN.C_GanHopBaoVe.Insert(chuyendm);
+            }
             // DAL.DULIEUKH.C_DuLieuKhachHang.UpdateBaoThay(this.txtSoDanhBo.Text.Replace("-", ""), "True");
             LoadData();
             CLEAR();
@@ -220,11 +269,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             {
                  
                 string ID = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID"].Value + "";
-                
-                string mess = "Xóa Thay Đổi Định Mức Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
+
+                string mess = "Xóa Gắn Hộp Bảo Vệ Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
                 if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    DAL.QLDHN.C_ChuyenDinhMuc.DeleteBYID(ID);
+                    DAL.QLDHN.C_GanHopBaoVe.DeleteBYID(ID);
                     LoadData();
                 }
             }
@@ -240,27 +289,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             try
             {
                 string ID = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID"].Value + "";
-                TB_CHUYENDINHMUC thaydh = DAL.QLDHN.C_ChuyenDinhMuc.findByID(int.Parse(ID));
-                string mess = "Cập Nhật Thay Đổi Định Mức Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
+                TB_GANHOPBV thaydh = DAL.QLDHN.C_GanHopBaoVe.findByID(int.Parse(ID));
+                string mess = "Cập Nhật Gắn Hộp Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
                 if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && thaydh != null)
                 {
-                   // thaydh.KY = int.Parse(txtKY.Text);
-                    thaydh.DOT = int.Parse(txtDot.Text);
-                    thaydh.NAM = DateTime.Now.Date.Year;
-                  //  thaydh.TODS = this.txtToDS.Text;
-                    thaydh.DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
+                    thaydh.TODS = DAL.SYS.C_USERS._toDocSo;
                     thaydh.LOTRINH = this.txtLoTrinh.Text;
                     thaydh.HOTEN = this.txtTenKH.Text;
                     thaydh.DIACHI = this.txtDiaChi.Text;
                     thaydh.HOPDONG = this.txtHopDong.Text;
                     thaydh.GB = this.txtGB.Text;
                     thaydh.DM = this.txtDM.Text;
-                    thaydh.TTBQ = int.Parse(this.txtBQ.Text);
-                    thaydh.CONGDUNG = this.txtHieuDHN.Text;
+                    thaydh.HIEU = this.txtHieuDHN.Text;
+                    thaydh.CO = this.txtCoDHN.Text;
+                    thaydh.GHICHU = this.txtGhiChu.Text;
+                    thaydh.NGAYLAP = this.txtNgayGan.Value.Date;                    
                     thaydh.MODIFYDATE = DateTime.Now;
                     thaydh.MODIFYBY = DAL.SYS.C_USERS._userName;
 
-                    DAL.QLDHN.C_ChuyenDinhMuc.Update();
+                    DAL.QLDHN.C_GanHopBaoVe.Update();
                     LoadData();
                 }
             }
@@ -305,15 +352,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 
         }
 
-        public void CLEAR() {
-            txtDot.Text = "";
+        public void CLEAR() { 
             txtLoTrinh.Text = "";
             //txtKY.Text = "";
             txtTenKH.Text = "";
             txtDiaChi.Text = "";
             txtGB.Text = "";
             txtDM.Text = "";
-            txtBQ.Text = "";
+            txtHieuDHN.Text = "";
+            txtCoDHN.Text = "";
             txtHopDong.Text = "";
             txtSoDanhBo.Text = "";
             txtSoDanhBo.Focus();
@@ -330,6 +377,34 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         private void txtNgayGan_ValueChanged(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void dataBangKe_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataBangKe);
+            setSTT();
+        }
+
+        private void btHoanTat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string ID = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID"].Value + "";
+                TB_GANHOPBV thaydh = DAL.QLDHN.C_GanHopBaoVe.findByID(int.Parse(ID));
+                string mess = "Cập Nhật Hoàn Công Gắn Hộp Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
+                if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && thaydh != null)
+                {
+                    thaydh.GANHOP = checkGanHop.Checked;
+                    thaydh.NGAYGANHOP = dateNgayGan.Value.Date;
+                    thaydh.GH_GHICHU = hc_ChiChu.Text;
+                    DAL.QLDHN.C_GanHopBaoVe.Update();
+                    MessageBox.Show(this, "Cập Nhật Gắn Hộp Thành Công ", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
         }
     }
 }

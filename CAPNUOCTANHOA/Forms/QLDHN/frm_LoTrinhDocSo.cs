@@ -219,8 +219,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 dataGanMoiBK.DataSource = table;
                 formatRows();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                log.Error(ex.Message);
             }
 
         }

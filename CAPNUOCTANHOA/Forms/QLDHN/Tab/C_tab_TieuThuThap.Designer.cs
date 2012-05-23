@@ -58,6 +58,7 @@
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl2 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -139,9 +140,9 @@
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
@@ -159,7 +160,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sanluongToDS)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -172,7 +172,7 @@
             this.title.ReflectionEnabled = false;
             this.title.Size = new System.Drawing.Size(704, 54);
             this.title.TabIndex = 3;
-            this.title.Text = "THEO DÕI TIÊU THỤ THẤP";
+            this.title.Text = "THỐNG KÊ KHÁCH HÀNG TIÊU THỤ THẤP";
             // 
             // tabControl1
             // 
@@ -207,6 +207,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "THEO KỲ ĐỌC SỐ";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CAPNUOCTANHOA.Properties.Resources.print;
+            this.pictureBox1.Location = new System.Drawing.Point(1057, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 34);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // tabControl2
             // 
@@ -1011,17 +1022,6 @@
             this.comboItem1.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem1.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CAPNUOCTANHOA.Properties.Resources.print;
-            this.pictureBox1.Location = new System.Drawing.Point(1057, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 34);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // tab_TieuThuThap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1036,6 +1036,7 @@
             this.Size = new System.Drawing.Size(1108, 630);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
@@ -1053,7 +1054,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sanluongToDS)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -101,6 +101,7 @@
     <Compile Include="DAL\QLDHN\C_BaoCaoTK.cs" />
     <Compile Include="DAL\QLDHN\C_BaoThay.cs" />
     <Compile Include="DAL\QLDHN\C_ChuyenDinhMuc.cs" />
+    <Compile Include="DAL\QLDHN\C_GanHopBaoVe.cs" />
     <Compile Include="DAL\QLDHN\C_PhieuKiemTra.cs" />
     <Compile Include="DAL\QLDHN\C_QuanLyDongHoNuoc.cs" />
     <Compile Include="DAL\QLDHN\C_tab_BaoCao.cs" />
@@ -299,6 +300,12 @@
     <Compile Include="Forms\QLDHN\tabDieuChinh\frm_DieuChinh.Designer.cs">
       <DependentUpon>frm_DieuChinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\rpt_GanHopBaoVe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_GanHopBaoVe.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\QLDHN\tabDieuChinh\rpt_PhieuChuyenDinhMuc.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -363,6 +370,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_TongKetBaoThayDHN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\TabBC\tabBaoCao.cs">
+      <DependentUpon>tabBaoCao.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\tab_DieuChinhDS.cs">
@@ -844,6 +855,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\frm_DieuChinh.resx">
       <DependentUpon>frm_DieuChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\rpt_GanHopBaoVe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_GanHopBaoVe.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\rpt_PhieuChuyenDinhMuc.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

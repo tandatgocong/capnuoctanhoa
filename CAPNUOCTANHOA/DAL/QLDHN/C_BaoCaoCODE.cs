@@ -325,6 +325,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             return DAL.LinQConnection.getDataTable("SELECT * FROM W_BAOCAO_CODE_DETAIL ");
         }
+
         public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL(string nam, int ky)
         {
             string sql = "UPDATE W_BAOCAO_CODE_DETAIL SET  ";
@@ -332,6 +333,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "    W_BAOCAO_CODE_DETAIL.KN_62 = t2.KN_62, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_63 = t2.KN_63, W_BAOCAO_CODE_DETAIL.KN_64= t2.KN_64, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_65 = t2.KN_65, W_BAOCAO_CODE_DETAIL.KN_66= t2.KN_66, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_67 = t2.KN_67, W_BAOCAO_CODE_DETAIL.KN_68= t2.KN_68, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_54 = t2.KN_54, W_BAOCAO_CODE_DETAIL.KN_58= t2.KN_58, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_F1 = t2.KN_F1, W_BAOCAO_CODE_DETAIL.KN_F2= t2.KN_F2, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_F3 = t2.KN_F3, W_BAOCAO_CODE_DETAIL.KN_F5= t2.KN_F5";
@@ -345,6 +347,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "   COUNT(case when CODE='64' then 1 else null end) AS KN_64,";
             sql += "   COUNT(case when CODE='65' then 1 else null end) AS KN_65,";
             sql += "   COUNT(case when CODE='66' then 1 else null end) AS KN_66,";
+            sql += "   COUNT(case when CODE='67' then 1 else null end) AS KN_67,";
+            sql += "   COUNT(case when CODE='68' then 1 else null end) AS KN_68,";
             sql += "   COUNT(case when CODE='54' then 1 else null end) AS KN_54,";
             sql += "   COUNT(case when CODE='58' then 1 else null end) AS KN_58,";
             sql += "   COUNT(case when CODE='F1' then 1 else null end) AS KN_F1,";
@@ -375,6 +379,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "  W_BAOCAO_CODE_DETAIL.KT_62 = t2.KT_62,  ";
             sql += "  W_BAOCAO_CODE_DETAIL.KT_63 = t2.KT_63, W_BAOCAO_CODE_DETAIL.KT_64= t2.KT_64, ";
             sql += "  W_BAOCAO_CODE_DETAIL.KT_65 = t2.KT_65, W_BAOCAO_CODE_DETAIL.KT_66= t2.KT_66, ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_67 = t2.KT_67, W_BAOCAO_CODE_DETAIL.KT_68= t2.KT_68, ";
             sql += " W_BAOCAO_CODE_DETAIL.KT_54 = t2.KT_54, W_BAOCAO_CODE_DETAIL.KT_58= t2.KT_58, ";
             sql += " W_BAOCAO_CODE_DETAIL.KT_F1 = t2.KT_F1, W_BAOCAO_CODE_DETAIL.KT_F2= t2.KT_F2, ";
             sql += " W_BAOCAO_CODE_DETAIL.KT_F3 = t2.KT_F3, W_BAOCAO_CODE_DETAIL.KT_F5= t2.KT_F5";
@@ -383,16 +388,18 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SELECT TODS, ";
             sql += " COUNT(case when CODE='60' then 1 else null end) AS KT_60, ";
             sql += " COUNT(case when CODE='61' then 1 else null end) AS KT_61,";
-            sql += "  COUNT(case when CODE='62' then 1 else null end) AS KT_62,";
-            sql += "   COUNT(case when CODE='63' then 1 else null end) AS KT_63,";
-            sql += "  COUNT(case when CODE='64' then 1 else null end) AS KT_64,";
-            sql += "    COUNT(case when CODE='65' then 1 else null end) AS KT_65,";
-            sql += "   COUNT(case when CODE='66' then 1 else null end) AS KT_66,";
-            sql += "   COUNT(case when CODE='54' then 1 else null end) AS KT_54,";
-            sql += "    COUNT(case when CODE='58' then 1 else null end) AS KT_58,";
-            sql += "    COUNT(case when CODE='F1' then 1 else null end) AS KT_F1,";
-            sql += "    COUNT(case when CODE='F2' then 1 else null end) AS KT_F2,";
-            sql += "   COUNT(case when CODE='F3' then 1 else null end) AS KT_F3,";
+            sql += " COUNT(case when CODE='62' then 1 else null end) AS KT_62,";
+            sql += " COUNT(case when CODE='63' then 1 else null end) AS KT_63,";
+            sql += " COUNT(case when CODE='64' then 1 else null end) AS KT_64,";
+            sql += " COUNT(case when CODE='65' then 1 else null end) AS KT_65,";
+            sql += " COUNT(case when CODE='66' then 1 else null end) AS KT_66,";
+            sql += " COUNT(case when CODE='67' then 1 else null end) AS KT_67,";
+            sql += " COUNT(case when CODE='68' then 1 else null end) AS KT_68,";
+            sql += " COUNT(case when CODE='54' then 1 else null end) AS KT_54,";
+            sql += " COUNT(case when CODE='58' then 1 else null end) AS KT_58,";
+            sql += " COUNT(case when CODE='F1' then 1 else null end) AS KT_F1,";
+            sql += " COUNT(case when CODE='F2' then 1 else null end) AS KT_F2,";
+            sql += "COUNT(case when CODE='F3' then 1 else null end) AS KT_F3,";
             sql += "    COUNT(case when CODE='F5' then 1 else null end) AS KT_F5";
             sql += "   FROM DocSo_PHT.dbo.DS" + nam;
             sql += "   WHERE  KY=" + ky;
@@ -418,6 +425,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "    W_BAOCAO_CODE_DETAIL.KN_62 = t2.KN_62, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_63 = t2.KN_63, W_BAOCAO_CODE_DETAIL.KN_64= t2.KN_64, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_65 = t2.KN_65, W_BAOCAO_CODE_DETAIL.KN_66= t2.KN_66, ";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_67 = t2.KN_67, W_BAOCAO_CODE_DETAIL.KN_68= t2.KN_68, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_54 = t2.KN_54, W_BAOCAO_CODE_DETAIL.KN_58= t2.KN_58, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_F1 = t2.KN_F1, W_BAOCAO_CODE_DETAIL.KN_F2= t2.KN_F2, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_F3 = t2.KN_F3, W_BAOCAO_CODE_DETAIL.KN_F5= t2.KN_F5";
@@ -431,6 +439,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "   COUNT(case when CODE='64' then 1 else null end) AS KN_64,";
             sql += "   COUNT(case when CODE='65' then 1 else null end) AS KN_65,";
             sql += "   COUNT(case when CODE='66' then 1 else null end) AS KN_66,";
+            sql += "   COUNT(case when CODE='67' then 1 else null end) AS KN_67,";
+            sql += "   COUNT(case when CODE='68' then 1 else null end) AS KN_68,";
             sql += "   COUNT(case when CODE='54' then 1 else null end) AS KN_54,";
             sql += "   COUNT(case when CODE='58' then 1 else null end) AS KN_58,";
             sql += "   COUNT(case when CODE='F1' then 1 else null end) AS KN_F1,";
@@ -461,6 +471,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "  W_BAOCAO_CODE_DETAIL.KT_62 = t2.KT_62,  ";
             sql += "  W_BAOCAO_CODE_DETAIL.KT_63 = t2.KT_63, W_BAOCAO_CODE_DETAIL.KT_64= t2.KT_64, ";
             sql += "  W_BAOCAO_CODE_DETAIL.KT_65 = t2.KT_65, W_BAOCAO_CODE_DETAIL.KT_66= t2.KT_66, ";
+            sql += "  W_BAOCAO_CODE_DETAIL.KT_67 = t2.KT_67, W_BAOCAO_CODE_DETAIL.KT_68= t2.KT_68, ";
             sql += " W_BAOCAO_CODE_DETAIL.KT_54 = t2.KT_54, W_BAOCAO_CODE_DETAIL.KT_58= t2.KT_58, ";
             sql += " W_BAOCAO_CODE_DETAIL.KT_F1 = t2.KT_F1, W_BAOCAO_CODE_DETAIL.KT_F2= t2.KT_F2, ";
             sql += " W_BAOCAO_CODE_DETAIL.KT_F3 = t2.KT_F3, W_BAOCAO_CODE_DETAIL.KT_F5= t2.KT_F5";
@@ -474,6 +485,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "  COUNT(case when CODE='64' then 1 else null end) AS KT_64,";
             sql += "    COUNT(case when CODE='65' then 1 else null end) AS KT_65,";
             sql += "   COUNT(case when CODE='66' then 1 else null end) AS KT_66,";
+            sql += "   COUNT(case when CODE='67' then 1 else null end) AS KT_67,";
+            sql += "   COUNT(case when CODE='68' then 1 else null end) AS KT_68,";
             sql += "   COUNT(case when CODE='54' then 1 else null end) AS KT_54,";
             sql += "    COUNT(case when CODE='58' then 1 else null end) AS KT_58,";
             sql += "    COUNT(case when CODE='F1' then 1 else null end) AS KT_F1,";

@@ -620,7 +620,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             ReportDocument rp = new rpt_DanhSachCode();
             string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.CODE IN ('60','62','63') ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.CODE IN ('60','62','63','67','68') ";
             sql += " ORDER BY DANHBO ASC";
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "DANHSACHCODE"));
             frm_Reports frm = new frm_Reports(rp);

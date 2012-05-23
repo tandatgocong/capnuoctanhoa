@@ -182,7 +182,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             ReportDocument rp = new rpt_LoaiKHTieuThuThap();
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_LOAIKD_THAP ", "W_BAOCAO_LOAIKD_THAP"));
-            rp.SetParameterValue("tenbk", "THỐNG KÊ TIÊU THỤ THẤP KỲ " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam.Text.Trim());
+            rp.SetParameterValue("tenbk", "THỐNG KÊ TIÊU THỤ THẤP THEO ĐỐI TƯỢNG SỮ DỤNG NƯỚC KỲ " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam.Text.Trim());
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }

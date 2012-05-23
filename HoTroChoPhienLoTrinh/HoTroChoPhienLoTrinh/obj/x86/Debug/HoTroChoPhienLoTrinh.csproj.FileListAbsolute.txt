@@ -1,0 +1,10 @@
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.exe
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.pdb
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Properties.Resources.resources
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.exe
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.pdb
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Form1.resources
+E:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.exe.config
