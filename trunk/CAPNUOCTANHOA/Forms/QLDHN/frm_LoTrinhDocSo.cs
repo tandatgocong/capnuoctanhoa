@@ -648,58 +648,31 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void buttonX1_Click_1(object sender, EventArgs e)
         {
-            //ExcelCOM.Application exApp = new ExcelCOM.Application();
-            //string workbookPath = AppDomain.CurrentDomain.BaseDirectory + @"\LOTRINH.xls";
-            //ExcelCOM.Workbook exBook = exApp.Workbooks.Open(workbookPath, 0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-            //ExcelCOM.Worksheet exSheet = (ExcelCOM.Worksheet)exBook.Worksheets[1];
-            //try
-            //{
-            //    int ky = DateTime.Now.Month + 1;
-            //    int nam = DateTime.Now.Year;
-            //    if (ky == 12)
-            //    {
-            //        ky = 1;
-            //        nam = nam + 1;
-            //    }
-            //    else { ky = ky + 1; }
+            if (MessageBox.Show(this, "Cảnh Báo Chuyển Đi !", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                int KY = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+                int NAM = int.Parse(this.txtNam.Text);
+                try
+                {
+                    result.Text = "Đường dẫn lưu file : " + Export.export(dataGridView1);
 
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        string danhbo = dataGridView1.Rows[i].Cells["DC_DANHBO"].Value + "";
+                        DAL.LinQConnection.ExecuteCommand("UPDATE TB_YEUCAUDC SET DACHUYEN='True', NGAYCHUYEN=GETDATE() ,CREATEBY='Chuyen " + DAL.SYS.C_USERS._userName + " ' WHERE DANHBO='" + danhbo.Replace(" ", "") + "' AND KY='" + KY + "' AND NAM='" + NAM + "'");
+                    }
+                    dataGridView1.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,LTCU  ,LTMOI  FROM TB_YEUCAUDC WHERE KY ='" + KY + "' AND NAM='" + NAM + "' AND DACHUYEN ='False'  ORDER BY LTCU ASC");
+                    setSTT();
+                    Utilities.DataGridV.formatRows(dataGridView1, "DC_DANHBO");
+                }
+                catch (Exception)
+                {
 
+                }
 
-            //    exSheet.Name = ky + "-" + nam;
-            //    exSheet.Cells[10, 10] = "TP.Hồ Chí Minh, ngày " + DateTime.Now.Date.Date + " tháng " + (DateTime.Now.Month + 1) + " năm " + DateTime.Now.Year;
+            }        
 
-            //    ///
-
-
-            //    exApp.Visible = false;
-            //    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            //    saveFileDialog1.InitialDirectory = @"C:\";
-            //    saveFileDialog1.Title = "Save text Files";
-            //    saveFileDialog1.DefaultExt = ".xls";
-            //    saveFileDialog1.Filter = "All files (*.*)|*.*";
-            //    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            //    {
-            //        string path = saveFileDialog1.FileName; ;
-            //        exBook.SaveAs(path, ExcelCOM.XlFileFormat.xlWorkbookNormal,
-            //            null, null, false, false,
-            //            ExcelCOM.XlSaveAsAccessMode.xlExclusive,
-            //            false, false, false, false, false);
-            //    }
-
-            //    exBook.Close(false, false, false);
-
-            //}
-            //catch (Exception EX)
-            //{
-
-            //    MessageBox.Show(this, EX.Message);
-            //}
-            //exApp.Quit();
-            //System.Runtime.InteropServices.Marshal.ReleaseComObject(exBook);
-            //System.Runtime.InteropServices.Marshal.ReleaseComObject(exApp);
             
-
-            result.Text = "Đường dẫn lưu file : " + Export.export(dataGridView1);
         }
     }
 }
