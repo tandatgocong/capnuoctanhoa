@@ -54,12 +54,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             }
             rows = rows + 1;
-            exSheet.Cells[rows, 3] = "Trân trọng kính chào !";
-            exSheet.Cells[rows + 1, 3] = "* Nơi Nhận";
-            exSheet.Cells[rows + 2, 3] = "  - Như trên.";
-            exSheet.Cells[rows + 3, 3] = "  - Đội Thu Tiền để biết.";
-            exSheet.Cells[rows + 4, 3] = "  - Ban KTKS để biết.";
-            exSheet.Cells[rows + 5, 3] = "  - Lưu.";
+            exSheet.Cells[rows, 2] = "Trân trọng kính chào !";
+            exSheet.Cells[rows + 1, 2] = "* Nơi Nhận";
+            exSheet.Cells[rows + 2, 2] = "  - Như trên.";
+            exSheet.Cells[rows + 3, 2] = "  - Đội Thu Tiền để biết.";
+            exSheet.Cells[rows + 4, 2] = "  - Ban KTKS để biết.";
+            exSheet.Cells[rows + 5, 2] = "  - Lưu.";
 
             exSheet.Cells[rows, 6] = "KT.GIÁM ĐỐC";
             exSheet.Cells[rows + 1, 6] = "PHÓ GIÁM ĐỐC KINH DOANH";
