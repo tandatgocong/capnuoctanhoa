@@ -11,6 +11,8 @@ using CAPNUOCTANHOA.LinQ;
 using log4net;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.QLDHN.SODOCSO;
+using CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh;
+using CAPNUOCTANHOA.Forms.Reports;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -25,6 +27,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             InitializeComponent();
             //this.txtNam.Text = DateTime.Now.Year.ToString();
             //cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
+            this.txtNam.Text = DateTime.Now.Year.ToString();
+            try
+            {
+                cbKyDS.SelectedIndex = DateTime.Now.Month + 1;
+            }
+            catch (Exception)
+            {
+                 
+            }
+           
+          
         }
         /// <summary>
         /// SO DOC SO
@@ -250,9 +263,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string CHISOTLK = dataGanMoiBK.Rows[i].Cells["CHISOTLK"].Value + "";
                 string SoHo = dataGanMoiBK.Rows[i].Cells["SoHo"].Value + "";
 
-                string DOT = dataGanMoiBK.Rows[i].Cells["DOT"].Value + "";
-                string TODS = dataGanMoiBK.Rows[i].Cells["TODS"].Value + "";
-                string MAYDS = dataGanMoiBK.Rows[i].Cells["MAYDS"].Value + "";
+                //string DOT = dataGanMoiBK.Rows[i].Cells["DOT"].Value + "";
+                //string TODS = dataGanMoiBK.Rows[i].Cells["TODS"].Value + "";
+                //string MAYDS = dataGanMoiBK.Rows[i].Cells["MAYDS"].Value + "";
 
                 VniToUnicode.ClassViToUnicode vn = new VniToUnicode.ClassViToUnicode();
                 HOTEN = vn.VniToKD(HOTEN).ToUpper().Replace("(DD " + SoHo + " HO)", "");
@@ -279,38 +292,38 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.txtCoTLK.Text = COTLK;
                 this.txtSoThan.Text = SOTLK;
                 this.txtCHISOTLK.Text = CHISOTLK;
+                this.txtLoTrinhTam.Text = "";
+                //if (!"".Equals(MAYDS))
+                //{
+                //    this.cbMayDocSo.SelectedIndex = int.Parse(MAYDS);
+                //}
+                //else
+                //{
+                //    this.cbMayDocSo.SelectedIndex = 0;
+                //}
 
-                if (!"".Equals(MAYDS))
-                {
-                    this.cbMayDocSo.SelectedIndex = int.Parse(MAYDS);
-                }
-                else
-                {
-                    this.cbMayDocSo.SelectedIndex = 0;
-                }
-
-                if (!"".Equals(DOT))
-                {
-                    this.cbDotDS.SelectedIndex = int.Parse(DOT) - 1;
-                }
-                else
-                {
-                    this.cbDotDS.SelectedIndex = 0;
-                }
+                //if (!"".Equals(DOT))
+                //{
+                //    this.cbDotDS.SelectedIndex = int.Parse(DOT) - 1;
+                //}
+                //else
+                //{
+                //    this.cbDotDS.SelectedIndex = 0;
+                //}
 
 
-                if ("TB02".Equals(TODS))
-                {
-                    this.cbToDocSo.SelectedIndex = 1;
-                }
-                else if ("TP".Equals(TODS))
-                {
-                    this.cbToDocSo.SelectedIndex = 2;
-                }
-                else
-                {
-                    this.cbToDocSo.SelectedIndex = 0;
-                }
+                //if ("TB02".Equals(TODS))
+                //{
+                //    this.cbToDocSo.SelectedIndex = 1;
+                //}
+                //else if ("TP".Equals(TODS))
+                //{
+                //    this.cbToDocSo.SelectedIndex = 2;
+                //}
+                //else
+                //{
+                //    this.cbToDocSo.SelectedIndex = 0;
+                //}
 
 
 
@@ -344,19 +357,24 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string COTLK = this.txtCoTLK.Text;
                 string SOTLK = this.txtSoThan.Text;
                 string CHISOTLK = this.txtCHISOTLK.Text;
-                string MAYDS = cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString();
+                string MAYDS ="0";
                 string DOTDS = cbDotDS.Items[cbDotDS.SelectedIndex].ToString();
                 string TODS = "TB01";
+                string LOTRINH = this.txtLoTrinhTam.Text; 
+                int tods=1;
                 if (this.cbToDocSo.SelectedIndex == 1)
                 {
                     TODS = "TB02";
+                    tods = 2;
                 }
                 else if (this.cbToDocSo.SelectedIndex == 2)
                 {
+                    tods = 3;
                     TODS = "TP";
                 }
                 else
                 {
+                    tods = 1;
                     TODS = "TB01";
                 }
                 TB_GANMOI tb = DAL.DULIEUKH.C_GanMoi.finByDanhBo(DANHBO);
@@ -382,12 +400,40 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     tb.SOHO = SOHO;
                     tb.TODS = TODS;
                     tb.DOT = DOTDS;
+                    tb.PLT = LOTRINH;
                     tb.MAYDS = MAYDS;
                     tb.CREATEDATE = DateTime.Now;
                     tb.CREATEBY = DAL.SYS.C_USERS._userName;
                     if (DAL.DULIEUKH.C_GanMoi.Insert(tb))
                     {
-                        MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        int ky = DateTime.Now.Month + 1;
+                        int nam = DateTime.Now.Year;
+                        try
+                        {
+                            ky = int.Parse(tb.HIEULUC.Substring(0, 2));
+                            nam = int.Parse(tb.HIEULUC.Substring(3, 4));
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                        string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH) VALUES ";
+                        insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "')";
+                        if (DAL.LinQConnection.ExecuteCommand(insert) > 0)
+                        {
+                            // inset Table Doc So
+                            string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
+                            insertGM += " VALUES ('" + QUAN + "','" + PHUONG + "'," + tods + "," + cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString() + "," + DOT + ",'" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "'," + GIABIEU + "," + DINHMUC + ",0,0,0,0,'" + LOTRINH + "','" + LOTRINH + "','" + HIEULUC + "'," + NGAYGAN + ",'" + NGAYGAN + "'," + CHISOTLK + ",0,'M','" + HIEU + "','" + SOTLK + "')";
+                            DAL.DULIEUKH.C_GanMoi.InsertDocSo(insertGM);
+                            MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else {
+                            MessageBox.Show(this, "Kiểm Tra Sai Dữ Liệu ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+
+
+                        
                     }
                     else
                     {
@@ -412,6 +458,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     tb.CHISOTLK = CHISOTLK;
                     tb.SOHO = SOHO;
                     tb.TODS = TODS;
+                    tb.PLT = LOTRINH;
                     tb.DOT = DOTDS;
                     tb.MAYDS = MAYDS;
                     tb.MODIFYDATE = DateTime.Now;
@@ -459,6 +506,107 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
            
         }
         #endregion
+
+        private void cbMayDocSo_SelectedValueChanged(object sender, EventArgs e){
+            try
+            {
+                this.txtLoTrinhTam.Text = "";
+                int t1 = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
+                int t2 = int.Parse(cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString());
+
+                if (t2 < 15)
+                {
+                    this.cbToDocSo.SelectedIndex = 0;
+                }
+                else if (t2 > 15 && t2 < 30)
+                {
+                    this.cbToDocSo.SelectedIndex = 1;
+                }
+                else if (t2 > 30)
+                {
+                    this.cbToDocSo.SelectedIndex = 2;
+
+                }
+                string dot = t1 + "";
+                if (t1 < 10)
+                {
+                    dot = "0" + t1;
+                }
+                string may = t2 + "";
+                if (t2 < 10)
+                {
+                    may = "0" + t2;
+                }
+                DataTable table = DAL.DULIEUKH.C_GanMoi.getMaxLoTrinh(dot + may);
+                string lotrinh = (int.Parse(table.Rows[0][0] + "") + 1) + "";
+                if (lotrinh.Length < 9)
+                {
+                    lotrinh = "0" + lotrinh;
+                }
+                this.txtLoTrinhTam.Text = lotrinh;
+            }
+            catch (Exception)
+            {
+                this.txtLoTrinhTam.Text = "";
+            }
+             
+        }
+
+        private void cbDotDS_SelectedValueChanged(object sender, EventArgs e)
+        {
+            this.txtLoTrinhTam.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void btCapNhatLoTrinhMoi_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "Cảnh Báo Chuyển Đi !", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                int KY = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+                int NAM = int.Parse(this.txtNam.Text);
+                try
+                {
+                    ReportDocument rp = new rpt_DieuChinhLoTrinh();
+                    rp.SetDataSource(DAL.DULIEUKH.C_PhienLoTrinh.getReportDieuChinh(KY, NAM));
+                    frm_Reports frm = new frm_Reports(rp);
+                    frm.ShowDialog();
+
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        string danhbo = dataGridView1.Rows[i].Cells["DC_DANHBO"].Value + "";
+                        DAL.LinQConnection.ExecuteCommand("UPDATE TB_YEUCAUDC SET DACHUYEN='True', NGAYCHUYEN=GETDATE() ,CREATEBY='Chuyen " + DAL.SYS.C_USERS._userName + " ' WHERE DANHBO='" + danhbo.Replace(" ", "") + "' AND KY='" + KY + "' AND NAM='" + NAM + "'");
+                    }
+                    dataGridView1.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,LTCU  ,LTMOI  FROM TB_YEUCAUDC WHERE KY ='" + KY + "' AND NAM='" + NAM + "' AND DACHUYEN ='False'  ORDER BY LTCU ASC");
+                    setSTT();
+                    Utilities.DataGridV.formatRows(dataGridView1, "DC_DANHBO");
+                }
+                catch (Exception)
+                {
+
+                }
+           
+            }
+            
+           
+        }
+        public void setSTT()
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells["DC_STT"].Value = i + 1;
+            }
+        }
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            int KY = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+            int NAM = int.Parse(this.txtNam.Text);
+            dataGridView1.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,LTCU  ,LTMOI  FROM TB_YEUCAUDC WHERE KY ='" + KY + "' AND NAM='" + NAM + "' AND DACHUYEN ='False'  ORDER BY LTCU ASC");
+            setSTT();
+            Utilities.DataGridV.formatRows(dataGridView1,"DC_DANHBO");
+        }
 
 
     }

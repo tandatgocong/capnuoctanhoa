@@ -56,6 +56,7 @@ namespace HoTroChoPhienLoTrinh
         public static string phienlotrinh(string _lotrinh, string kytu)
         {
             _lotrinh = _lotrinh.Replace(" ", "");
+            _lotrinh = _lotrinh.Replace(kytu, "");
             if (_lotrinh.Length > 6)
             {
                 _lotrinh = _lotrinh.Insert(2, kytu);

@@ -376,5 +376,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             panel4.Controls.Clear();
             panel4.Controls.Add(new frm_GanHopBV());
         }
+
+        private void tabItem1_Click(object sender, EventArgs e)
+        {
+            panel5.Controls.Clear();
+            panel5.Controls.Add(new frm_DHNAmSau());
+        }
     }
 }

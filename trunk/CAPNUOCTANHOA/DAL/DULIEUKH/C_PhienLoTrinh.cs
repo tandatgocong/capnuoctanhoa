@@ -12,6 +12,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
     class C_PhienLoTrinh
     {
         static DocSoDataContext ds = new DocSoDataContext();
+        static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
         private static readonly ILog log = LogManager.GetLogger(typeof(C_PhienLoTrinh).Name);
         public static List<MAYDOCSO> getListMayDS(int tods)
         {
@@ -114,6 +115,56 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             }
             db.SubmitChanges();
             return result;
+        }
+
+        public static void InsertYeuCauDC(TB_YEUCAUDC yc) {
+            try
+            {
+                db.TB_YEUCAUDCs.InsertOnSubmit(yc);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+        public static TB_YEUCAUDC findByDanhBoDC(string danhbo, int ky, int nam)
+        {
+            try
+            {
+                db = new CapNuocTanHoaDataContext();
+                var query = from q in db.TB_YEUCAUDCs where q.DANHBO == danhbo && q.KY == ky && q.NAM == nam && q.DACHUYEN ==false select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
+        public static void Update()
+        {
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+        public static DataSet getReportDieuChinh(int ky, int nam)
+        {
+            DataSet ds = new DataSet();
+            string query = " SELECT *  FROM TB_YEUCAUDC WHERE KY ='" + ky + "' AND NAM='" + nam + "' AND DACHUYEN ='False'  ORDER BY LTCU ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_YEUCAUDC");
+
+            query = "select * FROM CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+            return ds;
         }
     }
 }

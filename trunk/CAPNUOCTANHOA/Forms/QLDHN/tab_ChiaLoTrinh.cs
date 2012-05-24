@@ -31,12 +31,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.cbDenMayDocSo.DataSource = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(2);
                 this.cbDenMayDocSo.DisplayMember = "MAY";
                 this.cbDenMayDocSo.DisplayMember = "MAY";
+
+                this.txtTangBat.Text = "5";
             }
             else if ("TP".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
             {
                 tods = 3;
                 List<MAYDOCSO> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(3);
                 this.lbToDocSo.Text = "     TỔ TÂN PHÚ";
+                this.txtTangBat.Text = "100";
                 this.cbTuMayDocSo.DataSource = list;
                 this.cbTuMayDocSo.DisplayMember = "MAY";
                 this.cbTuMayDocSo.DisplayMember = "MAY";
@@ -57,24 +60,28 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.cbDenMayDocSo.DataSource = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(1); ;
                 this.cbDenMayDocSo.DisplayMember = "MAY";
                 this.cbDenMayDocSo.DisplayMember = "MAY";
+                this.txtTangBat.Text = "5";
             }
-            
+            LoadTuMayDocSo();
         }
 
-        public void LoadTuMayDocSo() {
-            string dotds = cbChiLoTrinhDotDS.Items[cbChiLoTrinhDotDS.SelectedIndex].ToString();
-            string mayds = cbTuMayDocSo.Text;
-            dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getDataGanMoi(DAL.SYS.C_USERS._toDocSo, dotds, mayds);
-            
+        public void LoadTuMayDocSo()
+        {
+
+
+            dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getDataGanMoi(DAL.SYS.C_USERS._toDocSo, "", "0");
+
             Utilities.DataGridV.formatRows(dataDanhBoGanMoi, "TU_DANHBO");
             lbTuMayDS.Text = "TỔNG SỐ " + (dataDanhBoGanMoi.Rows.Count) + " DANH BỘ";
         }
         DataTable table = null;
-        public void LoadDenMayDocSo() {
+        public void LoadDenMayDocSo()
+        {
             table = null;
             string dotds = cbChiLoTrinhDotDS.Items[cbChiLoTrinhDotDS.SelectedIndex].ToString();
             string mayds = cbDenMayDocSo.Text;
-            if (int.Parse(dotds) < 10) {
+            if (int.Parse(dotds) < 10)
+            {
                 dotds = "0" + dotds;
             }
             if (int.Parse(mayds) < 10)
@@ -95,7 +102,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             catch (Exception)
             {
-                
+
             }
         }
 
@@ -110,9 +117,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             catch (Exception)
             {
-                
+
             }
-           
+
         }
 
         private void pictureChuyen_Click(object sender, EventArgs e)
@@ -124,13 +131,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             catch (Exception)
             {
-                
+
             }
             if (index < dataLoTrinh.Rows.Count)
-            { 
-                index = index+1;
+            {
+                index = index + 1;
             }
-            
+
             for (int i = 0; i < dataDanhBoGanMoi.Rows.Count; i++)
             {
                 if ("1".Equals(dataDanhBoGanMoi.Rows[i].Cells["CHECK"].Value + ""))
@@ -156,33 +163,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                             dataDanhBoGanMoi.Rows.RemoveAt(i);
                             /// Insert Du Lieu Khach Hang de quan ly
-                            
-                            int ky= DateTime.Now.Month+1;
-                            int nam= DateTime.Now.Year;
+
+                            int ky = DateTime.Now.Month + 1;
+                            int nam = DateTime.Now.Year;
                             try
                             {
-                                ky = int.Parse(ganmoi.HIEULUC.Substring(0, 2) );
-                                nam = int.Parse(ganmoi.HIEULUC.Substring(3, 4) );
+                                ky = int.Parse(ganmoi.HIEULUC.Substring(0, 2));
+                                nam = int.Parse(ganmoi.HIEULUC.Substring(3, 4));
                             }
                             catch (Exception)
                             {
-                                
+
                             }
-                            string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM) VALUES ";
-                            insert += "('" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "','" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "','" + ganmoi.GIABIEU + "','" + ganmoi.DINHMUC + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.HIEU + "','" + ganmoi.COTLK + "','" + ganmoi.SOTLK + "','" + ganmoi.CHISOTLK + "','M','" + ky + "','" + nam + "')";
-                            DAL.LinQConnection.ExecuteCommand(insert);
-                           
-                            // inset Table Doc So
-                            string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
-                            insertGM += " VALUES ('" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "'," + tods + "," + cbDenMayDocSo.Text + "," + ganmoi.DOT + ",'" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "'," + ganmoi.GIABIEU + "," + ganmoi.DINHMUC + ",0,0,0,0,' ',' ','" + ganmoi.HIEULUC + "'," + ganmoi.NGAYGANTLK.Value.Year + ",'" + ganmoi.NGAYGANTLK.Value.Date.ToShortDateString() + "'," + ganmoi.CHISOTLK + ",0,'M','" + ganmoi.HIEU + "','" + ganmoi.SOTLK + "')";
-                            DAL.DULIEUKH.C_GanMoi.InsertDocSo(insertGM);
+                            //string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM) VALUES ";
+                            //insert += "('" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "','" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "','" + ganmoi.GIABIEU + "','" + ganmoi.DINHMUC + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.HIEU + "','" + ganmoi.COTLK + "','" + ganmoi.SOTLK + "','" + ganmoi.CHISOTLK + "','M','" + ky + "','" + nam + "')";
+                            //DAL.LinQConnection.ExecuteCommand(insert);
+
+                            //// inset Table Doc So
+                            //string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
+                            //insertGM += " VALUES ('" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "'," + tods + "," + cbDenMayDocSo.Text + "," + ganmoi.DOT + ",'" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "'," + ganmoi.GIABIEU + "," + ganmoi.DINHMUC + ",0,0,0,0,' ',' ','" + ganmoi.HIEULUC + "'," + ganmoi.NGAYGANTLK.Value.Year + ",'" + ganmoi.NGAYGANTLK.Value.Date.ToShortDateString() + "'," + ganmoi.CHISOTLK + ",0,'M','" + ganmoi.HIEU + "','" + ganmoi.SOTLK + "')";
+                            //DAL.DULIEUKH.C_GanMoi.InsertDocSo(insertGM);
 
                             /////
                         }
                         //data.update("UPDATE KHACHHANG SET MAY=" + cbDenMay.SelectedValue.ToString() + sqlTo + " WHERE ID_KH = " + gvTuMay.Rows[i].Cells["ID_KH"].Value.ToString());
-            
 
-                       
+
+
                     }
                     //DataGridViewRow row = new DataGridViewRow();
 
@@ -208,7 +215,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     //cellQUANPHUONG.Value = dataDanhBoGanMoi.Rows[i].Cells["TU_QP"].Value + "";
                     //row.Cells["DEN_QUANPHUONG"] = cellQUANPHUONG;
 
-                    
+
 
                     //string danhbo=dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value+"";
                     //TB_GANMOI ganmoi= DAL.DULIEUKH.C_GanMoi.finByDanhBo(danhbo.Replace("", ""));
@@ -238,16 +245,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
 
             String_Indentity.String_Indentity obj = new String_Indentity.String_Indentity();
-            string id ="00000";            
-            for (int i = 0; i < dataLoTrinh.Rows.Count; i++) {
+            string id = "00000";
+            for (int i = 0; i < dataLoTrinh.Rows.Count; i++)
+            {
                 id = obj.ID(dotds + mayds, id, "00000", int.Parse(this.txtTangBat.Text)) + "";
                 dataLoTrinh.Rows[i].Cells["M_LOTRINH"].Value = id;
             }
             //MessageBox.Show(this, id);
         }
 
-        public void CapNhatLoTrinhMoi_TB_DULIEUKHACHHANG() { 
-        
+        public void CapNhatLoTrinhMoi_TB_DULIEUKHACHHANG()
+        {
+
         }
 
         public void CapNhatLoTrinhMoi_TB_KHACHHANG()
@@ -264,23 +273,67 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             catch (Exception)
             {
-                
+
             }
-           
+
         }
 
         private void btCapNhatLoTrinhMoi_Click(object sender, EventArgs e)
         {
             try
             {
+                int ky = DateTime.Now.Month + 1;
+                int nam = DateTime.Now.Year;
+                if (ky == 12)
+                {
+                    ky = 1;
+                    nam = nam + 1;
+                }
+                else { ky = ky + 1; }
+
+
+
                 for (int i = 0; i < dataLoTrinh.Rows.Count; i++)
                 {
-                    string danhbo = dataLoTrinh.Rows[i].Cells["DEN_DANHBO"].Value + "";
-                    string lotrinh = dataLoTrinh.Rows[i].Cells["M_LOTRINH"].Value + "";
-                    if (!"".Equals(danhbo) && !"".Equals(lotrinh))
+                    string danhbo = (dataLoTrinh.Rows[i].Cells["DEN_DANHBO"].Value + "").Replace(" ", "");
+                    string C_LOTRINH = dataLoTrinh.Rows[i].Cells["C_LOTRINH"].Value + "";
+                    string M_LOTRINH = dataLoTrinh.Rows[i].Cells["M_LOTRINH"].Value + "";
+                    if (!"".Equals(danhbo) && !"".Equals(M_LOTRINH))
                     {
-                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatLoTrinh_DOCSO(danhbo.Replace(" ", ""), lotrinh.Replace(" ", ""));
-                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatLoTrinh_KHACHHANG(danhbo.Replace(" ", ""), lotrinh.Replace(" ", ""));
+                        if (C_LOTRINH.Equals(M_LOTRINH) == false)
+                        {
+                            //cap nhat da cho lo trinh
+                            DAL.LinQConnection.ExecuteCommand("UPDATE TB_GANMOI SET CHUYEN='True' WHERE DANHBO='" + danhbo + "'");
+                            //
+                            TB_YEUCAUDC dc = DAL.DULIEUKH.C_PhienLoTrinh.findByDanhBoDC(danhbo, ky, nam);
+                            if (dc != null)
+                            {
+                                dc.LTCU = C_LOTRINH;
+                                dc.LTMOI = M_LOTRINH;
+                                dc.KY = ky;
+                                dc.NAM = nam;
+                                dc.DACHUYEN = false;
+                                dc.CREATEDATE = DateTime.Now;
+                                dc.CREATEBY = DAL.SYS.C_USERS._userName;
+                                DAL.DULIEUKH.C_PhienLoTrinh.Update();
+                            }
+                            else
+                            {
+                                dc = new TB_YEUCAUDC();
+                                dc.DANHBO = danhbo;
+                                dc.LTCU = C_LOTRINH;
+                                dc.LTMOI = M_LOTRINH;
+                                dc.KY = ky;
+                                dc.NAM = nam;
+                                dc.DACHUYEN = false;
+                                dc.CREATEDATE = DateTime.Now;
+                                dc.CREATEBY = DAL.SYS.C_USERS._userName;
+                                DAL.DULIEUKH.C_PhienLoTrinh.InsertYeuCauDC(dc);
+                            }
+
+                        }
+                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatLoTrinh_DOCSO(danhbo.Replace(" ", ""), M_LOTRINH.Replace(" ", ""));
+                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatLoTrinh_KHACHHANG(danhbo.Replace(" ", ""), M_LOTRINH.Replace(" ", ""));
                     }
                 }
                 MessageBox.Show(this, "Cập Nhật Lộ Trình Mới Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -290,7 +343,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 log.Error(ex.Message);
                 MessageBox.Show(this, "Cập Nhật Lộ Trình Mới Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void dataLoTrinh_Sorted(object sender, EventArgs e)
@@ -298,83 +351,84 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
         }
 
-   /*
-        private Rectangle dragBoxFromMouseDown;
-        private int rowIndexFromMouseDown;
-        private int rowIndexOfItemUnderMouseToDrop;
+        /*
+             private Rectangle dragBoxFromMouseDown;
+             private int rowIndexFromMouseDown;
+             private int rowIndexOfItemUnderMouseToDrop;
 
-        private void dataLoTrinh_MouseMove(object sender, MouseEventArgs e)
-        {
-            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
-            {
-                if (dragBoxFromMouseDown != Rectangle.Empty && !dragBoxFromMouseDown.Contains(e.X, e.Y))
-                {
-                    DragDropEffects dropEffect = dataLoTrinh.DoDragDrop(dataLoTrinh.Rows[rowIndexFromMouseDown], DragDropEffects.Move);
-                }
-            }
-        }
+             private void dataLoTrinh_MouseMove(object sender, MouseEventArgs e)
+             {
+                 if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+                 {
+                     if (dragBoxFromMouseDown != Rectangle.Empty && !dragBoxFromMouseDown.Contains(e.X, e.Y))
+                     {
+                         DragDropEffects dropEffect = dataLoTrinh.DoDragDrop(dataLoTrinh.Rows[rowIndexFromMouseDown], DragDropEffects.Move);
+                     }
+                 }
+             }
 
-        private void dataLoTrinh_MouseDown(object sender, MouseEventArgs e)
-        {
-            rowIndexFromMouseDown = dataLoTrinh.HitTest(e.X, e.Y).RowIndex;
-            if (rowIndexFromMouseDown != -1)
-            {
-                Size dragSize = SystemInformation.DragSize;
-                dragBoxFromMouseDown = new Rectangle(new Point(e.X - (dragSize.Width / 2), e.Y - (dragSize.Height / 2)), dragSize);
-            }
-            else
-            {
-                dragBoxFromMouseDown = Rectangle.Empty;
-            }
-        }
+             private void dataLoTrinh_MouseDown(object sender, MouseEventArgs e)
+             {
+                 rowIndexFromMouseDown = dataLoTrinh.HitTest(e.X, e.Y).RowIndex;
+                 if (rowIndexFromMouseDown != -1)
+                 {
+                     Size dragSize = SystemInformation.DragSize;
+                     dragBoxFromMouseDown = new Rectangle(new Point(e.X - (dragSize.Width / 2), e.Y - (dragSize.Height / 2)), dragSize);
+                 }
+                 else
+                 {
+                     dragBoxFromMouseDown = Rectangle.Empty;
+                 }
+             }
 
-        private void dataLoTrinh_DragOver(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.Move;
-        }
+             private void dataLoTrinh_DragOver(object sender, DragEventArgs e)
+             {
+                 e.Effect = DragDropEffects.Move;
+             }
 
-        private void dataLoTrinh_DragDrop(object sender, DragEventArgs e)
-        {
-            //Point clientPoint = dataLoTrinh.PointToClient(new Point(e.X, e.Y));
-            //if (e.Effect == DragDropEffects.Move)
-            //{
-            //    DataGridViewRow rowToMove = e.Data.GetData(typeof(DataGridViewRow)) as DataGridViewRow;
-            //    dataLoTrinh.Rows.RemoveAt(rowIndexFromMouseDown);
-            //    dataLoTrinh.Rows.Insert(rowIndexOfItemUnderMouseToDrop, rowToMove);
-            //}
-            Point clientPoint = dataLoTrinh.PointToClient(new Point(e.X, e.Y));
-            rowIndexOfItemUnderMouseToDrop = dataLoTrinh.HitTest(clientPoint.X, clientPoint.Y).RowIndex;
-            DataGridView.HitTestInfo hit = dataLoTrinh.HitTest(clientPoint.X, clientPoint.Y);
+             private void dataLoTrinh_DragDrop(object sender, DragEventArgs e)
+             {
+                 //Point clientPoint = dataLoTrinh.PointToClient(new Point(e.X, e.Y));
+                 //if (e.Effect == DragDropEffects.Move)
+                 //{
+                 //    DataGridViewRow rowToMove = e.Data.GetData(typeof(DataGridViewRow)) as DataGridViewRow;
+                 //    dataLoTrinh.Rows.RemoveAt(rowIndexFromMouseDown);
+                 //    dataLoTrinh.Rows.Insert(rowIndexOfItemUnderMouseToDrop, rowToMove);
+                 //}
+                 Point clientPoint = dataLoTrinh.PointToClient(new Point(e.X, e.Y));
+                 rowIndexOfItemUnderMouseToDrop = dataLoTrinh.HitTest(clientPoint.X, clientPoint.Y).RowIndex;
+                 DataGridView.HitTestInfo hit = dataLoTrinh.HitTest(clientPoint.X, clientPoint.Y);
             
-            DataGridViewRow dgvr = (DataGridViewRow)e.Data.GetData(typeof(DataGridViewRow));
-            object[] celldata = new object[dgvr.Cells.Count];
-            for (int col = 0; col < dgvr.Cells.Count; col++)
-            {
-                celldata[col] = dgvr.Cells[col].Value;
-            }
-            DataRow row = table.NewRow();
-            row["DANHBO"] = celldata[1] + "";
-            row["DIACHI"] = celldata[2] + "";
-            row["QUANPHUONG"] = celldata[3] + "";
-            row["LOTRINH"] = "";
-            dgvr.DataGridView.Rows.Remove(dgvr);
-            MessageBox.Show(this, hit.RowIndex+"");
-            table.Rows.InsertAt(row, hit.RowIndex);
+                 DataGridViewRow dgvr = (DataGridViewRow)e.Data.GetData(typeof(DataGridViewRow));
+                 object[] celldata = new object[dgvr.Cells.Count];
+                 for (int col = 0; col < dgvr.Cells.Count; col++)
+                 {
+                     celldata[col] = dgvr.Cells[col].Value;
+                 }
+                 DataRow row = table.NewRow();
+                 row["DANHBO"] = celldata[1] + "";
+                 row["DIACHI"] = celldata[2] + "";
+                 row["QUANPHUONG"] = celldata[3] + "";
+                 row["LOTRINH"] = "";
+                 dgvr.DataGridView.Rows.Remove(dgvr);
+                 MessageBox.Show(this, hit.RowIndex+"");
+                 table.Rows.InsertAt(row, hit.RowIndex);
             
-            dataLoTrinh.DataSource=table;
+                 dataLoTrinh.DataSource=table;
            
-        }
-        */
+             }
+             */
         string _DanhBo = "";
         string _diachi = "";
         string _quanPhuong = "";
-
+        string _lotrinh = "";
         private void menuCut_Click(object sender, EventArgs e)
         {
-            
+
             _DanhBo = dataLoTrinh.Rows[dataLoTrinh.CurrentRow.Index].Cells["DEN_DANHBO"].Value + "";
             _diachi = dataLoTrinh.Rows[dataLoTrinh.CurrentRow.Index].Cells["DEN_DIACHI"].Value + "";
             _quanPhuong = dataLoTrinh.Rows[dataLoTrinh.CurrentRow.Index].Cells["DEN_QUANPHUONG"].Value + "";
+            _lotrinh = dataLoTrinh.Rows[dataLoTrinh.CurrentRow.Index].Cells["C_LOTRINH"].Value + "";
 
             //dataLoTrinh.Rows.RemoveAt(dataLoTrinh.CurrentRow.Index);
             table.Rows.RemoveAt(dataLoTrinh.CurrentRow.Index);
@@ -388,38 +442,69 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void menuDann_Click(object sender, EventArgs e)
         {
+            string lotrinhmoi1 = "";
             int index = 0;
             try
             {
                 index = dataLoTrinh.CurrentRow.Index;
+
+                try
+                {
+                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["C_LOTRINH"].Value + "") + 1) + "";
+                    if (lotrinhmoi1.Length <8)
+                    {
+                        lotrinhmoi1 = "0" + lotrinhmoi1;
+                    }
+
+                    if (index < dataLoTrinh.Rows.Count)
+                    {
+                        index = index + 1;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["M_LOTRINH"].Value + "") + 1) + "";
+                    if (lotrinhmoi1.Length < 8)
+                    {
+                        lotrinhmoi1 = "0" + lotrinhmoi1;
+                    }
+
+                    if (index < dataLoTrinh.Rows.Count)
+                    {
+                        index = index + 1;
+                    }
+                }
+
+
+                DataRow row = table.NewRow();
+                row["DANHBO"] = _DanhBo;
+                row["DIACHI"] = _diachi;
+                row["QUANPHUONG"] = _quanPhuong;
+                row["LOTRINH"] = _lotrinh;
+                row["M_LOTRINH"] = lotrinhmoi1;
+
+                table.Rows.InsertAt(row, index);
+                dataLoTrinh.DataSource = table;
+                Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
+                lbDenMayDocSo.Text = "TỔNG SỐ " + (dataLoTrinh.Rows.Count) + " DANH BỘ";
+
+
+                DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
+                cellStyle.ForeColor = System.Drawing.Color.Blue;
+                cellStyle.Font = new Font(dataLoTrinh.Font, FontStyle.Bold); ;
+                dataLoTrinh.Rows[index].Cells["DEN_DANHBO"].Style = cellStyle;
+                dataLoTrinh.Rows[index].Cells["C_LOTRINH"].Style = cellStyle;
+                dataLoTrinh.Rows[index].Cells["M_LOTRINH"].Style = cellStyle;
+                dataLoTrinh.Rows[index].Cells["DEN_DIACHI"].Style = cellStyle;
+
+                this.menuCut.Visible = true;
+                this.menuDann.Visible = false;
             }
             catch (Exception)
             {
 
             }
-            if (index < dataLoTrinh.Rows.Count)
-            {
-                index = index + 1;
-            }
-
-            DataRow row = table.NewRow();
-            row["DANHBO"] = _DanhBo;
-            row["DIACHI"] = _diachi;
-            row["QUANPHUONG"] = _quanPhuong;
-            row["LOTRINH"] = "";
-            table.Rows.InsertAt(row, index);
-            dataLoTrinh.DataSource = table;
-            Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
-            lbDenMayDocSo.Text = "TỔNG SỐ " + (dataLoTrinh.Rows.Count) + " DANH BỘ";
-
-
-            DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
-            cellStyle.ForeColor = System.Drawing.Color.Blue;
-            cellStyle.Font = new Font(dataLoTrinh.Font, FontStyle.Bold); ;
-            dataLoTrinh.Rows[index].Cells["DEN_DANHBO"].Style = cellStyle;
-
-            this.menuCut.Visible = true;
-            this.menuDann.Visible = false;
         }
 
         private void dataLoTrinh_MouseClick(object sender, MouseEventArgs e)
@@ -429,7 +514,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 contextMenuStrip1.Show(dataLoTrinh, new Point(e.X, e.Y));
             }
         }
-   
-    
+
+        private void dataDanhBoGanMoi_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataDanhBoGanMoi, "TU_DANHBO");
+        }
+
     }
 }
