@@ -56,12 +56,13 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
         }
 
         public static DataTable getDataGanMoi(string tods, string dotds, string mayds) {
-            string sql = "SELECT 0 AS [CHECK],DANHBO, (SONHA+' '+ DUONG) as DIACHI, (MAQUAN+MAPHUONG) AS QUANPHUONG  FROM TB_GANMOI ";
-            sql += " WHERE (CHUYEN IS NULL  OR CHUYEN='False') AND TODS='" + tods + "' AND DOT='" + dotds + "' AND MAYDS='" + mayds + "'";
+            string sql = "SELECT 0 AS [CHECK],DANHBO, (SONHA+' '+ DUONG) as DIACHI, (MAQUAN+MAPHUONG) AS QUANPHUONG,PLT  FROM TB_GANMOI ";
+            sql += " WHERE (CHUYEN IS NULL  OR CHUYEN='False') AND TODS='" + tods + "'  AND MAYDS='" + mayds + "' ORDER BY PLT ASC";
+            //AND DOT='" + dotds + "'
             return LinQConnection.getDataTable(sql);
         }
         public static DataTable getPhienLoTrinh(string lotrinh) {
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + lotrinh + "' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH,'' as 'M_LOTRINH' FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + lotrinh + "' ORDER BY LOTRINH ASC ";
             return LinQConnection.getDataTable(sql);
         }
 
@@ -92,6 +93,8 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             return result;
         }
 
-        
+        public static DataTable getMaxLoTrinh(string dotmay) {
+            return DAL.LinQConnection.getDataTable("SELECT MAX(LOTRINH) FROM  TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + dotmay + "'");
+        }
     }
 }

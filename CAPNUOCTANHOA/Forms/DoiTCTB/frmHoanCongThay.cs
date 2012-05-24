@@ -19,6 +19,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(frmHoanCongThay).Name);
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection namesCollection1 = new AutoCompleteStringCollection();
         public frmHoanCongThay()
         {
             InitializeComponent();
@@ -32,6 +33,18 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             txtHieuDHGan.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtHieuDHGan.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtHieuDHGan.AutoCompleteCustomSource = namesCollection;
+            ///
+            DataTable table2 = DAL.LinQConnection.getDataTable("SELECT MACHI FROM TB_MACHI");
+            foreach (var item in table2.Rows)
+            {
+                DataRow r = (DataRow)item;
+                namesCollection1.Add(r["MACHI"].ToString());
+            }
+
+            txtChiThan.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtChiThan.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtChiThan.AutoCompleteCustomSource = namesCollection1;
+            //
             this.txtSoBangKe.Focus();
             cbLoaiDHN.SelectedIndex = 0;
             txtCapGan.SelectedIndex = 0;

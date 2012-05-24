@@ -94,6 +94,7 @@
     <Compile Include="DAL\DULIEUKH\C_GanMoi.cs" />
     <Compile Include="DAL\DULIEUKH\C_PhienLoTrinh.cs" />
     <Compile Include="DAL\LinQConnection.cs" />
+    <Compile Include="DAL\QLDHN\C_DhnAmSau.cs" />
     <Compile Include="DAL\QLDHN\C_BaoCaoCODE.cs" />
     <Compile Include="DAL\QLDHN\C_BC_LoaiHinhKD_Thap.cs" />
     <Compile Include="DAL\QLDHN\C_BC_LoaiHinhKD.cs" />
@@ -282,6 +283,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PHIEUTAILAPDANHBO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\rpt_DieuChinhLoTrinh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DieuChinhLoTrinh.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\rpt_NangDHN.cs">
+      <DependentUpon>rpt_NangDHN.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\frm_DHNAmSau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\frm_DHNAmSau.Designer.cs">
+      <DependentUpon>frm_DHNAmSau.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\tabDieuChinh\frm_GanHopBV.cs">
       <SubType>UserControl</SubType>
@@ -849,6 +868,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_PhieuKiemTra.resx">
       <DependentUpon>frm_PhieuKiemTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\rpt_DieuChinhLoTrinh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DieuChinhLoTrinh.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\rpt_NangDHN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_NangDHN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\frm_DHNAmSau.resx">
+      <DependentUpon>frm_DHNAmSau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\frm_GanHopBV.resx">
       <DependentUpon>frm_GanHopBV.cs</DependentUpon>
