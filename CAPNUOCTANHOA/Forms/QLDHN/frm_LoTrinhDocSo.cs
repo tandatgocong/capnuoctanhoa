@@ -13,6 +13,9 @@ using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.QLDHN.SODOCSO;
 using CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh;
 using CAPNUOCTANHOA.Forms.Reports;
+using ExcelCOM = Microsoft.Office.Interop.Excel;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -34,10 +37,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             catch (Exception)
             {
-                 
+
             }
-           
-          
+
+
         }
         /// <summary>
         /// SO DOC SO
@@ -332,7 +335,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             catch (Exception ex)
             {
                 log.Error(ex.Message);
-
+                MessageBox.Show(this, "Lỗi Load Dữ Liệu !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -357,11 +360,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string COTLK = this.txtCoTLK.Text;
                 string SOTLK = this.txtSoThan.Text;
                 string CHISOTLK = this.txtCHISOTLK.Text;
-                string MAYDS ="0";
+                string MAYDS = "0";
                 string DOTDS = cbDotDS.Items[cbDotDS.SelectedIndex].ToString();
                 string TODS = "TB01";
-                string LOTRINH = this.txtLoTrinhTam.Text; 
-                int tods=1;
+                string LOTRINH = this.txtLoTrinhTam.Text;
+                int tods = 1;
                 if (this.cbToDocSo.SelectedIndex == 1)
                 {
                     TODS = "TB02";
@@ -377,111 +380,120 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     tods = 1;
                     TODS = "TB01";
                 }
-                TB_GANMOI tb = DAL.DULIEUKH.C_GanMoi.finByDanhBo(DANHBO);
-                if (tb == null)
+                if (DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(DANHBO) == null && "".Equals(LOTRINH.Replace(" ", "")) == false)
                 {
-                    tb = new TB_GANMOI();
-                    tb.SHS = SHS;
-                    tb.DANHBO = DANHBO;
-                    tb.HOPDONG = HOPDONG;
-                    tb.HOTEN = HOTEN;
-                    tb.SONHA = SONHA;
-                    tb.DUONG = DUONG;
-                    tb.MAPHUONG = PHUONG;
-                    tb.MAQUAN = QUAN;
-                    tb.GIABIEU = GIABIEU;
-                    tb.DINHMUC = DINHMUC;
-                    tb.HIEULUC = HIEULUC;
-                    tb.NGAYGANTLK = NGAYGAN;
-                    tb.HIEU = HIEU;
-                    tb.COTLK = COTLK;
-                    tb.SOTLK = SOTLK;
-                    tb.CHISOTLK = CHISOTLK;
-                    tb.SOHO = SOHO;
-                    tb.TODS = TODS;
-                    tb.DOT = DOTDS;
-                    tb.PLT = LOTRINH;
-                    tb.MAYDS = MAYDS;
-                    tb.CREATEDATE = DateTime.Now;
-                    tb.CREATEBY = DAL.SYS.C_USERS._userName;
-                    if (DAL.DULIEUKH.C_GanMoi.Insert(tb))
+
+                    TB_GANMOI tb = DAL.DULIEUKH.C_GanMoi.finByDanhBo(DANHBO);
+                    if (tb == null)
                     {
-                        int ky = DateTime.Now.Month + 1;
-                        int nam = DateTime.Now.Year;
-                        try
+                        tb = new TB_GANMOI();
+                        tb.SHS = SHS;
+                        tb.DANHBO = DANHBO;
+                        tb.HOPDONG = HOPDONG;
+                        tb.HOTEN = HOTEN;
+                        tb.SONHA = SONHA;
+                        tb.DUONG = DUONG;
+                        tb.MAPHUONG = PHUONG;
+                        tb.MAQUAN = QUAN;
+                        tb.GIABIEU = GIABIEU;
+                        tb.DINHMUC = DINHMUC;
+                        tb.HIEULUC = HIEULUC;
+                        tb.NGAYGANTLK = NGAYGAN;
+                        tb.HIEU = HIEU;
+                        tb.COTLK = COTLK;
+                        tb.SOTLK = SOTLK;
+                        tb.CHISOTLK = CHISOTLK;
+                        tb.SOHO = SOHO;
+                        tb.TODS = TODS;
+                        tb.DOT = DOTDS;
+                        tb.PLT = LOTRINH;
+                        tb.MAYDS = MAYDS;
+                        tb.CREATEDATE = DateTime.Now;
+                        tb.CREATEBY = DAL.SYS.C_USERS._userName;
+                        if (DAL.DULIEUKH.C_GanMoi.Insert(tb))
                         {
-                            ky = int.Parse(tb.HIEULUC.Substring(0, 2));
-                            nam = int.Parse(tb.HIEULUC.Substring(3, 4));
+                            int ky = DateTime.Now.Month + 1;
+                            int nam = DateTime.Now.Year;
+                            try
+                            {
+                                ky = int.Parse(tb.HIEULUC.Substring(0, 2));
+                                nam = int.Parse(tb.HIEULUC.Substring(3, 4));
+                            }
+                            catch (Exception)
+                            {
+
+                            }
+                            /////
+                            DAL.OledbConnection.ExecuteCommand_UpdatLoTrinh(connectionString, DANHBO, LOTRINH);
+
+                            ////
+                            string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH) VALUES ";
+                            insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "')";
+                            if (DAL.LinQConnection.ExecuteCommand(insert) > 0)
+                            {
+                                // inset Table Doc So
+                                string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
+                                insertGM += " VALUES ('" + QUAN + "','" + PHUONG + "'," + tods + "," + cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString() + "," + DOT + ",'" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "'," + GIABIEU + "," + DINHMUC + ",0,0,0,0,'" + LOTRINH + "','" + LOTRINH + "','" + HIEULUC + "'," + NGAYGAN + ",'" + NGAYGAN + "'," + CHISOTLK + ",0,'M','" + HIEU + "','" + SOTLK + "')";
+                                DAL.DULIEUKH.C_GanMoi.InsertDocSo(insertGM);
+                                MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show(this, "Kiểm Tra Sai Dữ Liệu ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
-                        catch (Exception)
+                        else
                         {
-
+                            MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH) VALUES ";
-                        insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "')";
-                        if (DAL.LinQConnection.ExecuteCommand(insert) > 0)
-                        {
-                            // inset Table Doc So
-                            string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
-                            insertGM += " VALUES ('" + QUAN + "','" + PHUONG + "'," + tods + "," + cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString() + "," + DOT + ",'" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "'," + GIABIEU + "," + DINHMUC + ",0,0,0,0,'" + LOTRINH + "','" + LOTRINH + "','" + HIEULUC + "'," + NGAYGAN + ",'" + NGAYGAN + "'," + CHISOTLK + ",0,'M','" + HIEU + "','" + SOTLK + "')";
-                            DAL.DULIEUKH.C_GanMoi.InsertDocSo(insertGM);
-                            MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else {
-                            MessageBox.Show(this, "Kiểm Tra Sai Dữ Liệu ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-
-
-                        
                     }
                     else
                     {
-                        MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        tb.HOPDONG = HOPDONG;
+                        tb.HOTEN = HOTEN;
+                        tb.SONHA = SONHA;
+                        tb.DUONG = DUONG;
+                        tb.MAPHUONG = PHUONG;
+                        tb.MAQUAN = QUAN;
+                        tb.GIABIEU = GIABIEU;
+                        tb.DINHMUC = DINHMUC;
+                        tb.HIEULUC = HIEULUC;
+                        tb.NGAYGANTLK = NGAYGAN;
+                        tb.HIEU = HIEU;
+                        tb.COTLK = COTLK;
+                        tb.SOTLK = SOTLK;
+                        tb.CHISOTLK = CHISOTLK;
+                        tb.SOHO = SOHO;
+                        tb.TODS = TODS;
+                        tb.PLT = LOTRINH;
+                        tb.DOT = DOTDS;
+                        tb.MAYDS = MAYDS;
+                        tb.MODIFYDATE = DateTime.Now;
+                        tb.MODIFYBY = DAL.SYS.C_USERS._userName;
+                        if (DAL.DULIEUKH.C_GanMoi.Update())
+                        {
+                            MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                    try
+                    {
+                        dataGanMoiBK.Rows[rowIndex].Cells["DOT"].Value = DOTDS;
+                        dataGanMoiBK.Rows[rowIndex].Cells["TODS"].Value = TODS;
+                        dataGanMoiBK.Rows[rowIndex].Cells["MAYDS"].Value = MAYDS;
+                    }
+                    catch (Exception)
+                    {
+
                     }
                 }
                 else
                 {
-                    tb.HOPDONG = HOPDONG;
-                    tb.HOTEN = HOTEN;
-                    tb.SONHA = SONHA;
-                    tb.DUONG = DUONG;
-                    tb.MAPHUONG = PHUONG;
-                    tb.MAQUAN = QUAN;
-                    tb.GIABIEU = GIABIEU;
-                    tb.DINHMUC = DINHMUC;
-                    tb.HIEULUC = HIEULUC;
-                    tb.NGAYGANTLK = NGAYGAN;
-                    tb.HIEU = HIEU;
-                    tb.COTLK = COTLK;
-                    tb.SOTLK = SOTLK;
-                    tb.CHISOTLK = CHISOTLK;
-                    tb.SOHO = SOHO;
-                    tb.TODS = TODS;
-                    tb.PLT = LOTRINH;
-                    tb.DOT = DOTDS;
-                    tb.MAYDS = MAYDS;
-                    tb.MODIFYDATE = DateTime.Now;
-                    tb.MODIFYBY = DAL.SYS.C_USERS._userName;
-                    if (DAL.DULIEUKH.C_GanMoi.Update())
-                    {
-                        MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                try
-                {
-                    dataGanMoiBK.Rows[rowIndex].Cells["DOT"].Value = DOTDS;
-                    dataGanMoiBK.Rows[rowIndex].Cells["TODS"].Value = TODS;
-                    dataGanMoiBK.Rows[rowIndex].Cells["MAYDS"].Value = MAYDS;
-                }
-                catch (Exception)
-                {
-
+                    MessageBox.Show(this, "Danh Bộ Đã Tồn Tại Hoặc Lộ Trình Không Được Trống !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -493,7 +505,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         }
         #endregion
 
-        
+
 
 
 
@@ -503,11 +515,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             this.panel3.Controls.Clear();
             this.panel3.Controls.Add(new tab_ChiaLoTrinh());
-           
+
         }
         #endregion
 
-        private void cbMayDocSo_SelectedValueChanged(object sender, EventArgs e){
+        private void cbMayDocSo_SelectedValueChanged(object sender, EventArgs e)
+        {
             try
             {
                 this.txtLoTrinhTam.Text = "";
@@ -549,7 +562,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 this.txtLoTrinhTam.Text = "";
             }
-             
+
         }
 
         private void cbDotDS_SelectedValueChanged(object sender, EventArgs e)
@@ -559,12 +572,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void button1_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void btCapNhatLoTrinhMoi_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(this, "Cảnh Báo Chuyển Đi !", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+            if (MessageBox.Show(this, "Cảnh Báo Chuyển Đi !", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
                 int KY = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
                 int NAM = int.Parse(this.txtNam.Text);
                 try
@@ -587,10 +601,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
 
                 }
-           
+
             }
-            
-           
+
+
         }
         public void setSTT()
         {
@@ -605,9 +619,87 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             int NAM = int.Parse(this.txtNam.Text);
             dataGridView1.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,LTCU  ,LTMOI  FROM TB_YEUCAUDC WHERE KY ='" + KY + "' AND NAM='" + NAM + "' AND DACHUYEN ='False'  ORDER BY LTCU ASC");
             setSTT();
-            Utilities.DataGridV.formatRows(dataGridView1,"DC_DANHBO");
+            Utilities.DataGridV.formatRows(dataGridView1, "DC_DANHBO");
         }
 
+        private void dataGanMoiBK_Sorted(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGanMoiBK.Rows.Count; i++)
+            {
+                dataGanMoiBK.Rows[i].Cells["STT"].Value = i + 1;
+                if (i % 2 == 0)
+                {
+                    dataGanMoiBK.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(217)))));
+                }
+                else
+                {
+                    dataGanMoiBK.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                }
 
+                try
+                {
+                    dataGanMoiBK.Rows[i].Cells["DANHBO"].Value = dataGanMoiBK.Rows[i].Cells["DANHBO"].Value != null ? Utilities.FormatSoHoSoDanhBo.sodanhbo(dataGanMoiBK.Rows[i].Cells["DANHBO"].Value + "") : dataGanMoiBK.Rows[i].Cells["DANHBO"].Value;
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
+
+        private void buttonX1_Click_1(object sender, EventArgs e)
+        {
+            //ExcelCOM.Application exApp = new ExcelCOM.Application();
+            //string workbookPath = AppDomain.CurrentDomain.BaseDirectory + @"\LOTRINH.xls";
+            //ExcelCOM.Workbook exBook = exApp.Workbooks.Open(workbookPath, 0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+            //ExcelCOM.Worksheet exSheet = (ExcelCOM.Worksheet)exBook.Worksheets[1];
+            //try
+            //{
+            //    int ky = DateTime.Now.Month + 1;
+            //    int nam = DateTime.Now.Year;
+            //    if (ky == 12)
+            //    {
+            //        ky = 1;
+            //        nam = nam + 1;
+            //    }
+            //    else { ky = ky + 1; }
+
+
+
+            //    exSheet.Name = ky + "-" + nam;
+            //    exSheet.Cells[10, 10] = "TP.Hồ Chí Minh, ngày " + DateTime.Now.Date.Date + " tháng " + (DateTime.Now.Month + 1) + " năm " + DateTime.Now.Year;
+
+            //    ///
+
+
+            //    exApp.Visible = false;
+            //    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            //    saveFileDialog1.InitialDirectory = @"C:\";
+            //    saveFileDialog1.Title = "Save text Files";
+            //    saveFileDialog1.DefaultExt = ".xls";
+            //    saveFileDialog1.Filter = "All files (*.*)|*.*";
+            //    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            //    {
+            //        string path = saveFileDialog1.FileName; ;
+            //        exBook.SaveAs(path, ExcelCOM.XlFileFormat.xlWorkbookNormal,
+            //            null, null, false, false,
+            //            ExcelCOM.XlSaveAsAccessMode.xlExclusive,
+            //            false, false, false, false, false);
+            //    }
+
+            //    exBook.Close(false, false, false);
+
+            //}
+            //catch (Exception EX)
+            //{
+
+            //    MessageBox.Show(this, EX.Message);
+            //}
+            //exApp.Quit();
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(exBook);
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(exApp);
+            
+
+            result.Text = "Đường dẫn lưu file : " + Export.export(dataGridView1);
+        }
     }
 }

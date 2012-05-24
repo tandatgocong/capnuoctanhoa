@@ -337,6 +337,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     }
                 }
                 MessageBox.Show(this, "Cập Nhật Lộ Trình Mới Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadTuMayDocSo();
             }
             catch (Exception ex)
             {
@@ -450,8 +451,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                 try
                 {
-                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["C_LOTRINH"].Value + "") + 1) + "";
-                    if (lotrinhmoi1.Length <8)
+                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["M_LOTRINH"].Value + "") + 1) + "";
+                    if (lotrinhmoi1.Length < 9)
                     {
                         lotrinhmoi1 = "0" + lotrinhmoi1;
                     }
@@ -464,8 +465,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 catch (Exception)
                 {
 
-                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["M_LOTRINH"].Value + "") + 1) + "";
-                    if (lotrinhmoi1.Length < 8)
+                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["C_LOTRINH"].Value + "") + 1) + "";
+                    if (lotrinhmoi1.Length < 9)
                     {
                         lotrinhmoi1 = "0" + lotrinhmoi1;
                     }

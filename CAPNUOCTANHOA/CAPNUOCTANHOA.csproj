@@ -273,6 +273,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>THONGKEDHN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\Export.cs" />
     <Compile Include="Forms\QLDHN\frm_PhieuKiemTra.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -639,6 +640,8 @@
     <None Include="bin\Debug\app.conf" />
     <None Include="bin\Debug\CAPNUOCTANHOA.exe.config" />
     <None Include="bin\Debug\CAPNUOCTANHOA.vshost.exe.config" />
+    <None Include="bin\Debug\CAPNUOCTANHOA.vshost.exe.manifest" />
+    <None Include="bin\Debug\LOTRINH.xls" />
     <None Include="bin\Debug\News.xls" />
     <None Include="bin\Debug\user.dat" />
     <None Include="Forms\DoiTCTB\BC\HOANCONGNHANH.xsc">
@@ -1099,6 +1102,7 @@
     <Content Include="bin\Debug\Microsoft.Office.Interop.Excel.dll" />
     <Content Include="bin\Debug\String_Indentity.dll" />
     <Content Include="bin\Debug\String_Indentity_.dll" />
+    <Content Include="bin\Debug\VniToUnicode.dll" />
     <Content Include="lib\CrystalDecisions.CrystalReports.Engine.dll" />
     <Content Include="lib\DevComponents.DotNetBar2.dll" />
     <Content Include="lib\icon.ico" />
