@@ -109,7 +109,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             VITRI.Text = "";
             CHITHAN.Text = "";
             CHIGOC.Text = "";
-            txtDanhBo.Text = "";
+          
             txtDanhBo.Focus();
         
         }
@@ -139,6 +139,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 khachhang.MODIFYDATE = DateTime.Now;
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.Update())
                 {
+
+                    DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), HIEUDH.Text.Substring(0, 3), SOTHAN.Text, CHITHAN.Text.ToUpper(), CHIGOC.Text.ToUpper(), VITRI.Text);
                     MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Refesh();
                 }

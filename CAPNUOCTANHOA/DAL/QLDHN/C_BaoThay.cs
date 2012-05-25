@@ -129,9 +129,9 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return ds;
          }
 
-        public static DataTable getBaoThayDinhKy() {
-            string sql = " SELECT TOP(300) DANHBO, HOTEN, (SONHA +''+ TENDUONG) AS 'DIACHI',NGAYTHAY FROM  TB_DULIEUKHACHHANG ";
-            return LinQConnection.getDataTable(sql);
-        }
+        //public static DataTable getBaoThayDinhKy() {
+        //    string sql = " SELECT TOP(300) DANHBO, HOTEN, (SONHA +''+ TENDUONG) AS 'DIACHI',NGAYTHAY FROM  TB_DULIEUKHACHHANG ";
+        //    return LinQConnection.getDataTable(sql);
+        //}
     }
 }

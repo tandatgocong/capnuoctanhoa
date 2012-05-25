@@ -64,7 +64,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             LoadTuMayDocSo();
         }
-
+        bool flag = false;
         public void LoadTuMayDocSo()
         {
 
@@ -98,7 +98,32 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             try
             {
-                LoadTuMayDocSo();
+                if (this.cbTuMayDocSo.Text.Equals("0"))
+                {
+                    LoadTuMayDocSo();
+                    dataDanhBoGanMoi.Columns["L_LOTRINH"].Visible = false;
+                    dataDanhBoGanMoi.Columns["TMP_LOT"].Visible = true;
+                    
+                }
+                else {
+                    string dotds = cbChiLoTrinhDotDS.Items[cbChiLoTrinhDotDS.SelectedIndex].ToString();
+                    string mayds = cbTuMayDocSo.Text;
+                    if (int.Parse(dotds) < 10)
+                    {
+                        dotds = "0" + dotds;
+                    }
+                    if (int.Parse(mayds) < 10)
+                    {
+                        mayds = "0" + mayds;
+                    }
+                    dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getPhienLoTrinh(dotds + mayds);
+
+                    Utilities.DataGridV.formatRows(dataDanhBoGanMoi, "TU_DANHBO");
+                    lbTuMayDS.Text = "TỔNG SỐ " + (dataDanhBoGanMoi.Rows.Count) + " DANH BỘ";
+                    dataDanhBoGanMoi.Columns["L_LOTRINH"].Visible = true;
+                    dataDanhBoGanMoi.Columns["TMP_LOT"].Visible = false;
+                
+                }
             }
             catch (Exception)
             {
@@ -443,6 +468,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void menuDann_Click(object sender, EventArgs e)
         {
+            /// Tìm trong máy có danh bộ thì xóa trước khi xóa
+
+            ///
+            if (flag == true)
+            {
+                for (int i = 0; i < dataLoTrinh.Rows.Count;i++ )
+                {
+                    string lt = dataLoTrinh.Rows[i].Cells["DEN_DANHBO"].Value + "";
+                    if (_DanhBo.Replace(" ", "").Equals(lt.Replace(" ", ""))) {
+                        table.Rows.RemoveAt(i);
+                        dataLoTrinh.DataSource = table;
+                    }
+                }
+            }
+
+            flag = false;
             string lotrinhmoi1 = "";
             int index = 0;
             try
@@ -451,7 +492,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                 try
                 {
-                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["M_LOTRINH"].Value + "") + 1) + "";
+                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["M_LOTRINH"].Value + "") + int.Parse(txtChen.Text)) + "";
                     if (lotrinhmoi1.Length < 9)
                     {
                         lotrinhmoi1 = "0" + lotrinhmoi1;
@@ -465,7 +506,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 catch (Exception)
                 {
 
-                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["C_LOTRINH"].Value + "") + 1) + "";
+                    lotrinhmoi1 = (int.Parse(dataLoTrinh.Rows[index].Cells["C_LOTRINH"].Value + "") + int.Parse(txtChen.Text)) + "";
                     if (lotrinhmoi1.Length < 9)
                     {
                         lotrinhmoi1 = "0" + lotrinhmoi1;
@@ -502,9 +543,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.menuCut.Visible = true;
                 this.menuDann.Visible = false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                log.Error(ex.Message);
             }
         }
 
@@ -519,6 +560,34 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void dataDanhBoGanMoi_Sorted(object sender, EventArgs e)
         {
             Utilities.DataGridV.formatRows(dataDanhBoGanMoi, "TU_DANHBO");
+        }
+
+        private void dataDanhBoGanMoi_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip2.Show(dataDanhBoGanMoi, new Point(e.X, e.Y));
+            }
+        }
+
+
+        private void tulotrinh_cut_Click(object sender, EventArgs e)
+        {
+            _DanhBo = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TU_DANHBO"].Value + "";
+            _diachi = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TU_DIACHI"].Value + "";
+            _quanPhuong = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TU_QP"].Value + "";
+            _lotrinh = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["L_LOTRINH"].Value + "";
+            if ("".Equals(_lotrinh))
+            {
+                _lotrinh = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TMP_LOT"].Value + "";
+            }
+            //dataLoTrinh.Rows.RemoveAt(dataLoTrinh.CurrentRow.Index);
+            dataDanhBoGanMoi.Rows.RemoveAt(dataDanhBoGanMoi.CurrentRow.Index);
+            lbTuMayDS.Text = "TỔNG SỐ " + (dataDanhBoGanMoi.Rows.Count) + " DANH BỘ";
+            
+            this.menuCut.Visible = false;
+            this.menuDann.Visible = true;
+            flag = true;
         }
 
     }
