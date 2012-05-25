@@ -63,7 +63,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             exSheet.Cells[rows, 6] = "KT.GIÁM ĐỐC";
             exSheet.Cells[rows + 1, 6] = "PHÓ GIÁM ĐỐC KINH DOANH";
-
+            exSheet.Cells[rows + 3, 6] = "  (đã ký)";
+            exSheet.Cells[rows + 5, 2] = " LÊ VĂN SƠN ";
 
             //ExcelCOM.Range tR;
             //tR = exSheet.get_Range("X11", "X" + (rows - 1));

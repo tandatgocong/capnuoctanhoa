@@ -56,7 +56,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 else
                 {
                     gioihan = "";
-                    tenbangke = "ĐỘI QLĐHN";
+                    tenbangke = "ĐỘI QUẢN LÝ ĐỒNG HỒ NƯỚC ";
                     user = "";
                 }
                 gioihan = gioihan.Replace("DANHBO", "DHN_DANHBO");

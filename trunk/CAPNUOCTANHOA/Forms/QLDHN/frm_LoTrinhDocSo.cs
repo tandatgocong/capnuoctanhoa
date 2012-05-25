@@ -230,7 +230,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             try
             {
-                string sql = "SELECT SHS,danhbo, PLT,giabieu,dinhmuc,hieuluc,hopdong,HoTen, NGAYGANTLK, Hieu,coTLK,SOTLK,CHISOTLK ,maPQ FROM [T07 DANH SACH HO SO HOAN CONG] WHERE DotThiCong='" + cbDotBangKe.Text + "' AND danhbo <> '' ORDER BY hopdong ASC ";
+                string sql = "SELECT SHS,danhbo, PLT,giabieu,dinhmuc,hieuluc,hopdong,HoTen, NGAYGANTLK, Hieu,coTLK,SOTLK,CHISOTLK ,maPQ FROM [T07 DANH SACH HO SO HOAN CONG] WHERE DotThiCong='" + cbDotBangKe.Text + "' AND danhbo <> '' ORDER BY danhbo ASC ";
                 DataTable table = DAL.OledbConnection.getDataTable(connectionString, sql);
                 dataGanMoiBK.DataSource = table;
                 formatRows();
@@ -269,67 +269,59 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 //string DOT = dataGanMoiBK.Rows[i].Cells["DOT"].Value + "";
                 //string TODS = dataGanMoiBK.Rows[i].Cells["TODS"].Value + "";
                 //string MAYDS = dataGanMoiBK.Rows[i].Cells["MAYDS"].Value + "";
-
-                VniToUnicode.ClassViToUnicode vn = new VniToUnicode.ClassViToUnicode();
-                HOTEN = vn.VniToKD(HOTEN).ToUpper().Replace("(DD " + SoHo + " HO)", "");
-                SONHA = vn.VniToKD(SONHA).ToUpper();
-                DUONG = vn.VniToKD(DUONG).ToUpper();
-                string MAQUAN = MAQP.Substring(0, 2);
-                string MAPHUONG = MAQP.Substring(2, 2);
                 DateTime ngayg = DateTime.Parse(NGAYGANTLK);
+                if (DateTime.Now.Year - ngayg.Year < 3)
+                {
+                    this.txtNgayGan.Value = ngayg;
 
-                ///
-                this.txtDanhBo.Text = DANHBO.Replace(" ", "");
-                this.txtHopDong.Text = HOPDONG;
-                this.txtNgayGan.ValueObject = ngayg;
-                this.txtHieuLuc.Text = hieuluc;
-                this.txtGiaBieu.Text = GIABIEU;
-                this.txtDinhMuc.Text = DINHMUC;
-                this.txtSoHo.Text = SoHo;
-                this.txtHoTen.Text = HOTEN;
-                this.txtSoNha.Text = SONHA;
-                this.txtTenDuong.Text = DUONG;
-                this.txtPhuong.Text = MAPHUONG;
-                this.txtQuan.Text = MAQUAN;
-                this.txtHieuDH.Text = "".Equals(HIEU) ? "KENT" : HIEU;
-                this.txtCoTLK.Text = COTLK;
-                this.txtSoThan.Text = SOTLK;
-                this.txtCHISOTLK.Text = CHISOTLK;
-                this.txtLoTrinhTam.Text = "";
-                //if (!"".Equals(MAYDS))
-                //{
-                //    this.cbMayDocSo.SelectedIndex = int.Parse(MAYDS);
-                //}
-                //else
-                //{
-                //    this.cbMayDocSo.SelectedIndex = 0;
-                //}
+                    VniToUnicode.ClassViToUnicode vn = new VniToUnicode.ClassViToUnicode();
+                    HOTEN = vn.VniToKD(HOTEN).ToUpper().Replace("(DD " + SoHo + " HO)", "");
+                    SONHA = vn.VniToKD(SONHA).ToUpper();
+                    DUONG = vn.VniToKD(DUONG).ToUpper();
+                    string MAQUAN = MAQP.Substring(0, 2);
+                    string MAPHUONG = MAQP.Substring(2, 2);
 
-                //if (!"".Equals(DOT))
-                //{
-                //    this.cbDotDS.SelectedIndex = int.Parse(DOT) - 1;
-                //}
-                //else
-                //{
-                //    this.cbDotDS.SelectedIndex = 0;
-                //}
+                    ///
+                    this.txtDanhBo.Text = DANHBO.Replace(" ", "");
+                    this.txtHopDong.Text = HOPDONG;
 
+                    this.txtHieuLuc.Text = hieuluc;
+                    this.txtGiaBieu.Text = GIABIEU;
+                    this.txtDinhMuc.Text = DINHMUC;
+                    this.txtSoHo.Text = SoHo;
+                    this.txtHoTen.Text = HOTEN;
+                    this.txtSoNha.Text = SONHA;
+                    this.txtTenDuong.Text = DUONG;
+                    this.txtPhuong.Text = MAPHUONG;
+                    this.txtQuan.Text = MAQUAN;
+                    this.txtHieuDH.Text = "".Equals(HIEU) ? "KENT" : HIEU;
+                    this.txtCoTLK.Text = COTLK;
+                    this.txtSoThan.Text = SOTLK;
+                    this.txtCHISOTLK.Text = CHISOTLK;
+                    this.txtLoTrinhTam.Text = "";
 
-                //if ("TB02".Equals(TODS))
-                //{
-                //    this.cbToDocSo.SelectedIndex = 1;
-                //}
-                //else if ("TP".Equals(TODS))
-                //{
-                //    this.cbToDocSo.SelectedIndex = 2;
-                //}
-                //else
-                //{
-                //    this.cbToDocSo.SelectedIndex = 0;
-                //}
+                }
+                else {
+                    this.txtDanhBo.Text = "";
+                    this.txtHopDong.Text = "";
 
-
-
+                    this.txtHieuLuc.Text = "";
+                    this.txtGiaBieu.Text = "";
+                    this.txtDinhMuc.Text = "";
+                    this.txtSoHo.Text = "";
+                    this.txtHoTen.Text = "";
+                    this.txtSoNha.Text = "";
+                    this.txtTenDuong.Text = "";
+                    this.txtPhuong.Text = "";
+                    this.txtQuan.Text = "";
+                    this.txtHieuDH.Text = "";
+                    this.txtCoTLK.Text = "";
+                    this.txtSoThan.Text = "";
+                    this.txtCHISOTLK.Text = "";
+                    this.txtLoTrinhTam.Text = "";
+                    MessageBox.Show(this, "Lỗi Load Dữ Liệu !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
 
             }
             catch (Exception ex)
@@ -485,6 +477,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         dataGanMoiBK.Rows[rowIndex].Cells["DOT"].Value = DOTDS;
                         dataGanMoiBK.Rows[rowIndex].Cells["TODS"].Value = TODS;
                         dataGanMoiBK.Rows[rowIndex].Cells["MAYDS"].Value = MAYDS;
+                        dataGanMoiBK.Rows[rowIndex].Cells["PLT"].Value = LOTRINH;
                     }
                     catch (Exception)
                     {
@@ -673,6 +666,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }        
 
             
+        }
+
+        private void dataGanMoiBK_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }

@@ -56,7 +56,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
         }
 
         public static DataTable getDataGanMoi(string tods, string dotds, string mayds) {
-            string sql = "SELECT 0 AS [CHECK],DANHBO, (SONHA+' '+ DUONG) as DIACHI, (MAQUAN+MAPHUONG) AS QUANPHUONG,PLT  FROM TB_GANMOI ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ DUONG) as DIACHI, (MAQUAN+MAPHUONG) AS QUANPHUONG,PLT  FROM TB_GANMOI ";
             sql += " WHERE (CHUYEN IS NULL  OR CHUYEN='False') AND TODS='" + tods + "'  AND MAYDS='" + mayds + "' ORDER BY PLT ASC";
             //AND DOT='" + dotds + "'
             return LinQConnection.getDataTable(sql);
