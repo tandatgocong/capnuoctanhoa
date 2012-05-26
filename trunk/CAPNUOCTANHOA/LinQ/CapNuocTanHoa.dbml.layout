@@ -128,12 +128,6 @@
         <elementListCompartment Id="91d7089f-5fe7-4410-a682-9a33b4961b41" absoluteBounds="18.765, 13.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9401f13c-fa9a-4329-a76f-9089c6ee4a3c" absoluteBounds="3.75, 6.25, 2, 8.8860498046875023">
-      <DataClassMoniker Name="/CapNuocTanHoaDataContext/TB_THAYDHN" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ae386f60-8b53-4be7-8d27-fe1bd981766a" absoluteBounds="3.765, 6.71, 1.9700000000000002, 8.3260498046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="88d88364-a529-482d-a336-0c386c53e948" absoluteBounds="12.75, 18.75, 2, 6.7707340494791666">
       <DataClassMoniker Name="/CapNuocTanHoaDataContext/TB_THONGKEDHN" />
       <nestedChildShapes>
@@ -195,25 +189,18 @@
         <classShapeMoniker Id="9d7affd8-01b7-440b-82c4-014e4f8db3c0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(0.78875 : 5.75); (0.78875 : 1.15625); (3.5 : 1.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.73159912109375); (4.5 : 4.50160970052083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapNuocTanHoaDataContext/SYS_PHONGBANDOI/SYS_PHONGBANDOI_SYS_USER" />
       <nodes>
         <classShapeMoniker Id="29fddc18-9d50-4d25-81e1-5868e4194dfc" />
         <classShapeMoniker Id="99ec9d0f-a073-496c-9d45-5db2d6a7bba8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.375 : 3.09699625651042); (3.5 : 3.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.375 : 3.09699625651042); (3.5 : 3.09699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapNuocTanHoaDataContext/SYS_ROLE/SYS_ROLE_SYS_USER" />
       <nodes>
         <classShapeMoniker Id="27523a92-4f85-4638-b78d-e7991daa9940" />
         <classShapeMoniker Id="99ec9d0f-a073-496c-9d45-5db2d6a7bba8" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 10.6546541341146); (6.5 : 10.6546541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/CapNuocTanHoaDataContext/TB_THAYDHN/TB_THAYDHN_TB_VATUTHAY_DHN" />
-      <nodes>
-        <classShapeMoniker Id="9401f13c-fa9a-4329-a76f-9089c6ee4a3c" />
-        <classShapeMoniker Id="cf10889e-fd20-4cce-a3f3-c2b333c0a9f1" />
       </nodes>
     </associationConnector>
     <classShape Id="0fccfebe-366c-4536-97f8-305e72fcd693" absoluteBounds="2, 4.5, 2, 4.6554182942708326">
@@ -252,5 +239,18 @@
         <elementListCompartment Id="07394a62-305f-4428-8473-888abfcc066b" absoluteBounds="1.2650000000000001, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="d94f3136-a9a1-4b4c-be91-37ef069f68ff" absoluteBounds="0.5, 3.75, 2, 10.424461263020833">
+      <DataClassMoniker Name="/CapNuocTanHoaDataContext/TB_THAYDHN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59cb7a41-abe4-4872-9557-c184ce92056b" absoluteBounds="0.515, 4.21, 1.9700000000000002, 9.8644612630208321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 10.76361328125); (6.5 : 10.76361328125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CapNuocTanHoaDataContext/TB_THAYDHN/TB_THAYDHN_TB_VATUTHAY_DHN" />
+      <nodes>
+        <classShapeMoniker Id="d94f3136-a9a1-4b4c-be91-37ef069f68ff" />
+        <classShapeMoniker Id="cf10889e-fd20-4cce-a3f3-c2b333c0a9f1" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

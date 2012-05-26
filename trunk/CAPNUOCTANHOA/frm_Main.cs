@@ -51,17 +51,36 @@ namespace CAPNUOCTANHOA
         {
             if ("AD".Equals(DAL.SYS.C_USERS._roles.Trim()))
             {
-                //menuQuanTri.Visible = true;
-                //this.PanelContent.Controls.Clear();
-                //this.PanelContent.Controls.Add(new Admin_Main());
+                this.menuDoiQLDHN.Visible = true;
+                this.menuDTCTB.Visible = true; ;
             }
-            else if ("US".Equals(DAL.SYS.C_USERS._roles.Trim()))
+            else
             {
                 //menuQuanTri.Visible = false;
                 if ("QLDHN".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
                     this.menuDoiQLDHN.Visible = true;
                     this.menuDTCTB.Visible = false;
+                    if ("GM,TT,DT,DP".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    {
+                        btLoTrinh.Visible = true;
+                    }
+                    else {
+                        btLoTrinh.Visible = false;
+                    }
+                    if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    {
+                        cmdBaoThay.Visible=false;
+                        menuKiemTra.Visible=false;
+                        yeucaukiemtra.Visible = false;
+                    }
+                    else
+                    {
+                        cmdBaoThay.Visible = true;
+                        menuKiemTra.Visible = true;
+                        yeucaukiemtra.Visible = true;
+                    }
+                    
 
                 }
                 else if ("DTCTB".Equals(DAL.SYS.C_USERS._maphong.Trim()))

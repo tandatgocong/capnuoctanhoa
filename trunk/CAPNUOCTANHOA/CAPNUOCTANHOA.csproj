@@ -280,6 +280,12 @@
       <DependentUpon>frm_BaoThayVaXuLy.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\Export.cs" />
+    <Compile Include="Forms\QLDHN\frm_CapNhatTroNgaiThay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_CapNhatTroNgaiThay.Designer.cs">
+      <DependentUpon>frm_CapNhatTroNgaiThay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\frm_PhieuKiemTra.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -883,6 +889,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_BaoThayVaXuLy.resx">
       <DependentUpon>frm_BaoThayVaXuLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_CapNhatTroNgaiThay.resx">
+      <DependentUpon>frm_CapNhatTroNgaiThay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_PhieuKiemTra.resx">
       <DependentUpon>frm_PhieuKiemTra.cs</DependentUpon>

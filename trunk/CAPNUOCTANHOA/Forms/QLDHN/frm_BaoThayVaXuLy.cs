@@ -51,7 +51,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string gioihan = DAL.SYS.C_USERS._gioihan;              
                 gioihan = gioihan.Replace("DANHBO", "DHN_DANHBO");
 
-                sql_trongai = " SELECT ID_BAOTHAY,XLT_XULY,loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI' ";
+                sql_trongai = " SELECT ID_BAOTHAY,XLT_XULY,XLT_TRAKQ,loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI' ";
                 sql_trongai += " , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , HCT_LYDOTRONGAI as 'TRONGAI' ";
                 sql_trongai += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh 	";
                 sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' " + gioihan;
@@ -176,13 +176,26 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             DAL.LinQConnection.ExecuteCommand("UPDATE TB_THAYDHN SET XLT_XULY ='True', XLT_CHUYENXL='TOTRUONG',XLT_NGAYCHUYEN=GETDATE() WHERE ID_BAOTHAY='" + ID_BAOTHAY + "'");
             this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["XL"].Value = "True";
             MessageBox.Show(this, "Chuyển Thành Công !" , "..: Thông Báo :..",  MessageBoxButtons.OK, MessageBoxIcon.Information);
-          
+
+
+        }
+
+        private void chuyenTCTB_Click(object sender, EventArgs e)
+        {
+            string ID_BAOTHAY = this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["ID_BAOTHAY"].Value + "";
+            DAL.LinQConnection.ExecuteCommand("UPDATE TB_THAYDHN SET XLT_XULY ='True', XLT_CHUYENXL='TCTB',XLT_NGAYCHUYEN=GETDATE() WHERE ID_BAOTHAY='" + ID_BAOTHAY + "'");
+            this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["XL"].Value = "True";
+            MessageBox.Show(this, "Chuyển Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
         private void menuCapNhatKetQua_Click(object sender, EventArgs e)
         {
-
+            string ID_BAOTHAY = this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["ID_BAOTHAY"].Value + "";
+            frm_CapNhatTroNgaiThay frm = new frm_CapNhatTroNgaiThay(ID_BAOTHAY);
+            if (frm.ShowDialog() == DialogResult.OK) {
+                this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["DAXULY"].Value = "True";
+            }
         }
     }
 }
