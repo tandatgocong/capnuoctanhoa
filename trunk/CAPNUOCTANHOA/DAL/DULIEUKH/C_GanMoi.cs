@@ -41,6 +41,21 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             return null;
         }
 
+        public static TB_GANMOI finByDanhBoGanMoi(string danhbo)
+        {
+
+            try
+            {
+                var query = from q in db.TB_GANMOIs where q.DANHBO == danhbo && (q.CHUYEN==false || q.CHUYEN==null) select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
+            return null;
+        }
+
         public static bool Update() {
 
             try
@@ -61,12 +76,20 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             //AND DOT='" + dotds + "'
             return LinQConnection.getDataTable(sql);
         }
+        public static DataTable getPhienLoTrinhGM(string lotrinh)
+        {
+            string sql = "SELECT DANHBO, (SONHA+' '+ DUONG) as DIACHI, (MAQUAN+MAPHUONG) AS QUANPHUONG,PLT  FROM TB_GANMOI ";
+            sql += " WHERE (CHUYEN IS NULL  OR CHUYEN='False') AND  LEFT(PLT,4)='" + lotrinh + "' ORDER BY PLT ASC";
+            //AND DOT='" + dotds + "'
+            return LinQConnection.getDataTable(sql);
+        }
+
         public static DataTable getPhienLoTrinh(string lotrinh) {
             string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH,'' as 'M_LOTRINH' FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + lotrinh + "' ORDER BY LOTRINH ASC ";
             return LinQConnection.getDataTable(sql);
         }
 
-        public static int InsertDocSo(string sql)
+        public static int InsertDocSo_(string sql)
         {
             int result = 0;
             DocSoDataContext db = new DocSoDataContext();

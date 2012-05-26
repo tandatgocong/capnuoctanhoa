@@ -50,6 +50,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 ItemGanMoi.Visible = true;
+                try
+                {
+                    loadCombox();
+
+                }
+                catch (Exception ex)
+                {
+                    log.Error("Loi Ket Noi " + ex.Message);
+                }
                 
             }
              
@@ -445,12 +454,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             ////
                             string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH) VALUES ";
                             insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "')";
-                            if (DAL.LinQConnection.ExecuteCommand(insert) > 0)
+                            if (DAL.LinQConnection.ExecuteCommand_(insert) > 0)
                             {
+                                int may = int.Parse(cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString());
+                                int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                                 // inset Table Doc So
                                 string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
-                                insertGM += " VALUES ('" + QUAN + "','" + PHUONG + "'," + tods + "," + cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString() + "," + DOT + ",'" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "'," + GIABIEU + "," + DINHMUC + ",0,0,0,0,'" + LOTRINH + "','" + LOTRINH + "','" + HIEULUC + "'," + NGAYGAN + ",'" + NGAYGAN + "'," + CHISOTLK + ",0,'M','" + HIEU + "','" + SOTLK + "')";
-                                DAL.DULIEUKH.C_GanMoi.InsertDocSo(insertGM);
+                                insertGM += " VALUES ('" + QUAN + "','" + PHUONG + "','" + tods + "','" + may + "','" + dot + "','" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "'," + GIABIEU + "," + DINHMUC + ",0,0,0,0,'" + LOTRINH + "','" + LOTRINH + "','" + HIEULUC + "','" + NGAYGAN.Year + "','" + NGAYGAN + "'," + CHISOTLK + ",0,'M','" + HIEU + "','" + SOTLK + "')";
+                              // log.Error(insertGM);
+                                DAL.DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
                                 MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else

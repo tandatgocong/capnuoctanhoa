@@ -54,7 +54,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     thaydhn.XLT_TRAKQ = true;
                     thaydhn.XLT_KETQUA = txtKetQuaThucHien.Text;
                     thaydhn.XLT_NGAYCAPNHAT = DateTime.Now.Date;
-                    DAL.LinQConnection.ExecuteCommand(" UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='False' WHERE DANHBO='" + thaydhn.DHN_DANHBO + "'");
+                    if (this.baothaylai.Checked == true) {
+                        DAL.LinQConnection.ExecuteCommand(" UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='False' WHERE DANHBO='" + thaydhn.DHN_DANHBO + "'");
+                    }                    
                     DAL.QLDHN.C_BaoThay.Update();
                 }
                

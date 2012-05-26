@@ -90,10 +90,42 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             table = DAL.DULIEUKH.C_GanMoi.getPhienLoTrinh(dotds + mayds);
             dataLoTrinh.DataSource = table;
-            Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
+            //Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
+            formatRows_gm();
             lbDenMayDocSo.Text = "TỔNG SỐ " + (dataLoTrinh.Rows.Count) + " DANH BỘ";
         }
+        public  void formatRows_gm()
+        {  
+            DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
+            cellStyle.ForeColor = System.Drawing.Color.Red;
+            cellStyle.Font = new Font(dataLoTrinh.Font, FontStyle.Bold);
+            for (int i = 0; i < dataLoTrinh.Rows.Count; i++)
+            {
+                try
+                {
+                    if (DAL.DULIEUKH.C_GanMoi.finByDanhBoGanMoi(dataLoTrinh.Rows[i].Cells["DEN_DANHBO"].Value + "") != null)
+                    {
+                        dataLoTrinh.Rows[i].Cells["DEN_DANHBO"].Style = cellStyle;
+                        dataLoTrinh.Rows[i].Cells["C_LOTRINH"].Style = cellStyle;
+                        dataLoTrinh.Rows[i].Cells["M_LOTRINH"].Style = cellStyle;
+                        dataLoTrinh.Rows[i].Cells["DEN_DIACHI"].Style = cellStyle;
+                    }
+                }
+                catch (Exception)
+                {
+                }
+                try
+                {
+                    string rows = "DEN_DANHBO";
+                    dataLoTrinh.Rows[i].Cells[rows].Value = dataLoTrinh.Rows[i].Cells[rows].Value != null ? Utilities.FormatSoHoSoDanhBo.sodanhbo(dataLoTrinh.Rows[i].Cells[rows].Value + "") : dataLoTrinh.Rows[i].Cells[rows].Value;
+                }
+                catch (Exception)
+                {
 
+                }
+            }
+        }
+        
         private void cbTuMayDocSo_SelectedValueChanged(object sender, EventArgs e)
         {
             try
@@ -116,12 +148,21 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     {
                         mayds = "0" + mayds;
                     }
-                    dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getPhienLoTrinh(dotds + mayds);
+
+                    if (ganmoi.Checked)
+                    {
+                        dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getPhienLoTrinhGM(dotds + mayds);
+                    }
+                    else
+                    {
+                        dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getPhienLoTrinh(dotds + mayds);
+                        dataDanhBoGanMoi.Columns["L_LOTRINH"].Visible = true;
+                        dataDanhBoGanMoi.Columns["TMP_LOT"].Visible = false;
+                    }
 
                     Utilities.DataGridV.formatRows(dataDanhBoGanMoi, "TU_DANHBO");
                     lbTuMayDS.Text = "TỔNG SỐ " + (dataDanhBoGanMoi.Rows.Count) + " DANH BỘ";
-                    dataDanhBoGanMoi.Columns["L_LOTRINH"].Visible = true;
-                    dataDanhBoGanMoi.Columns["TMP_LOT"].Visible = false;
+                
                 
                 }
             }
@@ -149,111 +190,153 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void pictureChuyen_Click(object sender, EventArgs e)
         {
-            int index = 0;
-            try
+            TB_GANMOI ganmoi = DAL.DULIEUKH.C_GanMoi.finByDanhBo("13141985499");
+            if (ganmoi != null)
             {
-                index = dataLoTrinh.CurrentCell.RowIndex;
-            }
-            catch (Exception)
-            {
+                //ganmoi.CHUYEN = true;
+                //DAL.DULIEUKH.C_GanMoi.Update();
 
-            }
-            if (index < dataLoTrinh.Rows.Count)
-            {
-                index = index + 1;
-            }
+                //DataRow row = table.NewRow();
+                //row["DANHBO"] = dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value + "";
+                //row["DIACHI"] = dataDanhBoGanMoi.Rows[i].Cells["TU_DIACHI"].Value + "";
+                //row["QUANPHUONG"] = dataDanhBoGanMoi.Rows[i].Cells["TU_QP"].Value + "";
+                //row["LOTRINH"] = "";
+                //table.Rows.InsertAt(row, index);
+                //dataLoTrinh.DataSource = table;
+                //Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
+                //lbDenMayDocSo.Text = "TỔNG SỐ " + (dataLoTrinh.Rows.Count) + " DANH BỘ";
 
-            for (int i = 0; i < dataDanhBoGanMoi.Rows.Count; i++)
-            {
-                if ("1".Equals(dataDanhBoGanMoi.Rows[i].Cells["CHECK"].Value + ""))
+                //dataDanhBoGanMoi.Rows.RemoveAt(i);
+                /// Insert Du Lieu Khach Hang de quan ly
+
+                int ky = DateTime.Now.Month + 1;
+                int nam = DateTime.Now.Year;
+                try
                 {
-                    if (table != null)
-                    {
-                        string danhbo = dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value + "";
-                        TB_GANMOI ganmoi = DAL.DULIEUKH.C_GanMoi.finByDanhBo(danhbo.Replace(" ", ""));
-                        if (ganmoi != null)
-                        {
-                            ganmoi.CHUYEN = true;
-                            DAL.DULIEUKH.C_GanMoi.Update();
-
-                            DataRow row = table.NewRow();
-                            row["DANHBO"] = dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value + "";
-                            row["DIACHI"] = dataDanhBoGanMoi.Rows[i].Cells["TU_DIACHI"].Value + "";
-                            row["QUANPHUONG"] = dataDanhBoGanMoi.Rows[i].Cells["TU_QP"].Value + "";
-                            row["LOTRINH"] = "";
-                            table.Rows.InsertAt(row, index);
-                            dataLoTrinh.DataSource = table;
-                            Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
-                            lbDenMayDocSo.Text = "TỔNG SỐ " + (dataLoTrinh.Rows.Count) + " DANH BỘ";
-
-                            dataDanhBoGanMoi.Rows.RemoveAt(i);
-                            /// Insert Du Lieu Khach Hang de quan ly
-
-                            int ky = DateTime.Now.Month + 1;
-                            int nam = DateTime.Now.Year;
-                            try
-                            {
-                                ky = int.Parse(ganmoi.HIEULUC.Substring(0, 2));
-                                nam = int.Parse(ganmoi.HIEULUC.Substring(3, 4));
-                            }
-                            catch (Exception)
-                            {
-
-                            }
-                            //string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM) VALUES ";
-                            //insert += "('" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "','" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "','" + ganmoi.GIABIEU + "','" + ganmoi.DINHMUC + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.HIEU + "','" + ganmoi.COTLK + "','" + ganmoi.SOTLK + "','" + ganmoi.CHISOTLK + "','M','" + ky + "','" + nam + "')";
-                            //DAL.LinQConnection.ExecuteCommand(insert);
-
-                            //// inset Table Doc So
-                            //string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
-                            //insertGM += " VALUES ('" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "'," + tods + "," + cbDenMayDocSo.Text + "," + ganmoi.DOT + ",'" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "'," + ganmoi.GIABIEU + "," + ganmoi.DINHMUC + ",0,0,0,0,' ',' ','" + ganmoi.HIEULUC + "'," + ganmoi.NGAYGANTLK.Value.Year + ",'" + ganmoi.NGAYGANTLK.Value.Date.ToShortDateString() + "'," + ganmoi.CHISOTLK + ",0,'M','" + ganmoi.HIEU + "','" + ganmoi.SOTLK + "')";
-                            //DAL.DULIEUKH.C_GanMoi.InsertDocSo(insertGM);
-
-                            /////
-                        }
-                        //data.update("UPDATE KHACHHANG SET MAY=" + cbDenMay.SelectedValue.ToString() + sqlTo + " WHERE ID_KH = " + gvTuMay.Rows[i].Cells["ID_KH"].Value.ToString());
-
-
-
-                    }
-                    //DataGridViewRow row = new DataGridViewRow();
-
-                    //dataLoTrinh.Rows.Add(row);
-
-                    //DataGridViewCell cellDanhBo = new DataGridViewTextBoxCell();
-                    //cellDanhBo.Value = dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value + "";
-                    //row.Cells["DEN_DANHBO"] = cellDanhBo;
-
-                    //DataGridViewCell cellC_LOTRINH = new DataGridViewTextBoxCell();
-                    //cellC_LOTRINH.Value = "";
-                    //row.Cells["C_LOTRINH"] = cellC_LOTRINH;
-
-                    //DataGridViewCell cellM_LOTRINH = new DataGridViewTextBoxCell();
-                    //cellM_LOTRINH.Value = "";
-                    //row.Cells["M_LOTRINH"] = cellM_LOTRINH;
-
-                    //DataGridViewCell cellDiACHI = new DataGridViewTextBoxCell();
-                    //cellDiACHI.Value = dataDanhBoGanMoi.Rows[i].Cells["TU_DIACHI"].Value + "";
-                    //row.Cells["DEN_DIACHI"] = cellDiACHI;
-
-                    //DataGridViewCell cellQUANPHUONG = new DataGridViewTextBoxCell();
-                    //cellQUANPHUONG.Value = dataDanhBoGanMoi.Rows[i].Cells["TU_QP"].Value + "";
-                    //row.Cells["DEN_QUANPHUONG"] = cellQUANPHUONG;
-
-
-
-                    //string danhbo=dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value+"";
-                    //TB_GANMOI ganmoi= DAL.DULIEUKH.C_GanMoi.finByDanhBo(danhbo.Replace("", ""));
-                    //if (ganmoi != null) {
-
-                    //    ganmoi.CHUYEN = true;
-                    //    DAL.DULIEUKH.C_GanMoi.Update();
-                    //    ///
-                    //}
-                    //data.update("UPDATE KHACHHANG SET MAY=" + cbDenMay.SelectedValue.ToString() + sqlTo + " WHERE ID_KH = " + gvTuMay.Rows[i].Cells["ID_KH"].Value.ToString());
+                    ky = int.Parse(ganmoi.HIEULUC.Substring(0, 2));
+                    nam = int.Parse(ganmoi.HIEULUC.Substring(3, 4));
                 }
+                catch (Exception)
+                {
 
+                }
+                string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH) VALUES ";
+                insert += "('" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "','" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "','" + ganmoi.GIABIEU + "','" + ganmoi.DINHMUC + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.HIEU + "','" + ganmoi.COTLK + "','" + ganmoi.SOTLK + "','" + ganmoi.CHISOTLK + "','M','" + ky + "','" + nam + "','" + ganmoi.PLT + "')";
+                DAL.LinQConnection.ExecuteCommand(insert);
+
+                // inset Table Doc So
+                string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
+                insertGM += " VALUES ('" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "'," + tods + "," + cbDenMayDocSo.Text + "," + ganmoi.DOT + ",'" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "'," + ganmoi.GIABIEU + "," + ganmoi.DINHMUC + ",0,0,0,0,'" + ganmoi.PLT + "','" + ganmoi.PLT + "','" + ganmoi.HIEULUC + "'," + ganmoi.NGAYGANTLK.Value.Year + ",'" + ganmoi.NGAYGANTLK.Value.Date.ToShortDateString() + "'," + ganmoi.CHISOTLK + ",0,'M','" + ganmoi.HIEU + "','" + ganmoi.SOTLK + "')";
+                DAL.DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
+
+                /////
             }
+
+            //int index = 0;
+            //try
+            //{
+            //    index = dataLoTrinh.CurrentCell.RowIndex;
+            //}
+            //catch (Exception)
+            //{
+
+            //}
+            //if (index < dataLoTrinh.Rows.Count)
+            //{
+            //    index = index + 1;
+            //}
+
+            //for (int i = 0; i < dataDanhBoGanMoi.Rows.Count; i++)
+            //{
+            //    if ("1".Equals(dataDanhBoGanMoi.Rows[i].Cells["CHECK"].Value + ""))
+            //    {
+            //        if (table != null)
+            //        {
+            //            string danhbo = dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value + "";
+            //            TB_GANMOI ganmoi = DAL.DULIEUKH.C_GanMoi.finByDanhBo(danhbo.Replace(" ", ""));
+            //            if (ganmoi != null)
+            //            {
+            //                //ganmoi.CHUYEN = true;
+            //                //DAL.DULIEUKH.C_GanMoi.Update();
+
+            //                DataRow row = table.NewRow();
+            //                row["DANHBO"] = dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value + "";
+            //                row["DIACHI"] = dataDanhBoGanMoi.Rows[i].Cells["TU_DIACHI"].Value + "";
+            //                row["QUANPHUONG"] = dataDanhBoGanMoi.Rows[i].Cells["TU_QP"].Value + "";
+            //                row["LOTRINH"] = "";
+            //                table.Rows.InsertAt(row, index);
+            //                dataLoTrinh.DataSource = table;
+            //                Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
+            //                lbDenMayDocSo.Text = "TỔNG SỐ " + (dataLoTrinh.Rows.Count) + " DANH BỘ";
+
+            //                dataDanhBoGanMoi.Rows.RemoveAt(i);
+            //                /// Insert Du Lieu Khach Hang de quan ly
+
+            //                int ky = DateTime.Now.Month + 1;
+            //                int nam = DateTime.Now.Year;
+            //                try
+            //                {
+            //                    ky = int.Parse(ganmoi.HIEULUC.Substring(0, 2));
+            //                    nam = int.Parse(ganmoi.HIEULUC.Substring(3, 4));
+            //                }
+            //                catch (Exception)
+            //                {
+
+            //                }
+            //                string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM) VALUES ";
+            //                insert += "('" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "','" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "','" + ganmoi.GIABIEU + "','" + ganmoi.DINHMUC + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.NGAYGANTLK + "','" + ganmoi.HIEU + "','" + ganmoi.COTLK + "','" + ganmoi.SOTLK + "','" + ganmoi.CHISOTLK + "','M','" + ky + "','" + nam + "')";
+            //                DAL.LinQConnection.ExecuteCommand(insert);
+
+            //                // inset Table Doc So
+            //                string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
+            //                insertGM += " VALUES ('" + ganmoi.MAQUAN + "','" + ganmoi.MAPHUONG + "'," + tods + "," + cbDenMayDocSo.Text + "," + ganmoi.DOT + ",'" + ganmoi.DANHBO + "','" + ganmoi.HOPDONG + "','" + ganmoi.HOTEN + "','" + ganmoi.SONHA + "','" + ganmoi.DUONG + "'," + ganmoi.GIABIEU + "," + ganmoi.DINHMUC + ",0,0,0,0,' ',' ','" + ganmoi.HIEULUC + "'," + ganmoi.NGAYGANTLK.Value.Year + ",'" + ganmoi.NGAYGANTLK.Value.Date.ToShortDateString() + "'," + ganmoi.CHISOTLK + ",0,'M','" + ganmoi.HIEU + "','" + ganmoi.SOTLK + "')";
+            //                DAL.DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
+
+            //                /////
+            //            }
+            //            //data.update("UPDATE KHACHHANG SET MAY=" + cbDenMay.SelectedValue.ToString() + sqlTo + " WHERE ID_KH = " + gvTuMay.Rows[i].Cells["ID_KH"].Value.ToString());
+
+
+
+            //        }
+            //        //DataGridViewRow row = new DataGridViewRow();
+
+            //        //dataLoTrinh.Rows.Add(row);
+
+            //        //DataGridViewCell cellDanhBo = new DataGridViewTextBoxCell();
+            //        //cellDanhBo.Value = dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value + "";
+            //        //row.Cells["DEN_DANHBO"] = cellDanhBo;
+
+            //        //DataGridViewCell cellC_LOTRINH = new DataGridViewTextBoxCell();
+            //        //cellC_LOTRINH.Value = "";
+            //        //row.Cells["C_LOTRINH"] = cellC_LOTRINH;
+
+            //        //DataGridViewCell cellM_LOTRINH = new DataGridViewTextBoxCell();
+            //        //cellM_LOTRINH.Value = "";
+            //        //row.Cells["M_LOTRINH"] = cellM_LOTRINH;
+
+            //        //DataGridViewCell cellDiACHI = new DataGridViewTextBoxCell();
+            //        //cellDiACHI.Value = dataDanhBoGanMoi.Rows[i].Cells["TU_DIACHI"].Value + "";
+            //        //row.Cells["DEN_DIACHI"] = cellDiACHI;
+
+            //        //DataGridViewCell cellQUANPHUONG = new DataGridViewTextBoxCell();
+            //        //cellQUANPHUONG.Value = dataDanhBoGanMoi.Rows[i].Cells["TU_QP"].Value + "";
+            //        //row.Cells["DEN_QUANPHUONG"] = cellQUANPHUONG;
+
+
+
+            //        //string danhbo=dataDanhBoGanMoi.Rows[i].Cells["TU_DANHBO"].Value+"";
+            //        //TB_GANMOI ganmoi= DAL.DULIEUKH.C_GanMoi.finByDanhBo(danhbo.Replace("", ""));
+            //        //if (ganmoi != null) {
+
+            //        //    ganmoi.CHUYEN = true;
+            //        //    DAL.DULIEUKH.C_GanMoi.Update();
+            //        //    ///
+            //        //}
+            //        //data.update("UPDATE KHACHHANG SET MAY=" + cbDenMay.SelectedValue.ToString() + sqlTo + " WHERE ID_KH = " + gvTuMay.Rows[i].Cells["ID_KH"].Value.ToString());
+                //}
+
+            //}
         }
 
         private void btChoLoTrinhMoi_Click(object sender, EventArgs e)
@@ -357,12 +440,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             }
 
                         }
-                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatLoTrinh_DOCSO(danhbo.Replace(" ", ""), M_LOTRINH.Replace(" ", ""));
+                        //DAL.DULIEUKH.C_PhienLoTrinh.CapNhatLoTrinh_DOCSO(danhbo.Replace(" ", ""), M_LOTRINH.Replace(" ", ""));
                         DAL.DULIEUKH.C_PhienLoTrinh.CapNhatLoTrinh_KHACHHANG(danhbo.Replace(" ", ""), M_LOTRINH.Replace(" ", ""));
+                        log.Info(danhbo + "- CLT : " + C_LOTRINH + " - MLT: " + M_LOTRINH);
                     }
                 }
                 MessageBox.Show(this, "Cập Nhật Lộ Trình Mới Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadTuMayDocSo();
+                //LoadTuMayDocSo();
             }
             catch (Exception ex)
             {
@@ -573,21 +657,29 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void tulotrinh_cut_Click(object sender, EventArgs e)
         {
-            _DanhBo = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TU_DANHBO"].Value + "";
-            _diachi = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TU_DIACHI"].Value + "";
-            _quanPhuong = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TU_QP"].Value + "";
-            _lotrinh = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["L_LOTRINH"].Value + "";
-            if ("".Equals(_lotrinh))
+            try
             {
-                _lotrinh = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TMP_LOT"].Value + "";
+                _DanhBo = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TU_DANHBO"].Value + "";
+                _diachi = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TU_DIACHI"].Value + "";
+                _quanPhuong = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TU_QP"].Value + "";
+                _lotrinh = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["L_LOTRINH"].Value + "";
+                if ("".Equals(_lotrinh))
+                {
+                    _lotrinh = dataDanhBoGanMoi.Rows[dataDanhBoGanMoi.CurrentRow.Index].Cells["TMP_LOT"].Value + "";
+                }
+                //dataLoTrinh.Rows.RemoveAt(dataLoTrinh.CurrentRow.Index);
+                dataDanhBoGanMoi.Rows.RemoveAt(dataDanhBoGanMoi.CurrentRow.Index);
+                lbTuMayDS.Text = "TỔNG SỐ " + (dataDanhBoGanMoi.Rows.Count) + " DANH BỘ";
+
+                this.menuCut.Visible = false;
+                this.menuDann.Visible = true;
+                flag = true;
             }
-            //dataLoTrinh.Rows.RemoveAt(dataLoTrinh.CurrentRow.Index);
-            dataDanhBoGanMoi.Rows.RemoveAt(dataDanhBoGanMoi.CurrentRow.Index);
-            lbTuMayDS.Text = "TỔNG SỐ " + (dataDanhBoGanMoi.Rows.Count) + " DANH BỘ";
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
             
-            this.menuCut.Visible = false;
-            this.menuDann.Visible = true;
-            flag = true;
         }
 
     }

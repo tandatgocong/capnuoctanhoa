@@ -68,7 +68,7 @@ namespace CAPNUOCTANHOA
                     else {
                         btLoTrinh.Visible = false;
                     }
-                    if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    if ("GM,TH".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         cmdBaoThay.Visible=false;
                         menuKiemTra.Visible=false;
