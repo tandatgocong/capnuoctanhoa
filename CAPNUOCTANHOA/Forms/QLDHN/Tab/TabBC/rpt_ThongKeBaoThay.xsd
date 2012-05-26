@@ -33,6 +33,8 @@
               <xs:element name="DIACHI" msprop:Generator_ColumnVarNameInTable="columnDIACHI" msprop:Generator_ColumnPropNameInRow="DIACHI" msprop:Generator_ColumnPropNameInTable="DIACHIColumn" msprop:Generator_UserColumnName="DIACHI" type="xs:string" minOccurs="0" />
               <xs:element name="NGAYBAO" msprop:Generator_ColumnVarNameInTable="columnNGAYBAO" msprop:Generator_ColumnPropNameInRow="NGAYBAO" msprop:Generator_ColumnPropNameInTable="NGAYBAOColumn" msprop:Generator_UserColumnName="NGAYBAO" type="xs:string" minOccurs="0" />
               <xs:element name="TRONGAI" msprop:Generator_ColumnVarNameInTable="columnTRONGAI" msprop:Generator_ColumnPropNameInRow="TRONGAI" msprop:Generator_ColumnPropNameInTable="TRONGAIColumn" msprop:Generator_UserColumnName="TRONGAI" type="xs:string" minOccurs="0" />
+              <xs:element name="XLT_CHUYENXL" msprop:Generator_ColumnVarNameInTable="columnXLT_CHUYENXL" msprop:Generator_ColumnPropNameInRow="XLT_CHUYENXL" msprop:Generator_ColumnPropNameInTable="XLT_CHUYENXLColumn" msprop:Generator_UserColumnName="XLT_CHUYENXL" type="xs:string" minOccurs="0" />
+              <xs:element name="XLT_KETQUA" msprop:Generator_ColumnVarNameInTable="columnXLT_KETQUA" msprop:Generator_ColumnPropNameInRow="XLT_KETQUA" msprop:Generator_ColumnPropNameInTable="XLT_KETQUAColumn" msprop:Generator_UserColumnName="XLT_KETQUA" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

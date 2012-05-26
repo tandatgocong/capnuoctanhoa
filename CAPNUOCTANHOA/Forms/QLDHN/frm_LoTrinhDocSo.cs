@@ -30,6 +30,30 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             InitializeComponent();
             //this.txtNam.Text = DateTime.Now.Year.ToString();
             //cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
+            tabItemPhienLoTrinh.Visible = false;
+            tabSoDocSo.Visible = false;
+            tabItem1.Visible = false;
+            ItemGanMoi.Visible = false;
+            if ("DT,DP".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            {
+                tabItem1.Visible = true;
+            }
+
+            if ("TT".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            {
+                tabItemPhienLoTrinh.Visible = true;
+                tabSoDocSo.Visible = true;
+                this.panel3.Controls.Clear();
+                this.panel3.Controls.Add(new tab_ChiaLoTrinh());
+
+            }
+            if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            {
+                ItemGanMoi.Visible = true;
+                
+            }
+             
+
             this.txtNam.Text = DateTime.Now.Year.ToString();
             try
             {

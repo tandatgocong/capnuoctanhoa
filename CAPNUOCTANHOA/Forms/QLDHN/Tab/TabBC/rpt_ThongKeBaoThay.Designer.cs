@@ -631,6 +631,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             private global::System.Data.DataColumn columnTRONGAI;
             
+            private global::System.Data.DataColumn columnXLT_CHUYENXL;
+            
+            private global::System.Data.DataColumn columnXLT_KETQUA;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DANHSACHTRONGAIDataTable() {
@@ -722,6 +726,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn XLT_CHUYENXLColumn {
+                get {
+                    return this.columnXLT_CHUYENXL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn XLT_KETQUAColumn {
+                get {
+                    return this.columnXLT_KETQUA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -757,7 +777,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DANHSACHTRONGAIRow AddDANHSACHTRONGAIRow(string TENBANGKE, string SOBANGKE, string DHN_DANHBO, string HOTEN, string DIACHI, string NGAYBAO, string TRONGAI) {
+            public DANHSACHTRONGAIRow AddDANHSACHTRONGAIRow(string TENBANGKE, string SOBANGKE, string DHN_DANHBO, string HOTEN, string DIACHI, string NGAYBAO, string TRONGAI, string XLT_CHUYENXL, string XLT_KETQUA) {
                 DANHSACHTRONGAIRow rowDANHSACHTRONGAIRow = ((DANHSACHTRONGAIRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TENBANGKE,
@@ -766,7 +786,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                         HOTEN,
                         DIACHI,
                         NGAYBAO,
-                        TRONGAI};
+                        TRONGAI,
+                        XLT_CHUYENXL,
+                        XLT_KETQUA};
                 rowDANHSACHTRONGAIRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDANHSACHTRONGAIRow);
                 return rowDANHSACHTRONGAIRow;
@@ -796,6 +818,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                 this.columnDIACHI = base.Columns["DIACHI"];
                 this.columnNGAYBAO = base.Columns["NGAYBAO"];
                 this.columnTRONGAI = base.Columns["TRONGAI"];
+                this.columnXLT_CHUYENXL = base.Columns["XLT_CHUYENXL"];
+                this.columnXLT_KETQUA = base.Columns["XLT_KETQUA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -815,6 +839,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                 base.Columns.Add(this.columnNGAYBAO);
                 this.columnTRONGAI = new global::System.Data.DataColumn("TRONGAI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTRONGAI);
+                this.columnXLT_CHUYENXL = new global::System.Data.DataColumn("XLT_CHUYENXL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnXLT_CHUYENXL);
+                this.columnXLT_KETQUA = new global::System.Data.DataColumn("XLT_KETQUA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnXLT_KETQUA);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1224,6 +1252,38 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string XLT_CHUYENXL {
+                get {
+                    try {
+                        return ((string)(this[this.tableDANHSACHTRONGAI.XLT_CHUYENXLColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'XLT_CHUYENXL\' in table \'DANHSACHTRONGAI\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDANHSACHTRONGAI.XLT_CHUYENXLColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string XLT_KETQUA {
+                get {
+                    try {
+                        return ((string)(this[this.tableDANHSACHTRONGAI.XLT_KETQUAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'XLT_KETQUA\' in table \'DANHSACHTRONGAI\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDANHSACHTRONGAI.XLT_KETQUAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTENBANGKENull() {
                 return this.IsNull(this.tableDANHSACHTRONGAI.TENBANGKEColumn);
             }
@@ -1304,6 +1364,30 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTRONGAINull() {
                 this[this.tableDANHSACHTRONGAI.TRONGAIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsXLT_CHUYENXLNull() {
+                return this.IsNull(this.tableDANHSACHTRONGAI.XLT_CHUYENXLColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetXLT_CHUYENXLNull() {
+                this[this.tableDANHSACHTRONGAI.XLT_CHUYENXLColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsXLT_KETQUANull() {
+                return this.IsNull(this.tableDANHSACHTRONGAI.XLT_KETQUAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetXLT_KETQUANull() {
+                this[this.tableDANHSACHTRONGAI.XLT_KETQUAColumn] = global::System.Convert.DBNull;
             }
         }
         
