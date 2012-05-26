@@ -50,6 +50,8 @@
             this.txtKetQuaThucHien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.btCapNhat = new DevComponents.DotNetBar.ButtonX();
+            this.baothaylai = new System.Windows.Forms.CheckBox();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.SuspendLayout();
             // 
             // title
@@ -57,7 +59,7 @@
             this.title.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
             this.title.ForeColor = System.Drawing.Color.Crimson;
             this.title.Location = new System.Drawing.Point(17, 5);
-            this.title.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.title.Margin = new System.Windows.Forms.Padding(7);
             this.title.Name = "title";
             this.title.ReflectionEnabled = false;
             this.title.Size = new System.Drawing.Size(1004, 52);
@@ -69,7 +71,7 @@
             this.labelX7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.labelX7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX7.Location = new System.Drawing.Point(366, 168);
-            this.labelX7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(47, 32);
             this.labelX7.TabIndex = 105;
@@ -81,7 +83,7 @@
             this.txtSoDanhBo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDanhBo.ForeColor = System.Drawing.Color.Red;
             this.txtSoDanhBo.Location = new System.Drawing.Point(153, 68);
-            this.txtSoDanhBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoDanhBo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDanhBo.Mask = "0000-000-0000";
             this.txtSoDanhBo.Name = "txtSoDanhBo";
             this.txtSoDanhBo.Size = new System.Drawing.Size(232, 27);
@@ -98,7 +100,7 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.Red;
             this.txtDiaChi.Location = new System.Drawing.Point(153, 135);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(360, 27);
             this.txtDiaChi.TabIndex = 109;
@@ -113,7 +115,7 @@
             this.txtCo.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.txtCo.ForeColor = System.Drawing.Color.Red;
             this.txtCo.Location = new System.Drawing.Point(421, 168);
-            this.txtCo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCo.Name = "txtCo";
             this.txtCo.Size = new System.Drawing.Size(92, 27);
             this.txtCo.TabIndex = 111;
@@ -129,7 +131,7 @@
             this.txtLyDoThay.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.txtLyDoThay.ForeColor = System.Drawing.Color.Red;
             this.txtLyDoThay.Location = new System.Drawing.Point(153, 238);
-            this.txtLyDoThay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLyDoThay.Margin = new System.Windows.Forms.Padding(4);
             this.txtLyDoThay.Name = "txtLyDoThay";
             this.txtLyDoThay.Size = new System.Drawing.Size(415, 27);
             this.txtLyDoThay.TabIndex = 114;
@@ -144,7 +146,7 @@
             this.txtHieuDHN.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHieuDHN.ForeColor = System.Drawing.Color.Red;
             this.txtHieuDHN.Location = new System.Drawing.Point(153, 203);
-            this.txtHieuDHN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHieuDHN.Margin = new System.Windows.Forms.Padding(4);
             this.txtHieuDHN.Name = "txtHieuDHN";
             this.txtHieuDHN.Size = new System.Drawing.Size(130, 27);
             this.txtHieuDHN.TabIndex = 113;
@@ -159,7 +161,7 @@
             this.txtSoThan.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoThan.ForeColor = System.Drawing.Color.Red;
             this.txtSoThan.Location = new System.Drawing.Point(153, 168);
-            this.txtSoThan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoThan.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoThan.Name = "txtSoThan";
             this.txtSoThan.Size = new System.Drawing.Size(200, 27);
             this.txtSoThan.TabIndex = 112;
@@ -169,7 +171,7 @@
             this.labelX10.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX10.Location = new System.Drawing.Point(33, 238);
-            this.labelX10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX10.Margin = new System.Windows.Forms.Padding(4);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(124, 32);
             this.labelX10.TabIndex = 101;
@@ -185,7 +187,7 @@
             this.txtTenKH.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.ForeColor = System.Drawing.Color.Red;
             this.txtTenKH.Location = new System.Drawing.Point(153, 103);
-            this.txtTenKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(360, 27);
             this.txtTenKH.TabIndex = 108;
@@ -195,7 +197,7 @@
             this.labelX8.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX8.Location = new System.Drawing.Point(33, 198);
-            this.labelX8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX8.Margin = new System.Windows.Forms.Padding(4);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(137, 32);
             this.labelX8.TabIndex = 99;
@@ -206,7 +208,7 @@
             this.labelX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX2.Location = new System.Drawing.Point(33, 135);
-            this.labelX2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(124, 32);
             this.labelX2.TabIndex = 98;
@@ -217,7 +219,7 @@
             this.labelX3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX3.Location = new System.Drawing.Point(33, 170);
-            this.labelX3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(137, 32);
             this.labelX3.TabIndex = 102;
@@ -228,7 +230,7 @@
             this.labelX5.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
             this.labelX5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX5.Location = new System.Drawing.Point(33, 68);
-            this.labelX5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(137, 32);
             this.labelX5.TabIndex = 104;
@@ -239,7 +241,7 @@
             this.labelX6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX6.Location = new System.Drawing.Point(33, 105);
-            this.labelX6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX6.Margin = new System.Windows.Forms.Padding(4);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(229, 32);
             this.labelX6.TabIndex = 103;
@@ -330,7 +332,7 @@
             this.btCapNhat.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btCapNhat.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCapNhat.ForeColor = System.Drawing.Color.Crimson;
-            this.btCapNhat.Location = new System.Drawing.Point(168, 389);
+            this.btCapNhat.Location = new System.Drawing.Point(168, 420);
             this.btCapNhat.Name = "btCapNhat";
             this.btCapNhat.Size = new System.Drawing.Size(135, 27);
             this.btCapNhat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -338,15 +340,37 @@
             this.btCapNhat.Text = "CẬP NHẬT";
             this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
             // 
+            // baothaylai
+            // 
+            this.baothaylai.AutoSize = true;
+            this.baothaylai.Location = new System.Drawing.Point(168, 390);
+            this.baothaylai.Name = "baothaylai";
+            this.baothaylai.Size = new System.Drawing.Size(15, 14);
+            this.baothaylai.TabIndex = 124;
+            this.baothaylai.UseVisualStyleBackColor = true;
+            // 
+            // labelX4
+            // 
+            this.labelX4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelX4.Location = new System.Drawing.Point(13, 381);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(168, 32);
+            this.labelX4.TabIndex = 121;
+            this.labelX4.Text = "BÁO THAY LẠI";
+            // 
             // frm_CapNhatTroNgaiThay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(607, 444);
+            this.ClientSize = new System.Drawing.Size(607, 478);
+            this.Controls.Add(this.baothaylai);
             this.Controls.Add(this.txtBoPhanChuyen);
             this.Controls.Add(this.btCapNhat);
             this.Controls.Add(this.txtKetQuaThucHien);
+            this.Controls.Add(this.labelX4);
             this.Controls.Add(this.labelX11);
             this.Controls.Add(this.labelX9);
             this.Controls.Add(this.txtTroNgaiThay);
@@ -367,7 +391,7 @@
             this.Controls.Add(this.labelX6);
             this.Controls.Add(this.title);
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_CapNhatTroNgaiThay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cập Nhật Kết Quả Xử Lý Trở Ngại Thay";
@@ -400,5 +424,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtKetQuaThucHien;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.ButtonX btCapNhat;
+        private System.Windows.Forms.CheckBox baothaylai;
+        private DevComponents.DotNetBar.LabelX labelX4;
     }
 }
