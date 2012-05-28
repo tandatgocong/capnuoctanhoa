@@ -19,6 +19,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             InitializeComponent();
             cbChiLoTrinhDotDS.SelectedIndex = 0;
+       
+            int ky = DateTime.Now.Month + 2;
+            int nam = DateTime.Now.Year;
+            if (ky >= 13) {
+                ky = 1;
+                nam = nam + 1;
+            }
+            txtHieuLuc.Text = String.Format("{0:00}", ky) + "/" + nam;
+
             if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
             {
                 tods = 2;
@@ -69,7 +78,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
 
 
-            dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getDataGanMoi(DAL.SYS.C_USERS._toDocSo, "", "0");
+            dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getDataGanMoi(DAL.SYS.C_USERS._toDocSo, "", "0", this.txtHieuLuc.Text);
 
             Utilities.DataGridV.formatRows(dataDanhBoGanMoi, "TU_DANHBO");
             lbTuMayDS.Text = "TỔNG SỐ " + (dataDanhBoGanMoi.Rows.Count) + " DANH BỘ";
@@ -151,7 +160,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                     if (ganmoi.Checked)
                     {
-                        dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getPhienLoTrinhGM(dotds + mayds);
+                        dataDanhBoGanMoi.DataSource = DAL.DULIEUKH.C_GanMoi.getPhienLoTrinhGM(dotds + mayds, this.txtHieuLuc.Text);
                     }
                     else
                     {

@@ -70,16 +70,16 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             return false;
         }
 
-        public static DataTable getDataGanMoi(string tods, string dotds, string mayds) {
+        public static DataTable getDataGanMoi(string tods, string dotds, string mayds, string hieuluc) {
             string sql = "SELECT DANHBO, (SONHA+' '+ DUONG) as DIACHI, (MAQUAN+MAPHUONG) AS QUANPHUONG,PLT  FROM TB_GANMOI ";
-            sql += " WHERE (CHUYEN IS NULL  OR CHUYEN='False') AND TODS='" + tods + "'  AND MAYDS='" + mayds + "' ORDER BY PLT ASC";
+            sql += " WHERE (CHUYEN IS NULL  OR CHUYEN='False') AND TODS='" + tods + "'  AND MAYDS='" + mayds + "' AND HIEULUC='"+hieuluc+"' ORDER BY PLT ASC";
             //AND DOT='" + dotds + "'
             return LinQConnection.getDataTable(sql);
         }
-        public static DataTable getPhienLoTrinhGM(string lotrinh)
+        public static DataTable getPhienLoTrinhGM(string lotrinh, string hieuluc)
         {
             string sql = "SELECT DANHBO, (SONHA+' '+ DUONG) as DIACHI, (MAQUAN+MAPHUONG) AS QUANPHUONG,PLT  FROM TB_GANMOI ";
-            sql += " WHERE (CHUYEN IS NULL  OR CHUYEN='False') AND  LEFT(PLT,4)='" + lotrinh + "' ORDER BY PLT ASC";
+            sql += " WHERE (CHUYEN IS NULL  OR CHUYEN='False') AND  LEFT(PLT,4)='" + lotrinh + "' AND HIEULUC='" + hieuluc + "' ORDER BY PLT ASC";
             //AND DOT='" + dotds + "'
             return LinQConnection.getDataTable(sql);
         }

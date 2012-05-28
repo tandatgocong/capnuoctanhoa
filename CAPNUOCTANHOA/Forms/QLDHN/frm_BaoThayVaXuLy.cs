@@ -70,7 +70,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     sql_chuyentt += " AND (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) = '" + txtSoBangKe.Text + "'";
         
                 }
-                sql_trongai += " ORDER BY DHN_NGAYBAOTHAY ASC ";
+                sql_trongai += " ORDER BY DHN_NGAYBAOTHAY DESC ";
                 dataGridLoi.DataSource = DAL.LinQConnection.getDataTable(sql_trongai);
 
 
@@ -92,9 +92,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 db.Connection.Open();
 
-               
-
-               SqlDataAdapter adapter = new SqlDataAdapter(sql_trongai, db.Connection.ConnectionString);
+                SqlDataAdapter adapter = new SqlDataAdapter(sql_trongai, db.Connection.ConnectionString);
                 adapter.Fill(ds, "DANHSACHTRONGAI");
 
                 ReportDocument rp = new rpt_TongKetBaoThayDHN_to();
@@ -118,7 +116,32 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void btInDanhSachChuyenKT_Click(object sender, EventArgs e)
         {
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            DataSet ds = new DataSet();
+            try
+            {
+                db.Connection.Open();
 
+                SqlDataAdapter adapter = new SqlDataAdapter(sql_chuyenkt, db.Connection.ConnectionString);
+                adapter.Fill(ds, "DANHSACHTRONGAI");
+
+                ReportDocument rp = new rpt_THayDHNYeuCauKT();
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(dateTuNgay.Value.Date));
+                rp.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(dateDenNgay.Value.Date));
+                rp.SetParameterValue("TEN", DAL.SYS.C_USERS._toDocSo);
+
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Report " + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
         }
 
         private void buttonX1_Click(object sender, EventArgs e)
@@ -196,6 +219,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             if (frm.ShowDialog() == DialogResult.OK) {
                 this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["DAXULY"].Value = "True";
             }
+        }
+        
+        private void dataGridLoi_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataGridLoi, "GG_DANHBO");
+            Utilities.DataGridV.setSTT(dataGridLoi, "G_STT");
         }
     }
 }
