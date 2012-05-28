@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.ganmoi = new System.Windows.Forms.CheckBox();
             this.cbTuMayDocSo = new System.Windows.Forms.ComboBox();
             this.lbTuMayDS = new DevComponents.DotNetBar.LabelX();
             this.pictureChuyen = new System.Windows.Forms.PictureBox();
@@ -94,7 +95,8 @@
             this.menuDann = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tulotrinh_cut = new System.Windows.Forms.ToolStripMenuItem();
-            this.ganmoi = new System.Windows.Forms.CheckBox();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.txtHieuLuc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel3.SuspendLayout();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
@@ -115,6 +117,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txtHieuLuc);
+            this.panel3.Controls.Add(this.labelX3);
             this.panel3.Controls.Add(this.splitContainer4);
             this.panel3.Controls.Add(this.cbChiLoTrinhDotDS);
             this.panel3.Controls.Add(this.labelX23);
@@ -164,6 +168,18 @@
             this.splitContainer5.Size = new System.Drawing.Size(616, 550);
             this.splitContainer5.SplitterDistance = 35;
             this.splitContainer5.TabIndex = 0;
+            // 
+            // ganmoi
+            // 
+            this.ganmoi.AutoSize = true;
+            this.ganmoi.Checked = true;
+            this.ganmoi.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ganmoi.Location = new System.Drawing.Point(466, 9);
+            this.ganmoi.Name = "ganmoi";
+            this.ganmoi.Size = new System.Drawing.Size(82, 23);
+            this.ganmoi.TabIndex = 149;
+            this.ganmoi.Text = "Gắn Mới";
+            this.ganmoi.UseVisualStyleBackColor = true;
             // 
             // cbTuMayDocSo
             // 
@@ -233,8 +249,8 @@
             // TU_DANHBO
             // 
             this.TU_DANHBO.DataPropertyName = "DANHBO";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TU_DANHBO.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TU_DANHBO.DefaultCellStyle = dataGridViewCellStyle1;
             this.TU_DANHBO.HeaderText = "DANH BỘ";
             this.TU_DANHBO.Name = "TU_DANHBO";
             this.TU_DANHBO.Width = 130;
@@ -257,8 +273,8 @@
             // TMP_LOT
             // 
             this.TMP_LOT.DataPropertyName = "PLT";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TMP_LOT.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TMP_LOT.DefaultCellStyle = dataGridViewCellStyle2;
             this.TMP_LOT.HeaderText = "LỘ TRÌNH TẠM";
             this.TMP_LOT.Name = "TMP_LOT";
             this.TMP_LOT.Width = 150;
@@ -266,8 +282,8 @@
             // TU_QP
             // 
             this.TU_QP.DataPropertyName = "QUANPHUONG";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TU_QP.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TU_QP.DefaultCellStyle = dataGridViewCellStyle3;
             this.TU_QP.HeaderText = "MÃQP";
             this.TU_QP.Name = "TU_QP";
             this.TU_QP.Width = 60;
@@ -438,8 +454,8 @@
             // DEN_DANHBO
             // 
             this.DEN_DANHBO.DataPropertyName = "DANHBO";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DEN_DANHBO.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DEN_DANHBO.DefaultCellStyle = dataGridViewCellStyle4;
             this.DEN_DANHBO.HeaderText = "DANH BỘ";
             this.DEN_DANHBO.Name = "DEN_DANHBO";
             this.DEN_DANHBO.Width = 130;
@@ -447,8 +463,8 @@
             // C_LOTRINH
             // 
             this.C_LOTRINH.DataPropertyName = "LOTRINH";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.C_LOTRINH.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.C_LOTRINH.DefaultCellStyle = dataGridViewCellStyle5;
             this.C_LOTRINH.HeaderText = "LT CŨ";
             this.C_LOTRINH.Name = "C_LOTRINH";
             this.C_LOTRINH.Width = 110;
@@ -456,8 +472,8 @@
             // M_LOTRINH
             // 
             this.M_LOTRINH.DataPropertyName = "M_LOTRINH";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.M_LOTRINH.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.M_LOTRINH.DefaultCellStyle = dataGridViewCellStyle6;
             this.M_LOTRINH.HeaderText = "LT MỚI";
             this.M_LOTRINH.Name = "M_LOTRINH";
             this.M_LOTRINH.Width = 110;
@@ -472,8 +488,8 @@
             // DEN_QUANPHUONG
             // 
             this.DEN_QUANPHUONG.DataPropertyName = "QUANPHUONG";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DEN_QUANPHUONG.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DEN_QUANPHUONG.DefaultCellStyle = dataGridViewCellStyle7;
             this.DEN_QUANPHUONG.HeaderText = "MÃQP";
             this.DEN_QUANPHUONG.Name = "DEN_QUANPHUONG";
             this.DEN_QUANPHUONG.Width = 60;
@@ -698,17 +714,25 @@
             this.tulotrinh_cut.Text = "Cắt";
             this.tulotrinh_cut.Click += new System.EventHandler(this.tulotrinh_cut_Click);
             // 
-            // ganmoi
+            // labelX3
             // 
-            this.ganmoi.AutoSize = true;
-            this.ganmoi.Checked = true;
-            this.ganmoi.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ganmoi.Location = new System.Drawing.Point(466, 9);
-            this.ganmoi.Name = "ganmoi";
-            this.ganmoi.Size = new System.Drawing.Size(82, 23);
-            this.ganmoi.TabIndex = 149;
-            this.ganmoi.Text = "Gắn Mới";
-            this.ganmoi.UseVisualStyleBackColor = true;
+            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.Location = new System.Drawing.Point(424, 2);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(98, 22);
+            this.labelX3.TabIndex = 145;
+            this.labelX3.Text = "HIỆU LỰC";
+            // 
+            // txtHieuLuc
+            // 
+            // 
+            // 
+            // 
+            this.txtHieuLuc.Border.Class = "TextBoxBorder";
+            this.txtHieuLuc.Location = new System.Drawing.Point(527, 1);
+            this.txtHieuLuc.Name = "txtHieuLuc";
+            this.txtHieuLuc.Size = new System.Drawing.Size(93, 26);
+            this.txtHieuLuc.TabIndex = 147;
             // 
             // tab_ChiaLoTrinh
             // 
@@ -801,6 +825,8 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtChen;
         private DevComponents.DotNetBar.LabelX labelX2;
         private System.Windows.Forms.CheckBox ganmoi;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtHieuLuc;
+        private DevComponents.DotNetBar.LabelX labelX3;
 
     }
 }
