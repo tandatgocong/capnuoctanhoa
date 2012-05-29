@@ -23,8 +23,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         public frm_BaoThayVaXuLy()
         {
             InitializeComponent();
-            this.panelBaoThay.Controls.Clear();
-            this.panelBaoThay.Controls.Add(new frm_BaoThayDHN());
+            if ("QLDHN".Equals(DAL.SYS.C_USERS._maphong.ToString()))
+            {
+                tabItem3.Visible = true;
+                this.panelBaoThay.Controls.Clear();
+                this.panelBaoThay.Controls.Add(new frm_BaoThayDHN());
+            }
+            else {
+                tabControl2.SelectedTabIndex = 1;
+            }
+          
 
             if (DateTime.Now.Month >1 && DateTime.Now.Month<12)
             {
@@ -41,6 +49,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
            
         }
+ 
         string sql_trongai = "";
         string sql_chuyentt = "";
         string sql_chuyenkt = "";
