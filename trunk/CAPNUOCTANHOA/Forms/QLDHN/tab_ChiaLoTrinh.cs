@@ -425,7 +425,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             TB_YEUCAUDC dc = DAL.DULIEUKH.C_PhienLoTrinh.findByDanhBoDC(danhbo, ky, nam);
                             if (dc != null)
                             {
-                                dc.LTCU = C_LOTRINH;
+                                //dc.LTCU = C_LOTRINH;
                                 dc.LTMOI = M_LOTRINH;
                                 dc.KY = ky;
                                 dc.NAM = nam;

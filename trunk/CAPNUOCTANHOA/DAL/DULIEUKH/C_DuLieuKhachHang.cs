@@ -38,6 +38,19 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             }
             return null;
         }
+        public static TB_DULIEUKHACHHANG finByLoTrinh(string lotrinh)
+        {
+            try
+            {
+                var query = from q in db.TB_DULIEUKHACHHANGs where q.LOTRINH == lotrinh select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
         public static TB_DULIEUKHACHHANG_HUYDB finByDanhBoHuy(string danhbo)
         {
             try

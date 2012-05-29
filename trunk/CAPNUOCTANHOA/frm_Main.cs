@@ -14,6 +14,7 @@ using CAPNUOCTANHOA.View.Users;
 using CAPNUOCTANHOA.Forms.DoiTCTB;
 using CAPNUOCTANHOA.Forms.QLDHN.SODOCSO;
 using CAPNUOCTANHOA.Forms.TimKiem;
+using CAPNUOCTANHOA.Forms.BanKTKS;
  
 
 namespace CAPNUOCTANHOA
@@ -88,6 +89,12 @@ namespace CAPNUOCTANHOA
                     this.menuDoiQLDHN.Visible = false;
                     this.menuDTCTB.Visible = true;
 
+                }
+                else if ("BANKTKS".Equals(DAL.SYS.C_USERS._maphong.Trim()))
+                {
+                    this.menuDoiQLDHN.Visible = false;
+                    this.menuDTCTB.Visible = false;
+                    this.banKTKS.Visible = true;
                 }
                 //else if ("DHN".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 //{
@@ -251,11 +258,6 @@ namespace CAPNUOCTANHOA
 
         private void hcThayThuDHN_Click(object sender, EventArgs e)
         {
-            PanelContent.Controls.Clear();
-            frmHoanCongThayThu baothay = new frmHoanCongThayThu();
-            baothay.Height = PanelContent.Size.Height - 20;
-            baothay.Width = PanelContent.Size.Width - 20;
-            PanelContent.Controls.Add(baothay);
 
         }
 
@@ -319,5 +321,23 @@ namespace CAPNUOCTANHOA
             PanelContent.Controls.Add(baothay);
         }
 
+        private void hcXuLyTroNgaiThay_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_BaoThayVaXuLy baothay = new frm_BaoThayVaXuLy();
+            baothay.Height = PanelContent.Size.Height - 20;
+            baothay.Width = PanelContent.Size.Width - 20;
+            PanelContent.Controls.Add(baothay);
+        }
+
+        private void menuInPhieuTieuTHu_Click(object sender, EventArgs e)
+        {
+             PanelContent.Controls.Clear();
+             frmPhieuChepTieuThu baothay = new frmPhieuChepTieuThu();
+            baothay.Height = PanelContent.Size.Height - 20;
+            baothay.Width = PanelContent.Size.Width - 20;
+            PanelContent.Controls.Add(baothay);
+        }
+        
     }
 }

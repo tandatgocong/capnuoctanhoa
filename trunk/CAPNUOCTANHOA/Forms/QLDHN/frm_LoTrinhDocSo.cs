@@ -456,13 +456,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "')";
                             if (DAL.LinQConnection.ExecuteCommand_(insert) > 0)
                             {
-                                int may = int.Parse(cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString());
-                                int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
-                                // inset Table Doc So
-                                string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
-                                insertGM += " VALUES ('" + QUAN + "','" + PHUONG + "','" + tods + "','" + may + "','" + dot + "','" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "'," + GIABIEU + "," + DINHMUC + ",0,0,0,0,'" + LOTRINH + "','" + LOTRINH + "','" + HIEULUC + "','" + NGAYGAN.Year + "','" + NGAYGAN + "'," + CHISOTLK + ",0,'M','" + HIEU + "','" + SOTLK + "')";
+                                log.Info("GM - " + DANHBO+"");
+                              //int may = int.Parse(cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString());
+                              //int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
+                              // inset Table Doc So
+                              //  string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
+                              //  insertGM += " VALUES ('" + QUAN + "','" + PHUONG + "','" + tods + "','" + may + "','" + dot + "','" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "'," + GIABIEU + "," + DINHMUC + ",0,0,0,0,'" + LOTRINH + "','" + LOTRINH + "','" + HIEULUC + "','" + NGAYGAN.Year + "','" + NGAYGAN + "'," + CHISOTLK + ",0,'M','" + HIEU + "','" + SOTLK + "')";
                               // log.Error(insertGM);
-                                DAL.DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
+                              //  DAL.DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
                                 MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else

@@ -656,7 +656,7 @@
             this.txtLoTrinhTam.FocusHighlightColor = System.Drawing.Color.Transparent;
             this.txtLoTrinhTam.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoTrinhTam.ForeColor = System.Drawing.Color.Red;
-            this.txtLoTrinhTam.Location = new System.Drawing.Point(983, 89);
+            this.txtLoTrinhTam.Location = new System.Drawing.Point(995, 89);
             this.txtLoTrinhTam.Name = "txtLoTrinhTam";
             this.txtLoTrinhTam.Size = new System.Drawing.Size(129, 27);
             this.txtLoTrinhTam.TabIndex = 145;
@@ -665,7 +665,7 @@
             // labelX20
             // 
             this.labelX20.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX20.Location = new System.Drawing.Point(897, 91);
+            this.labelX20.Location = new System.Drawing.Point(909, 92);
             this.labelX20.Name = "labelX20";
             this.labelX20.Size = new System.Drawing.Size(93, 22);
             this.labelX20.TabIndex = 144;
@@ -698,7 +698,7 @@
             this.comboItem63});
             this.cbToDocSo.Location = new System.Drawing.Point(767, 91);
             this.cbToDocSo.Name = "cbToDocSo";
-            this.cbToDocSo.Size = new System.Drawing.Size(104, 25);
+            this.cbToDocSo.Size = new System.Drawing.Size(136, 25);
             this.cbToDocSo.TabIndex = 142;
             // 
             // comboItem61
