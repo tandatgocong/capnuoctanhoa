@@ -43,7 +43,6 @@
             this.SOTHAN = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.DINHMUC = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GIABIEU = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LOTRINH = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.PHUONGT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.VITRI = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.CAP = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -81,6 +80,7 @@
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btInDS = new DevComponents.DotNetBar.ButtonX();
+            this.LOTRINH = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.KIEMDINH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NGAYGAN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -253,21 +253,6 @@
             this.GIABIEU.Size = new System.Drawing.Size(85, 27);
             this.GIABIEU.TabIndex = 135;
             this.GIABIEU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // LOTRINH
-            // 
-            // 
-            // 
-            // 
-            this.LOTRINH.Border.Class = "TextBoxBorder";
-            this.LOTRINH.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LOTRINH.ForeColor = System.Drawing.Color.Red;
-            this.LOTRINH.Location = new System.Drawing.Point(423, 69);
-            this.LOTRINH.Name = "LOTRINH";
-            this.LOTRINH.Size = new System.Drawing.Size(134, 27);
-            this.LOTRINH.TabIndex = 127;
-            this.LOTRINH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.LOTRINH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LOTRINH_KeyPress);
             // 
             // PHUONGT
             // 
@@ -561,6 +546,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12.75F);
@@ -664,6 +650,7 @@
             this.txtKy.Size = new System.Drawing.Size(65, 27);
             this.txtKy.TabIndex = 169;
             this.txtKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtKy.Visible = false;
             // 
             // txtNam
             // 
@@ -678,6 +665,7 @@
             this.txtNam.Size = new System.Drawing.Size(85, 27);
             this.txtNam.TabIndex = 169;
             this.txtNam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNam.Visible = false;
             // 
             // labelX1
             // 
@@ -687,6 +675,7 @@
             this.labelX1.Size = new System.Drawing.Size(48, 22);
             this.labelX1.TabIndex = 170;
             this.labelX1.Text = "KỲ";
+            this.labelX1.Visible = false;
             // 
             // btInDS
             // 
@@ -702,12 +691,25 @@
             this.btInDS.Text = "IN PHIẾU TIÊU THỤ";
             this.btInDS.Click += new System.EventHandler(this.btInDS_Click);
             // 
+            // LOTRINH
+            // 
+            this.LOTRINH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LOTRINH.ForeColor = System.Drawing.Color.Red;
+            this.LOTRINH.Location = new System.Drawing.Point(423, 69);
+            this.LOTRINH.Mask = "00.00.00000";
+            this.LOTRINH.Name = "LOTRINH";
+            this.LOTRINH.Size = new System.Drawing.Size(154, 29);
+            this.LOTRINH.TabIndex = 126;
+            this.LOTRINH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LOTRINH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDanhBo_KeyPress);
+            // 
             // frmPhieuChepTieuThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.LOTRINH);
             this.Controls.Add(this.btInDS);
             this.Controls.Add(this.txtKy);
             this.Controls.Add(this.labelX1);
@@ -722,7 +724,6 @@
             this.Controls.Add(this.SOTHAN);
             this.Controls.Add(this.DINHMUC);
             this.Controls.Add(this.GIABIEU);
-            this.Controls.Add(this.LOTRINH);
             this.Controls.Add(this.VITRI);
             this.Controls.Add(this.CAP);
             this.Controls.Add(this.CO);
@@ -767,7 +768,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX SOTHAN;
         private DevComponents.DotNetBar.Controls.TextBoxX DINHMUC;
         private DevComponents.DotNetBar.Controls.TextBoxX GIABIEU;
-        private DevComponents.DotNetBar.Controls.TextBoxX LOTRINH;
         private DevComponents.DotNetBar.Controls.TextBoxX PHUONGT;
         private DevComponents.DotNetBar.Controls.TextBoxX VITRI;
         private DevComponents.DotNetBar.Controls.TextBoxX CAP;
@@ -805,6 +805,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtNam;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ButtonX btInDS;
+        private System.Windows.Forms.MaskedTextBox LOTRINH;
 
     }
 }
