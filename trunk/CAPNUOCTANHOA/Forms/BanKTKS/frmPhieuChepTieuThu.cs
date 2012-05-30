@@ -49,7 +49,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         void LoadThongTinDB()
         {
             string sodanhbo = this.txtDanhBo.Text.Replace("-", "");
-            string lotrinh = this.LOTRINH.Text;
+            string lotrinh = this.LOTRINH.Text.Replace(".", "");
             if (sodanhbo.Length == 11)
             {
                 khachhang = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
