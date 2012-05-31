@@ -6,12 +6,42 @@ using System.Data;
 using CAPNUOCTANHOA.LinQ;
 using System.Data.SqlClient;
 using log4net;
+using System.Windows.Forms;
 
 namespace CAPNUOCTANHOA.DAL.QLDHN
 {
     class C_QuanLyDongHoNuoc
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C_QuanLyDongHoNuoc).Name);
+        
+        static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+        
+        public static string getNhanVienDS(int mayds){
+        
+            string tennv="";
+            var query = from q in db.TB_NHANVIENDOCSOs where q.MAYDS == mayds select q;
+            TB_NHANVIENDOCSO nv =query.SingleOrDefault();
+            if (nv != null) {
+                return nv.NAME;
+            }
+            return tennv;
+        }
+
+        public static void setNhanVienDS(DataGridView g, string dataColum,string mayds) {
+
+            for (int i = 0; i < g.Rows.Count; i++) {
+                try
+                {
+                    g.Rows[i].Cells[dataColum].Value = getNhanVienDS(int.Parse(mayds));
+                }
+                catch (Exception)
+                {
+                    
+                }
+                
+            }
+        }
+
         public static DataSet getThongKeDHN(int ky, int nam)
         {
             LinQConnection.ExecuteStoredProcedure("THONGKEDHN", ky, nam);

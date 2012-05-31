@@ -104,7 +104,19 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             adapter.Fill(ds, "TB_DULIEUKHACHHANG");
             return ds;
         }
+        public static DataSet SoDocSo_GM(string sobangke, string ky, string nam)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = " select ID, KHU, DOT, CUON_GCS, CUON_STT, LOTRINH, DANHBO, NGAYGANDH, HOPDONG, HOTEN, SONHA, TENDUONG,p.TENPHUONG as 'PHUONG', q.TENQUAN as 'QUAN', CHUKY, CODE, CODEFU, GIABIEU, DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, CHISOKYTRUOC, BAOTHAY, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY, KY, NAM ";
+            query += " from TB_DULIEUKHACHHANG tb, QUAN q, PHUONG p ";
+            query += " where  tb.QUAN=q.MAQUAN AND q.MAQUAN = p.MAQUAN AND tb.PHUONG=p.MAPHUONG AND LEFT(LOTRINH,4)='" + sobangke + "' AND KY='" + ky + "' AND NAM='" + nam + "' ORDER BY LOTRINH ASC ";
 
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DULIEUKHACHHANG");
+            return ds;
+        }
         public static bool HuyDanhBo(TB_DULIEUKHACHHANG_HUYDB huy, TB_DULIEUKHACHHANG kh) {
 
             try
