@@ -38,8 +38,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 log.Error(ex.Message);
             }
-            string sql = "SELECT DANHBO,HOTEN,(SONHA+' '+TENDUONG) as 'DIACHI',NGAYTHAY,TB_HIEUDONGHO.TENDONGHO as 'HIEUDH',CODH,SOTHANDH,CHITHAN,CHIGOC,CHISOKYTRUOC,DOT,N'ĐỊNH KỲ' as 'GHICHU'";
-            sql += "FROM  TB_DULIEUKHACHHANG, TB_HIEUDONGHO WHERE TB_HIEUDONGHO.HIEUDH=TB_DULIEUKHACHHANG.HIEUDH AND DANHBO IN (" + listDanhBo + ") ORDER BY DANHBO ASC ";
+            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) as 'DIACHI',NGAYTHAY,TB_HIEUDONGHO.TENDONGHO as 'HIEUDH',CODH,SOTHANDH,CHITHAN,CHIGOC,CHISOKYTRUOC,DOT,N'ĐỊNH KỲ' as 'GHICHU'";
+            sql += "FROM  TB_DULIEUKHACHHANG, TB_HIEUDONGHO WHERE TB_HIEUDONGHO.HIEUDH=TB_DULIEUKHACHHANG.HIEUDH AND DANHBO IN (" + listDanhBo + ") ORDER BY LOTRINH ASC ";
 
             dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
          
@@ -194,6 +194,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void labelX4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataBangKe_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataBangKe);
+            setSTT();
         }
     }
 }

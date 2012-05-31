@@ -280,7 +280,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 sum_NT_SANLUONG += double.Parse(detail.Rows[i].Cells["MAY_NT_SANLUONG"].Value + "");
                 sum_NT_TANGIAM_DHN += NT_TANGIAM_DHN;
                 sum_NT_TANGIAM_SANLUONG += NT_TANGIAM_SANLUONG;
+                ///
+                try
+                {
+                    string mayds = detail.Rows[i].Cells["MAYDS"].Value + "";
+                    detail.Rows[i].Cells["NHAVIEN"].Value = DAL.QLDHN.C_QuanLyDongHoNuoc.getNhanVienDS(int.Parse(mayds));
+                }
+                catch (Exception)
+                {
 
+                }
             }
             int index = detail.Rows.Count - 1;
             detail.Rows[index].Cells["MAY_KN_DHN"].Value = String.Format("{0:0,0}", sum_KN_DHN);

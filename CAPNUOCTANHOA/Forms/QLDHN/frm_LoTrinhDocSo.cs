@@ -34,6 +34,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             tabSoDocSo.Visible = false;
             tabItem1.Visible = false;
             ItemGanMoi.Visible = false;
+            tabItem2.Visible = false;
             if ("DT,DP".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 tabItem1.Visible = true;
@@ -45,11 +46,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 tabSoDocSo.Visible = true;
                 this.panel3.Controls.Clear();
                 this.panel3.Controls.Add(new tab_ChiaLoTrinh());
+                tabItem2.Visible = true;
+                int ky = DateTime.Now.Month + 2;
+                int nam = DateTime.Now.Year;
+                if (ky >= 13)
+                {
+                    ky = 1;
+                    nam = nam + 1;
+                }
+                SO_KY.Text = ky + "";
+                SO_NAM.Text = nam + "";
 
             }
             if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 ItemGanMoi.Visible = true;
+               
                 try
                 {
                     loadCombox();
@@ -433,6 +445,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         tb.DOT = DOTDS;
                         tb.PLT = LOTRINH;
                         tb.MAYDS = MAYDS;
+                        VniToUnicode.ClassViToUnicode vn = new VniToUnicode.ClassViToUnicode();
+                  
+                        tb.BANGKE = vn.VniToKD(cbDotBangKe.Text).ToUpper();  
                         tb.CREATEDATE = DateTime.Now;
                         tb.CREATEBY = DAL.SYS.C_USERS._userName;
                         if (DAL.DULIEUKH.C_GanMoi.Insert(tb))
@@ -708,6 +723,78 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void dataGanMoiBK_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        private void tabItem2_Click(object sender, EventArgs e)
+        {
+            string quan = DAL.SYS.C_USERS._gioihan;
+            string sql = "SELECT LOTRINH ";
+            sql += "FROM  TB_DULIEUKHACHHANG WHERE LOTRINH IS NOT NULL " + quan + "  GROUP BY LOTRINH HAVING COUNT(LOTRINH)>=2 ORDER BY LOTRINH ASC ";
+                  dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
+            Utilities.DataGridV.formatRows(dataBangKe);
+            setSTT_2();
+        }
+
+        private void dataBangKe_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataBangKe);
+            setSTT_2();
+        }
+        public void setSTT_2()
+        {
+            for (int i = 0; i < dataBangKe.Rows.Count; i++)
+            {
+                dataBangKe.Rows[i].Cells["G_STT"].Value = i + 1;
+                try
+                {
+                    dataBangKe.Rows[i].Cells["LOTRINH"].Value = dataBangKe.Rows[i].Cells["LOTRINH"].Value != null ? Utilities.FormatSoHoSoDanhBo.phienlotrinh(dataBangKe.Rows[i].Cells["LOTRINH"].Value + "", ".") : dataBangKe.Rows[i].Cells["LOTRINH"].Value;
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            string quan = DAL.SYS.C_USERS._gioihan;
+            string sql = "SELECT LOTRINH ";
+            sql += "FROM  TB_DULIEUKHACHHANG WHERE LOTRINH IS NOT NULL " + quan + "  GROUP BY LOTRINH HAVING COUNT(LOTRINH)>=2 ORDER BY LOTRINH ASC ";
+            dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
+            Utilities.DataGridV.formatRows(dataBangKe);
+            setSTT_2();
+        }
+
+        private void tabItem3_Click(object sender, EventArgs e)
+        {
+            int ky = DateTime.Now.Month + 2;
+            int nam = DateTime.Now.Year;
+            if (ky >= 13)
+            {
+                ky = 1;
+                nam = nam + 1;
+            }
+            SO_KY.Text = ky+"";
+            SO_NAM.Text = nam+"";
+        }
+
+        private void btSoGanMoi_Click(object sender, EventArgs e)
+        {
+            if ("".Equals(this.SO_LT.Text))
+            {
+                MessageBox.Show(this, "Nhập Lộ Trình Đọc Số.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.SO_LT.Focus();
+            }
+            else
+            {
+                ReportDocument rp = new rpt_SoDocSo_GANMOI();
+                rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_GM(SO_LT.Text, SO_KY.Text, SO_NAM.Text));
+                rp.SetParameterValue("HIEULUC",String.Format("{0:00}",int.Parse(SO_KY.Text)) + "/" + SO_NAM.Text);
+                crystalReportViewer2.ReportSource = rp;
+                this.crystalReportViewer2.Visible = true;
+
+            }
         }
     }
 }

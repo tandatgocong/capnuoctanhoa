@@ -399,37 +399,6 @@
       <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TB_GANMOI" Member="TB_GANMOIs">
-    <Type Name="TB_GANMOI">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SHS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DANHBO" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HOPDONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="SONHA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DUONG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="MAPHUONG" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="MAQUAN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="PLT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GIABIEU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DINHMUC" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="HIEULUC" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="NGAYGANTLK" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="HIEU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="COTLK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="SOTLK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="CHISOTLK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="SOHO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="TODS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DOT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="MAYDS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="CHUYEN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.TB_HIEUDONGHO" Member="TB_HIEUDONGHOs">
     <Type Name="TB_HIEUDONGHO">
       <Column Name="HIEUDH" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -821,6 +790,45 @@
       <Column Name="XLT_CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="XLT_TRAKQ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="TB_THAYDHN_TB_VATUTHAY_DHN" Member="TB_VATUTHAY_DHNs" ThisKey="ID_BAOTHAY" OtherKey="ID_BAOTHAY" Type="TB_VATUTHAY_DHN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_GANMOI" Member="TB_GANMOIs">
+    <Type Name="TB_GANMOI">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SHS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DANHBO" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HOPDONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SONHA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DUONG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MAPHUONG" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MAQUAN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PLT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GIABIEU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DINHMUC" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="HIEULUC" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NGAYGANTLK" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HIEU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="COTLK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SOTLK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CHISOTLK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SOHO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TODS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DOT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MAYDS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CHUYEN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BANGKE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_NHANVIENDOCSO" Member="TB_NHANVIENDOCSOs">
+    <Type Name="TB_NHANVIENDOCSO">
+      <Column Name="MAYDS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">
