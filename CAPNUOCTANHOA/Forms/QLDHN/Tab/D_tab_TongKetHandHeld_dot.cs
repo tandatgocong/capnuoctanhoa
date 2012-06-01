@@ -226,54 +226,54 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
                 if (TANGIAM_DHN > 0)
                 {
-                    detail[6, i].Style.BackColor = Color.Lime;
+                    detail[6 + 1, i].Style.BackColor = Color.Lime;
                 }
                 else if (TANGIAM_DHN < 0)
                 {
-                    detail[6, i].Style.BackColor = Color.Red;
+                    detail[6 + 1, i].Style.BackColor = Color.Red;
                 }
                 else if (TANGIAM_DHN == 0)
                 {
-                    detail[6, i].Style.BackColor = Color.Yellow;
+                    detail[6 + 1, i].Style.BackColor = Color.Yellow;
                 }
                 /////
                 if (TANGIAM_SANLUONG > 0)
                 {
-                    detail[7, i].Style.BackColor = Color.Lime;
+                    detail[7 + 1, i].Style.BackColor = Color.Lime;
                 }
                 else if (TANGIAM_SANLUONG < 0)
                 {
-                    detail[7, i].Style.BackColor = Color.Red;
+                    detail[7 + 1, i].Style.BackColor = Color.Red;
                 }
                 else if (TANGIAM_SANLUONG == 0)
                 {
-                    detail[7, i].Style.BackColor = Color.Yellow;
+                    detail[7 + 1, i].Style.BackColor = Color.Yellow;
                 }
                 ////NT_TANGIAM_DHN
                 if (NT_TANGIAM_DHN > 0)
                 {
-                    detail[10, i].Style.BackColor = Color.Lime;
+                    detail[10 + 1, i].Style.BackColor = Color.Lime;
                 }
                 else if (NT_TANGIAM_DHN < 0)
                 {
-                    detail[10, i].Style.BackColor = Color.Red;
+                    detail[10 + 1, i].Style.BackColor = Color.Red;
                 }
                 else if (NT_TANGIAM_DHN == 0)
                 {
-                    detail[10, i].Style.BackColor = Color.Yellow;
+                    detail[10 + 1, i].Style.BackColor = Color.Yellow;
                 }
                 ////NT_TANGIAM_SANLUONG
                 if (NT_TANGIAM_SANLUONG > 0)
                 {
-                    detail[11, i].Style.BackColor = Color.Lime;
+                    detail[11 + 1, i].Style.BackColor = Color.Lime;
                 }
                 else if (NT_TANGIAM_SANLUONG < 0)
                 {
-                    detail[11, i].Style.BackColor = Color.Red;
+                    detail[11 + 1, i].Style.BackColor = Color.Red;
                 }
                 else if (NT_TANGIAM_SANLUONG == 0)
                 {
-                    detail[11, i].Style.BackColor = Color.Yellow;
+                    detail[11 + 1, i].Style.BackColor = Color.Yellow;
                 }
 
                 sum_KN_DHN += double.Parse(detail.Rows[i].Cells["MAY_KN_DHN"].Value + "");
@@ -286,7 +286,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 sum_NT_SANLUONG += double.Parse(detail.Rows[i].Cells["MAY_NT_SANLUONG"].Value + "");
                 sum_NT_TANGIAM_DHN += NT_TANGIAM_DHN;
                 sum_NT_TANGIAM_SANLUONG += NT_TANGIAM_SANLUONG;
-
+                try
+                {
+                    string mayds = detail.Rows[i].Cells["MAYDS"].Value + "";
+                    detail.Rows[i].Cells["NHANVIEN"].Value = DAL.QLDHN.C_QuanLyDongHoNuoc.getNhanVienDS(int.Parse(mayds));
+                }
+                catch (Exception ex)
+                {
+                    log.Error(ex.Message);
+                }
             }
             int index = detail.Rows.Count - 1;
             detail.Rows[index].Cells["MAY_KN_DHN"].Value = String.Format("{0:0,0}", sum_KN_DHN);
@@ -307,11 +315,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         }
 
         private void sanluongToDS_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-
-        }
-
-        private void detail_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
         }

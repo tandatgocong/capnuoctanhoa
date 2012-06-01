@@ -10,6 +10,7 @@ using log4net;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC;
+using System.Configuration;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 {
@@ -243,15 +244,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 double KT_CODEQ = double.Parse(detail.Rows[i].Cells["M_KT_CODEQ"].Value + "");
                 double KT_CODEF = double.Parse(detail.Rows[i].Cells["M_KT_CODEF"].Value + "");
                 double KT_CODEK = double.Parse(detail.Rows[i].Cells["M_KT_CODEK"].Value + "");
-                linedetail(KN_CODE4 - KT_CODE4, 2, i);
-                linedetail(KN_CODE5 - KT_CODEM, 3, i);
-                linedetail(KN_CODE6 - KT_CODE5, 4, i);
-                linedetail(KN_CODE8 - KT_CODEN, 5, i);
-                linedetail(KN_CODEM - KT_CODE6, 6, i);
-                linedetail(KN_CODEN - KT_CODEQ, 7, i);
-                linedetail(KN_CODEQ - KT_CODE8, 8, i);
-                linedetail(KN_CODEF - KT_CODEF, 9, i);
-                linedetail(KN_CODEK - KT_CODEK, 10, i);
+                linedetail(KN_CODE4 - KT_CODE4, 2 +1, i);
+                linedetail(KN_CODE5 - KT_CODEM, 3 + 1, i);
+                linedetail(KN_CODE6 - KT_CODE5, 4 + 1, i);
+                linedetail(KN_CODE8 - KT_CODEN, 5 + 1, i);
+                linedetail(KN_CODEM - KT_CODE6, 6 + 1, i);
+                linedetail(KN_CODEN - KT_CODEQ, 7 + 1, i);
+                linedetail(KN_CODEQ - KT_CODE8, 8 + 1, i);
+                linedetail(KN_CODEF - KT_CODEF, 9 + 1, i);
+                linedetail(KN_CODEK - KT_CODEK, 10 + 1, i);
 
                 sum_KN_CODE4 += KN_CODE4; sum_KN_CODE5 += KN_CODE5;
                 sum_KN_CODE6 += KN_CODE6; sum_KN_CODE8 += KN_CODE8;
@@ -262,6 +263,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 sum_KT_CODE8 += KT_CODE8; sum_KT_CODEM += KT_CODEM;
                 sum_KT_CODEN += KT_CODEN; sum_KT_CODEQ += KT_CODEQ;
                 sum_KT_CODEF += KT_CODEF; sum_KT_CODEK += KT_CODEK;
+                try
+                {
+                    string mayds = detail.Rows[i].Cells["KY_MAYDS"].Value + "";
+                    detail.Rows[i].Cells["maynv"].Value = mayds + "-" + DAL.QLDHN.C_QuanLyDongHoNuoc.getNhanVienDS(int.Parse(mayds));
+                }
+                catch (Exception ex)
+                {
+                    log.Error(ex.Message);
+                }
             }
 
             int index = detail.Rows.Count - 1;
@@ -381,15 +391,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 double KT_CODEQ = double.Parse(dotToDs.Rows[i].Cells["DOT_KT_CODEQ"].Value + "");
                 double KT_CODEF = double.Parse(dotToDs.Rows[i].Cells["DOT_KT_CODEF"].Value + "");
                 double KT_CODEK = double.Parse(dotToDs.Rows[i].Cells["DOT_KT_CODEK"].Value + "");
-                line_dot_to(KN_CODE4 - KT_CODE4, 2, i);
-                line_dot_to(KN_CODE5 - KT_CODEM, 3, i);
-                line_dot_to(KN_CODE6 - KT_CODE5, 4, i);
-                line_dot_to(KN_CODE8 - KT_CODEN, 5, i);
-                line_dot_to(KN_CODEM - KT_CODE6, 6, i);
-                line_dot_to(KN_CODEN - KT_CODEQ, 7, i);
-                line_dot_to(KN_CODEQ - KT_CODE8, 8, i);
-                line_dot_to(KN_CODEF - KT_CODEF, 9, i);
-                line_dot_to(KN_CODEK - KT_CODEK, 10, i);
+                line_dot_to(KN_CODE4 - KT_CODE4, 2 , i);
+                line_dot_to(KN_CODE5 - KT_CODEM, 3 , i);
+                line_dot_to(KN_CODE6 - KT_CODE5, 4 , i);
+                line_dot_to(KN_CODE8 - KT_CODEN, 5 , i);
+                line_dot_to(KN_CODEM - KT_CODE6, 6 , i);
+                line_dot_to(KN_CODEN - KT_CODEQ, 7 , i);
+                line_dot_to(KN_CODEQ - KT_CODE8, 8 , i);
+                line_dot_to(KN_CODEF - KT_CODEF, 9 , i);
+                line_dot_to(KN_CODEK - KT_CODEK, 10 , i);
 
                 sum_KN_CODE4 += KN_CODE4; sum_KN_CODE5 += KN_CODE5;
                 sum_KN_CODE6 += KN_CODE6; sum_KN_CODE8 += KN_CODE8;
@@ -520,15 +530,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 double KT_CODEQ = double.Parse(dotMayTods.Rows[i].Cells["DM_KT_CODEQ"].Value + "");
                 double KT_CODEF = double.Parse(dotMayTods.Rows[i].Cells["DM_KT_CODEF"].Value + "");
                 double KT_CODEK = double.Parse(dotMayTods.Rows[i].Cells["DM_KT_CODEK"].Value + "");
-                linedetail_dotMayTods(KN_CODE4 - KT_CODE4, 2, i);
-                linedetail_dotMayTods(KN_CODE5 - KT_CODEM, 3, i);
-                linedetail_dotMayTods(KN_CODE6 - KT_CODE5, 4, i);
-                linedetail_dotMayTods(KN_CODE8 - KT_CODEN, 5, i);
-                linedetail_dotMayTods(KN_CODEM - KT_CODE6, 6, i);
-                linedetail_dotMayTods(KN_CODEN - KT_CODEQ, 7, i);
-                linedetail_dotMayTods(KN_CODEQ - KT_CODE8, 8, i);
-                linedetail_dotMayTods(KN_CODEF - KT_CODEF, 9, i);
-                linedetail_dotMayTods(KN_CODEK - KT_CODEK, 10, i);
+                linedetail_dotMayTods(KN_CODE4 - KT_CODE4, 2 + 1, i);
+                linedetail_dotMayTods(KN_CODE5 - KT_CODEM, 3 + 1, i);
+                linedetail_dotMayTods(KN_CODE6 - KT_CODE5, 4 + 1, i);
+                linedetail_dotMayTods(KN_CODE8 - KT_CODEN, 5 + 1, i);
+                linedetail_dotMayTods(KN_CODEM - KT_CODE6, 6 + 1, i);
+                linedetail_dotMayTods(KN_CODEN - KT_CODEQ, 7 + 1, i);
+                linedetail_dotMayTods(KN_CODEQ - KT_CODE8, 8 + 1, i);
+                linedetail_dotMayTods(KN_CODEF - KT_CODEF, 9 + 1, i);
+                linedetail_dotMayTods(KN_CODEK - KT_CODEK, 10 + 1, i);
 
                 sum_KN_CODE4 += KN_CODE4; sum_KN_CODE5 += KN_CODE5;
                 sum_KN_CODE6 += KN_CODE6; sum_KN_CODE8 += KN_CODE8;
@@ -539,6 +549,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 sum_KT_CODE8 += KT_CODE8; sum_KT_CODEM += KT_CODEM;
                 sum_KT_CODEN += KT_CODEN; sum_KT_CODEQ += KT_CODEQ;
                 sum_KT_CODEF += KT_CODEF; sum_KT_CODEK += KT_CODEK;
+
+                try
+                {
+                    string mayds = dotMayTods.Rows[i].Cells["DOT_MAYDS"].Value + "";
+                    dotMayTods.Rows[i].Cells["dot_NHANVIEN"].Value = mayds + "-" + DAL.QLDHN.C_QuanLyDongHoNuoc.getNhanVienDS(int.Parse(mayds));
+                }
+                catch (Exception)
+                {
+
+                }
             }
 
             int index = dotMayTods.Rows.Count - 1;
@@ -611,7 +631,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
-
+        string config = ConfigurationManager.AppSettings["code"].ToString();
         private void btDSCode_Click(object sender, EventArgs e)
         {
 
@@ -620,7 +640,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             ReportDocument rp = new rpt_DanhSachCode();
             string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.CODE IN ('60','62','63','67','68') ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.CODE IN (" + config + ") ";
             sql += " ORDER BY DANHBO ASC";
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "DANHSACHCODE"));
             frm_Reports frm = new frm_Reports(rp);
@@ -635,7 +655,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             ReportDocument rp = new rpt_DanhSachCode();
             string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DOT =" + dot + " AND ds.CODE IN ('60','62','63') ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DOT =" + dot + " AND ds.CODE IN (" + config + ") ";
             sql += " ORDER BY DANHBO ASC";
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "DANHSACHCODE"));
             frm_Reports frm = new frm_Reports(rp);

@@ -252,10 +252,10 @@
         <elementListCompartment Id="fe1d543a-e44f-4b8f-8515-b13f7ec064ac" absoluteBounds="9.39, 21.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7b13d028-5f8e-4906-b33a-3d9d84b8eaef" absoluteBounds="2.625, 0.625, 2, 1.3862939453125">
+    <classShape Id="aa757c82-9ac2-4ecd-859d-eaad2faca8ba" absoluteBounds="0.5, 0.5, 2, 2.7324039713541666">
       <DataClassMoniker Name="/CapNuocTanHoaDataContext/TB_NHANVIENDOCSO" />
       <nestedChildShapes>
-        <elementListCompartment Id="56886b20-99cd-4117-8bf1-2c2b2a50db0d" absoluteBounds="2.6399999999999997, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a9d434b4-2f4a-47ce-ba5f-d82cc8d623a0" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

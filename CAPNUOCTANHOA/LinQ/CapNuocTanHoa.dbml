@@ -827,8 +827,15 @@
   <Table Name="dbo.TB_NHANVIENDOCSO" Member="TB_NHANVIENDOCSOs">
     <Type Name="TB_NHANVIENDOCSO">
       <Column Name="MAYDS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TODS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SOLUONGDHN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SANLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KHONGGHI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NHAXD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GIAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">

@@ -207,6 +207,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\BC\KETQUABIENCHISONUOC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KETQUABIENCHISONUOC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\BC\LISTYEUCAUDC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,6 +230,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_DanhSachYeuCauDieuChinh.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\BC\rpt_KetQuaBienChiSo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_KetQuaBienChiSo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\BC\rpt_PhieuDeNghiKT.cs">
@@ -379,6 +390,12 @@
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.Designer.cs">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\H_tab_BienDocCS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\H_tab_BienDocCS.Designer.cs">
+      <DependentUpon>H_tab_BienDocCS.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODE.cs">
       <DependentUpon>DANHSACHCODE.xsd</DependentUpon>
@@ -719,6 +736,17 @@
     <None Include="Forms\QLDHN\BC\BC_DONGHONUOC.xss">
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\BC\KETQUABIENCHISONUOC.xsc">
+      <DependentUpon>KETQUABIENCHISONUOC.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\BC\KETQUABIENCHISONUOC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KETQUABIENCHISONUOC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\BC\KETQUABIENCHISONUOC.xss">
+      <DependentUpon>KETQUABIENCHISONUOC.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\BC\LISTYEUCAUDC.xsc">
       <DependentUpon>LISTYEUCAUDC.xsd</DependentUpon>
     </None>
@@ -886,6 +914,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DanhSachYeuCauDieuChinh.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\BC\rpt_KetQuaBienChiSo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_KetQuaBienChiSo.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_PhieuDeNghiKT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_PhieuDeNghiKT.cs</LastGenOutput>
@@ -966,6 +998,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\H_tab_BienDocCS.resx">
+      <DependentUpon>H_tab_BienDocCS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\rpt_DanhSachCode.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

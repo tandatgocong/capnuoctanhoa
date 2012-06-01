@@ -27,7 +27,8 @@ namespace CAPNUOCTANHOA
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
             Utilities.Files.getFileOnServer();
-          
+            
+           
             //     frm_BaoThayDHN frm = new frm_BaoThayDHN();
             //frm.MdiParent = this;
             //frm.Show();
