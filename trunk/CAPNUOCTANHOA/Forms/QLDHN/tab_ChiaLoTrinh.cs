@@ -20,7 +20,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             InitializeComponent();
             cbChiLoTrinhDotDS.SelectedIndex = 0;
        
-            int ky = DateTime.Now.Month + 2;
+            int ky = DateTime.Now.Month + 1;
             int nam = DateTime.Now.Year;
             if (ky >= 13) {
                 ky = 1;

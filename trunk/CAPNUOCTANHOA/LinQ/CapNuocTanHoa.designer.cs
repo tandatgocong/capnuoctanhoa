@@ -16762,9 +16762,23 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private int _MAYDS;
 		
+		private System.Nullable<int> _TODS;
+		
 		private string _NAME;
 		
 		private string _FULLNAME;
+		
+		private System.Nullable<int> _SOLUONGDHN;
+		
+		private System.Nullable<int> _SANLUONG;
+		
+		private System.Nullable<int> _KHONGGHI;
+		
+		private System.Nullable<int> _NHAXD;
+		
+		private System.Nullable<int> _TANG;
+		
+		private System.Nullable<int> _GIAM;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -16772,10 +16786,24 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnCreated();
     partial void OnMAYDSChanging(int value);
     partial void OnMAYDSChanged();
+    partial void OnTODSChanging(System.Nullable<int> value);
+    partial void OnTODSChanged();
     partial void OnNAMEChanging(string value);
     partial void OnNAMEChanged();
     partial void OnFULLNAMEChanging(string value);
     partial void OnFULLNAMEChanged();
+    partial void OnSOLUONGDHNChanging(System.Nullable<int> value);
+    partial void OnSOLUONGDHNChanged();
+    partial void OnSANLUONGChanging(System.Nullable<int> value);
+    partial void OnSANLUONGChanged();
+    partial void OnKHONGGHIChanging(System.Nullable<int> value);
+    partial void OnKHONGGHIChanged();
+    partial void OnNHAXDChanging(System.Nullable<int> value);
+    partial void OnNHAXDChanged();
+    partial void OnTANGChanging(System.Nullable<int> value);
+    partial void OnTANGChanged();
+    partial void OnGIAMChanging(System.Nullable<int> value);
+    partial void OnGIAMChanged();
     #endregion
 		
 		public TB_NHANVIENDOCSO()
@@ -16799,6 +16827,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._MAYDS = value;
 					this.SendPropertyChanged("MAYDS");
 					this.OnMAYDSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TODS", DbType="Int")]
+		public System.Nullable<int> TODS
+		{
+			get
+			{
+				return this._TODS;
+			}
+			set
+			{
+				if ((this._TODS != value))
+				{
+					this.OnTODSChanging(value);
+					this.SendPropertyChanging();
+					this._TODS = value;
+					this.SendPropertyChanged("TODS");
+					this.OnTODSChanged();
 				}
 			}
 		}
@@ -16839,6 +16887,126 @@ namespace CAPNUOCTANHOA.LinQ
 					this._FULLNAME = value;
 					this.SendPropertyChanged("FULLNAME");
 					this.OnFULLNAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONGDHN", DbType="Int")]
+		public System.Nullable<int> SOLUONGDHN
+		{
+			get
+			{
+				return this._SOLUONGDHN;
+			}
+			set
+			{
+				if ((this._SOLUONGDHN != value))
+				{
+					this.OnSOLUONGDHNChanging(value);
+					this.SendPropertyChanging();
+					this._SOLUONGDHN = value;
+					this.SendPropertyChanged("SOLUONGDHN");
+					this.OnSOLUONGDHNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SANLUONG", DbType="Int")]
+		public System.Nullable<int> SANLUONG
+		{
+			get
+			{
+				return this._SANLUONG;
+			}
+			set
+			{
+				if ((this._SANLUONG != value))
+				{
+					this.OnSANLUONGChanging(value);
+					this.SendPropertyChanging();
+					this._SANLUONG = value;
+					this.SendPropertyChanged("SANLUONG");
+					this.OnSANLUONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHONGGHI", DbType="Int")]
+		public System.Nullable<int> KHONGGHI
+		{
+			get
+			{
+				return this._KHONGGHI;
+			}
+			set
+			{
+				if ((this._KHONGGHI != value))
+				{
+					this.OnKHONGGHIChanging(value);
+					this.SendPropertyChanging();
+					this._KHONGGHI = value;
+					this.SendPropertyChanged("KHONGGHI");
+					this.OnKHONGGHIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NHAXD", DbType="Int")]
+		public System.Nullable<int> NHAXD
+		{
+			get
+			{
+				return this._NHAXD;
+			}
+			set
+			{
+				if ((this._NHAXD != value))
+				{
+					this.OnNHAXDChanging(value);
+					this.SendPropertyChanging();
+					this._NHAXD = value;
+					this.SendPropertyChanged("NHAXD");
+					this.OnNHAXDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TANG", DbType="Int")]
+		public System.Nullable<int> TANG
+		{
+			get
+			{
+				return this._TANG;
+			}
+			set
+			{
+				if ((this._TANG != value))
+				{
+					this.OnTANGChanging(value);
+					this.SendPropertyChanging();
+					this._TANG = value;
+					this.SendPropertyChanged("TANG");
+					this.OnTANGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAM", DbType="Int")]
+		public System.Nullable<int> GIAM
+		{
+			get
+			{
+				return this._GIAM;
+			}
+			set
+			{
+				if ((this._GIAM != value))
+				{
+					this.OnGIAMChanging(value);
+					this.SendPropertyChanging();
+					this._GIAM = value;
+					this.SendPropertyChanged("GIAM");
+					this.OnGIAMChanged();
 				}
 			}
 		}

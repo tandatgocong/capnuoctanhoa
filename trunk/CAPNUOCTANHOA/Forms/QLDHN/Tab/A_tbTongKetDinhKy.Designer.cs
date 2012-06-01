@@ -49,7 +49,6 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btXemThongTin = new DevComponents.DotNetBar.ButtonX();
             this.cbHieuDongHo = new System.Windows.Forms.ComboBox();
-            this.dateTime = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.cbCoDH = new System.Windows.Forms.ComboBox();
             this.checHieu = new System.Windows.Forms.CheckBox();
             this.ckNgayThay = new System.Windows.Forms.CheckBox();
@@ -74,10 +73,10 @@
             this.G_CODH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAMGAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTime = new System.Windows.Forms.DateTimePicker();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
@@ -92,10 +91,10 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.dateTime);
             this.splitContainer1.Panel1.Controls.Add(this.labelX1);
             this.splitContainer1.Panel1.Controls.Add(this.btXemThongTin);
             this.splitContainer1.Panel1.Controls.Add(this.cbHieuDongHo);
-            this.splitContainer1.Panel1.Controls.Add(this.dateTime);
             this.splitContainer1.Panel1.Controls.Add(this.cbCoDH);
             this.splitContainer1.Panel1.Controls.Add(this.checHieu);
             this.splitContainer1.Panel1.Controls.Add(this.ckNgayThay);
@@ -149,51 +148,6 @@
             this.cbHieuDongHo.Name = "cbHieuDongHo";
             this.cbHieuDongHo.Size = new System.Drawing.Size(118, 27);
             this.cbHieuDongHo.TabIndex = 8;
-            // 
-            // dateTime
-            // 
-            // 
-            // 
-            // 
-            this.dateTime.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTime.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTime.ButtonDropDown.Visible = true;
-            this.dateTime.CustomFormat = "dd/MM/yyyy";
-            this.dateTime.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateTime.Location = new System.Drawing.Point(152, 38);
-            // 
-            // 
-            // 
-            this.dateTime.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTime.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTime.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTime.MonthCalendar.DisplayMonth = new System.DateTime(2012, 3, 1, 0, 0, 0, 0);
-            this.dateTime.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTime.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTime.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTime.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTime.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTime.MonthCalendar.TodayButtonVisible = true;
-            this.dateTime.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(126, 27);
-            this.dateTime.TabIndex = 7;
-            this.dateTime.Value = new System.DateTime(2012, 3, 1, 22, 34, 31, 0);
             // 
             // cbCoDH
             // 
@@ -524,6 +478,15 @@
             this.NAMGAN.ReadOnly = true;
             this.NAMGAN.Width = 120;
             // 
+            // dateTime
+            // 
+            this.dateTime.CustomFormat = "dd/MM/yyyy";
+            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTime.Location = new System.Drawing.Point(152, 38);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(153, 27);
+            this.dateTime.TabIndex = 5;
+            // 
             // tbTongKetDinhKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -539,7 +502,6 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
@@ -553,7 +515,6 @@
         private System.Windows.Forms.CheckBox ckNgayThay;
         private System.Windows.Forms.ComboBox cbCoDH;
         private System.Windows.Forms.CheckBox checHieu;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTime;
         private System.Windows.Forms.ComboBox cbHieuDongHo;
         private DevComponents.DotNetBar.ButtonX btXemThongTin;
         private DevComponents.DotNetBar.LabelX labelX1;
@@ -578,5 +539,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn NAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn gggg_sl;
+        private System.Windows.Forms.DateTimePicker dateTime;
     }
 }
