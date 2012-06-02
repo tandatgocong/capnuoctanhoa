@@ -7,6 +7,7 @@ using CAPNUOCTANHOA.LinQ;
 using System.Data.SqlClient;
 using log4net;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace CAPNUOCTANHOA.DAL.QLDHN
 {
@@ -68,7 +69,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             adapter.Fill(ds, "TB_THONGKEDHN_SUM");
             return ds;
         }
-
+        static string khoi = ConfigurationManager.AppSettings["khoi"].ToString();
         public static void CAPNHAT_BIENDOCCHISO(string nam, int ky, int dot)
         {
             string sql = " UPDATE TB_NHANVIENDOCSO ";
@@ -80,8 +81,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 sql += " SELECT t.MAY, COUNT(t.DANHBA) AS SOLUONG,(case when SUM(t.TIEUTHU) IS NULL then 0 else SUM(t.TIEUTHU) end) AS SANLUONG,";
                 sql += "  COUNT(case when (t.CODE LIKE 'F%' OR t.CODE='61' OR t.CODE='64'  OR t.CODE='66')  then 1 else null end) AS KOGHI,";
                 sql += "   COUNT(case when (t.GHICHUMOI LIKE N'%Xây dựng%') then 1 else null end )AS XAYDUNG,";
-                sql += " COUNT(case when (t.TIEUTHU-t3.TIEUTHU)>100  then 1 else null end) AS TANG,";
-                sql += " COUNT(case when (t.TIEUTHU-t3.TIEUTHU)<100  then 1 else null end) AS GAM";
+                sql += " COUNT(case when (t.TIEUTHU-t3.TIEUTHU)>" + khoi + "  then 1 else null end) AS TANG,";
+                sql += " COUNT(case when (t.TIEUTHU-t3.TIEUTHU)<" + khoi + "  then 1 else null end) AS GAM";
                 sql += " FROM DocSo_PHT.dbo.DS" + nam + "  t ";
                 sql += " LEFT JOIN ( ";
                 sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + "  ) as t3";
@@ -99,8 +100,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 sql += " SELECT t.MAY, COUNT(t.DANHBA) AS SOLUONG,(case when SUM(t.TIEUTHU) IS NULL then 0 else SUM(t.TIEUTHU) end) AS SANLUONG,";
                 sql += "  COUNT(case when (t.CODE LIKE 'F%' OR t.CODE='61' OR t.CODE='64'  OR t.CODE='66')  then 1 else null end) AS KOGHI,";
                 sql += "   COUNT(case when (t.GHICHUMOI LIKE N'%Xây dựng%') then 1 else null end )AS XAYDUNG,";
-                sql += " COUNT(case when (t.TIEUTHU-t3.TIEUTHU)>100  then 1 else null end) AS TANG,";
-                sql += " COUNT(case when (t.TIEUTHU-t3.TIEUTHU)<100  then 1 else null end) AS GAM";
+                sql += " COUNT(case when (t.TIEUTHU-t3.TIEUTHU)>" + khoi + "  then 1 else null end) AS TANG,";
+                sql += " COUNT(case when (t.TIEUTHU-t3.TIEUTHU)<" + khoi + "  then 1 else null end) AS GAM";
                 sql += " FROM DocSo_PHT.dbo.DS" + nam+"  t ";
                 sql += " LEFT JOIN ( ";
                 sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + " AND DOT=" + dot + " ) as t3";

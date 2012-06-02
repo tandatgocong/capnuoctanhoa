@@ -35,9 +35,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             tabItem1.Visible = false;
             ItemGanMoi.Visible = false;
             tabItem2.Visible = false;
+            tabItem3.Visible = false;
             if ("DT,DP".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 tabItem1.Visible = true;
+                tabItem2.Visible = true;
             }
 
             if ("TT".Contains(DAL.SYS.C_USERS._roles.Trim()))
@@ -47,6 +49,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.panel3.Controls.Clear();
                 this.panel3.Controls.Add(new tab_ChiaLoTrinh());
                 tabItem2.Visible = true;
+                tabItem3.Visible = true;
                 int ky = DateTime.Now.Month + 2;
                 int nam = DateTime.Now.Year;
                 if (ky >= 13)
