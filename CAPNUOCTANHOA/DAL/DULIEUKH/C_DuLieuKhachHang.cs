@@ -38,6 +38,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             }
             return null;
         }
+       
         public static TB_DULIEUKHACHHANG finByLoTrinh(string lotrinh)
         {
             try
@@ -51,6 +52,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             }
             return null;
         }
+       
         public static TB_DULIEUKHACHHANG_HUYDB finByDanhBoHuy(string danhbo)
         {
             try
@@ -76,6 +78,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
                 log.Error(ex.Message);
             }
         }
+        
         public static List<TB_DULIEUKHACHHANG> getAllKHACHHANG()
         {
             var query = from q in db.TB_DULIEUKHACHHANGs select q;
@@ -176,6 +179,19 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             adapter.Fill(ds, "TB_DULIEUKHACHHANG_HUYDB");
 
             return ds;
+        }
+        public static List<TB_DULIEUKHACHHANG> getSoThanDHN(string sothan)
+        {
+            try
+            {
+                var query = from q in db.TB_DULIEUKHACHHANGs where q.SOTHANDH == sothan select q;
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
         }
     }
 }
