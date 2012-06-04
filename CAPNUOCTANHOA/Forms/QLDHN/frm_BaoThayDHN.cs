@@ -217,8 +217,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     txtHieu.Text = hieudh != null ? hieudh.TENDONGHO : khachhang.HIEUDH;
                     txtCo.Text = khachhang.CODH;
                     txtSoThan.Text = khachhang.SOTHANDH;
-                    txtChiThan.Text = khachhang.CHITHAN;
-                    txtChiGoc.Text = khachhang.CHIGOC;
+                    txtChiThan.Text = "CON";
+                    txtChiGoc.Text = "CON";
                     txtChiSoThay.Text = khachhang.CHISOKYTRUOC;
                     
                     txtDot.Text = khachhang.DOT;
