@@ -18,7 +18,8 @@ namespace CAPNUOCTANHOA.DAL.TimKiem
                                                     string searchTenKH,
                                                     string searchDiaChi,
                                                     string searchLoTrinh,
-                                                    string searchNgayGan)
+                                                    string searchNgayGan,
+                                                    string searchSoThan_)
         {
             string sql = "SELECT * FROM V_SEARCH WHERE DHN_DANHBO IS NOT NULL ";
             if (!"".Equals(searchBangKe))
@@ -46,6 +47,13 @@ namespace CAPNUOCTANHOA.DAL.TimKiem
             {
                 sql += " AND CONVERT(DATETIME,HCT_NGAYGAN,103) ='" + searchNgayGan + "' ";
             }
+
+            if (!"".Equals(searchSoThan_.Replace(" ","")))
+            {
+                sql += " AND HCT_SOTHANGAN ='" + searchSoThan_ + "' ";
+            }
+
+             
             sql += " ORDER BY DHN_NGAYBAOTHAY DESC ";
             return LinQConnection.getDataTable(sql);
         }

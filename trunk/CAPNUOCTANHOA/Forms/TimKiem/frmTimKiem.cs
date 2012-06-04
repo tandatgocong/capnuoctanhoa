@@ -63,8 +63,9 @@ namespace CAPNUOCTANHOA.Forms.TimKiem
                 string searchTenKH = this.searchTenKH.Text.Replace("*", "%");
                 string searchDiaChi = this.searchDiaChi.Text.Replace("*", "%");
                 string searchLoTrinh = this.searchLoTrinh.Text;
+                string searchSoThan_ = this.searchSoThan.Text;
                 string searchNgayGan = "".Equals(this.searchNgayGan.Value.ToString()) ? "" : this.searchNgayGan.Value.Date.ToShortDateString();
-                dataBangKe.DataSource = DAL.TimKiem.C_TimKiem.search(searchBangKe, searchDanhBo, searchTenKH, searchDiaChi, searchLoTrinh, searchNgayGan);
+                dataBangKe.DataSource = DAL.TimKiem.C_TimKiem.search(searchBangKe, searchDanhBo, searchTenKH, searchDiaChi, searchLoTrinh, searchNgayGan, searchSoThan_);
                 Utilities.DataGridV.formatRows(dataBangKe);
                 setSTT();
             }
