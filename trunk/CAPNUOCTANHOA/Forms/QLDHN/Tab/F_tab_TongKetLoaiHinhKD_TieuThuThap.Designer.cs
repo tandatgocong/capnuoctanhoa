@@ -349,6 +349,7 @@
             this.KT_HCSN4});
             this.sanluongToDS.Location = new System.Drawing.Point(4, 121);
             this.sanluongToDS.Name = "sanluongToDS";
+            this.sanluongToDS.ReadOnly = true;
             dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle22.Font = new System.Drawing.Font("Times New Roman", 12.75F);
@@ -371,6 +372,7 @@
             this.TODS.DefaultCellStyle = dataGridViewCellStyle2;
             this.TODS.HeaderText = "TODS";
             this.TODS.Name = "TODS";
+            this.TODS.ReadOnly = true;
             this.TODS.Visible = false;
             // 
             // TENTO
@@ -378,6 +380,7 @@
             this.TENTO.DataPropertyName = "TENTO";
             this.TENTO.HeaderText = "TỔ ĐỌC SỐ";
             this.TENTO.Name = "TENTO";
+            this.TENTO.ReadOnly = true;
             this.TENTO.Width = 120;
             // 
             // KN_SH0
@@ -390,6 +393,7 @@
             this.KN_SH0.DefaultCellStyle = dataGridViewCellStyle3;
             this.KN_SH0.HeaderText = "SH";
             this.KN_SH0.Name = "KN_SH0";
+            this.KN_SH0.ReadOnly = true;
             this.KN_SH0.Width = 80;
             // 
             // KN_SX0
@@ -401,6 +405,7 @@
             this.KN_SX0.DefaultCellStyle = dataGridViewCellStyle4;
             this.KN_SX0.HeaderText = "SX";
             this.KN_SX0.Name = "KN_SX0";
+            this.KN_SX0.ReadOnly = true;
             this.KN_SX0.Width = 80;
             // 
             // KN_KD0
@@ -412,6 +417,7 @@
             this.KN_KD0.DefaultCellStyle = dataGridViewCellStyle5;
             this.KN_KD0.HeaderText = "KD";
             this.KN_KD0.Name = "KN_KD0";
+            this.KN_KD0.ReadOnly = true;
             this.KN_KD0.Width = 80;
             // 
             // KN_CC0
@@ -423,6 +429,7 @@
             this.KN_CC0.DefaultCellStyle = dataGridViewCellStyle6;
             this.KN_CC0.HeaderText = "C/C";
             this.KN_CC0.Name = "KN_CC0";
+            this.KN_CC0.ReadOnly = true;
             this.KN_CC0.Width = 80;
             // 
             // KN_HCSN0
@@ -434,6 +441,7 @@
             this.KN_HCSN0.DefaultCellStyle = dataGridViewCellStyle7;
             this.KN_HCSN0.HeaderText = "HCSN";
             this.KN_HCSN0.Name = "KN_HCSN0";
+            this.KN_HCSN0.ReadOnly = true;
             this.KN_HCSN0.Width = 80;
             // 
             // KN_SH4
@@ -445,6 +453,7 @@
             this.KN_SH4.DefaultCellStyle = dataGridViewCellStyle8;
             this.KN_SH4.HeaderText = "SH";
             this.KN_SH4.Name = "KN_SH4";
+            this.KN_SH4.ReadOnly = true;
             this.KN_SH4.Width = 80;
             // 
             // KN_SX4
@@ -456,6 +465,7 @@
             this.KN_SX4.DefaultCellStyle = dataGridViewCellStyle9;
             this.KN_SX4.HeaderText = "SX";
             this.KN_SX4.Name = "KN_SX4";
+            this.KN_SX4.ReadOnly = true;
             this.KN_SX4.Width = 80;
             // 
             // KN_KD4
@@ -467,6 +477,7 @@
             this.KN_KD4.DefaultCellStyle = dataGridViewCellStyle10;
             this.KN_KD4.HeaderText = "KD";
             this.KN_KD4.Name = "KN_KD4";
+            this.KN_KD4.ReadOnly = true;
             this.KN_KD4.Width = 80;
             // 
             // KN_CC4
@@ -478,6 +489,7 @@
             this.KN_CC4.DefaultCellStyle = dataGridViewCellStyle11;
             this.KN_CC4.HeaderText = "C/C";
             this.KN_CC4.Name = "KN_CC4";
+            this.KN_CC4.ReadOnly = true;
             this.KN_CC4.Width = 80;
             // 
             // KN_HCSN4
@@ -489,6 +501,7 @@
             this.KN_HCSN4.DefaultCellStyle = dataGridViewCellStyle12;
             this.KN_HCSN4.HeaderText = "HCSN";
             this.KN_HCSN4.Name = "KN_HCSN4";
+            this.KN_HCSN4.ReadOnly = true;
             this.KN_HCSN4.Width = 80;
             // 
             // KT_SH0
@@ -500,6 +513,7 @@
             this.KT_SH0.DefaultCellStyle = dataGridViewCellStyle13;
             this.KT_SH0.HeaderText = "SH";
             this.KT_SH0.Name = "KT_SH0";
+            this.KT_SH0.ReadOnly = true;
             this.KT_SH0.Width = 80;
             // 
             // KT_SX0
@@ -511,6 +525,7 @@
             this.KT_SX0.DefaultCellStyle = dataGridViewCellStyle14;
             this.KT_SX0.HeaderText = "SX";
             this.KT_SX0.Name = "KT_SX0";
+            this.KT_SX0.ReadOnly = true;
             this.KT_SX0.Width = 80;
             // 
             // KT_KD0
@@ -518,6 +533,7 @@
             this.KT_KD0.DataPropertyName = "KT_KD0";
             this.KT_KD0.HeaderText = "KD";
             this.KT_KD0.Name = "KT_KD0";
+            this.KT_KD0.ReadOnly = true;
             this.KT_KD0.Width = 80;
             // 
             // KT_CC0
@@ -529,6 +545,7 @@
             this.KT_CC0.DefaultCellStyle = dataGridViewCellStyle15;
             this.KT_CC0.HeaderText = "C/C";
             this.KT_CC0.Name = "KT_CC0";
+            this.KT_CC0.ReadOnly = true;
             this.KT_CC0.Width = 80;
             // 
             // KT_HCSN0
@@ -540,6 +557,7 @@
             this.KT_HCSN0.DefaultCellStyle = dataGridViewCellStyle16;
             this.KT_HCSN0.HeaderText = "HCSN";
             this.KT_HCSN0.Name = "KT_HCSN0";
+            this.KT_HCSN0.ReadOnly = true;
             this.KT_HCSN0.Width = 80;
             // 
             // KT_SH4
@@ -551,6 +569,7 @@
             this.KT_SH4.DefaultCellStyle = dataGridViewCellStyle17;
             this.KT_SH4.HeaderText = "SH";
             this.KT_SH4.Name = "KT_SH4";
+            this.KT_SH4.ReadOnly = true;
             this.KT_SH4.Width = 80;
             // 
             // KT_SX4
@@ -562,6 +581,7 @@
             this.KT_SX4.DefaultCellStyle = dataGridViewCellStyle18;
             this.KT_SX4.HeaderText = "SX";
             this.KT_SX4.Name = "KT_SX4";
+            this.KT_SX4.ReadOnly = true;
             this.KT_SX4.Width = 80;
             // 
             // KT_KD4
@@ -573,6 +593,7 @@
             this.KT_KD4.DefaultCellStyle = dataGridViewCellStyle19;
             this.KT_KD4.HeaderText = "KD";
             this.KT_KD4.Name = "KT_KD4";
+            this.KT_KD4.ReadOnly = true;
             this.KT_KD4.Width = 80;
             // 
             // KT_CC4
@@ -584,6 +605,7 @@
             this.KT_CC4.DefaultCellStyle = dataGridViewCellStyle20;
             this.KT_CC4.HeaderText = "C/C";
             this.KT_CC4.Name = "KT_CC4";
+            this.KT_CC4.ReadOnly = true;
             this.KT_CC4.Width = 80;
             // 
             // KT_HCSN4
@@ -595,6 +617,7 @@
             this.KT_HCSN4.DefaultCellStyle = dataGridViewCellStyle21;
             this.KT_HCSN4.HeaderText = "HCSN";
             this.KT_HCSN4.Name = "KT_HCSN4";
+            this.KT_HCSN4.ReadOnly = true;
             this.KT_HCSN4.Width = 80;
             // 
             // cbKyDS
@@ -839,7 +862,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_tab_TongKetLoaiHinhKD_TieuThuThap";
-            this.Size = new System.Drawing.Size(1749, 611);
+            this.Size = new System.Drawing.Size(1732, 594);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

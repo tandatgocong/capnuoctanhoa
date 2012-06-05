@@ -81,7 +81,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.txtNam.Text = DateTime.Now.Year.ToString();
             try
             {
-                cbKyDS.SelectedIndex = DateTime.Now.Month + 1;
+                cbKyDS.SelectedIndex = DateTime.Now.Month;
             }
             catch (Exception)
             {
