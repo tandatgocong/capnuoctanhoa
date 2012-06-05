@@ -21,7 +21,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             InitializeComponent();
             this.txtNam.Text = DateTime.Now.Year.ToString();
             cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
-     
+
             panel12.Controls.Add(new tab_tab_TongKetLoaiHinhKD());
         }
 
@@ -96,7 +96,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 double KT_CC_SL = double.Parse(sanluongToDS.Rows[i].Cells["KT_CC_SL"].Value + "");
                 double KT_HCSN_DH = double.Parse(sanluongToDS.Rows[i].Cells["KT_HCSN_DH"].Value + "");
                 double KT_HCSN_SL = double.Parse(sanluongToDS.Rows[i].Cells["KT_HCSN_SL"].Value + "");
-                line(KN_SH_DH - KT_SH_DH, 2, i); line(KN_SH_SL - KT_SH_SL, 3, i);                
+                line(KN_SH_DH - KT_SH_DH, 2, i); line(KN_SH_SL - KT_SH_SL, 3, i);
                 line(KN_SX_DH - KT_SX_DH, 4, i); line(KN_SX_SL - KT_SX_SL, 5, i);
                 line(KN_KD_DH - KT_KD_DH, 6, i); line(KN_KD_SL - KT_KD_SL, 7, i);
                 line(KN_CC_DH - KT_CC_DH, 8, i); line(KN_CC_SL - KT_CC_SL, 9, i);
@@ -165,8 +165,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
         private void tabControl1_Click(object sender, EventArgs e)
         {
-           
-           
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -177,6 +177,62 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
+
+        private void sanluongToDS_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (sanluongToDS.CurrentCell.OwningColumn.Name == "TENTO")
+            {
+                string tods = sanluongToDS.Rows[e.RowIndex].Cells["TODS"].Value + "";
+                try
+                {
+                    int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+                    int nam = int.Parse(txtNam.Text.Trim());
+
+                    // ky hien tai
+                    DAL.QLDHN.C_BC_LoaiHinhKD.CAPNHATSOLIEU_BAOCAO_LOAIKD_KYNAY_MAY(nam.ToString(), ky);
+                    // ky truoc
+                    if (ky == 1)
+                    {
+                        DAL.QLDHN.C_BC_LoaiHinhKD.CAPNHATSOLIEU_BAOCAO_LOAIKD_KYTRUOC_MAY((nam - 1) + "", 12);
+                    }
+                    else
+                    {
+                        DAL.QLDHN.C_BC_LoaiHinhKD.CAPNHATSOLIEU_BAOCAO_LOAIKD_KYTRUOC_MAY(nam.ToString(), ky - 1);
+                    }
+
+
+                    tabControl2.Visible = true;
+                    dataGridView1.DataSource = DAL.QLDHN.C_BC_LoaiHinhKD.get_BAOCAO_BAOCAO_LOAIKD_MAY(int.Parse(tods));
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            dataGridView1.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(217)))));
+                        }
+                        else
+                        {
+                            dataGridView1.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                        }
+                        try
+                        {
+                            string mayds = dataGridView1.Rows[i].Cells["MAYDS"].Value + "";
+                            dataGridView1.Rows[i].Cells["NHANVIEN"].Value = DAL.QLDHN.C_QuanLyDongHoNuoc.getNhanVienDS(int.Parse(mayds));
+                        }
+                        catch (Exception ex)
+                        {
+                            log.Error(ex.Message);
+                        }
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    log.Error(ex.Message);
+                }
+            }
+        }
+
         //private void btThem_Click(object sender, EventArgs e)
         //{
         //    try
@@ -240,7 +296,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         //        sum_NT_SANLUONG += double.Parse(sanluongToDS.Rows[i].Cells["NT_SANLUONG"].Value + "");
         //        sum_NT_TANGIAM_DHN += NT_TANGIAM_DHN;
         //        sum_NT_TANGIAM_SANLUONG += NT_TANGIAM_SANLUONG;
-                
+
         //        if (TANGIAM_DHN > 0) {
         //            sanluongToDS[6, i].Style.BackColor = Color.Lime;
         //        }
@@ -290,9 +346,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         //            sanluongToDS[11, i].Style.BackColor = Color.Yellow;
         //        }
         //    }
-            
+
         //    int index = sanluongToDS.Rows.Count-1;
-            
+
         //    sanluongToDS.Rows[index].Cells["KN_DHN"].Value = String.Format("{0:0,0}", sum_KN_DHN);
         //    sanluongToDS.Rows[index].Cells["KN_SANLUONG"].Value = String.Format("{0:0,0}", sum_KN_SANLUONG);
         //    sanluongToDS.Rows[index].Cells["KT_DHN"].Value = String.Format("{0:0,0}", sum_KT_DHN);
@@ -303,7 +359,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         //    sanluongToDS.Rows[index].Cells["NT_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_SANLUONG);
         //    sanluongToDS.Rows[index].Cells["NT_TANGIAM_DHN"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_DHN);
         //    sanluongToDS.Rows[index].Cells["NT_TANGIAM_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_SANLUONG);
-            
+
         //    DataGridViewCellStyle style = new DataGridViewCellStyle();
         //    style.Font = new System.Drawing.Font(sanluongToDS.Font, FontStyle.Bold);
         //    sanluongToDS.Rows[index].DefaultCellStyle = style;
@@ -311,7 +367,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
         //}
 
-        
+
         //private void sanluongToDS_CellClick(object sender, DataGridViewCellEventArgs e)
         //{
         //    if (sanluongToDS.CurrentCell.OwningColumn.Name == "TENTO")
@@ -346,10 +402,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         //            log.Error(ex.Message);
         //        }
         //    }
-           
+
         //}
 
-       
+
 
         //private void sanluongToDS_DataError(object sender, DataGridViewDataErrorEventArgs e)
         //{
@@ -374,7 +430,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
         //private void detail_CellClick(object sender, DataGridViewCellEventArgs e)
         //{
-         
+
         //}
 
         //private void tabPage1_Click(object sender, EventArgs e)

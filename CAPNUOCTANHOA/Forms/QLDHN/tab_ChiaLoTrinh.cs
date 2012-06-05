@@ -400,7 +400,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             try
             {
                 int ky = DateTime.Now.Month + 1;
-                int nam = DateTime.Now.Year;
+                int nam = DateTime.Now.Year;              
                 if (ky == 12)
                 {
                     ky = 1;
