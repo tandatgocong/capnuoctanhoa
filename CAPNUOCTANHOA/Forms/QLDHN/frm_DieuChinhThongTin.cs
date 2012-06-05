@@ -70,6 +70,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     catch (Exception)
                     {
                     }
+                    txtHieuLuc.Text = String.Format("{0:00}", khachhang.KY) + "/" + khachhang.NAM;
                     GIABIEU.Text = khachhang.GIABIEU;
                     DINHMUC.Text = khachhang.DINHMUC;
                     NGAYGAN.ValueObject = khachhang.NGAYTHAY;
