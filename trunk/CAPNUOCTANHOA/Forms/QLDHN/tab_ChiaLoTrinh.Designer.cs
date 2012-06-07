@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtHieuLuc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -47,6 +47,13 @@
             this.pictureChuyen = new System.Windows.Forms.PictureBox();
             this.labelX24 = new DevComponents.DotNetBar.LabelX();
             this.dataDanhBoGanMoi = new System.Windows.Forms.DataGridView();
+            this.TU_DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TU_DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.L_LOTRINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TMP_LOT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TU_QP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BANGKE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.txtChen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -91,13 +98,6 @@
             this.menuDann = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tulotrinh_cut = new System.Windows.Forms.ToolStripMenuItem();
-            this.TU_DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TU_DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.L_LOTRINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TMP_LOT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TU_QP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BANGKE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
@@ -267,6 +267,62 @@
             this.dataDanhBoGanMoi.TabIndex = 0;
             this.dataDanhBoGanMoi.Sorted += new System.EventHandler(this.dataDanhBoGanMoi_Sorted);
             this.dataDanhBoGanMoi.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataDanhBoGanMoi_MouseClick);
+            // 
+            // TU_DANHBO
+            // 
+            this.TU_DANHBO.DataPropertyName = "DANHBO";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TU_DANHBO.DefaultCellStyle = dataGridViewCellStyle1;
+            this.TU_DANHBO.HeaderText = "DANH BỘ";
+            this.TU_DANHBO.Name = "TU_DANHBO";
+            this.TU_DANHBO.Width = 130;
+            // 
+            // TU_DIACHI
+            // 
+            this.TU_DIACHI.DataPropertyName = "DIACHI";
+            this.TU_DIACHI.HeaderText = "ĐỊA CHỈ";
+            this.TU_DIACHI.Name = "TU_DIACHI";
+            this.TU_DIACHI.Width = 250;
+            // 
+            // L_LOTRINH
+            // 
+            this.L_LOTRINH.DataPropertyName = "LOTRINH";
+            this.L_LOTRINH.HeaderText = "LỘ TRÌNH";
+            this.L_LOTRINH.Name = "L_LOTRINH";
+            this.L_LOTRINH.Visible = false;
+            this.L_LOTRINH.Width = 150;
+            // 
+            // TMP_LOT
+            // 
+            this.TMP_LOT.DataPropertyName = "PLT";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TMP_LOT.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TMP_LOT.HeaderText = "LỘ TRÌNH TẠM";
+            this.TMP_LOT.Name = "TMP_LOT";
+            this.TMP_LOT.Width = 150;
+            // 
+            // TU_QP
+            // 
+            this.TU_QP.DataPropertyName = "QUANPHUONG";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TU_QP.DefaultCellStyle = dataGridViewCellStyle3;
+            this.TU_QP.HeaderText = "MÃQP";
+            this.TU_QP.Name = "TU_QP";
+            this.TU_QP.Width = 60;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "M_LOTRINH";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // BANGKE
+            // 
+            this.BANGKE.DataPropertyName = "BANGKE";
+            this.BANGKE.HeaderText = "BẢNG KÊ";
+            this.BANGKE.Name = "BANGKE";
+            this.BANGKE.Width = 130;
             // 
             // splitContainer6
             // 
@@ -686,62 +742,6 @@
             this.tulotrinh_cut.Size = new System.Drawing.Size(100, 24);
             this.tulotrinh_cut.Text = "Cắt";
             this.tulotrinh_cut.Click += new System.EventHandler(this.tulotrinh_cut_Click);
-            // 
-            // TU_DANHBO
-            // 
-            this.TU_DANHBO.DataPropertyName = "DANHBO";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TU_DANHBO.DefaultCellStyle = dataGridViewCellStyle1;
-            this.TU_DANHBO.HeaderText = "DANH BỘ";
-            this.TU_DANHBO.Name = "TU_DANHBO";
-            this.TU_DANHBO.Width = 130;
-            // 
-            // TU_DIACHI
-            // 
-            this.TU_DIACHI.DataPropertyName = "DIACHI";
-            this.TU_DIACHI.HeaderText = "ĐỊA CHỈ";
-            this.TU_DIACHI.Name = "TU_DIACHI";
-            this.TU_DIACHI.Width = 250;
-            // 
-            // L_LOTRINH
-            // 
-            this.L_LOTRINH.DataPropertyName = "LOTRINH";
-            this.L_LOTRINH.HeaderText = "LỘ TRÌNH";
-            this.L_LOTRINH.Name = "L_LOTRINH";
-            this.L_LOTRINH.Visible = false;
-            this.L_LOTRINH.Width = 150;
-            // 
-            // TMP_LOT
-            // 
-            this.TMP_LOT.DataPropertyName = "PLT";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TMP_LOT.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TMP_LOT.HeaderText = "LỘ TRÌNH TẠM";
-            this.TMP_LOT.Name = "TMP_LOT";
-            this.TMP_LOT.Width = 150;
-            // 
-            // TU_QP
-            // 
-            this.TU_QP.DataPropertyName = "QUANPHUONG";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TU_QP.DefaultCellStyle = dataGridViewCellStyle3;
-            this.TU_QP.HeaderText = "MÃQP";
-            this.TU_QP.Name = "TU_QP";
-            this.TU_QP.Width = 60;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "M_LOTRINH";
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // BANGKE
-            // 
-            this.BANGKE.DataPropertyName = "BANGKE";
-            this.BANGKE.HeaderText = "BẢNG KÊ";
-            this.BANGKE.Name = "BANGKE";
-            this.BANGKE.Width = 130;
             // 
             // tab_ChiaLoTrinh
             // 

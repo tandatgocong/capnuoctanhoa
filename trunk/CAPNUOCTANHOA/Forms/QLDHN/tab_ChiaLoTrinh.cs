@@ -400,16 +400,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             try
             {
                 int ky = DateTime.Now.Month + 1;
-                int nam = DateTime.Now.Year;              
-                if (ky == 12)
+                int nam = DateTime.Now.Year;
+                if (ky >= 13)
                 {
                     ky = 1;
                     nam = nam + 1;
                 }
-                else { ky = ky + 1; }
-
-
-
+               
                 for (int i = 0; i < dataLoTrinh.Rows.Count; i++)
                 {
                     string danhbo = (dataLoTrinh.Rows[i].Cells["DEN_DANHBO"].Value + "").Replace(" ", "");

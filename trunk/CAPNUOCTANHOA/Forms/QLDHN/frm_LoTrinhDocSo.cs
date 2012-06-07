@@ -50,7 +50,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.panel3.Controls.Add(new tab_ChiaLoTrinh());
                 tabItem2.Visible = true;
                 tabItem3.Visible = true;
-                int ky = DateTime.Now.Month + 2;
+                int ky = DateTime.Now.Month + 1;
                 int nam = DateTime.Now.Year;
                 if (ky >= 13)
                 {
@@ -771,7 +771,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void tabItem3_Click(object sender, EventArgs e)
         {
-            int ky = DateTime.Now.Month + 2;
+            int ky = DateTime.Now.Month +1;
             int nam = DateTime.Now.Year;
             if (ky >= 13)
             {
