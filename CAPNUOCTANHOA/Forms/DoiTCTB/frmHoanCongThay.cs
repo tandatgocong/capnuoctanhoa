@@ -436,25 +436,33 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         }
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            try
+  
+            if (int.Parse(txtChiSoThay.Text)<= int.Parse(txtChiSoGo.Text))
             {
-                currentRow = dataBangKe.CurrentRow.Index + 1;
-                string ID_BAOTHAY = lbResult.Text.Replace("ID:", "");
-                TB_THAYDHN thaydh = DAL.QLDHN.C_BaoThay.finByID_BAOTHAY(int.Parse(ID_BAOTHAY));
-                if (ckTroNgai.Checked)
+                try
                 {
-                    CapNhatCS(thaydh);
-                }
-                else
-                {
-                    List<TB_DULIEUKHACHHANG> cothantrung = DAL.DULIEUKH.C_DuLieuKhachHang.getSoThanDHN(this.txtSoThanGan.Text.Replace(" ", ""));
-                    if (cothantrung.Count > 0)
+                    currentRow = dataBangKe.CurrentRow.Index + 1;
+                    string ID_BAOTHAY = lbResult.Text.Replace("ID:", "");
+                    TB_THAYDHN thaydh = DAL.QLDHN.C_BaoThay.finByID_BAOTHAY(int.Parse(ID_BAOTHAY));
+                    if (ckTroNgai.Checked)
                     {
-                        if (cothantrung.Count == 1)
+                        CapNhatCS(thaydh);
+                    }
+                    else
+                    {
+                        List<TB_DULIEUKHACHHANG> cothantrung = DAL.DULIEUKH.C_DuLieuKhachHang.getSoThanDHN(this.txtSoThanGan.Text.Replace(" ", ""));
+                        if (cothantrung.Count > 0)
                         {
-                            if (this.txtSoDanhBo.Text.Replace("-", "").Equals(cothantrung[0].DANHBO))
+                            if (cothantrung.Count == 1)
                             {
-                                CapNhatCS(thaydh);
+                                if (this.txtSoDanhBo.Text.Replace("-", "").Equals(cothantrung[0].DANHBO))
+                                {
+                                    CapNhatCS(thaydh);
+                                }
+                                else
+                                {
+                                    ChoCapNhat(cothantrung, thaydh);
+                                }
                             }
                             else
                             {
@@ -463,22 +471,21 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         }
                         else
                         {
-                            ChoCapNhat(cothantrung, thaydh);
+                            CapNhatCS(thaydh);
                         }
                     }
-                    else
-                    {
-                        CapNhatCS(thaydh);
-                    }
+                    //string mess = "Cập Nhật Báo Thay Cho Danh Bộ  " + Utilities.FormatSoHoSoDanhBo.sodanhbo(thaydh.DHN_DANHBO, "-") + " ?";
+
                 }
-                //string mess = "Cập Nhật Báo Thay Cho Danh Bộ  " + Utilities.FormatSoHoSoDanhBo.sodanhbo(thaydh.DHN_DANHBO, "-") + " ?";
-
+                catch (Exception ex)
+                {
+                    log.Error(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
+            else {
 
+                MessageBox.Show(this, "Chỉ Số Gở >= Chỉ Số Thay", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
