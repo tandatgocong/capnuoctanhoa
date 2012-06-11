@@ -750,7 +750,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 dataBangKe.Rows[i].Cells["G_STT"].Value = i + 1;
                 try
                 {
-                    dataBangKe.Rows[i].Cells["LOTRINH"].Value = dataBangKe.Rows[i].Cells["LOTRINH"].Value != null ? Utilities.FormatSoHoSoDanhBo.phienlotrinh(dataBangKe.Rows[i].Cells["LOTRINH"].Value + "", ".") : dataBangKe.Rows[i].Cells["LOTRINH"].Value;
+                    dataBangKe.Rows[i].Cells["LOTRINH"].Value = dataBangKe.Rows[i].Cells["LOTRINH"].Value != null ? Utilities.FormatSoHoSoDanhBo.phienlotrinh(dataBangKe.Rows[i].Cells["LOTRINH"].Value.ToString().Replace(".","") + "", ".") : dataBangKe.Rows[i].Cells["LOTRINH"].Value;
                 }
                 catch (Exception)
                 {
@@ -797,6 +797,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 crystalReportViewer2.ReportSource = rp;
                 this.crystalReportViewer2.Visible = true;
 
+            }
+        }
+
+        private void SO_LT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+                ReportDocument rp = new rpt_SoDocSo_GANMOI();
+                rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_GM(SO_LT.Text, SO_KY.Text, SO_NAM.Text));
+                rp.SetParameterValue("HIEULUC", String.Format("{0:00}", int.Parse(SO_KY.Text)) + "/" + SO_NAM.Text);
+                crystalReportViewer2.ReportSource = rp;
+                this.crystalReportViewer2.Visible = true;
             }
         }
     }

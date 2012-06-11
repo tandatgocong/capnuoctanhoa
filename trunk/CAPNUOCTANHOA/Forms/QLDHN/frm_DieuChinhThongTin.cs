@@ -82,10 +82,51 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     VITRI.Text = khachhang.VITRIDHN;
                     CHITHAN.Text = khachhang.CHITHAN;
                     CHIGOC.Text = khachhang.CHIGOC;
+                    btCapNhatThongTin.Enabled = true;
                 }
                 else
                 {
-                    MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TB_DULIEUKHACHHANG_HUYDB khachhanghuy = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
+                    if (khachhanghuy != null)
+                    {
+                        LOTRINH.Text = khachhanghuy.LOTRINH;
+                        DOT.Text = khachhanghuy.DOT;
+                        HOPDONG.Text = khachhanghuy.HOPDONG;
+                        HOTEN.Text = khachhanghuy.HOTEN;
+                        SONHA.Text = khachhanghuy.SONHA;
+                        TENDUONG.Text = khachhanghuy.TENDUONG;
+                        try
+                        {
+                            LinQ.QUAN q = DAL.SYS.C_Quan.finByMaQuan(int.Parse(khachhanghuy.QUAN));
+                            if (q != null)
+                            {
+                                QUAN.Text = q.TENQUAN;
+                                LinQ.PHUONG ph = DAL.SYS.C_Phuong.finbyPhuong(q.MAQUAN, khachhanghuy.PHUONG.Trim());
+                                PHUONGT.Text = ph.TENPHUONG;
+                            }
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        txtHieuLuc.Text = "Hết HL " + khachhanghuy.HIEULUCHUY;
+                        GIABIEU.Text = khachhanghuy.GIABIEU;
+                        DINHMUC.Text = khachhanghuy.DINHMUC;
+                        NGAYGAN.ValueObject = khachhanghuy.NGAYTHAY;
+                        KIEMDINH.ValueObject = khachhanghuy.NGAYKIEMDINH;
+                        HIEUDH.Text = khachhanghuy.HIEUDH;
+                        CO.Text = khachhanghuy.CODH;
+                        CAP.Text = khachhanghuy.CAP;
+                        SOTHAN.Text = khachhanghuy.SOTHANDH;
+                        VITRI.Text = khachhanghuy.VITRIDHN;
+                        CHITHAN.Text = khachhanghuy.CHITHAN;
+                        CHIGOC.Text = khachhanghuy.CHIGOC;
+                        btCapNhatThongTin.Enabled = false;
+                    }
+                    else
+                    {
+
+                        MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

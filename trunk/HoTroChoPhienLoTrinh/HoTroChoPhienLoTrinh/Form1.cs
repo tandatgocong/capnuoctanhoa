@@ -127,6 +127,18 @@ namespace HoTroChoPhienLoTrinh
             string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN FROM TB_DULIEUKHACHHANG WHERE (SONHA+' '+ TENDUONG) LIKE '" + diachi.Replace("*", "%") + "' ORDER BY LOTRINH ASC ";
             return getDataTable(sql);
         }
+
+        public static DataTable DANHBO(string danhbo)
+        {
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN FROM TB_DULIEUKHACHHANG WHERE DANHBO = '" + danhbo + "' ORDER BY LOTRINH ASC ";
+            return getDataTable(sql);
+        }
+
+        public static DataTable LOTRINH(string LT)
+        {
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN FROM TB_DULIEUKHACHHANG WHERE LOTRINH = '" + LT + "' ORDER BY LOTRINH ASC ";
+            return getDataTable(sql);
+        }
         private void cbMay_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridView2.DataSource= getPhienLoTrinh(cbDot.Text+""+cbMay.Text);
@@ -155,6 +167,50 @@ namespace HoTroChoPhienLoTrinh
         private void dataGridView2_Sorted(object sender, EventArgs e)
         {
             formatRows(dataGridView2, "M_DANHBA", "M_LOTRINH");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+                dataGridView3.DataSource = DANHBO(txtDanhBo.Text);
+                formatRows(dataGridView3, "db_DANHBA", "db_LOTRINH");
+           
+        }
+
+        private void txtDanhBo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dataGridView3.DataSource = DANHBO(txtDanhBo.Text);
+                formatRows(dataGridView3, "db_DANHBA", "db_LOTRINH");
+            }
+        }
+
+        private void dataGridView3_Sorted(object sender, EventArgs e)
+        {
+            formatRows(dataGridView3, "db_DANHBA", "db_LOTRINH");
+        }
+
+        private void txtLoTrinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dataGridView4.DataSource = LOTRINH(txtLoTrinh.Text);
+                formatRows(dataGridView4, "db_DANHBA", "db_LOTRINH");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            dataGridView4.DataSource = LOTRINH(txtLoTrinh.Text);
+            formatRows(dataGridView4, "lt_DANHBA", "lt_LOTRINH");
+            
+        }
+
+        private void dataGridView4_Sorted(object sender, EventArgs e)
+        {
+            formatRows(dataGridView4, "lt_DANHBA", "lt_LOTRINH");
         }
     }
 }
