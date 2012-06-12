@@ -651,12 +651,6 @@
     <Compile Include="Forms\TimKiem\frmTimKiem.Designer.cs">
       <DependentUpon>frmTimKiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TimKiem\frm_TimKiem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\TimKiem\frm_TimKiem.Designer.cs">
-      <DependentUpon>frm_TimKiem.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1123,9 +1117,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimKiem\frmTimKiem.resx">
       <DependentUpon>frmTimKiem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TimKiem\frm_TimKiem.resx">
-      <DependentUpon>frm_TimKiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>

@@ -36,27 +36,6 @@ namespace CAPNUOCTANHOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\TC_HeQLHS-XP2000.mdb;Persist Secu" +
-            "rity Info=True;Jet OLEDB:Database Password=25874")]
-        public string AccessFile {
-            get {
-                return ((string)(this["AccessFile"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\QLHSMAIN.mdb")]
-        public string AccessFile2 {
-            get {
-                return ((string)(this["AccessFile2"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP_G7;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User I" +
             "D=sa;Password=123@tanhoa")]
         public string CAPNUOCTANHOAConnectionString {
@@ -73,6 +52,27 @@ namespace CAPNUOCTANHOA.Properties {
         public string DocSo_PHTConnectionString {
             get {
                 return ((string)(this["DocSo_PHTConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\\KHKT\\TC_HeQLHS-XP2000.mdb;Persist" +
+            " Security Info=True;Jet OLEDB:Database Password=25874")]
+        public string AccessFile {
+            get {
+                return ((string)(this["AccessFile"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\\KHKT\\QLHSMAIN.mdb")]
+        public string AccessFile2 {
+            get {
+                return ((string)(this["AccessFile2"]));
             }
         }
     }

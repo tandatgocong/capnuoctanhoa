@@ -82,7 +82,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     VITRI.Text = khachhang.VITRIDHN;
                     CHITHAN.Text = khachhang.CHITHAN;
                     CHIGOC.Text = khachhang.CHIGOC;
+                    
                     btCapNhatThongTin.Enabled = true;
+                    
+                    
+                    loadghichu(khachhang.DANHBO);
+
                 }
                 else
                 {
@@ -121,16 +126,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         CHITHAN.Text = khachhanghuy.CHITHAN;
                         CHIGOC.Text = khachhanghuy.CHIGOC;
                         btCapNhatThongTin.Enabled = false;
+
+                        loadghichu(khachhang.DANHBO);
                     }
                     else
                     {
 
                         MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Refesh();
                     }
                 }
             }
         }
 
+        public void loadghichu(string danhbo) {
+            lichsuGhiCHu.DataSource = DAL.DULIEUKH.C_DuLieuKhachHang.lisGhiChu(danhbo);
+            for (int i = 0; i < lichsuGhiCHu.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    lichsuGhiCHu.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(217)))));
+                }
+                else
+                {
+                    lichsuGhiCHu.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                }
+            }
+        }
         public void Refesh() {
             LOTRINH.Text ="";
             DOT.Text = "";
@@ -171,6 +193,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     khachhang.NGAYKIEMDINH = this.KIEMDINH.Value;
                 }
                 khachhang.HIEUDH = HIEUDH.Text.ToUpper();
+                khachhang.GIABIEU = GIABIEU.Text;
+                khachhang.DINHMUC = DINHMUC.Text;
                 khachhang.CODH = CO.Text;
                 khachhang.CAP = CAP.Text;
                 khachhang.SOTHANDH = SOTHAN.Text;
@@ -181,10 +205,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 khachhang.MODIFYDATE = DateTime.Now;
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.Update())
                 {
-
+                    //cap nhat handheld
                     DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), HIEUDH.Text.Substring(0, 3), SOTHAN.Text, CHITHAN.Text.ToUpper(), CHIGOC.Text.ToUpper(), VITRI.Text);
+                    //cap nhat ghi chu
+                    if ("".Equals(txtGhiChu.Text.Replace(" ",""))==false) {
+                        TB_GHICHU ghichu = new TB_GHICHU();
+                        ghichu.DANHBO = khachhang.DANHBO;
+                        ghichu.NOIDUNG = txtGhiChu.Text;
+                        ghichu.DONVI = DAL.SYS.C_USERS._maphong;
+                        ghichu.CREATEDATE = DateTime.Now.Date;
+                        ghichu.CREATEBY = DAL.SYS.C_USERS._userName;
+                        DAL.DULIEUKH.C_DuLieuKhachHang.InsertGHICHU(ghichu);
+                        loadghichu(khachhang.DANHBO);
+                    }
+                    //
                     MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Refesh();
+                    txtDanhBo.Focus();
                 }
                 else
                 {
