@@ -59,6 +59,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             //G_HIEUDHN.AutoCompleteMode = AutoCompleteMode.Suggest;
             //G_HIEUDHN.AutoCompleteSource = AutoCompleteSource.CustomSource;
             //G_HIEUDHN.AutoCompleteCustomSource = namesCollection;
+            btTaoBangKe.Enabled = true;
         }
         public void setSTT()
         {
@@ -160,6 +161,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 Add();
                 MessageBox.Show(this, "Thêm Mới Bảng Kê Thành Công.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btTaoBangKe.Enabled = false;
             }
             catch (Exception ex)
             {

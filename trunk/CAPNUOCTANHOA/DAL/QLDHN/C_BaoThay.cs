@@ -128,7 +128,22 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
             return ds;
          }
-
+        public static TB_THAYDHN finByBaoThay(int sobangke, string danhbo)
+        {
+            try
+            {
+                db = new CapNuocTanHoaDataContext();
+                var query = from q in db.TB_THAYDHNs where q.DHN_SOBANGKE == sobangke && q.DHN_DANHBO == danhbo && q.DHN_TODS == DAL.SYS.C_USERS._toDocSo && q.DHN_LOAIBANGKE == "DK" orderby q.DHN_SOBANGKE descending select q;
+                List<TB_THAYDHN> th = query.ToList();
+                if(th.Count>=1)
+                    return th[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
         //public static DataTable getBaoThayDinhKy() {
         //    string sql = " SELECT TOP(300) DANHBO, HOTEN, (SONHA +''+ TENDUONG) AS 'DIACHI',NGAYTHAY FROM  TB_DULIEUKHACHHANG ";
         //    return LinQConnection.getDataTable(sql);

@@ -105,6 +105,16 @@ namespace CAPNUOCTANHOA.Forms.TimKiem
 
                 string HCT_HIEUDHNGAN = dataBangKe.Rows[i].Cells["HCT_HIEUDHNGAN"].Value + "";
                 txtHieuDHGan.Text = !HCT_HIEUDHNGAN.Equals("") ? HCT_HIEUDHNGAN : "KENT";
+                try
+                {
+                    txtNam.Text = DateTime.Parse(DHN_NGAYGAN).Year + "";
+                }
+                catch (Exception)
+                {
+
+                    txtNam.Text = DHN_NGAYGAN;
+                }
+
 
                 string HCT_CODHNGAN = dataBangKe.Rows[i].Cells["HCT_CODHNGAN"].Value + "";
                 txtGoGan.Text = !HCT_CODHNGAN.Equals("") ? HCT_CODHNGAN : "15";
@@ -169,7 +179,6 @@ namespace CAPNUOCTANHOA.Forms.TimKiem
                 //MessageBox.Show(ex.Message);
             }
         }
-       
 
         private void txtChiSoGo_KeyPress(object sender, KeyPressEventArgs e)
         {
