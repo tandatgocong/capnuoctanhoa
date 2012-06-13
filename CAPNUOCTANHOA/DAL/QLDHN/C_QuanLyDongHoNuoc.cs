@@ -47,9 +47,21 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
         }
 
-        public static DataSet getThongKeDHN(int ky, int nam)
+        public static DataSet getThongKeDHN(int ky, int nam, string tods)
         {
-            LinQConnection.ExecuteStoredProcedure("THONGKEDHN", ky, nam);
+            if ("TB01".Equals(tods)) {
+                LinQConnection.ExecuteStoredProcedure("THONGKEDHN_TB01", ky, nam);
+            }
+            else if ("TB02".Equals(tods)) {
+                LinQConnection.ExecuteStoredProcedure("THONGKEDHN_TB02", ky, nam);
+            }
+            else if ("TP".Equals(tods)) {
+                LinQConnection.ExecuteStoredProcedure("THONGKEDHN_TP", ky, nam);
+            }
+            else
+            {
+                LinQConnection.ExecuteStoredProcedure("THONGKEDHN", ky, nam);
+            }
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
 

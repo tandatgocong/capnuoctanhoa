@@ -54,7 +54,8 @@ namespace CAPNUOCTANHOA
             if ("AD".Equals(DAL.SYS.C_USERS._roles.Trim()))
             {
                 this.menuDoiQLDHN.Visible = true;
-                this.menuDTCTB.Visible = true; ;
+                this.menuDTCTB.Visible = true;
+                this.banKTKS.Visible = true;
             }
             else
             {

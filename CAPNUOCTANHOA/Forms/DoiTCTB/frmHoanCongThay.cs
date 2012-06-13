@@ -18,6 +18,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
 {
     public partial class frmHoanCongThay : UserControl
     {
+        static string mep = ConfigurationManager.AppSettings["mep"].ToString();
         private static readonly ILog log = LogManager.GetLogger(typeof(frmHoanCongThay).Name);
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         AutoCompleteStringCollection namesCollection1 = new AutoCompleteStringCollection();
@@ -44,6 +45,14 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             cbLoaiDHN.SelectedIndex = 0;
             txtCapGan.SelectedIndex = 0;
             dateNgayHCNhanh.Value = DateTime.Now.Date.AddDays(-1);
+            if ("ngan".Equals(mep))
+            {
+                checkMepNgan.Checked = true;
+            }
+            else {
+                checkMepNgan.Checked = false;
+            }
+
         }
 
         private Control txtKeypress;
