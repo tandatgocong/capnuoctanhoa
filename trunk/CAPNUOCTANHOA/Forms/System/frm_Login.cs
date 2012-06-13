@@ -64,7 +64,7 @@ namespace CAPNUOCTANHOA.View.Users
                  errorProvider1.Clear();
              }
              string password = LogIn.Encrypt(pass);
-            CAPNUOCTANHOA.DAL.SYS.C_USERS users = new CAPNUOCTANHOA.DAL.SYS.C_USERS();
+             DAL.SYS.C_USERS users = new DAL.SYS.C_USERS();
             if (users.UserLogin(udi, password))    {
                 this.lbFail.Visible = false;
                 this.Close();

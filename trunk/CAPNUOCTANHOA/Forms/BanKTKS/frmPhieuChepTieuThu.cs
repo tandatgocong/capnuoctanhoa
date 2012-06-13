@@ -14,6 +14,7 @@ using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using System.Data.SqlClient;
 using CAPNUOCTANHOA.Forms.BanKTKS.BC;
+using System.Configuration;
 
 namespace CAPNUOCTANHOA.Forms.BanKTKS
 {
@@ -239,8 +240,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             query = "select * FROM CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO";
             adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DHN_BAOCAO");
-
-            query = "SELECT TOP(10) * FROM CAPNUOCTANHOA.dbo.TB_GHICHU WHERE DANHBO='" + danhba + "' ORDER BY CREATEDATE DESC";
+            string record = ConfigurationManager.AppSettings["record"].ToString();
+            query = "SELECT TOP(" + record + ") * FROM CAPNUOCTANHOA.dbo.TB_GHICHU WHERE DANHBO='" + danhba + "' ORDER BY CREATEDATE DESC";
             adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_GHICHU");
 
