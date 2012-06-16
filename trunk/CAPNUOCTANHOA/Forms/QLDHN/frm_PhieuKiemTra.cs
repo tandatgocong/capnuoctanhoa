@@ -13,6 +13,8 @@ using System.Data.SqlClient;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CAPNUOCTANHOA.Forms.Reports;
+using System.Configuration;
+using CAPNUOCTANHOA.Forms.BanKTKS.BC;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -58,7 +60,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 TODS = 3;
             }
-            DG_ChuaGiao.DataSource = DAL.QLDHN.C_PhieuKiemTra.getListByCode(TODS, DOT, KY, NAM, code);
+            DG_ChuaGiao.DataSource = DAL.QLDHN.C_PhieuKiemTra.getListByCode(TODS, DOT, KY, NAM, "'60','61','62','63','64','65','66'");
             Utilities.DataGridV.formatRows(DG_ChuaGiao, "DANHBO", "LOTRINH");
             if (DG_ChuaGiao.Rows.Count > 0) {
 
@@ -80,6 +82,81 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             LoadData();
           
         }
+        // them
+
+
+        public DataSet getListHoaDonReport_BC(string danhba, int nam, int ky)
+        {
+
+            DocSoDataContext db = new DocSoDataContext();
+            DataSet ds = new DataSet();
+            string query2 = "";
+
+            string query = "SELECT  TOP(1)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+                  " KH.CO,  H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
+                " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TIEUTHU");
+
+            query = "SELECT  TOP(10)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+                " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
+              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
+            DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
+            ds.Tables["TIEUTHU"].Merge(TB_HD);
+
+            string _ky = ky + "";
+            try
+            {
+                _ky = ds.Tables["TIEUTHU"].Rows[0]["KY"].ToString();
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+            query2 = "SELECT  kh.*, ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.TENNHANVIEN  ";
+            query2 += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
+            query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + _ky + " AND ds.DANHBA='" + danhba + "' ";
+
+            adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
+            adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
+
+            int scl = 10 - ds.Tables["TIEUTHU"].Rows.Count;
+            if (scl > 0)
+            {
+                nam = nam - 1;
+                query = "SELECT  TOP(" + scl + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+             " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
+           " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
+
+                DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
+                ds.Tables["TIEUTHU"].Merge(b_Old);
+            }
+
+            query = "select * FROM CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+            string record = ConfigurationManager.AppSettings["record"].ToString();
+            query = "SELECT TOP(" + record + ") * FROM CAPNUOCTANHOA.dbo.TB_GHICHU WHERE DANHBO='" + danhba + "' ORDER BY CREATEDATE DESC";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_GHICHU");
+
+            return ds;
+
+        }
+
+        private void btInDS_Click(object sender, EventArgs e)
+        {
+            //ReportDocument rp = new rpt_PhieuGhiChepTieuThu();
+            //int ky = int.Parse(txtKy.Text);
+            //int nam = int.Parse(txtNam.Text);
+            //LoadPhieuTieuTHU(txtDanhBo.Text.Replace("-", ""), nam, ky);
+            //rp.SetDataSource(getListHoaDonReport_BC(txtDanhBo.Text.Replace("-", ""), nam, ky));
+            //frm_Reports frm = new frm_Reports(rp);
+            //frm.ShowDialog();
+        }
+        //end
         int stt = 1;
         string listDanhBo = "";
         private void btInKT_Click(object sender, EventArgs e)
@@ -105,10 +182,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         listDanhBo += "'" + DANHBO + "',";
                         try
                         {
-                            ReportDocument rp = new rpt_PhieuDeNghiKT();
-                            rp.SetDataSource(DAL.QLDHN.C_PhieuKiemTra.getListHoaDonReport(DANHBO, NAM, KY, DOT));
-                            rp.SetParameterValue("ky", KY);
-                            rp.SetParameterValue("stt", stt);
+                            ReportDocument rp = new rpt_PhieuGhiChepTieuThu();
+
+                            rp.SetDataSource(getListHoaDonReport_BC(DANHBO, NAM, KY));                
+
                             rp.PrintToPrinter(1, false, 0, 0);
                             stt++;
                             TB_CHUYENKIEMTRA chuyenkt = new TB_CHUYENKIEMTRA();
@@ -165,6 +242,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             try
             {
+                for (int i = 0; i < DG_ChuaGiao.RowCount; i++)
+                {
+                    if (DG_ChuaGiao[0, i].Value != null && "True".Equals(DG_ChuaGiao[0, i].Value.ToString()))
+                    {                         
+                        string DANHBO = (DG_ChuaGiao.Rows[i].Cells["DANHBO"].Value + "").Replace(" ", "");                   
+                        listDanhBo += "'" + DANHBO + "',";
+                    }
+                }
+                ///////
                 string listDanhBa = (listDanhBo.Remove(listDanhBo.Length - 1, 1));
                 string title = "";
                 if ("TB01".Equals(DAL.SYS.C_USERS._toDocSo))
@@ -179,7 +265,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
                     title = "TỔ :  TÂN PHÚ ";
                 }
-                title += " -  KỲ: " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + " - ĐỢT : " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " - CODE : " + cbCode.Items[cbCode.SelectedIndex].ToString();
+                title += " -  KỲ: " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + " - ĐỢT : " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " - CODE : 60,61,62,63,64,65,66" ;
 
                 ReportDocument rp = new rpt_DanhSachYeuCauDieuChinh();
 

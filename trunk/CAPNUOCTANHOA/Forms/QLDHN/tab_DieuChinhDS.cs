@@ -191,5 +191,50 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
+
+        private void cbMayDocSo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.LOTRINH.Text = "";
+                int t1 = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
+                int t2 = int.Parse(cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString());
+
+                if (t2 < 15)
+                {
+                    this.cbToDocSo.SelectedIndex = 0;
+                }
+                else if (t2 > 15 && t2 < 30)
+                {
+                    this.cbToDocSo.SelectedIndex = 1;
+                }
+                else if (t2 > 30)
+                {
+                    this.cbToDocSo.SelectedIndex = 2;
+
+                }
+                string dot = t1 + "";
+                if (t1 < 10)
+                {
+                    dot = "0" + t1;
+                }
+                string may = t2 + "";
+                if (t2 < 10)
+                {
+                    may = "0" + t2;
+                }
+                DataTable table = DAL.DULIEUKH.C_GanMoi.getMaxLoTrinh(dot + may);
+                string lotrinh = (int.Parse(table.Rows[0][0] + "") + 1) + "";
+                if (lotrinh.Length < 9)
+                {
+                    lotrinh = "0" + lotrinh;
+                }
+                this.LOTRINH.Text = lotrinh;
+            }
+            catch (Exception)
+            {
+                this.LOTRINH.Text = "";
+            }
+        }
     }
 }

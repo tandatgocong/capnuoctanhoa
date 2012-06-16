@@ -76,6 +76,7 @@ namespace CAPNUOCTANHOA
                         cmdBaoThay.Visible=false;
                         menuKiemTra.Visible=false;
                         yeucaukiemtra.Visible = false;
+                        menuDieuChinhKH.Visible = true;
                     }
                     else
                     {
@@ -83,6 +84,11 @@ namespace CAPNUOCTANHOA
                         menuKiemTra.Visible = true;
                         yeucaukiemtra.Visible = true;
                     }
+                     if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    {
+                        menuDieuChinhKH.Visible = false;
+                    }
+                    
                     
 
                 }
