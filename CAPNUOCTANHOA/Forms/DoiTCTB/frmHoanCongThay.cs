@@ -256,29 +256,38 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 }
                 else
                 {
-                    thaydh.HCT_CHISOGO = txtChiSoGo.Text != null ? int.Parse(txtChiSoGo.Text.Trim()) : 0;
-                    thaydh.HCT_SOTHANGO = txtSoThanGo.Text;
-                    thaydh.HCT_HIEUDHNGAN = txtHieuDHGan.Text;
-                    thaydh.HCT_SOTHANGAN = txtSoThanGan.Text;
-                    thaydh.HCT_CODHNGAN = txtGoGan.Text;
-                    thaydh.HCT_CAP = txtCapGan.Text.ToUpper();
-                    thaydh.HCT_CHISOGAN = txtChiSoGan.Text != null ? int.Parse(txtChiSoGan.Text.Trim()) : 0;
-                    if (cbLoaiDHN.SelectedIndex == 0)
+                    if (int.Parse(txtChiSoThay.Text) <= int.Parse(txtChiSoGo.Text))
                     {
-                        thaydh.HCT_LOAIDHGAN = true;
+                        thaydh.HCT_CHISOGO = txtChiSoGo.Text != null ? int.Parse(txtChiSoGo.Text.Trim()) : 0;
+                        thaydh.HCT_SOTHANGO = txtSoThanGo.Text;
+                        thaydh.HCT_HIEUDHNGAN = txtHieuDHGan.Text;
+                        thaydh.HCT_SOTHANGAN = txtSoThanGan.Text;
+                        thaydh.HCT_CODHNGAN = txtGoGan.Text;
+                        thaydh.HCT_CAP = txtCapGan.Text.ToUpper();
+                        thaydh.HCT_CHISOGAN = txtChiSoGan.Text != null ? int.Parse(txtChiSoGan.Text.Trim()) : 0;
+                        if (cbLoaiDHN.SelectedIndex == 0)
+                        {
+                            thaydh.HCT_LOAIDHGAN = true;
+                        }
+                        else
+                        {
+                            thaydh.HCT_LOAIDHGAN = false;
+                        }
+                        thaydh.HCT_NGAYGAN = txtNgayGan.Value.Date;
+                        thaydh.HCT_NGAYKIEMDINH = txtngayKiemDinh.Value.Date;
+                        thaydh.HCT_CHITHAN = txtChiThan.Text.ToUpper();
+                        thaydh.HCT_CHIGOC = txtChiGoc.Text.ToUpper();
+                        thaydh.HCT_TRONGAI = false;
+                        thaydh.HCT_LYDOTRONGAI = "";
+                        thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
+                        thaydh.HCT_CREATEDATE = DateTime.Now;
                     }
                     else
                     {
-                        thaydh.HCT_LOAIDHGAN = false;
+                        MessageBox.Show(this, "Chỉ Số Gở >= Chỉ Số Thay", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
-                    thaydh.HCT_NGAYGAN = txtNgayGan.Value.Date;
-                    thaydh.HCT_NGAYKIEMDINH = txtngayKiemDinh.Value.Date;
-                    thaydh.HCT_CHITHAN = txtChiThan.Text.ToUpper();
-                    thaydh.HCT_CHIGOC = txtChiGoc.Text.ToUpper();
-                    thaydh.HCT_TRONGAI = false;
-                    thaydh.HCT_LYDOTRONGAI = "";
-                    thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
-                    thaydh.HCT_CREATEDATE = DateTime.Now;
+                    
                 }
                 if (DAL.QLDHN.C_BaoThay.Update())
                 {
@@ -446,8 +455,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         private void btCapNhat_Click(object sender, EventArgs e)
         {
   
-            if (int.Parse(txtChiSoThay.Text)<= int.Parse(txtChiSoGo.Text))
-            {
+          
+
                 try
                 {
                     currentRow = dataBangKe.CurrentRow.Index + 1;
@@ -490,12 +499,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 {
                     log.Error(ex.Message);
                 }
-            }
-            else {
-
-                MessageBox.Show(this, "Chỉ Số Gở >= Chỉ Số Thay", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            
         }
 
         private void dataBangKe_SelectionChanged(object sender, EventArgs e)

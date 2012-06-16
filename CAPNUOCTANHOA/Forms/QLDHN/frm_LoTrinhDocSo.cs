@@ -244,7 +244,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         void loadCombox()
         {
-            string sql = "SELECT DotThiCong FROM [T07 DANH SACH HO SO HOAN CONG] WHERE RIGHT (DotThiCong,2)>='12' AND LEFT (DotThiCong,1)='Q' AND Instr (DotThiCong, 'D')<>5 GROUP BY  DotThiCong";
+            string sql = "SELECT DotThiCong FROM [T07 DANH SACH HO SO HOAN CONG] WHERE RIGHT (DotThiCong,2)>='12' AND LEFT (DotThiCong,1)='Q' GROUP BY  DotThiCong";
             DataTable table = DAL.OledbConnection.getDataTable(connectionString, sql);
             cbDotBangKe.DataSource = table;
             cbDotBangKe.DisplayMember = "DotThiCong";
@@ -633,6 +633,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
                     ReportDocument rp = new rpt_DieuChinhLoTrinh();
                     rp.SetDataSource(DAL.DULIEUKH.C_PhienLoTrinh.getReportDieuChinh(KY, NAM));
+                    rp.SetParameterValue("ky", KY);
+                    rp.SetParameterValue("nam", NAM);
                     frm_Reports frm = new frm_Reports(rp);
                     frm.ShowDialog();
 
@@ -702,7 +704,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 int NAM = int.Parse(this.txtNam.Text);
                 try
                 {
-                    result.Text = "Đường dẫn lưu file : " + Export.export(dataGridView1);
+                    result.Text = "Đường dẫn lưu file : " + Export.export(dataGridView1, KY, NAM);
 
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
@@ -808,6 +810,28 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 rp.SetParameterValue("HIEULUC", String.Format("{0:00}", int.Parse(SO_KY.Text)) + "/" + SO_NAM.Text);
                 crystalReportViewer2.ReportSource = rp;
                 this.crystalReportViewer2.Visible = true;
+            }
+        }
+
+        private void buttonX3_Click(object sender, EventArgs e)
+        {
+            int KY = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+            int NAM = int.Parse(this.txtNam.Text);
+            try
+            {
+                ReportDocument rp = new CONGVANDIEUCHINH();
+                rp.SetDataSource(DAL.DULIEUKH.C_PhienLoTrinh.getReportDieuChinh(KY, NAM));
+                rp.SetParameterValue("ky", KY);
+                rp.SetParameterValue("nam", NAM);
+                rp.SetParameterValue("sodanhbo", dataGridView1.Rows.Count);
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+
+               
+            }
+            catch (Exception)
+            {
+
             }
         }
     }

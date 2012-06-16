@@ -20,16 +20,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 {
     class Export
     {
-        public static string export(DataGridView dataGridView1)
+        public static string export(DataGridView dataGridView1, int ky, int nam)
         {
-            int ky = DateTime.Now.Month + 1;
-            int nam = DateTime.Now.Year;
-            if (ky == 12)
-            {
-                ky = 1;
-                nam = nam + 1;
-            }
-            else { ky = ky + 1; }
             ExcelCOM.Application exApp = new ExcelCOM.Application();
             string workbookPath = AppDomain.CurrentDomain.BaseDirectory + @"\LOTRINH.xls";
             ExcelCOM.Workbook exBook = exApp.Workbooks.Open(workbookPath,
@@ -50,6 +42,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 exSheet.Cells[rows,3] = danhbo;
                 exSheet.Cells[rows,4] = lotrinhMoi;
                 exSheet.Cells[rows, 5] = lotrinhCu;
+                if(lotrinhMoi.Substring(0,2).Equals(lotrinhCu.Substring(0,2))==false){
+                 exSheet.Cells[rows, 6] = "Chuyển Đơt";
+                }              
+                
                 rows++;
 
             }
@@ -64,7 +60,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             exSheet.Cells[rows, 6] = "KT.GIÁM ĐỐC";
             exSheet.Cells[rows + 1, 6] = "PHÓ GIÁM ĐỐC KINH DOANH";
             exSheet.Cells[rows + 3, 6] = "  (đã ký)";
-            exSheet.Cells[rows + 5, 2] = " LÊ VĂN SƠN ";
+            exSheet.Cells[rows + 5, 6] = " LÊ VĂN SƠN ";
 
             //ExcelCOM.Range tR;
             //tR = exSheet.get_Range("X11", "X" + (rows - 1));

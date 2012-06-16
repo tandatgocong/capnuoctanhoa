@@ -154,6 +154,33 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DC_HIEULUC = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX38 = new DevComponents.DotNetBar.LabelX();
+            this.DC_SOPHIEU = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX39 = new DevComponents.DotNetBar.LabelX();
+            this.DC_DOT = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem65 = new DevComponents.Editors.ComboItem();
+            this.comboItem76 = new DevComponents.Editors.ComboItem();
+            this.comboItem77 = new DevComponents.Editors.ComboItem();
+            this.comboItem78 = new DevComponents.Editors.ComboItem();
+            this.comboItem79 = new DevComponents.Editors.ComboItem();
+            this.comboItem80 = new DevComponents.Editors.ComboItem();
+            this.comboItem81 = new DevComponents.Editors.ComboItem();
+            this.comboItem82 = new DevComponents.Editors.ComboItem();
+            this.comboItem83 = new DevComponents.Editors.ComboItem();
+            this.comboItem84 = new DevComponents.Editors.ComboItem();
+            this.comboItem85 = new DevComponents.Editors.ComboItem();
+            this.comboItem86 = new DevComponents.Editors.ComboItem();
+            this.comboItem87 = new DevComponents.Editors.ComboItem();
+            this.comboItem88 = new DevComponents.Editors.ComboItem();
+            this.comboItem89 = new DevComponents.Editors.ComboItem();
+            this.comboItem90 = new DevComponents.Editors.ComboItem();
+            this.comboItem91 = new DevComponents.Editors.ComboItem();
+            this.comboItem92 = new DevComponents.Editors.ComboItem();
+            this.comboItem93 = new DevComponents.Editors.ComboItem();
+            this.comboItem94 = new DevComponents.Editors.ComboItem();
+            this.labelX40 = new DevComponents.DotNetBar.LabelX();
+            this.cbLoaiDieuChinh = new System.Windows.Forms.ComboBox();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -185,33 +212,6 @@
             this.DCDANHBO = new System.Windows.Forms.MaskedTextBox();
             this.labelX25 = new DevComponents.DotNetBar.LabelX();
             this.labelX24 = new DevComponents.DotNetBar.LabelX();
-            this.cbLoaiDieuChinh = new System.Windows.Forms.ComboBox();
-            this.DC_HIEULUC = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX38 = new DevComponents.DotNetBar.LabelX();
-            this.DC_SOPHIEU = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX39 = new DevComponents.DotNetBar.LabelX();
-            this.DC_DOT = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem65 = new DevComponents.Editors.ComboItem();
-            this.comboItem76 = new DevComponents.Editors.ComboItem();
-            this.comboItem77 = new DevComponents.Editors.ComboItem();
-            this.comboItem78 = new DevComponents.Editors.ComboItem();
-            this.comboItem79 = new DevComponents.Editors.ComboItem();
-            this.comboItem80 = new DevComponents.Editors.ComboItem();
-            this.comboItem81 = new DevComponents.Editors.ComboItem();
-            this.comboItem82 = new DevComponents.Editors.ComboItem();
-            this.comboItem83 = new DevComponents.Editors.ComboItem();
-            this.comboItem84 = new DevComponents.Editors.ComboItem();
-            this.comboItem85 = new DevComponents.Editors.ComboItem();
-            this.comboItem86 = new DevComponents.Editors.ComboItem();
-            this.comboItem87 = new DevComponents.Editors.ComboItem();
-            this.comboItem88 = new DevComponents.Editors.ComboItem();
-            this.comboItem89 = new DevComponents.Editors.ComboItem();
-            this.comboItem90 = new DevComponents.Editors.ComboItem();
-            this.comboItem91 = new DevComponents.Editors.ComboItem();
-            this.comboItem92 = new DevComponents.Editors.ComboItem();
-            this.comboItem93 = new DevComponents.Editors.ComboItem();
-            this.comboItem94 = new DevComponents.Editors.ComboItem();
-            this.labelX40 = new DevComponents.DotNetBar.LabelX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KIEMDINH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NGAYGAN)).BeginInit();
@@ -350,7 +350,7 @@
             this.comboItem61,
             this.comboItem62,
             this.comboItem63});
-            this.cbToDocSo.Location = new System.Drawing.Point(118, 267);
+            this.cbToDocSo.Location = new System.Drawing.Point(404, 257);
             this.cbToDocSo.Name = "cbToDocSo";
             this.cbToDocSo.Size = new System.Drawing.Size(126, 26);
             this.cbToDocSo.TabIndex = 147;
@@ -426,10 +426,11 @@
             this.comboItem73,
             this.comboItem74,
             this.comboItem75});
-            this.cbMayDocSo.Location = new System.Drawing.Point(375, 265);
+            this.cbMayDocSo.Location = new System.Drawing.Point(228, 257);
             this.cbMayDocSo.Name = "cbMayDocSo";
             this.cbMayDocSo.Size = new System.Drawing.Size(62, 26);
             this.cbMayDocSo.TabIndex = 148;
+            this.cbMayDocSo.SelectedValueChanged += new System.EventHandler(this.cbMayDocSo_SelectedValueChanged);
             // 
             // comboItem41
             // 
@@ -765,7 +766,7 @@
             this.comboItem30,
             this.comboItem31,
             this.comboItem32});
-            this.cbDotDS.Location = new System.Drawing.Point(488, 225);
+            this.cbDotDS.Location = new System.Drawing.Point(52, 256);
             this.cbDotDS.Name = "cbDotDS";
             this.cbDotDS.Size = new System.Drawing.Size(57, 26);
             this.cbDotDS.TabIndex = 146;
@@ -893,7 +894,7 @@
             // labelX9
             // 
             this.labelX9.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX9.Location = new System.Drawing.Point(444, 227);
+            this.labelX9.Location = new System.Drawing.Point(8, 258);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(59, 22);
             this.labelX9.TabIndex = 169;
@@ -902,7 +903,7 @@
             // labelX10
             // 
             this.labelX10.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX10.Location = new System.Drawing.Point(261, 267);
+            this.labelX10.Location = new System.Drawing.Point(114, 259);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(122, 22);
             this.labelX10.TabIndex = 168;
@@ -911,7 +912,7 @@
             // labelX23
             // 
             this.labelX23.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX23.Location = new System.Drawing.Point(13, 269);
+            this.labelX23.Location = new System.Drawing.Point(305, 259);
             this.labelX23.Name = "labelX23";
             this.labelX23.Size = new System.Drawing.Size(104, 22);
             this.labelX23.TabIndex = 167;
@@ -923,7 +924,7 @@
             this.btInPhieuDieuChinh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btInPhieuDieuChinh.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInPhieuDieuChinh.ForeColor = System.Drawing.Color.Crimson;
-            this.btInPhieuDieuChinh.Location = new System.Drawing.Point(232, 310);
+            this.btInPhieuDieuChinh.Location = new System.Drawing.Point(257, 310);
             this.btInPhieuDieuChinh.Name = "btInPhieuDieuChinh";
             this.btInPhieuDieuChinh.Size = new System.Drawing.Size(205, 27);
             this.btInPhieuDieuChinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -937,7 +938,7 @@
             this.btTaiLapDanhBo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btTaiLapDanhBo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTaiLapDanhBo.ForeColor = System.Drawing.Color.Crimson;
-            this.btTaiLapDanhBo.Location = new System.Drawing.Point(24, 310);
+            this.btTaiLapDanhBo.Location = new System.Drawing.Point(49, 310);
             this.btTaiLapDanhBo.Name = "btTaiLapDanhBo";
             this.btTaiLapDanhBo.Size = new System.Drawing.Size(194, 27);
             this.btTaiLapDanhBo.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -1505,6 +1506,226 @@
             this.panel1.Size = new System.Drawing.Size(672, 570);
             this.panel1.TabIndex = 0;
             // 
+            // DC_HIEULUC
+            // 
+            // 
+            // 
+            // 
+            this.DC_HIEULUC.Border.Class = "TextBoxBorder";
+            this.DC_HIEULUC.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_HIEULUC.ForeColor = System.Drawing.Color.Red;
+            this.DC_HIEULUC.Location = new System.Drawing.Point(324, 65);
+            this.DC_HIEULUC.Name = "DC_HIEULUC";
+            this.DC_HIEULUC.Size = new System.Drawing.Size(115, 27);
+            this.DC_HIEULUC.TabIndex = 202;
+            this.DC_HIEULUC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX38
+            // 
+            this.labelX38.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX38.Location = new System.Drawing.Point(233, 68);
+            this.labelX38.Name = "labelX38";
+            this.labelX38.Size = new System.Drawing.Size(87, 22);
+            this.labelX38.TabIndex = 181;
+            this.labelX38.Text = "HIỆU LỰC";
+            // 
+            // DC_SOPHIEU
+            // 
+            // 
+            // 
+            // 
+            this.DC_SOPHIEU.Border.Class = "TextBoxBorder";
+            this.DC_SOPHIEU.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DC_SOPHIEU.ForeColor = System.Drawing.Color.Red;
+            this.DC_SOPHIEU.Location = new System.Drawing.Point(106, 65);
+            this.DC_SOPHIEU.Name = "DC_SOPHIEU";
+            this.DC_SOPHIEU.Size = new System.Drawing.Size(115, 27);
+            this.DC_SOPHIEU.TabIndex = 201;
+            this.DC_SOPHIEU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX39
+            // 
+            this.labelX39.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX39.Location = new System.Drawing.Point(24, 69);
+            this.labelX39.Name = "labelX39";
+            this.labelX39.Size = new System.Drawing.Size(87, 22);
+            this.labelX39.TabIndex = 180;
+            this.labelX39.Text = "SỐ PHIẾU";
+            // 
+            // DC_DOT
+            // 
+            this.DC_DOT.DisplayMember = "Text";
+            this.DC_DOT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.DC_DOT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DC_DOT.FormattingEnabled = true;
+            this.DC_DOT.ItemHeight = 20;
+            this.DC_DOT.Items.AddRange(new object[] {
+            this.comboItem65,
+            this.comboItem76,
+            this.comboItem77,
+            this.comboItem78,
+            this.comboItem79,
+            this.comboItem80,
+            this.comboItem81,
+            this.comboItem82,
+            this.comboItem83,
+            this.comboItem84,
+            this.comboItem85,
+            this.comboItem86,
+            this.comboItem87,
+            this.comboItem88,
+            this.comboItem89,
+            this.comboItem90,
+            this.comboItem91,
+            this.comboItem92,
+            this.comboItem93,
+            this.comboItem94});
+            this.DC_DOT.Location = new System.Drawing.Point(503, 68);
+            this.DC_DOT.Name = "DC_DOT";
+            this.DC_DOT.Size = new System.Drawing.Size(57, 26);
+            this.DC_DOT.TabIndex = 203;
+            // 
+            // comboItem65
+            // 
+            this.comboItem65.Text = "01";
+            this.comboItem65.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem65.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem76
+            // 
+            this.comboItem76.Text = "02";
+            this.comboItem76.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem76.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem77
+            // 
+            this.comboItem77.Text = "03";
+            this.comboItem77.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem77.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem78
+            // 
+            this.comboItem78.Text = "04";
+            this.comboItem78.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem78.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem79
+            // 
+            this.comboItem79.Text = "05";
+            this.comboItem79.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem79.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem80
+            // 
+            this.comboItem80.Text = "06";
+            this.comboItem80.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem80.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem81
+            // 
+            this.comboItem81.Text = "07";
+            this.comboItem81.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem81.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem82
+            // 
+            this.comboItem82.Text = "08";
+            this.comboItem82.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem82.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem83
+            // 
+            this.comboItem83.Text = "09";
+            this.comboItem83.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem83.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem84
+            // 
+            this.comboItem84.Text = "10";
+            this.comboItem84.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem84.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem85
+            // 
+            this.comboItem85.Text = "11";
+            this.comboItem85.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem85.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem86
+            // 
+            this.comboItem86.Text = "12";
+            this.comboItem86.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem86.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem87
+            // 
+            this.comboItem87.Text = "13";
+            this.comboItem87.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem87.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem88
+            // 
+            this.comboItem88.Text = "14";
+            this.comboItem88.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem88.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem89
+            // 
+            this.comboItem89.Text = "15";
+            this.comboItem89.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem89.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem90
+            // 
+            this.comboItem90.Text = "16";
+            this.comboItem90.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem90.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem91
+            // 
+            this.comboItem91.Text = "17";
+            this.comboItem91.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem91.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem92
+            // 
+            this.comboItem92.Text = "18";
+            this.comboItem92.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem92.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem93
+            // 
+            this.comboItem93.Text = "19";
+            this.comboItem93.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem93.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem94
+            // 
+            this.comboItem94.Text = "20";
+            this.comboItem94.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem94.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // labelX40
+            // 
+            this.labelX40.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX40.Location = new System.Drawing.Point(459, 70);
+            this.labelX40.Name = "labelX40";
+            this.labelX40.Size = new System.Drawing.Size(59, 22);
+            this.labelX40.TabIndex = 179;
+            this.labelX40.Text = "ĐỢT";
+            // 
+            // cbLoaiDieuChinh
+            // 
+            this.cbLoaiDieuChinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLoaiDieuChinh.FormattingEnabled = true;
+            this.cbLoaiDieuChinh.Items.AddRange(new object[] {
+            "Nâng Cở ĐHN",
+            "Hạ Cở ĐHN"});
+            this.cbLoaiDieuChinh.Location = new System.Drawing.Point(180, 18);
+            this.cbLoaiDieuChinh.Name = "cbLoaiDieuChinh";
+            this.cbLoaiDieuChinh.Size = new System.Drawing.Size(207, 27);
+            this.cbLoaiDieuChinh.TabIndex = 200;
+            // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -1889,226 +2110,6 @@
             this.labelX24.Size = new System.Drawing.Size(160, 22);
             this.labelX24.TabIndex = 152;
             this.labelX24.Text = "LOẠI ĐIỀU CHỈNH";
-            // 
-            // cbLoaiDieuChinh
-            // 
-            this.cbLoaiDieuChinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLoaiDieuChinh.FormattingEnabled = true;
-            this.cbLoaiDieuChinh.Items.AddRange(new object[] {
-            "Nâng Cở ĐHN",
-            "Hạ Cở ĐHN"});
-            this.cbLoaiDieuChinh.Location = new System.Drawing.Point(180, 18);
-            this.cbLoaiDieuChinh.Name = "cbLoaiDieuChinh";
-            this.cbLoaiDieuChinh.Size = new System.Drawing.Size(207, 27);
-            this.cbLoaiDieuChinh.TabIndex = 200;
-            // 
-            // DC_HIEULUC
-            // 
-            // 
-            // 
-            // 
-            this.DC_HIEULUC.Border.Class = "TextBoxBorder";
-            this.DC_HIEULUC.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DC_HIEULUC.ForeColor = System.Drawing.Color.Red;
-            this.DC_HIEULUC.Location = new System.Drawing.Point(324, 65);
-            this.DC_HIEULUC.Name = "DC_HIEULUC";
-            this.DC_HIEULUC.Size = new System.Drawing.Size(115, 27);
-            this.DC_HIEULUC.TabIndex = 202;
-            this.DC_HIEULUC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelX38
-            // 
-            this.labelX38.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX38.Location = new System.Drawing.Point(233, 68);
-            this.labelX38.Name = "labelX38";
-            this.labelX38.Size = new System.Drawing.Size(87, 22);
-            this.labelX38.TabIndex = 181;
-            this.labelX38.Text = "HIỆU LỰC";
-            // 
-            // DC_SOPHIEU
-            // 
-            // 
-            // 
-            // 
-            this.DC_SOPHIEU.Border.Class = "TextBoxBorder";
-            this.DC_SOPHIEU.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DC_SOPHIEU.ForeColor = System.Drawing.Color.Red;
-            this.DC_SOPHIEU.Location = new System.Drawing.Point(106, 65);
-            this.DC_SOPHIEU.Name = "DC_SOPHIEU";
-            this.DC_SOPHIEU.Size = new System.Drawing.Size(115, 27);
-            this.DC_SOPHIEU.TabIndex = 201;
-            this.DC_SOPHIEU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelX39
-            // 
-            this.labelX39.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX39.Location = new System.Drawing.Point(24, 69);
-            this.labelX39.Name = "labelX39";
-            this.labelX39.Size = new System.Drawing.Size(87, 22);
-            this.labelX39.TabIndex = 180;
-            this.labelX39.Text = "SỐ PHIẾU";
-            // 
-            // DC_DOT
-            // 
-            this.DC_DOT.DisplayMember = "Text";
-            this.DC_DOT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.DC_DOT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DC_DOT.FormattingEnabled = true;
-            this.DC_DOT.ItemHeight = 20;
-            this.DC_DOT.Items.AddRange(new object[] {
-            this.comboItem65,
-            this.comboItem76,
-            this.comboItem77,
-            this.comboItem78,
-            this.comboItem79,
-            this.comboItem80,
-            this.comboItem81,
-            this.comboItem82,
-            this.comboItem83,
-            this.comboItem84,
-            this.comboItem85,
-            this.comboItem86,
-            this.comboItem87,
-            this.comboItem88,
-            this.comboItem89,
-            this.comboItem90,
-            this.comboItem91,
-            this.comboItem92,
-            this.comboItem93,
-            this.comboItem94});
-            this.DC_DOT.Location = new System.Drawing.Point(503, 68);
-            this.DC_DOT.Name = "DC_DOT";
-            this.DC_DOT.Size = new System.Drawing.Size(57, 26);
-            this.DC_DOT.TabIndex = 203;
-            // 
-            // comboItem65
-            // 
-            this.comboItem65.Text = "01";
-            this.comboItem65.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem65.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem76
-            // 
-            this.comboItem76.Text = "02";
-            this.comboItem76.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem76.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem77
-            // 
-            this.comboItem77.Text = "03";
-            this.comboItem77.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem77.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem78
-            // 
-            this.comboItem78.Text = "04";
-            this.comboItem78.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem78.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem79
-            // 
-            this.comboItem79.Text = "05";
-            this.comboItem79.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem79.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem80
-            // 
-            this.comboItem80.Text = "06";
-            this.comboItem80.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem80.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem81
-            // 
-            this.comboItem81.Text = "07";
-            this.comboItem81.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem81.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem82
-            // 
-            this.comboItem82.Text = "08";
-            this.comboItem82.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem82.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem83
-            // 
-            this.comboItem83.Text = "09";
-            this.comboItem83.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem83.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem84
-            // 
-            this.comboItem84.Text = "10";
-            this.comboItem84.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem84.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem85
-            // 
-            this.comboItem85.Text = "11";
-            this.comboItem85.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem85.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem86
-            // 
-            this.comboItem86.Text = "12";
-            this.comboItem86.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem86.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem87
-            // 
-            this.comboItem87.Text = "13";
-            this.comboItem87.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem87.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem88
-            // 
-            this.comboItem88.Text = "14";
-            this.comboItem88.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem88.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem89
-            // 
-            this.comboItem89.Text = "15";
-            this.comboItem89.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem89.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem90
-            // 
-            this.comboItem90.Text = "16";
-            this.comboItem90.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem90.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem91
-            // 
-            this.comboItem91.Text = "17";
-            this.comboItem91.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem91.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem92
-            // 
-            this.comboItem92.Text = "18";
-            this.comboItem92.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem92.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem93
-            // 
-            this.comboItem93.Text = "19";
-            this.comboItem93.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem93.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem94
-            // 
-            this.comboItem94.Text = "20";
-            this.comboItem94.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem94.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX40
-            // 
-            this.labelX40.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX40.Location = new System.Drawing.Point(459, 70);
-            this.labelX40.Name = "labelX40";
-            this.labelX40.Size = new System.Drawing.Size(59, 22);
-            this.labelX40.TabIndex = 179;
-            this.labelX40.Text = "ĐỢT";
             // 
             // tab_DieuChinhDS
             // 

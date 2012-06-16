@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_DieuChinhLoTrinh : ReportClass {
+    public class CONGVANDIEUCHINH : ReportClass {
         
-        public rpt_DieuChinhLoTrinh() {
+        public CONGVANDIEUCHINH() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_DieuChinhLoTrinh.rpt";
+                return "CONGVANDIEUCHINH.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh.rpt_DieuChinhLoTrinh.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh.CONGVANDIEUCHINH.rpt";
             }
             set {
                 // Do nothing
@@ -103,12 +103,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh {
                 return this.DataDefinition.ParameterFields[1];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_sodanhbo {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_DieuChinhLoTrinh : Component, ICachedReport {
+    public class CachedCONGVANDIEUCHINH : Component, ICachedReport {
         
-        public Cachedrpt_DieuChinhLoTrinh() {
+        public CachedCONGVANDIEUCHINH() {
         }
         
         [Browsable(false)]
@@ -145,7 +153,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_DieuChinhLoTrinh rpt = new rpt_DieuChinhLoTrinh();
+            CONGVANDIEUCHINH rpt = new CONGVANDIEUCHINH();
             rpt.Site = this.Site;
             return rpt;
         }

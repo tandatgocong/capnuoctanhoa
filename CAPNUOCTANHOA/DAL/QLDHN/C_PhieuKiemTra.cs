@@ -30,7 +30,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             string sql = "SELECT MAY,DANHBO,ds.MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,ds.CODECU, ds.CSCU";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.TODS='"+tods+"' AND ds.KY='" + ky + "' AND ds.CODE ='" + code + "' ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.TODS='"+tods+"' AND ds.KY='" + ky + "' AND ds.CODE IN (" + code + ") ";
             if (dot != 0) {
                 sql += " AND ds.DOT='"+dot+"'"; 
             }
