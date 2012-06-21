@@ -36,13 +36,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             ItemGanMoi.Visible = false;
             tabItem2.Visible = false;
             tabItem3.Visible = false;
-            if ("DT,DP".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            if ("DT,DP,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 tabItem1.Visible = true;
                 tabItem2.Visible = true;
             }
 
-            if ("TT".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            if ("TT,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 tabItemPhienLoTrinh.Visible = true;
                 tabSoDocSo.Visible = true;
@@ -61,7 +61,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 SO_NAM.Text = nam + "";
 
             }
-            if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            if ("GM,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 ItemGanMoi.Visible = true;
                
