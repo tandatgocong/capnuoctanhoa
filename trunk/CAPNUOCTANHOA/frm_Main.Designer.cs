@@ -76,6 +76,15 @@
             this.lb2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.lb1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuDieuChinhKH = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuKiemTra = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmdBaoThay = new System.Windows.Forms.ToolStripMenuItem();
+            this.btLoTrinh = new System.Windows.Forms.ToolStripMenuItem();
+            this.yeucaukiemtra = new System.Windows.Forms.ToolStripMenuItem();
+            this.baocaoTongKet = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLayDuLieuGanMoi = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip6 = new System.Windows.Forms.MenuStrip();
             this.chepTieuThu = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,15 +97,6 @@
             this.ribbonPanel6 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip5 = new System.Windows.Forms.MenuStrip();
             this.menuInPhieuTieuTHu = new System.Windows.Forms.ToolStripMenuItem();
-            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuDieuChinhKH = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuKiemTra = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmdBaoThay = new System.Windows.Forms.ToolStripMenuItem();
-            this.btLoTrinh = new System.Windows.Forms.ToolStripMenuItem();
-            this.yeucaukiemtra = new System.Windows.Forms.ToolStripMenuItem();
-            this.baocaoTongKet = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuLayDuLieuGanMoi = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoiQLDHN = new DevComponents.DotNetBar.RibbonTabItem();
             this.banKTKS = new DevComponents.DotNetBar.RibbonTabItem();
             this.menuDTCTB = new DevComponents.DotNetBar.RibbonTabItem();
@@ -113,14 +113,14 @@
             this.panelHome.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.ribbonControl1.SuspendLayout();
+            this.ribbonPanel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.ribbonPanel5.SuspendLayout();
             this.menuStrip6.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.ribbonPanel6.SuspendLayout();
             this.menuStrip5.SuspendLayout();
-            this.ribbonPanel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuHeThong
@@ -136,10 +136,10 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel1.Controls.Add(this.menuStrip3);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 32);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 30);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1038, 62);
             this.ribbonPanel1.TabIndex = 1;
             // 
             // menuStrip3
@@ -514,7 +514,7 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(536, 17);
             this.toolStripStatusLabel1.Text = "© Copyright  2012 - Tan Hoa Water Supply Company Limted. Developed by Lê Tấn Đạt " +
-    "- 0909933397";
+                "- 0909933397";
             // 
             // reflectionImage1
             // 
@@ -556,18 +556,18 @@
             this.lb3.Size = new System.Drawing.Size(624, 34);
             this.lb3.TabIndex = 32;
             this.lb3.Text = " <font size=\"+6\"><font color=\"#B02B2C\">CÔNG TY TNHH MTV CẤP NƯỚC TÂN HÒA</font></" +
-    "font>";
+                "font>";
             // 
             // lb2
             // 
             this.lb2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb2.Location = new System.Drawing.Point(231, 47);
+            this.lb2.Location = new System.Drawing.Point(206, 47);
             this.lb2.Name = "lb2";
             this.lb2.ReflectionEnabled = false;
-            this.lb2.Size = new System.Drawing.Size(607, 34);
+            this.lb2.Size = new System.Drawing.Size(656, 34);
             this.lb2.TabIndex = 31;
             this.lb2.Text = "<b><font size=\"+6\"><font color=\"#B02B2C\">TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN </fon" +
-    "t></font></b>";
+                "t></font></b>";
             // 
             // lb1
             // 
@@ -578,7 +578,7 @@
             this.lb1.Size = new System.Drawing.Size(526, 34);
             this.lb1.TabIndex = 30;
             this.lb1.Text = "<font size=\"+6\"><font color=\"#B02B2C\">TỔNG CÔNG TY CẤP NƯỚC SÀI GÒN </font></font" +
-    ">";
+                ">";
             // 
             // ribbonControl1
             // 
@@ -611,6 +611,101 @@
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
+            // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel2.Controls.Add(this.menuStrip1);
+            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 32);
+            this.ribbonPanel2.Name = "ribbonPanel2";
+            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel2.Size = new System.Drawing.Size(1038, 30);
+            this.ribbonPanel2.TabIndex = 5;
+            this.ribbonPanel2.Visible = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuDieuChinhKH,
+            this.menuKiemTra,
+            this.cmdBaoThay,
+            this.btLoTrinh,
+            this.yeucaukiemtra,
+            this.baocaoTongKet,
+            this.menuLayDuLieuGanMoi});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1032, 27);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuDieuChinhKH
+            // 
+            this.menuDieuChinhKH.ForeColor = System.Drawing.Color.Black;
+            this.menuDieuChinhKH.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
+            this.menuDieuChinhKH.Name = "menuDieuChinhKH";
+            this.menuDieuChinhKH.Size = new System.Drawing.Size(184, 23);
+            this.menuDieuChinhKH.Text = "Điều Chỉnh Thông Tin";
+            this.menuDieuChinhKH.Click += new System.EventHandler(this.menuDieuChinhKH_Click);
+            // 
+            // menuKiemTra
+            // 
+            this.menuKiemTra.ForeColor = System.Drawing.Color.Black;
+            this.menuKiemTra.Image = global::CAPNUOCTANHOA.Properties.Resources.Ok;
+            this.menuKiemTra.Name = "menuKiemTra";
+            this.menuKiemTra.ShowShortcutKeys = false;
+            this.menuKiemTra.Size = new System.Drawing.Size(131, 23);
+            this.menuKiemTra.Text = "Thay Định Kỳ";
+            this.menuKiemTra.Click += new System.EventHandler(this.menuKiemTra_Click);
+            // 
+            // cmdBaoThay
+            // 
+            this.cmdBaoThay.ForeColor = System.Drawing.Color.Black;
+            this.cmdBaoThay.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
+            this.cmdBaoThay.Name = "cmdBaoThay";
+            this.cmdBaoThay.Size = new System.Drawing.Size(142, 23);
+            this.cmdBaoThay.Text = "Báo Thay ĐHN";
+            this.cmdBaoThay.Click += new System.EventHandler(this.cmdBaoThay_Click);
+            // 
+            // btLoTrinh
+            // 
+            this.btLoTrinh.ForeColor = System.Drawing.Color.Black;
+            this.btLoTrinh.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right1;
+            this.btLoTrinh.Name = "btLoTrinh";
+            this.btLoTrinh.Size = new System.Drawing.Size(146, 23);
+            this.btLoTrinh.Text = "Lộ Trình Đọc Số";
+            this.btLoTrinh.Click += new System.EventHandler(this.btChuyenBK_Click);
+            // 
+            // yeucaukiemtra
+            // 
+            this.yeucaukiemtra.ForeColor = System.Drawing.Color.Black;
+            this.yeucaukiemtra.Image = global::CAPNUOCTANHOA.Properties.Resources.Stats2;
+            this.yeucaukiemtra.Name = "yeucaukiemtra";
+            this.yeucaukiemtra.Size = new System.Drawing.Size(144, 23);
+            this.yeucaukiemtra.Text = "Y.Cầu Kiểm Tra";
+            this.yeucaukiemtra.Click += new System.EventHandler(this.yeucaukiemtra_Click);
+            // 
+            // baocaoTongKet
+            // 
+            this.baocaoTongKet.ForeColor = System.Drawing.Color.Black;
+            this.baocaoTongKet.Image = global::CAPNUOCTANHOA.Properties.Resources.Stats2;
+            this.baocaoTongKet.Name = "baocaoTongKet";
+            this.baocaoTongKet.Size = new System.Drawing.Size(95, 23);
+            this.baocaoTongKet.Text = "Báo Cáo";
+            this.baocaoTongKet.Click += new System.EventHandler(this.baocaoTongKet_Click);
+            // 
+            // menuLayDuLieuGanMoi
+            // 
+            this.menuLayDuLieuGanMoi.ForeColor = System.Drawing.Color.Black;
+            this.menuLayDuLieuGanMoi.Image = global::CAPNUOCTANHOA.Properties.Resources.Puzzle;
+            this.menuLayDuLieuGanMoi.Name = "menuLayDuLieuGanMoi";
+            this.menuLayDuLieuGanMoi.Size = new System.Drawing.Size(188, 23);
+            this.menuLayDuLieuGanMoi.Text = "Lấy Dữ Liệu Gắn Mới";
+            this.menuLayDuLieuGanMoi.Visible = false;
+            this.menuLayDuLieuGanMoi.Click += new System.EventHandler(this.menuLayDuLieuGanMoi_Click);
             // 
             // ribbonPanel5
             // 
@@ -745,101 +840,6 @@
             this.menuInPhieuTieuTHu.Text = "Chép Tiêu Thụ Nước";
             this.menuInPhieuTieuTHu.Click += new System.EventHandler(this.menuInPhieuTieuTHu_Click);
             // 
-            // ribbonPanel2
-            // 
-            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel2.Controls.Add(this.menuStrip1);
-            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 32);
-            this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(1038, 30);
-            this.ribbonPanel2.TabIndex = 5;
-            this.ribbonPanel2.Visible = false;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuDieuChinhKH,
-            this.menuKiemTra,
-            this.cmdBaoThay,
-            this.btLoTrinh,
-            this.yeucaukiemtra,
-            this.baocaoTongKet,
-            this.menuLayDuLieuGanMoi});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1032, 27);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuDieuChinhKH
-            // 
-            this.menuDieuChinhKH.ForeColor = System.Drawing.Color.Black;
-            this.menuDieuChinhKH.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
-            this.menuDieuChinhKH.Name = "menuDieuChinhKH";
-            this.menuDieuChinhKH.Size = new System.Drawing.Size(184, 23);
-            this.menuDieuChinhKH.Text = "Điều Chỉnh Thông Tin";
-            this.menuDieuChinhKH.Click += new System.EventHandler(this.menuDieuChinhKH_Click);
-            // 
-            // menuKiemTra
-            // 
-            this.menuKiemTra.ForeColor = System.Drawing.Color.Black;
-            this.menuKiemTra.Image = global::CAPNUOCTANHOA.Properties.Resources.Ok;
-            this.menuKiemTra.Name = "menuKiemTra";
-            this.menuKiemTra.ShowShortcutKeys = false;
-            this.menuKiemTra.Size = new System.Drawing.Size(131, 23);
-            this.menuKiemTra.Text = "Thay Định Kỳ";
-            this.menuKiemTra.Click += new System.EventHandler(this.menuKiemTra_Click);
-            // 
-            // cmdBaoThay
-            // 
-            this.cmdBaoThay.ForeColor = System.Drawing.Color.Black;
-            this.cmdBaoThay.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
-            this.cmdBaoThay.Name = "cmdBaoThay";
-            this.cmdBaoThay.Size = new System.Drawing.Size(142, 23);
-            this.cmdBaoThay.Text = "Báo Thay ĐHN";
-            this.cmdBaoThay.Click += new System.EventHandler(this.cmdBaoThay_Click);
-            // 
-            // btLoTrinh
-            // 
-            this.btLoTrinh.ForeColor = System.Drawing.Color.Black;
-            this.btLoTrinh.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right1;
-            this.btLoTrinh.Name = "btLoTrinh";
-            this.btLoTrinh.Size = new System.Drawing.Size(146, 23);
-            this.btLoTrinh.Text = "Lộ Trình Đọc Số";
-            this.btLoTrinh.Click += new System.EventHandler(this.btChuyenBK_Click);
-            // 
-            // yeucaukiemtra
-            // 
-            this.yeucaukiemtra.ForeColor = System.Drawing.Color.Black;
-            this.yeucaukiemtra.Image = global::CAPNUOCTANHOA.Properties.Resources.Stats2;
-            this.yeucaukiemtra.Name = "yeucaukiemtra";
-            this.yeucaukiemtra.Size = new System.Drawing.Size(144, 23);
-            this.yeucaukiemtra.Text = "Y.Cầu Kiểm Tra";
-            this.yeucaukiemtra.Click += new System.EventHandler(this.yeucaukiemtra_Click);
-            // 
-            // baocaoTongKet
-            // 
-            this.baocaoTongKet.ForeColor = System.Drawing.Color.Black;
-            this.baocaoTongKet.Image = global::CAPNUOCTANHOA.Properties.Resources.Stats2;
-            this.baocaoTongKet.Name = "baocaoTongKet";
-            this.baocaoTongKet.Size = new System.Drawing.Size(95, 23);
-            this.baocaoTongKet.Text = "Báo Cáo";
-            this.baocaoTongKet.Click += new System.EventHandler(this.baocaoTongKet_Click);
-            // 
-            // menuLayDuLieuGanMoi
-            // 
-            this.menuLayDuLieuGanMoi.ForeColor = System.Drawing.Color.Black;
-            this.menuLayDuLieuGanMoi.Image = global::CAPNUOCTANHOA.Properties.Resources.Puzzle;
-            this.menuLayDuLieuGanMoi.Name = "menuLayDuLieuGanMoi";
-            this.menuLayDuLieuGanMoi.Size = new System.Drawing.Size(188, 23);
-            this.menuLayDuLieuGanMoi.Text = "Lấy Dữ Liệu Gắn Mới";
-            this.menuLayDuLieuGanMoi.Visible = false;
-            this.menuLayDuLieuGanMoi.Click += new System.EventHandler(this.menuLayDuLieuGanMoi_Click);
-            // 
             // menuDoiQLDHN
             // 
             this.menuDoiQLDHN.Name = "menuDoiQLDHN";
@@ -920,6 +920,10 @@
             this.statusStrip2.PerformLayout();
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
+            this.ribbonPanel2.ResumeLayout(false);
+            this.ribbonPanel2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ribbonPanel5.ResumeLayout(false);
             this.ribbonPanel5.PerformLayout();
             this.menuStrip6.ResumeLayout(false);
@@ -932,10 +936,6 @@
             this.ribbonPanel6.PerformLayout();
             this.menuStrip5.ResumeLayout(false);
             this.menuStrip5.PerformLayout();
-            this.ribbonPanel2.ResumeLayout(false);
-            this.ribbonPanel2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }

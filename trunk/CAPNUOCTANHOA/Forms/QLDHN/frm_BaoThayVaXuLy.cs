@@ -23,7 +23,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         public frm_BaoThayVaXuLy()
         {
             InitializeComponent();
-            if ("QLDHN".Equals(DAL.SYS.C_USERS._maphong.ToString()))
+            if ("QLDHN,TOCNTT".Contains(DAL.SYS.C_USERS._maphong.ToString()))
             {
                 tabItem3.Visible = true;
                 this.panelBaoThay.Controls.Clear();
