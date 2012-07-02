@@ -144,6 +144,20 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
             return null;
         }
+        public static TB_DHN_BAOCAO getBaoCao()
+        {
+            try
+            {
+                var query = from q in db.TB_DHN_BAOCAOs where q.ID_BC == 1 select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
         //public static DataTable getBaoThayDinhKy() {
         //    string sql = " SELECT TOP(300) DANHBO, HOTEN, (SONHA +''+ TENDUONG) AS 'DIACHI',NGAYTHAY FROM  TB_DULIEUKHACHHANG ";
         //    return LinQConnection.getDataTable(sql);

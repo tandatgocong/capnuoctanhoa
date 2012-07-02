@@ -147,7 +147,8 @@ namespace HoTroChoPhienLoTrinh
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = DIACHI(textBox1.Text);
+            formatRows(dataGridView1, "DC_DANHBA", "DC_LOTRINH");
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

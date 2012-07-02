@@ -127,7 +127,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         CHIGOC.Text = khachhanghuy.CHIGOC;
                         btCapNhatThongTin.Enabled = false;
 
-                        loadghichu(khachhang.DANHBO);
+                        loadghichu(khachhanghuy.DANHBO);
                     }
                     else
                     {
