@@ -66,10 +66,10 @@ namespace CAPNUOCTANHOA
                     this.menuDTCTB.Visible = false;
                     if ("GM,TT,DT,DP".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
-                        btLoTrinh.Visible = true;
+                        btLoTrinh.Visible = true; handHeld.Visible = true;
                     }
                     else {
-                        btLoTrinh.Visible = false;
+                        btLoTrinh.Visible = false; handHeld.Visible = false;
                     }
                     if ("GM,TH".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
@@ -373,6 +373,18 @@ namespace CAPNUOCTANHOA
             PanelContent.Controls.Clear();
             // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
             tb_ThayDoiBaoCao baothay = new tb_ThayDoiBaoCao();
+            //baothay.Height = PanelContent.Size.Height - 20;
+            //baothay.Width = PanelContent.Size.Width - 20;
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+        }
+
+        private void handHeld_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
+            frm_CapNhatThongTin baothay = new frm_CapNhatThongTin();
             //baothay.Height = PanelContent.Size.Height - 20;
             //baothay.Width = PanelContent.Size.Width - 20;
             baothay.Height = PanelContent.Size.Height - 5;
