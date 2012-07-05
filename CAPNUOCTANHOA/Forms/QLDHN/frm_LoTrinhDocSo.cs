@@ -35,7 +35,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             tabItem1.Visible = false;
             ItemGanMoi.Visible = false;
             tabItem2.Visible = false;
-            tabItem3.Visible = false;
+            soGanMoi.Visible = false;
             if ("DT,DP,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 tabItem1.Visible = true;
@@ -49,7 +49,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.panel3.Controls.Clear();
                 this.panel3.Controls.Add(new tab_ChiaLoTrinh());
                 tabItem2.Visible = true;
-                tabItem3.Visible = true;
+                soGanMoi.Visible = true;
                 int ky = DateTime.Now.Month + 1;
                 int nam = DateTime.Now.Year;
                 if (ky >= 13)
@@ -75,6 +75,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     log.Error("Loi Ket Noi " + ex.Message);
                 }
                 
+            }
+            if ("TK".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            {
+                tabSoDocSo.Visible = true;
+                soGanMoi.Visible=true;
             }
              
 
@@ -834,5 +839,30 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             }
         }
+        /*
+            dsadsa         
+         */
+
+        private void btSoA3_Click(object sender, EventArgs e)
+        {
+            if ("".Equals(this.txtTuLoTrinh.Text))
+            {
+                MessageBox.Show(this, "Nhập Lộ Trình Đọc Số.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtTuLoTrinh.Focus();
+            }
+            else
+            {
+                string toLT = txtTuLoTrinh.Text;
+                string denLT = txtDenLoTrinh.Text;
+                ReportDocument rp = new rpt_SoDocSo_A3();
+                rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_A3(toLT, denLT));
+                rp.SetParameterValue("HIEULUC", "");
+                rptSoDocSoA3.ReportSource = rp;
+                this.rptSoDocSoA3.Visible = true;
+
+            }
+        }
+        
+
     }
 }
