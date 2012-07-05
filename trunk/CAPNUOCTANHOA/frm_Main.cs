@@ -64,29 +64,30 @@ namespace CAPNUOCTANHOA
                 {
                     this.menuDoiQLDHN.Visible = true;
                     this.menuDTCTB.Visible = false;
-                    if ("GM,TT,DT,DP".Contains(DAL.SYS.C_USERS._roles.Trim()))
-                    {
-                        btLoTrinh.Visible = true; handHeld.Visible = true;
-                    }
-                    else {
-                        btLoTrinh.Visible = false; handHeld.Visible = false;
-                    }
                     if ("GM,TH".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         cmdBaoThay.Visible=false;
                         menuKiemTra.Visible=false;
                         yeucaukiemtra.Visible = false;
                         menuDieuChinhKH.Visible = true;
+                        btLoTrinh.Visible = true;
+                        handHeld.Visible = false;
                     }
                     else
                     {
                         cmdBaoThay.Visible = true;
                         menuKiemTra.Visible = true;
+                        btLoTrinh.Visible = true; 
                         yeucaukiemtra.Visible = true;
+                        handHeld.Visible = true;
                     }
-                     if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         menuDieuChinhKH.Visible = false;
+                    }
+                    if ("TK".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    {
+                        handHeld.Visible = false;
                     }
                     
                     

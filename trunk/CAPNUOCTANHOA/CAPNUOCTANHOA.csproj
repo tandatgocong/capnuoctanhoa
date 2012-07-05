@@ -69,6 +69,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -328,6 +329,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PHIEUTAILAPDANHBO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_A3.cs">
+      <DependentUpon>rpt_SoDocSo_A3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_GANMOI.cs">
       <DependentUpon>rpt_SoDocSo_GANMOI.rpt</DependentUpon>
@@ -976,6 +983,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_PhieuKiemTra.resx">
       <DependentUpon>frm_PhieuKiemTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_A3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SoDocSo_A3.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_GANMOI.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

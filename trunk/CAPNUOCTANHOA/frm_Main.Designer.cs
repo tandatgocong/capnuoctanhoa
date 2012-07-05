@@ -316,7 +316,7 @@
             this.ribbonPanel4.Location = new System.Drawing.Point(0, 32);
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel4.Size = new System.Drawing.Size(1038, 30);
+            this.ribbonPanel4.Size = new System.Drawing.Size(1178, 30);
             this.ribbonPanel4.TabIndex = 4;
             this.ribbonPanel4.Visible = false;
             // 
@@ -333,10 +333,9 @@
             this.toolStripMenuItem1});
             this.menuStrip4.Location = new System.Drawing.Point(3, 0);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(1032, 27);
+            this.menuStrip4.Size = new System.Drawing.Size(1172, 27);
             this.menuStrip4.TabIndex = 1;
             this.menuStrip4.Text = "menuStrip4";
-            this.menuStrip4.Visible = false;
             // 
             // caculator
             // 
@@ -596,8 +595,8 @@
             // 
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
@@ -824,6 +823,7 @@
             this.menuStrip2.Size = new System.Drawing.Size(1032, 27);
             this.menuStrip2.TabIndex = 3;
             this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.Visible = false;
             // 
             // menuHoanCongThay
             // 
