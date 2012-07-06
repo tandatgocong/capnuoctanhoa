@@ -12,6 +12,7 @@ using CAPNUOCTANHOA.LinQ;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh;
+using CAPNUOCTANHOA.Forms.QLDHN.BC;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -37,6 +38,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             kdKy.SelectedIndex = DateTime.Now.Month - 1;
             kdDot.SelectedIndex = 1;
             txtNgayGan.Value = DateTime.Now.Date;
+
+            this.dcNam.Text = DateTime.Now.Year.ToString();
+            dcKy.SelectedIndex = DateTime.Now.Month - 1;
+            dcDot.SelectedIndex = 1;
+            dcNgayYC.Value = DateTime.Now.Date;
 
 
         }
@@ -230,12 +236,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void dataBangKe_KeyPress(object sender, KeyPressEventArgs e)
         {
-            MessageBox.Show(this, e.KeyChar + "");
-            if (e.KeyChar == (char)Keys.Delete)
-            {
-                result.Rows.RemoveAt(dataBangKe.CurrentRow.Index);
-                dataBangKe.DataSource = result;
-            }
+            //MessageBox.Show(this, e.KeyChar + "");
+            //if (e.KeyChar == (char)Keys.Delete)
+            //{
+            //    result.Rows.RemoveAt(dataBangKe.CurrentRow.Index);
+            //    dataBangKe.DataSource = result;
+            //}
 
         }
 
@@ -243,8 +249,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             if (e.KeyCode == Keys.Delete)
             {
-                result.Rows.RemoveAt(dataBangKe.CurrentRow.Index);
-                dataBangKe.DataSource = result;
+                if (result != null)
+                {
+                    result.Rows.RemoveAt(dataBangKe.CurrentRow.Index);
+                    dataBangKe.DataSource = result;
+                }
             }
         }
 
@@ -293,6 +302,149 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
 
+        }
+        /*sfsdfds */
+        public static DataTable getListDutChiThan(string dot, string ky, string nam)
+        {
+            if ("00".Equals(dot))
+            {
+                string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
+                sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
+                sql += " ORDER BY ds.MALOTRINH ASC";
+
+                return DAL.LinQConnection.getDataTable(sql);
+
+            }
+            else
+            {
+                string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
+                sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND ds.DOT=" + int.Parse(dot) + "  AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
+                sql += " ORDER BY ds.MALOTRINH ASC";
+                return DAL.LinQConnection.getDataTable(sql);
+            }
+
+        }
+        public static DataTable getListDutChiThan(string dot, string ky, string nam, string ngay)
+        {
+            if ("00".Equals(dot))
+            {
+                string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
+                sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH") + " AND  ds.DANHBA NOT IN (SELECT DANHBO FROM TB_TLKDUTCHI  WHERE  NGAYBAO='" + ngay + "')";
+                sql += " ORDER BY ds.MALOTRINH ASC";
+
+                return DAL.LinQConnection.getDataTable(sql);
+
+            }
+            else
+            {
+                string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
+                sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND ds.DOT=" + int.Parse(dot) + "  AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH") + " AND  ds.DANHBA NOT IN (SELECT DANHBO FROM TB_TLKDUTCHI  WHERE  NGAYBAO='" + ngay + "')";
+                sql += " ORDER BY ds.MALOTRINH ASC";
+                return DAL.LinQConnection.getDataTable(sql);
+            }
+
+        }
+
+        DataTable dutchi = null;
+        private void bt_DCIN_Click(object sender, EventArgs e)
+        {
+            string dot = dcDot.Items[dcDot.SelectedIndex].ToString();
+            string ky = dcKy.Items[dcKy.SelectedIndex].ToString();
+            string nam = dcNam.Text.Trim();
+
+            dutchi = getListDutChiThan(dot, ky, nam);
+            dataDutChiThan.DataSource = dutchi;
+
+        }
+
+        private void dataDutChiThan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (dutchi != null)
+                {
+                    dutchi.Rows.RemoveAt(dataDutChiThan.CurrentRow.Index);
+                    dataDutChiThan.DataSource = dutchi;
+                }
+            }
+        }
+
+        private void btInTLKDutChi_Click(object sender, EventArgs e)
+        {
+            string listDanhBa = "";
+            for (int i = 0; i < dataDutChiThan.Rows.Count; i++)
+            {
+                if ("True".Equals(this.dataDutChiThan.Rows[i].Cells["checkChon"].Value + ""))
+                {
+                    string DC_DANHBO = this.dataDutChiThan.Rows[i].Cells["DC_DANHBO"].Value + "";
+                    string DC_LOTRINH = this.dataDutChiThan.Rows[i].Cells["DC_LOTRINH"].Value + "";
+                    string DC_HOTEN = this.dataDutChiThan.Rows[i].Cells["DC_HOTEN"].Value + "";
+                    string DC_DIACHI = this.dataDutChiThan.Rows[i].Cells["DC_DIACHI"].Value + "";
+                    string DC_HOPDONG = this.dataDutChiThan.Rows[i].Cells["DC_HOPDONG"].Value + "";
+                    string DC_GB = this.dataDutChiThan.Rows[i].Cells["DC_GB"].Value + "";
+                    string DC_DM = this.dataDutChiThan.Rows[i].Cells["DC_DM"].Value + "";
+                    string DC_HIEU = this.dataDutChiThan.Rows[i].Cells["DC_HIEU"].Value + "";
+                    string DC_CO = this.dataDutChiThan.Rows[i].Cells["DC_CO"].Value + "";
+                    string SOTHANDH = this.dataDutChiThan.Rows[i].Cells["SOTHANDH"].Value + "";
+
+                    TB_TLKDUTCHI dc = DAL.QLDHN.C_DhnAmSau.findByDanhBoDutChi(DC_DANHBO.Replace(" ", ""), this.dcNgayYC.Value.Date);
+                    if (dc != null)
+                    {
+                        dc.TODS = DAL.SYS.C_USERS._toDocSo;
+                        dc.DANHBO = DC_DANHBO;
+                        dc.LOTRINH = DC_LOTRINH;
+                        dc.HOTEN = DC_HOTEN;
+                        dc.DIACHI = DC_DIACHI;
+                        dc.HOPDONG = DC_HOPDONG;
+                        dc.GB = DC_GB;
+                        dc.DM = DC_DM;
+                        dc.HIEU = DC_HIEU;
+                        dc.CO = DC_CO;
+                        dc.SOTHAN = SOTHANDH;
+                        dc.NGAYBAO = this.dcNgayYC.Value.Date;
+                        dc.MODIFYDATE = DateTime.Now;
+                        dc.MODIFYBY = DAL.SYS.C_USERS._userName;
+                        DAL.QLDHN.C_DhnAmSau.Update();
+                    }
+                    else
+                    {
+                        dc = new TB_TLKDUTCHI();
+                        dc.TODS = DAL.SYS.C_USERS._toDocSo;
+                        dc.DANHBO = DC_DANHBO;
+                        dc.LOTRINH = DC_LOTRINH;
+                        dc.HOTEN = DC_HOTEN;
+                        dc.DIACHI = DC_DIACHI;
+                        dc.HOPDONG = DC_HOPDONG;
+                        dc.GB = DC_GB;
+                        dc.DM = DC_DM;
+                        dc.HIEU = DC_HIEU;
+                        dc.CO = DC_CO;
+                        dc.SOTHAN = SOTHANDH;
+                        dc.NGAYBAO = this.dcNgayYC.Value.Date;
+                        dc.CREATEDATE = DateTime.Now;
+                        dc.CREATEBY = DAL.SYS.C_USERS._userName;
+                        DAL.QLDHN.C_DhnAmSau.Insert(dc);
+                    }
+                    listDanhBa += ("'" + (DC_DANHBO.Replace(" ", "") + "',"));
+                }
+            }
+           listDanhBa= listDanhBa.Remove(listDanhBa.Length - 1, 1);
+           ReportDocument rp = new rpt_TLKDutChi();
+           rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString()));
+           frm_Reports frm = new frm_Reports(rp);
+           frm.ShowDialog();
+
+
+           string dot = dcDot.Items[dcDot.SelectedIndex].ToString();
+           string ky = dcKy.Items[dcKy.SelectedIndex].ToString();
+           string nam = dcNam.Text.Trim();
+
+           dutchi = getListDutChiThan(dot, ky, nam, this.dcNgayYC.Value.Date.ToShortDateString());
+           dataDutChiThan.DataSource = dutchi;
         }
     }
 }

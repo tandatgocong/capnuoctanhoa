@@ -90,5 +90,56 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             adapter.Fill(ds, "TB_DHN_BAOCAO");
             return ds;
         }
+    
+    /** DUT CHI THAN **/
+
+        public static void Insert(TB_TLKDUTCHI dutchi)
+        {
+            try
+            {
+                db.TB_TLKDUTCHIs.InsertOnSubmit(dutchi);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+       
+        public static DataTable getListTLKDutChiByDate(string ngay)
+        {
+            string sql = " SELECT DANHBO ,LOTRINH ,  HOTEN ,DIACHI ,HOPDONG,GB , DM ,HIEU ,CO ,SOTHAN FROM TB_TLKDUTCHI WHERE TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND NGAYBAO='" + ngay + "' ORDER BY LOTRINH ASC ";
+            return LinQConnection.getDataTable(sql);
+
+        }
+        
+        public static TB_TLKDUTCHI findByDanhBoDutChi(string danhbo, DateTime ngayyc)
+        {
+            try
+            {
+                var query = from q in db.TB_TLKDUTCHIs where q.DANHBO == danhbo && q.NGAYBAO==ngayyc select q;
+                return query.ToList()[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
+        public static DataSet getReportDutChi(string listDanhbo, string ngay)
+        {
+            DataSet ds = new DataSet();
+            string query = " SELECT *  FROM TB_TLKDUTCHI WHERE TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND  NGAYBAO='" + ngay + "' AND DANHBO IN ("+listDanhbo+") ORDER BY LOTRINH ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_TLKDUTCHI");
+
+            query = "select * FROM TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+            return ds;
+        }
+    
+    
     }
 }
