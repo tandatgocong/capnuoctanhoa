@@ -39,8 +39,11 @@
             this.tabControl2 = new DevComponents.DotNetBar.TabControl();
             this.tabDieuChinhKH = new DevComponents.DotNetBar.TabControlPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lichsuGhiCHu = new System.Windows.Forms.DataGridView();
+            this.txtGhiChu = new System.Windows.Forms.RichTextBox();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.btCapNhatThongTin = new DevComponents.DotNetBar.ButtonX();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.KIEMDINH = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.NGAYGAN = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -81,6 +84,7 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -166,17 +170,18 @@
             this.labelX38 = new DevComponents.DotNetBar.LabelX();
             this.labelX40 = new DevComponents.DotNetBar.LabelX();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.txtGhiChu = new System.Windows.Forms.RichTextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lichsuGhiCHu = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CREATEDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOIDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONVICN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuCapNhatKetQua = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabDieuChinhKH.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lichsuGhiCHu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KIEMDINH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NGAYGAN)).BeginInit();
             this.tabControlPanel4.SuspendLayout();
@@ -187,8 +192,7 @@
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lichsuGhiCHu)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl2
@@ -247,8 +251,8 @@
             this.tabDieuChinhKH.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabDieuChinhKH.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabDieuChinhKH.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabDieuChinhKH.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabDieuChinhKH.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabDieuChinhKH.Style.GradientAngle = 90;
             this.tabDieuChinhKH.TabIndex = 1;
             this.tabDieuChinhKH.TabItem = this.tabItem3;
@@ -307,6 +311,52 @@
             this.panel2.Size = new System.Drawing.Size(1146, 542);
             this.panel2.TabIndex = 1;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lichsuGhiCHu);
+            this.groupBox2.Location = new System.Drawing.Point(543, 25);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(580, 453);
+            this.groupBox2.TabIndex = 127;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Lịch Sử Cập Nhật";
+            // 
+            // lichsuGhiCHu
+            // 
+            this.lichsuGhiCHu.AllowUserToAddRows = false;
+            this.lichsuGhiCHu.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.lichsuGhiCHu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lichsuGhiCHu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lichsuGhiCHu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.CREATEDATE,
+            this.NOIDUNG,
+            this.DONVICN});
+            this.lichsuGhiCHu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lichsuGhiCHu.Location = new System.Drawing.Point(3, 22);
+            this.lichsuGhiCHu.Name = "lichsuGhiCHu";
+            this.lichsuGhiCHu.RowHeadersWidth = 20;
+            this.lichsuGhiCHu.Size = new System.Drawing.Size(574, 428);
+            this.lichsuGhiCHu.TabIndex = 0;
+            this.lichsuGhiCHu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lichsuGhiCHu_MouseClick);
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.Location = new System.Drawing.Point(151, 382);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(357, 96);
+            this.txtGhiChu.TabIndex = 21;
+            this.txtGhiChu.Text = "";
+            // 
+            // labelX6
+            // 
+            this.labelX6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Location = new System.Drawing.Point(45, 385);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(102, 22);
+            this.labelX6.TabIndex = 126;
+            this.labelX6.Text = "GHI CHÚ";
+            // 
             // btCapNhatThongTin
             // 
             this.btCapNhatThongTin.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -320,15 +370,6 @@
             this.btCapNhatThongTin.TabIndex = 22;
             this.btCapNhatThongTin.Text = "CẬP NHẬT THÔNG TIN";
             this.btCapNhatThongTin.Click += new System.EventHandler(this.btCapNhatThongTin_Click);
-            // 
-            // labelX13
-            // 
-            this.labelX13.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX13.Location = new System.Drawing.Point(304, 191);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(85, 22);
-            this.labelX13.TabIndex = 125;
-            this.labelX13.Text = "QUẬN";
             // 
             // labelX7
             // 
@@ -876,6 +917,15 @@
             this.labelX12.TabIndex = 114;
             this.labelX12.Text = "NGÀY GẮN";
             // 
+            // labelX13
+            // 
+            this.labelX13.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX13.Location = new System.Drawing.Point(304, 191);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(85, 22);
+            this.labelX13.TabIndex = 125;
+            this.labelX13.Text = "QUẬN";
+            // 
             // tabItem3
             // 
             this.tabItem3.AttachedControl = this.tabDieuChinhKH;
@@ -894,8 +944,8 @@
             this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel4.Style.GradientAngle = 90;
             this.tabControlPanel4.TabIndex = 7;
             this.tabControlPanel4.TabItem = this.tabItem1;
@@ -929,8 +979,8 @@
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 5;
             this.tabControlPanel1.TabItem = this.tabDieuChinh;
@@ -964,8 +1014,8 @@
             this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel2.Style.GradientAngle = 90;
             this.tabControlPanel2.TabIndex = 6;
             this.tabControlPanel2.TabItem = this.ganhopBV;
@@ -999,8 +1049,8 @@
             this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel3.Style.GradientAngle = 90;
             this.tabControlPanel3.TabIndex = 4;
             this.tabControlPanel3.TabItem = this.tabItem6;
@@ -1034,8 +1084,8 @@
             this.tabCapNhatDS.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabCapNhatDS.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabCapNhatDS.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabCapNhatDS.Style.GradientAngle = 90;
             this.tabCapNhatDS.TabIndex = 2;
             this.tabCapNhatDS.TabItem = this.tabItem2;
@@ -1800,49 +1850,19 @@
             this.tabItem2.Text = "CẮT HỦY DANH BỘ";
             this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
             // 
-            // labelX6
+            // contextMenuStrip1
             // 
-            this.labelX6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX6.Location = new System.Drawing.Point(45, 385);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(102, 22);
-            this.labelX6.TabIndex = 126;
-            this.labelX6.Text = "GHI CHÚ";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCapNhatKetQua});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(200, 28);
             // 
-            // txtGhiChu
+            // ID
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(151, 382);
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(357, 96);
-            this.txtGhiChu.TabIndex = 21;
-            this.txtGhiChu.Text = "";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lichsuGhiCHu);
-            this.groupBox2.Location = new System.Drawing.Point(543, 25);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(580, 453);
-            this.groupBox2.TabIndex = 127;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lịch Sử Cập Nhật";
-            // 
-            // lichsuGhiCHu
-            // 
-            this.lichsuGhiCHu.AllowUserToAddRows = false;
-            this.lichsuGhiCHu.BackgroundColor = System.Drawing.Color.AliceBlue;
-            this.lichsuGhiCHu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lichsuGhiCHu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lichsuGhiCHu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CREATEDATE,
-            this.NOIDUNG,
-            this.DONVICN});
-            this.lichsuGhiCHu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lichsuGhiCHu.Location = new System.Drawing.Point(3, 22);
-            this.lichsuGhiCHu.Name = "lichsuGhiCHu";
-            this.lichsuGhiCHu.RowHeadersWidth = 20;
-            this.lichsuGhiCHu.Size = new System.Drawing.Size(574, 428);
-            this.lichsuGhiCHu.TabIndex = 0;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
             // 
             // CREATEDATE
             // 
@@ -1869,6 +1889,16 @@
             this.DONVICN.HeaderText = "ĐƠN VỊ";
             this.DONVICN.Name = "DONVICN";
             // 
+            // menuCapNhatKetQua
+            // 
+            this.menuCapNhatKetQua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuCapNhatKetQua.ForeColor = System.Drawing.Color.Red;
+            this.menuCapNhatKetQua.Image = global::CAPNUOCTANHOA.Properties.Resources.Write2;
+            this.menuCapNhatKetQua.Name = "menuCapNhatKetQua";
+            this.menuCapNhatKetQua.Size = new System.Drawing.Size(199, 24);
+            this.menuCapNhatKetQua.Text = "Cập Nhật Ghi Chú";
+            this.menuCapNhatKetQua.Click += new System.EventHandler(this.menuCapNhatKetQua_Click);
+            // 
             // frm_DieuChinhThongTin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1884,6 +1914,8 @@
             this.tabDieuChinhKH.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lichsuGhiCHu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KIEMDINH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NGAYGAN)).EndInit();
             this.tabControlPanel4.ResumeLayout(false);
@@ -1895,8 +1927,7 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lichsuGhiCHu)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2037,6 +2068,9 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView lichsuGhiCHu;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuCapNhatKetQua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CREATEDATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOIDUNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVICN;

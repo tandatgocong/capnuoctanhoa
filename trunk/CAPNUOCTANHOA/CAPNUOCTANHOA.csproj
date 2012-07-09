@@ -311,6 +311,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TLKDUTCHITAHN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\frm_CapNhatGhiChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_CapNhatGhiChu.Designer.cs">
+      <DependentUpon>frm_CapNhatGhiChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\frm_CapNhatThongTin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -997,6 +1003,9 @@
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_ThongKeDongHoNuoc_.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeDongHoNuoc_.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_CapNhatGhiChu.resx">
+      <DependentUpon>frm_CapNhatGhiChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_CapNhatThongTin.resx">
       <DependentUpon>frm_CapNhatThongTin.cs</DependentUpon>

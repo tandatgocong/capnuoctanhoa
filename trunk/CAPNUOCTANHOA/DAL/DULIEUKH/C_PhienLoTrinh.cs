@@ -91,6 +91,34 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             return result;
         }
 
+        public static int CapNhatGhiChu(string danhbo, string ghichu)
+        {
+            int result = 0;
+            DocSoDataContext db = new DocSoDataContext();
+            try
+            {
+                string sql = "UPDATE KHACHHANG SET GHICHUVANPHONG=N'" + ghichu + "' WHERE DANHBA='" + danhbo + "' ";
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cap Nhat Thong Tin Thay That Bai." + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
+        }
+
         public static int CapNhatThongTinHandHeld(string danhbo, string hieudh, string sothan, string chithan, string chigoc, string vitri)
         {
             int result = 0;

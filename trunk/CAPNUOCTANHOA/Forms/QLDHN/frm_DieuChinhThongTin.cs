@@ -217,6 +217,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         ghichu.CREATEBY = DAL.SYS.C_USERS._userName;
                         DAL.DULIEUKH.C_DuLieuKhachHang.InsertGHICHU(ghichu);
                         loadghichu(khachhang.DANHBO);
+                        // CAPNHAT GHICU HANDHELD
+                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatGhiChu(this.txtDanhBo.Text.Replace("-", ""), txtGhiChu.Text);
+
                     }
                     //
                     MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -348,6 +351,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.HuyDanhBo(hKhacHang, huyDanhBo))
                 {
                     MessageBox.Show(this, "Hủy Danh Bộ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    H_LOTRINH.Text = "";
+                    H_DOT.Text = "";
+                    H_HOPDONG.Text = "";
+                    H_HOTEN.Text = "";
+                    H_SONHA.Text = "";
+                    H_TENDUONG.Text = "";
+                    H_QUAN.Text = "";
+                    H_PHUONG.Text = "";
+                    H_GIABIEU.Text = "";
+                    H_DINHMUC.Text = "";
+                    huy_danhbo.Text = "";
+
                     this.huy_danhbo.Focus();
                 }
                 else
@@ -462,5 +477,26 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             panel5.Controls.Clear();
             panel5.Controls.Add(new frm_DHNAmSau());
         }
+
+
+        private void lichsuGhiCHu_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(lichsuGhiCHu, new Point(e.X, e.Y));
+            }
+        }
+
+        private void menuCapNhatKetQua_Click(object sender, EventArgs e)
+        {
+            string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
+            frm_CapNhatGhiChu frm = new frm_CapNhatGhiChu(ID_);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                string sodanhbo = this.txtDanhBo.Text.Replace("-", "");
+                loadghichu(sodanhbo);
+            }
+        }
+
     }
 }

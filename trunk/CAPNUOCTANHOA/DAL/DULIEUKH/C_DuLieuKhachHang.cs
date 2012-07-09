@@ -226,8 +226,23 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
 
         public static DataTable lisGhiChu(string danhbo)
         {
-            string sql = "SELECT NOIDUNG,DONVI,CREATEDATE FROM TB_GHICHU WHERE DANHBO='" + danhbo + "' ORDER BY CREATEDATE DESC";
+            string sql = "SELECT ID,NOIDUNG,DONVI,CREATEDATE FROM TB_GHICHU WHERE DANHBO='" + danhbo + "' ORDER BY CREATEDATE DESC";
             return LinQConnection.getDataTable(sql);
         }
+
+        public static TB_GHICHU findGhiChuByID(int id)
+        {
+            try
+            {
+                var query = from q in db.TB_GHICHUs where q.ID == id select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
     }
 }
