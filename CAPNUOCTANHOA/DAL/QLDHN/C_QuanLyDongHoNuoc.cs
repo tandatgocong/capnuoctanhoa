@@ -107,7 +107,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 sql += " LEFT JOIN ( ";
                 sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + "  ) as t3";
                 sql += " ON t.DANHBA=t3.DANHBA";
-                sql += " WHERE  KY=" + ky ;
+                sql += " WHERE  KY=" + ky;
                 sql += " GROUP BY  MAY ";
                 sql += " ) as t2 ";
                 sql += " ON TB_NHANVIENDOCSO.MAYDS = t2.MAY";
@@ -122,7 +122,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 sql += "   COUNT(case when (t.GHICHUMOI LIKE N'%Xây dựng%') then 1 else null end )AS XAYDUNG,";
                 sql += " COUNT(case when (t.TIEUTHU >= (t.TBTHU * 1.51)) AND t.CODE='4' then 1 else null end) AS TANG,";
                 sql += " COUNT(case when (t.TIEUTHU <= (t.TBTHU * 0.51)) AND t.CODE='4' then 1 else null end) AS GAM";
-                sql += " FROM DocSo_PHT.dbo.DS" + nam+"  t ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + "  t ";
                 sql += " LEFT JOIN ( ";
                 sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + " AND DOT=" + dot + " ) as t3";
                 sql += " ON t.DANHBA=t3.DANHBA";
@@ -187,6 +187,97 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DHN_BAOCAO");
             return ds;
+        }
+
+        public static void CAPNHAT_BANGCHAMCONG(string nam, int ky)
+        {
+
+            string sql = " UPDATE TB_BANGCHAMCONG SET ";
+            sql += " DOT01=t2.SL01, DOT01_DC=t2.DC01, DOT02=t2.SL02, DOT02_DC=t2.DC02, ";
+            sql += " DOT03=t2.SL03, DOT03_DC=t2.DC03, DOT04=t2.SL04, DOT04_DC=t2.DC04, ";
+            sql += " DOT05=t2.SL05, DOT05_DC=t2.DC05, DOT06=t2.SL06, DOT06_DC=t2.DC06,  ";
+            sql += " DOT07=t2.SL07, DOT07_DC=t2.DC07, DOT08=t2.SL08, DOT08_DC=t2.DC08,  ";
+            sql += " DOT09=t2.SL09, DOT09_DC=t2.DC09, DOT10=t2.SL10, DOT10_DC=t2.DC10,  ";
+            sql += " DOT11=t2.SL11, DOT11_DC=t2.DC11, DOT12=t2.SL12, DOT12_DC=t2.DC12,  ";
+            sql += " DOT13=t2.SL13, DOT13_DC=t2.DC13, DOT14=t2.SL14, DOT14_DC=t2.DC14,  ";
+            sql += " DOT15=t2.SL15, DOT15_DC=t2.DC15, DOT16=t2.SL16, DOT16_DC=t2.DC16,  ";
+            sql += " DOT17=t2.SL17, DOT17_DC=t2.DC17, DOT18=t2.SL18, DOT18_DC=t2.DC18,  ";
+            sql += " DOT19=t2.SL19, DOT19_DC=t2.DC19, DOT20=t2.SL20, DOT20_DC=t2.DC20 ";
+            sql += " FROM TB_BANGCHAMCONG INNER JOIN   ";
+            sql += " (                  ";
+            sql += " SELECT t.MAY, ";
+            sql += " COUNT(case when (t.DOT=1)  then 1 else null end) AS SL01, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=1)  then 1 else null end) AS DC01, ";
+            sql += " COUNT(case when (t.DOT=2)  then 1 else null end) AS SL02, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=2)  then 1 else null end) AS DC02, ";
+            sql += " COUNT(case when (t.DOT=3)  then 1 else null end) AS SL03, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=3)  then 1 else null end) AS DC03, ";
+            sql += " COUNT(case when (t.DOT=4)  then 1 else null end) AS SL04, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=4)  then 1 else null end) AS DC04, ";
+            sql += " COUNT(case when (t.DOT=5)  then 1 else null end) AS SL05, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=5)  then 1 else null end) AS DC05, ";
+            sql += " COUNT(case when (t.DOT=6)  then 1 else null end) AS SL06, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=6)  then 1 else null end) AS DC06, ";
+            sql += " COUNT(case when (t.DOT=7)  then 1 else null end) AS SL07, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=7)  then 1 else null end) AS DC07, ";
+            sql += " COUNT(case when (t.DOT=8)  then 1 else null end) AS SL08, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=8)  then 1 else null end) AS DC08, ";
+            sql += " COUNT(case when (t.DOT=9)  then 1 else null end) AS SL09, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=9)  then 1 else null end) AS DC09, ";
+            sql += " COUNT(case when (t.DOT=10)  then 1 else null end) AS SL10, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=10)  then 1 else null end) AS DC10, ";
+            sql += " COUNT(case when (t.DOT=11)  then 1 else null end) AS SL11, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=11)  then 1 else null end) AS DC11, ";
+            sql += " COUNT(case when (t.DOT=12)  then 1 else null end) AS SL12, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=12)  then 1 else null end) AS DC12, ";
+            sql += " COUNT(case when (t.DOT=13)  then 1 else null end) AS SL13, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=13)  then 1 else null end) AS DC13, ";
+            sql += " COUNT(case when (t.DOT=14)  then 1 else null end) AS SL14, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=14)  then 1 else null end) AS DC14, ";
+            sql += " COUNT(case when (t.DOT=15)  then 1 else null end) AS SL15, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=15)  then 1 else null end) AS DC15, ";
+            sql += " COUNT(case when (t.DOT=16)  then 1 else null end) AS SL16, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=16)  then 1 else null end) AS DC16, ";
+            sql += " COUNT(case when (t.DOT=17)  then 1 else null end) AS SL17, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=17)  then 1 else null end) AS DC17, ";
+            sql += " COUNT(case when (t.DOT=18)  then 1 else null end) AS SL18, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=18)  then 1 else null end) AS DC18, ";
+            sql += " COUNT(case when (t.DOT=19)  then 1 else null end) AS SL19, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=19)  then 1 else null end) AS DC19, ";
+            sql += " COUNT(case when (t.DOT=20)  then 1 else null end) AS SL20, ";
+            sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=20)  then 1 else null end) AS DC20 ";
+            sql += " FROM DocSo_PHT.dbo.DS2012  t  ";
+            sql += " WHERE  KY=7 ";
+            sql += " GROUP BY  t.MAY  ";
+            sql += " ) as t2  ";
+            sql += " ON TB_BANGCHAMCONG.MAYDS = t2.MAY ";
+
+            try
+            {
+                string cmd = "UPDATE TB_BANGCHAMCONG SET  DOT01=t2.SL01, DOT01_DC=t2.DC01, DOT02=t2.SL02, DOT02_DC=t2.DC02,";
+                cmd += " DOT03=0, DOT03_DC=0, DOT04=0, DOT04_DC=0, ";
+                cmd += " DOT05=0, DOT05_DC=0, DOT06=0, DOT06_DC=0, ";
+                cmd += " DOT07=0, DOT07_DC=0, DOT08=0, DOT08_DC=0, ";
+                cmd += " DOT09=0, DOT09_DC=0, DOT10=0, DOT10_DC=0, ";
+                cmd += " DOT11=0, DOT11_DC=0, DOT12=0, DOT12_DC=0, ";
+                cmd += " DOT13=0, DOT13_DC=0, DOT14=0, DOT14_DC=0, ";
+                cmd += " DOT15=0, DOT15_DC=0, DOT16=0, DOT16_DC=0, ";
+                cmd += " DOT17=0, DOT17_DC=0, DOT18=0, DOT18_DC=0, ";
+                cmd += " DOT19=0, DOT19_DC=0, DOT20=0, DOT20_DC=0, ";
+                cmd += " DOT01_TC=0, DOT02_TC=0, DOT03_TC=0, DOT04_TC=0, ";
+                cmd += " DOT05_TC=0, DOT06_TC=0, DOT07_TC=0, DOT08_TC=0, ";
+                cmd += " DOT09_TC=0, DOT10_TC=0, DOT11_TC=0, DOT12_TC=0, ";
+                cmd += " DOT13_TC=0, DOT14_TC=0, DOT15_TC=0, DOT16_TC=0, ";
+                cmd += " DOT17_TC=0, DOT18_TC=0, DOT19_TC=0, DOT20_TC=0 ";
+                DAL.LinQConnection.ExecuteCommand(cmd);
+                sql = sql.Replace(@"\t", " ");
+                int resqult = DAL.LinQConnection.ExecuteCommand(sql);
+                log.Info("CAPNHAT_BANGCHAMCONG  " + resqult + " record");
+            }
+            catch (Exception ex)
+            {
+                log.Error("CAPNHAT_BANGCHAMCONG " + ex.Message);
+            }
         }
     }
 }

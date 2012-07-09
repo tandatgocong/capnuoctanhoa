@@ -460,6 +460,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         tb.CREATEBY = DAL.SYS.C_USERS._userName;
                         if (DAL.DULIEUKH.C_GanMoi.Insert(tb))
                         {
+                            log.Info("--------------- GAN MOI - " + DANHBO + "");
                             int ky = DateTime.Now.Month + 1;
                             int nam = DateTime.Now.Year;
                             try
@@ -479,7 +480,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "')";
                             if (DAL.LinQConnection.ExecuteCommand_(insert) > 0)
                             {
-                                log.Info("GM - " + DANHBO+"");
+                                log.Info("+++++++++++ TB_DULIEUKHACHHANG : " + DANHBO + "");
                               //int may = int.Parse(cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString());
                               //int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                               // inset Table Doc So
