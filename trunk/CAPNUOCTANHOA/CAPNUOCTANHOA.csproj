@@ -430,6 +430,12 @@
     <Compile Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.Designer.cs">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\Tab\I_tab_BangChamCong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\I_tab_BangChamCong.Designer.cs">
+      <DependentUpon>I_tab_BangChamCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\Tab\H_tab_BienDocCS.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -449,6 +455,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_DanhSachCode.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\TabBC\rpt_tab_BangChamCong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_tab_BangChamCong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\TabBC\rpt_tab_CodeKy_Detail.cs">
@@ -1067,12 +1079,19 @@
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\I_tab_BangChamCong.resx">
+      <DependentUpon>I_tab_BangChamCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\H_tab_BienDocCS.resx">
       <DependentUpon>H_tab_BienDocCS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\rpt_DanhSachCode.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DanhSachCode.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\rpt_tab_BangChamCong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_tab_BangChamCong.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\rpt_tab_CodeKy_Detail.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

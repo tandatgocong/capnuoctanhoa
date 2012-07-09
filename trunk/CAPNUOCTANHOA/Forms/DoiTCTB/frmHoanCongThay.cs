@@ -251,8 +251,17 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     thaydh.HCT_TRONGAI = true;
                     thaydh.HCT_NGAYGAN = txtNgayGan.Value.Date;
                     thaydh.HCT_LYDOTRONGAI = this.txtLyDoTroNgai.Text;
-                    thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
-                    thaydh.HCT_CREATEDATE = DateTime.Now.Date;
+                    if ("".Equals(thaydh.HCT_CREATEBY + ""))
+                    {
+                        thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
+                        thaydh.HCT_CREATEDATE = DateTime.Now.Date;
+                    }
+                    else {
+                        thaydh.HCT_MODIFYBY = DAL.SYS.C_USERS._userName;
+                        thaydh.HCT_MODIFYDATE = DateTime.Now;
+                    }
+                   
+                    
                 }
                 else
                 {
@@ -279,8 +288,16 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         thaydh.HCT_CHIGOC = txtChiGoc.Text.ToUpper();
                         thaydh.HCT_TRONGAI = false;
                         thaydh.HCT_LYDOTRONGAI = "";
-                        thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
-                        thaydh.HCT_CREATEDATE = DateTime.Now;
+                        if ("".Equals(thaydh.HCT_CREATEBY + ""))
+                        {
+                            thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
+                            thaydh.HCT_CREATEDATE = DateTime.Now.Date;
+                        }
+                        else
+                        {
+                            thaydh.HCT_MODIFYBY = DAL.SYS.C_USERS._userName;
+                            thaydh.HCT_MODIFYDATE = DateTime.Now;
+                        }
                     }
                     else
                     {

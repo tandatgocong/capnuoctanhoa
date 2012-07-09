@@ -30,7 +30,8 @@ namespace CAPNUOCTANHOA.DAL
             }
             catch (Exception ex)
             {
-                log.Error("LinQConnection getDataTable" + ex.Message);
+                log.Error("LinQConnection ExecuteCommand : " + sql);
+                log.Error("LinQConnection ExecuteCommand : " + ex.Message);
             }
             finally
             {
@@ -57,7 +58,9 @@ namespace CAPNUOCTANHOA.DAL
             }
             catch (Exception ex)
             {
-                log.Error("LinQConnection getDataTable" + ex.Message);
+                log.Error("LinQConnection ExecuteCommand_ : " + sql);
+                log.Error("LinQConnection ExecuteCommand_ : " + ex.Message);
+
             }
             finally
             {
