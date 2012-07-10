@@ -78,5 +78,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
              this.splitContainer1.Panel2.Controls.Add(new H_tab_BienDocCS());
             
         }
+      
+        private void radioButton8_Click(object sender, EventArgs e)
+        {
+             this.splitContainer1.Panel2.Controls.Clear();
+             this.splitContainer1.Panel2.Controls.Add(new I_tab_BangChamCong());
+        }
     }
 }

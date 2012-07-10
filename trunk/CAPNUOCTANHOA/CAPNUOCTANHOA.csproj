@@ -311,6 +311,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TLKDUTCHITAHN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\frm_NhapTangCuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_NhapTangCuong.Designer.cs">
+      <DependentUpon>frm_NhapTangCuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\frm_CapNhatGhiChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +435,17 @@
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.Designer.cs">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\DANHSACHCODEK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DANHSACHCODEK.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\J_tab_DanhSachCodeK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\J_tab_DanhSachCodeK.Designer.cs">
+      <DependentUpon>J_tab_DanhSachCodeK.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\I_tab_BangChamCong.cs">
       <SubType>UserControl</SubType>
@@ -886,6 +903,17 @@
     <None Include="Forms\QLDHN\tabDieuChinh\DIEUCHINH.xss">
       <DependentUpon>DIEUCHINH.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\Tab\DANHSACHCODEK.xsc">
+      <DependentUpon>DANHSACHCODEK.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\Tab\DANHSACHCODEK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DANHSACHCODEK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\Tab\DANHSACHCODEK.xss">
+      <DependentUpon>DANHSACHCODEK.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODE.xsc">
       <DependentUpon>DANHSACHCODE.xsd</DependentUpon>
     </None>
@@ -1016,6 +1044,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeDongHoNuoc_.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_NhapTangCuong.resx">
+      <DependentUpon>frm_NhapTangCuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_CapNhatGhiChu.resx">
       <DependentUpon>frm_CapNhatGhiChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -1078,6 +1109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\J_tab_DanhSachCodeK.resx">
+      <DependentUpon>J_tab_DanhSachCodeK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\I_tab_BangChamCong.resx">
       <DependentUpon>I_tab_BangChamCong.cs</DependentUpon>

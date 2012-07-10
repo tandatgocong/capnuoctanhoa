@@ -919,6 +919,26 @@
       <Column Name="DOT19_DC" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DOT20" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DOT20_DC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT01_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT02_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT03_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT04_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT05_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT06_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT07_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT08_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT09_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT10_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT11_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT12_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT13_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT14_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT15_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT16_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT17_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT18_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT19_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT20_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">

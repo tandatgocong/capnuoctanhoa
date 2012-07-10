@@ -47,7 +47,7 @@
             this.title.ReflectionEnabled = false;
             this.title.Size = new System.Drawing.Size(1004, 52);
             this.title.TabIndex = 3;
-            this.title.Text = "CẬP NHẬT KẾT QUẢ XỬ LÝ TRỞ NGẠI THAY";
+            this.title.Text = "CẬP NHẬT GHI CHÚ";
             // 
             // txtSoDanhBo
             // 
