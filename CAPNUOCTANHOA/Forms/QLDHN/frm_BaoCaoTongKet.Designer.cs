@@ -39,6 +39,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rtThongKeDHN = new System.Windows.Forms.RadioButton();
             this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
@@ -66,6 +67,7 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.Color.AliceBlue;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.expandablePanel1.Controls.Add(this.radioButton8);
             this.expandablePanel1.Controls.Add(this.radioButton7);
             this.expandablePanel1.Controls.Add(this.radioButton6);
             this.expandablePanel1.Controls.Add(this.radioButton5);
@@ -126,7 +128,7 @@
             this.radioButton5.AutoSize = true;
             this.radioButton5.Location = new System.Drawing.Point(10, 208);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(188, 23);
+            this.radioButton5.Size = new System.Drawing.Size(189, 23);
             this.radioButton5.TabIndex = 4;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Loại KH Tiêu Thụ  Thấp";
@@ -138,7 +140,7 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(10, 179);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(176, 23);
+            this.radioButton4.Size = new System.Drawing.Size(177, 23);
             this.radioButton4.TabIndex = 4;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Theo Dõi SL Loại KH";
@@ -150,7 +152,7 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(10, 149);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(189, 23);
+            this.radioButton3.Size = new System.Drawing.Size(190, 23);
             this.radioButton3.TabIndex = 4;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Theo Dõi Tiêu Thụ Thấp";
@@ -198,12 +200,24 @@
             this.radioThayDinhKy.AutoSize = true;
             this.radioThayDinhKy.Location = new System.Drawing.Point(10, 62);
             this.radioThayDinhKy.Name = "radioThayDinhKy";
-            this.radioThayDinhKy.Size = new System.Drawing.Size(171, 23);
+            this.radioThayDinhKy.Size = new System.Drawing.Size(172, 23);
             this.radioThayDinhKy.TabIndex = 1;
             this.radioThayDinhKy.TabStop = true;
             this.radioThayDinhKy.Text = "Dự Trù Thay Định Kỳ";
             this.radioThayDinhKy.UseVisualStyleBackColor = true;
             this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(10, 295);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(144, 23);
+            this.radioButton8.TabIndex = 5;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "Bảng Chấm Công";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton8.Click += new System.EventHandler(this.radioButton8_Click);
             // 
             // frm_BaoCaoTongKet
             // 
@@ -236,6 +250,7 @@
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton rtThongKeDHN;
         private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton8;
 
     }
 }

@@ -71,7 +71,6 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 LinQConnection.ExecuteStoredProcedure("THONGKEDHN", ky, nam);
             }
             DataSet ds = new DataSet();
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
 
             db.Connection.Open();
             string query = "SELECT * FROM TB_THONGKEDHN WHERE HIEUCU='False' ORDER BY STT ASC ";
@@ -168,7 +167,6 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static DataSet getTheoDoiBienDocChiSo()
         {
             DataSet ds = new DataSet();
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
 
             db.Connection.Open();
             string query = "SELECT * FROM TB_NHANVIENDOCSO  ORDER BY MAYDS ASC ";
@@ -189,7 +187,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return ds;
         }
 
-        public static void CAPNHAT_BANGCHAMCONG(string nam, int ky)
+        public static void CAPNHAT_BANGCHAMCONG(string nam, int ky, int tods)
         {
 
             string sql = " UPDATE TB_BANGCHAMCONG SET ";
@@ -246,15 +244,16 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=19)  then 1 else null end) AS DC19, ";
             sql += " COUNT(case when (t.DOT=20)  then 1 else null end) AS SL20, ";
             sql += " COUNT(case when (t.CODE ='F1' AND t.DOT=20)  then 1 else null end) AS DC20 ";
-            sql += " FROM DocSo_PHT.dbo.DS2012  t  ";
-            sql += " WHERE  KY=7 ";
+            sql += " FROM DocSo_PHT.dbo.DS"+nam+" t  ";
+            sql += " WHERE  KY=" + ky ;
             sql += " GROUP BY  t.MAY  ";
             sql += " ) as t2  ";
             sql += " ON TB_BANGCHAMCONG.MAYDS = t2.MAY ";
+            sql += " WHERE TODS="+tods;
 
             try
             {
-                string cmd = "UPDATE TB_BANGCHAMCONG SET  DOT01=t2.SL01, DOT01_DC=t2.DC01, DOT02=t2.SL02, DOT02_DC=t2.DC02,";
+                string cmd = "UPDATE TB_BANGCHAMCONG SET  DOT01=0, DOT01_DC=0, DOT02=0, DOT02_DC=0,";
                 cmd += " DOT03=0, DOT03_DC=0, DOT04=0, DOT04_DC=0, ";
                 cmd += " DOT05=0, DOT05_DC=0, DOT06=0, DOT06_DC=0, ";
                 cmd += " DOT07=0, DOT07_DC=0, DOT08=0, DOT08_DC=0, ";
@@ -269,6 +268,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 cmd += " DOT09_TC=0, DOT10_TC=0, DOT11_TC=0, DOT12_TC=0, ";
                 cmd += " DOT13_TC=0, DOT14_TC=0, DOT15_TC=0, DOT16_TC=0, ";
                 cmd += " DOT17_TC=0, DOT18_TC=0, DOT19_TC=0, DOT20_TC=0 ";
+                cmd += " WHERE TODS=" + tods;
                 DAL.LinQConnection.ExecuteCommand(cmd);
                 sql = sql.Replace(@"\t", " ");
                 int resqult = DAL.LinQConnection.ExecuteCommand(sql);
@@ -279,5 +279,155 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 log.Error("CAPNHAT_BANGCHAMCONG " + ex.Message);
             }
         }
+
+
+        public static DataSet reportChamCong(string nam, int ky, int tods)
+        {
+            CAPNHAT_BANGCHAMCONG(nam, ky, tods);
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Closed)
+            {
+                db.Connection.Open();
+            }
+            
+            string query = "SELECT * FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY STT ASC ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_BANGCHAMCONG");
+
+            return ds;
+        }
+
+        public static DataSet reportChamCong_1(string nam, int ky, int tods)
+        {
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Closed)
+            {
+                db.Connection.Open();
+            }
+           
+            string query = "SELECT * FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY STT ASC ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_BANGCHAMCONG");
+
+            return ds;
+        }
+        public static DataTable getTable_CHAMCONG(int tods)
+        {
+
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Closed) {
+                db.Connection.Open();
+            }
+            
+            string query = "SELECT MAYDS,FULLNAME FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY STT ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_BANGCHAMCONG");
+            return ds.Tables["TB_BANGCHAMCONG"];
+        }
+
+        public static DataTable getChamCongNVDS_TANGCUONG(int mayds)
+        {
+
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Closed)
+            {
+                db.Connection.Open();
+            }
+            string query = "SELECT MAYDS,DOT01_TC, DOT02_TC, DOT03_TC, DOT04_TC, DOT05_TC, DOT06_TC, DOT07_TC, DOT08_TC, DOT09_TC, DOT10_TC, DOT11_TC, DOT12_TC, DOT13_TC, DOT14_TC, DOT15_TC, DOT16_TC, DOT17_TC, DOT18_TC, DOT19_TC, DOT20_TC FROM TB_BANGCHAMCONG WHERE MAYDS='" + mayds + "' ORDER BY STT ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_BANGCHAMCONG");
+
+            return ds.Tables["TB_BANGCHAMCONG"];
+        }
+
+        public static DataTable getChamCongNVDS_DHN(int mayds)
+        {
+
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Closed)
+            {
+                db.Connection.Open();
+            }
+            string query = "SELECT MAYDS,DOT01,DOT02,DOT03,DOT04,DOT05,DOT06,DOT07,DOT08,DOT09,DOT10,DOT11,DOT12,DOT13,DOT14,DOT15,DOT16,DOT17,DOT18,DOT19,DOT20 FROM TB_BANGCHAMCONG WHERE MAYDS='" + mayds + "' ORDER BY STT ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_BANGCHAMCONG");
+
+            return ds.Tables["TB_BANGCHAMCONG"];
+        }
+
+        public static DataTable getChamCongNVDS_DONGCUA(int mayds)
+        {
+
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Closed)
+            {
+                db.Connection.Open();
+            }
+            string query = "SELECT MAYDS,DOT01_DC,DOT02_DC,DOT03_DC,DOT04_DC,DOT05_DC,DOT06_DC,DOT07_DC,DOT08_DC,DOT09_DC,DOT10_DC,DOT11_DC,DOT12_DC,DOT13_DC,DOT14_DC,DOT15_DC,DOT16_DC,DOT17_DC,DOT18_DC,DOT19_DC,DOT20_DC FROM TB_BANGCHAMCONG WHERE MAYDS='" + mayds + "' ORDER BY STT ASC ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_BANGCHAMCONG");
+
+            return ds.Tables["TB_BANGCHAMCONG"];
+        }
+
+        public static TB_BANGCHAMCONG getChamCongBy(int mayds)
+        {
+
+            try
+            {
+                var query = from q in db.TB_BANGCHAMCONGs where q.MAYDS == mayds select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception)
+            {
+
+            }
+            return null;
+        }
+
+        public static void Update() {
+
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+
+        public static int ExecuteUpdate(int MAYDS,string nameColume, string values)
+        {
+            int result = 0;
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE TB_BANGCHAMCONG SET " + nameColume + "= " + values + " WHERE MAYDS=" + MAYDS, conn);
+                result = Convert.ToInt32(cmd.ExecuteNonQuery());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+               // log.Error("LinQConnection ExecuteCommand_ : " + sql);
+                log.Error("LinQConnection ExecuteCommand_ : " + ex.Message);
+
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
+        }
+
     }
 }

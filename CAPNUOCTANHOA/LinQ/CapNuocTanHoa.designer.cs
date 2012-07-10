@@ -17861,6 +17861,46 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private System.Nullable<int> _DOT20_DC;
 		
+		private System.Nullable<int> _DOT01_TC;
+		
+		private System.Nullable<int> _DOT02_TC;
+		
+		private System.Nullable<int> _DOT03_TC;
+		
+		private System.Nullable<int> _DOT04_TC;
+		
+		private System.Nullable<int> _DOT05_TC;
+		
+		private System.Nullable<int> _DOT06_TC;
+		
+		private System.Nullable<int> _DOT07_TC;
+		
+		private System.Nullable<int> _DOT08_TC;
+		
+		private System.Nullable<int> _DOT09_TC;
+		
+		private System.Nullable<int> _DOT10_TC;
+		
+		private System.Nullable<int> _DOT11_TC;
+		
+		private System.Nullable<int> _DOT12_TC;
+		
+		private System.Nullable<int> _DOT13_TC;
+		
+		private System.Nullable<int> _DOT14_TC;
+		
+		private System.Nullable<int> _DOT15_TC;
+		
+		private System.Nullable<int> _DOT16_TC;
+		
+		private System.Nullable<int> _DOT17_TC;
+		
+		private System.Nullable<int> _DOT18_TC;
+		
+		private System.Nullable<int> _DOT19_TC;
+		
+		private System.Nullable<int> _DOT20_TC;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -17955,6 +17995,46 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnDOT20Changed();
     partial void OnDOT20_DCChanging(System.Nullable<int> value);
     partial void OnDOT20_DCChanged();
+    partial void OnDOT01_TCChanging(System.Nullable<int> value);
+    partial void OnDOT01_TCChanged();
+    partial void OnDOT02_TCChanging(System.Nullable<int> value);
+    partial void OnDOT02_TCChanged();
+    partial void OnDOT03_TCChanging(System.Nullable<int> value);
+    partial void OnDOT03_TCChanged();
+    partial void OnDOT04_TCChanging(System.Nullable<int> value);
+    partial void OnDOT04_TCChanged();
+    partial void OnDOT05_TCChanging(System.Nullable<int> value);
+    partial void OnDOT05_TCChanged();
+    partial void OnDOT06_TCChanging(System.Nullable<int> value);
+    partial void OnDOT06_TCChanged();
+    partial void OnDOT07_TCChanging(System.Nullable<int> value);
+    partial void OnDOT07_TCChanged();
+    partial void OnDOT08_TCChanging(System.Nullable<int> value);
+    partial void OnDOT08_TCChanged();
+    partial void OnDOT09_TCChanging(System.Nullable<int> value);
+    partial void OnDOT09_TCChanged();
+    partial void OnDOT10_TCChanging(System.Nullable<int> value);
+    partial void OnDOT10_TCChanged();
+    partial void OnDOT11_TCChanging(System.Nullable<int> value);
+    partial void OnDOT11_TCChanged();
+    partial void OnDOT12_TCChanging(System.Nullable<int> value);
+    partial void OnDOT12_TCChanged();
+    partial void OnDOT13_TCChanging(System.Nullable<int> value);
+    partial void OnDOT13_TCChanged();
+    partial void OnDOT14_TCChanging(System.Nullable<int> value);
+    partial void OnDOT14_TCChanged();
+    partial void OnDOT15_TCChanging(System.Nullable<int> value);
+    partial void OnDOT15_TCChanged();
+    partial void OnDOT16_TCChanging(System.Nullable<int> value);
+    partial void OnDOT16_TCChanged();
+    partial void OnDOT17_TCChanging(System.Nullable<int> value);
+    partial void OnDOT17_TCChanged();
+    partial void OnDOT18_TCChanging(System.Nullable<int> value);
+    partial void OnDOT18_TCChanged();
+    partial void OnDOT19_TCChanging(System.Nullable<int> value);
+    partial void OnDOT19_TCChanged();
+    partial void OnDOT20_TCChanging(System.Nullable<int> value);
+    partial void OnDOT20_TCChanged();
     #endregion
 		
 		public TB_BANGCHAMCONG()
@@ -18858,6 +18938,406 @@ namespace CAPNUOCTANHOA.LinQ
 					this._DOT20_DC = value;
 					this.SendPropertyChanged("DOT20_DC");
 					this.OnDOT20_DCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT01_TC", DbType="Int")]
+		public System.Nullable<int> DOT01_TC
+		{
+			get
+			{
+				return this._DOT01_TC;
+			}
+			set
+			{
+				if ((this._DOT01_TC != value))
+				{
+					this.OnDOT01_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT01_TC = value;
+					this.SendPropertyChanged("DOT01_TC");
+					this.OnDOT01_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT02_TC", DbType="Int")]
+		public System.Nullable<int> DOT02_TC
+		{
+			get
+			{
+				return this._DOT02_TC;
+			}
+			set
+			{
+				if ((this._DOT02_TC != value))
+				{
+					this.OnDOT02_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT02_TC = value;
+					this.SendPropertyChanged("DOT02_TC");
+					this.OnDOT02_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT03_TC", DbType="Int")]
+		public System.Nullable<int> DOT03_TC
+		{
+			get
+			{
+				return this._DOT03_TC;
+			}
+			set
+			{
+				if ((this._DOT03_TC != value))
+				{
+					this.OnDOT03_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT03_TC = value;
+					this.SendPropertyChanged("DOT03_TC");
+					this.OnDOT03_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT04_TC", DbType="Int")]
+		public System.Nullable<int> DOT04_TC
+		{
+			get
+			{
+				return this._DOT04_TC;
+			}
+			set
+			{
+				if ((this._DOT04_TC != value))
+				{
+					this.OnDOT04_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT04_TC = value;
+					this.SendPropertyChanged("DOT04_TC");
+					this.OnDOT04_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT05_TC", DbType="Int")]
+		public System.Nullable<int> DOT05_TC
+		{
+			get
+			{
+				return this._DOT05_TC;
+			}
+			set
+			{
+				if ((this._DOT05_TC != value))
+				{
+					this.OnDOT05_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT05_TC = value;
+					this.SendPropertyChanged("DOT05_TC");
+					this.OnDOT05_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT06_TC", DbType="Int")]
+		public System.Nullable<int> DOT06_TC
+		{
+			get
+			{
+				return this._DOT06_TC;
+			}
+			set
+			{
+				if ((this._DOT06_TC != value))
+				{
+					this.OnDOT06_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT06_TC = value;
+					this.SendPropertyChanged("DOT06_TC");
+					this.OnDOT06_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT07_TC", DbType="Int")]
+		public System.Nullable<int> DOT07_TC
+		{
+			get
+			{
+				return this._DOT07_TC;
+			}
+			set
+			{
+				if ((this._DOT07_TC != value))
+				{
+					this.OnDOT07_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT07_TC = value;
+					this.SendPropertyChanged("DOT07_TC");
+					this.OnDOT07_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT08_TC", DbType="Int")]
+		public System.Nullable<int> DOT08_TC
+		{
+			get
+			{
+				return this._DOT08_TC;
+			}
+			set
+			{
+				if ((this._DOT08_TC != value))
+				{
+					this.OnDOT08_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT08_TC = value;
+					this.SendPropertyChanged("DOT08_TC");
+					this.OnDOT08_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT09_TC", DbType="Int")]
+		public System.Nullable<int> DOT09_TC
+		{
+			get
+			{
+				return this._DOT09_TC;
+			}
+			set
+			{
+				if ((this._DOT09_TC != value))
+				{
+					this.OnDOT09_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT09_TC = value;
+					this.SendPropertyChanged("DOT09_TC");
+					this.OnDOT09_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT10_TC", DbType="Int")]
+		public System.Nullable<int> DOT10_TC
+		{
+			get
+			{
+				return this._DOT10_TC;
+			}
+			set
+			{
+				if ((this._DOT10_TC != value))
+				{
+					this.OnDOT10_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT10_TC = value;
+					this.SendPropertyChanged("DOT10_TC");
+					this.OnDOT10_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT11_TC", DbType="Int")]
+		public System.Nullable<int> DOT11_TC
+		{
+			get
+			{
+				return this._DOT11_TC;
+			}
+			set
+			{
+				if ((this._DOT11_TC != value))
+				{
+					this.OnDOT11_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT11_TC = value;
+					this.SendPropertyChanged("DOT11_TC");
+					this.OnDOT11_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT12_TC", DbType="Int")]
+		public System.Nullable<int> DOT12_TC
+		{
+			get
+			{
+				return this._DOT12_TC;
+			}
+			set
+			{
+				if ((this._DOT12_TC != value))
+				{
+					this.OnDOT12_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT12_TC = value;
+					this.SendPropertyChanged("DOT12_TC");
+					this.OnDOT12_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT13_TC", DbType="Int")]
+		public System.Nullable<int> DOT13_TC
+		{
+			get
+			{
+				return this._DOT13_TC;
+			}
+			set
+			{
+				if ((this._DOT13_TC != value))
+				{
+					this.OnDOT13_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT13_TC = value;
+					this.SendPropertyChanged("DOT13_TC");
+					this.OnDOT13_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT14_TC", DbType="Int")]
+		public System.Nullable<int> DOT14_TC
+		{
+			get
+			{
+				return this._DOT14_TC;
+			}
+			set
+			{
+				if ((this._DOT14_TC != value))
+				{
+					this.OnDOT14_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT14_TC = value;
+					this.SendPropertyChanged("DOT14_TC");
+					this.OnDOT14_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT15_TC", DbType="Int")]
+		public System.Nullable<int> DOT15_TC
+		{
+			get
+			{
+				return this._DOT15_TC;
+			}
+			set
+			{
+				if ((this._DOT15_TC != value))
+				{
+					this.OnDOT15_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT15_TC = value;
+					this.SendPropertyChanged("DOT15_TC");
+					this.OnDOT15_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT16_TC", DbType="Int")]
+		public System.Nullable<int> DOT16_TC
+		{
+			get
+			{
+				return this._DOT16_TC;
+			}
+			set
+			{
+				if ((this._DOT16_TC != value))
+				{
+					this.OnDOT16_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT16_TC = value;
+					this.SendPropertyChanged("DOT16_TC");
+					this.OnDOT16_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT17_TC", DbType="Int")]
+		public System.Nullable<int> DOT17_TC
+		{
+			get
+			{
+				return this._DOT17_TC;
+			}
+			set
+			{
+				if ((this._DOT17_TC != value))
+				{
+					this.OnDOT17_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT17_TC = value;
+					this.SendPropertyChanged("DOT17_TC");
+					this.OnDOT17_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT18_TC", DbType="Int")]
+		public System.Nullable<int> DOT18_TC
+		{
+			get
+			{
+				return this._DOT18_TC;
+			}
+			set
+			{
+				if ((this._DOT18_TC != value))
+				{
+					this.OnDOT18_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT18_TC = value;
+					this.SendPropertyChanged("DOT18_TC");
+					this.OnDOT18_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT19_TC", DbType="Int")]
+		public System.Nullable<int> DOT19_TC
+		{
+			get
+			{
+				return this._DOT19_TC;
+			}
+			set
+			{
+				if ((this._DOT19_TC != value))
+				{
+					this.OnDOT19_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT19_TC = value;
+					this.SendPropertyChanged("DOT19_TC");
+					this.OnDOT19_TCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOT20_TC", DbType="Int")]
+		public System.Nullable<int> DOT20_TC
+		{
+			get
+			{
+				return this._DOT20_TC;
+			}
+			set
+			{
+				if ((this._DOT20_TC != value))
+				{
+					this.OnDOT20_TCChanging(value);
+					this.SendPropertyChanging();
+					this._DOT20_TC = value;
+					this.SendPropertyChanged("DOT20_TC");
+					this.OnDOT20_TCChanged();
 				}
 			}
 		}

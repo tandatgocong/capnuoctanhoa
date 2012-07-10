@@ -30,12 +30,75 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         private void btThem_Click(object sender, EventArgs e)
         {
             int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
-            int nam = int.Parse(txtNam.Text.Trim());
-            ReportDocument rp = new rpt_ThongKeDongHoNuoc_();
-            rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.getThongKeDHN(ky,nam,DAL.SYS.C_USERS._toDocSo));
-            rp.SetParameterValue("KY", ky);
-            rp.SetParameterValue("NAM", nam);
-          //  crystalReportViewer1.ReportSource = rp;
+            ReportDocument rp = new rpt_tab_BangChamCong();
+            int tods = 1;
+            string tento = "TỔ TÂN BÌNH 01";
+            if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo)) {
+                 tods = 2;
+                 tento = "TỔ TÂN BÌNH 02";
+            }
+            if ("TP".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                tods = 3;
+                tento = "TỔ TÂN PHÚ";
+            }
+            rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong_1(txtNam.Text.Trim(), ky, tods));
+            rp.SetParameterValue("TODS", tento);
+            rp.SetParameterValue("KYDS", ky);
+            rp.SetParameterValue("TONGDHN", 12563);
+            rp.SetParameterValue("TONGDC", txtNam.Text.Trim());
+            crystalReportViewer1.ReportSource = rp;
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+            ReportDocument rp = new rpt_tab_BangChamCong();
+            int tods = 1;
+            string tento = "TỔ TÂN BÌNH 01";
+            if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                tods = 2;
+                tento = "TỔ TÂN BÌNH 02";
+            }
+            if ("TP".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                tods = 3;
+                tento = "TỔ TÂN PHÚ";
+            }
+            rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong(txtNam.Text.Trim(), ky, tods));
+            rp.SetParameterValue("TODS", tento);
+            rp.SetParameterValue("KYDS", ky);
+            rp.SetParameterValue("TONGDHN", 12563);
+            rp.SetParameterValue("TONGDC", txtNam.Text.Trim());
+            crystalReportViewer1.ReportSource = rp;
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            frm_NhapTangCuong frm = new frm_NhapTangCuong();
+            if (frm.ShowDialog() == DialogResult.OK) {
+                int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+                ReportDocument rp = new rpt_tab_BangChamCong();
+                int tods = 1;
+                string tento = "TỔ TÂN BÌNH 01";
+                if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
+                {
+                    tods = 2;
+                    tento = "TỔ TÂN BÌNH 02";
+                }
+                if ("TP".Equals(DAL.SYS.C_USERS._toDocSo))
+                {
+                    tods = 3;
+                    tento = "TỔ TÂN PHÚ";
+                }
+                rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong_1(txtNam.Text.Trim(), ky, tods));
+                rp.SetParameterValue("TODS", tento);
+                rp.SetParameterValue("KYDS", ky);
+                rp.SetParameterValue("TONGDHN", 12563);
+                rp.SetParameterValue("TONGDC", txtNam.Text.Trim());
+                crystalReportViewer1.ReportSource = rp;
+            }
         }
 
     }
