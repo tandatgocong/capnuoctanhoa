@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CAPNUOCTANHOA.Forms.QLDHN.Tab {
+namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
     
     
     /// <summary>
@@ -299,7 +299,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab {
             
             private global::System.Data.DataColumn columnNAME;
             
-            private global::System.Data.DataColumn columnGHICHU;
+            private global::System.Data.DataColumn columnGHICHUVANPHONG;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -416,9 +416,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GHICHUColumn {
+            public global::System.Data.DataColumn GHICHUVANPHONGColumn {
                 get {
-                    return this.columnGHICHU;
+                    return this.columnGHICHUVANPHONG;
                 }
             }
             
@@ -459,7 +459,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TB_DSCODERow AddTB_DSCODERow(string LOTRINH, string DANHBO, string HOPDONG, string HOTEN, string SONHA, string TENDUONG, string HIEUDH, string CODH, string NAM, string NAME, string GHICHU) {
+            public TB_DSCODERow AddTB_DSCODERow(string LOTRINH, string DANHBO, string HOPDONG, string HOTEN, string SONHA, string TENDUONG, string HIEUDH, string CODH, string NAM, string NAME, string GHICHUVANPHONG) {
                 TB_DSCODERow rowTB_DSCODERow = ((TB_DSCODERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         LOTRINH,
@@ -472,7 +472,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab {
                         CODH,
                         NAM,
                         NAME,
-                        GHICHU};
+                        GHICHUVANPHONG};
                 rowTB_DSCODERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTB_DSCODERow);
                 return rowTB_DSCODERow;
@@ -505,7 +505,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab {
                 this.columnCODH = base.Columns["CODH"];
                 this.columnNAM = base.Columns["NAM"];
                 this.columnNAME = base.Columns["NAME"];
-                this.columnGHICHU = base.Columns["GHICHU"];
+                this.columnGHICHUVANPHONG = base.Columns["GHICHUVANPHONG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -531,8 +531,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab {
                 base.Columns.Add(this.columnNAM);
                 this.columnNAME = new global::System.Data.DataColumn("NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNAME);
-                this.columnGHICHU = new global::System.Data.DataColumn("GHICHU", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGHICHU);
+                this.columnGHICHUVANPHONG = new global::System.Data.DataColumn("GHICHUVANPHONG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGHICHUVANPHONG);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -835,17 +835,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string GHICHU {
+            public string GHICHUVANPHONG {
                 get {
                     try {
-                        return ((string)(this[this.tableTB_DSCODE.GHICHUColumn]));
+                        return ((string)(this[this.tableTB_DSCODE.GHICHUVANPHONGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GHICHU\' in table \'TB_DSCODE\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GHICHUVANPHONG\' in table \'TB_DSCODE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTB_DSCODE.GHICHUColumn] = value;
+                    this[this.tableTB_DSCODE.GHICHUVANPHONGColumn] = value;
                 }
             }
             
@@ -971,14 +971,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGHICHUNull() {
-                return this.IsNull(this.tableTB_DSCODE.GHICHUColumn);
+            public bool IsGHICHUVANPHONGNull() {
+                return this.IsNull(this.tableTB_DSCODE.GHICHUVANPHONGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGHICHUNull() {
-                this[this.tableTB_DSCODE.GHICHUColumn] = global::System.Convert.DBNull;
+            public void SetGHICHUVANPHONGNull() {
+                this[this.tableTB_DSCODE.GHICHUVANPHONGColumn] = global::System.Convert.DBNull;
             }
         }
         
