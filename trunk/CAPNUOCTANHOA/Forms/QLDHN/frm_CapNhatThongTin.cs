@@ -154,6 +154,27 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         }
 
+        public DataTable getThongTinDiaChi(string dot, string ky, string nam)
+        {
+            if ("00".Equals(dot))
+            {
+                string sql = " SELECT MALOTRINH, DANHBA, kh.SONHA,kh.TENDUONG, ds.SOMOI, (kh.SONHA + '('+ ds.SOMOI +')' ) as TH ";
+                sql += " FROM [DocSo_PHT].[dbo].[DS" + nam + "] ds ,TB_DULIEUKHACHHANG kh ";
+                sql += " WHERE kh.DANHBO= ds.DANHBA AND ds.SOMOI IS NOT NULL AND ds.SOMOI <> ''  AND ds.KY='" + int.Parse(ky) + "' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "ds.MALOTRINH");
+                return DAL.LinQConnection.getDataTable(sql);
+
+            }
+            else
+            {
+                string sql = " SELECT MALOTRINH, DANHBA, kh.SONHA,kh.TENDUONG, ds.SOMOI, (kh.SONHA + '('+ ds.SOMOI +')' ) as TH ";
+                sql += " FROM [DocSo_PHT].[dbo].[DS" + nam + "] ds ,TB_DULIEUKHACHHANG kh ";
+                sql += " WHERE kh.DANHBO= ds.DANHBA AND ds.SOMOI IS NOT NULL AND ds.SOMOI <> ''  AND ds.KY='" + int.Parse(ky) + "' AND ds.DOT = '" + int.Parse(dot) + "'  " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "ds.MALOTRINH");
+                return DAL.LinQConnection.getDataTable(sql);
+            }
+
+        }
+
+
         private void btXemTT_Click(object sender, EventArgs e)
         {
             string dot = qlDot.Items[qlDot.SelectedIndex].ToString();
@@ -161,6 +182,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string nam = qlNam.Text.Trim();
             dataGridView1.DataSource = getThongTinCapNhat(dot, ky, nam);
             Utilities.DataGridV.formatRows(dataGridView1);
+
+            gridSoNha.DataSource = getThongTinDiaChi(dot, ky, nam);
+            Utilities.DataGridV.formatRows(gridSoNha);
         }
 
         private void btCapNhat_Click(object sender, EventArgs e)
@@ -445,6 +469,53 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
            dutchi = getListDutChiThan(dot, ky, nam, this.dcNgayYC.Value.Date.ToShortDateString());
            dataDutChiThan.DataSource = dutchi;
+        }
+
+        private void btSoNhaMoi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                 for (int i = 0; i < gridSoNha.Rows.Count; i++)
+            {
+                try
+                {
+
+
+                    string DC_DB = gridSoNha.Rows[i].Cells["DC_DB"].Value + "";
+                    string TONGHOPDC = gridSoNha.Rows[i].Cells["TONGHOPDC"].Value + "";
+                    string DC_DUONGMOI = gridSoNha.Rows[i].Cells["DC_DUONGMOI"].Value + "";
+                                       
+                    string sqlUPdate = "UPDATE TB_DULIEUKHACHHANG SET  MODIFYBY='" + DAL.SYS.C_USERS._userName + "' , MODIFYDATE=GETDATE() ";
+                    
+                    if ("".Equals(TONGHOPDC) == false)
+                    {
+                        sqlUPdate += " , SONHA=N'" + TONGHOPDC.ToUpper() + "' ";
+                    }
+
+                    if ("".Equals(DC_DUONGMOI) == false)
+                    {
+                        sqlUPdate += " , TENDUONG=N'" + DC_DUONGMOI.ToUpper() + "' ";
+                    }
+
+                    sqlUPdate += " WHERE DANHBO='" + DC_DB.Replace(" ", "") + "'";
+
+                    DAL.LinQConnection.ExecuteCommand(sqlUPdate);
+
+
+                }
+                catch (Exception ex)
+                {
+                    log.Error("Cap Nhat HandHeld Loi " + ex.Message);
+                }
+
+            }
+            MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                
+                  MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
