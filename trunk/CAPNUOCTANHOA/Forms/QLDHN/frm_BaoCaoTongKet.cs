@@ -84,5 +84,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
              this.splitContainer1.Panel2.Controls.Clear();
              this.splitContainer1.Panel2.Controls.Add(new I_tab_BangChamCong());
         }
+
+        private void rptDSCode_Click(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new J_tab_DanhSachCodeK());
+        }
     }
 }

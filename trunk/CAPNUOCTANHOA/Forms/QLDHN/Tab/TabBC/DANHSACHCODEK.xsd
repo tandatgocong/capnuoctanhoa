@@ -25,7 +25,7 @@
               <xs:element name="CODH" msprop:Generator_ColumnVarNameInTable="columnCODH" msprop:Generator_ColumnPropNameInRow="CODH" msprop:Generator_ColumnPropNameInTable="CODHColumn" msprop:Generator_UserColumnName="CODH" type="xs:string" minOccurs="0" />
               <xs:element name="NAM" msprop:Generator_ColumnVarNameInTable="columnNAM" msprop:Generator_ColumnPropNameInRow="NAM" msprop:Generator_ColumnPropNameInTable="NAMColumn" msprop:Generator_UserColumnName="NAM" type="xs:string" minOccurs="0" />
               <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" type="xs:string" minOccurs="0" />
-              <xs:element name="GHICHU" msprop:Generator_ColumnVarNameInTable="columnGHICHU" msprop:Generator_ColumnPropNameInRow="GHICHU" msprop:Generator_ColumnPropNameInTable="GHICHUColumn" msprop:Generator_UserColumnName="GHICHU" type="xs:string" minOccurs="0" />
+              <xs:element name="GHICHUVANPHONG" msprop:Generator_ColumnVarNameInTable="columnGHICHUVANPHONG" msprop:Generator_ColumnPropNameInRow="GHICHUVANPHONG" msprop:Generator_ColumnPropNameInTable="GHICHUVANPHONGColumn" msprop:Generator_UserColumnName="GHICHUVANPHONG" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

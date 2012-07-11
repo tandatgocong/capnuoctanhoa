@@ -36,11 +36,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
 
-            string query = "SELECT kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.HIEUDH, kh.CODH, YEAR(kh.NGAYTHAY) AS NAM, nv.NAME ";
-            query += " FROM  DocSo_PHT.dbo.DS"+nam+" ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv ";
+            string query = "SELECT kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.HIEUDH, kh.CODH, convert(varchar(20),YEAR(kh.NGAYTHAY)) AS 'NAM', nv.NAME, ds.GHICHUVANPHONG ";
+            query += " FROM  DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv ";
             query += " WHERE ds.DANHBA = kh.DANHBO AND CONVERT(int,SUBSTRING(kh.LOTRINH,3,2))= nv.MAYDS ";
-            query += " AND ds.CODE LIKE '"+code+"%' AND ds.KY="+ky;
-            if (dot != 0) {
+            query += " AND ds.CODE LIKE '" + code + "%' AND ds.KY=" + ky;
+            if (dot != 0)
+            {
                 query += " AND ds.DOT=" + dot;
             }
             query += " ORDER BY  nv.NAME ASC,kh.LOTRINH ASC";
@@ -55,12 +56,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
             int nam = int.Parse(txtNam.Text.Trim());
             string code = cbCode.SelectedValue.ToString();
-            
-            ReportDocument rp = new rpt_KetQuaBienChiSo();
-           
-
-            rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.getTheoDoiBienDocChiSo());
-            rp.SetParameterValue("title", title);
+            ReportDocument rp = new rpt_DanhSachByCode();
+            string title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + "   KỲ " + ky;
+            if (dot != 0)
+            {
+                title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + "   ĐỢT " + dot + "   KỲ " + ky;
+            }
+            rp.SetDataSource(getTheoDoiBienDocChiSo(dot, ky, nam, code));
+            rp.SetParameterValue("title", title_);
             crystalReportViewer1.ReportSource = rp;
         }
     }
