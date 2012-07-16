@@ -126,10 +126,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
           
         }
+
+        public void LoadData_DT()
+        {
+            try
+            {
+                dataBangKe.DataSource = DAL.QLDHN.C_BaoThay.getBangKeBaoThay(txtSoBangKe.Text.Trim());
+                Utilities.DataGridV.formatRows(dataBangKe);
+                setSTT();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Du Lieu Thay " + ex.Message);
+            }
+
+        }
+
         private void txtSoBangKe_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
-                LoadData();
+                if ("DT,DP,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                {
+                    LoadData_DT();
+                }
+                else {
+                    LoadData();
+                }
+                
                 //btIn.Enabled = true;
             }
         }
@@ -156,7 +179,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string DHN_LYDOTHAY = dataBangKe.Rows[e.RowIndex].Cells["G_LYDO"].Value + "";
 
                 cbLoaiBangKe.SelectedValue = DHN_LOAIBANGKE;
-                txtSoBangKe.Text = DHN_SOBANGKE;
+              //  txtSoBangKe.Text = DHN_SOBANGKE;
                 txtSoDanhBo.Text = DHN_DANHBO.Replace(" ", "");
                 txtTenKH.Text = HOTEN;
                 txtDiaChi.Text = DIACHI;
@@ -334,7 +357,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     DAL.QLDHN.C_BaoThay.deleteBAOTHAY(thay);
-                    LoadData();
+                    if ("DT,DP,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    {
+                        LoadData_DT();
+                    }
+                    else
+                    {
+                        LoadData();
+                    }
                 }
             }
             catch (Exception ex)
@@ -368,7 +398,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     thaydh.DHN_MODIFYDATE = DateTime.Now;
 
                     DAL.QLDHN.C_BaoThay.Update();
-                    LoadData();
+                    if ("DT,DP,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    {
+                        LoadData_DT();
+                    }
+                    else
+                    {
+                        LoadData();
+                    }
                 }
             }
             catch (Exception ex)
