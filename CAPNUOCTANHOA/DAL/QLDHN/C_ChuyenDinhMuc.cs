@@ -67,6 +67,20 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
             return null;
         }
+        public static TB_CHUYENDINHMUC findByDanhBoChuyenDM(string danhbo, DateTime ngayyc)
+        {
+            try
+            {
+                var query = from q in db.TB_CHUYENDINHMUCs where q.DANHBO == danhbo && q.NGAYLAP == ngayyc select q;
+                return query.ToList()[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
 
         public static DataSet getReport(string ngay)
         {

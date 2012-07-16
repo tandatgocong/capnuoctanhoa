@@ -30,6 +30,9 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.rptThayDoi = new System.Windows.Forms.RadioButton();
+            this.rptGanMoi = new System.Windows.Forms.RadioButton();
+            this.rptDSCode = new System.Windows.Forms.RadioButton();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
@@ -40,7 +43,6 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rtThongKeDHN = new System.Windows.Forms.RadioButton();
             this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
-            this.rptDSCode = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
@@ -68,6 +70,8 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.Color.AliceBlue;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.expandablePanel1.Controls.Add(this.rptThayDoi);
+            this.expandablePanel1.Controls.Add(this.rptGanMoi);
             this.expandablePanel1.Controls.Add(this.rptDSCode);
             this.expandablePanel1.Controls.Add(this.radioButton8);
             this.expandablePanel1.Controls.Add(this.radioButton7);
@@ -100,6 +104,42 @@
             this.expandablePanel1.TitleStyle.ForeColor.Color = System.Drawing.Color.Firebrick;
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "Danh Mục Báo Cáo";
+            // 
+            // rptThayDoi
+            // 
+            this.rptThayDoi.AutoSize = true;
+            this.rptThayDoi.Location = new System.Drawing.Point(10, 382);
+            this.rptThayDoi.Name = "rptThayDoi";
+            this.rptThayDoi.Size = new System.Drawing.Size(152, 23);
+            this.rptThayDoi.TabIndex = 5;
+            this.rptThayDoi.TabStop = true;
+            this.rptThayDoi.Text = "Lộ Trình Thay Đổi";
+            this.rptThayDoi.UseVisualStyleBackColor = true;
+            this.rptThayDoi.Click += new System.EventHandler(this.rptThayDoi_Click);
+            // 
+            // rptGanMoi
+            // 
+            this.rptGanMoi.AutoSize = true;
+            this.rptGanMoi.Location = new System.Drawing.Point(10, 353);
+            this.rptGanMoi.Name = "rptGanMoi";
+            this.rptGanMoi.Size = new System.Drawing.Size(157, 23);
+            this.rptGanMoi.TabIndex = 5;
+            this.rptGanMoi.TabStop = true;
+            this.rptGanMoi.Text = "Thống Kê Gắn Mới";
+            this.rptGanMoi.UseVisualStyleBackColor = true;
+            this.rptGanMoi.Click += new System.EventHandler(this.rptGanMoi_Click);
+            // 
+            // rptDSCode
+            // 
+            this.rptDSCode.AutoSize = true;
+            this.rptDSCode.Location = new System.Drawing.Point(10, 324);
+            this.rptDSCode.Name = "rptDSCode";
+            this.rptDSCode.Size = new System.Drawing.Size(176, 23);
+            this.rptDSCode.TabIndex = 5;
+            this.rptDSCode.TabStop = true;
+            this.rptDSCode.Text = "Danh Sách Theo Code";
+            this.rptDSCode.UseVisualStyleBackColor = true;
+            this.rptDSCode.Click += new System.EventHandler(this.rptDSCode_Click);
             // 
             // radioButton8
             // 
@@ -221,18 +261,6 @@
             this.radioThayDinhKy.UseVisualStyleBackColor = true;
             this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
             // 
-            // rptDSCode
-            // 
-            this.rptDSCode.AutoSize = true;
-            this.rptDSCode.Location = new System.Drawing.Point(10, 324);
-            this.rptDSCode.Name = "rptDSCode";
-            this.rptDSCode.Size = new System.Drawing.Size(176, 23);
-            this.rptDSCode.TabIndex = 5;
-            this.rptDSCode.TabStop = true;
-            this.rptDSCode.Text = "Danh Sách Theo Code";
-            this.rptDSCode.UseVisualStyleBackColor = true;
-            this.rptDSCode.Click += new System.EventHandler(this.rptDSCode_Click);
-            // 
             // frm_BaoCaoTongKet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -266,6 +294,8 @@
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton8;
         private System.Windows.Forms.RadioButton rptDSCode;
+        private System.Windows.Forms.RadioButton rptGanMoi;
+        private System.Windows.Forms.RadioButton rptThayDoi;
 
     }
 }

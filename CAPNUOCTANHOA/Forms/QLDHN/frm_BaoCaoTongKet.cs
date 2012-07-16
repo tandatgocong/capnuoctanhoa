@@ -90,5 +90,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.splitContainer1.Panel2.Controls.Clear();
             this.splitContainer1.Panel2.Controls.Add(new J_tab_DanhSachCodeK());
         }
+
+        private void rptGanMoi_Click(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new K_tab_ThongKeGanMoi());
+        }
+
+        private void rptThayDoi_Click(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new L_tab_LoTrinhThayDoi());
+            
+        }
+
+      
     }
 }

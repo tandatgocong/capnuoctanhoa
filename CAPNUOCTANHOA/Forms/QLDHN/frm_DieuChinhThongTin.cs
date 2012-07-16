@@ -87,7 +87,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     
                     
                     loadghichu(khachhang.DANHBO);
-
+                    txtGhiChu.Text = "";
                 }
                 else
                 {
@@ -223,6 +223,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     }
                     //
                     MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtGhiChu.Text = "";
                     txtDanhBo.Focus();
                 }
                 else

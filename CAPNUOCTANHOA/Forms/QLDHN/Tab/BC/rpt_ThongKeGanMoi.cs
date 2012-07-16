@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
+namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_PhieuGhiChepTieuThu : ReportClass {
+    public class rpt_ThongKeGanMoi : ReportClass {
         
-        public rpt_PhieuGhiChepTieuThu() {
+        public rpt_ThongKeGanMoi() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_PhieuGhiChepTieuThu.rpt";
+                return "rpt_ThongKeGanMoi.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.BanKTKS.BC.rpt_PhieuGhiChepTieuThu.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.BC.rpt_ThongKeGanMoi.rpt";
             }
             set {
                 // Do nothing
@@ -90,25 +90,17 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ky {
+        public CrystalDecisions.Shared.IParameterField Parameter_title_ {
             get {
                 return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_stt {
-            get {
-                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_PhieuGhiChepTieuThu : Component, ICachedReport {
+    public class Cachedrpt_ThongKeGanMoi : Component, ICachedReport {
         
-        public Cachedrpt_PhieuGhiChepTieuThu() {
+        public Cachedrpt_ThongKeGanMoi() {
         }
         
         [Browsable(false)]
@@ -145,7 +137,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_PhieuGhiChepTieuThu rpt = new rpt_PhieuGhiChepTieuThu();
+            rpt_ThongKeGanMoi rpt = new rpt_ThongKeGanMoi();
             rpt.Site = this.Site;
             return rpt;
         }

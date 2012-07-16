@@ -297,24 +297,50 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                 try
                 {
-                    TB_CHUYENDINHMUC chuyendm = new TB_CHUYENDINHMUC();
-                    chuyendm.KY = int.Parse(dataBangKe.Rows[i].Cells["G_KY"].Value + "");
-                    chuyendm.DOT = int.Parse(dataBangKe.Rows[i].Cells["DOT"].Value + "");
-                    chuyendm.NAM = DateTime.Now.Date.Year;
-                    chuyendm.TODS = DAL.SYS.C_USERS._toDocSo;
-                    chuyendm.DANHBO = dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "";
-                    chuyendm.LOTRINH = dataBangKe.Rows[i].Cells["G_LOTRINH"].Value + "";
-                    chuyendm.HOTEN = dataBangKe.Rows[i].Cells["HOTEN"].Value + "";
-                    chuyendm.DIACHI = dataBangKe.Rows[i].Cells["DIACHI"].Value + "";
-                    chuyendm.HOPDONG = dataBangKe.Rows[i].Cells["HOPDONG"].Value + "";
-                    chuyendm.GB = dataBangKe.Rows[i].Cells["GB"].Value + "";
-                    chuyendm.DM = dataBangKe.Rows[i].Cells["DM"].Value + "";
-                    chuyendm.TTBQ = int.Parse(dataBangKe.Rows[i].Cells["TTBQ"].Value + "");
-                    chuyendm.CONGDUNG = dataBangKe.Rows[i].Cells["CONGDUNG"].Value + "";
-                    chuyendm.NGAYLAP = this.txtNgayGan.Value.Date;
-                    chuyendm.CREATEDATE = DateTime.Now;
-                    chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
-                    DAL.QLDHN.C_ChuyenDinhMuc.Insert(chuyendm);
+                    TB_CHUYENDINHMUC chuyendm = DAL.QLDHN.C_ChuyenDinhMuc.findByDanhBoChuyenDM((dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", ""), this.txtNgayGan.Value.Date);
+                    if (chuyendm != null)
+                    {
+                        chuyendm.KY = int.Parse(dataBangKe.Rows[i].Cells["G_KY"].Value + "");
+                        chuyendm.DOT = int.Parse(dataBangKe.Rows[i].Cells["DOT"].Value + "");
+                        chuyendm.NAM = DateTime.Now.Date.Year;
+                        chuyendm.TODS = DAL.SYS.C_USERS._toDocSo;
+                        chuyendm.DANHBO = dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "";
+                        chuyendm.LOTRINH = dataBangKe.Rows[i].Cells["G_LOTRINH"].Value + "";
+                        chuyendm.HOTEN = dataBangKe.Rows[i].Cells["HOTEN"].Value + "";
+                        chuyendm.DIACHI = dataBangKe.Rows[i].Cells["DIACHI"].Value + "";
+                        chuyendm.HOPDONG = dataBangKe.Rows[i].Cells["HOPDONG"].Value + "";
+                        chuyendm.GB = dataBangKe.Rows[i].Cells["GB"].Value + "";
+                        chuyendm.DM = dataBangKe.Rows[i].Cells["DM"].Value + "";
+                        chuyendm.TTBQ = int.Parse(dataBangKe.Rows[i].Cells["TTBQ"].Value + "");
+                        chuyendm.CONGDUNG = dataBangKe.Rows[i].Cells["CONGDUNG"].Value + "";
+                        chuyendm.NGAYLAP = this.txtNgayGan.Value.Date;
+                        chuyendm.CREATEDATE = DateTime.Now;
+                        chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
+                        DAL.QLDHN.C_ChuyenDinhMuc.Update();
+                    }
+                    else
+                    {
+                        chuyendm = new TB_CHUYENDINHMUC();
+                        chuyendm.KY = int.Parse(dataBangKe.Rows[i].Cells["G_KY"].Value + "");
+                        chuyendm.DOT = int.Parse(dataBangKe.Rows[i].Cells["DOT"].Value + "");
+                        chuyendm.NAM = DateTime.Now.Date.Year;
+                        chuyendm.TODS = DAL.SYS.C_USERS._toDocSo;
+                        chuyendm.DANHBO = dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "";
+                        chuyendm.LOTRINH = dataBangKe.Rows[i].Cells["G_LOTRINH"].Value + "";
+                        chuyendm.HOTEN = dataBangKe.Rows[i].Cells["HOTEN"].Value + "";
+                        chuyendm.DIACHI = dataBangKe.Rows[i].Cells["DIACHI"].Value + "";
+                        chuyendm.HOPDONG = dataBangKe.Rows[i].Cells["HOPDONG"].Value + "";
+                        chuyendm.GB = dataBangKe.Rows[i].Cells["GB"].Value + "";
+                        chuyendm.DM = dataBangKe.Rows[i].Cells["DM"].Value + "";
+                        chuyendm.TTBQ = int.Parse(dataBangKe.Rows[i].Cells["TTBQ"].Value + "");
+                        chuyendm.CONGDUNG = dataBangKe.Rows[i].Cells["CONGDUNG"].Value + "";
+                        chuyendm.NGAYLAP = this.txtNgayGan.Value.Date;
+                        chuyendm.CREATEDATE = DateTime.Now;
+                        chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
+                        DAL.QLDHN.C_ChuyenDinhMuc.Insert(chuyendm);
+                    }
+
+                  
                 }
                 catch (Exception ex)
                 {
