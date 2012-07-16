@@ -436,6 +436,41 @@
     <Compile Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.Designer.cs">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\BAOCAOTHONGKE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BAOCAOTHONGKE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\rpt_ChiTietLoTrinhGM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ChiTietLoTrinhGM.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\rpt_DanhSachThayDoiLoTrinh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DanhSachThayDoiLoTrinh.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\rpt_ThongKeGanMoi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ThongKeGanMoi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\L_tab_LoTrinhThayDoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\L_tab_LoTrinhThayDoi.Designer.cs">
+      <DependentUpon>L_tab_LoTrinhThayDoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\K_tab_ThongKeGanMoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\K_tab_ThongKeGanMoi.Designer.cs">
+      <DependentUpon>K_tab_ThongKeGanMoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODEK.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -909,6 +944,17 @@
     <None Include="Forms\QLDHN\tabDieuChinh\DIEUCHINH.xss">
       <DependentUpon>DIEUCHINH.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\Tab\BC\BAOCAOTHONGKE.xsc">
+      <DependentUpon>BAOCAOTHONGKE.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\Tab\BC\BAOCAOTHONGKE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BAOCAOTHONGKE.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\Tab\BC\BAOCAOTHONGKE.xss">
+      <DependentUpon>BAOCAOTHONGKE.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODEK.xsc">
       <DependentUpon>DANHSACHCODEK.xsd</DependentUpon>
     </None>
@@ -1115,6 +1161,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_ChiTietLoTrinhGM.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ChiTietLoTrinhGM.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_DanhSachThayDoiLoTrinh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachThayDoiLoTrinh.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_ThongKeGanMoi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ThongKeGanMoi.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\L_tab_LoTrinhThayDoi.resx">
+      <DependentUpon>L_tab_LoTrinhThayDoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\K_tab_ThongKeGanMoi.resx">
+      <DependentUpon>K_tab_ThongKeGanMoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\J_tab_DanhSachCodeK.resx">
       <DependentUpon>J_tab_DanhSachCodeK.cs</DependentUpon>
