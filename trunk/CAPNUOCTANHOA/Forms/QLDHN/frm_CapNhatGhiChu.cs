@@ -44,6 +44,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     ghichu.DONVI=DAL.SYS.C_USERS._maphong; 
                     ghichu.MODIFYDATE= DateTime.Now;
                     ghichu.MODIFYBY = DAL.SYS.C_USERS._userName;
+                    DAL.DULIEUKH.C_PhienLoTrinh.CapNhatGhiChu(this.txtSoDanhBo.Text.Replace("-", ""), txtGhiChu.Text);
                     DAL.DULIEUKH.C_DuLieuKhachHang.Update();
                 }
                
