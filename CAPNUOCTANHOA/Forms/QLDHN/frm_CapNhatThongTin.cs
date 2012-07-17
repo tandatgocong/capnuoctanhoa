@@ -74,6 +74,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
                     UpDateCSLoTrinh(dot, ky, nam);
                 }
+                if (checkGhiChu.Checked)
+                {
+                    UpdateChiChu(dot, ky, nam);
+                }
                 MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -84,7 +88,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
 
-
+        public void UpdateChiChu(string dot, string ky, string nam)
+        {
+            string sql = " UPDATE DocSo_PHT.dbo.DS" + nam + " SET  GHICHUVANPHONG=t2.NOIDUNG ";
+            sql += " FROM (SELECT NOIDUNG,DANHBO FROM CAPNUOCTANHOA.dbo.TB_GHICHU as t2 WHERE DONVI='QLDHN' ) as t2  ";
+            sql += "  WHERE DANHBA= t2.DANHBO AND LEFT(MALOTRINH,2)='" + dot + "' AND KY='" + int.Parse(ky) + "' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "MALOTRINH"); ;
+            DAL.LinQConnection.ExecuteCommand(sql);
+        }
         public void UpDateSoNha(string dot, string ky, string nam)
         {
             string sql = " UPDATE DocSo_PHT.dbo.KHACHHANG SET  SO=t2.SONHA ,DUONG=t2.TENDUONG ";
@@ -340,7 +350,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         DAL.QLDHN.C_ChuyenDinhMuc.Insert(chuyendm);
                     }
 
-                  
+
                 }
                 catch (Exception ex)
                 {
@@ -482,65 +492,65 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     listDanhBa += ("'" + (DC_DANHBO.Replace(" ", "") + "',"));
                 }
             }
-           listDanhBa= listDanhBa.Remove(listDanhBa.Length - 1, 1);
-           ReportDocument rp = new rpt_TLKDutChi();
-           rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString()));
-           frm_Reports frm = new frm_Reports(rp);
-           frm.ShowDialog();
+            listDanhBa = listDanhBa.Remove(listDanhBa.Length - 1, 1);
+            ReportDocument rp = new rpt_TLKDutChi();
+            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString()));
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
 
 
-           string dot = dcDot.Items[dcDot.SelectedIndex].ToString();
-           string ky = dcKy.Items[dcKy.SelectedIndex].ToString();
-           string nam = dcNam.Text.Trim();
+            string dot = dcDot.Items[dcDot.SelectedIndex].ToString();
+            string ky = dcKy.Items[dcKy.SelectedIndex].ToString();
+            string nam = dcNam.Text.Trim();
 
-           dutchi = getListDutChiThan(dot, ky, nam, this.dcNgayYC.Value.Date.ToShortDateString());
-           dataDutChiThan.DataSource = dutchi;
+            dutchi = getListDutChiThan(dot, ky, nam, this.dcNgayYC.Value.Date.ToShortDateString());
+            dataDutChiThan.DataSource = dutchi;
         }
 
         private void btSoNhaMoi_Click(object sender, EventArgs e)
         {
             try
             {
-                 for (int i = 0; i < gridSoNha.Rows.Count; i++)
-            {
-                try
+                for (int i = 0; i < gridSoNha.Rows.Count; i++)
                 {
-
-
-                    string DC_DB = gridSoNha.Rows[i].Cells["DC_DB"].Value + "";
-                    string TONGHOPDC = gridSoNha.Rows[i].Cells["TONGHOPDC"].Value + "";
-                    string DC_DUONGMOI = gridSoNha.Rows[i].Cells["DC_DUONGMOI"].Value + "";
-                                       
-                    string sqlUPdate = "UPDATE TB_DULIEUKHACHHANG SET  MODIFYBY='" + DAL.SYS.C_USERS._userName + "' , MODIFYDATE=GETDATE() ";
-                    
-                    if ("".Equals(TONGHOPDC) == false)
+                    try
                     {
-                        sqlUPdate += " , SONHA=N'" + TONGHOPDC.ToUpper() + "' ";
+
+
+                        string DC_DB = gridSoNha.Rows[i].Cells["DC_DB"].Value + "";
+                        string TONGHOPDC = gridSoNha.Rows[i].Cells["TONGHOPDC"].Value + "";
+                        string DC_DUONGMOI = gridSoNha.Rows[i].Cells["DC_DUONGMOI"].Value + "";
+
+                        string sqlUPdate = "UPDATE TB_DULIEUKHACHHANG SET  MODIFYBY='" + DAL.SYS.C_USERS._userName + "' , MODIFYDATE=GETDATE() ";
+
+                        if ("".Equals(TONGHOPDC) == false)
+                        {
+                            sqlUPdate += " , SONHA=N'" + TONGHOPDC.ToUpper() + "' ";
+                        }
+
+                        if ("".Equals(DC_DUONGMOI) == false)
+                        {
+                            sqlUPdate += " , TENDUONG=N'" + DC_DUONGMOI.ToUpper() + "' ";
+                        }
+
+                        sqlUPdate += " WHERE DANHBO='" + DC_DB.Replace(" ", "") + "'";
+
+                        DAL.LinQConnection.ExecuteCommand(sqlUPdate);
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Error("Cap Nhat HandHeld Loi " + ex.Message);
                     }
 
-                    if ("".Equals(DC_DUONGMOI) == false)
-                    {
-                        sqlUPdate += " , TENDUONG=N'" + DC_DUONGMOI.ToUpper() + "' ";
-                    }
-
-                    sqlUPdate += " WHERE DANHBO='" + DC_DB.Replace(" ", "") + "'";
-
-                    DAL.LinQConnection.ExecuteCommand(sqlUPdate);
-
-
                 }
-                catch (Exception ex)
-                {
-                    log.Error("Cap Nhat HandHeld Loi " + ex.Message);
-                }
-
-            }
-            MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                
-                  MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
