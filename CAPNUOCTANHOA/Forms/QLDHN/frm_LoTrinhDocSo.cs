@@ -484,10 +484,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                               //int may = int.Parse(cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString());
                               //int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                               // inset Table Doc So
-                              //  string insertGM = "INSERT INTO KHACHHANG (MAQUAN,MAPHUONG,TODS, MAY, DOT, DANHBA, HOPDONG, TENKH, SO, DUONG, GB, DM, TILESH, TILEHCSN, TILESX, TILEKD, MALOTRINH,MALOTRINH2, HIEULUCKY, NAM, NGAYGAN, CHISO, TIEUTHU, CODE,HIEU,SOTHAN)";
-                              //  insertGM += " VALUES ('" + QUAN + "','" + PHUONG + "','" + tods + "','" + may + "','" + dot + "','" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "'," + GIABIEU + "," + DINHMUC + ",0,0,0,0,'" + LOTRINH + "','" + LOTRINH + "','" + HIEULUC + "','" + NGAYGAN.Year + "','" + NGAYGAN + "'," + CHISOTLK + ",0,'M','" + HIEU + "','" + SOTLK + "')";
-                              // log.Error(insertGM);
-                              //  DAL.DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
+
+                                string insertGM = "INSERT INTO LENHDONGNUOC(DANHBA, HIEU, CO, SOTHAN,LOAI_LENH, NGAYTHUCHIEN, GHICHU, NGAYCAPNHAT, SOLENH, NAM, CSDONG_MO) ";
+                                insertGM += " VALUES ('" + DANHBO + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','2','" + NGAYGAN + "','GM',GETDATE(),'123','" + nam + "','" + CHISOTLK + "')";
+                                log.Info("+++++++++++ LENHDONGNUOC : " + DANHBO + "");
+                                DAL.DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
                                 MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else

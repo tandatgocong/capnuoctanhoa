@@ -182,7 +182,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         listDanhBo += "'" + DANHBO + "',";
                         try
                         {
-                            ReportDocument rp = new rpt_PhieuGhiChepTieuThu();
+                            ReportDocument rp = new rpt_PhieuDeNghiKT();
 
                             rp.SetDataSource(getListHoaDonReport_BC(DANHBO, NAM, KY));                
 
