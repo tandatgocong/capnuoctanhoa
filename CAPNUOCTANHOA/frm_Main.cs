@@ -40,6 +40,7 @@ namespace CAPNUOCTANHOA
         public static frm_Login dn = new frm_Login();
         public void dangnhap()
         {
+            CNTANHOA.CNTANHOA.Conecttionstring();
             dn.ShowDialog();
             if (DAL.SYS.C_USERS._roles != null)
             {
@@ -130,11 +131,8 @@ namespace CAPNUOCTANHOA
 
         private void frm_Main_Load(object sender, EventArgs e)
         {
-             
             this.Show();
-            dangnhap();
-            
-
+            dangnhap();            
         }
 
         private void caculator_Click(object sender, EventArgs e)
@@ -235,10 +233,7 @@ namespace CAPNUOCTANHOA
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show(this, "Thoát Chương Trình ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+           
         }
 
         private void baocaoTongKet_Click(object sender, EventArgs e)
