@@ -491,6 +491,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void menuCapNhatKetQua_Click(object sender, EventArgs e)
         {
             string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
+            DAL.LinQConnection.ExecuteCommand_("DELETE FROM TB_GHICHU WHERE ID='"+ID_+"'");
+            string sodanhbo = this.txtDanhBo.Text.Replace("-", "");
+            loadghichu(sodanhbo);
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
             frm_CapNhatGhiChu frm = new frm_CapNhatGhiChu(ID_);
             if (frm.ShowDialog() == DialogResult.OK)
             {

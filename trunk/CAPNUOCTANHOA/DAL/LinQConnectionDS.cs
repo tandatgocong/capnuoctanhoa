@@ -20,6 +20,10 @@ namespace CAPNUOCTANHOA.DAL
             try
             {
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 result = Convert.ToInt32(cmd.ExecuteNonQuery());
@@ -92,7 +96,11 @@ namespace CAPNUOCTANHOA.DAL
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             try
             {
-               
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(storedNam, conn);
                 cmd.CommandType = CommandType.StoredProcedure;

@@ -29,18 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl2 = new DevComponents.DotNetBar.TabControl();
             this.tabDieuChinhKH = new DevComponents.DotNetBar.TabControlPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lichsuGhiCHu = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CREATEDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOIDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONVICN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtGhiChu = new System.Windows.Forms.RichTextBox();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.btCapNhatThongTin = new DevComponents.DotNetBar.ButtonX();
@@ -171,11 +175,8 @@
             this.labelX40 = new DevComponents.DotNetBar.LabelX();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CREATEDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOIDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONVICN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuCapNhatKetQua = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabDieuChinhKH.SuspendLayout();
@@ -339,6 +340,38 @@
             this.lichsuGhiCHu.Size = new System.Drawing.Size(574, 428);
             this.lichsuGhiCHu.TabIndex = 0;
             this.lichsuGhiCHu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lichsuGhiCHu_MouseClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // CREATEDATE
+            // 
+            this.CREATEDATE.DataPropertyName = "CREATEDATE";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle22.NullValue = null;
+            this.CREATEDATE.DefaultCellStyle = dataGridViewCellStyle22;
+            this.CREATEDATE.HeaderText = "NGÀY";
+            this.CREATEDATE.Name = "CREATEDATE";
+            // 
+            // NOIDUNG
+            // 
+            this.NOIDUNG.DataPropertyName = "NOIDUNG";
+            this.NOIDUNG.HeaderText = "NỘI DUNG";
+            this.NOIDUNG.Name = "NOIDUNG";
+            this.NOIDUNG.Width = 350;
+            // 
+            // DONVICN
+            // 
+            this.DONVICN.DataPropertyName = "DONVI";
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DONVICN.DefaultCellStyle = dataGridViewCellStyle23;
+            this.DONVICN.HeaderText = "ĐƠN VỊ";
+            this.DONVICN.Name = "DONVICN";
             // 
             // txtGhiChu
             // 
@@ -1153,14 +1186,14 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12.75F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Times New Roman", 12.75F);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -1170,14 +1203,14 @@
             this.DANHSACH});
             this.dataGridView1.Location = new System.Drawing.Point(18, 66);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12.75F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Times New Roman", 12.75F);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(422, 160);
@@ -1187,8 +1220,8 @@
             // STT
             // 
             this.STT.DataPropertyName = "STT";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STT.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle25;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
             this.STT.Width = 50;
@@ -1210,17 +1243,17 @@
             // SOLUONG
             // 
             this.SOLUONG.DataPropertyName = "SOLUONG";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "n0";
-            this.SOLUONG.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.Format = "n0";
+            this.SOLUONG.DefaultCellStyle = dataGridViewCellStyle26;
             this.SOLUONG.HeaderText = "SỐ LƯỢNG";
             this.SOLUONG.Name = "SOLUONG";
             this.SOLUONG.Width = 120;
             // 
             // DANHSACH
             // 
-            dataGridViewCellStyle6.NullValue = "Danh Sách";
-            this.DANHSACH.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle27.NullValue = "Danh Sách";
+            this.DANHSACH.DefaultCellStyle = dataGridViewCellStyle27;
             this.DANHSACH.HeaderText = "";
             this.DANHSACH.Name = "DANHSACH";
             this.DANHSACH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1853,51 +1886,30 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
             this.menuCapNhatKetQua});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(200, 28);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
-            // CREATEDATE
-            // 
-            this.CREATEDATE.DataPropertyName = "CREATEDATE";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.CREATEDATE.DefaultCellStyle = dataGridViewCellStyle1;
-            this.CREATEDATE.HeaderText = "NGÀY";
-            this.CREATEDATE.Name = "CREATEDATE";
-            // 
-            // NOIDUNG
-            // 
-            this.NOIDUNG.DataPropertyName = "NOIDUNG";
-            this.NOIDUNG.HeaderText = "NỘI DUNG";
-            this.NOIDUNG.Name = "NOIDUNG";
-            this.NOIDUNG.Width = 350;
-            // 
-            // DONVICN
-            // 
-            this.DONVICN.DataPropertyName = "DONVI";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DONVICN.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DONVICN.HeaderText = "ĐƠN VỊ";
-            this.DONVICN.Name = "DONVICN";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(200, 74);
             // 
             // menuCapNhatKetQua
             // 
             this.menuCapNhatKetQua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuCapNhatKetQua.ForeColor = System.Drawing.Color.Red;
-            this.menuCapNhatKetQua.Image = global::CAPNUOCTANHOA.Properties.Resources.Write2;
+            this.menuCapNhatKetQua.Image = global::CAPNUOCTANHOA.Properties.Resources.Clipboard_Cut;
             this.menuCapNhatKetQua.Name = "menuCapNhatKetQua";
             this.menuCapNhatKetQua.Size = new System.Drawing.Size(199, 24);
-            this.menuCapNhatKetQua.Text = "Cập Nhật Ghi Chú";
+            this.menuCapNhatKetQua.Text = "Xóa";
             this.menuCapNhatKetQua.Click += new System.EventHandler(this.menuCapNhatKetQua_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Red;
+            this.toolStripMenuItem1.Image = global::CAPNUOCTANHOA.Properties.Resources.Write2;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(199, 24);
+            this.toolStripMenuItem1.Text = "Cập Nhật Ghi Chú";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // frm_DieuChinhThongTin
             // 
@@ -2074,6 +2086,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CREATEDATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOIDUNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVICN;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 
     }
 }
