@@ -57,6 +57,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 if (ckSoNha.Checked)
                 {
                     UpDateSoNha(dot, ky, nam);
+                    UpDateCSNuocGBDM(dot, ky, nam);
                 }
                 if (ckHieuGM.Checked)
                 {
@@ -116,6 +117,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             sql += " WHERE DANHBA = t2.DANHBO AND t2.KY='" + int.Parse(ky) + "' AND t2.NAM='" + int.Parse(nam) + "'";
             DAL.LinQConnection.ExecuteCommand(sql);
         }
+        public void UpDateCSNuocGBDM(string dot, string ky, string nam)
+        {
+            string sql = "  UPDATE TB_DULIEUKHACHHANG SET  GIABIEU=GB, DINHMUC=DM ";
+            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ";
+            sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSo_PHT.dbo.DS" + nam + ".DANHBA ";
+            sql += "		AND DocSo_PHT.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  AND DocSo_PHT.dbo.DS" + nam + ".DOT = " + int.Parse(dot) + "";
+            DAL.LinQConnection.ExecuteCommand(sql);
+        }
+
         public void UpDateCSNuoc(string dot, string ky, string nam)
         {
             string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSo_PHT.dbo.DS" + nam + ".CODE ";
