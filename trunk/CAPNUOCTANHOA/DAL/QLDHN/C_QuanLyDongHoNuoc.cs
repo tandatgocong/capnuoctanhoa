@@ -71,7 +71,9 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 LinQConnection.ExecuteStoredProcedure("THONGKEDHN", ky, nam);
             }
             DataSet ds = new DataSet();
-
+            if (db.Connection.State == ConnectionState.Open) {
+                db.Connection.Close();
+            }
             db.Connection.Open();
             string query = "SELECT * FROM TB_THONGKEDHN WHERE HIEUCU='False' ORDER BY STT ASC ";
 
@@ -168,6 +170,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             DataSet ds = new DataSet();
 
+            if (db.Connection.State == ConnectionState.Open)
+            {
+                db.Connection.Close();
+            }
             db.Connection.Open();
             string query = "SELECT * FROM TB_NHANVIENDOCSO  ORDER BY MAYDS ASC ";
 
@@ -285,10 +291,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             CAPNHAT_BANGCHAMCONG(nam, ky, tods);
             DataSet ds = new DataSet();
-            if (db.Connection.State == ConnectionState.Closed)
+            if (db.Connection.State == ConnectionState.Open)
             {
-                db.Connection.Open();
+                db.Connection.Close();
             }
+            db.Connection.Open();
             
             string query = "SELECT * FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY STT ASC ";
 
@@ -301,10 +308,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static DataSet reportChamCong_1(string nam, int ky, int tods)
         {
             DataSet ds = new DataSet();
-            if (db.Connection.State == ConnectionState.Closed)
+            if (db.Connection.State == ConnectionState.Open)
             {
-                db.Connection.Open();
+                db.Connection.Close();
             }
+            db.Connection.Open();
            
             string query = "SELECT * FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY STT ASC ";
 
@@ -317,9 +325,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
 
             DataSet ds = new DataSet();
-            if (db.Connection.State == ConnectionState.Closed) {
-                db.Connection.Open();
+            if (db.Connection.State == ConnectionState.Open)
+            {
+                db.Connection.Close();
             }
+            db.Connection.Open();
             
             string query = "SELECT MAYDS,FULLNAME FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY STT ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
@@ -331,10 +341,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
 
             DataSet ds = new DataSet();
-            if (db.Connection.State == ConnectionState.Closed)
+            if (db.Connection.State == ConnectionState.Open)
             {
-                db.Connection.Open();
+                db.Connection.Close();
             }
+            db.Connection.Open();
             string query = "SELECT MAYDS,DOT01_TC, DOT02_TC, DOT03_TC, DOT04_TC, DOT05_TC, DOT06_TC, DOT07_TC, DOT08_TC, DOT09_TC, DOT10_TC, DOT11_TC, DOT12_TC, DOT13_TC, DOT14_TC, DOT15_TC, DOT16_TC, DOT17_TC, DOT18_TC, DOT19_TC, DOT20_TC FROM TB_BANGCHAMCONG WHERE MAYDS='" + mayds + "' ORDER BY STT ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_BANGCHAMCONG");
@@ -346,10 +357,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
 
             DataSet ds = new DataSet();
-            if (db.Connection.State == ConnectionState.Closed)
+            if (db.Connection.State == ConnectionState.Open)
             {
-                db.Connection.Open();
+                db.Connection.Close();
             }
+            db.Connection.Open();
             string query = "SELECT MAYDS,DOT01,DOT02,DOT03,DOT04,DOT05,DOT06,DOT07,DOT08,DOT09,DOT10,DOT11,DOT12,DOT13,DOT14,DOT15,DOT16,DOT17,DOT18,DOT19,DOT20 FROM TB_BANGCHAMCONG WHERE MAYDS='" + mayds + "' ORDER BY STT ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_BANGCHAMCONG");
@@ -361,10 +373,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
 
             DataSet ds = new DataSet();
-            if (db.Connection.State == ConnectionState.Closed)
+            if (db.Connection.State == ConnectionState.Open)
             {
-                db.Connection.Open();
+                db.Connection.Close();
             }
+            db.Connection.Open();
             string query = "SELECT MAYDS,DOT01_DC,DOT02_DC,DOT03_DC,DOT04_DC,DOT05_DC,DOT06_DC,DOT07_DC,DOT08_DC,DOT09_DC,DOT10_DC,DOT11_DC,DOT12_DC,DOT13_DC,DOT14_DC,DOT15_DC,DOT16_DC,DOT17_DC,DOT18_DC,DOT19_DC,DOT20_DC FROM TB_BANGCHAMCONG WHERE MAYDS='" + mayds + "' ORDER BY STT ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
@@ -407,7 +420,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             try
             {
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
-                conn.Open();
+                if (db.Connection.State == ConnectionState.Open)
+                {
+                    db.Connection.Close();
+                }
+                db.Connection.Open();
                 SqlCommand cmd = new SqlCommand("UPDATE TB_BANGCHAMCONG SET " + nameColume + "= " + values + " WHERE MAYDS=" + MAYDS, conn);
                 result = Convert.ToInt32(cmd.ExecuteNonQuery());
                 conn.Close();
