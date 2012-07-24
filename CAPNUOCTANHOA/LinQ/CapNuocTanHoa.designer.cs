@@ -45,9 +45,6 @@ namespace CAPNUOCTANHOA.LinQ
     partial void InsertSYS_USER(SYS_USER instance);
     partial void UpdateSYS_USER(SYS_USER instance);
     partial void DeleteSYS_USER(SYS_USER instance);
-    partial void InsertTB_DHN_BAOCAO(TB_DHN_BAOCAO instance);
-    partial void UpdateTB_DHN_BAOCAO(TB_DHN_BAOCAO instance);
-    partial void DeleteTB_DHN_BAOCAO(TB_DHN_BAOCAO instance);
     partial void InsertTB_DIEUCHINHDANHBO(TB_DIEUCHINHDANHBO instance);
     partial void UpdateTB_DIEUCHINHDANHBO(TB_DIEUCHINHDANHBO instance);
     partial void DeleteTB_DIEUCHINHDANHBO(TB_DIEUCHINHDANHBO instance);
@@ -123,6 +120,9 @@ namespace CAPNUOCTANHOA.LinQ
     partial void InsertTB_BANGCHAMCONG(TB_BANGCHAMCONG instance);
     partial void UpdateTB_BANGCHAMCONG(TB_BANGCHAMCONG instance);
     partial void DeleteTB_BANGCHAMCONG(TB_BANGCHAMCONG instance);
+    partial void InsertTB_DHN_BAOCAO(TB_DHN_BAOCAO instance);
+    partial void UpdateTB_DHN_BAOCAO(TB_DHN_BAOCAO instance);
+    partial void DeleteTB_DHN_BAOCAO(TB_DHN_BAOCAO instance);
     #endregion
 		
 		public CapNuocTanHoaDataContext() : 
@@ -264,14 +264,6 @@ namespace CAPNUOCTANHOA.LinQ
 			get
 			{
 				return this.GetTable<TANPHU1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TB_DHN_BAOCAO> TB_DHN_BAOCAOs
-		{
-			get
-			{
-				return this.GetTable<TB_DHN_BAOCAO>();
 			}
 		}
 		
@@ -480,6 +472,14 @@ namespace CAPNUOCTANHOA.LinQ
 			get
 			{
 				return this.GetTable<TB_BANGCHAMCONG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TB_DHN_BAOCAO> TB_DHN_BAOCAOs
+		{
+			get
+			{
+				return this.GetTable<TB_DHN_BAOCAO>();
 			}
 		}
 		
@@ -4637,308 +4637,6 @@ namespace CAPNUOCTANHOA.LinQ
 				{
 					this._VITRI = value;
 				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TB_DHN_BAOCAO")]
-	public partial class TB_DHN_BAOCAO : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_BC;
-		
-		private string _CVPGKD;
-		
-		private string _TENPGKD;
-		
-		private string _CVDQLDH;
-		
-		private string _TENQLDHN;
-		
-		private string _CVPGDKT;
-		
-		private string _TENPGDKT;
-		
-		private string _CVKIEMTRA;
-		
-		private string _TENKIEMTRA;
-		
-		private string _CVTHICONG;
-		
-		private string _TENTHICONG;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_BCChanging(int value);
-    partial void OnID_BCChanged();
-    partial void OnCVPGKDChanging(string value);
-    partial void OnCVPGKDChanged();
-    partial void OnTENPGKDChanging(string value);
-    partial void OnTENPGKDChanged();
-    partial void OnCVDQLDHChanging(string value);
-    partial void OnCVDQLDHChanged();
-    partial void OnTENQLDHNChanging(string value);
-    partial void OnTENQLDHNChanged();
-    partial void OnCVPGDKTChanging(string value);
-    partial void OnCVPGDKTChanged();
-    partial void OnTENPGDKTChanging(string value);
-    partial void OnTENPGDKTChanged();
-    partial void OnCVKIEMTRAChanging(string value);
-    partial void OnCVKIEMTRAChanged();
-    partial void OnTENKIEMTRAChanging(string value);
-    partial void OnTENKIEMTRAChanged();
-    partial void OnCVTHICONGChanging(string value);
-    partial void OnCVTHICONGChanged();
-    partial void OnTENTHICONGChanging(string value);
-    partial void OnTENTHICONGChanged();
-    #endregion
-		
-		public TB_DHN_BAOCAO()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_BC", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_BC
-		{
-			get
-			{
-				return this._ID_BC;
-			}
-			set
-			{
-				if ((this._ID_BC != value))
-				{
-					this.OnID_BCChanging(value);
-					this.SendPropertyChanging();
-					this._ID_BC = value;
-					this.SendPropertyChanged("ID_BC");
-					this.OnID_BCChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVPGKD", DbType="NVarChar(MAX)")]
-		public string CVPGKD
-		{
-			get
-			{
-				return this._CVPGKD;
-			}
-			set
-			{
-				if ((this._CVPGKD != value))
-				{
-					this.OnCVPGKDChanging(value);
-					this.SendPropertyChanging();
-					this._CVPGKD = value;
-					this.SendPropertyChanged("CVPGKD");
-					this.OnCVPGKDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPGKD", DbType="NVarChar(MAX)")]
-		public string TENPGKD
-		{
-			get
-			{
-				return this._TENPGKD;
-			}
-			set
-			{
-				if ((this._TENPGKD != value))
-				{
-					this.OnTENPGKDChanging(value);
-					this.SendPropertyChanging();
-					this._TENPGKD = value;
-					this.SendPropertyChanged("TENPGKD");
-					this.OnTENPGKDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVDQLDH", DbType="NVarChar(MAX)")]
-		public string CVDQLDH
-		{
-			get
-			{
-				return this._CVDQLDH;
-			}
-			set
-			{
-				if ((this._CVDQLDH != value))
-				{
-					this.OnCVDQLDHChanging(value);
-					this.SendPropertyChanging();
-					this._CVDQLDH = value;
-					this.SendPropertyChanged("CVDQLDH");
-					this.OnCVDQLDHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQLDHN", DbType="NVarChar(MAX)")]
-		public string TENQLDHN
-		{
-			get
-			{
-				return this._TENQLDHN;
-			}
-			set
-			{
-				if ((this._TENQLDHN != value))
-				{
-					this.OnTENQLDHNChanging(value);
-					this.SendPropertyChanging();
-					this._TENQLDHN = value;
-					this.SendPropertyChanged("TENQLDHN");
-					this.OnTENQLDHNChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVPGDKT", DbType="NVarChar(MAX)")]
-		public string CVPGDKT
-		{
-			get
-			{
-				return this._CVPGDKT;
-			}
-			set
-			{
-				if ((this._CVPGDKT != value))
-				{
-					this.OnCVPGDKTChanging(value);
-					this.SendPropertyChanging();
-					this._CVPGDKT = value;
-					this.SendPropertyChanged("CVPGDKT");
-					this.OnCVPGDKTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPGDKT", DbType="NVarChar(MAX)")]
-		public string TENPGDKT
-		{
-			get
-			{
-				return this._TENPGDKT;
-			}
-			set
-			{
-				if ((this._TENPGDKT != value))
-				{
-					this.OnTENPGDKTChanging(value);
-					this.SendPropertyChanging();
-					this._TENPGDKT = value;
-					this.SendPropertyChanged("TENPGDKT");
-					this.OnTENPGDKTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVKIEMTRA", DbType="NVarChar(MAX)")]
-		public string CVKIEMTRA
-		{
-			get
-			{
-				return this._CVKIEMTRA;
-			}
-			set
-			{
-				if ((this._CVKIEMTRA != value))
-				{
-					this.OnCVKIEMTRAChanging(value);
-					this.SendPropertyChanging();
-					this._CVKIEMTRA = value;
-					this.SendPropertyChanged("CVKIEMTRA");
-					this.OnCVKIEMTRAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENKIEMTRA", DbType="NVarChar(MAX)")]
-		public string TENKIEMTRA
-		{
-			get
-			{
-				return this._TENKIEMTRA;
-			}
-			set
-			{
-				if ((this._TENKIEMTRA != value))
-				{
-					this.OnTENKIEMTRAChanging(value);
-					this.SendPropertyChanging();
-					this._TENKIEMTRA = value;
-					this.SendPropertyChanged("TENKIEMTRA");
-					this.OnTENKIEMTRAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVTHICONG", DbType="NVarChar(MAX)")]
-		public string CVTHICONG
-		{
-			get
-			{
-				return this._CVTHICONG;
-			}
-			set
-			{
-				if ((this._CVTHICONG != value))
-				{
-					this.OnCVTHICONGChanging(value);
-					this.SendPropertyChanging();
-					this._CVTHICONG = value;
-					this.SendPropertyChanged("CVTHICONG");
-					this.OnCVTHICONGChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTHICONG", DbType="NVarChar(MAX)")]
-		public string TENTHICONG
-		{
-			get
-			{
-				return this._TENTHICONG;
-			}
-			set
-			{
-				if ((this._TENTHICONG != value))
-				{
-					this.OnTENTHICONGChanging(value);
-					this.SendPropertyChanging();
-					this._TENTHICONG = value;
-					this.SendPropertyChanged("TENTHICONG");
-					this.OnTENTHICONGChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -19338,6 +19036,332 @@ namespace CAPNUOCTANHOA.LinQ
 					this._DOT20_TC = value;
 					this.SendPropertyChanged("DOT20_TC");
 					this.OnDOT20_TCChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TB_DHN_BAOCAO")]
+	public partial class TB_DHN_BAOCAO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_BC;
+		
+		private string _CVPGKD;
+		
+		private string _TENPGKD;
+		
+		private string _CVDQLDH;
+		
+		private string _TENQLDHN;
+		
+		private string _CVPGDKT;
+		
+		private string _TENPGDKT;
+		
+		private string _CVKIEMTRA;
+		
+		private string _TENKIEMTRA;
+		
+		private string _CVTHICONG;
+		
+		private string _TENTHICONG;
+		
+		private string _CVKT;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_BCChanging(int value);
+    partial void OnID_BCChanged();
+    partial void OnCVPGKDChanging(string value);
+    partial void OnCVPGKDChanged();
+    partial void OnTENPGKDChanging(string value);
+    partial void OnTENPGKDChanged();
+    partial void OnCVDQLDHChanging(string value);
+    partial void OnCVDQLDHChanged();
+    partial void OnTENQLDHNChanging(string value);
+    partial void OnTENQLDHNChanged();
+    partial void OnCVPGDKTChanging(string value);
+    partial void OnCVPGDKTChanged();
+    partial void OnTENPGDKTChanging(string value);
+    partial void OnTENPGDKTChanged();
+    partial void OnCVKIEMTRAChanging(string value);
+    partial void OnCVKIEMTRAChanged();
+    partial void OnTENKIEMTRAChanging(string value);
+    partial void OnTENKIEMTRAChanged();
+    partial void OnCVTHICONGChanging(string value);
+    partial void OnCVTHICONGChanged();
+    partial void OnTENTHICONGChanging(string value);
+    partial void OnTENTHICONGChanged();
+    partial void OnCVKTChanging(string value);
+    partial void OnCVKTChanged();
+    #endregion
+		
+		public TB_DHN_BAOCAO()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_BC", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_BC
+		{
+			get
+			{
+				return this._ID_BC;
+			}
+			set
+			{
+				if ((this._ID_BC != value))
+				{
+					this.OnID_BCChanging(value);
+					this.SendPropertyChanging();
+					this._ID_BC = value;
+					this.SendPropertyChanged("ID_BC");
+					this.OnID_BCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVPGKD", DbType="NVarChar(MAX)")]
+		public string CVPGKD
+		{
+			get
+			{
+				return this._CVPGKD;
+			}
+			set
+			{
+				if ((this._CVPGKD != value))
+				{
+					this.OnCVPGKDChanging(value);
+					this.SendPropertyChanging();
+					this._CVPGKD = value;
+					this.SendPropertyChanged("CVPGKD");
+					this.OnCVPGKDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPGKD", DbType="NVarChar(MAX)")]
+		public string TENPGKD
+		{
+			get
+			{
+				return this._TENPGKD;
+			}
+			set
+			{
+				if ((this._TENPGKD != value))
+				{
+					this.OnTENPGKDChanging(value);
+					this.SendPropertyChanging();
+					this._TENPGKD = value;
+					this.SendPropertyChanged("TENPGKD");
+					this.OnTENPGKDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVDQLDH", DbType="NVarChar(MAX)")]
+		public string CVDQLDH
+		{
+			get
+			{
+				return this._CVDQLDH;
+			}
+			set
+			{
+				if ((this._CVDQLDH != value))
+				{
+					this.OnCVDQLDHChanging(value);
+					this.SendPropertyChanging();
+					this._CVDQLDH = value;
+					this.SendPropertyChanged("CVDQLDH");
+					this.OnCVDQLDHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQLDHN", DbType="NVarChar(MAX)")]
+		public string TENQLDHN
+		{
+			get
+			{
+				return this._TENQLDHN;
+			}
+			set
+			{
+				if ((this._TENQLDHN != value))
+				{
+					this.OnTENQLDHNChanging(value);
+					this.SendPropertyChanging();
+					this._TENQLDHN = value;
+					this.SendPropertyChanged("TENQLDHN");
+					this.OnTENQLDHNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVPGDKT", DbType="NVarChar(MAX)")]
+		public string CVPGDKT
+		{
+			get
+			{
+				return this._CVPGDKT;
+			}
+			set
+			{
+				if ((this._CVPGDKT != value))
+				{
+					this.OnCVPGDKTChanging(value);
+					this.SendPropertyChanging();
+					this._CVPGDKT = value;
+					this.SendPropertyChanged("CVPGDKT");
+					this.OnCVPGDKTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPGDKT", DbType="NVarChar(MAX)")]
+		public string TENPGDKT
+		{
+			get
+			{
+				return this._TENPGDKT;
+			}
+			set
+			{
+				if ((this._TENPGDKT != value))
+				{
+					this.OnTENPGDKTChanging(value);
+					this.SendPropertyChanging();
+					this._TENPGDKT = value;
+					this.SendPropertyChanged("TENPGDKT");
+					this.OnTENPGDKTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVKIEMTRA", DbType="NVarChar(MAX)")]
+		public string CVKIEMTRA
+		{
+			get
+			{
+				return this._CVKIEMTRA;
+			}
+			set
+			{
+				if ((this._CVKIEMTRA != value))
+				{
+					this.OnCVKIEMTRAChanging(value);
+					this.SendPropertyChanging();
+					this._CVKIEMTRA = value;
+					this.SendPropertyChanged("CVKIEMTRA");
+					this.OnCVKIEMTRAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENKIEMTRA", DbType="NVarChar(MAX)")]
+		public string TENKIEMTRA
+		{
+			get
+			{
+				return this._TENKIEMTRA;
+			}
+			set
+			{
+				if ((this._TENKIEMTRA != value))
+				{
+					this.OnTENKIEMTRAChanging(value);
+					this.SendPropertyChanging();
+					this._TENKIEMTRA = value;
+					this.SendPropertyChanged("TENKIEMTRA");
+					this.OnTENKIEMTRAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVTHICONG", DbType="NVarChar(MAX)")]
+		public string CVTHICONG
+		{
+			get
+			{
+				return this._CVTHICONG;
+			}
+			set
+			{
+				if ((this._CVTHICONG != value))
+				{
+					this.OnCVTHICONGChanging(value);
+					this.SendPropertyChanging();
+					this._CVTHICONG = value;
+					this.SendPropertyChanged("CVTHICONG");
+					this.OnCVTHICONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTHICONG", DbType="NVarChar(MAX)")]
+		public string TENTHICONG
+		{
+			get
+			{
+				return this._TENTHICONG;
+			}
+			set
+			{
+				if ((this._TENTHICONG != value))
+				{
+					this.OnTENTHICONGChanging(value);
+					this.SendPropertyChanging();
+					this._TENTHICONG = value;
+					this.SendPropertyChanged("TENTHICONG");
+					this.OnTENTHICONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVKT", DbType="NVarChar(MAX)")]
+		public string CVKT
+		{
+			get
+			{
+				return this._CVKT;
+			}
+			set
+			{
+				if ((this._CVKT != value))
+				{
+					this.OnCVKTChanging(value);
+					this.SendPropertyChanging();
+					this._CVKT = value;
+					this.SendPropertyChanged("CVKT");
+					this.OnCVKTChanged();
 				}
 			}
 		}

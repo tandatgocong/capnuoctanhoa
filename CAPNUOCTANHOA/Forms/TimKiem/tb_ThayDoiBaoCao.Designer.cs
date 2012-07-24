@@ -42,6 +42,7 @@
             this.CVTHICONG = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TENTHICONG = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtCapNhat = new DevComponents.DotNetBar.ButtonX();
+            this.txtKT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SuspendLayout();
             // 
             // title
@@ -192,7 +193,7 @@
             this.txtCapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.txtCapNhat.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCapNhat.ForeColor = System.Drawing.Color.Crimson;
-            this.txtCapNhat.Location = new System.Drawing.Point(249, 272);
+            this.txtCapNhat.Location = new System.Drawing.Point(248, 312);
             this.txtCapNhat.Name = "txtCapNhat";
             this.txtCapNhat.Size = new System.Drawing.Size(135, 23);
             this.txtCapNhat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -200,11 +201,23 @@
             this.txtCapNhat.Text = "CẬP NHẬT";
             this.txtCapNhat.Click += new System.EventHandler(this.txtCapNhat_Click);
             // 
+            // txtKT
+            // 
+            // 
+            // 
+            // 
+            this.txtKT.Border.Class = "TextBoxBorder";
+            this.txtKT.Location = new System.Drawing.Point(45, 279);
+            this.txtKT.Name = "txtKT";
+            this.txtKT.Size = new System.Drawing.Size(254, 27);
+            this.txtKT.TabIndex = 120;
+            // 
             // tb_ThayDoiBaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.txtKT);
             this.Controls.Add(this.txtCapNhat);
             this.Controls.Add(this.TENTHICONG);
             this.Controls.Add(this.CVTHICONG);
@@ -220,7 +233,7 @@
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.title);
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "tb_ThayDoiBaoCao";
             this.Size = new System.Drawing.Size(1309, 665);
             this.ResumeLayout(false);
@@ -243,5 +256,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX CVTHICONG;
         private DevComponents.DotNetBar.Controls.TextBoxX TENTHICONG;
         private DevComponents.DotNetBar.ButtonX txtCapNhat;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtKT;
     }
 }

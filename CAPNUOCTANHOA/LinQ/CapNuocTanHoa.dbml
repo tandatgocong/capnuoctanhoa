@@ -257,21 +257,6 @@
       <Column Name="VITRI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TB_DHN_BAOCAO" Member="TB_DHN_BAOCAOs">
-    <Type Name="TB_DHN_BAOCAO">
-      <Column Name="ID_BC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CVPGKD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TENPGKD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CVDQLDH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TENQLDHN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CVPGDKT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TENPGDKT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CVKIEMTRA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TENKIEMTRA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CVTHICONG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TENTHICONG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.TB_DIEUCHINHDANHBO" Member="TB_DIEUCHINHDANHBOs">
     <Type Name="TB_DIEUCHINHDANHBO">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -939,6 +924,22 @@
       <Column Name="DOT18_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DOT19_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DOT20_TC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_DHN_BAOCAO" Member="TB_DHN_BAOCAOs">
+    <Type Name="TB_DHN_BAOCAO">
+      <Column Name="ID_BC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CVPGKD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TENPGKD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVDQLDH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TENQLDHN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVPGDKT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TENPGDKT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVKIEMTRA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TENKIEMTRA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVTHICONG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TENTHICONG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVKT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">

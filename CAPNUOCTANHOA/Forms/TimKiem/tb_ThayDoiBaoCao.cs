@@ -29,6 +29,7 @@ namespace CAPNUOCTANHOA.Forms.TimKiem
                 TENKIEMTRA.Text = dhn_bc.TENKIEMTRA;
                 CVTHICONG.Text = dhn_bc.CVTHICONG;
                 TENTHICONG.Text = dhn_bc.TENTHICONG;
+                txtKT.Text = dhn_bc.CVKT;
             }
         }
 
@@ -48,6 +49,7 @@ namespace CAPNUOCTANHOA.Forms.TimKiem
                     dhn_bc.TENKIEMTRA = TENKIEMTRA.Text;
                     dhn_bc.CVTHICONG = CVTHICONG.Text;
                     dhn_bc.TENTHICONG = TENTHICONG.Text;
+                    dhn_bc.CVKT = txtKT.Text;
                     DAL.QLDHN.C_BaoThay.Update();
                     MessageBox.Show(this, "Cập Nhật Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

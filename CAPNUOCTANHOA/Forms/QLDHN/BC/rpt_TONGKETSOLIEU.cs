@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_ThongKeDongHoNuoc_ : ReportClass {
+    public class rpt_TONGKETSOLIEU : ReportClass {
         
-        public rpt_ThongKeDongHoNuoc_() {
+        public rpt_TONGKETSOLIEU() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_ThongKeDongHoNuoc_.rpt";
+                return "rpt_TONGKETSOLIEU.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_ThongKeDongHoNuoc_.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_TONGKETSOLIEU.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,41 +90,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_KY {
+        public CrystalDecisions.Shared.IParameterField Parameter_TITLE {
             get {
                 return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_NAM {
-            get {
-                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_ThongKeDongHoNuoc_ : Component, ICachedReport {
+    public class Cachedrpt_TONGKETSOLIEU : Component, ICachedReport {
         
-        public Cachedrpt_ThongKeDongHoNuoc_() {
+        public Cachedrpt_TONGKETSOLIEU() {
         }
         
         [Browsable(false)]
@@ -161,7 +137,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_ThongKeDongHoNuoc_ rpt = new rpt_ThongKeDongHoNuoc_();
+            rpt_TONGKETSOLIEU rpt = new rpt_TONGKETSOLIEU();
             rpt.Site = this.Site;
             return rpt;
         }
