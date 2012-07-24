@@ -30,6 +30,7 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.rptThayDoi = new System.Windows.Forms.RadioButton();
             this.rptGanMoi = new System.Windows.Forms.RadioButton();
             this.rptDSCode = new System.Windows.Forms.RadioButton();
@@ -43,6 +44,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rtThongKeDHN = new System.Windows.Forms.RadioButton();
             this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
@@ -70,6 +72,8 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.Color.AliceBlue;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.expandablePanel1.Controls.Add(this.radioButton10);
+            this.expandablePanel1.Controls.Add(this.radioButton9);
             this.expandablePanel1.Controls.Add(this.rptThayDoi);
             this.expandablePanel1.Controls.Add(this.rptGanMoi);
             this.expandablePanel1.Controls.Add(this.rptDSCode);
@@ -104,6 +108,18 @@
             this.expandablePanel1.TitleStyle.ForeColor.Color = System.Drawing.Color.Firebrick;
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "Danh Mục Báo Cáo";
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(10, 411);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(151, 23);
+            this.radioButton9.TabIndex = 5;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "Tổng Kết Số Liệu ";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton9_CheckedChanged);
             // 
             // rptThayDoi
             // 
@@ -261,6 +277,18 @@
             this.radioThayDinhKy.UseVisualStyleBackColor = true;
             this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
             // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(10, 440);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(158, 23);
+            this.radioButton10.TabIndex = 5;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "Danh Sach Hiệu Cũ";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
+            // 
             // frm_BaoCaoTongKet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -296,6 +324,8 @@
         private System.Windows.Forms.RadioButton rptDSCode;
         private System.Windows.Forms.RadioButton rptGanMoi;
         private System.Windows.Forms.RadioButton rptThayDoi;
+        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton radioButton10;
 
     }
 }
