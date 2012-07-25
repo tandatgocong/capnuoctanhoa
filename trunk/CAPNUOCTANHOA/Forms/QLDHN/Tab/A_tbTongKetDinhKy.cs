@@ -82,7 +82,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 //theonam = "SELECT CODH,DOT,YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG  WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)" + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
                 //theonam += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY DOT,YEAR(NGAYTHAY),CODH  ORDER BY DOT ASC";
 
-                theonam = "SELECT CODH,YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG  WHERE CODH" + codh + "  " + gioihan + "  AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
+                theonam = "SELECT CODH,YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG  WHERE   (BAOTHAY!=1 OR BAOTHAY IS NULL) AND CODH" + codh + "  " + gioihan + "  AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
                 theonam += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY  YEAR(NGAYTHAY),CODH  ORDER BY YEAR(NGAYTHAY) ASC";
            
             }
@@ -91,14 +91,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 sql += " AND NGAYTHAY <= '" + date.ToShortDateString() + "' ";
                 tksql = "SELECT CODH,DOT,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' GROUP BY DOT,CODH ORDER BY DOT ASC";
                  //theonam = "SELECT CODH,DOT,YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' GROUP BY DOT,YEAR(NGAYTHAY),CODH ORDER BY DOT ASC";
-                theonam = "SELECT CODH, YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE CODH" + codh + " " + gioihan + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' GROUP BY  YEAR(NGAYTHAY),CODH ORDER BY YEAR(NGAYTHAY) ASC";
+                theonam = "SELECT CODH, YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE  (BAOTHAY!=1 OR BAOTHAY IS NULL) AND CODH" + codh + " " + gioihan + " AND NGAYTHAY <= '" + date.ToShortDateString() + "' GROUP BY  YEAR(NGAYTHAY),CODH ORDER BY YEAR(NGAYTHAY) ASC";
             }
             else if (this.checHieu.Checked)
             {
                 sql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') ";
                 tksql = "SELECT CODH,DOT,COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY DOT,CODH  ORDER BY DOT ASC";
                // theonam = "SELECT CODH,DOT,YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + gioihan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY DOT,YEAR(NGAYTHAY),CODH  ORDER BY DOT ASC";
-                theonam = "SELECT CODH, YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE CODH" + codh + " " + gioihan + "  AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY  YEAR(NGAYTHAY),CODH  ORDER BY YEAR(NGAYTHAY) ASC";
+                theonam = "SELECT CODH, YEAR(NGAYTHAY) AS 'NAM',COUNT(CODH) AS 'SOLUONG' FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) AND CODH" + codh + " " + gioihan + "  AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "') GROUP BY  YEAR(NGAYTHAY),CODH  ORDER BY YEAR(NGAYTHAY) ASC";
             }
             sql += " GROUP BY HIEUDH,CODH,YEAR(NGAYTHAY) ORDER BY YEAR(NGAYTHAY),SOLUONG DESC ";
 
@@ -117,6 +117,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
           
             setSTT();
         }
+
         public void setSTT()
         {
             for (int i = 0; i < dataGrid.Rows.Count-1; i++)

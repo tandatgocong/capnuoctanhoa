@@ -75,7 +75,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
                     UpDateCSLoTrinh(dot, ky, nam);
                 }
-                if (checkGhiChu.Checked)
+                if (ckGhichu.Checked)
                 {
                     UpdateChiChu(dot, ky, nam);
                 }
