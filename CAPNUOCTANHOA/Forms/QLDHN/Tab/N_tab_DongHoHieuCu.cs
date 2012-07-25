@@ -34,8 +34,21 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
+            string dk = "";
+            string query = "";
+            if (!"".Equals(nam))
+            {
+                query = "SELECT * FROM W_DH_HIEUCU WHERE  NAMLD " + nam + " " + DAL.SYS.C_USERS._gioihan + " ORDER BY NAME ASC,LOTRINH ASC ";
+            }
 
-            string query = "SELECT * FROM W_DH_HIEUCU WHERE NAMLD "+nam+" "+ DAL.SYS.C_USERS._gioihan + " ORDER BY NAME ASC,LOTRINH ASC ";
+            if (!"".Equals(this.comboBox1.Text.Replace(" ","")))
+            {
+                query = "SELECT * FROM W_DH_HIEUCU WHERE  LEFT(W_DH_HIEUCU.HIEUDH,3)  ='" + this.comboBox1.Text.Replace(" ", "") + "' " + DAL.SYS.C_USERS._gioihan + " ORDER BY NAME ASC,LOTRINH ASC ";
+            }
+
+            if (!"".Equals(nam) && !"".Equals(this.comboBox1.Text.Replace(" ", ""))) {
+                query = "SELECT * FROM W_DH_HIEUCU WHERE  NAMLD " + nam + " AND LEFT(W_DH_HIEUCU.HIEUDH,3)  ='" + this.comboBox1.Text.Replace(" ", "") + "' " + DAL.SYS.C_USERS._gioihan + " ORDER BY NAME ASC,LOTRINH ASC ";
+            }
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "W_DH_HIEUCU");
             return ds;
