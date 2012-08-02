@@ -23,7 +23,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.KN_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky;
             sql += " GROUP BY TODS ";
@@ -47,7 +47,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky;
             sql += " GROUP BY TODS ";
@@ -71,7 +71,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky;
             sql += " GROUP BY TODS ";
@@ -119,7 +119,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             string sql = "INSERT INTO W_BAOCAO_SANLUONG_MAY ";
             sql += " SELECT TODS,MAY, COUNT(DANHBA) AS 'KN_DHN', ";
-            sql += " (case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS KN_SANLUONG, ";
+            sql += " (case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS KN_SANLUONG, ";
             sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE KY=" + ky;
@@ -142,7 +142,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS,MAY, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS,MAY, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE KY=" + ky;
             sql += " GROUP BY TODS,MAY ";
@@ -166,7 +166,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS,MAY, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS,MAY, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE KY=" + ky;
             sql += " GROUP BY TODS,MAY ";
@@ -211,7 +211,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.KN_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += "(";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky +" AND DOT ="+dot;
             sql += " GROUP BY TODS ";
@@ -236,7 +236,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
@@ -260,7 +260,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
@@ -308,7 +308,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             string sql = "INSERT INTO W_BAOCAO_SANLUONG_MAY ";
             sql += " SELECT TODS,MAY, COUNT(DANHBA) AS 'KN_DHN' ,  ";
-            sql += " (case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS KN_SANLUONG, ";
+            sql += " (case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS KN_SANLUONG, ";
             sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
@@ -331,7 +331,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
             sql += " FROM	W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS,MAY, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS,MAY, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS,MAY ";
@@ -355,7 +355,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS,MAY, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(CASE WHEN TIEUTHU<0 THEN 0 ELSE TIEUTHU END) end) AS SANLUONG ";
+            sql += " SELECT TODS,MAY, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS,MAY ";
