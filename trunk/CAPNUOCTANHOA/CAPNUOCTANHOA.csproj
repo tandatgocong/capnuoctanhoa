@@ -804,11 +804,28 @@
     <Compile Include="Forms\TimKiem\frmTimKiem.Designer.cs">
       <DependentUpon>frmTimKiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TimKiem\Inthubao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TimKiem\Inthubao.Designer.cs">
+      <DependentUpon>Inthubao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimKiem\rpt_INTHUMOI.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_INTHUMOI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\TimKiem\tb_ThayDoiBaoCao.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\TimKiem\tb_ThayDoiBaoCao.Designer.cs">
       <DependentUpon>tb_ThayDoiBaoCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimKiem\THUMOI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>THUMOI.xsd</DependentUpon>
     </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
@@ -1064,6 +1081,17 @@
     </None>
     <None Include="Forms\QLDHN\Tab\TabBC\tabBaoCao.xss">
       <DependentUpon>tabBaoCao.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\TimKiem\THUMOI.xsc">
+      <DependentUpon>THUMOI.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\TimKiem\THUMOI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>THUMOI.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\TimKiem\THUMOI.xss">
+      <DependentUpon>THUMOI.xsd</DependentUpon>
     </None>
     <None Include="lib\app.conf" />
     <None Include="lib\app.settings" />
@@ -1402,6 +1430,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimKiem\frmTimKiem.resx">
       <DependentUpon>frmTimKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimKiem\Inthubao.resx">
+      <DependentUpon>Inthubao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimKiem\rpt_INTHUMOI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_INTHUMOI.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimKiem\tb_ThayDoiBaoCao.resx">
       <DependentUpon>tb_ThayDoiBaoCao.cs</DependentUpon>

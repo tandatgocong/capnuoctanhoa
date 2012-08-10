@@ -113,6 +113,7 @@
             this.ckTroNgai = new System.Windows.Forms.CheckBox();
             this.txtngayKiemDinh = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtNgayGan = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtChiThan = new System.Windows.Forms.ComboBox();
             this.txtCapGan = new System.Windows.Forms.ComboBox();
             this.cbLoaiDHN = new System.Windows.Forms.ComboBox();
             this.txtGoGan = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -140,7 +141,7 @@
             this.labelX25 = new DevComponents.DotNetBar.LabelX();
             this.btXemThongTin = new DevComponents.DotNetBar.ButtonX();
             this.dateNgayHCNhanh = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.txtChiThan = new System.Windows.Forms.ComboBox();
+            this.btHuyThay = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVatTuThay)).BeginInit();
@@ -534,6 +535,7 @@
             this.groupPanel1.Controls.Add(this.lbLoaiBK);
             this.groupPanel1.Controls.Add(this.lbResult);
             this.groupPanel1.Controls.Add(this.labelX12);
+            this.groupPanel1.Controls.Add(this.btHuyThay);
             this.groupPanel1.Controls.Add(this.btCapNhat);
             this.groupPanel1.Controls.Add(this.dataVatTuThay);
             this.groupPanel1.Controls.Add(this.labelX7);
@@ -589,7 +591,7 @@
             // lbLoaiBK
             // 
             this.lbLoaiBK.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.lbLoaiBK.Location = new System.Drawing.Point(252, 547);
+            this.lbLoaiBK.Location = new System.Drawing.Point(354, 547);
             this.lbLoaiBK.Name = "lbLoaiBK";
             this.lbLoaiBK.Size = new System.Drawing.Size(123, 22);
             this.lbLoaiBK.TabIndex = 99;
@@ -1084,6 +1086,19 @@
             this.txtNgayGan.Size = new System.Drawing.Size(133, 26);
             this.txtNgayGan.TabIndex = 28;
             // 
+            // txtChiThan
+            // 
+            this.txtChiThan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtChiThan.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.txtChiThan.FormattingEnabled = true;
+            this.txtChiThan.Items.AddRange(new object[] {
+            "B",
+            "C"});
+            this.txtChiThan.Location = new System.Drawing.Point(108, 113);
+            this.txtChiThan.Name = "txtChiThan";
+            this.txtChiThan.Size = new System.Drawing.Size(92, 25);
+            this.txtChiThan.TabIndex = 30;
+            // 
             // txtCapGan
             // 
             this.txtCapGan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1423,18 +1438,19 @@
             this.dateNgayHCNhanh.Size = new System.Drawing.Size(127, 27);
             this.dateNgayHCNhanh.TabIndex = 106;
             // 
-            // txtChiThan
+            // btHuyThay
             // 
-            this.txtChiThan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtChiThan.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.txtChiThan.FormattingEnabled = true;
-            this.txtChiThan.Items.AddRange(new object[] {
-            "B",
-            "C"});
-            this.txtChiThan.Location = new System.Drawing.Point(108, 113);
-            this.txtChiThan.Name = "txtChiThan";
-            this.txtChiThan.Size = new System.Drawing.Size(92, 25);
-            this.txtChiThan.TabIndex = 30;
+            this.btHuyThay.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btHuyThay.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btHuyThay.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHuyThay.ForeColor = System.Drawing.Color.Crimson;
+            this.btHuyThay.Location = new System.Drawing.Point(177, 546);
+            this.btHuyThay.Name = "btHuyThay";
+            this.btHuyThay.Size = new System.Drawing.Size(134, 23);
+            this.btHuyThay.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btHuyThay.TabIndex = 34;
+            this.btHuyThay.Text = "HỦY THAY";
+            this.btHuyThay.Click += new System.EventHandler(this.btHuyThay_Click);
             // 
             // frmHoanCongThay
             // 
@@ -1576,5 +1592,6 @@
         private DevComponents.Editors.DateTimeAdv.DateTimeInput txtngayKiemDinh;
         private DevComponents.DotNetBar.LabelX lbLoaiBK;
         private System.Windows.Forms.ComboBox txtChiThan;
+        private DevComponents.DotNetBar.ButtonX btHuyThay;
     }
 }

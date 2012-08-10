@@ -49,7 +49,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             {
                 checkMepNgan.Checked = true;
             }
-            else {
+            else
+            {
                 checkMepNgan.Checked = false;
             }
 
@@ -256,12 +257,13 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         thaydh.HCT_CREATEBY = DAL.SYS.C_USERS._userName;
                         thaydh.HCT_CREATEDATE = DateTime.Now.Date;
                     }
-                    else {
+                    else
+                    {
                         thaydh.HCT_MODIFYBY = DAL.SYS.C_USERS._userName;
                         thaydh.HCT_MODIFYDATE = DateTime.Now;
                     }
-                   
-                    
+
+
                 }
                 else
                 {
@@ -304,7 +306,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         MessageBox.Show(this, "Chỉ Số Gở >= Chỉ Số Thay", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    
+
                 }
                 if (DAL.QLDHN.C_BaoThay.Update())
                 {
@@ -471,33 +473,26 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         }
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-  
-          
 
-                try
+            try
+            {
+                currentRow = dataBangKe.CurrentRow.Index + 1;
+                string ID_BAOTHAY = lbResult.Text.Replace("ID:", "");
+                TB_THAYDHN thaydh = DAL.QLDHN.C_BaoThay.finByID_BAOTHAY(int.Parse(ID_BAOTHAY));
+                if (ckTroNgai.Checked)
                 {
-                    currentRow = dataBangKe.CurrentRow.Index + 1;
-                    string ID_BAOTHAY = lbResult.Text.Replace("ID:", "");
-                    TB_THAYDHN thaydh = DAL.QLDHN.C_BaoThay.finByID_BAOTHAY(int.Parse(ID_BAOTHAY));
-                    if (ckTroNgai.Checked)
+                    CapNhatCS(thaydh);
+                }
+                else
+                {
+                    List<TB_DULIEUKHACHHANG> cothantrung = DAL.DULIEUKH.C_DuLieuKhachHang.getSoThanDHN(this.txtSoThanGan.Text.Replace(" ", ""));
+                    if (cothantrung.Count > 0)
                     {
-                        CapNhatCS(thaydh);
-                    }
-                    else
-                    {
-                        List<TB_DULIEUKHACHHANG> cothantrung = DAL.DULIEUKH.C_DuLieuKhachHang.getSoThanDHN(this.txtSoThanGan.Text.Replace(" ", ""));
-                        if (cothantrung.Count > 0)
+                        if (cothantrung.Count == 1)
                         {
-                            if (cothantrung.Count == 1)
+                            if (this.txtSoDanhBo.Text.Replace("-", "").Equals(cothantrung[0].DANHBO))
                             {
-                                if (this.txtSoDanhBo.Text.Replace("-", "").Equals(cothantrung[0].DANHBO))
-                                {
-                                    CapNhatCS(thaydh);
-                                }
-                                else
-                                {
-                                    ChoCapNhat(cothantrung, thaydh);
-                                }
+                                CapNhatCS(thaydh);
                             }
                             else
                             {
@@ -506,17 +501,22 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         }
                         else
                         {
-                            CapNhatCS(thaydh);
+                            ChoCapNhat(cothantrung, thaydh);
                         }
                     }
-                    //string mess = "Cập Nhật Báo Thay Cho Danh Bộ  " + Utilities.FormatSoHoSoDanhBo.sodanhbo(thaydh.DHN_DANHBO, "-") + " ?";
+                    else
+                    {
+                        CapNhatCS(thaydh);
+                    }
+                }
+                //string mess = "Cập Nhật Báo Thay Cho Danh Bộ  " + Utilities.FormatSoHoSoDanhBo.sodanhbo(thaydh.DHN_DANHBO, "-") + " ?";
 
-                }
-                catch (Exception ex)
-                {
-                    log.Error(ex.Message);
-                }
-            
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+
         }
 
         private void dataBangKe_SelectionChanged(object sender, EventArgs e)
@@ -643,6 +643,27 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             rp.SetDataSource(DAL.DoiTCTB.C_HoanCongThay.HoanCongNhanh(Utilities.DateToString.NgayVN(dateNgayHCNhanh.Value)));
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
+        }
+
+        private void btHuyThay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show(this, "Có Thật Sự Muốn Hủy Hoàn Công ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                    string ID_BAOTHAY = lbResult.Text.Replace("ID:", "");
+                    string update = "UPDATE TB_THAYDHN SET HCT_CHISOGO=NULL,HCT_SOTHANGO=NULL,HCT_HIEUDHNGAN=NULL,HCT_CODHNGAN=NULL,HCT_SOTHANGAN=NULL,HCT_CAP=NULL,HCT_CHISOGAN=NULL,";
+                    update += " HCT_LOAIDHGAN=NULL,HCT_NGAYGAN=NULL,HCT_CHITHAN=NULL,HCT_CHIGOC=NULL,HCT_TRONGAI=NULL,HCT_LYDOTRONGAI=NULL,HCT_CREATEDATE=NULL,";
+                    update += " HCT_CREATEBY=NULL,HCT_MODIFYDATE=NULL,HCT_MODIFYBY=NULL WHERE ID_BAOTHAY=" + ID_BAOTHAY;
+                    DAL.LinQConnection.ExecuteCommand_(update);
+                    MessageBox.Show(this, "Hủy Hoàn Công Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
         }
     }
 }
