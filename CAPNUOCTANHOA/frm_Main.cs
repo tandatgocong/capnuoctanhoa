@@ -387,6 +387,18 @@ namespace CAPNUOCTANHOA
             baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
+            Inthubao baothay = new Inthubao();
+            //baothay.Height = PanelContent.Size.Height - 20;
+            //baothay.Width = PanelContent.Size.Width - 20;
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+        }
         
     }
 }

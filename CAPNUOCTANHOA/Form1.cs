@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using log4net;
 using CAPNUOCTANHOA.Forms.QLDHN;
+using CAPNUOCTANHOA.Forms.TimKiem;
 
 namespace CAPNUOCTANHOA
 {
@@ -58,11 +59,11 @@ namespace CAPNUOCTANHOA
             //DataTable dt = new DataTable("TIEUTHU");
             //dt = showCustomInformationDetail("13132164598", 2012);
             //ds.Tables.Add(dt);            
-            ReportDocument rp = new rpt_PhieuDeNghiKT();            
+            ReportDocument rp = new rpt_INTHUMOI();            
             //DataTable tabl = ds.Tables.Add("TIEUTHU");
             //tabl = showCustomInformationDetail("13132164598", 2012);
-            rp.SetDataSource(getData("13011010633", 2012, 4));
-            rp.SetParameterValue("ky",5);
+            rp.SetDataSource(getData());
+        
             //rp.SetParameterValue("KY",4);
             //rp.SetParameterValue("NAM",2012);
            // rp.PrintToPrinter(1, false, 0, 0);
@@ -70,43 +71,15 @@ namespace CAPNUOCTANHOA
             //  dataGridView1.DataSource = showCustomInformationDetail("13132164598",2012);
 
         }
-        private DataSet getData(string danhba, int nam, int ky)
+        private DataSet getData()
         {
-            DocSoDataContext db = new DocSoDataContext();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             DataSet ds = new DataSet();
-            string query2 = "SELECT  kh.*, ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.TENNHANVIEN  ";
-            query2 += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
-            query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DANHBA='" + danhba + "' ";
 
-            SqlDataAdapter adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
-            adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
-
-
-            string query = "SELECT  TOP(1)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-                  " KH.CO, KH.SOTHAN, H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.NGAYGHI, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
-                " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
-            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            adapter.Fill(ds, "TIEUTHU");
-
-            query = "SELECT  TOP(4)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-                " KH.CO, KH.SOTHAN, H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-            DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
-            ds.Tables["TIEUTHU"].Merge(TB_HD);
-
-            int scl = 5 - ds.Tables["TIEUTHU"].Rows.Count;
-            if (scl > 0)
-            {
-                nam = nam - 1;
-                DataTable b_Old = DAL.LinQConnectionDS.getDataTable("SELECT  TOP(" + scl + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-                      " KH.CO, KH.SOTHAN, H.KY, " + nam + " AS NAM , H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.NGAYGHI, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
-                      " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ");
-                ds.Tables["TIEUTHU"].Merge(b_Old);
-            }
-
-            query = "select * FROM CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO";
-            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            adapter.Fill(ds, "TB_DHN_BAOCAO");
+           string query = "select * FROM W_THUMOI_";
+           SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+       
+            adapter.Fill(ds, "W_THUMOI_");
             return ds;
         }
         private void button1_Click(object sender, EventArgs e)

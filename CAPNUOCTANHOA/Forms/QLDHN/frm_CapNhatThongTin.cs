@@ -44,6 +44,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             dcDot.SelectedIndex = 1;
             dcNgayYC.Value = DateTime.Now.Date;
 
+            this.ksdlNam.Text = DateTime.Now.Year.ToString();
+            ksdlKy.SelectedIndex = DateTime.Now.Month - 1;
+            ksdlDot.SelectedIndex = 1;
+
 
         }
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_CapNhatThongTin).Name);
@@ -562,6 +566,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                 MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ksdlBT_Click(object sender, EventArgs e)
+        {
+            string dot = ksdlDot.Items[ksdlDot.SelectedIndex].ToString();
+            string ky = ksdlKy.Items[ksdlKy.SelectedIndex].ToString();
+            string nam = ksdlNam.Text.Trim();
+            string SQL = "SELECT TODS,DANHBA,MALOTRINH FROM DocSo_PHT.dbo.DS" + nam + " WHERE CSMOI IS NULL AND KY=" + ky + " AND DOT=" + dot + " ORDER BY TODS ASC";
+            dataGridView2.DataSource = DAL.LinQConnection.getDataTable(SQL);
         }
     }
 }
