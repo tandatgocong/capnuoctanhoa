@@ -576,5 +576,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string SQL = "SELECT TODS,DANHBA,MALOTRINH FROM DocSo_PHT.dbo.DS" + nam + " WHERE CSMOI IS NULL AND KY=" + ky + " AND DOT=" + dot + " ORDER BY TODS ASC";
             dataGridView2.DataSource = DAL.LinQConnection.getDataTable(SQL);
         }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            string SQL = " SELECT (CONVERT(VARCHAR,[KY])+'/'+CONVERT(VARCHAR,[NAM])) AS HL,LTCU,LTMOI FROM [CAPNUOCTANHOA].[dbo].[TB_YEUCAUDC]  WHERE DANHBO='" + txtSoDanhBo.Text.Replace("-","").Replace(" ","") + "'";
+            dataGridView3.DataSource = DAL.LinQConnection.getDataTable(SQL);
+
+        }
+
+        private void txtSoDanhBo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+                string SQL = " SELECT (CONVERT(VARCHAR,[KY])+'/'+CONVERT(VARCHAR,[NAM])) AS HL,LTCU,LTMOI FROM [CAPNUOCTANHOA].[dbo].[TB_YEUCAUDC]  WHERE DANHBO='" + txtSoDanhBo.Text.Replace("-", "").Replace(" ", "") + "'";
+                dataGridView3.DataSource = DAL.LinQConnection.getDataTable(SQL);
+            }
+        }
     }
 }
