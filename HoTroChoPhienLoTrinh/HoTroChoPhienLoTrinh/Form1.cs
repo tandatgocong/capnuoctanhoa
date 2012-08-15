@@ -119,24 +119,24 @@ namespace HoTroChoPhienLoTrinh
         }
         public static DataTable getPhienLoTrinh(string lotrinh)
         {
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + lotrinh + "' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + lotrinh + "' ORDER BY LOTRINH ASC ";
             return getDataTable(sql);
         }
         public static DataTable DIACHI(string diachi)
         {
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG FROM TB_DULIEUKHACHHANG WHERE (SONHA+' '+ TENDUONG) LIKE '" + diachi.Replace("*", "%") + "' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE (SONHA+' '+ TENDUONG) LIKE '" + diachi.Replace("*", "%") + "' ORDER BY LOTRINH ASC ";
             return getDataTable(sql);
         }
 
         public static DataTable DANHBO(string danhbo)
         {
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG FROM TB_DULIEUKHACHHANG WHERE DANHBO = '" + danhbo + "' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE DANHBO = '" + danhbo + "' ORDER BY LOTRINH ASC ";
             return getDataTable(sql);
         }
 
         public static DataTable LOTRINH(string LT)
         {
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG FROM TB_DULIEUKHACHHANG WHERE LOTRINH = '" + LT + "' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE LOTRINH = '" + LT + "' ORDER BY LOTRINH ASC ";
             return getDataTable(sql);
         }
         private void cbMay_SelectedIndexChanged(object sender, EventArgs e)
@@ -217,7 +217,7 @@ namespace HoTroChoPhienLoTrinh
 
         public static DataTable HOPDONG(string danhbo)
         {
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG FROM TB_DULIEUKHACHHANG WHERE HOPDONG LIKE '%" + danhbo + "%' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE HOPDONG LIKE '%" + danhbo + "%' ORDER BY LOTRINH ASC ";
             return getDataTable(sql);
         }
 
@@ -226,6 +226,15 @@ namespace HoTroChoPhienLoTrinh
         {
             dataHopDong.DataSource = HOPDONG(txtHopDong.Text);
             formatRows(dataHopDong, "hd_DANHBA", "hd_LOTRINH");
+        }
+
+        private void txtHopDong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dataHopDong.DataSource = HOPDONG(txtHopDong.Text);
+                formatRows(dataHopDong, "hd_DANHBA", "hd_LOTRINH");
+            }
         }
     }
 }
