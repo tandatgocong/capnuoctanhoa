@@ -133,7 +133,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         public void UpDateCSNuoc(string dot, string ky, string nam)
         {
-            string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSo_PHT.dbo.DS" + nam + ".CODE ";
+            string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSo_PHT.dbo.DS" + nam + ".CODE,SODHN=TIEUTHU ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " ";
             sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSo_PHT.dbo.DS" + nam + ".DANHBA ";
             sql += "		AND DocSo_PHT.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  AND DocSo_PHT.dbo.DS" + nam + ".DOT = " + int.Parse(dot) + "";
