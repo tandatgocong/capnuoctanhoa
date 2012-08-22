@@ -41,13 +41,15 @@
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.txtHieuLuc = new System.Windows.Forms.TextBox();
             this.btThem = new DevComponents.DotNetBar.ButtonX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.txtCoDHN = new System.Windows.Forms.TextBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -134,6 +136,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txtCoDHN);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX3);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.labelX2);
             this.splitContainer1.Panel1.Controls.Add(this.txtHieuLuc);
@@ -148,6 +152,44 @@
             this.splitContainer1.SplitterDistance = 80;
             this.splitContainer1.TabIndex = 0;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "",
+            "ACT",
+            "AIC",
+            "ASA",
+            "BAD",
+            "BAY",
+            "FLO",
+            "HER",
+            "HYD",
+            "INV",
+            "ITR",
+            "KEN",
+            "LUG",
+            "MEI",
+            "MUL",
+            "PRE",
+            "ROC",
+            "SEN",
+            "TAC",
+            "WOL",
+            "ZEN"});
+            this.comboBox1.Location = new System.Drawing.Point(207, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 27);
+            this.comboBox1.TabIndex = 32;
+            // 
+            // labelX2
+            // 
+            this.labelX2.Location = new System.Drawing.Point(164, 49);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(76, 23);
+            this.labelX2.TabIndex = 31;
+            this.labelX2.Text = "HIỆU";
+            // 
             // txtHieuLuc
             // 
             this.txtHieuLuc.Location = new System.Drawing.Point(58, 46);
@@ -161,7 +203,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(346, 45);
+            this.btThem.Location = new System.Drawing.Point(476, 49);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(163, 27);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -201,43 +243,20 @@
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // labelX2
+            // labelX3
             // 
-            this.labelX2.Location = new System.Drawing.Point(164, 49);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(76, 23);
-            this.labelX2.TabIndex = 31;
-            this.labelX2.Text = "HIỆU";
+            this.labelX3.Location = new System.Drawing.Point(341, 49);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(76, 23);
+            this.labelX3.TabIndex = 33;
+            this.labelX3.Text = "CỠ";
             // 
-            // comboBox1
+            // txtCoDHN
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "",
-            "ACT",
-            "AIC",
-            "ASA",
-            "BAD",
-            "BAY",
-            "FLO",
-            "HER",
-            "HYD",
-            "INV",
-            "ITR",
-            "KEN",
-            "LUG",
-            "MEI",
-            "MUL",
-            "PRE",
-            "ROC",
-            "SEN",
-            "TAC",
-            "WOL",
-            "ZEN"});
-            this.comboBox1.Location = new System.Drawing.Point(207, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 27);
-            this.comboBox1.TabIndex = 32;
+            this.txtCoDHN.Location = new System.Drawing.Point(372, 48);
+            this.txtCoDHN.Name = "txtCoDHN";
+            this.txtCoDHN.Size = new System.Drawing.Size(81, 27);
+            this.txtCoDHN.TabIndex = 34;
             // 
             // N_tab_DongHoHieuCu
             // 
@@ -280,5 +299,7 @@
         private System.Windows.Forms.TextBox txtHieuLuc;
         private DevComponents.DotNetBar.LabelX labelX2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtCoDHN;
+        private DevComponents.DotNetBar.LabelX labelX3;
     }
 }
