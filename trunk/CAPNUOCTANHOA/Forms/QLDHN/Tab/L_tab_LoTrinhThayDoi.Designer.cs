@@ -310,7 +310,7 @@
             this.title.ReflectionEnabled = false;
             this.title.Size = new System.Drawing.Size(704, 54);
             this.title.TabIndex = 28;
-            this.title.Text = "THỐNG KÊ GẮN MỚI";
+            this.title.Text = "THAY ĐỔI LỘ TRÌNH";
             // 
             // crystalReportViewer1
             // 
@@ -324,7 +324,7 @@
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // K_tab_ThongKeGanMoi
+            // L_tab_LoTrinhThayDoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -333,7 +333,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "K_tab_ThongKeGanMoi";
+            this.Name = "L_tab_LoTrinhThayDoi";
             this.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
