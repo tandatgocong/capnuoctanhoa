@@ -507,5 +507,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
 
+        private void tabItem4_Click(object sender, EventArgs e)
+        {
+            panel6.Controls.Clear();
+            panel6.Controls.Add(new frm_DUTCHITHAN());
+        }
+
     }
 }

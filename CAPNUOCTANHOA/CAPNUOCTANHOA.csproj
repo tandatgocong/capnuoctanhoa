@@ -403,6 +403,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\frm_DUTCHITHAN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\frm_DUTCHITHAN.Designer.cs">
+      <DependentUpon>frm_DUTCHITHAN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\tabDieuChinh\rpt_THayDHNYeuCauKT.cs">
       <DependentUpon>rpt_THayDHNYeuCauKT.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1231,6 +1237,9 @@
     <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\CONGVANDIEUCHINH.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CONGVANDIEUCHINH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\frm_DUTCHITHAN.resx">
+      <DependentUpon>frm_DUTCHITHAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\rpt_THayDHNYeuCauKT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

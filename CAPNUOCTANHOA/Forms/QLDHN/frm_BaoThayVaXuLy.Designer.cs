@@ -67,7 +67,6 @@
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuChuyenKT = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuChuyenTT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCapNhatKetQua = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
             this.tabControl2.SuspendLayout();
@@ -164,7 +163,7 @@
             this.buttonX1.Size = new System.Drawing.Size(238, 27);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.buttonX1.TabIndex = 108;
-            this.buttonX1.Text = "IN DANH SÁCH CHUYỂN TT";
+            this.buttonX1.Text = "IN DANH SÁCH ÂM SÂU";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // btInDanhSachChuyenKT
@@ -239,7 +238,7 @@
             // XL
             // 
             this.XL.DataPropertyName = "XLT_XULY";
-            this.XL.HeaderText = "C.XỬ LÝ";
+            this.XL.HeaderText = "XỬ LÝ";
             this.XL.Name = "XL";
             this.XL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.XL.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -252,6 +251,7 @@
             this.DAXULY.ReadOnly = true;
             this.DAXULY.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.DAXULY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DAXULY.Visible = false;
             this.DAXULY.Width = 90;
             // 
             // dataGridViewTextBoxColumn2
@@ -509,7 +509,7 @@
             // 
             this.tabDieuChinh.AttachedControl = this.tabControlPanel1;
             this.tabDieuChinh.Name = "tabDieuChinh";
-            this.tabDieuChinh.Text = "XỬ LÝ HOÀN CÔNG TRỞ NGẠI THAY";
+            this.tabDieuChinh.Text = "XỬ LÝ TRỞ NGẠI THAY";
             // 
             // tabDieuChinhKH
             // 
@@ -555,10 +555,9 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuChuyenKT,
-            this.menuChuyenTT,
             this.menuCapNhatKetQua});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(287, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 52);
             // 
             // menuChuyenKT
             // 
@@ -566,19 +565,9 @@
             this.menuChuyenKT.ForeColor = System.Drawing.Color.Red;
             this.menuChuyenKT.Image = global::CAPNUOCTANHOA.Properties.Resources._24;
             this.menuChuyenKT.Name = "menuChuyenKT";
-            this.menuChuyenKT.Size = new System.Drawing.Size(286, 24);
-            this.menuChuyenKT.Text = "Chuyển Ban KTKS - ĐỨT CHÌ";
+            this.menuChuyenKT.Size = new System.Drawing.Size(205, 24);
+            this.menuChuyenKT.Text = "Chuyển Ban KTKS";
             this.menuChuyenKT.Click += new System.EventHandler(this.menuChuyenKT_Click);
-            // 
-            // menuChuyenTT
-            // 
-            this.menuChuyenTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuChuyenTT.ForeColor = System.Drawing.Color.Red;
-            this.menuChuyenTT.Image = global::CAPNUOCTANHOA.Properties.Resources._24;
-            this.menuChuyenTT.Name = "menuChuyenTT";
-            this.menuChuyenTT.Size = new System.Drawing.Size(286, 24);
-            this.menuChuyenTT.Text = "Chuyển Tổ Trưởng";
-            this.menuChuyenTT.Click += new System.EventHandler(this.menuChuyenTT_Click);
             // 
             // menuCapNhatKetQua
             // 
@@ -587,7 +576,7 @@
             this.menuCapNhatKetQua.Image = global::CAPNUOCTANHOA.Properties.Resources.Write2;
             this.menuCapNhatKetQua.Name = "menuCapNhatKetQua";
             this.menuCapNhatKetQua.Size = new System.Drawing.Size(286, 24);
-            this.menuCapNhatKetQua.Text = "Cập Nhật Kết Quả";
+            this.menuCapNhatKetQua.Text = "Cập Nhật Xử Lý";
             this.menuCapNhatKetQua.Click += new System.EventHandler(this.menuCapNhatKetQua_Click);
             // 
             // frm_BaoThayVaXuLy
@@ -643,7 +632,6 @@
         private DevComponents.DotNetBar.ButtonX indsTroNgai;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuChuyenTT;
         private System.Windows.Forms.ToolStripMenuItem menuChuyenKT;
         private System.Windows.Forms.ToolStripMenuItem menuCapNhatKetQua;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_BAOTHAY;
