@@ -139,7 +139,26 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             adapter.Fill(ds, "TB_DHN_BAOCAO");
             return ds;
         }
-    
-    
+
+        public static DataSet getReportDutChi(string ngay)
+        {
+            DataSet ds = new DataSet();
+            string query = " SELECT *  FROM TB_TLKDUTCHI WHERE TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND  NGAYBAO='" + ngay + "' ORDER BY LOTRINH ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_TLKDUTCHI");
+
+            query = "select * FROM TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+            return ds;
+        }
+
+        public static DataTable getListDutChiByDate(string ngay)
+        {
+            string sql = " SELECT ID,DANHBO ,LOTRINH ,HOTEN ,DIACHI ,HOPDONG ,GB,DM,HIEU,CO,SOTHAN  FROM TB_TLKDUTCHI  WHERE TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND NGAYBAO='" + ngay + "' ORDER BY DANHBO ASC ";
+            return LinQConnection.getDataTable(sql);
+
+        }
+        
     }
 }

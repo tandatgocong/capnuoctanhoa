@@ -34,21 +34,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 tabControl2.SelectedTabIndex = 1;
             }
-
-
-            if (DateTime.Now.Month > 1 && DateTime.Now.Month < 12)
-            {
-                if (DateTime.Now.Date.Day < 22)
-                {
-                    dateTuNgay.ValueObject = DateTime.Now.Month - 1 + "/21/" + DateTime.Now.Year;
-                    dateDenNgay.ValueObject = (DateTime.Now.Month) + "/20/" + DateTime.Now.Year;
-                }
-                else
-                {
-                    dateTuNgay.ValueObject = DateTime.Now.Month + "/21/" + DateTime.Now.Year;
-                    dateDenNgay.ValueObject = (DateTime.Now.Month + 1) + "/20/" + DateTime.Now.Year;
-                }
-            }
+            
+            dateTuNgay.ValueObject = DateTime.Now.Date;
+            dateDenNgay.ValueObject = DateTime.Now.Date;
 
         }
 
@@ -129,34 +117,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
-            DataSet ds = new DataSet();
-            try
-            {
-                db.Connection.Open();
-
-
-
-                SqlDataAdapter adapter = new SqlDataAdapter(sql_chuyentt, db.Connection.ConnectionString);
-                adapter.Fill(ds, "DANHSACHTRONGAI");
-
-                ReportDocument rp = new rpt_TongKetBaoThayDHN_to();
-                rp.SetDataSource(ds);
-                rp.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(dateTuNgay.Value.Date));
-                rp.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(dateDenNgay.Value.Date));
-                rp.SetParameterValue("TEN", DAL.SYS.C_USERS._toDocSo);
-
-                frm_Reports frm = new frm_Reports(rp);
-                frm.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                log.Error("Report " + ex.Message);
-            }
-            finally
-            {
-                db.Connection.Close();
-            }
+            ReportDocument rp = new rpt_NangDHN();
+            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReport(DateTime.Now.Date.ToShortDateString()));
+            rp.SetParameterValue("loai", "");
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
         }
 
         private void dataGridLoi_MouseClick(object sender, MouseEventArgs e)
@@ -167,16 +132,39 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
 
+        public void Add(string sodanhbo)
+        {
+            TB_TLKDUTCHI dc = new TB_TLKDUTCHI();
+            TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
+           
+                dc.TODS = DAL.SYS.C_USERS._toDocSo;
+                dc.DANHBO = sodanhbo;
+                dc.LOTRINH = kh.LOTRINH;
+                dc.HOTEN = kh.HOTEN;
+                dc.DIACHI = kh.SONHA + " " + kh.TENDUONG;
+                dc.HOPDONG =kh.HOPDONG;
+                dc.GB = kh.GIABIEU;
+                dc.DM = kh.DINHMUC;
+                dc.HIEU = kh.HIEUDH;
+                dc.CO = kh.CODH;
+                dc.SOTHAN = kh.SOTHANDH;
+                dc.NGAYBAO = DateTime.Now.Date;
+                dc.MODIFYDATE = DateTime.Now;
+                dc.MODIFYBY = DAL.SYS.C_USERS._userName;
+                DAL.QLDHN.C_DhnAmSau.Insert(dc);
+        }
+
         private void menuChuyenKT_Click(object sender, EventArgs e)
         {
             string XL = this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["XL"].Value + "";
-            if ("True".Contains(XL))
+            if ("True".Equals(XL))
             {
                 if (MessageBox.Show(this, "Đã chuyển xử lý rồi, cập nhật chuyển xử lý !", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string ID_BAOTHAY = this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["ID_BAOTHAY"].Value + "";
                     DAL.LinQConnection.ExecuteCommand("UPDATE TB_THAYDHN SET XLT_XULY ='True', XLT_CHUYENXL='BANKTKS-DC',XLT_NGAYCHUYEN=GETDATE() WHERE ID_BAOTHAY='" + ID_BAOTHAY + "'");
                     this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["XL"].Value = "True";
+                    Add((this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["GG_DANHBO"].Value + "").Replace(" ", ""));
                     MessageBox.Show(this, "Chuyển Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -187,6 +175,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string ID_BAOTHAY = this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["ID_BAOTHAY"].Value + "";
                 DAL.LinQConnection.ExecuteCommand("UPDATE TB_THAYDHN SET XLT_XULY ='True', XLT_CHUYENXL='BANKTKS-DC',XLT_NGAYCHUYEN=GETDATE() WHERE ID_BAOTHAY='" + ID_BAOTHAY + "'");
                 this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["XL"].Value = "True";
+                Add((this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["GG_DANHBO"].Value + "").Replace(" ", ""));
                 MessageBox.Show(this, "Chuyển Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -249,7 +238,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             frm_CapNhatTroNgaiThay frm = new frm_CapNhatTroNgaiThay(ID_BAOTHAY);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["DAXULY"].Value = "True";
+                this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["XL"].Value = "True";
             }
         }
 
@@ -286,32 +275,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void btInDanhSachChuyenKT_Click(object sender, EventArgs e)
         {
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
-            DataSet ds = new DataSet();
-            try
-            {
-                db.Connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(sql_chuyenkt, db.Connection.ConnectionString);
-                adapter.Fill(ds, "DANHSACHTRONGAI");
-
-                ReportDocument rp = new rpt_THayDHNYeuCauKT();
-                rp.SetDataSource(ds);
-                rp.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(dateTuNgay.Value.Date));
-                rp.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(dateDenNgay.Value.Date));
-                rp.SetParameterValue("TEN", DAL.SYS.C_USERS._toDocSo);
-
-                frm_Reports frm = new frm_Reports(rp);
-                frm.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                log.Error("Report " + ex.Message);
-            }
-            finally
-            {
-                db.Connection.Close();
-            }
+            ReportDocument rp = new rpt_TLKDutChi();
+            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(DateTime.Now.Date.ToShortDateString()));
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
         }
 
         // AM SAU

@@ -45,13 +45,13 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.txtTroNgaiThay = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtBoPhanChuyen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtKetQuaThucHien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.btCapNhat = new DevComponents.DotNetBar.ButtonX();
             this.baothaylai = new System.Windows.Forms.CheckBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.txtBoPhanChuyen = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // title
@@ -273,21 +273,6 @@
             this.labelX1.TabIndex = 115;
             this.labelX1.Text = "LÝ DO TRỞ NGẠI";
             // 
-            // txtBoPhanChuyen
-            // 
-            this.txtBoPhanChuyen.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.txtBoPhanChuyen.Border.Class = "TextBoxBorder";
-            this.txtBoPhanChuyen.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.txtBoPhanChuyen.ForeColor = System.Drawing.Color.Red;
-            this.txtBoPhanChuyen.Location = new System.Drawing.Point(168, 315);
-            this.txtBoPhanChuyen.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoPhanChuyen.Name = "txtBoPhanChuyen";
-            this.txtBoPhanChuyen.Size = new System.Drawing.Size(217, 27);
-            this.txtBoPhanChuyen.TabIndex = 118;
-            // 
             // labelX9
             // 
             this.labelX9.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -323,7 +308,7 @@
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(168, 32);
             this.labelX11.TabIndex = 121;
-            this.labelX11.Text = "KẾT QUẢ XỬ LÝ";
+            this.labelX11.Text = "KẾT QUẢ";
             // 
             // btCapNhat
             // 
@@ -360,14 +345,25 @@
             this.labelX4.TabIndex = 121;
             this.labelX4.Text = "BÁO THAY LẠI";
             // 
+            // txtBoPhanChuyen
+            // 
+            this.txtBoPhanChuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtBoPhanChuyen.FormattingEnabled = true;
+            this.txtBoPhanChuyen.Items.AddRange(new object[] {
+            "ĐỘI TCTB"});
+            this.txtBoPhanChuyen.Location = new System.Drawing.Point(168, 316);
+            this.txtBoPhanChuyen.Name = "txtBoPhanChuyen";
+            this.txtBoPhanChuyen.Size = new System.Drawing.Size(121, 27);
+            this.txtBoPhanChuyen.TabIndex = 125;
+            // 
             // frm_CapNhatTroNgaiThay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(607, 478);
-            this.Controls.Add(this.baothaylai);
             this.Controls.Add(this.txtBoPhanChuyen);
+            this.Controls.Add(this.baothaylai);
             this.Controls.Add(this.btCapNhat);
             this.Controls.Add(this.txtKetQuaThucHien);
             this.Controls.Add(this.labelX4);
@@ -419,12 +415,12 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTroNgaiThay;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtBoPhanChuyen;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.Controls.TextBoxX txtKetQuaThucHien;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.ButtonX btCapNhat;
         private System.Windows.Forms.CheckBox baothaylai;
         private DevComponents.DotNetBar.LabelX labelX4;
+        private System.Windows.Forms.ComboBox txtBoPhanChuyen;
     }
 }
