@@ -234,7 +234,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     }
                     sqlUPdate += " WHERE DANHBO='" + DanhBo.Replace(" ", "") + "'";
 
-                    DAL.LinQConnection.ExecuteCommand(sqlUPdate);
+                    DAL.LinQConnection.ExecuteCommand_(sqlUPdate);
 
 
                 }

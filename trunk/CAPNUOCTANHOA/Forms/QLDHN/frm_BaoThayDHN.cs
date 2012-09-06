@@ -83,8 +83,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
             }
-
-                 
         }
 
         private void cbLoaiBangKe_SelectedValueChanged(object sender, EventArgs e)
@@ -283,7 +281,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             thaydh.DHN_SOBANGKE = int.Parse(this.txtSoBangKe.Text.Trim());
             thaydh.DHN_SOTHAN = this.txtSoThan.Text.ToUpper();
             thaydh.DHN_STT=dataBangKe.Rows.Count + 1;
-            thaydh.DHN_LYDOTHAY = this.txtLyDo.Text;            
+            thaydh.DHN_LYDOTHAY = this.txtLyDo.Text;
+            thaydh.DHN_GHICHU = this.txtGhiChu.Text;
             thaydh.DHN_TODS = DAL.SYS.C_USERS._toDocSo;
             thaydh.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
             thaydh.DHN_CREATEDATE = DateTime.Now.Date;
@@ -390,6 +389,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     thaydh.DHN_DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
                     thaydh.DHN_HIEUDHN = this.txtHieu.Text;
                     thaydh.DHN_LOAIBANGKE = this.cbLoaiBangKe.SelectedValue + "";
+                    thaydh.DHN_GHICHU = this.txtGhiChu.Text;
                     thaydh.DHN_LYDOTHAY = this.txtLyDo.Text;
                     thaydh.DHN_NGAYBAOTHAY = DateTime.Now.Date;
                     thaydh.DHN_NGAYGAN = txtNgayGan.Value;
