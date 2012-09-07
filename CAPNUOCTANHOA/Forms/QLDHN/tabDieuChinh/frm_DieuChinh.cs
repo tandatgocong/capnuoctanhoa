@@ -44,8 +44,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         private void btIn_Click(object sender, EventArgs e)
         {
              
-                ReportDocument rp = new rpt_PhieuChuyenDinhMuc();
-                         
+                ReportDocument rp = new rpt_PhieuChuyenDinhMuc();                         
                 rp.SetDataSource(DAL.QLDHN.C_ChuyenDinhMuc.getReport(this.txtNgayGan.Value.ToShortDateString()));
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
@@ -162,7 +161,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             chuyendm.KY = int.Parse(txtKY.Text);
             chuyendm.DOT = int.Parse(txtDot.Text);
             chuyendm.NAM = DateTime.Now.Date.Year;
-            chuyendm.TODS = this.txtToDS.Text;
+            chuyendm.TODS = DAL.SYS.C_USERS._toDocSo;
             chuyendm.DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
             chuyendm.LOTRINH = this.txtLoTrinh.Text;
             chuyendm.HOTEN = this.txtTenKH.Text;
@@ -247,7 +246,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                     thaydh.KY = int.Parse(txtKY.Text);
                     thaydh.DOT = int.Parse(txtDot.Text);
                     thaydh.NAM = DateTime.Now.Date.Year;
-                    thaydh.TODS = this.txtToDS.Text;
+                    thaydh.TODS = DAL.SYS.C_USERS._toDocSo;
                     thaydh.DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
                     thaydh.LOTRINH = this.txtLoTrinh.Text;
                     thaydh.HOTEN = this.txtTenKH.Text;
