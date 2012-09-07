@@ -85,7 +85,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static DataSet getReport(string ngay)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT *  FROM TB_CHUYENDINHMUC WHERE NGAYLAP='" + ngay + "' ORDER BY DANHBO ASC ";
+            string query = " SELECT *  FROM TB_CHUYENDINHMUC WHERE NGAYLAP='" + ngay + "' AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DANHBO ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_CHUYENDINHMUC");
             

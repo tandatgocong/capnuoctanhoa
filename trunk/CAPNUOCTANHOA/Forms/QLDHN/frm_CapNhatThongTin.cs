@@ -363,9 +363,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
                         DAL.QLDHN.C_ChuyenDinhMuc.Insert(chuyendm);
                     }
-                    string sql1 = " UPDATE [DocSo_PHT].[dbo].[DS" + kdNam.Text.Trim() + "] SET GHICHUMOI=NULL WHERE DANHBA='" + dataBangKe.Rows[i].Cells["G_DANHBO"].Value +"' ";
-                    string sql2 = " UPDATE [DocSo_PHT].[dbo].[KHACHHANG] SET GHICHU1=NULL,GHICHU2=NULL,GHICHU3=NULL WHERE DANHBA='" + dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "' ";
-                    DAL.LinQConnection.ExecuteCommand_(sql1);
+                  //  string sql1 = " UPDATE [DocSo_PHT].[dbo].[DS" + kdNam.Text.Trim() + "] SET GHICHUMOI=NULL WHERE DANHBA='" + (dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") +"' ";
+                    string sql2 = " UPDATE [DocSo_PHT].[dbo].[KHACHHANG] SET GHICHU=NULL, GHICHU1=NULL,GHICHU2=NULL,GHICHU3=NULL WHERE DANHBA='" + (dataBangKe.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "' ";
+                 //   DAL.LinQConnection.ExecuteCommand_(sql1);
                     DAL.LinQConnection.ExecuteCommand_(sql2);
 
 
