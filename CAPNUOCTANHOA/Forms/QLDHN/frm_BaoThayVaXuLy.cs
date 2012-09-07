@@ -52,7 +52,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                 sql_trongai = " SELECT ID_BAOTHAY,XLT_XULY,XLT_TRAKQ,loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI' ";
                 sql_trongai += " , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , HCT_LYDOTRONGAI as 'TRONGAI' ";
-                sql_trongai += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh 	";
+                sql_trongai += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh ";
                 sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' " + gioihan;
                 sql_chuyenkt = sql_trongai + " AND XLT_CHUYENXL='BANKTKS' ";
                 sql_chuyentt = sql_trongai + " AND XLT_CHUYENXL='TOTRUONG' ";

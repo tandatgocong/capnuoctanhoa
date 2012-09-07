@@ -175,6 +175,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string DHN_SOTHAN = dataBangKe.Rows[e.RowIndex].Cells["G_SOTHAN"].Value + "";
                 string DHN_CHISO = dataBangKe.Rows[e.RowIndex].Cells["G_CHISO"].Value + "";
                 string DHN_LYDOTHAY = dataBangKe.Rows[e.RowIndex].Cells["G_LYDO"].Value + "";
+                string DHN_GHICHU = dataBangKe.Rows[e.RowIndex].Cells["DHN_GHICHU"].Value + "";
 
                 cbLoaiBangKe.SelectedValue = DHN_LOAIBANGKE;
               //  txtSoBangKe.Text = DHN_SOBANGKE;
@@ -189,6 +190,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 txtChiGoc.Text = DHN_CHIGOC;
                 txtChiSoThay.Text = DHN_CHISO;
                 txtLyDo.Text = DHN_LYDOTHAY;
+                txtGhiChu.Text = DHN_GHICHU;
+                try
+                {
+                    txtMaLoTrinh.Text = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(DHN_DANHBO.Replace(" ","").Replace("-","")).LOTRINH;
+                }
+                catch (Exception)
+                {
+                }
                 btcapNhat.Enabled = true;
                 btXoa.Enabled = true;
             }
@@ -396,7 +405,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     thaydh.DHN_SOTHAN = this.txtSoThan.Text;
                     thaydh.DHN_MODIFYBY = DAL.SYS.C_USERS._userName;
                     thaydh.DHN_MODIFYDATE = DateTime.Now;
-
+                    thaydh.DHN_GHICHU = this.txtGhiChu.Text;
+                       
                     DAL.QLDHN.C_BaoThay.Update();
                     if ("DT,DP,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
