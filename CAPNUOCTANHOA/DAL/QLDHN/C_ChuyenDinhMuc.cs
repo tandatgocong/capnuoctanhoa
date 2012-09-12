@@ -46,7 +46,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
              return LinQConnection.getDataTable(sql);
         }
         public static DataTable getListDCByDate(string ngay) {
-            string sql = " SELECT ID, KY, DOT, DANHBO, LOTRINH, HOTEN, DIACHI, HOPDONG, GB, DM,TTBQ , CONGDUNG  FROM TB_CHUYENDINHMUC WHERE NGAYLAP='" + ngay + "' ORDER BY DANHBO ASC ";
+            string sql = " SELECT ID, KY, DOT, DANHBO, LOTRINH, HOTEN, DIACHI, HOPDONG, GB, DM,TTBQ , CONGDUNG  FROM TB_CHUYENDINHMUC WHERE NGAYLAP='" + ngay + "' AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DANHBO ASC ";
             return LinQConnection.getDataTable(sql);
         
         }
