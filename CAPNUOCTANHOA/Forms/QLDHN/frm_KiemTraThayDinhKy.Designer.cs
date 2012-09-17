@@ -71,6 +71,8 @@
             this.BAOTHAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.txtLoaiBo = new System.Windows.Forms.TextBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -90,6 +92,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txtLoaiBo);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX3);
             this.splitContainer1.Panel1.Controls.Add(this.cbDot);
             this.splitContainer1.Panel1.Controls.Add(this.labelX2);
             this.splitContainer1.Panel1.Controls.Add(this.lbTongDHN);
@@ -161,16 +165,16 @@
             this.lbTongDHN.BackColor = System.Drawing.Color.Transparent;
             this.lbTongDHN.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTongDHN.ForeColor = System.Drawing.Color.Red;
-            this.lbTongDHN.Location = new System.Drawing.Point(891, 97);
+            this.lbTongDHN.Location = new System.Drawing.Point(1001, 97);
             this.lbTongDHN.Name = "lbTongDHN";
-            this.lbTongDHN.Size = new System.Drawing.Size(333, 19);
+            this.lbTongDHN.Size = new System.Drawing.Size(223, 19);
             this.lbTongDHN.TabIndex = 1;
             // 
             // next
             // 
             this.next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Last;
-            this.next.Location = new System.Drawing.Point(865, 98);
+            this.next.Location = new System.Drawing.Point(951, 98);
             this.next.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(20, 18);
@@ -182,7 +186,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::CAPNUOCTANHOA.Properties.Resources.First;
-            this.pictureBox2.Location = new System.Drawing.Point(805, 97);
+            this.pictureBox2.Location = new System.Drawing.Point(891, 97);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(18, 19);
@@ -207,7 +211,7 @@
             this.btXemThongTin.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btXemThongTin.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btXemThongTin.ForeColor = System.Drawing.Color.Crimson;
-            this.btXemThongTin.Location = new System.Drawing.Point(616, 93);
+            this.btXemThongTin.Location = new System.Drawing.Point(702, 93);
             this.btXemThongTin.Name = "btXemThongTin";
             this.btXemThongTin.Size = new System.Drawing.Size(157, 27);
             this.btXemThongTin.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -336,7 +340,7 @@
             // 
             this.lbPaing.AutoSize = true;
             this.lbPaing.BackColor = System.Drawing.Color.Transparent;
-            this.lbPaing.Location = new System.Drawing.Point(819, 96);
+            this.lbPaing.Location = new System.Drawing.Point(905, 96);
             this.lbPaing.Name = "lbPaing";
             this.lbPaing.Size = new System.Drawing.Size(50, 19);
             this.lbPaing.TabIndex = 708;
@@ -508,6 +512,24 @@
             this.dafaToolStripMenuItem.Text = "Tạo Mới Bảng Kê";
             this.dafaToolStripMenuItem.Click += new System.EventHandler(this.dafaToolStripMenuItem_Click);
             // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.labelX3.Location = new System.Drawing.Point(560, 65);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(132, 22);
+            this.labelX3.TabIndex = 711;
+            this.labelX3.Text = "LOẠI BỎ CODE";
+            // 
+            // txtLoaiBo
+            // 
+            this.txtLoaiBo.Location = new System.Drawing.Point(560, 90);
+            this.txtLoaiBo.Name = "txtLoaiBo";
+            this.txtLoaiBo.Size = new System.Drawing.Size(132, 27);
+            this.txtLoaiBo.TabIndex = 712;
+            // 
             // frm_KiemTraThayDinhKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -565,5 +587,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CODHN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYGAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn BAOTHAY;
+        private DevComponents.DotNetBar.LabelX labelX3;
+        private System.Windows.Forms.TextBox txtLoaiBo;
     }
 }
