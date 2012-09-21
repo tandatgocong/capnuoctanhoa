@@ -15,8 +15,7 @@ using CAPNUOCTANHOA.Forms.DoiTCTB;
 using CAPNUOCTANHOA.Forms.QLDHN.SODOCSO;
 using CAPNUOCTANHOA.Forms.TimKiem;
 using CAPNUOCTANHOA.Forms.BanKTKS;
- 
-
+using CAPNUOCTANHOA.Forms.DoiThuTien;
 namespace CAPNUOCTANHOA
 {
     public partial class frm_Main : Form
@@ -27,15 +26,6 @@ namespace CAPNUOCTANHOA
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
             Utilities.Files.getFileOnServer();
-            
-           
-            //     frm_BaoThayDHN frm = new frm_BaoThayDHN();
-            //frm.MdiParent = this;
-            //frm.Show();
-           // dataGridView1.DataSource = DAL.OledbConnection.getDataTable(ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString,"SELECT * FROM LyLichDHN WHERE DOT='20'"); 
-           
-
-            
         }
         public static frm_Login dn = new frm_Login();
         public void dangnhap()
@@ -46,10 +36,8 @@ namespace CAPNUOCTANHOA
             {
                 role(DAL.SYS.C_USERS._roles);
             }
-
             this.Text = "Tan Hoa Water Co., ltd - Nhân Viên : " + DAL.SYS.C_USERS._fullName;
         }
-        
         public void role(string role)
         {
             if ("AD".Equals(DAL.SYS.C_USERS._roles.Trim()))
@@ -57,12 +45,13 @@ namespace CAPNUOCTANHOA
                 this.menuDoiQLDHN.Visible = true;
                 this.menuDTCTB.Visible = true;
                 this.banKTKS.Visible = true;
+                ribbonDoiThuTien.Visible = true;
             }
             else
             {
-                //menuQuanTri.Visible = false;
                 if ("QLDHN".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
+                    ribbonDoiThuTien.Visible = false;
                     this.menuDoiQLDHN.Visible = true;
                     this.menuDTCTB.Visible = false;
                     if ("GM,TH".Contains(DAL.SYS.C_USERS._roles.Trim()))
@@ -73,57 +62,41 @@ namespace CAPNUOCTANHOA
                         menuDieuChinhKH.Visible = true;
                         btLoTrinh.Visible = true;
                         handHeld.Visible = false;
-                    }
-                    else
-                    {
+                    }else{
                         cmdBaoThay.Visible = true;
                         menuKiemTra.Visible = true;
                         btLoTrinh.Visible = true; 
                         yeucaukiemtra.Visible = true;
                         handHeld.Visible = true;
-                    }
-                    if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    }if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         menuDieuChinhKH.Visible = false;
-                    }
-                    if ("TK".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    }if ("TK".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         handHeld.Visible = false;
                     }
-                    
-                    
-
                 }
                 else if ("DTCTB".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
+                    ribbonDoiThuTien.Visible = false;
                     this.menuDoiQLDHN.Visible = false;
                     this.menuDTCTB.Visible = true;
 
                 }
                 else if ("BANKTKS".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
+                    ribbonDoiThuTien.Visible = false;
                     this.menuDoiQLDHN.Visible = false;
                     this.menuDTCTB.Visible = false;
                     this.banKTKS.Visible = true;
                 }
-                //else if ("DHN".Equals(DAL.SYS.C_USERS._maphong.Trim()))
-                //{
-                //    this.menuQLDHNuoc.Visible = true;
-                //    this.iconMenuPanel.Controls.Clear();
-                //    this.iconMenuPanel.Controls.Add(group_DoiDHN);
-                //    group_DoiDHN.Visible = true;
-
-                //}
+                else if ("THUTIEN".Equals(DAL.SYS.C_USERS._maphong.Trim())){
+                    ribbonDoiThuTien.Visible = true;
+                    this.menuDoiQLDHN.Visible = false;
+                    this.menuDTCTB.Visible = false;
+                    this.banKTKS.Visible = false;
+                }
             }
-            //else if ("QT".Equals(DAL.C_USERS._roles.Trim()))
-            //{
-
-            //    this.menuToThietKe.Visible = true;
-            //    this.iconMenuPanel.Controls.Clear();
-            //    this.menuKHVT.Visible = true;
-            //    this.menuQLDHNuoc.Visible = true;
-            //}
- 
             this.subDoiMatKhau.Visible = true;
             this.subDangXuat.Visible = true;
             this.subdangnhap.Visible = false;
@@ -157,7 +130,6 @@ namespace CAPNUOCTANHOA
 
         private void webBrowserTool_Click(object sender, EventArgs e)
         {
-
             try
             {
                 this.PanelContent.Controls.Clear();
@@ -233,7 +205,6 @@ namespace CAPNUOCTANHOA
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
         }
 
         private void baocaoTongKet_Click(object sender, EventArgs e)
@@ -395,6 +366,16 @@ namespace CAPNUOCTANHOA
             Inthubao baothay = new Inthubao();
             //baothay.Height = PanelContent.Size.Height - 20;
             //baothay.Width = PanelContent.Size.Width - 20;
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+        }
+
+        private void toolDongNuoc_Click(object sender, EventArgs e)
+        {
+
+            PanelContent.Controls.Clear();
+            frm_CatNuoc baothay = new frm_CatNuoc();
             baothay.Height = PanelContent.Size.Height - 5;
             baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
