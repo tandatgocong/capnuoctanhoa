@@ -152,7 +152,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     dataGanMoiBK.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.White;
                 }
                 string shs = dataGanMoiBK.Rows[i].Cells["SHS"].Value + "";
-                string sql = "SELECT SoHo,SoNha,Duong FROM [T02 DANH SACH HO SO KHACH HANG] WHERE  SHS='" + shs + "' ";
+                string sql = "SELECT SoHo,SoNha,Duong,SoDienThoaiLienLac FROM [T02 DANH SACH HO SO KHACH HANG] WHERE  SHS='" + shs + "' ";
                 DataTable table = DAL.OledbConnection.getDataTable(connectionString2, sql);
                 if (table.Rows.Count >= 1)
                 {
@@ -160,6 +160,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     //MessageBox.Show(this, table.Rows[0]["SoHo"].ToString());
                     dataGanMoiBK.Rows[i].Cells["SONHA"].Value = table.Rows[0]["SoNha"];
                     dataGanMoiBK.Rows[i].Cells["DUONG"].Value = table.Rows[0]["Duong"];
+                    dataGanMoiBK.Rows[i].Cells["_DIENTHOAI"].Value=table.Rows[0]["SoDienThoaiLienLac"];
                     dataGanMoiBK.Rows[i].Cells["HOTEN"].Value = (dataGanMoiBK.Rows[i].Cells["HOTEN"].Value + "").Replace(" (ÑD " + table.Rows[0]["SoHo"] + " hoä)", "");
                 }
                 try
@@ -318,6 +319,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string SOTLK = dataGanMoiBK.Rows[i].Cells["SOTLK"].Value + "";
                 string CHISOTLK = dataGanMoiBK.Rows[i].Cells["CHISOTLK"].Value + "";
                 string SoHo = dataGanMoiBK.Rows[i].Cells["SoHo"].Value + "";
+                string _DIENTHOAI = dataGanMoiBK.Rows[i].Cells["_DIENTHOAI"].Value + "";
 
                 //string DOT = dataGanMoiBK.Rows[i].Cells["DOT"].Value + "";
                 //string TODS = dataGanMoiBK.Rows[i].Cells["TODS"].Value + "";
@@ -352,12 +354,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     this.txtSoThan.Text = SOTLK;
                     this.txtCHISOTLK.Text = CHISOTLK;
                     this.txtLoTrinhTam.Text = "";
-
+                    txtDienThoai.Text = _DIENTHOAI;
                 }
                 else {
                     this.txtDanhBo.Text = "";
                     this.txtHopDong.Text = "";
-
+                    txtDienThoai.Text = "";
                     this.txtHieuLuc.Text = "";
                     this.txtGiaBieu.Text = "";
                     this.txtDinhMuc.Text = "";
@@ -409,6 +411,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string DOTDS = cbDotDS.Items[cbDotDS.SelectedIndex].ToString();
                 string TODS = "TB01";
                 string LOTRINH = this.txtLoTrinhTam.Text;
+                string _dt = this.txtDienThoai.Text;
                 int tods = 1;
                 if (this.cbToDocSo.SelectedIndex == 1)
                 {
@@ -476,8 +479,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             DAL.OledbConnection.ExecuteCommand_UpdatLoTrinh(connectionString, DANHBO, LOTRINH);
 
                             ////
-                            string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH) VALUES ";
-                            insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "')";
+                            string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH,DIENTHOAI) VALUES ";
+                            insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "','" + _dt + "')";
                             if (DAL.LinQConnection.ExecuteCommand_(insert) > 0)
                             {
                                 log.Info("+++++++++++ TB_DULIEUKHACHHANG : " + DANHBO + "");

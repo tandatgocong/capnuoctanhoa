@@ -210,6 +210,12 @@
     <Compile Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.Designer.cs">
       <DependentUpon>tabThongKeVatTu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoiThuTien\frm_CatNuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiThuTien\frm_CatNuoc.Designer.cs">
+      <DependentUpon>frm_CatNuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\BC\BAOCAOTONGKET.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1151,6 +1157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.resx">
       <DependentUpon>tabThongKeVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiThuTien\frm_CatNuoc.resx">
+      <DependentUpon>frm_CatNuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_ThongKeDongHoNuoc_bk.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
