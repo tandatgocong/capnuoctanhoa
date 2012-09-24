@@ -19,7 +19,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         }
         public static void CAPNHATSOLIEU_BAOCAO_LOAIKD_KYNAY(string nam, int ky)
         {
-            string sql = "UPDATE 	W_BAOCAO_LOAIKD_THAP ";
+            string sql = "UPDATE W_BAOCAO_LOAIKD_THAP ";
             sql += " SET	KN_SH0 =t2.KN_SH0,KN_SH4=t2.KN_SH4 ,";
             sql += " KN_SX0 =t2.KN_SX0,KN_SX4=t2.KN_SX4 ,";
             sql += " KN_KD0 =t2.KN_KD0,KN_KD4=t2.KN_KD4 ,";
@@ -29,8 +29,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " (";
             sql += " SELECT TODS,";
             sql += " (COUNT(case when (GB=11 AND TIEUTHU=0) then 1 else null end)) AS KN_SH0, (COUNT(case when (GB=11 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SH4,";
-            sql += " (COUNT(case when (GB IN (12,14,34,24) AND TIEUTHU=0)  then 1 else null end)) AS KN_SX0, (COUNT(case when (GB IN (12,14,34,24) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SX4,";
-            sql += " (COUNT(case when (GB IN (15,13,33,23) AND TIEUTHU=0) then 1 else null end)) AS KN_KD0, (COUNT(case when (GB IN (15,13,33,23) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_KD4,";
+            sql += " (COUNT(case when (GB IN (12,14,34,24,32,22) AND TIEUTHU=0)  then 1 else null end)) AS KN_SX0, (COUNT(case when (GB IN (12,14,34,24,32,22) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SX4,";
+            sql += " (COUNT(case when (GB IN (15,13,33,23,16,25,26,35) AND TIEUTHU=0) then 1 else null end)) AS KN_KD0, (COUNT(case when (GB IN (15,13,33,23) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_KD4,";
             sql += " (COUNT(case when (GB IN (21,51,52) AND TIEUTHU=0) then 1 else null end)) AS KN_CC0, (COUNT(case when (GB IN (21,51,52) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_CC4,";
             sql += " (COUNT(case when (GB=31 AND TIEUTHU=0) then 1 else null end)) AS KN_HCSN0, (COUNT(case when (GB=31 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_HCSN4	";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
@@ -61,8 +61,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " (";
             sql += " SELECT TODS,";
             sql += " (COUNT(case when (GB=11 AND TIEUTHU=0) then 1 else null end)) AS KN_SH0, (COUNT(case when (GB=11 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SH4,";
-            sql += " (COUNT(case when (GB IN (12,14,34,24) AND TIEUTHU=0)  then 1 else null end)) AS KN_SX0, (COUNT(case when (GB IN (12,14,34,24) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SX4,";
-            sql += " (COUNT(case when (GB IN (15,13,33,23) AND TIEUTHU=0) then 1 else null end)) AS KN_KD0, (COUNT(case when (GB IN (15,13,33,23) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_KD4,";
+            sql += " (COUNT(case when (GB IN (12,14,34,24,12,14,34,24,32,22) AND TIEUTHU=0)  then 1 else null end)) AS KN_SX0, (COUNT(case when (GB IN (12,14,34,24,12,14,34,24,32,22) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SX4,";
+            sql += " (COUNT(case when (GB IN (15,13,33,23,16,25,26,35) AND TIEUTHU=0) then 1 else null end)) AS KN_KD0, (COUNT(case when (GB IN (15,13,33,23,16,25,26,35) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_KD4,";
             sql += " (COUNT(case when (GB IN (21,51,52) AND TIEUTHU=0) then 1 else null end)) AS KN_CC0, (COUNT(case when (GB IN (21,51,52) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_CC4,";
             sql += " (COUNT(case when (GB=31 AND TIEUTHU=0) then 1 else null end)) AS KN_HCSN0, (COUNT(case when (GB=31 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_HCSN4	";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
@@ -94,8 +94,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " (";
             sql += " SELECT TODS,";
             sql += " (COUNT(case when (GB=11 AND TIEUTHU=0) then 1 else null end)) AS KN_SH0, (COUNT(case when (GB=11 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SH4,";
-            sql += " (COUNT(case when (GB IN (12,14,34,24) AND TIEUTHU=0)  then 1 else null end)) AS KN_SX0, (COUNT(case when (GB IN (12,14,34,24) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SX4,";
-            sql += " (COUNT(case when (GB IN (15,13,33,23) AND TIEUTHU=0) then 1 else null end)) AS KN_KD0, (COUNT(case when (GB IN (15,13,33,23) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_KD4,";
+            sql += " (COUNT(case when (GB IN (12,14,34,24,32,22) AND TIEUTHU=0)  then 1 else null end)) AS KN_SX0, (COUNT(case when (GB IN (12,14,34,24,32,22) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_SX4,";
+            sql += " (COUNT(case when (GB IN (15,13,33,23,16,25,26,35) AND TIEUTHU=0) then 1 else null end)) AS KN_KD0, (COUNT(case when (GB IN (15,13,33,23,16,25,26,35) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_KD4,";
             sql += " (COUNT(case when (GB IN (21,51,52) AND TIEUTHU=0) then 1 else null end)) AS KN_CC0, (COUNT(case when (GB IN (21,51,52) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_CC4,";
             sql += " (COUNT(case when (GB=31 AND TIEUTHU=0) then 1 else null end)) AS KN_HCSN0, (COUNT(case when (GB=31 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KN_HCSN4	";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;
@@ -126,8 +126,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " (";
             sql += " SELECT TODS,";
             sql += " (COUNT(case when (GB=11 AND TIEUTHU=0) then 1 else null end)) AS KT_SH0, (COUNT(case when (GB=11 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_SH4,";
-            sql += " (COUNT(case when (GB IN (12,14,34,24) AND TIEUTHU=0)  then 1 else null end)) AS KT_SX0, (COUNT(case when (GB IN (12,14,34,24) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_SX4,";
-            sql += " (COUNT(case when (GB IN (15,13,33,23) AND TIEUTHU=0) then 1 else null end)) AS KT_KD0, (COUNT(case when (GB IN (15,13,33,23) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_KD4,";
+            sql += " (COUNT(case when (GB IN (12,14,34,24,32,22) AND TIEUTHU=0)  then 1 else null end)) AS KT_SX0, (COUNT(case when (GB IN (12,14,34,24,32,22) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_SX4,";
+            sql += " (COUNT(case when (GB IN (15,13,33,23,16,25,26,35) AND TIEUTHU=0) then 1 else null end)) AS KT_KD0, (COUNT(case when (GB IN (15,13,33,23,16,25,26,35) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_KD4,";
             sql += " (COUNT(case when (GB IN (21,51,52) AND TIEUTHU=0) then 1 else null end)) AS KT_CC0, (COUNT(case when (GB IN (21,51,52) AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_CC4,";
             sql += " (COUNT(case when (GB=31 AND TIEUTHU=0) then 1 else null end)) AS KT_HCSN0, (COUNT(case when (GB=31 AND (TIEUTHU>=1  AND TIEUTHU<=4)) then 1 else null end)) AS KT_HCSN4	";
             sql += " FROM DocSo_PHT.dbo.DS" + nam;

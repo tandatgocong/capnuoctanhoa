@@ -57,6 +57,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     HOTEN.Text = khachhang.HOTEN;
                     SONHA.Text = khachhang.SONHA;
                     TENDUONG.Text = khachhang.TENDUONG;
+                    txtDienThoai.Text = khachhang.DIENTHOAI;
                     try
                     {
                         LinQ.QUAN q = DAL.SYS.C_Quan.finByMaQuan(int.Parse(khachhang.QUAN));
@@ -184,6 +185,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 khachhang.HOTEN = HOTEN.Text.ToUpper();
                 khachhang.SONHA = SONHA.Text.ToUpper();
                 khachhang.TENDUONG = TENDUONG.Text.ToUpper();
+                khachhang.DIENTHOAI = txtDienThoai.Text;
                 if (!"".Equals(this.NGAYGAN.ValueObject + ""))
                 {
                     khachhang.NGAYTHAY = this.NGAYGAN.Value;

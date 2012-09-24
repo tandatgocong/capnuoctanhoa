@@ -117,6 +117,7 @@
     <Compile Include="DAL\SYS\C_PHUONG.cs" />
     <Compile Include="DAL\SYS\C_QUAN.cs" />
     <Compile Include="DAL\SYS\C_Users.cs" />
+    <Compile Include="DAL\THUTIEN\C_ThuTien.cs" />
     <Compile Include="DAL\TimKiem\C_TimKiem.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

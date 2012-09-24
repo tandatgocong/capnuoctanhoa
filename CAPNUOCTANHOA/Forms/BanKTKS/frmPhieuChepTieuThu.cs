@@ -60,45 +60,45 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 khachhang = DAL.DULIEUKH.C_DuLieuKhachHang.finByLoTrinh(lotrinh);
             }
 
-                if (khachhang != null)
+            if (khachhang != null)
+            {
+                txtDanhBo.Text = khachhang.DANHBO;
+                LOTRINH.Text = khachhang.LOTRINH;
+                HOPDONG.Text = khachhang.HOPDONG;
+                HOTEN.Text = khachhang.HOTEN;
+                SONHA.Text = khachhang.SONHA;
+                TENDUONG.Text = khachhang.TENDUONG;
+                txtDienThoai.Text = khachhang.DIENTHOAI;
+                try
                 {
-                    txtDanhBo.Text = khachhang.DANHBO;
-                    LOTRINH.Text = khachhang.LOTRINH;
-                    HOPDONG.Text = khachhang.HOPDONG;
-                    HOTEN.Text = khachhang.HOTEN;
-                    SONHA.Text = khachhang.SONHA;
-                    TENDUONG.Text = khachhang.TENDUONG;
-                    try
+                    LinQ.QUAN q = DAL.SYS.C_Quan.finByMaQuan(int.Parse(khachhang.QUAN));
+                    if (q != null)
                     {
-                        LinQ.QUAN q = DAL.SYS.C_Quan.finByMaQuan(int.Parse(khachhang.QUAN));
-                        if (q != null)
-                        {
-                            LinQ.PHUONG ph = DAL.SYS.C_Phuong.finbyPhuong(q.MAQUAN, khachhang.PHUONG.Trim());
-                            PHUONGT.Text = ph.TENPHUONG;
-                        }
+                        LinQ.PHUONG ph = DAL.SYS.C_Phuong.finbyPhuong(q.MAQUAN, khachhang.PHUONG.Trim());
+                        PHUONGT.Text = ph.TENPHUONG;
                     }
-                    catch (Exception)
-                    {
-                    }
-                    GIABIEU.Text = khachhang.GIABIEU;
-                    DINHMUC.Text = khachhang.DINHMUC;
-                    NGAYGAN.ValueObject = khachhang.NGAYTHAY;
-                    KIEMDINH.ValueObject = khachhang.NGAYKIEMDINH;
-                    HIEUDH.Text = khachhang.HIEUDH;
-                    CO.Text = khachhang.CODH;
-                    CAP.Text = khachhang.CAP;
-                    SOTHAN.Text = khachhang.SOTHANDH;
-                    VITRI.Text = khachhang.VITRIDHN;
-                    int ky=int.Parse(txtKy.Text);
-                    int nam=int.Parse(txtNam.Text);
-                    LoadPhieuTieuTHU(txtDanhBo.Text.Replace("-",""),nam, ky);
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Refesh();
                 }
-            
+                GIABIEU.Text = khachhang.GIABIEU;
+                DINHMUC.Text = khachhang.DINHMUC;
+                NGAYGAN.ValueObject = khachhang.NGAYTHAY;
+                KIEMDINH.ValueObject = khachhang.NGAYKIEMDINH;
+                HIEUDH.Text = khachhang.HIEUDH;
+                CO.Text = khachhang.CODH;
+                CAP.Text = khachhang.CAP;
+                SOTHAN.Text = khachhang.SOTHANDH;
+                VITRI.Text = khachhang.VITRIDHN;
+                int ky = int.Parse(txtKy.Text);
+                int nam = int.Parse(txtNam.Text);
+                LoadPhieuTieuTHU(txtDanhBo.Text.Replace("-", ""), nam, ky);
+            }
+            else
+            {
+                MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Refesh();
+            }
         }
 
         public void Refesh()
@@ -216,9 +216,10 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             {
                 
             }
-            
 
-            query2 = "SELECT  kh.*, ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.TENNHANVIEN  ";
+
+            query2 = "SELECT  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM"; 
+            query2+=" , ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.TENNHANVIEN  ";
             query2 += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
             query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + _ky + " AND ds.DANHBA='" + danhba + "' ";
 
@@ -259,6 +260,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
+
+       
    
     }
 }

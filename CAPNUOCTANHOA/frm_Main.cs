@@ -40,6 +40,7 @@ namespace CAPNUOCTANHOA
         }
         public void role(string role)
         {
+
             if ("AD".Equals(DAL.SYS.C_USERS._roles.Trim()))
             {
                 this.menuDoiQLDHN.Visible = true;
@@ -49,11 +50,13 @@ namespace CAPNUOCTANHOA
             }
             else
             {
+                menuDieuChinhThongSo.Visible = false;
                 if ("QLDHN".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
                     ribbonDoiThuTien.Visible = false;
                     this.menuDoiQLDHN.Visible = true;
                     this.menuDTCTB.Visible = false;
+                    menuDieuChinhThongSo.Visible = true;
                     if ("GM,TH".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         cmdBaoThay.Visible=false;
@@ -276,7 +279,7 @@ namespace CAPNUOCTANHOA
         {
             PanelContent.Controls.Clear();
             // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
-            frmTimKiem baothay = new frmTimKiem();
+            frmPhieuChepTieuThu baothay = new frmPhieuChepTieuThu();
             //baothay.Height = PanelContent.Size.Height - 20;
             //baothay.Width = PanelContent.Size.Width - 20;
             baothay.Height = PanelContent.Size.Height - 5;
