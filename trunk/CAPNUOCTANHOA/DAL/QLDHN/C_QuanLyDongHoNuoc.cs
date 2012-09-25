@@ -54,6 +54,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             updatedhn += " ,NHOCO100 = 0 ,NHOCO150 = 0 ,NHOCO200 = 0 ,LONCO15 = 0 ,LONCO20 = 0 ,LONCO25 =0 ,LONCO40 = 0 ";
             updatedhn += " ,LONCO50 = 0 ,LONCO80 = 0 ,LONCO100 = 0 ,LONCO150 = 0 ,LONCO200 =0";
             DAL.LinQConnection.ExecuteCommand_(updatedhn);
+
             if ("TB01".Equals(tods))
             {
                 LinQConnection.ExecuteStoredProcedure("THONGKEDHN_TB01", ky, nam);

@@ -142,7 +142,7 @@
             this.title.ReflectionEnabled = false;
             this.title.Size = new System.Drawing.Size(943, 54);
             this.title.TabIndex = 3;
-            this.title.Text = "THỐNG KÊ TIÊU THỤ THẤP THEO ĐỐI TƯỢNG SỮ DỤNG NƯỚC";
+            this.title.Text = "THỐNG KÊ TIÊU THỤ THẤP THEO ĐỐI TƯỢNG SỬ DỤNG NƯỚC";
             // 
             // tabControl1
             // 
@@ -862,7 +862,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_tab_TongKetLoaiHinhKD_TieuThuThap";
-            this.Size = new System.Drawing.Size(1732, 594);
+            this.Size = new System.Drawing.Size(1715, 577);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
