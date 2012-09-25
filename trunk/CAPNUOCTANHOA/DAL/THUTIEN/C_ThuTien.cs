@@ -5,6 +5,7 @@ using System.Text;
 using log4net;
 using CAPNUOCTANHOA.LinQ;
 using CAPNUOCTANHOA.DAL.QLDHN;
+using System.Data;
 
 namespace CAPNUOCTANHOA.DAL.THUTIEN
 {
@@ -12,13 +13,85 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C_ThuTien).Name);
         static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+        public static bool Insert(TB_DONGNUOC th_dhn)
+        {
+            try
+            {
+                db.TB_DONGNUOCs.InsertOnSubmit(th_dhn);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
+        public static bool Update()
+        {
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
 
-        //public static DataTable getBangKeBaoThay(int sobangke)
-        //{
-        //    string sql = "SELECT ID_BAOTHAY,DHN_LOAIBANGKE,DHN_SOBANGKE, DHN_DANHBO,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_NGAYBAOTHAY,DHN_NGAYGAN,DHN_CHITHAN,DHN_CHIGOC,DHN_HIEUDHN,DHN_CODH,DHN_SOTHAN,DHN_CHISO,DHN_LYDOTHAY,DHN_GHICHU ";
-        //    sql += " FROM TB_THAYDHN thay,TB_DULIEUKHACHHANG kh WHERE kh.DANHBO=thay.DHN_DANHBO AND DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_DANHBO ASC ";
-        //    return LinQConnection.getDataTable(sql);
-        //}
+        public static bool delete(TB_DONGNUOC dongnuoc)
+        {
+            try
+            {
+                db.TB_DONGNUOCs.DeleteOnSubmit(dongnuoc);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
+
+        public static DataTable getDongNuocByDate(string month)
+        {
+            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            sql += " FROM  TB_DONGNUOC WHERE MONTH(NGAYDONGNUOC)='"+month+"'  ORDER BY ID DESC";
+            return LinQConnection.getDataTable(sql);
+        }
+
+
+        public static TB_DONGNUOC finByDanhBo(string danhbo)
+        {
+            try
+            {
+                db = new CapNuocTanHoaDataContext();
+                var query = from q in db.TB_DONGNUOCs where q.DANHBO == danhbo && q.NGAYDONGNUOC.Value.Year== DateTime.Now.Year orderby q.ID descending select q;
+                return (TB_DONGNUOC)query.ToList()[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
+        public static string noidung(string danhbo) {
+
+            string result = "Nợ hóa đơn kỳ ";
+            HoaDonDataContext hd = new HoaDonDataContext();
+            var query = from q in hd.HDs where q.DBo == danhbo orderby q.KyHD ascending, q.NamHD descending select q;
+            foreach (var item in query.ToList())
+            {
+                HD hd_ = (HD)item;
+                result += " " + hd_.KyHD + "/" + hd_.NamHD + ": " + String.Format("{0:0,0}", hd_.TNuoc).Replace(",",".") + " ; ";
+            }
+            return result;
+        
+        }
         //public static DataTable getBangKeBaoThay(string sobangke)
         //{
         //    string sql = "SELECT ID_BAOTHAY,DHN_LOAIBANGKE,DHN_SOBANGKE, DHN_DANHBO,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_NGAYBAOTHAY,DHN_NGAYGAN,DHN_CHITHAN,DHN_CHIGOC,DHN_HIEUDHN,DHN_CODH,DHN_SOTHAN,DHN_CHISO,DHN_LYDOTHAY ";
@@ -52,19 +125,7 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
         //    return LinQConnection.getDataTable(sql);
         //}
 
-        //public static void Insert(TB_THAYDHN th_dhn)
-        //{
-        //    try
-        //    {
-        //        db.TB_THAYDHNs.InsertOnSubmit(th_dhn);
-        //        db.SubmitChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        log.Error(ex.Message);
-        //    }
-        //}
-
+        
         //public static TB_THAYDHN finByID_BAOTHAY(int id)
         //{
         //    try
