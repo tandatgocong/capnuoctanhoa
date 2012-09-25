@@ -864,6 +864,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocSo.dbml</DependentUpon>
     </Compile>
+    <Compile Include="LinQ\HoaDon.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\AddValueCombox.cs" />
@@ -1469,6 +1474,9 @@
     <None Include="LinQ\DocSo.dbml.layout">
       <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
+    <None Include="LinQ\HoaDon.dbml.layout">
+      <DependentUpon>HoaDon.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1487,6 +1495,11 @@
     <None Include="LinQ\DocSo.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DocSo.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LinQ\HoaDon.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>HoaDon.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
