@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using log4net;
 using CAPNUOCTANHOA.LinQ;
+using CAPNUOCTANHOA.DAL.QLDHN;
 
 namespace CAPNUOCTANHOA.DAL.THUTIEN
 {
     public static class C_ThuTien
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(C_BaoThay).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_ThuTien).Name);
         static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
 
         //public static DataTable getBangKeBaoThay(int sobangke)
