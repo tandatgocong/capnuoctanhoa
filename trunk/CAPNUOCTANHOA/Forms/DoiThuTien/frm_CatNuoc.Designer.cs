@@ -55,11 +55,6 @@
             this.txtGhiChu = new System.Windows.Forms.RichTextBox();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dataBangKe = new System.Windows.Forms.DataGridView();
-            this.btTaoMoi = new DevComponents.DotNetBar.ButtonX();
-            this.btIn = new DevComponents.DotNetBar.ButtonX();
-            this.btcapNhat = new DevComponents.DotNetBar.ButtonX();
-            this.btXoa = new DevComponents.DotNetBar.ButtonX();
-            this.btThem = new DevComponents.DotNetBar.ButtonX();
             this.G_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_QUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_PHUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +67,11 @@
             this.G_NGAYDONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_NGAYMO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_NOIDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btTaoMoi = new DevComponents.DotNetBar.ButtonX();
+            this.btIn = new DevComponents.DotNetBar.ButtonX();
+            this.btcapNhat = new DevComponents.DotNetBar.ButtonX();
+            this.btXoa = new DevComponents.DotNetBar.ButtonX();
+            this.btThem = new DevComponents.DotNetBar.ButtonX();
             this.txtid = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.NGAYMO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NGAYDONG)).BeginInit();
@@ -449,76 +449,6 @@
             this.dataBangKe.TabIndex = 101;
             this.dataBangKe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBangKe_CellClick);
             // 
-            // btTaoMoi
-            // 
-            this.btTaoMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btTaoMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btTaoMoi.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTaoMoi.ForeColor = System.Drawing.Color.Crimson;
-            this.btTaoMoi.Location = new System.Drawing.Point(540, 210);
-            this.btTaoMoi.Name = "btTaoMoi";
-            this.btTaoMoi.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
-            this.btTaoMoi.Size = new System.Drawing.Size(116, 23);
-            this.btTaoMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btTaoMoi.TabIndex = 162;
-            this.btTaoMoi.Text = "TẠO MỚI (F5)";
-            this.btTaoMoi.Click += new System.EventHandler(this.btTaoMoi_Click);
-            // 
-            // btIn
-            // 
-            this.btIn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btIn.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btIn.ForeColor = System.Drawing.Color.Crimson;
-            this.btIn.Location = new System.Drawing.Point(540, 174);
-            this.btIn.Name = "btIn";
-            this.btIn.Size = new System.Drawing.Size(116, 23);
-            this.btIn.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btIn.TabIndex = 159;
-            this.btIn.Text = "IN";
-            // 
-            // btcapNhat
-            // 
-            this.btcapNhat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btcapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btcapNhat.Enabled = false;
-            this.btcapNhat.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btcapNhat.ForeColor = System.Drawing.Color.Crimson;
-            this.btcapNhat.Location = new System.Drawing.Point(540, 141);
-            this.btcapNhat.Name = "btcapNhat";
-            this.btcapNhat.Size = new System.Drawing.Size(116, 23);
-            this.btcapNhat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btcapNhat.TabIndex = 161;
-            this.btcapNhat.Text = "CẬP NHẬT";
-            // 
-            // btXoa
-            // 
-            this.btXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btXoa.Enabled = false;
-            this.btXoa.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXoa.ForeColor = System.Drawing.Color.Crimson;
-            this.btXoa.Location = new System.Drawing.Point(540, 106);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(116, 23);
-            this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btXoa.TabIndex = 160;
-            this.btXoa.Text = "XÓA";
-            // 
-            // btThem
-            // 
-            this.btThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(540, 70);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(116, 23);
-            this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btThem.TabIndex = 158;
-            this.btThem.Text = "THÊM";
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
-            // 
             // G_ID
             // 
             this.G_ID.DataPropertyName = "ID";
@@ -624,6 +554,79 @@
             this.G_NOIDUNG.Name = "G_NOIDUNG";
             this.G_NOIDUNG.ReadOnly = true;
             this.G_NOIDUNG.Width = 400;
+            // 
+            // btTaoMoi
+            // 
+            this.btTaoMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btTaoMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btTaoMoi.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaoMoi.ForeColor = System.Drawing.Color.Crimson;
+            this.btTaoMoi.Location = new System.Drawing.Point(540, 177);
+            this.btTaoMoi.Name = "btTaoMoi";
+            this.btTaoMoi.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
+            this.btTaoMoi.Size = new System.Drawing.Size(116, 23);
+            this.btTaoMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btTaoMoi.TabIndex = 162;
+            this.btTaoMoi.Text = "TẠO MỚI (F5)";
+            this.btTaoMoi.Click += new System.EventHandler(this.btTaoMoi_Click);
+            // 
+            // btIn
+            // 
+            this.btIn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btIn.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btIn.ForeColor = System.Drawing.Color.Crimson;
+            this.btIn.Location = new System.Drawing.Point(540, 209);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(116, 23);
+            this.btIn.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btIn.TabIndex = 159;
+            this.btIn.Text = "IN";
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
+            // 
+            // btcapNhat
+            // 
+            this.btcapNhat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btcapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btcapNhat.Enabled = false;
+            this.btcapNhat.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcapNhat.ForeColor = System.Drawing.Color.Crimson;
+            this.btcapNhat.Location = new System.Drawing.Point(540, 145);
+            this.btcapNhat.Name = "btcapNhat";
+            this.btcapNhat.Size = new System.Drawing.Size(116, 23);
+            this.btcapNhat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btcapNhat.TabIndex = 161;
+            this.btcapNhat.Text = "CẬP NHẬT";
+            this.btcapNhat.Click += new System.EventHandler(this.btcapNhat_Click);
+            // 
+            // btXoa
+            // 
+            this.btXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btXoa.Enabled = false;
+            this.btXoa.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXoa.ForeColor = System.Drawing.Color.Crimson;
+            this.btXoa.Location = new System.Drawing.Point(540, 110);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(116, 23);
+            this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btXoa.TabIndex = 160;
+            this.btXoa.Text = "XÓA";
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // btThem
+            // 
+            this.btThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThem.ForeColor = System.Drawing.Color.Crimson;
+            this.btThem.Location = new System.Drawing.Point(540, 74);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(116, 23);
+            this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btThem.TabIndex = 158;
+            this.btThem.Text = "THÊM";
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // txtid
             // 
