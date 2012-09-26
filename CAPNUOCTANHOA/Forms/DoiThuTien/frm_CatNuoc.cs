@@ -10,6 +10,9 @@ using CAPNUOCTANHOA.Forms.DoiTCTB.Tab;
 using CAPNUOCTANHOA.Forms.QLDHN.Tab;
 using CAPNUOCTANHOA.LinQ;
 using CAPNUOCTANHOA.DAL.THUTIEN;
+using CrystalDecisions.CrystalReports.Engine;
+using CAPNUOCTANHOA.Forms.DoiThuTien.BC;
+using CAPNUOCTANHOA.Forms.Reports;
 
 namespace CAPNUOCTANHOA.Forms.DoiThuTien
 {
@@ -38,8 +41,11 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
             TENDUONG.Text = "";
             QUAN.Text = "";
             PHUONGT.Text = "";
+            this.NGAYDONG.Value = DateTime.Now.Date;
             this.txtGhiChu.Text = "";
             txtDanhBo.Focus();
+            btcapNhat.Enabled = false;
+            btXoa.Enabled = false;
 
         }
 
@@ -73,6 +79,9 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
                     NGAYDONG.ValueObject = dongnuoc.NGAYDONGNUOC;
                     NGAYMO.ValueObject = dongnuoc.NGAYMONUOC;
                     txtGhiChu.Text = dongnuoc.NOIDUNG;
+
+                    btcapNhat.Enabled = true;
+                    btXoa.Enabled = true;
                 }
                 else
                 {
@@ -150,46 +159,119 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
                 Utilities.DataGridV.formatRows(dataBangKe);
                 Refesh();
             }
-            else {
+            else
+            {
                 MessageBox.Show(this, "Cập Nhật Đóng Nước Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            btcapNhat.Enabled = true;
+            btXoa.Enabled = true;
         }
 
         private void dataBangKe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            //try
+            //{
+            //    string ID_ = dataBangKe.Rows[e.RowIndex].Cells["G_ID"].Value + "";
+            //    string DANHBO_ = dataBangKe.Rows[e.RowIndex].Cells["G_DANHBO"].Value + "";
+            //    string HOPDONG_ = dataBangKe.Rows[e.RowIndex].Cells["G_HOPDONG"].Value + "";
+            //    string HOTEN_ = dataBangKe.Rows[e.RowIndex].Cells["G_TENKH"].Value + "";
+            //    string SONHA_ = dataBangKe.Rows[e.RowIndex].Cells["G_SONHA"].Value + "";
+            //    string TENDUONG_ = dataBangKe.Rows[e.RowIndex].Cells["G_TENDUONG"].Value + "";
+            //    string PHUONG_ = dataBangKe.Rows[e.RowIndex].Cells["G_PHUONG"].Value + "";
+            //    string QUAN_ = dataBangKe.Rows[e.RowIndex].Cells["G_QUAN"].Value + "";
+            //    object NGAYDONGNUOC_ = dataBangKe.Rows[e.RowIndex].Cells["G_NGAYDONG"].Value;
+            //    object NGAYMONUOC_ = dataBangKe.Rows[e.RowIndex].Cells["G_NGAYMO"].Value;
+            //    string NOIDUNG_ = dataBangKe.Rows[e.RowIndex].Cells["G_NOIDUNG"].Value + "";
+
+            //    txtid.Text = ID_;
+            //    txtDanhBo.Text = DANHBO_.Replace(" ","");
+            //    HOPDONG.Text = DANHBO_;
+            //    HOTEN.Text = HOTEN_;
+            //    SONHA.Text = SONHA_;
+            //    TENDUONG.Text = TENDUONG_;
+            //    QUAN.Text = QUAN_;
+            //    PHUONGT.Text = PHUONG_;
+            //    NGAYDONG.ValueObject = NGAYDONGNUOC_;
+            //    NGAYMO.ValueObject = NGAYMONUOC_;
+            //    txtGhiChu.Text = NOIDUNG_;
+
+            //    btcapNhat.Enabled = true;
+            //    btXoa.Enabled = true;
+            //}
+            //catch (Exception)
+            //{
+
+            //}
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            if (dongnuoc != null)
             {
-                string ID_ = dataBangKe.Rows[e.RowIndex].Cells["G_ID"].Value + "";
-                string DANHBO_ = dataBangKe.Rows[e.RowIndex].Cells["G_DANHBO"].Value + "";
-                string HOPDONG_ = dataBangKe.Rows[e.RowIndex].Cells["G_HOPDONG"].Value + "";
-                string HOTEN_ = dataBangKe.Rows[e.RowIndex].Cells["G_TENKH"].Value + "";
-                string SONHA_ = dataBangKe.Rows[e.RowIndex].Cells["G_SONHA"].Value + "";
-                string TENDUONG_ = dataBangKe.Rows[e.RowIndex].Cells["G_TENDUONG"].Value + "";
-                string PHUONG_ = dataBangKe.Rows[e.RowIndex].Cells["G_PHUONG"].Value + "";
-                string QUAN_ = dataBangKe.Rows[e.RowIndex].Cells["G_QUAN"].Value + "";
-                object NGAYDONGNUOC_ = dataBangKe.Rows[e.RowIndex].Cells["G_NGAYDONG"].Value;
-                object NGAYMONUOC_ = dataBangKe.Rows[e.RowIndex].Cells["G_NGAYMO"].Value;
-                string NOIDUNG_ = dataBangKe.Rows[e.RowIndex].Cells["G_NOIDUNG"].Value + "";
+                string mess = "Xóa Thông Tin Đóng Nước Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(dongnuoc.DANHBO, "-") + " ?";
+                if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DAL.THUTIEN.C_ThuTien.delete(dongnuoc);
+                    dataBangKe.DataSource = C_ThuTien.getDongNuocByDate(DateTime.Now.Month.ToString());
+                    Utilities.DataGridV.formatRows(dataBangKe);
+                    Refesh();
+                    this.txtDanhBo.Text = "";
+                }
 
-                txtid.Text = ID_;
-                txtDanhBo.Text = DANHBO_.Replace(" ","");
-                HOPDONG.Text = DANHBO_;
-                HOTEN.Text = HOTEN_;
-                SONHA.Text = SONHA_;
-                TENDUONG.Text = TENDUONG_;
-                QUAN.Text = QUAN_;
-                PHUONGT.Text = PHUONG_;
-                NGAYDONG.ValueObject = NGAYDONGNUOC_;
-                NGAYMO.ValueObject = NGAYMONUOC_;
-                txtGhiChu.Text = NOIDUNG_;
-
-                btcapNhat.Enabled = true;
-                btXoa.Enabled = true;
             }
-            catch (Exception)
+
+        }
+
+        private void btcapNhat_Click(object sender, EventArgs e)
+        {
+            if (dongnuoc != null)
             {
+                dongnuoc.HOPDONG = this.HOPDONG.Text;
+                dongnuoc.HOTEN = this.HOTEN.Text;
+                dongnuoc.SONHA = this.SONHA.Text;
+                dongnuoc.TENDUONG = this.TENDUONG.Text;
+                dongnuoc.PHUONG = this.PHUONGT.Text;
+                dongnuoc.QUAN = QUAN.Text;
+
+                if (!"".Equals(this.NGAYDONG.ValueObject + ""))
+                {
+                    dongnuoc.NGAYDONGNUOC = NGAYDONG.Value.Date;
+                }
+                if (!"".Equals(this.NGAYMO.ValueObject + ""))
+                {
+                    dongnuoc.NGAYMONUOC = NGAYMO.Value.Date;
+                }
+                dongnuoc.NOIDUNG = this.txtGhiChu.Text;
+                dongnuoc.MODIFYDATE = DateTime.Now.Date;
+                dongnuoc.MODIFYBY = DAL.SYS.C_USERS._userName;
+
+                if (DAL.THUTIEN.C_ThuTien.Update())
+                {
+                    MessageBox.Show(this, "Cập Nhật Đóng & Mở Nước Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataBangKe.DataSource = C_ThuTien.getDongNuocByDate(DateTime.Now.Month.ToString());
+                    Utilities.DataGridV.formatRows(dataBangKe);
+                    Refesh(); 
+                    btcapNhat.Enabled = true;
+                    btXoa.Enabled = true;
+                    this.txtDanhBo.Text = "";
+                    this.NGAYMO.ValueObject = null;
+                }
+                else
+                {
+                    MessageBox.Show(this, "Cập Nhật Đóng & Mở Nước Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
 
             }
+        }
+
+        private void btIn_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new crpt_ThongTinDongNuoc();
+            rp.SetDataSource(DAL.THUTIEN.C_ThuTien.getDongNuocByDate(DateTime.Now.Month.ToString()));
+            rp.SetParameterValue("title", "THÔNG TIN ĐÓNG NƯỚC THÁNG " + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString());
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
         }
     }
 }

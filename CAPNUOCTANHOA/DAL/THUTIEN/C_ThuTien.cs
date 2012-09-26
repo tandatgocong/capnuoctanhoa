@@ -6,6 +6,7 @@ using log4net;
 using CAPNUOCTANHOA.LinQ;
 using CAPNUOCTANHOA.DAL.QLDHN;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace CAPNUOCTANHOA.DAL.THUTIEN
 {
@@ -56,10 +57,16 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
             return false;
         }
 
+        public static int DeleteByID(string ID) {
+
+            string sql = "DELETE FROM TB_DONGNUOC WHERE ID='"+ID+"'";
+            return DAL.LinQConnection.ExecuteCommand_(ID);
+        }
+
         public static DataTable getDongNuocByDate(string month)
         {
             string sql = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
-            sql += " FROM  TB_DONGNUOC WHERE MONTH(NGAYDONGNUOC)='"+month+"'  ORDER BY ID DESC";
+            sql += " FROM TB_DONGNUOC WHERE MONTH(NGAYDONGNUOC)='" + month + "'  AND YEAR(NGAYDONGNUOC)='" + DateTime.Now.Date.Year.ToString() + "' ORDER BY NGAYDONGNUOC DESC";
             return LinQConnection.getDataTable(sql);
         }
 
@@ -92,115 +99,77 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
             return result;
         
         }
-        //public static DataTable getBangKeBaoThay(string sobangke)
-        //{
-        //    string sql = "SELECT ID_BAOTHAY,DHN_LOAIBANGKE,DHN_SOBANGKE, DHN_DANHBO,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_NGAYBAOTHAY,DHN_NGAYGAN,DHN_CHITHAN,DHN_CHIGOC,DHN_HIEUDHN,DHN_CODH,DHN_SOTHAN,DHN_CHISO,DHN_LYDOTHAY ";
-        //    sql += " FROM TB_THAYDHN thay,TB_DULIEUKHACHHANG kh WHERE kh.DANHBO=thay.DHN_DANHBO AND (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) = '" + sobangke + "' ORDER BY DHN_DANHBO ASC ";
-        //    return LinQConnection.getDataTable(sql);
-        //}
+       
+        public static DataSet ReportByDate(string month)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            query += " FROM TB_DONGNUOC WHERE MONTH(NGAYDONGNUOC)='" + month + "' AND YEAR(NGAYDONGNUOC)='" + DateTime.Now.Date.Year.ToString() + "'  ORDER BY NGAYDONGNUOC DESC";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DONGNUOC");
+
+            //query = "select * FROM TB_DHN_BAOCAO";
+            //adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            //adapter.Fill(ds, "TB_DHN_BAOCAO");
+
+            return ds;
+        }
+        public static DataSet ReportByYear(string month)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            query += " FROM TB_DONGNUOC WHERE YEAR(NGAYDONGNUOC)='" + month + "'  ORDER BY NGAYDONGNUOC DESC";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DONGNUOC");
+
+            //query = "select * FROM TB_DHN_BAOCAO";
+            //adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            //adapter.Fill(ds, "TB_DHN_BAOCAO");
+
+            return ds;
+        }
+
+        public static DataSet ReportByToDate(string tungay, string denngay)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            query += " FROM TB_DONGNUOC WHERE CONVERT(DATETIME,NGAYDONGNUOC,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103)  ORDER BY NGAYDONGNUOC DESC";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DONGNUOC");
+            return ds;
+        }
+
+        public static DataSet ReportByDate(string thang, string nam)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            query += " FROM TB_DONGNUOC WHERE MONTH(NGAYDONGNUOC)='" + thang + "' AND YEAR(NGAYDONGNUOC)='" + nam + "'  ORDER BY NGAYDONGNUOC DESC";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DONGNUOC");
+            return ds;
+        }
+
+        public static DataSet ReportByDay( string ngay)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            query += " FROM TB_DONGNUOC WHERE CONVERT(DATETIME,NGAYDONGNUOC,103) = CONVERT(DATETIME,'" + ngay + "',103) ORDER BY NGAYDONGNUOC DESC";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DONGNUOC");
+            return ds;
+        }
 
 
-        //public static int getMaxBangKe()
-        //{
-        //    string sql = "SELECT MAX(DHN_SOBANGKE)  FROM TB_THAYDHN where DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "'";
-        //    return LinQConnection.ExecuteCommand(sql);
-        //}
-        //public static int getMaxLanThay(string danhbo)
-        //{
-        //    string sql = "SELECT MAX(DHN_LANTHAY) FROM TB_THAYDHN WHERE DHN_DANHBO='" + danhbo + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "'";
-        //    return LinQConnection.ExecuteCommand(sql);
-        //}
-
-        //public static DataTable getLoaiBangKe()
-        //{
-        //    string sql = "SELECT LOAIBK,TENBANGKE";
-        //    sql += " FROM TB_LOAIBANGKE";
-        //    return LinQConnection.getDataTable(sql);
-        //}
-
-        //public static DataTable HistoryThay(string danhbo)
-        //{
-        //    string sql = "SELECT DHN_LANTHAY,DHN_LYDOTHAY AS 'TENBANGKE',DHN_SOBANGKE,DHN_NGAYBAOTHAY,HCT_NGAYGAN,HCT_TRONGAI";
-        //    sql += " FROM  TB_THAYDHN thay WHERE DHN_DANHBO='" + danhbo + "' ORDER BY DHN_LANTHAY ASC  ";
-        //    return LinQConnection.getDataTable(sql);
-        //}
-
-        
-        //public static TB_THAYDHN finByID_BAOTHAY(int id)
-        //{
-        //    try
-        //    {
-        //        db = new CapNuocTanHoaDataContext();
-        //        var query = from q in db.TB_THAYDHNs where q.ID_BAOTHAY == id select q;
-        //        return query.SingleOrDefault();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        log.Error(ex.Message);
-        //    }
-        //    return null;
-        //}
-
-        //public static bool deleteBAOTHAY(TB_THAYDHN THAY)
-        //{
-        //    try
-        //    {
-        //        db.TB_THAYDHNs.DeleteOnSubmit(THAY);
-        //        db.SubmitChanges();
-        //        LinQConnection.ExecuteCommand("UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='False' WHERE DANHBO='" + THAY.DHN_DANHBO + "'");
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        log.Error(ex.Message);
-        //    }
-        //    return false;
-        //}
-
-        //public static bool Update()
-        //{
-        //    try
-        //    {
-        //        db.SubmitChanges();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        log.Error(ex.Message);
-        //    }
-        //    return false;
-        //}
-
-        //public static TB_HIEUDONGHO finByHieuDH(string mahieu)
-        //{
-        //    try
-        //    {
-        //        var query = from q in db.TB_HIEUDONGHOs where q.HIEUDH == mahieu select q;
-        //        return query.SingleOrDefault();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        log.Error(ex.Message);
-        //    }
-        //    return null;
-        //}
-
-        //public static DataSet ReportBaoThay(string sobangke)
-        //{
-        //    DataSet ds = new DataSet();
-        //    CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
-        //    db.Connection.Open();
-        //    string query = "select *, N'" + DAL.SYS.C_USERS._fullName + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DHN_DANHBO ASC ";
-
-        //    SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-        //    adapter.Fill(ds, "V_DHN_BANGKE");
-
-        //    query = "select * FROM TB_DHN_BAOCAO";
-        //    adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-        //    adapter.Fill(ds, "TB_DHN_BAOCAO");
-
-        //    return ds;
-        //}
         //public static TB_THA YDHN finByBaoThay(int sobangke, string danhbo)
         //{
         //    try

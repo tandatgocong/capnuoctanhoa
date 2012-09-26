@@ -211,6 +211,29 @@
     <Compile Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.Designer.cs">
       <DependentUpon>tabThongKeVatTu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoiThuTien\BC\crpt_ThongTinDongNuoc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpt_ThongTinDongNuoc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiThuTien\BC\THONGTINDONGNUOC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>THONGTINDONGNUOC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DoiThuTien\TimKiemThongTin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiThuTien\TimKiemThongTin.Designer.cs">
+      <DependentUpon>TimKiemThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DoiThuTien\frm_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiThuTien\frm_ThongKe.Designer.cs">
+      <DependentUpon>frm_ThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DoiThuTien\frm_CatNuoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -913,6 +936,17 @@
     <None Include="Forms\DoiTCTB\BC\THONGKEVATTU.xss">
       <DependentUpon>THONGKEVATTU.xsd</DependentUpon>
     </None>
+    <None Include="Forms\DoiThuTien\BC\THONGTINDONGNUOC.xsc">
+      <DependentUpon>THONGTINDONGNUOC.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DoiThuTien\BC\THONGTINDONGNUOC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>THONGTINDONGNUOC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\DoiThuTien\BC\THONGTINDONGNUOC.xss">
+      <DependentUpon>THONGTINDONGNUOC.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\BC\BAOCAOTONGKET.xsc">
       <DependentUpon>BAOCAOTONGKET.xsd</DependentUpon>
     </None>
@@ -1163,6 +1197,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\Tab\tabThongKeVatTu.resx">
       <DependentUpon>tabThongKeVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiThuTien\BC\crpt_ThongTinDongNuoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpt_ThongTinDongNuoc.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiThuTien\TimKiemThongTin.resx">
+      <DependentUpon>TimKiemThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiThuTien\frm_ThongKe.resx">
+      <DependentUpon>frm_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiThuTien\frm_CatNuoc.resx">
       <DependentUpon>frm_CatNuoc.cs</DependentUpon>
