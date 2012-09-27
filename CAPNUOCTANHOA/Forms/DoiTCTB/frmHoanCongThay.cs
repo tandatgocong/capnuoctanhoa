@@ -423,11 +423,16 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                             log.Error("Cap Nhat Ho So Khach Hang : " + ex.Message);
                         }
                     }
-
+                    //else {
+                    //     TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(this.txtSoDanhBo.Text.Replace("-", ""));
+                    //     if (kh != null )
+                    //     {
+                    //         kh.BAOTHAY = false;
+                    //         DAL.DULIEUKH.C_DuLieuKhachHang.Update();
+                    //     }
+                    //}
 
                     LoadData();
-
-
                     MessageBox.Show(this, "Cập Nhật Hoàn Công Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //try
                     //{

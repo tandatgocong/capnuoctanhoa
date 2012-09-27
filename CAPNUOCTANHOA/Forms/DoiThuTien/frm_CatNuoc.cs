@@ -13,11 +13,13 @@ using CAPNUOCTANHOA.DAL.THUTIEN;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.DoiThuTien.BC;
 using CAPNUOCTANHOA.Forms.Reports;
+using log4net;
 
 namespace CAPNUOCTANHOA.Forms.DoiThuTien
 {
     public partial class frm_CatNuoc : UserControl
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(frm_CatNuoc).Name);
         public frm_CatNuoc()
         {
             InitializeComponent();
@@ -39,6 +41,8 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
             HOTEN.Text = "";
             SONHA.Text = "";
             TENDUONG.Text = "";
+            CSMO.Text = "";
+            CSDONG.Text = "";
             QUAN.Text = "";
             PHUONGT.Text = "";
             this.NGAYDONG.Value = DateTime.Now.Date;
@@ -63,21 +67,12 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
                     HOTEN.Text = dongnuoc.HOTEN;
                     SONHA.Text = dongnuoc.SONHA;
                     TENDUONG.Text = dongnuoc.TENDUONG;
-                    try
-                    {
-                        LinQ.QUAN q = DAL.SYS.C_Quan.finByMaQuan(int.Parse(dongnuoc.QUAN));
-                        if (q != null)
-                        {
-                            QUAN.Text = q.TENQUAN;
-                            LinQ.PHUONG ph = DAL.SYS.C_Phuong.finbyPhuong(q.MAQUAN, dongnuoc.PHUONG.Trim());
-                            PHUONGT.Text = ph.TENPHUONG;
-                        }
-                    }
-                    catch (Exception)
-                    {
-                    }
+                    PHUONGT.Text = dongnuoc.PHUONG;
+                    QUAN.Text = dongnuoc.QUAN;
                     NGAYDONG.ValueObject = dongnuoc.NGAYDONGNUOC;
                     NGAYMO.ValueObject = dongnuoc.NGAYMONUOC;
+                    CSDONG.Text = dongnuoc.CSDONG.ToString(); 
+                    CSMO.Text = dongnuoc.CSMO.ToString();
                     txtGhiChu.Text = dongnuoc.NOIDUNG;
 
                     btcapNhat.Enabled = true;
@@ -129,6 +124,27 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
 
         #endregion
 
+        public void InsertDongNuoc( TB_DULIEUKHACHHANG kh, DateTime NGAY, string csdong) {
+            if (kh != null)
+            {
+                string insertGM = "INSERT INTO LENHDONGNUOC(DANHBA, HIEU, CO, SOTHAN,LOAI_LENH, NGAYTHUCHIEN, GHICHU, NGAYCAPNHAT, SOLENH, NAM, CSDONG_MO) ";
+                insertGM += " VALUES ('" + kh.DANHBO + "','" + kh.HIEUDH + "','" + kh.CODH + "','" + kh.SOTHANDH + "','0','" + NGAY + "','DOI THU TIEN DONG NUOC',GETDATE(),'123','" + NGAY.Year.ToString() + "','" + csdong + "')";
+                log.Info("+++++++++++ LENHDONGNUOC : " + kh.DANHBO + "");
+                DAL.DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
+            }
+        }
+
+        public void InsertMoNuoc(TB_DULIEUKHACHHANG kh, DateTime NGAY, string csmo)
+        {
+            if (kh != null)
+            {
+                string insertGM = "INSERT INTO LENHDONGNUOC(DANHBA, HIEU, CO, SOTHAN,LOAI_LENH, NGAYTHUCHIEN, GHICHU, NGAYCAPNHAT, SOLENH, NAM, CSDONG_MO) ";
+                insertGM += " VALUES ('" + kh.DANHBO + "','" + kh.HIEUDH + "','" + kh.CODH + "','" + kh.SOTHANDH + "','2','" + NGAY + "','DOI THU TIEN MO NUOC NUOC',GETDATE(),'123','" + NGAY.Year.ToString() + "','" + csmo + "')";
+                log.Info("+++++++++++ LENHDONGNUOC : " + kh.DANHBO + "");
+                DAL.DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
+            }
+        }
+
         private void btThem_Click(object sender, EventArgs e)
         {
             TB_DONGNUOC dn = new TB_DONGNUOC();
@@ -139,14 +155,22 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
             dn.TENDUONG = this.TENDUONG.Text;
             dn.PHUONG = this.PHUONGT.Text;
             dn.QUAN = QUAN.Text;
-
+            int csdong_;
+            int csmo_;
+            
             if (!"".Equals(this.NGAYDONG.ValueObject + ""))
             {
                 dn.NGAYDONGNUOC = NGAYDONG.Value.Date;
+                int.TryParse(this.CSDONG.Text, out csdong_);
+                dn.CSDONG = csdong_;
+                InsertDongNuoc(DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(this.txtDanhBo.Text.Replace("-", "")), NGAYDONG.Value.Date, csdong_.ToString());
             }
             if (!"".Equals(this.NGAYMO.ValueObject + ""))
             {
                 dn.NGAYMONUOC = NGAYMO.Value.Date;
+                int.TryParse(this.CSMO.Text, out csmo_);
+                dn.CSMO = csmo_;
+                InsertMoNuoc(DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(this.txtDanhBo.Text.Replace("-", "")), NGAYMO.Value.Date,csmo_.ToString());
             }
             dn.NOIDUNG = this.txtGhiChu.Text;
             dn.CREATEDATE = DateTime.Now.Date;
@@ -163,8 +187,8 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
             {
                 MessageBox.Show(this, "Cập Nhật Đóng Nước Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            btcapNhat.Enabled = true;
-            btXoa.Enabled = true;
+            btcapNhat.Enabled = false;
+            btXoa.Enabled = false;
         }
 
         private void dataBangKe_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -232,15 +256,24 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
                 dongnuoc.TENDUONG = this.TENDUONG.Text;
                 dongnuoc.PHUONG = this.PHUONGT.Text;
                 dongnuoc.QUAN = QUAN.Text;
+                int csdong_;
+                int csmo_;
 
                 if (!"".Equals(this.NGAYDONG.ValueObject + ""))
                 {
                     dongnuoc.NGAYDONGNUOC = NGAYDONG.Value.Date;
+                    int.TryParse(this.CSDONG.Text, out csdong_);
+                    dongnuoc.CSDONG = csdong_;
+                    InsertDongNuoc(DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(this.txtDanhBo.Text.Replace("-", "")), NGAYDONG.Value.Date,csdong_.ToString());
                 }
                 if (!"".Equals(this.NGAYMO.ValueObject + ""))
                 {
                     dongnuoc.NGAYMONUOC = NGAYMO.Value.Date;
+                    int.TryParse(this.CSMO.Text, out csmo_);
+                    dongnuoc.CSMO = csmo_;
+                    InsertMoNuoc(DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(this.txtDanhBo.Text.Replace("-", "")), NGAYMO.Value.Date, csmo_.ToString());
                 }
+
                 dongnuoc.NOIDUNG = this.txtGhiChu.Text;
                 dongnuoc.MODIFYDATE = DateTime.Now.Date;
                 dongnuoc.MODIFYBY = DAL.SYS.C_USERS._userName;
@@ -268,7 +301,7 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
         private void btIn_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new crpt_ThongTinDongNuoc();
-            rp.SetDataSource(DAL.THUTIEN.C_ThuTien.getDongNuocByDate(DateTime.Now.Month.ToString()));
+            rp.SetDataSource(DAL.THUTIEN.C_ThuTien.ReportByDate(DateTime.Now.Month.ToString()));
             rp.SetParameterValue("title", "THÔNG TIN ĐÓNG NƯỚC THÁNG " + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString());
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();

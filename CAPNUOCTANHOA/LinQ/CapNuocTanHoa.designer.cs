@@ -19446,7 +19446,11 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private System.Nullable<System.DateTime> _NGAYDONGNUOC;
 		
+		private System.Nullable<int> _CSDONG;
+		
 		private System.Nullable<System.DateTime> _NGAYMONUOC;
+		
+		private System.Nullable<int> _CSMO;
 		
 		private string _NOIDUNG;
 		
@@ -19480,8 +19484,12 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnQUANChanged();
     partial void OnNGAYDONGNUOCChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYDONGNUOCChanged();
+    partial void OnCSDONGChanging(System.Nullable<int> value);
+    partial void OnCSDONGChanged();
     partial void OnNGAYMONUOCChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYMONUOCChanged();
+    partial void OnCSMOChanging(System.Nullable<int> value);
+    partial void OnCSMOChanged();
     partial void OnNOIDUNGChanging(string value);
     partial void OnNOIDUNGChanged();
     partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
@@ -19679,6 +19687,26 @@ namespace CAPNUOCTANHOA.LinQ
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CSDONG", DbType="Int")]
+		public System.Nullable<int> CSDONG
+		{
+			get
+			{
+				return this._CSDONG;
+			}
+			set
+			{
+				if ((this._CSDONG != value))
+				{
+					this.OnCSDONGChanging(value);
+					this.SendPropertyChanging();
+					this._CSDONG = value;
+					this.SendPropertyChanged("CSDONG");
+					this.OnCSDONGChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYMONUOC", DbType="DateTime")]
 		public System.Nullable<System.DateTime> NGAYMONUOC
 		{
@@ -19695,6 +19723,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._NGAYMONUOC = value;
 					this.SendPropertyChanged("NGAYMONUOC");
 					this.OnNGAYMONUOCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CSMO", DbType="Int")]
+		public System.Nullable<int> CSMO
+		{
+			get
+			{
+				return this._CSMO;
+			}
+			set
+			{
+				if ((this._CSMO != value))
+				{
+					this.OnCSMOChanging(value);
+					this.SendPropertyChanging();
+					this._CSMO = value;
+					this.SendPropertyChanged("CSMO");
+					this.OnCSMOChanged();
 				}
 			}
 		}

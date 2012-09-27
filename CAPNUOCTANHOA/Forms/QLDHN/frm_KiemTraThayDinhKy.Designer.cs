@@ -40,6 +40,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txtLoaiBo = new System.Windows.Forms.TextBox();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cbDot = new System.Windows.Forms.ComboBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.lbTongDHN = new DevComponents.DotNetBar.LabelX();
@@ -71,8 +73,6 @@
             this.BAOTHAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.txtLoaiBo = new System.Windows.Forms.TextBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -117,6 +117,25 @@
             this.splitContainer1.Size = new System.Drawing.Size(1238, 657);
             this.splitContainer1.SplitterDistance = 123;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // txtLoaiBo
+            // 
+            this.txtLoaiBo.Location = new System.Drawing.Point(560, 90);
+            this.txtLoaiBo.Name = "txtLoaiBo";
+            this.txtLoaiBo.Size = new System.Drawing.Size(132, 27);
+            this.txtLoaiBo.TabIndex = 712;
+            this.txtLoaiBo.Text = "K";
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.labelX3.Location = new System.Drawing.Point(560, 65);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(132, 22);
+            this.labelX3.TabIndex = 711;
+            this.labelX3.Text = "LOẠI BỎ CODE";
             // 
             // cbDot
             // 
@@ -511,24 +530,6 @@
             this.dafaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.dafaToolStripMenuItem.Text = "Tạo Mới Bảng Kê";
             this.dafaToolStripMenuItem.Click += new System.EventHandler(this.dafaToolStripMenuItem_Click);
-            // 
-            // labelX3
-            // 
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.labelX3.Location = new System.Drawing.Point(560, 65);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(132, 22);
-            this.labelX3.TabIndex = 711;
-            this.labelX3.Text = "LOẠI BỎ CODE";
-            // 
-            // txtLoaiBo
-            // 
-            this.txtLoaiBo.Location = new System.Drawing.Point(560, 90);
-            this.txtLoaiBo.Name = "txtLoaiBo";
-            this.txtLoaiBo.Size = new System.Drawing.Size(132, 27);
-            this.txtLoaiBo.TabIndex = 712;
             // 
             // frm_KiemTraThayDinhKy
             // 
