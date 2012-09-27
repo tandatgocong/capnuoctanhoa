@@ -65,7 +65,7 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
 
         public static DataTable getDongNuocByDate(string month)
         {
-            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY NGAYDONGNUOC  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
             sql += " FROM TB_DONGNUOC WHERE MONTH(NGAYDONGNUOC)='" + month + "'  AND YEAR(NGAYDONGNUOC)='" + DateTime.Now.Date.Year.ToString() + "' ORDER BY NGAYDONGNUOC DESC";
             return LinQConnection.getDataTable(sql);
         }
@@ -105,7 +105,7 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY NGAYDONGNUOC  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
             query += " FROM TB_DONGNUOC WHERE MONTH(NGAYDONGNUOC)='" + month + "' AND YEAR(NGAYDONGNUOC)='" + DateTime.Now.Date.Year.ToString() + "'  ORDER BY NGAYDONGNUOC DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DONGNUOC");
@@ -121,7 +121,7 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY NGAYDONGNUOC  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
             query += " FROM TB_DONGNUOC WHERE YEAR(NGAYDONGNUOC)='" + month + "'  ORDER BY NGAYDONGNUOC DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DONGNUOC");
@@ -138,7 +138,7 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY NGAYDONGNUOC  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
             query += " FROM TB_DONGNUOC WHERE CONVERT(DATETIME,NGAYDONGNUOC,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103)  ORDER BY NGAYDONGNUOC DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DONGNUOC");
@@ -150,7 +150,7 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY NGAYDONGNUOC  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
             query += " FROM TB_DONGNUOC WHERE MONTH(NGAYDONGNUOC)='" + thang + "' AND YEAR(NGAYDONGNUOC)='" + nam + "'  ORDER BY NGAYDONGNUOC DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DONGNUOC");
@@ -162,7 +162,7 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY NGAYDONGNUOC  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, HOPDONG,QUAN,PHUONG ";
             query += " FROM TB_DONGNUOC WHERE CONVERT(DATETIME,NGAYDONGNUOC,103) = CONVERT(DATETIME,'" + ngay + "',103) ORDER BY NGAYDONGNUOC DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DONGNUOC");
