@@ -297,7 +297,11 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
             
             private global::System.Data.DataColumn columnNGAYDONGNUOC;
             
+            private global::System.Data.DataColumn columnCSDONG;
+            
             private global::System.Data.DataColumn columnNGAYMONUOC;
+            
+            private global::System.Data.DataColumn columnCSMO;
             
             private global::System.Data.DataColumn columnNOIDUNG;
             
@@ -416,9 +420,25 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CSDONGColumn {
+                get {
+                    return this.columnCSDONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn NGAYMONUOCColumn {
                 get {
                     return this.columnNGAYMONUOC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CSMOColumn {
+                get {
+                    return this.columnCSMO;
                 }
             }
             
@@ -499,7 +519,23 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TB_DONGNUOCRow AddTB_DONGNUOCRow(string DANHBO, string HOPDONG, string HOTEN, string SONHA, string TENDUONG, string PHUONG, string QUAN, System.DateTime NGAYDONGNUOC, System.DateTime NGAYMONUOC, string NOIDUNG, System.DateTime CREATEDATE, string CREATEBY, System.DateTime MODIFYDATE, string MODIFYBY) {
+            public TB_DONGNUOCRow AddTB_DONGNUOCRow(
+                        string DANHBO, 
+                        string HOPDONG, 
+                        string HOTEN, 
+                        string SONHA, 
+                        string TENDUONG, 
+                        string PHUONG, 
+                        string QUAN, 
+                        System.DateTime NGAYDONGNUOC, 
+                        int CSDONG, 
+                        System.DateTime NGAYMONUOC, 
+                        int CSMO, 
+                        string NOIDUNG, 
+                        System.DateTime CREATEDATE, 
+                        string CREATEBY, 
+                        System.DateTime MODIFYDATE, 
+                        string MODIFYBY) {
                 TB_DONGNUOCRow rowTB_DONGNUOCRow = ((TB_DONGNUOCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -511,7 +547,9 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
                         PHUONG,
                         QUAN,
                         NGAYDONGNUOC,
+                        CSDONG,
                         NGAYMONUOC,
+                        CSMO,
                         NOIDUNG,
                         CREATEDATE,
                         CREATEBY,
@@ -555,7 +593,9 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
                 this.columnPHUONG = base.Columns["PHUONG"];
                 this.columnQUAN = base.Columns["QUAN"];
                 this.columnNGAYDONGNUOC = base.Columns["NGAYDONGNUOC"];
+                this.columnCSDONG = base.Columns["CSDONG"];
                 this.columnNGAYMONUOC = base.Columns["NGAYMONUOC"];
+                this.columnCSMO = base.Columns["CSMO"];
                 this.columnNOIDUNG = base.Columns["NOIDUNG"];
                 this.columnCREATEDATE = base.Columns["CREATEDATE"];
                 this.columnCREATEBY = base.Columns["CREATEBY"];
@@ -584,8 +624,12 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
                 base.Columns.Add(this.columnQUAN);
                 this.columnNGAYDONGNUOC = new global::System.Data.DataColumn("NGAYDONGNUOC", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAYDONGNUOC);
+                this.columnCSDONG = new global::System.Data.DataColumn("CSDONG", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCSDONG);
                 this.columnNGAYMONUOC = new global::System.Data.DataColumn("NGAYMONUOC", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAYMONUOC);
+                this.columnCSMO = new global::System.Data.DataColumn("CSMO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCSMO);
                 this.columnNOIDUNG = new global::System.Data.DataColumn("NOIDUNG", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNOIDUNG);
                 this.columnCREATEDATE = new global::System.Data.DataColumn("CREATEDATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -895,6 +939,22 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CSDONG {
+                get {
+                    try {
+                        return ((int)(this[this.tableTB_DONGNUOC.CSDONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CSDONG\' in table \'TB_DONGNUOC\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_DONGNUOC.CSDONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime NGAYMONUOC {
                 get {
                     try {
@@ -906,6 +966,22 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
                 }
                 set {
                     this[this.tableTB_DONGNUOC.NGAYMONUOCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CSMO {
+                get {
+                    try {
+                        return ((int)(this[this.tableTB_DONGNUOC.CSMOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CSMO\' in table \'TB_DONGNUOC\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_DONGNUOC.CSMOColumn] = value;
                 }
             }
             
@@ -1087,6 +1163,18 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCSDONGNull() {
+                return this.IsNull(this.tableTB_DONGNUOC.CSDONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCSDONGNull() {
+                this[this.tableTB_DONGNUOC.CSDONGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNGAYMONUOCNull() {
                 return this.IsNull(this.tableTB_DONGNUOC.NGAYMONUOCColumn);
             }
@@ -1095,6 +1183,18 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAYMONUOCNull() {
                 this[this.tableTB_DONGNUOC.NGAYMONUOCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCSMONull() {
+                return this.IsNull(this.tableTB_DONGNUOC.CSMOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCSMONull() {
+                this[this.tableTB_DONGNUOC.CSMOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1326,7 +1426,9 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC.THONGTINDONGNUOCTableAdapters {
             tableMapping.ColumnMappings.Add("PHUONG", "PHUONG");
             tableMapping.ColumnMappings.Add("QUAN", "QUAN");
             tableMapping.ColumnMappings.Add("NGAYDONGNUOC", "NGAYDONGNUOC");
+            tableMapping.ColumnMappings.Add("CSDONG", "CSDONG");
             tableMapping.ColumnMappings.Add("NGAYMONUOC", "NGAYMONUOC");
+            tableMapping.ColumnMappings.Add("CSMO", "CSMO");
             tableMapping.ColumnMappings.Add("NOIDUNG", "NOIDUNG");
             tableMapping.ColumnMappings.Add("CREATEDATE", "CREATEDATE");
             tableMapping.ColumnMappings.Add("CREATEBY", "CREATEBY");
@@ -1335,7 +1437,7 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC.THONGTINDONGNUOCTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TB_DONGNUOC] WHERE (([ID] = @Original_ID) AND ((@IsNull_DANHBO = 1 AND [DANHBO] IS NULL) OR ([DANHBO] = @Original_DANHBO)) AND ((@IsNull_HOPDONG = 1 AND [HOPDONG] IS NULL) OR ([HOPDONG] = @Original_HOPDONG)) AND ((@IsNull_PHUONG = 1 AND [PHUONG] IS NULL) OR ([PHUONG] = @Original_PHUONG)) AND ((@IsNull_QUAN = 1 AND [QUAN] IS NULL) OR ([QUAN] = @Original_QUAN)) AND ((@IsNull_NGAYDONGNUOC = 1 AND [NGAYDONGNUOC] IS NULL) OR ([NGAYDONGNUOC] = @Original_NGAYDONGNUOC)) AND ((@IsNull_NGAYMONUOC = 1 AND [NGAYMONUOC] IS NULL) OR ([NGAYMONUOC] = @Original_NGAYMONUOC)) AND ((@IsNull_CREATEDATE = 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@IsNull_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Original_MODIFYDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYBY] = @Original_MODIFYBY)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TB_DONGNUOC] WHERE (([ID] = @Original_ID) AND ((@IsNull_DANHBO = 1 AND [DANHBO] IS NULL) OR ([DANHBO] = @Original_DANHBO)) AND ((@IsNull_HOPDONG = 1 AND [HOPDONG] IS NULL) OR ([HOPDONG] = @Original_HOPDONG)) AND ((@IsNull_PHUONG = 1 AND [PHUONG] IS NULL) OR ([PHUONG] = @Original_PHUONG)) AND ((@IsNull_QUAN = 1 AND [QUAN] IS NULL) OR ([QUAN] = @Original_QUAN)) AND ((@IsNull_NGAYDONGNUOC = 1 AND [NGAYDONGNUOC] IS NULL) OR ([NGAYDONGNUOC] = @Original_NGAYDONGNUOC)) AND ((@IsNull_CSDONG = 1 AND [CSDONG] IS NULL) OR ([CSDONG] = @Original_CSDONG)) AND ((@IsNull_NGAYMONUOC = 1 AND [NGAYMONUOC] IS NULL) OR ([NGAYMONUOC] = @Original_NGAYMONUOC)) AND ((@IsNull_CSMO = 1 AND [CSMO] IS NULL) OR ([CSMO] = @Original_CSMO)) AND ((@IsNull_CREATEDATE = 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@IsNull_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Original_MODIFYDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYBY] = @Original_MODIFYBY)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DANHBO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DANHBO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1348,8 +1450,12 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC.THONGTINDONGNUOCTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QUAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NGAYDONGNUOC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYDONGNUOC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NGAYDONGNUOC", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYDONGNUOC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CSDONG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSDONG", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CSDONG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSDONG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NGAYMONUOC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYMONUOC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NGAYMONUOC", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYMONUOC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CSMO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSMO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CSMO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSMO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CREATEDATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CREATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CREATEBY", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEBY", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1360,8 +1466,8 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien.BC.THONGTINDONGNUOCTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MODIFYBY", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MODIFYBY", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TB_DONGNUOC] ([DANHBO], [HOPDONG], [HOTEN], [SONHA], [TENDUONG], [PHUONG], [QUAN], [NGAYDONGNUOC], [NGAYMONUOC], [NOIDUNG], [CREATEDATE], [CREATEBY], [MODIFYDATE], [MODIFYBY]) VALUES (@DANHBO, @HOPDONG, @HOTEN, @SONHA, @TENDUONG, @PHUONG, @QUAN, @NGAYDONGNUOC, @NGAYMONUOC, @NOIDUNG, @CREATEDATE, @CREATEBY, @MODIFYDATE, @MODIFYBY);
-SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM TB_DONGNUOC WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TB_DONGNUOC] ([DANHBO], [HOPDONG], [HOTEN], [SONHA], [TENDUONG], [PHUONG], [QUAN], [NGAYDONGNUOC], [CSDONG], [NGAYMONUOC], [CSMO], [NOIDUNG], [CREATEDATE], [CREATEBY], [MODIFYDATE], [MODIFYBY]) VALUES (@DANHBO, @HOPDONG, @HOTEN, @SONHA, @TENDUONG, @PHUONG, @QUAN, @NGAYDONGNUOC, @CSDONG, @NGAYMONUOC, @CSMO, @NOIDUNG, @CREATEDATE, @CREATEBY, @MODIFYDATE, @MODIFYBY);
+SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, CSDONG, NGAYMONUOC, CSMO, NOIDUNG, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM TB_DONGNUOC WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DANHBO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DANHBO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HOPDONG", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HOPDONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1371,7 +1477,9 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PHUONG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PHUONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAYDONGNUOC", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYDONGNUOC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CSDONG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSDONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAYMONUOC", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYMONUOC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CSMO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSMO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOIDUNG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOIDUNG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREATEBY", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEBY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1379,8 +1487,27 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MODIFYBY", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MODIFYBY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TB_DONGNUOC] SET [DANHBO] = @DANHBO, [HOPDONG] = @HOPDONG, [HOTEN] = @HOTEN, [SONHA] = @SONHA, [TENDUONG] = @TENDUONG, [PHUONG] = @PHUONG, [QUAN] = @QUAN, [NGAYDONGNUOC] = @NGAYDONGNUOC, [NGAYMONUOC] = @NGAYMONUOC, [NOIDUNG] = @NOIDUNG, [CREATEDATE] = @CREATEDATE, [CREATEBY] = @CREATEBY, [MODIFYDATE] = @MODIFYDATE, [MODIFYBY] = @MODIFYBY WHERE (([ID] = @Original_ID) AND ((@IsNull_DANHBO = 1 AND [DANHBO] IS NULL) OR ([DANHBO] = @Original_DANHBO)) AND ((@IsNull_HOPDONG = 1 AND [HOPDONG] IS NULL) OR ([HOPDONG] = @Original_HOPDONG)) AND ((@IsNull_PHUONG = 1 AND [PHUONG] IS NULL) OR ([PHUONG] = @Original_PHUONG)) AND ((@IsNull_QUAN = 1 AND [QUAN] IS NULL) OR ([QUAN] = @Original_QUAN)) AND ((@IsNull_NGAYDONGNUOC = 1 AND [NGAYDONGNUOC] IS NULL) OR ([NGAYDONGNUOC] = @Original_NGAYDONGNUOC)) AND ((@IsNull_NGAYMONUOC = 1 AND [NGAYMONUOC] IS NULL) OR ([NGAYMONUOC] = @Original_NGAYMONUOC)) AND ((@IsNull_CREATEDATE = 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@IsNull_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Original_MODIFYDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYBY] = @Original_MODIFYBY)));
-SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM TB_DONGNUOC WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[TB_DONGNUOC] SET [DANHBO] = @DANHBO, [HOPDONG] = @HOPDONG, [HOTEN] " +
+                "= @HOTEN, [SONHA] = @SONHA, [TENDUONG] = @TENDUONG, [PHUONG] = @PHUONG, [QUAN] =" +
+                " @QUAN, [NGAYDONGNUOC] = @NGAYDONGNUOC, [CSDONG] = @CSDONG, [NGAYMONUOC] = @NGAY" +
+                "MONUOC, [CSMO] = @CSMO, [NOIDUNG] = @NOIDUNG, [CREATEDATE] = @CREATEDATE, [CREAT" +
+                "EBY] = @CREATEBY, [MODIFYDATE] = @MODIFYDATE, [MODIFYBY] = @MODIFYBY WHERE (([ID" +
+                "] = @Original_ID) AND ((@IsNull_DANHBO = 1 AND [DANHBO] IS NULL) OR ([DANHBO] = " +
+                "@Original_DANHBO)) AND ((@IsNull_HOPDONG = 1 AND [HOPDONG] IS NULL) OR ([HOPDONG" +
+                "] = @Original_HOPDONG)) AND ((@IsNull_PHUONG = 1 AND [PHUONG] IS NULL) OR ([PHUO" +
+                "NG] = @Original_PHUONG)) AND ((@IsNull_QUAN = 1 AND [QUAN] IS NULL) OR ([QUAN] =" +
+                " @Original_QUAN)) AND ((@IsNull_NGAYDONGNUOC = 1 AND [NGAYDONGNUOC] IS NULL) OR " +
+                "([NGAYDONGNUOC] = @Original_NGAYDONGNUOC)) AND ((@IsNull_CSDONG = 1 AND [CSDONG]" +
+                " IS NULL) OR ([CSDONG] = @Original_CSDONG)) AND ((@IsNull_NGAYMONUOC = 1 AND [NG" +
+                "AYMONUOC] IS NULL) OR ([NGAYMONUOC] = @Original_NGAYMONUOC)) AND ((@IsNull_CSMO " +
+                "= 1 AND [CSMO] IS NULL) OR ([CSMO] = @Original_CSMO)) AND ((@IsNull_CREATEDATE =" +
+                " 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@Is" +
+                "Null_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) " +
+                "AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Origi" +
+                "nal_MODIFYDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYB" +
+                "Y] = @Original_MODIFYBY)));\r\nSELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG," +
+                " PHUONG, QUAN, NGAYDONGNUOC, CSDONG, NGAYMONUOC, CSMO, NOIDUNG, CREATEDATE, CREA" +
+                "TEBY, MODIFYDATE, MODIFYBY FROM TB_DONGNUOC WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DANHBO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DANHBO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HOPDONG", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HOPDONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1390,7 +1517,9 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PHUONG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PHUONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAYDONGNUOC", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYDONGNUOC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CSDONG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSDONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAYMONUOC", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYMONUOC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CSMO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSMO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOIDUNG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOIDUNG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREATEBY", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEBY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1407,8 +1536,12 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QUAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NGAYDONGNUOC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYDONGNUOC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NGAYDONGNUOC", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYDONGNUOC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CSDONG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSDONG", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CSDONG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSDONG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NGAYMONUOC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYMONUOC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NGAYMONUOC", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAYMONUOC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CSMO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSMO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CSMO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CSMO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CREATEDATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CREATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CREATEBY", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEBY", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1433,9 +1566,9 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, N" +
-                "GAYMONUOC, NOIDUNG, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM dbo.TB_DONGN" +
-                "UOC";
+            this._commandCollection[0].CommandText = "SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, C" +
+                "SDONG, NGAYMONUOC, CSMO, NOIDUNG, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FRO" +
+                "M dbo.TB_DONGNUOC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1496,7 +1629,7 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_DANHBO, string Original_HOPDONG, string Original_PHUONG, string Original_QUAN, global::System.Nullable<global::System.DateTime> Original_NGAYDONGNUOC, global::System.Nullable<global::System.DateTime> Original_NGAYMONUOC, global::System.Nullable<global::System.DateTime> Original_CREATEDATE, string Original_CREATEBY, global::System.Nullable<global::System.DateTime> Original_MODIFYDATE, string Original_MODIFYBY) {
+        public virtual int Delete(int Original_ID, string Original_DANHBO, string Original_HOPDONG, string Original_PHUONG, string Original_QUAN, global::System.Nullable<global::System.DateTime> Original_NGAYDONGNUOC, global::System.Nullable<int> Original_CSDONG, global::System.Nullable<global::System.DateTime> Original_NGAYMONUOC, global::System.Nullable<int> Original_CSMO, global::System.Nullable<global::System.DateTime> Original_CREATEDATE, string Original_CREATEBY, global::System.Nullable<global::System.DateTime> Original_MODIFYDATE, string Original_MODIFYBY) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_DANHBO == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1538,45 +1671,61 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_NGAYMONUOC.HasValue == true)) {
+            if ((Original_CSDONG.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_NGAYMONUOC.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_CSDONG.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_CREATEDATE.HasValue == true)) {
+            if ((Original_NGAYMONUOC.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_CREATEDATE.Value));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_NGAYMONUOC.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_CREATEBY == null)) {
+            if ((Original_CSMO.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_CSMO.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_CREATEBY));
-            }
-            if ((Original_MODIFYDATE.HasValue == true)) {
+            if ((Original_CREATEDATE.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((System.DateTime)(Original_MODIFYDATE.Value));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((System.DateTime)(Original_CREATEDATE.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_MODIFYBY == null)) {
+            if ((Original_CREATEBY == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_MODIFYBY));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_CREATEBY));
+            }
+            if ((Original_MODIFYDATE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((System.DateTime)(Original_MODIFYDATE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MODIFYBY == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_MODIFYBY));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1598,7 +1747,23 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string DANHBO, string HOPDONG, string HOTEN, string SONHA, string TENDUONG, string PHUONG, string QUAN, global::System.Nullable<global::System.DateTime> NGAYDONGNUOC, global::System.Nullable<global::System.DateTime> NGAYMONUOC, string NOIDUNG, global::System.Nullable<global::System.DateTime> CREATEDATE, string CREATEBY, global::System.Nullable<global::System.DateTime> MODIFYDATE, string MODIFYBY) {
+        public virtual int Insert(
+                    string DANHBO, 
+                    string HOPDONG, 
+                    string HOTEN, 
+                    string SONHA, 
+                    string TENDUONG, 
+                    string PHUONG, 
+                    string QUAN, 
+                    global::System.Nullable<global::System.DateTime> NGAYDONGNUOC, 
+                    global::System.Nullable<int> CSDONG, 
+                    global::System.Nullable<global::System.DateTime> NGAYMONUOC, 
+                    global::System.Nullable<int> CSMO, 
+                    string NOIDUNG, 
+                    global::System.Nullable<global::System.DateTime> CREATEDATE, 
+                    string CREATEBY, 
+                    global::System.Nullable<global::System.DateTime> MODIFYDATE, 
+                    string MODIFYBY) {
             if ((DANHBO == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1647,41 +1812,53 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((NGAYMONUOC.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(NGAYMONUOC.Value));
+            if ((CSDONG.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(CSDONG.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((NOIDUNG == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((NGAYMONUOC.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(NGAYMONUOC.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(NOIDUNG));
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((CREATEDATE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(CREATEDATE.Value));
+            if ((CSMO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(CSMO.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((CREATEBY == null)) {
+            if ((NOIDUNG == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(CREATEBY));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(NOIDUNG));
             }
-            if ((MODIFYDATE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(MODIFYDATE.Value));
+            if ((CREATEDATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(CREATEDATE.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((MODIFYBY == null)) {
+            if ((CREATEBY == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(MODIFYBY));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(CREATEBY));
+            }
+            if ((MODIFYDATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((System.DateTime)(MODIFYDATE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((MODIFYBY == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(MODIFYBY));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1712,7 +1889,9 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
                     string PHUONG, 
                     string QUAN, 
                     global::System.Nullable<global::System.DateTime> NGAYDONGNUOC, 
+                    global::System.Nullable<int> CSDONG, 
                     global::System.Nullable<global::System.DateTime> NGAYMONUOC, 
+                    global::System.Nullable<int> CSMO, 
                     string NOIDUNG, 
                     global::System.Nullable<global::System.DateTime> CREATEDATE, 
                     string CREATEBY, 
@@ -1724,7 +1903,9 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
                     string Original_PHUONG, 
                     string Original_QUAN, 
                     global::System.Nullable<global::System.DateTime> Original_NGAYDONGNUOC, 
+                    global::System.Nullable<int> Original_CSDONG, 
                     global::System.Nullable<global::System.DateTime> Original_NGAYMONUOC, 
+                    global::System.Nullable<int> Original_CSMO, 
                     global::System.Nullable<global::System.DateTime> Original_CREATEDATE, 
                     string Original_CREATEBY, 
                     global::System.Nullable<global::System.DateTime> Original_MODIFYDATE, 
@@ -1778,124 +1959,152 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((NGAYMONUOC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(NGAYMONUOC.Value));
+            if ((CSDONG.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(CSDONG.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((NOIDUNG == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((NGAYMONUOC.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(NGAYMONUOC.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(NOIDUNG));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((CREATEDATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(CREATEDATE.Value));
+            if ((CSMO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(CSMO.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((CREATEBY == null)) {
+            if ((NOIDUNG == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(CREATEBY));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(NOIDUNG));
             }
-            if ((MODIFYDATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(MODIFYDATE.Value));
+            if ((CREATEDATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(CREATEDATE.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((MODIFYBY == null)) {
+            if ((CREATEBY == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(MODIFYBY));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(CREATEBY));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ID));
-            if ((Original_DANHBO == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            if ((MODIFYDATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(MODIFYDATE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_DANHBO));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_HOPDONG == null)) {
+            if ((MODIFYBY == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(MODIFYBY));
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_ID));
+            if ((Original_DANHBO == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_HOPDONG));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_DANHBO));
             }
-            if ((Original_PHUONG == null)) {
+            if ((Original_HOPDONG == null)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_PHUONG));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_HOPDONG));
             }
-            if ((Original_QUAN == null)) {
+            if ((Original_PHUONG == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_QUAN));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_PHUONG));
             }
-            if ((Original_NGAYDONGNUOC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_NGAYDONGNUOC.Value));
-            }
-            else {
+            if ((Original_QUAN == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((Original_NGAYMONUOC.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_QUAN));
+            }
+            if ((Original_NGAYDONGNUOC.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_NGAYMONUOC.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_NGAYDONGNUOC.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Original_CREATEDATE.HasValue == true)) {
+            if ((Original_CSDONG.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(Original_CREATEDATE.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_CSDONG.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            if ((Original_CREATEBY == null)) {
+            if ((Original_NGAYMONUOC.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(Original_NGAYMONUOC.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_CREATEBY));
-            }
-            if ((Original_MODIFYDATE.HasValue == true)) {
+            if ((Original_CSMO.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(Original_MODIFYDATE.Value));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_CSMO.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((Original_MODIFYBY == null)) {
+            if ((Original_CREATEDATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((System.DateTime)(Original_CREATEDATE.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_MODIFYBY));
+            if ((Original_CREATEBY == null)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(ID));
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_CREATEBY));
+            }
+            if ((Original_MODIFYDATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_MODIFYDATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MODIFYBY == null)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_MODIFYBY));
+            }
+            this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1925,7 +2134,9 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
                     string PHUONG, 
                     string QUAN, 
                     global::System.Nullable<global::System.DateTime> NGAYDONGNUOC, 
+                    global::System.Nullable<int> CSDONG, 
                     global::System.Nullable<global::System.DateTime> NGAYMONUOC, 
+                    global::System.Nullable<int> CSMO, 
                     string NOIDUNG, 
                     global::System.Nullable<global::System.DateTime> CREATEDATE, 
                     string CREATEBY, 
@@ -1937,12 +2148,14 @@ SELECT ID, DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, 
                     string Original_PHUONG, 
                     string Original_QUAN, 
                     global::System.Nullable<global::System.DateTime> Original_NGAYDONGNUOC, 
+                    global::System.Nullable<int> Original_CSDONG, 
                     global::System.Nullable<global::System.DateTime> Original_NGAYMONUOC, 
+                    global::System.Nullable<int> Original_CSMO, 
                     global::System.Nullable<global::System.DateTime> Original_CREATEDATE, 
                     string Original_CREATEBY, 
                     global::System.Nullable<global::System.DateTime> Original_MODIFYDATE, 
                     string Original_MODIFYBY) {
-            return this.Update(DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, NGAYMONUOC, NOIDUNG, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY, Original_ID, Original_DANHBO, Original_HOPDONG, Original_PHUONG, Original_QUAN, Original_NGAYDONGNUOC, Original_NGAYMONUOC, Original_CREATEDATE, Original_CREATEBY, Original_MODIFYDATE, Original_MODIFYBY, Original_ID);
+            return this.Update(DANHBO, HOPDONG, HOTEN, SONHA, TENDUONG, PHUONG, QUAN, NGAYDONGNUOC, CSDONG, NGAYMONUOC, CSMO, NOIDUNG, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY, Original_ID, Original_DANHBO, Original_HOPDONG, Original_PHUONG, Original_QUAN, Original_NGAYDONGNUOC, Original_CSDONG, Original_NGAYMONUOC, Original_CSMO, Original_CREATEDATE, Original_CREATEBY, Original_MODIFYDATE, Original_MODIFYBY, Original_ID);
         }
     }
     
