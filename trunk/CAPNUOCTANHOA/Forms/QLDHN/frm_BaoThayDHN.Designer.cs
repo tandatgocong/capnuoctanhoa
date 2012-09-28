@@ -165,10 +165,10 @@
             // 
             // 
             this.txtSoBangKe.Border.Class = "TextBoxBorder";
-            this.txtSoBangKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoBangKe.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoBangKe.Location = new System.Drawing.Point(155, 91);
             this.txtSoBangKe.Name = "txtSoBangKe";
-            this.txtSoBangKe.Size = new System.Drawing.Size(154, 20);
+            this.txtSoBangKe.Size = new System.Drawing.Size(154, 27);
             this.txtSoBangKe.TabIndex = 2;
             this.txtSoBangKe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoBangKe_KeyPress);
             // 
@@ -216,11 +216,11 @@
             // 
             this.txtTenKH.Border.Class = "TextBoxBorder";
             this.txtTenKH.FocusHighlightColor = System.Drawing.Color.Transparent;
-            this.txtTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKH.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.ForeColor = System.Drawing.Color.Red;
             this.txtTenKH.Location = new System.Drawing.Point(155, 123);
             this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(205, 20);
+            this.txtTenKH.Size = new System.Drawing.Size(205, 27);
             this.txtTenKH.TabIndex = 4;
             this.txtTenKH.WatermarkColor = System.Drawing.Color.Transparent;
             // 
@@ -232,11 +232,11 @@
             // 
             this.txtDiaChi.Border.Class = "TextBoxBorder";
             this.txtDiaChi.FocusHighlightColor = System.Drawing.Color.Transparent;
-            this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.Red;
             this.txtDiaChi.Location = new System.Drawing.Point(444, 122);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(286, 20);
+            this.txtDiaChi.Size = new System.Drawing.Size(286, 27);
             this.txtDiaChi.TabIndex = 5;
             this.txtDiaChi.WatermarkColor = System.Drawing.Color.Transparent;
             // 
@@ -255,11 +255,11 @@
             // 
             // 
             this.txtHieu.Border.Class = "TextBoxBorder";
-            this.txtHieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHieu.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHieu.ForeColor = System.Drawing.Color.Red;
             this.txtHieu.Location = new System.Drawing.Point(359, 155);
             this.txtHieu.Name = "txtHieu";
-            this.txtHieu.Size = new System.Drawing.Size(109, 20);
+            this.txtHieu.Size = new System.Drawing.Size(109, 27);
             this.txtHieu.TabIndex = 7;
             // 
             // labelX9
@@ -277,11 +277,11 @@
             // 
             // 
             this.txtCo.Border.Class = "TextBoxBorder";
-            this.txtCo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCo.ForeColor = System.Drawing.Color.Red;
             this.txtCo.Location = new System.Drawing.Point(503, 154);
             this.txtCo.Name = "txtCo";
-            this.txtCo.Size = new System.Drawing.Size(42, 20);
+            this.txtCo.Size = new System.Drawing.Size(42, 27);
             this.txtCo.TabIndex = 8;
             this.txtCo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -300,11 +300,11 @@
             // 
             // 
             this.txtSoThan.Border.Class = "TextBoxBorder";
-            this.txtSoThan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoThan.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoThan.ForeColor = System.Drawing.Color.Red;
             this.txtSoThan.Location = new System.Drawing.Point(629, 153);
             this.txtSoThan.Name = "txtSoThan";
-            this.txtSoThan.Size = new System.Drawing.Size(101, 20);
+            this.txtSoThan.Size = new System.Drawing.Size(101, 27);
             this.txtSoThan.TabIndex = 9;
             this.txtSoThan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -520,11 +520,11 @@
             // 
             // 
             this.txtChiThan.Border.Class = "TextBoxBorder";
-            this.txtChiThan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChiThan.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChiThan.ForeColor = System.Drawing.Color.Red;
             this.txtChiThan.Location = new System.Drawing.Point(155, 186);
             this.txtChiThan.Name = "txtChiThan";
-            this.txtChiThan.Size = new System.Drawing.Size(112, 20);
+            this.txtChiThan.Size = new System.Drawing.Size(112, 27);
             this.txtChiThan.TabIndex = 10;
             this.txtChiThan.Text = "CON";
             this.txtChiThan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -544,11 +544,11 @@
             // 
             // 
             this.txtChiGoc.Border.Class = "TextBoxBorder";
-            this.txtChiGoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChiGoc.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChiGoc.ForeColor = System.Drawing.Color.Red;
             this.txtChiGoc.Location = new System.Drawing.Point(359, 185);
             this.txtChiGoc.Name = "txtChiGoc";
-            this.txtChiGoc.Size = new System.Drawing.Size(109, 20);
+            this.txtChiGoc.Size = new System.Drawing.Size(109, 27);
             this.txtChiGoc.TabIndex = 11;
             this.txtChiGoc.Text = "CON";
             this.txtChiGoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -577,10 +577,10 @@
             // 
             // 
             this.txtLyDo.Border.Class = "TextBoxBorder";
-            this.txtLyDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLyDo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLyDo.Location = new System.Drawing.Point(359, 220);
             this.txtLyDo.Name = "txtLyDo";
-            this.txtLyDo.Size = new System.Drawing.Size(371, 20);
+            this.txtLyDo.Size = new System.Drawing.Size(371, 27);
             this.txtLyDo.TabIndex = 14;
             // 
             // btThem
@@ -692,12 +692,12 @@
             // 
             // txtSoDanhBo
             // 
-            this.txtSoDanhBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDanhBo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDanhBo.ForeColor = System.Drawing.Color.Red;
             this.txtSoDanhBo.Location = new System.Drawing.Point(444, 90);
             this.txtSoDanhBo.Mask = "0000-000-0000";
             this.txtSoDanhBo.Name = "txtSoDanhBo";
-            this.txtSoDanhBo.Size = new System.Drawing.Size(143, 20);
+            this.txtSoDanhBo.Size = new System.Drawing.Size(143, 27);
             this.txtSoDanhBo.TabIndex = 3;
             this.txtSoDanhBo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSoDanhBo.TextChanged += new System.EventHandler(this.txtSoDanhBo_TextChanged);
@@ -710,11 +710,11 @@
             // 
             // 
             this.txtChiSoThay.Border.Class = "TextBoxBorder";
-            this.txtChiSoThay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChiSoThay.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChiSoThay.ForeColor = System.Drawing.Color.Red;
             this.txtChiSoThay.Location = new System.Drawing.Point(629, 185);
             this.txtChiSoThay.Name = "txtChiSoThay";
-            this.txtChiSoThay.Size = new System.Drawing.Size(101, 20);
+            this.txtChiSoThay.Size = new System.Drawing.Size(101, 27);
             this.txtChiSoThay.TabIndex = 12;
             this.txtChiSoThay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChiSoThay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChiSoThay_KeyPress);
@@ -870,11 +870,11 @@
             // 
             // 
             this.txtMaLoTrinh.Border.Class = "TextBoxBorder";
-            this.txtMaLoTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaLoTrinh.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaLoTrinh.ForeColor = System.Drawing.Color.Red;
             this.txtMaLoTrinh.Location = new System.Drawing.Point(155, 219);
             this.txtMaLoTrinh.Name = "txtMaLoTrinh";
-            this.txtMaLoTrinh.Size = new System.Drawing.Size(112, 20);
+            this.txtMaLoTrinh.Size = new System.Drawing.Size(112, 27);
             this.txtMaLoTrinh.TabIndex = 13;
             this.txtMaLoTrinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -884,10 +884,10 @@
             // 
             // 
             this.txtGhiChu.Border.Class = "TextBoxBorder";
-            this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGhiChu.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Location = new System.Drawing.Point(155, 254);
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(575, 20);
+            this.txtGhiChu.Size = new System.Drawing.Size(575, 27);
             this.txtGhiChu.TabIndex = 14;
             // 
             // labelX16
