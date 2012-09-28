@@ -14,6 +14,7 @@ using System.Configuration;
 using log4net;
 using CAPNUOCTANHOA.Forms.QLDHN;
 using CAPNUOCTANHOA.Forms.TimKiem;
+using CAPNUOCTANHOA.LinhTinh;
 
 namespace CAPNUOCTANHOA
 {
@@ -23,76 +24,136 @@ namespace CAPNUOCTANHOA
         public Form1()
         {
             InitializeComponent();
-
-            //// MessageBox.Show(this, );
-            // //panel1.Controls.Add(new frm_LayDuLieuGanMoi_Ky());
-
-
-            
-            // CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
-            // db.Connection.Open();
-            // string query = "SELECT * FROM TB_THONGKEDHN WHERE HIEUCU='False'";
-
-            // SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            // adapter.Fill(ds, "TB_THONGKEDHN");
-
-
-            // query = "SELECT * FROM TB_THONGKEDHN  WHERE HIEUCU='True'";
-            // adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            // adapter.Fill(ds, "TB_THONGKEDHN_CU");
-
-            // query = "SELECT SUM(CO15) AS SUM_CO15, SUM(CO20) AS SUM_CO20, SUM(CO25) AS SUM_CO25, SUM(CO40) AS SUM_CO40, SUM(CO50) AS SUM_CO50, SUM(CO80) AS SUM_CO80, SUM(CO100) AS SUM_CO100, SUM(CO150) AS SUM_CO150, SUM(CO200) AS SUM_CO200, SUM(NHOCO15) AS SUM_NHOCO15, SUM(NHOCO20) AS SUM_NHOCO20, SUM(NHOCO25) AS SUM_NHOCO25, SUM(NHOCO40) AS SUM_NHOCO40, SUM(NHOCO50) AS SUM_NHOCO50, SUM(NHOCO80) AS SUM_NHOCO80, SUM(NHOCO100) AS SUM_NHOCO100, SUM(NHOCO150) AS SUM_NHOCO150, SUM(NHOCO200) AS SUM_NHOCO200, SUM(LONCO15) AS SUM_LONCO15, SUM(LONCO20) AS SUM_LONCO20, SUM(LONCO25) AS SUM_LONCO25, SUM(LONCO40) AS SUM_LONCO40, SUM(LONCO50) AS SUM_LONCO50, SUM(LONCO80) AS SUM_LONCO80, SUM(LONCO100) AS SUM_LONCO100, SUM(LONCO150) AS SUM_LONCO150, SUM(LONCO200) AS SUM_LONCO200 FROM TB_THONGKEDHN";
-            // adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            // adapter.Fill(ds, "TB_THONGKEDHN_SUM");
-
-
-
-            ////string user = "SELECT USERNAME, UPPER(FULLNAME) AS 'FULLNAME' FROM USERS WHERE USERNAME='" + nguoiduyet + "'";
-            ////SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
-            ////ct.Fill(ds, "USERS");
-
-            ////string bc = "SELECT * FROM KH_TC_BAOCAO ";
-            ////ct = new SqlDataAdapter(bc, db.Connection.ConnectionString);
-            ////ct.Fill(ds, "KH_TC_BAOCAO");
-
-            //DataSet ds = new DataSet();
-            //DataTable dt = new DataTable("TIEUTHU");
-            //dt = showCustomInformationDetail("13132164598", 2012);
-            //ds.Tables.Add(dt);            
-            ReportDocument rp = new rpt_INTHUMOI();            
-            //DataTable tabl = ds.Tables.Add("TIEUTHU");
-            //tabl = showCustomInformationDetail("13132164598", 2012);
-            rp.SetDataSource(getData());
-        
-            //rp.SetParameterValue("KY",4);
-            //rp.SetParameterValue("NAM",2012);
-           // rp.PrintToPrinter(1, false, 0, 0);
-            crystalReportViewer1.ReportSource = rp;
+            cbNhanVien.DataSource = DAL.QLDHN.C_QuanLyDongHoNuoc.getTable_CHAMCONG(3);
+            cbNhanVien.DisplayMember = "FULLNAME";
+            cbNhanVien.ValueMember = "MAYDS";
+     
+           
             //  dataGridView1.DataSource = showCustomInformationDetail("13132164598",2012);
 
+        }
+        public void ViewReport() {
+            ReportDocument rp = new rpt_ThiDuaGiamHoaDon();
+            rp.SetDataSource(getData());
+            rp.SetParameterValue("TEN", cbNhanVien.Text.ToUpper());
+            rp.SetParameterValue("TO", "TÂN PHÚ");
+            crystalReportViewer1.ReportSource = rp;
         }
         private DataSet getData()
         {
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             DataSet ds = new DataSet();
+            string query = "SELECT TOP(20) * FROM THIDUA_GIAMHOADON WHERE ";
+            query += " TTKY7=0 and (TTKY8<>0  and TTKY9<>0 and TTKY10<>0 ) ";
+            query+="   AND CONVERT(int,SUBSTRING(LOTRINH,3,2))= "+cbNhanVien.SelectedValue;
+             query += " ORDER BY TTKY8 desc ,TTKY9 desc,TTKY10 desc ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
 
-           string query = "select * FROM W_THUMOI_";
-           SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-       
-            adapter.Fill(ds, "W_THUMOI_");
+           adapter.Fill(ds, "THIDUA_GIAMHOADON");
             return ds;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile2"].ConnectionString;
 
-            //List<TB_DULIEUKHACHHANG> list = DAL.DULIEUKH.C_DuLieuKhachHang.getAllKHACHHANG();
-            //foreach (var item in list)
-            //{
-            //   // string insert = "UPDATE HANDHELD SET HODONG='" + item.HOPDONG + "', TENKH='" + item.HOTEN + "', SONHA='" + item.SONHA + "',TENDUONG='" + item.TENDUONG + "',PHUONG='" + item.PHUONG + "',QUAN='" + item.QUAN + "' WHERE DANHBO='" + item.DANHBO + "' ";
-            //    log.Info(item.DANHBO + "");
-            //    DAL.OledbConnection.ExecuteCommand(connectionString, item.HOPDONG, item.HOTEN, item.SONHA, item.TENDUONG, item.PHUONG, item.QUAN, item.DANHBO);
-            //  }
+        public void ViewReport2()
+        {
+            ReportDocument rp = new rpt_ThiDuaGiamHoaDon();
+            rp.SetDataSource(getData2());
+            rp.SetParameterValue("TEN", cbNhanVien.Text.ToUpper());
+            rp.SetParameterValue("TO", "TÂN PHÚ");
+            crystalReportViewer1.ReportSource = rp;
         }
+        private DataSet getData2()
+        {
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            DataSet ds = new DataSet();
+            string query = "SELECT td.* FROM THIDUA_GIAMHOADON td, W_GIAMHOADON gm WHERE td.DANHBO=gm.DANHBO ";
+            query += "   AND gm.NHANVIEN= " + cbNhanVien.SelectedValue;
+            query += " ORDER BY TTKY8 desc ,TTKY9 desc,TTKY10 desc ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+
+            adapter.Fill(ds, "THIDUA_GIAMHOADON");
+            return ds;
+        }
+        CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+        public bool Insert(W_GIAMHOADON th_dhn)
+        {
+            try
+            {
+                db.W_GIAMHOADONs.InsertOnSubmit(th_dhn);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
+
+        public int DeleteByDANHBO(string ID)
+        {
+
+            string sql = "DELETE FROM W_GIAMHOADON WHERE DANHBO='" + ID + "'";
+            return DAL.LinQConnection.ExecuteCommand_(ID);
+        }
+        // TTKY1=0 and TTKY2=0 and TTKY3=0 and TTKY4=0 and TTKY5=0 and TTKY6=0 and
+        void LoadBC() {
+
+            if (this.checkTuDong.Checked)
+            {
+                ViewReport();
+            }
+            else
+            {
+                try
+                {
+                    ViewReport2();
+                }
+                catch (Exception)
+                {
+                }
+
+            }
+        }
+        private void cbNhanVien_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LoadBC();
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+
+            W_GIAMHOADON gh = new W_GIAMHOADON();
+            gh.TODS = "TP";
+            gh.DANHBO = this.txtDanhBo.Text;
+            int gt =0;
+            int.TryParse(this.cbNhanVien.SelectedValue.ToString(), out gt);
+            gh.NHANVIEN = gt;
+            if (Insert(gh))
+            {
+                MessageBox.Show(this, "Thêm Thành Công !");
+                LoadBC();
+            }
+            else {
+                MessageBox.Show(this, "Thêm Thất Bại !");
+            }
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+
+            if (DeleteByDANHBO(this.txtDanhBo.Text)==1)
+            {
+                MessageBox.Show(this, "Xóa Thành Công !");
+            }
+            else {
+                MessageBox.Show(this, "Xóa Thất Bại !");
+            }
+        }
+
+        private void checkTuDong_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadBC();
+        }
+
     }
 }
