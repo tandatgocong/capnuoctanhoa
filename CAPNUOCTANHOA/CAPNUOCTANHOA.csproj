@@ -367,6 +367,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TLKDUTCHITAHN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\frm_HuyLoTrinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_HuyLoTrinh.Designer.cs">
+      <DependentUpon>frm_HuyLoTrinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\frm_NhapTangCuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -876,6 +882,17 @@
       <DependentUpon>frm_baothay_lay.cs</DependentUpon>
     </Compile>
     <Compile Include="lib\app.Designer.cs" />
+    <Compile Include="LinhTinh\LinhTaLinhTinh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LinhTaLinhTinh.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LinhTinh\rpt_ThiDuaGiamHoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ThiDuaGiamHoaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="LinQ\CapNuocTanHoa.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1150,6 +1167,17 @@
     <None Include="lib\LOTRINH.xls" />
     <None Include="lib\News.xls" />
     <None Include="lib\user.dat" />
+    <None Include="LinhTinh\LinhTaLinhTinh.xsc">
+      <DependentUpon>LinhTaLinhTinh.xsd</DependentUpon>
+    </None>
+    <None Include="LinhTinh\LinhTaLinhTinh.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LinhTaLinhTinh.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LinhTinh\LinhTaLinhTinh.xss">
+      <DependentUpon>LinhTaLinhTinh.xsd</DependentUpon>
+    </None>
     <None Include="LinQ\CapNuocTanHoa.dbml.layout">
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </None>
@@ -1262,6 +1290,9 @@
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_TONGKETSOLIEU.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_TONGKETSOLIEU.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_HuyLoTrinh.resx">
+      <DependentUpon>frm_HuyLoTrinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_NhapTangCuong.resx">
       <DependentUpon>frm_NhapTangCuong.cs</DependentUpon>
@@ -1521,6 +1552,10 @@
     <None Include="LinQ\HoaDon.dbml.layout">
       <DependentUpon>HoaDon.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="LinhTinh\rpt_ThiDuaGiamHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ThiDuaGiamHoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

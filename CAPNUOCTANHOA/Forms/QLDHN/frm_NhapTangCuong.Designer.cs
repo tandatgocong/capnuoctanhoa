@@ -33,56 +33,12 @@
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.TANGCUONG_ = new System.Windows.Forms.DataGridView();
             this.cbNhanVien = new System.Windows.Forms.ComboBox();
-            this.MAYDS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT01_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT02_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT03_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT04_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT05_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT06_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT07_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT08_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT09_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT10_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT11_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT12_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT13_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT14_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT15_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT16_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT17_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT18_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT19_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT20_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DHN = new System.Windows.Forms.DataGridView();
-            this.DONGCUA = new System.Windows.Forms.DataGridView();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT01 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT02 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT03 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT04 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT05 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT07 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT09 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOT20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.DONGCUA = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DOT01_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DOT02_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,15 +60,59 @@
             this.DOT18_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DOT19_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DOT20_DC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DHN = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT01 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT02 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT03 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT04 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT05 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT07 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT09 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TANGCUONG_ = new System.Windows.Forms.DataGridView();
+            this.MAYDS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT01_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT02_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT03_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT04_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT05_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT06_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT07_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT08_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT09_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT10_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT11_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT12_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT13_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT14_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT15_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT16_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT17_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT18_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT19_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOT20_TC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TANGCUONG_)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DHN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DONGCUA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DHN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TANGCUONG_)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -188,6 +188,16 @@
             this.splitContainer1.SplitterDistance = 83;
             this.splitContainer1.TabIndex = 130;
             // 
+            // cbNhanVien
+            // 
+            this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNhanVien.FormattingEnabled = true;
+            this.cbNhanVien.Location = new System.Drawing.Point(118, 49);
+            this.cbNhanVien.Name = "cbNhanVien";
+            this.cbNhanVien.Size = new System.Drawing.Size(255, 27);
+            this.cbNhanVien.TabIndex = 130;
+            this.cbNhanVien.SelectedValueChanged += new System.EventHandler(this.cbNhanVien_SelectedValueChanged);
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -209,229 +219,41 @@
             this.splitContainer2.Panel2.Controls.Add(this.buttonX1);
             this.splitContainer2.Panel2.Controls.Add(this.btCapNhat);
             this.splitContainer2.Size = new System.Drawing.Size(1133, 501);
-            this.splitContainer2.SplitterDistance = 455;
+            this.splitContainer2.SplitterDistance = 454;
             this.splitContainer2.TabIndex = 0;
             // 
-            // TANGCUONG_
+            // labelX3
             // 
-            this.TANGCUONG_.AllowUserToAddRows = false;
-            this.TANGCUONG_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TANGCUONG_.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MAYDS,
-            this.DOT01_TC,
-            this.DOT02_TC,
-            this.DOT03_TC,
-            this.DOT04_TC,
-            this.DOT05_TC,
-            this.DOT06_TC,
-            this.DOT07_TC,
-            this.DOT08_TC,
-            this.DOT09_TC,
-            this.DOT10_TC,
-            this.DOT11_TC,
-            this.DOT12_TC,
-            this.DOT13_TC,
-            this.DOT14_TC,
-            this.DOT15_TC,
-            this.DOT16_TC,
-            this.DOT17_TC,
-            this.DOT18_TC,
-            this.DOT19_TC,
-            this.DOT20_TC});
-            this.TANGCUONG_.Location = new System.Drawing.Point(11, 343);
-            this.TANGCUONG_.Name = "TANGCUONG_";
-            this.TANGCUONG_.RowHeadersWidth = 20;
-            this.TANGCUONG_.Size = new System.Drawing.Size(1119, 91);
-            this.TANGCUONG_.TabIndex = 0;
+            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.labelX3.ForeColor = System.Drawing.Color.Blue;
+            this.labelX3.Location = new System.Drawing.Point(11, 163);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(299, 25);
+            this.labelX3.TabIndex = 132;
+            this.labelX3.Text = "ĐÓNG CỬA";
             // 
-            // cbNhanVien
+            // labelX2
             // 
-            this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbNhanVien.FormattingEnabled = true;
-            this.cbNhanVien.Location = new System.Drawing.Point(118, 49);
-            this.cbNhanVien.Name = "cbNhanVien";
-            this.cbNhanVien.Size = new System.Drawing.Size(255, 27);
-            this.cbNhanVien.TabIndex = 130;
-            this.cbNhanVien.SelectedValueChanged += new System.EventHandler(this.cbNhanVien_SelectedValueChanged);
+            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.labelX2.ForeColor = System.Drawing.Color.Blue;
+            this.labelX2.Location = new System.Drawing.Point(11, 311);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(299, 25);
+            this.labelX2.TabIndex = 131;
+            this.labelX2.Text = "TĂNG CƯỜNG";
             // 
-            // MAYDS
+            // labelX1
             // 
-            this.MAYDS.DataPropertyName = "MAYDS";
-            this.MAYDS.HeaderText = "MAYDS";
-            this.MAYDS.Name = "MAYDS";
-            this.MAYDS.Visible = false;
-            // 
-            // DOT01_TC
-            // 
-            this.DOT01_TC.DataPropertyName = "DOT01_TC";
-            this.DOT01_TC.HeaderText = "ĐỢT 01";
-            this.DOT01_TC.Name = "DOT01_TC";
-            this.DOT01_TC.Width = 90;
-            // 
-            // DOT02_TC
-            // 
-            this.DOT02_TC.DataPropertyName = "DOT02_TC";
-            this.DOT02_TC.HeaderText = "ĐỢT 02";
-            this.DOT02_TC.Name = "DOT02_TC";
-            this.DOT02_TC.Width = 90;
-            // 
-            // DOT03_TC
-            // 
-            this.DOT03_TC.DataPropertyName = "DOT03_TC";
-            this.DOT03_TC.HeaderText = "ĐỢT 03";
-            this.DOT03_TC.Name = "DOT03_TC";
-            this.DOT03_TC.Width = 90;
-            // 
-            // DOT04_TC
-            // 
-            this.DOT04_TC.DataPropertyName = "DOT04_TC";
-            this.DOT04_TC.HeaderText = "ĐỢT 04";
-            this.DOT04_TC.Name = "DOT04_TC";
-            this.DOT04_TC.Width = 90;
-            // 
-            // DOT05_TC
-            // 
-            this.DOT05_TC.DataPropertyName = "DOT05_TC";
-            this.DOT05_TC.HeaderText = "ĐỢT 05";
-            this.DOT05_TC.Name = "DOT05_TC";
-            this.DOT05_TC.Width = 90;
-            // 
-            // DOT06_TC
-            // 
-            this.DOT06_TC.DataPropertyName = "DOT06_TC";
-            this.DOT06_TC.HeaderText = "ĐỢT 06";
-            this.DOT06_TC.Name = "DOT06_TC";
-            this.DOT06_TC.Width = 90;
-            // 
-            // DOT07_TC
-            // 
-            this.DOT07_TC.DataPropertyName = "DOT07_TC";
-            this.DOT07_TC.HeaderText = "ĐỢT 07";
-            this.DOT07_TC.Name = "DOT07_TC";
-            this.DOT07_TC.Width = 90;
-            // 
-            // DOT08_TC
-            // 
-            this.DOT08_TC.DataPropertyName = "DOT08_TC";
-            this.DOT08_TC.HeaderText = "ĐỢT 08";
-            this.DOT08_TC.Name = "DOT08_TC";
-            this.DOT08_TC.Width = 90;
-            // 
-            // DOT09_TC
-            // 
-            this.DOT09_TC.DataPropertyName = "DOT09_TC";
-            this.DOT09_TC.HeaderText = "ĐỢT 09";
-            this.DOT09_TC.Name = "DOT09_TC";
-            this.DOT09_TC.Width = 90;
-            // 
-            // DOT10_TC
-            // 
-            this.DOT10_TC.DataPropertyName = "DOT10_TC";
-            this.DOT10_TC.HeaderText = "ĐỢT 10";
-            this.DOT10_TC.Name = "DOT10_TC";
-            this.DOT10_TC.Width = 90;
-            // 
-            // DOT11_TC
-            // 
-            this.DOT11_TC.DataPropertyName = "DOT11_TC";
-            this.DOT11_TC.HeaderText = "ĐỢT 11";
-            this.DOT11_TC.Name = "DOT11_TC";
-            this.DOT11_TC.Width = 90;
-            // 
-            // DOT12_TC
-            // 
-            this.DOT12_TC.DataPropertyName = "DOT12_TC";
-            this.DOT12_TC.HeaderText = "ĐỢT 12";
-            this.DOT12_TC.Name = "DOT12_TC";
-            this.DOT12_TC.Width = 90;
-            // 
-            // DOT13_TC
-            // 
-            this.DOT13_TC.DataPropertyName = "DOT13_TC";
-            this.DOT13_TC.HeaderText = "ĐỢT 13";
-            this.DOT13_TC.Name = "DOT13_TC";
-            this.DOT13_TC.Width = 90;
-            // 
-            // DOT14_TC
-            // 
-            this.DOT14_TC.DataPropertyName = "DOT14_TC";
-            this.DOT14_TC.HeaderText = "ĐỢT 14";
-            this.DOT14_TC.Name = "DOT14_TC";
-            this.DOT14_TC.Width = 90;
-            // 
-            // DOT15_TC
-            // 
-            this.DOT15_TC.DataPropertyName = "DOT15_TC";
-            this.DOT15_TC.HeaderText = "ĐỢT 15";
-            this.DOT15_TC.Name = "DOT15_TC";
-            this.DOT15_TC.Width = 90;
-            // 
-            // DOT16_TC
-            // 
-            this.DOT16_TC.DataPropertyName = "DOT16_TC";
-            this.DOT16_TC.HeaderText = "ĐỢT 16";
-            this.DOT16_TC.Name = "DOT16_TC";
-            this.DOT16_TC.Width = 90;
-            // 
-            // DOT17_TC
-            // 
-            this.DOT17_TC.DataPropertyName = "DOT17_TC";
-            this.DOT17_TC.HeaderText = "ĐỢT 17";
-            this.DOT17_TC.Name = "DOT17_TC";
-            this.DOT17_TC.Width = 90;
-            // 
-            // DOT18_TC
-            // 
-            this.DOT18_TC.DataPropertyName = "DOT18_TC";
-            this.DOT18_TC.HeaderText = "ĐỢT 18";
-            this.DOT18_TC.Name = "DOT18_TC";
-            this.DOT18_TC.Width = 90;
-            // 
-            // DOT19_TC
-            // 
-            this.DOT19_TC.DataPropertyName = "DOT19_TC";
-            this.DOT19_TC.HeaderText = "ĐỢT 19";
-            this.DOT19_TC.Name = "DOT19_TC";
-            this.DOT19_TC.Width = 90;
-            // 
-            // DOT20_TC
-            // 
-            this.DOT20_TC.DataPropertyName = "DOT20_TC";
-            this.DOT20_TC.HeaderText = "ĐỢT 20";
-            this.DOT20_TC.Name = "DOT20_TC";
-            this.DOT20_TC.Width = 90;
-            // 
-            // DHN
-            // 
-            this.DHN.AllowUserToAddRows = false;
-            this.DHN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DHN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.DOT01,
-            this.DOT02,
-            this.DOT03,
-            this.DOT04,
-            this.DOT05,
-            this.DOT06,
-            this.DOT07,
-            this.DOT08,
-            this.DOT09,
-            this.DOT10,
-            this.DOT11,
-            this.DOT12,
-            this.DOT13,
-            this.DOT14,
-            this.DOT15,
-            this.DOT16,
-            this.DOT17,
-            this.DOT18,
-            this.DOT19,
-            this.DOT20});
-            this.DHN.Location = new System.Drawing.Point(12, 56);
-            this.DHN.Name = "DHN";
-            this.DHN.RowHeadersWidth = 20;
-            this.DHN.Size = new System.Drawing.Size(1118, 90);
-            this.DHN.TabIndex = 1;
+            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.labelX1.ForeColor = System.Drawing.Color.Blue;
+            this.labelX1.Location = new System.Drawing.Point(13, 24);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(299, 25);
+            this.labelX1.TabIndex = 130;
+            this.labelX1.Text = "ĐỒNG HỒ NƯỚC";
             // 
             // DONGCUA
             // 
@@ -464,186 +286,6 @@
             this.DONGCUA.RowHeadersWidth = 20;
             this.DONGCUA.Size = new System.Drawing.Size(1118, 97);
             this.DONGCUA.TabIndex = 2;
-            // 
-            // labelX1
-            // 
-            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.labelX1.ForeColor = System.Drawing.Color.Blue;
-            this.labelX1.Location = new System.Drawing.Point(13, 24);
-            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(299, 25);
-            this.labelX1.TabIndex = 130;
-            this.labelX1.Text = "ĐỒNG HỒ NƯỚC";
-            // 
-            // labelX2
-            // 
-            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.labelX2.ForeColor = System.Drawing.Color.Blue;
-            this.labelX2.Location = new System.Drawing.Point(11, 311);
-            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(299, 25);
-            this.labelX2.TabIndex = 131;
-            this.labelX2.Text = "TĂNG CƯỜNG";
-            // 
-            // labelX3
-            // 
-            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.labelX3.ForeColor = System.Drawing.Color.Blue;
-            this.labelX3.Location = new System.Drawing.Point(11, 163);
-            this.labelX3.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(299, 25);
-            this.labelX3.TabIndex = 132;
-            this.labelX3.Text = "ĐÓNG CỬA";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MAYDS";
-            this.dataGridViewTextBoxColumn1.HeaderText = "MAYDS";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // DOT01
-            // 
-            this.DOT01.DataPropertyName = "DOT01";
-            this.DOT01.HeaderText = "ĐỢT 01";
-            this.DOT01.Name = "DOT01";
-            this.DOT01.Width = 90;
-            // 
-            // DOT02
-            // 
-            this.DOT02.DataPropertyName = "DOT02";
-            this.DOT02.HeaderText = "ĐỢT 02";
-            this.DOT02.Name = "DOT02";
-            this.DOT02.Width = 90;
-            // 
-            // DOT03
-            // 
-            this.DOT03.DataPropertyName = "DOT03";
-            this.DOT03.HeaderText = "ĐỢT 03";
-            this.DOT03.Name = "DOT03";
-            this.DOT03.Width = 90;
-            // 
-            // DOT04
-            // 
-            this.DOT04.DataPropertyName = "DOT04";
-            this.DOT04.HeaderText = "ĐỢT 04";
-            this.DOT04.Name = "DOT04";
-            this.DOT04.Width = 90;
-            // 
-            // DOT05
-            // 
-            this.DOT05.DataPropertyName = "DOT05";
-            this.DOT05.HeaderText = "ĐỢT 05";
-            this.DOT05.Name = "DOT05";
-            this.DOT05.Width = 90;
-            // 
-            // DOT06
-            // 
-            this.DOT06.DataPropertyName = "DOT06";
-            this.DOT06.HeaderText = "ĐỢT 06";
-            this.DOT06.Name = "DOT06";
-            this.DOT06.Width = 90;
-            // 
-            // DOT07
-            // 
-            this.DOT07.DataPropertyName = "DOT07";
-            this.DOT07.HeaderText = "ĐỢT 07";
-            this.DOT07.Name = "DOT07";
-            this.DOT07.Width = 90;
-            // 
-            // DOT08
-            // 
-            this.DOT08.DataPropertyName = "DOT08";
-            this.DOT08.HeaderText = "ĐỢT 08";
-            this.DOT08.Name = "DOT08";
-            this.DOT08.Width = 90;
-            // 
-            // DOT09
-            // 
-            this.DOT09.DataPropertyName = "DOT09";
-            this.DOT09.HeaderText = "ĐỢT 09";
-            this.DOT09.Name = "DOT09";
-            this.DOT09.Width = 90;
-            // 
-            // DOT10
-            // 
-            this.DOT10.DataPropertyName = "DOT10";
-            this.DOT10.HeaderText = "ĐỢT 10";
-            this.DOT10.Name = "DOT10";
-            this.DOT10.Width = 90;
-            // 
-            // DOT11
-            // 
-            this.DOT11.DataPropertyName = "DOT11";
-            this.DOT11.HeaderText = "ĐỢT 11";
-            this.DOT11.Name = "DOT11";
-            this.DOT11.Width = 90;
-            // 
-            // DOT12
-            // 
-            this.DOT12.DataPropertyName = "DOT12";
-            this.DOT12.HeaderText = "ĐỢT 12";
-            this.DOT12.Name = "DOT12";
-            this.DOT12.Width = 90;
-            // 
-            // DOT13
-            // 
-            this.DOT13.DataPropertyName = "DOT13";
-            this.DOT13.HeaderText = "ĐỢT 13";
-            this.DOT13.Name = "DOT13";
-            this.DOT13.Width = 90;
-            // 
-            // DOT14
-            // 
-            this.DOT14.DataPropertyName = "DOT14";
-            this.DOT14.HeaderText = "ĐỢT 14";
-            this.DOT14.Name = "DOT14";
-            this.DOT14.Width = 90;
-            // 
-            // DOT15
-            // 
-            this.DOT15.DataPropertyName = "DOT15";
-            this.DOT15.HeaderText = "ĐỢT 15";
-            this.DOT15.Name = "DOT15";
-            this.DOT15.Width = 90;
-            // 
-            // DOT16
-            // 
-            this.DOT16.DataPropertyName = "DOT16";
-            this.DOT16.HeaderText = "ĐỢT 16";
-            this.DOT16.Name = "DOT16";
-            this.DOT16.Width = 90;
-            // 
-            // DOT17
-            // 
-            this.DOT17.DataPropertyName = "DOT17";
-            this.DOT17.HeaderText = "ĐỢT 17";
-            this.DOT17.Name = "DOT17";
-            this.DOT17.Width = 90;
-            // 
-            // DOT18
-            // 
-            this.DOT18.DataPropertyName = "DOT18";
-            this.DOT18.HeaderText = "ĐỢT 18";
-            this.DOT18.Name = "DOT18";
-            this.DOT18.Width = 90;
-            // 
-            // DOT19
-            // 
-            this.DOT19.DataPropertyName = "DOT19";
-            this.DOT19.HeaderText = "ĐỢT 19";
-            this.DOT19.Name = "DOT19";
-            this.DOT19.Width = 90;
-            // 
-            // DOT20
-            // 
-            this.DOT20.DataPropertyName = "DOT20";
-            this.DOT20.HeaderText = "ĐỢT 20";
-            this.DOT20.Name = "DOT20";
-            this.DOT20.Width = 90;
             // 
             // dataGridViewTextBoxColumn22
             // 
@@ -792,6 +434,364 @@
             this.DOT20_DC.Name = "DOT20_DC";
             this.DOT20_DC.Width = 90;
             // 
+            // DHN
+            // 
+            this.DHN.AllowUserToAddRows = false;
+            this.DHN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DHN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.DOT01,
+            this.DOT02,
+            this.DOT03,
+            this.DOT04,
+            this.DOT05,
+            this.DOT06,
+            this.DOT07,
+            this.DOT08,
+            this.DOT09,
+            this.DOT10,
+            this.DOT11,
+            this.DOT12,
+            this.DOT13,
+            this.DOT14,
+            this.DOT15,
+            this.DOT16,
+            this.DOT17,
+            this.DOT18,
+            this.DOT19,
+            this.DOT20});
+            this.DHN.Location = new System.Drawing.Point(12, 56);
+            this.DHN.Name = "DHN";
+            this.DHN.RowHeadersWidth = 20;
+            this.DHN.Size = new System.Drawing.Size(1118, 90);
+            this.DHN.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MAYDS";
+            this.dataGridViewTextBoxColumn1.HeaderText = "MAYDS";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // DOT01
+            // 
+            this.DOT01.DataPropertyName = "DOT01";
+            this.DOT01.HeaderText = "ĐỢT 01";
+            this.DOT01.Name = "DOT01";
+            this.DOT01.Width = 90;
+            // 
+            // DOT02
+            // 
+            this.DOT02.DataPropertyName = "DOT02";
+            this.DOT02.HeaderText = "ĐỢT 02";
+            this.DOT02.Name = "DOT02";
+            this.DOT02.Width = 90;
+            // 
+            // DOT03
+            // 
+            this.DOT03.DataPropertyName = "DOT03";
+            this.DOT03.HeaderText = "ĐỢT 03";
+            this.DOT03.Name = "DOT03";
+            this.DOT03.Width = 90;
+            // 
+            // DOT04
+            // 
+            this.DOT04.DataPropertyName = "DOT04";
+            this.DOT04.HeaderText = "ĐỢT 04";
+            this.DOT04.Name = "DOT04";
+            this.DOT04.Width = 90;
+            // 
+            // DOT05
+            // 
+            this.DOT05.DataPropertyName = "DOT05";
+            this.DOT05.HeaderText = "ĐỢT 05";
+            this.DOT05.Name = "DOT05";
+            this.DOT05.Width = 90;
+            // 
+            // DOT06
+            // 
+            this.DOT06.DataPropertyName = "DOT06";
+            this.DOT06.HeaderText = "ĐỢT 06";
+            this.DOT06.Name = "DOT06";
+            this.DOT06.Width = 90;
+            // 
+            // DOT07
+            // 
+            this.DOT07.DataPropertyName = "DOT07";
+            this.DOT07.HeaderText = "ĐỢT 07";
+            this.DOT07.Name = "DOT07";
+            this.DOT07.Width = 90;
+            // 
+            // DOT08
+            // 
+            this.DOT08.DataPropertyName = "DOT08";
+            this.DOT08.HeaderText = "ĐỢT 08";
+            this.DOT08.Name = "DOT08";
+            this.DOT08.Width = 90;
+            // 
+            // DOT09
+            // 
+            this.DOT09.DataPropertyName = "DOT09";
+            this.DOT09.HeaderText = "ĐỢT 09";
+            this.DOT09.Name = "DOT09";
+            this.DOT09.Width = 90;
+            // 
+            // DOT10
+            // 
+            this.DOT10.DataPropertyName = "DOT10";
+            this.DOT10.HeaderText = "ĐỢT 10";
+            this.DOT10.Name = "DOT10";
+            this.DOT10.Width = 90;
+            // 
+            // DOT11
+            // 
+            this.DOT11.DataPropertyName = "DOT11";
+            this.DOT11.HeaderText = "ĐỢT 11";
+            this.DOT11.Name = "DOT11";
+            this.DOT11.Width = 90;
+            // 
+            // DOT12
+            // 
+            this.DOT12.DataPropertyName = "DOT12";
+            this.DOT12.HeaderText = "ĐỢT 12";
+            this.DOT12.Name = "DOT12";
+            this.DOT12.Width = 90;
+            // 
+            // DOT13
+            // 
+            this.DOT13.DataPropertyName = "DOT13";
+            this.DOT13.HeaderText = "ĐỢT 13";
+            this.DOT13.Name = "DOT13";
+            this.DOT13.Width = 90;
+            // 
+            // DOT14
+            // 
+            this.DOT14.DataPropertyName = "DOT14";
+            this.DOT14.HeaderText = "ĐỢT 14";
+            this.DOT14.Name = "DOT14";
+            this.DOT14.Width = 90;
+            // 
+            // DOT15
+            // 
+            this.DOT15.DataPropertyName = "DOT15";
+            this.DOT15.HeaderText = "ĐỢT 15";
+            this.DOT15.Name = "DOT15";
+            this.DOT15.Width = 90;
+            // 
+            // DOT16
+            // 
+            this.DOT16.DataPropertyName = "DOT16";
+            this.DOT16.HeaderText = "ĐỢT 16";
+            this.DOT16.Name = "DOT16";
+            this.DOT16.Width = 90;
+            // 
+            // DOT17
+            // 
+            this.DOT17.DataPropertyName = "DOT17";
+            this.DOT17.HeaderText = "ĐỢT 17";
+            this.DOT17.Name = "DOT17";
+            this.DOT17.Width = 90;
+            // 
+            // DOT18
+            // 
+            this.DOT18.DataPropertyName = "DOT18";
+            this.DOT18.HeaderText = "ĐỢT 18";
+            this.DOT18.Name = "DOT18";
+            this.DOT18.Width = 90;
+            // 
+            // DOT19
+            // 
+            this.DOT19.DataPropertyName = "DOT19";
+            this.DOT19.HeaderText = "ĐỢT 19";
+            this.DOT19.Name = "DOT19";
+            this.DOT19.Width = 90;
+            // 
+            // DOT20
+            // 
+            this.DOT20.DataPropertyName = "DOT20";
+            this.DOT20.HeaderText = "ĐỢT 20";
+            this.DOT20.Name = "DOT20";
+            this.DOT20.Width = 90;
+            // 
+            // TANGCUONG_
+            // 
+            this.TANGCUONG_.AllowUserToAddRows = false;
+            this.TANGCUONG_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TANGCUONG_.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MAYDS,
+            this.DOT01_TC,
+            this.DOT02_TC,
+            this.DOT03_TC,
+            this.DOT04_TC,
+            this.DOT05_TC,
+            this.DOT06_TC,
+            this.DOT07_TC,
+            this.DOT08_TC,
+            this.DOT09_TC,
+            this.DOT10_TC,
+            this.DOT11_TC,
+            this.DOT12_TC,
+            this.DOT13_TC,
+            this.DOT14_TC,
+            this.DOT15_TC,
+            this.DOT16_TC,
+            this.DOT17_TC,
+            this.DOT18_TC,
+            this.DOT19_TC,
+            this.DOT20_TC});
+            this.TANGCUONG_.Location = new System.Drawing.Point(11, 343);
+            this.TANGCUONG_.Name = "TANGCUONG_";
+            this.TANGCUONG_.RowHeadersWidth = 20;
+            this.TANGCUONG_.Size = new System.Drawing.Size(1119, 91);
+            this.TANGCUONG_.TabIndex = 0;
+            // 
+            // MAYDS
+            // 
+            this.MAYDS.DataPropertyName = "MAYDS";
+            this.MAYDS.HeaderText = "MAYDS";
+            this.MAYDS.Name = "MAYDS";
+            this.MAYDS.Visible = false;
+            // 
+            // DOT01_TC
+            // 
+            this.DOT01_TC.DataPropertyName = "DOT01_TC";
+            this.DOT01_TC.HeaderText = "ĐỢT 01";
+            this.DOT01_TC.Name = "DOT01_TC";
+            this.DOT01_TC.Width = 90;
+            // 
+            // DOT02_TC
+            // 
+            this.DOT02_TC.DataPropertyName = "DOT02_TC";
+            this.DOT02_TC.HeaderText = "ĐỢT 02";
+            this.DOT02_TC.Name = "DOT02_TC";
+            this.DOT02_TC.Width = 90;
+            // 
+            // DOT03_TC
+            // 
+            this.DOT03_TC.DataPropertyName = "DOT03_TC";
+            this.DOT03_TC.HeaderText = "ĐỢT 03";
+            this.DOT03_TC.Name = "DOT03_TC";
+            this.DOT03_TC.Width = 90;
+            // 
+            // DOT04_TC
+            // 
+            this.DOT04_TC.DataPropertyName = "DOT04_TC";
+            this.DOT04_TC.HeaderText = "ĐỢT 04";
+            this.DOT04_TC.Name = "DOT04_TC";
+            this.DOT04_TC.Width = 90;
+            // 
+            // DOT05_TC
+            // 
+            this.DOT05_TC.DataPropertyName = "DOT05_TC";
+            this.DOT05_TC.HeaderText = "ĐỢT 05";
+            this.DOT05_TC.Name = "DOT05_TC";
+            this.DOT05_TC.Width = 90;
+            // 
+            // DOT06_TC
+            // 
+            this.DOT06_TC.DataPropertyName = "DOT06_TC";
+            this.DOT06_TC.HeaderText = "ĐỢT 06";
+            this.DOT06_TC.Name = "DOT06_TC";
+            this.DOT06_TC.Width = 90;
+            // 
+            // DOT07_TC
+            // 
+            this.DOT07_TC.DataPropertyName = "DOT07_TC";
+            this.DOT07_TC.HeaderText = "ĐỢT 07";
+            this.DOT07_TC.Name = "DOT07_TC";
+            this.DOT07_TC.Width = 90;
+            // 
+            // DOT08_TC
+            // 
+            this.DOT08_TC.DataPropertyName = "DOT08_TC";
+            this.DOT08_TC.HeaderText = "ĐỢT 08";
+            this.DOT08_TC.Name = "DOT08_TC";
+            this.DOT08_TC.Width = 90;
+            // 
+            // DOT09_TC
+            // 
+            this.DOT09_TC.DataPropertyName = "DOT09_TC";
+            this.DOT09_TC.HeaderText = "ĐỢT 09";
+            this.DOT09_TC.Name = "DOT09_TC";
+            this.DOT09_TC.Width = 90;
+            // 
+            // DOT10_TC
+            // 
+            this.DOT10_TC.DataPropertyName = "DOT10_TC";
+            this.DOT10_TC.HeaderText = "ĐỢT 10";
+            this.DOT10_TC.Name = "DOT10_TC";
+            this.DOT10_TC.Width = 90;
+            // 
+            // DOT11_TC
+            // 
+            this.DOT11_TC.DataPropertyName = "DOT11_TC";
+            this.DOT11_TC.HeaderText = "ĐỢT 11";
+            this.DOT11_TC.Name = "DOT11_TC";
+            this.DOT11_TC.Width = 90;
+            // 
+            // DOT12_TC
+            // 
+            this.DOT12_TC.DataPropertyName = "DOT12_TC";
+            this.DOT12_TC.HeaderText = "ĐỢT 12";
+            this.DOT12_TC.Name = "DOT12_TC";
+            this.DOT12_TC.Width = 90;
+            // 
+            // DOT13_TC
+            // 
+            this.DOT13_TC.DataPropertyName = "DOT13_TC";
+            this.DOT13_TC.HeaderText = "ĐỢT 13";
+            this.DOT13_TC.Name = "DOT13_TC";
+            this.DOT13_TC.Width = 90;
+            // 
+            // DOT14_TC
+            // 
+            this.DOT14_TC.DataPropertyName = "DOT14_TC";
+            this.DOT14_TC.HeaderText = "ĐỢT 14";
+            this.DOT14_TC.Name = "DOT14_TC";
+            this.DOT14_TC.Width = 90;
+            // 
+            // DOT15_TC
+            // 
+            this.DOT15_TC.DataPropertyName = "DOT15_TC";
+            this.DOT15_TC.HeaderText = "ĐỢT 15";
+            this.DOT15_TC.Name = "DOT15_TC";
+            this.DOT15_TC.Width = 90;
+            // 
+            // DOT16_TC
+            // 
+            this.DOT16_TC.DataPropertyName = "DOT16_TC";
+            this.DOT16_TC.HeaderText = "ĐỢT 16";
+            this.DOT16_TC.Name = "DOT16_TC";
+            this.DOT16_TC.Width = 90;
+            // 
+            // DOT17_TC
+            // 
+            this.DOT17_TC.DataPropertyName = "DOT17_TC";
+            this.DOT17_TC.HeaderText = "ĐỢT 17";
+            this.DOT17_TC.Name = "DOT17_TC";
+            this.DOT17_TC.Width = 90;
+            // 
+            // DOT18_TC
+            // 
+            this.DOT18_TC.DataPropertyName = "DOT18_TC";
+            this.DOT18_TC.HeaderText = "ĐỢT 18";
+            this.DOT18_TC.Name = "DOT18_TC";
+            this.DOT18_TC.Width = 90;
+            // 
+            // DOT19_TC
+            // 
+            this.DOT19_TC.DataPropertyName = "DOT19_TC";
+            this.DOT19_TC.HeaderText = "ĐỢT 19";
+            this.DOT19_TC.Name = "DOT19_TC";
+            this.DOT19_TC.Width = 90;
+            // 
+            // DOT20_TC
+            // 
+            this.DOT20_TC.DataPropertyName = "DOT20_TC";
+            this.DOT20_TC.HeaderText = "ĐỢT 20";
+            this.DOT20_TC.Name = "DOT20_TC";
+            this.DOT20_TC.Width = 90;
+            // 
             // frm_NhapTangCuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -811,9 +811,9 @@
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TANGCUONG_)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DHN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DONGCUA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DHN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TANGCUONG_)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -867,6 +867,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             }
         }
+
+        private void btHuyLoTrinh_Click(object sender, EventArgs e)
+        {
+            frm_HuyLoTrinh frm = new frm_HuyLoTrinh();
+            frm.ShowDialog();
+        }
         
 
     }
