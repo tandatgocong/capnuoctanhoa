@@ -250,6 +250,9 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         }
 
+
+
+
         private void btInDS_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new rpt_PhieuGhiChepTieuThu();
@@ -257,6 +260,80 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             int nam = int.Parse(txtNam.Text);
             LoadPhieuTieuTHU(txtDanhBo.Text.Replace("-", ""), nam, ky);
             rp.SetDataSource(getListHoaDonReport_BC(txtDanhBo.Text.Replace("-", ""), nam, ky));
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+        }
+
+
+        public DataSet getListHoaDonReport_BC_KT(string danhba, int nam, int ky)
+        {
+
+            DocSoDataContext db = new DocSoDataContext();
+            DataSet ds = new DataSet();
+            string query2 = "";
+
+            string query = "SELECT  TOP(1)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+                  " KH.CO,  H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
+                " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TIEUTHU");
+
+            query = "SELECT  TOP(" + int.Parse(cbSoLuong.Text) + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+                " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
+              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
+            DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
+            ds.Tables["TIEUTHU"].Merge(TB_HD);
+
+            string _ky = ky + "";
+            try
+            {
+                _ky = ds.Tables["TIEUTHU"].Rows[0]["KY"].ToString();
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+            query2 = "SELECT  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM";
+            query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.TENNHANVIEN  ";
+            query2 += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
+            query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + _ky + " AND ds.DANHBA='" + danhba + "' ";
+
+            adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
+            adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
+
+            int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
+            if (scl > 0)
+            {
+                nam = nam - 1;
+                query = "SELECT  TOP(" + scl + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+             " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
+           " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
+
+                DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
+                ds.Tables["TIEUTHU"].Merge(b_Old);
+            }
+
+            query = "select * FROM CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+            string recordKT = ConfigurationManager.AppSettings["recordKT"].ToString();
+            query = "SELECT TOP(" + recordKT + ") * FROM CAPNUOCTANHOA.dbo.TB_GHICHU WHERE DANHBO='" + danhba + "' ORDER BY CREATEDATE DESC";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_GHICHU");
+
+            return ds;
+
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_PhieuKiemTra();
+            int ky = int.Parse(txtKy.Text);
+            int nam = int.Parse(txtNam.Text);
+            LoadPhieuTieuTHU(txtDanhBo.Text.Replace("-", ""), nam, ky);
+            rp.SetDataSource(getListHoaDonReport_BC_KT(txtDanhBo.Text.Replace("-", ""), nam, ky));
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
