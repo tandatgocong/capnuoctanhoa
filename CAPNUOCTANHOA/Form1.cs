@@ -24,9 +24,10 @@ namespace CAPNUOCTANHOA
         public Form1()
         {
             InitializeComponent();
-            cbNhanVien.DataSource = DAL.QLDHN.C_QuanLyDongHoNuoc.getTable_CHAMCONG(3);
+            cbNhanVien.DataSource = DAL.QLDHN.C_QuanLyDongHoNuoc.getTable_CHAMCONG();
             cbNhanVien.DisplayMember = "FULLNAME";
             cbNhanVien.ValueMember = "MAYDS";
+            cbSoLuong.SelectedIndex = 3;
      
            
             //  dataGridView1.DataSource = showCustomInformationDetail("13132164598",2012);
@@ -36,14 +37,24 @@ namespace CAPNUOCTANHOA
             ReportDocument rp = new rpt_ThiDuaGiamHoaDon();
             rp.SetDataSource(getData());
             rp.SetParameterValue("TEN", cbNhanVien.Text.ToUpper());
-            rp.SetParameterValue("TO", "TÂN PHÚ");
+            if (DAL.QLDHN.C_QuanLyDongHoNuoc.findbyMayDS(int.Parse(cbNhanVien.SelectedValue.ToString())).TODS == 1) {
+                rp.SetParameterValue("TO", "TÂN BINH 01");
+            }
+            else if (DAL.QLDHN.C_QuanLyDongHoNuoc.findbyMayDS(int.Parse(cbNhanVien.SelectedValue.ToString())).TODS == 2)
+            {
+                rp.SetParameterValue("TO", "TÂN BINH 02");
+            }
+            else {
+                rp.SetParameterValue("TO", "TÂN PHÚ");
+            }
+            
             crystalReportViewer1.ReportSource = rp;
         }
         private DataSet getData()
         {
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             DataSet ds = new DataSet();
-            string query = "SELECT TOP(20) * FROM THIDUA_GIAMHOADON WHERE ";
+            string query = "SELECT TOP(" + cbSoLuong.Text + ") * FROM THIDUA_GIAMHOADON WHERE ";
             query += " TTKY7=0 and (TTKY8<>0  and TTKY9<>0 and TTKY10<>0 ) ";
             query+="   AND CONVERT(int,SUBSTRING(LOTRINH,3,2))= "+cbNhanVien.SelectedValue;
              query += " ORDER BY TTKY8 desc ,TTKY9 desc,TTKY10 desc ";

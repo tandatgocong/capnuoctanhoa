@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.checkTuDong = new System.Windows.Forms.CheckBox();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.cbSoLuong = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.cbSoLuong);
             this.splitContainer1.Panel1.Controls.Add(this.btXoa);
             this.splitContainer1.Panel1.Controls.Add(this.btThem);
             this.splitContainer1.Panel1.Controls.Add(this.txtDanhBo);
@@ -79,7 +81,7 @@
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(693, 6);
+            this.btXoa.Location = new System.Drawing.Point(795, 4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(75, 23);
             this.btXoa.TabIndex = 5;
@@ -89,7 +91,7 @@
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(597, 7);
+            this.btThem.Location = new System.Drawing.Point(699, 5);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(75, 23);
             this.btThem.TabIndex = 5;
@@ -99,7 +101,7 @@
             // 
             // txtDanhBo
             // 
-            this.txtDanhBo.Location = new System.Drawing.Point(461, 10);
+            this.txtDanhBo.Location = new System.Drawing.Point(563, 8);
             this.txtDanhBo.Name = "txtDanhBo";
             this.txtDanhBo.Size = new System.Drawing.Size(130, 20);
             this.txtDanhBo.TabIndex = 4;
@@ -107,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(406, 15);
+            this.label2.Location = new System.Drawing.Point(508, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 3;
@@ -117,7 +119,7 @@
             // 
             this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNhanVien.FormattingEnabled = true;
-            this.cbNhanVien.Location = new System.Drawing.Point(225, 10);
+            this.cbNhanVien.Location = new System.Drawing.Point(327, 8);
             this.cbNhanVien.Name = "cbNhanVien";
             this.cbNhanVien.Size = new System.Drawing.Size(168, 21);
             this.cbNhanVien.TabIndex = 2;
@@ -126,7 +128,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(156, 13);
+            this.label1.Location = new System.Drawing.Point(258, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
@@ -137,9 +139,9 @@
             this.checkTuDong.AutoSize = true;
             this.checkTuDong.Location = new System.Drawing.Point(12, 12);
             this.checkTuDong.Name = "checkTuDong";
-            this.checkTuDong.Size = new System.Drawing.Size(127, 17);
+            this.checkTuDong.Size = new System.Drawing.Size(176, 17);
             this.checkTuDong.TabIndex = 0;
-            this.checkTuDong.Text = "Tự Động Lấy Số Liệu";
+            this.checkTuDong.Text = "Tự Động Lấy Số Liệu Số Lượng";
             this.checkTuDong.UseVisualStyleBackColor = true;
             this.checkTuDong.CheckedChanged += new System.EventHandler(this.checkTuDong_CheckedChanged);
             // 
@@ -154,6 +156,38 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(1141, 520);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // cbSoLuong
+            // 
+            this.cbSoLuong.FormattingEnabled = true;
+            this.cbSoLuong.Items.AddRange(new object[] {
+            "5",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "60",
+            "70",
+            "80",
+            "90",
+            "100",
+            "150",
+            "200",
+            "250",
+            "300",
+            "350",
+            "400",
+            "450",
+            "500"});
+            this.cbSoLuong.Location = new System.Drawing.Point(183, 10);
+            this.cbSoLuong.Name = "cbSoLuong";
+            this.cbSoLuong.Size = new System.Drawing.Size(79, 21);
+            this.cbSoLuong.TabIndex = 2;
             // 
             // Form1
             // 
@@ -185,6 +219,7 @@
         private System.Windows.Forms.TextBox txtDanhBo;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThem;
+        private System.Windows.Forms.ComboBox cbSoLuong;
 
 
 

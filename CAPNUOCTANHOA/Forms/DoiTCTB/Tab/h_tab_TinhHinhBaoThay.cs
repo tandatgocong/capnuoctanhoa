@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
+using CAPNUOCTANHOA.LinQ;
+using System.Data.SqlClient;
+using CrystalDecisions.CrystalReports.Engine;
+using CAPNUOCTANHOA.Forms.Reports;
+using CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC;
 
 namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
 {
@@ -26,6 +31,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
         string sql_dathay = "";
         string sql_chuathay = "";
         string sql_trongai = "";
+        string sql = "";
         private void btXemThongTin_Click(object sender, EventArgs e)
         {
             try
@@ -49,7 +55,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
                 }
                 gioihan = gioihan.Replace("DANHBO", "DHN_DANHBO");
 
-                string sql = "SELECT COUNT(DISTINCT (convert(varchar(20),DHN_SOBANGKE)+'-'+DHN_TODS)) AS 'TONG',COUNT(*) AS 'SOLUONGTHAY' ";
+                sql = "SELECT COUNT(DISTINCT (convert(varchar(20),DHN_SOBANGKE)+'-'+DHN_TODS)) AS 'TONG',COUNT(*) AS 'SOLUONGTHAY' ";
                 sql += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='True' then 1 else null end)) AS 'CHUAGAN'";
                 sql += " ,count(case when HCT_TRONGAI ='False' then 1 else null end) AS 'HOANTAT' ";
                 sql += " ,count(case when HCT_TRONGAI ='True' then 1 else null end) AS 'TRONGAI' ";
@@ -70,7 +76,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
 
 
                 sql_trongai = " SELECT loai.TENBANGKE,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI' ";
-                sql_trongai += " , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , HCT_LYDOTRONGAI as 'TRONGAI' ";
+                sql_trongai += " , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , CONVERT(VARCHAR(20),HCT_NGAYGAN,103) AS 'HCT_NGAYGAN' ,HCT_LYDOTRONGAI as 'TRONGAI' ";
                 sql_trongai += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh 	";
                 sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' " + gioihan;
 
@@ -155,6 +161,44 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
             Utilities.DataGridV.formatRows(dataGridLoi, "GG_DANHBO");
             Utilities.DataGridV.setSTT(dataGridLoi, "G_STT");
              
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            DataSet ds = new DataSet();
+            try
+            {
+                db.Connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(ds, "TONGKET");
+
+                adapter = new SqlDataAdapter(sql_trongai, db.Connection.ConnectionString);
+                adapter.Fill(ds, "DANHSACHTRONGAI");
+
+                ReportDocument rp = new Rpt_TongKetBaoThayDHN_TOTHAY();
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(dateTuNgay));
+                rp.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(dateDenNgay));
+                rp.SetParameterValue("TEN", " TỔ THAY ");
+                rp.SetParameterValue("USER", DAL.SYS.C_USERS._fullName);
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Report " + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
         }
 
        

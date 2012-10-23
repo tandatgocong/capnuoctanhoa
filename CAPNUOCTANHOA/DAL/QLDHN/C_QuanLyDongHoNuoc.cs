@@ -29,6 +29,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
             return tennv;
         }
+        public static TB_NHANVIENDOCSO findbyMayDS(int mayds) {
+            var query = from q in db.TB_NHANVIENDOCSOs where q.MAYDS == mayds select q;
+            TB_NHANVIENDOCSO nv = query.SingleOrDefault();
+            return nv;
+        }
 
         public static void setNhanVienDS(DataGridView g, string dataColum, string mayds)
         {
@@ -342,6 +347,22 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             adapter.Fill(ds, "TB_BANGCHAMCONG");
             return ds.Tables["TB_BANGCHAMCONG"];
         }
+        public static DataTable getTable_CHAMCONG()
+        {
+
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Open)
+            {
+                db.Connection.Close();
+            }
+            db.Connection.Open();
+
+            string query = "SELECT MAYDS,FULLNAME FROM TB_BANGCHAMCONG  ORDER BY STT ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_BANGCHAMCONG");
+            return ds.Tables["TB_BANGCHAMCONG"];
+        }
+
 
         public static DataTable getChamCongNVDS_TANGCUONG(int mayds)
         {
