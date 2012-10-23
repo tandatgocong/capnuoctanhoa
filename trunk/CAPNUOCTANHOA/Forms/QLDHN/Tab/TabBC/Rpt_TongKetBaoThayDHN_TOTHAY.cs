@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
+namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_BCHoanCong_A4 : ReportClass {
+    public class Rpt_TongKetBaoThayDHN_TOTHAY : ReportClass {
         
-        public rpt_BCHoanCong_A4() {
+        public Rpt_TongKetBaoThayDHN_TOTHAY() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_BCHoanCong_A4.rpt";
+                return "Rpt_TongKetBaoThayDHN_TOTHAY.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.DoiTCTB.BC.rpt_BCHoanCong_A4.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC.Rpt_TongKetBaoThayDHN_TOTHAY.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_TRONGAI {
+        public CrystalDecisions.Shared.IParameterField Parameter_TEN {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,7 +98,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_lapbk {
+        public CrystalDecisions.Shared.IParameterField Parameter_TUNGAY {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,17 +106,25 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_hoantat {
+        public CrystalDecisions.Shared.IParameterField Parameter_DENNGAY {
             get {
                 return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_USER {
+            get {
+                return this.DataDefinition.ParameterFields[3];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_BCHoanCong_A4 : Component, ICachedReport {
+    public class CachedRpt_TongKetBaoThayDHN_TOTHAY : Component, ICachedReport {
         
-        public Cachedrpt_BCHoanCong_A4() {
+        public CachedRpt_TongKetBaoThayDHN_TOTHAY() {
         }
         
         [Browsable(false)]
@@ -153,7 +161,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_BCHoanCong_A4 rpt = new rpt_BCHoanCong_A4();
+            Rpt_TongKetBaoThayDHN_TOTHAY rpt = new Rpt_TongKetBaoThayDHN_TOTHAY();
             rpt.Site = this.Site;
             return rpt;
         }
