@@ -88,7 +88,7 @@ namespace GIAMHOADON
             DataSet ds = new DataSet();
             string query = "SELECT td.* FROM THIDUA_GIAMHOADON td, W_GIAMHOADON gm WHERE td.DANHBO=gm.DANHBO ";
             query += "   AND gm.NHANVIEN= " + cbNhanVien.SelectedValue;
-            query += " ORDER BY TTKY8 desc ,TTKY9 desc,TTKY10 desc ";
+            query += " ORDER by gm.ID ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
 
             adapter.Fill(ds, "THIDUA_GIAMHOADON");
@@ -108,6 +108,7 @@ namespace GIAMHOADON
             query += " COUNT(CASE WHEN TTKY12 > 0 THEN 1 ELSE NULL END) AS '12_1' ";
             query += " FROM THIDUA_GIAMHOADON td, W_GIAMHOADON gm WHERE td.DANHBO=gm.DANHBO ";
             query += "   AND gm.NHANVIEN= " + cbNhanVien.SelectedValue;
+
             adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
 
             adapter.Fill(ds, "GIAM_HOADON_0");
@@ -133,7 +134,7 @@ namespace GIAMHOADON
         public int DeleteByDANHBO(string ID)
         {
 
-            string sql = "DELETE FROM W_GIAMHOADON WHERE DANHBO='" + ID + "'";
+            string sql = "DELETE FROM W_GIAMHOADON WHERE DANHBO='" + ID.Replace(" ","") + "' ";
             return DAL.LinQConnection.ExecuteCommand_(sql);
         }
         // TTKY1=0 and TTKY2=0 and TTKY3=0 and TTKY4=0 and TTKY5=0 and TTKY6=0 and
