@@ -1,0 +1,5 @@
+C:\Users\Administrator\Desktop\CNTANHOA\CNTANHOA\bin\Debug\CNTANHOA.dll
+C:\Users\Administrator\Desktop\CNTANHOA\CNTANHOA\bin\Debug\CNTANHOA.pdb
+C:\Users\Administrator\Desktop\CNTANHOA\CNTANHOA\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\CNTANHOA\CNTANHOA\obj\Debug\CNTANHOA.dll
+C:\Users\Administrator\Desktop\CNTANHOA\CNTANHOA\obj\Debug\CNTANHOA.pdb
