@@ -401,6 +401,25 @@ namespace CAPNUOCTANHOA
             baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
         }
+
+        private void toolNhanDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolDmChungCu_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_DMChungCu baothay = new frm_DMChungCu();
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+        }
+
+        private void menuThayDoiGBDM_Click(object sender, EventArgs e)
+        {
+
+        }
         
     }
 }
