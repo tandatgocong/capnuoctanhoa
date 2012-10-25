@@ -119,12 +119,6 @@
     <Compile Include="DAL\SYS\C_Users.cs" />
     <Compile Include="DAL\THUTIEN\C_ThuTien.cs" />
     <Compile Include="DAL\TimKiem\C_TimKiem.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\BanKTKS\BC\rpt_PhieuKiemTra.cs">
       <DependentUpon>rpt_PhieuKiemTra.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -142,6 +136,12 @@
     </Compile>
     <Compile Include="Forms\BanKTKS\frmPhieuChepTieuThu.Designer.cs">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frm_DMChungCu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frm_DMChungCu.Designer.cs">
+      <DependentUpon>frm_DMChungCu.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DoiTCTB\BC\HOANCONGNHANH.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -894,17 +894,6 @@
       <DependentUpon>frm_baothay_lay.cs</DependentUpon>
     </Compile>
     <Compile Include="lib\app.Designer.cs" />
-    <Compile Include="LinhTinh\LinhTaLinhTinh.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LinhTaLinhTinh.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="LinhTinh\rpt_ThiDuaGiamHoaDon.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpt_ThiDuaGiamHoaDon.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="LinQ\CapNuocTanHoa.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1179,23 +1168,9 @@
     <None Include="lib\LOTRINH.xls" />
     <None Include="lib\News.xls" />
     <None Include="lib\user.dat" />
-    <None Include="LinhTinh\LinhTaLinhTinh.xsc">
-      <DependentUpon>LinhTaLinhTinh.xsd</DependentUpon>
-    </None>
-    <None Include="LinhTinh\LinhTaLinhTinh.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LinhTaLinhTinh.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="LinhTinh\LinhTaLinhTinh.xss">
-      <DependentUpon>LinhTaLinhTinh.xsd</DependentUpon>
-    </None>
     <None Include="LinQ\CapNuocTanHoa.dbml.layout">
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\BC\rpt_PhieuKiemTra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_PhieuKiemTra.cs</LastGenOutput>
@@ -1206,6 +1181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frmPhieuChepTieuThu.resx">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\frm_DMChungCu.resx">
+      <DependentUpon>frm_DMChungCu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\BC\rpt_BCHoanCong_A4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1572,10 +1550,6 @@
     <None Include="LinQ\HoaDon.dbml.layout">
       <DependentUpon>HoaDon.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="LinhTinh\rpt_ThiDuaGiamHoaDon.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_ThiDuaGiamHoaDon.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1670,6 +1644,7 @@
     <Content Include="Resources\Currency Euro.png" />
     <Content Include="Resources\currency_dollar.ico" />
     <Content Include="Resources\daoduong.jpg" />
+    <Content Include="Resources\Database.png" />
     <Content Include="Resources\delete.ico" />
     <Content Include="Resources\delete2.ico" />
     <Content Include="Resources\document_add.ico" />
