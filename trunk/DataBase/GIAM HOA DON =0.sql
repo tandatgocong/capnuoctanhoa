@@ -113,3 +113,16 @@ FROM         dbo.TB_DULIEUKHACHHANG AS kh
 
 SELECT * FROM TAPHOPSOLIEU WHERE TTKY7=0 AND ( TTKY8 <> 0 OR TTKY9 <> TTKY10 )
 
+
+alter view SOLIEUHOADON
+as 
+select hd7.DANHBO, hd7.TENKH,( hd7.SONHA + '' + hd7.DUONG ) as 'DIACHI ', hd7.LNCC as 'LNCC7',
+(select hd8.Field29 FROM HOADONTH08 hd8 where hd7.DANHBO = hd8.danhbo) as 'LNCC8',
+(select hd9.LNCC FROM HOADONTH09 hd9 where hd7.DANHBO = hd9.danhbo) as 'LNCC9',
+(select hd10.LNCC FROM HOADONKY10 hd10 where hd7.DANHBO = hd10.danhbo) as 'LNCC10'
+from HOADONTH07 hd7
+where hd7.LNCC=0 
+
+
+select * from SOLIEUHOADON
+
