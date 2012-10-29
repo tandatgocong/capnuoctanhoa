@@ -155,7 +155,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TIEUTHU");
 
-            query = "SELECT  TOP(" + int.Parse(cbSoLuong.Text) + ") " +
+            query = "SELECT  TOP(" + (int.Parse(cbSoLuong.Text)-1) + ") " +
                 "( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
               " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
             DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
@@ -201,7 +201,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TIEUTHU");
 
-            query = "SELECT  TOP(" + int.Parse(cbSoLuong.Text) + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+            query = "SELECT  TOP(" + (int.Parse(cbSoLuong.Text) -1)+ ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
                 " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
               " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
             DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
@@ -278,7 +278,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TIEUTHU");
 
-            query = "SELECT  TOP(" + int.Parse(cbSoLuong.Text) + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+            query = "SELECT  TOP(" + (int.Parse(cbSoLuong.Text)-1) + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
                 " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
               " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
             DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
