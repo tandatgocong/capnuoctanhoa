@@ -49,6 +49,7 @@
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.cbLoCC = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.btXemThongTin = new DevComponents.DotNetBar.ButtonX();
             this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -60,7 +61,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.NGAYDONG = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -76,6 +76,8 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX8 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -324,6 +326,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.labelX14);
+            this.groupBox3.Controls.Add(this.textBoxX11);
             this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.labelX12);
             this.groupBox3.Controls.Add(this.btXemThongTin);
@@ -354,6 +358,16 @@
             this.groupBox3.TabIndex = 213;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Nhập Thông Tin Cấp Định Mức";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(410, 97);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(79, 23);
+            this.checkBox1.TabIndex = 216;
+            this.checkBox1.Text = "Chuyển";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // labelX12
             // 
@@ -482,16 +496,6 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(171, 27);
             this.comboBox2.TabIndex = 217;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(410, 97);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(79, 23);
-            this.checkBox1.TabIndex = 216;
-            this.checkBox1.Text = "Chuyển";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // NGAYDONG
             // 
@@ -703,6 +707,30 @@
             this.textBoxX8.TabIndex = 216;
             this.textBoxX8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // textBoxX11
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX11.Border.Class = "TextBoxBorder";
+            this.textBoxX11.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX11.ForeColor = System.Drawing.Color.Red;
+            this.textBoxX11.Location = new System.Drawing.Point(338, 368);
+            this.textBoxX11.Name = "textBoxX11";
+            this.textBoxX11.Size = new System.Drawing.Size(62, 27);
+            this.textBoxX11.TabIndex = 228;
+            this.textBoxX11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX14
+            // 
+            this.labelX14.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX14.ForeColor = System.Drawing.Color.Blue;
+            this.labelX14.Location = new System.Drawing.Point(404, 371);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(17, 22);
+            this.labelX14.TabIndex = 229;
+            this.labelX14.Text = "=";
+            // 
             // frm_DMChungCu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -781,5 +809,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX9;
         private DevComponents.DotNetBar.ButtonX btXemThongTin;
         private DevComponents.DotNetBar.LabelX labelX12;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
+        private DevComponents.DotNetBar.LabelX labelX14;
     }
 }
