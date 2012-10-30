@@ -21,12 +21,21 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             cbChiLoTrinhDotDS.SelectedIndex = 0;
        
             int ky = DateTime.Now.Month + 1;
-            int nam = DateTime.Now.Year;
+            int nam = DateTime.Now.Year;            
             if (ky >= 13) {
                 ky = 1;
                 nam = nam + 1;
             }
             txtHieuLuc.Text = String.Format("{0:00}", ky) + "/" + nam;
+            cbHLNam.Text = nam + "";
+            try
+            {
+                cbhlKyDS.SelectedIndex = ky;
+            }
+            catch (Exception)
+            {
+            }
+            
 
             if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
             {
@@ -399,13 +408,24 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             try
             {
-                int ky = DateTime.Now.Month + 1;
-                int nam = DateTime.Now.Year;
-                if (ky >= 13)
+                int ky = 0;
+                int nam = 0;
+                try
                 {
-                    ky = 1;
-                    nam = nam + 1;
+                    ky = int.Parse(cbhlKyDS.Items[cbhlKyDS.SelectedIndex].ToString());
+                    nam = int.Parse(cbHLNam.Text.Trim());
                 }
+                catch (Exception)
+                {
+                    ky = DateTime.Now.Month + 1;
+                    nam = DateTime.Now.Year;
+                    if (ky >= 13)
+                    {
+                        ky = 1;
+                        nam = nam + 1;
+                    }
+                }
+                
                
                 for (int i = 0; i < dataLoTrinh.Rows.Count; i++)
                 {
