@@ -23,6 +23,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             InitializeComponent();
             // this.cbLoaiBangKe.Focus(); 
             formLoad();
+            comboBoxDutChi.SelectedIndex = 0;
+            comboBoxTitle.SelectedIndex = 0;
            
         }
 
@@ -41,11 +43,21 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         }
         private void btIn_Click(object sender, EventArgs e)
         {
-
-            ReportDocument rp = new rpt_TLKDutChi();
-            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString()));
-            frm_Reports frm = new frm_Reports(rp);
-            frm.ShowDialog();
+            if (comboBoxDutChi.SelectedIndex == 0) {
+                ReportDocument rp = new rpt_TLKDutChi();
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),0));
+                rp.SetParameterValue("type", this.comboBoxTitle.Text);
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
+            else if (comboBoxDutChi.SelectedIndex == 1) {
+                ReportDocument rp = new rpt_TLKDutChi_Goc_();
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),1));
+                rp.SetParameterValue("NGUOILAP",DAL.SYS.C_USERS._fullName.ToUpper());
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
+            
 
         }
 
@@ -54,7 +66,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-                dataBangKe.DataSource = DAL.QLDHN.C_DhnAmSau.getListDutChiByDate(this.txtNgayGan.Value.ToShortDateString());
+                dataBangKe.DataSource = DAL.QLDHN.C_DhnAmSau.getListDutChiByDate(this.txtNgayGan.Value.ToShortDateString(), comboBoxDutChi.SelectedIndex);
                 Utilities.DataGridV.formatRows(dataBangKe);
                 setSTT();
             }
@@ -175,9 +187,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             }
         }
 
-        public void Add()
+        public void Add(string sodanhbo)
         {
-            string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
             TB_TLKDUTCHI dc = DAL.QLDHN.C_DhnAmSau.findByDanhBoDutChi(sodanhbo.Replace(" ", ""), this.txtNgayGan.Value.Date);
             if (dc != null)
             {
@@ -191,6 +202,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 dc.DM = TXTDM.Text;
                 dc.HIEU = txtHieuDHN.Text;
                 dc.CO = txtCoDHN.Text;
+                dc.TYPE = comboBoxDutChi.SelectedIndex;
                 dc.SOTHAN = txtSoThan.Text;
                 dc.NGAYBAO = this.txtNgayGan.Value.Date;
                 dc.MODIFYDATE = DateTime.Now;
@@ -210,6 +222,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 dc.DM = TXTDM.Text;
                 dc.HIEU = txtHieuDHN.Text;
                 dc.CO = txtCoDHN.Text;
+                dc.TYPE = comboBoxDutChi.SelectedIndex;
                 dc.SOTHAN = txtSoThan.Text;
                 dc.NGAYBAO = this.txtNgayGan.Value.Date;
                 dc.CREATEDATE = DateTime.Now;
@@ -244,7 +257,21 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-                Add();
+                string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+                TB_TLKDUTCHI dc = DAL.QLDHN.C_DhnAmSau.findByDanhBoDutChi_khacgnay(sodanhbo.Replace(" ", ""), this.txtNgayGan.Value.Date);
+                if (dc != null)
+                {
+                    string ngay= Utilities.DateToString.NgayVNVN(dc.NGAYBAO.Value);
+                         string mess = "Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " đã báo đứt chì ngày " + ngay +" , Báo tiếp ?" ;
+                         if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                         {
+                             Add(sodanhbo);
+                         }
+                }
+                else
+                {
+                    Add(sodanhbo);
+                }
 
             }
             catch (Exception ex)
@@ -395,6 +422,19 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         private void loai_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxDutChi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxDutChi.SelectedIndex == 1)
+            {
+                comboBoxTitle.Visible = false;
+            }
+            else {
+                comboBoxTitle.Visible = true;
+                comboBoxTitle.SelectedIndex = 0;
+            }
+            LoadData();
         }
     }
 }
