@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_TLKDutChi : ReportClass {
+    public class rpt_TLKDutChi_Goc_ : ReportClass {
         
-        public rpt_TLKDutChi() {
+        public rpt_TLKDutChi_Goc_() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_TLKDutChi.rpt";
+                return "rpt_TLKDutChi_Goc_.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_TLKDutChi.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_TLKDutChi_Goc_.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_type {
+        public CrystalDecisions.Shared.IParameterField Parameter_NGUOILAP {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_TLKDutChi : Component, ICachedReport {
+    public class Cachedrpt_TLKDutChi_Goc_ : Component, ICachedReport {
         
-        public Cachedrpt_TLKDutChi() {
+        public Cachedrpt_TLKDutChi_Goc_() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_TLKDutChi rpt = new rpt_TLKDutChi();
+            rpt_TLKDutChi_Goc_ rpt = new rpt_TLKDutChi_Goc_();
             rpt.Site = this.Site;
             return rpt;
         }

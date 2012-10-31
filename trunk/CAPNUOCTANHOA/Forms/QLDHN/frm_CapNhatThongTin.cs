@@ -21,6 +21,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         public frm_CapNhatThongTin()
         {
             InitializeComponent();
+            this.comboBoxDutChi.SelectedIndex = 0;
         }
         int tods = 0;
         private void frm_CapNhatThongTin_Load(object sender, EventArgs e)
@@ -469,52 +470,117 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     string DC_CO = this.dataDutChiThan.Rows[i].Cells["DC_CO"].Value + "";
                     string SOTHANDH = this.dataDutChiThan.Rows[i].Cells["SOTHANDH"].Value + "";
 
-                    TB_TLKDUTCHI dc = DAL.QLDHN.C_DhnAmSau.findByDanhBoDutChi(DC_DANHBO.Replace(" ", ""), this.dcNgayYC.Value.Date);
-                    if (dc != null)
+                    TB_TLKDUTCHI dc1 = DAL.QLDHN.C_DhnAmSau.findByDanhBoDutChi_khacgnay(DC_DANHBO.Replace(" ", ""), this.txtNgayGan.Value.Date);
+                    if (dc1 != null)
                     {
-                        dc.TODS = DAL.SYS.C_USERS._toDocSo;
-                        dc.DANHBO = DC_DANHBO;
-                        dc.LOTRINH = DC_LOTRINH;
-                        dc.HOTEN = DC_HOTEN;
-                        dc.DIACHI = DC_DIACHI;
-                        dc.HOPDONG = DC_HOPDONG;
-                        dc.GB = DC_GB;
-                        dc.DM = DC_DM;
-                        dc.HIEU = DC_HIEU;
-                        dc.CO = DC_CO;
-                        dc.SOTHAN = SOTHANDH;
-                        dc.NGAYBAO = this.dcNgayYC.Value.Date;
-                        dc.MODIFYDATE = DateTime.Now;
-                        dc.MODIFYBY = DAL.SYS.C_USERS._userName;
-                        DAL.QLDHN.C_DhnAmSau.Update();
+                        string ngay = Utilities.DateToString.NgayVNVN(dc1.NGAYBAO.Value);
+                        string mess = "Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " đã báo đứt chì ngày " + ngay + " , Báo tiếp ?";
+                        if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            TB_TLKDUTCHI dc = DAL.QLDHN.C_DhnAmSau.findByDanhBoDutChi(DC_DANHBO.Replace(" ", ""), this.dcNgayYC.Value.Date);
+                            if (dc != null)
+                            {
+                                dc.TODS = DAL.SYS.C_USERS._toDocSo;
+                                dc.DANHBO = DC_DANHBO;
+                                dc.LOTRINH = DC_LOTRINH;
+                                dc.HOTEN = DC_HOTEN;
+                                dc.DIACHI = DC_DIACHI;
+                                dc.HOPDONG = DC_HOPDONG;
+                                dc.GB = DC_GB;
+                                dc.DM = DC_DM;
+                                dc.HIEU = DC_HIEU;
+                                dc.CO = DC_CO;
+                                dc.SOTHAN = SOTHANDH;
+                                dc.NGAYBAO = this.dcNgayYC.Value.Date;
+                                dc.MODIFYDATE = DateTime.Now;
+                                dc.MODIFYBY = DAL.SYS.C_USERS._userName;
+                                DAL.QLDHN.C_DhnAmSau.Update();
+                            }
+                            else
+                            {
+                                dc = new TB_TLKDUTCHI();
+                                dc.TODS = DAL.SYS.C_USERS._toDocSo;
+                                dc.DANHBO = DC_DANHBO;
+                                dc.LOTRINH = DC_LOTRINH;
+                                dc.HOTEN = DC_HOTEN;
+                                dc.DIACHI = DC_DIACHI;
+                                dc.HOPDONG = DC_HOPDONG;
+                                dc.GB = DC_GB;
+                                dc.DM = DC_DM;
+                                dc.HIEU = DC_HIEU;
+                                dc.CO = DC_CO;
+                                dc.SOTHAN = SOTHANDH;
+                                dc.NGAYBAO = this.dcNgayYC.Value.Date;
+                                dc.CREATEDATE = DateTime.Now;
+                                dc.CREATEBY = DAL.SYS.C_USERS._userName;
+                                DAL.QLDHN.C_DhnAmSau.Insert(dc);
+                            }
+                        }
+                        listDanhBa += ("'" + (DC_DANHBO.Replace(" ", "") + "',"));
                     }
-                    else
-                    {
-                        dc = new TB_TLKDUTCHI();
-                        dc.TODS = DAL.SYS.C_USERS._toDocSo;
-                        dc.DANHBO = DC_DANHBO;
-                        dc.LOTRINH = DC_LOTRINH;
-                        dc.HOTEN = DC_HOTEN;
-                        dc.DIACHI = DC_DIACHI;
-                        dc.HOPDONG = DC_HOPDONG;
-                        dc.GB = DC_GB;
-                        dc.DM = DC_DM;
-                        dc.HIEU = DC_HIEU;
-                        dc.CO = DC_CO;
-                        dc.SOTHAN = SOTHANDH;
-                        dc.NGAYBAO = this.dcNgayYC.Value.Date;
-                        dc.CREATEDATE = DateTime.Now;
-                        dc.CREATEBY = DAL.SYS.C_USERS._userName;
-                        DAL.QLDHN.C_DhnAmSau.Insert(dc);
+                    else {
+                        TB_TLKDUTCHI dc = DAL.QLDHN.C_DhnAmSau.findByDanhBoDutChi(DC_DANHBO.Replace(" ", ""), this.dcNgayYC.Value.Date);
+                        if (dc != null)
+                        {
+                            dc.TODS = DAL.SYS.C_USERS._toDocSo;
+                            dc.DANHBO = DC_DANHBO;
+                            dc.LOTRINH = DC_LOTRINH;
+                            dc.HOTEN = DC_HOTEN;
+                            dc.DIACHI = DC_DIACHI;
+                            dc.HOPDONG = DC_HOPDONG;
+                            dc.GB = DC_GB;
+                            dc.DM = DC_DM;
+                            dc.HIEU = DC_HIEU;
+                            dc.CO = DC_CO;
+                            dc.TYPE = this.comboBoxDutChi.SelectedIndex;
+                            dc.SOTHAN = SOTHANDH;
+                            dc.NGAYBAO = this.dcNgayYC.Value.Date;
+                            dc.MODIFYDATE = DateTime.Now;
+                            dc.MODIFYBY = DAL.SYS.C_USERS._userName;
+                            DAL.QLDHN.C_DhnAmSau.Update();
+                        }
+                        else
+                        {
+                            dc = new TB_TLKDUTCHI();
+                            dc.TODS = DAL.SYS.C_USERS._toDocSo;
+                            dc.DANHBO = DC_DANHBO;
+                            dc.LOTRINH = DC_LOTRINH;
+                            dc.HOTEN = DC_HOTEN;
+                            dc.DIACHI = DC_DIACHI;
+                            dc.HOPDONG = DC_HOPDONG;
+                            dc.GB = DC_GB;
+                            dc.DM = DC_DM;
+                            dc.HIEU = DC_HIEU;
+                            dc.CO = DC_CO;
+                            dc.SOTHAN = SOTHANDH;
+                            dc.TYPE = this.comboBoxDutChi.SelectedIndex;
+                            dc.NGAYBAO = this.dcNgayYC.Value.Date;
+                            dc.CREATEDATE = DateTime.Now;
+                            dc.CREATEBY = DAL.SYS.C_USERS._userName;
+                            DAL.QLDHN.C_DhnAmSau.Insert(dc);
+                        }
+                        listDanhBa += ("'" + (DC_DANHBO.Replace(" ", "") + "',"));
                     }
-                    listDanhBa += ("'" + (DC_DANHBO.Replace(" ", "") + "',"));
                 }
             }
             listDanhBa = listDanhBa.Remove(listDanhBa.Length - 1, 1);
-            ReportDocument rp = new rpt_TLKDutChi();
-            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString()));
-            frm_Reports frm = new frm_Reports(rp);
-            frm.ShowDialog();
+            if (this.comboBoxDutChi.SelectedIndex == 0)
+            {
+                ReportDocument rp = new rpt_TLKDutChi();
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString(), 0));
+                rp.SetParameterValue("type",this.comboBoxTitle.Text);
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
+            else {
+
+                ReportDocument rp = new rpt_TLKDutChi_Goc_();
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString(), 1));
+                rp.SetParameterValue("NGUOILAP", DAL.SYS.C_USERS._fullName.ToUpper());
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+            }
+           
 
 
             string dot = dcDot.Items[dcDot.SelectedIndex].ToString();

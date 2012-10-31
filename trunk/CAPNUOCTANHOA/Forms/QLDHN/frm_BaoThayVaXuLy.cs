@@ -276,7 +276,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void btInDanhSachChuyenKT_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new rpt_TLKDutChi();
-            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(DateTime.Now.Date.ToShortDateString()));
+            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(DateTime.Now.Date.ToShortDateString(),0));
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
