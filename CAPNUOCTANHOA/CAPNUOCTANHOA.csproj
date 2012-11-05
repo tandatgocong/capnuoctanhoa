@@ -550,6 +550,18 @@
       <DependentUpon>rpt_ThongKeGanMoi.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\rpt_ThongKeHoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ThongKeHoaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\M_tab_ThongHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\M_tab_ThongHoaDon.Designer.cs">
+      <DependentUpon>M_tab_ThongHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\Tab\N_tab_DongHoHieuCu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1387,6 +1399,13 @@
     <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_ThongKeGanMoi.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeGanMoi.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_ThongKeHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ThongKeHoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\M_tab_ThongHoaDon.resx">
+      <DependentUpon>M_tab_ThongHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\N_tab_DongHoHieuCu.resx">
       <DependentUpon>N_tab_DongHoHieuCu.cs</DependentUpon>

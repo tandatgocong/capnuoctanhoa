@@ -45,7 +45,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             if (comboBoxDutChi.SelectedIndex == 0) {
                 ReportDocument rp = new rpt_TLKDutChi();
-                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),0));
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),0, comboBoxTitle.SelectedIndex));
                 rp.SetParameterValue("type", this.comboBoxTitle.Text);
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
@@ -203,6 +203,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 dc.HIEU = txtHieuDHN.Text;
                 dc.CO = txtCoDHN.Text;
                 dc.TYPE = comboBoxDutChi.SelectedIndex;
+                dc.SONAM = comboBoxTitle.SelectedIndex;
                 dc.SOTHAN = txtSoThan.Text;
                 dc.NGAYBAO = this.txtNgayGan.Value.Date;
                 dc.MODIFYDATE = DateTime.Now;
@@ -223,6 +224,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 dc.HIEU = txtHieuDHN.Text;
                 dc.CO = txtCoDHN.Text;
                 dc.TYPE = comboBoxDutChi.SelectedIndex;
+                dc.SONAM = comboBoxTitle.SelectedIndex;
                 dc.SOTHAN = txtSoThan.Text;
                 dc.NGAYBAO = this.txtNgayGan.Value.Date;
                 dc.CREATEDATE = DateTime.Now;
