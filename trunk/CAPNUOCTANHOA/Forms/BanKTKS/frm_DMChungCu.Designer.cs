@@ -49,11 +49,11 @@
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.cbLoCC = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkChuyen = new System.Windows.Forms.CheckBox();
             this.btYcCapDM = new DevComponents.DotNetBar.ButtonX();
             this.txtDMMoi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.txtDMCu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.checkChuyen = new System.Windows.Forms.CheckBox();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.btNhapDM = new DevComponents.DotNetBar.ButtonX();
             this.txtDMThem = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -364,6 +364,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Nhập Thông Tin Cấp Định Mức";
             // 
+            // checkChuyen
+            // 
+            this.checkChuyen.AutoSize = true;
+            this.checkChuyen.Location = new System.Drawing.Point(410, 97);
+            this.checkChuyen.Name = "checkChuyen";
+            this.checkChuyen.Size = new System.Drawing.Size(79, 23);
+            this.checkChuyen.TabIndex = 216;
+            this.checkChuyen.Text = "Chuyển";
+            this.checkChuyen.UseVisualStyleBackColor = true;
+            this.checkChuyen.CheckedChanged += new System.EventHandler(this.checkChuyen_CheckedChanged);
+            // 
             // btYcCapDM
             // 
             this.btYcCapDM.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -415,16 +426,6 @@
             this.txtDMCu.Size = new System.Drawing.Size(62, 27);
             this.txtDMCu.TabIndex = 228;
             this.txtDMCu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // checkChuyen
-            // 
-            this.checkChuyen.AutoSize = true;
-            this.checkChuyen.Location = new System.Drawing.Point(410, 97);
-            this.checkChuyen.Name = "checkChuyen";
-            this.checkChuyen.Size = new System.Drawing.Size(79, 23);
-            this.checkChuyen.TabIndex = 216;
-            this.checkChuyen.Text = "Chuyển";
-            this.checkChuyen.UseVisualStyleBackColor = true;
             // 
             // labelX12
             // 
@@ -538,21 +539,23 @@
             this.txtDiaChiChuyen.Border.Class = "TextBoxBorder";
             this.txtDiaChiChuyen.FocusHighlightColor = System.Drawing.Color.Transparent;
             this.txtDiaChiChuyen.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChiChuyen.ForeColor = System.Drawing.Color.Red;
+            this.txtDiaChiChuyen.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtDiaChiChuyen.Location = new System.Drawing.Point(407, 124);
             this.txtDiaChiChuyen.Name = "txtDiaChiChuyen";
             this.txtDiaChiChuyen.Size = new System.Drawing.Size(268, 27);
             this.txtDiaChiChuyen.TabIndex = 218;
-            this.txtDiaChiChuyen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDiaChiChuyen.Visible = false;
             this.txtDiaChiChuyen.WatermarkColor = System.Drawing.Color.Transparent;
             // 
             // cbDonViChuyen
             // 
+            this.cbDonViChuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDonViChuyen.FormattingEnabled = true;
             this.cbDonViChuyen.Location = new System.Drawing.Point(504, 93);
             this.cbDonViChuyen.Name = "cbDonViChuyen";
             this.cbDonViChuyen.Size = new System.Drawing.Size(171, 27);
             this.cbDonViChuyen.TabIndex = 217;
+            this.cbDonViChuyen.Visible = false;
             // 
             // ngayDK
             // 
@@ -668,7 +671,6 @@
             this.txtHoKhau.Name = "txtHoKhau";
             this.txtHoKhau.Size = new System.Drawing.Size(163, 27);
             this.txtHoKhau.TabIndex = 209;
-            this.txtHoKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHoKhau.WatermarkColor = System.Drawing.Color.Transparent;
             // 
             // cbLoaiChungTu
@@ -688,12 +690,11 @@
             // 
             this.txtSoPhong.Border.Class = "TextBoxBorder";
             this.txtSoPhong.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoPhong.ForeColor = System.Drawing.Color.Red;
+            this.txtSoPhong.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSoPhong.Location = new System.Drawing.Point(504, 25);
             this.txtSoPhong.Name = "txtSoPhong";
             this.txtSoPhong.Size = new System.Drawing.Size(122, 27);
             this.txtSoPhong.TabIndex = 207;
-            this.txtSoPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelX3
             // 
@@ -713,12 +714,11 @@
             this.txtKhCapDM.Border.Class = "TextBoxBorder";
             this.txtKhCapDM.FocusHighlightColor = System.Drawing.Color.Transparent;
             this.txtKhCapDM.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhCapDM.ForeColor = System.Drawing.Color.Red;
+            this.txtKhCapDM.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtKhCapDM.Location = new System.Drawing.Point(112, 26);
             this.txtKhCapDM.Name = "txtKhCapDM";
             this.txtKhCapDM.Size = new System.Drawing.Size(289, 27);
             this.txtKhCapDM.TabIndex = 204;
-            this.txtKhCapDM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKhCapDM.WatermarkColor = System.Drawing.Color.Transparent;
             // 
             // labelX1

@@ -264,7 +264,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string dot = kdDot.Items[kdDot.SelectedIndex].ToString();
             string ky = kdKy.Items[kdKy.SelectedIndex].ToString();
             string nam = kdNam.Text.Trim();
-            string list = "SELECT DANHBA FROM [DocSo_PHT].[dbo].[DS" + nam + "] where KY=" + int.Parse(ky) + " AND DOT=" + int.Parse(dot) + " AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "MALOTRINH");
+            string list = "SELECT DANHBA FROM [DocSo_PHT].[dbo].[DS" + nam + "] where KY=" + int.Parse(ky) + " AND DOT=" + int.Parse(dot) + " " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "MALOTRINH") + " AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 AND  ( GHICHUMOI NOT LIKE N'%Đức chì thân%' AND GHICHUMOI NOT LIKE N'%Đứt chì gốc%' AND GHICHUMOI NOT LIKE N'%CHẠY%')";
             DataTable listdb = DAL.LinQConnection.getDataTable(list);
 
             for (int i = 0; i < listdb.Rows.Count; i++)
@@ -383,13 +383,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         }
         /*sfsdfds */
-        public static DataTable getListDutChiThan(string dot, string ky, string nam)
+        public DataTable getListDutChiThan(string dot, string ky, string nam)
         {
             if ("00".Equals(dot))
             {
                 string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
                 sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
-                sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
+                sql += " WHERE  ds.DANHBA=kh.DANHBO " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
+                sql += " AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND GHICHUMOI LIKE N'%"+this.comboBoxDutChi.Text +"%' ";
                 sql += " ORDER BY ds.MALOTRINH ASC";
 
                 return DAL.LinQConnection.getDataTable(sql);
@@ -399,7 +400,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
                 sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
-                sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND ds.DOT=" + int.Parse(dot) + "  AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
+                sql += " WHERE  ds.DANHBA=kh.DANHBO " +DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
+                sql += " AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND ds.DOT=" + int.Parse(dot) + "  AND GHICHUMOI LIKE N'%" + this.comboBoxDutChi.Text + "%' ";
                 sql += " ORDER BY ds.MALOTRINH ASC";
                 return DAL.LinQConnection.getDataTable(sql);
             }
@@ -491,6 +493,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                                 dc.HIEU = DC_HIEU;
                                 dc.CO = DC_CO;
                                 dc.SOTHAN = SOTHANDH;
+                                dc.TYPE = comboBoxDutChi.SelectedIndex;
+                                dc.SONAM = comboBoxTitle.SelectedIndex;
                                 dc.NGAYBAO = this.dcNgayYC.Value.Date;
                                 dc.MODIFYDATE = DateTime.Now;
                                 dc.MODIFYBY = DAL.SYS.C_USERS._userName;
@@ -510,6 +514,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                                 dc.HIEU = DC_HIEU;
                                 dc.CO = DC_CO;
                                 dc.SOTHAN = SOTHANDH;
+                                dc.TYPE = comboBoxDutChi.SelectedIndex;
+                                dc.SONAM = comboBoxTitle.SelectedIndex;
                                 dc.NGAYBAO = this.dcNgayYC.Value.Date;
                                 dc.CREATEDATE = DateTime.Now;
                                 dc.CREATEBY = DAL.SYS.C_USERS._userName;
@@ -532,7 +538,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             dc.DM = DC_DM;
                             dc.HIEU = DC_HIEU;
                             dc.CO = DC_CO;
-                            dc.TYPE = this.comboBoxDutChi.SelectedIndex;
+                            dc.TYPE = comboBoxDutChi.SelectedIndex;
+                            dc.SONAM = comboBoxTitle.SelectedIndex;
                             dc.SOTHAN = SOTHANDH;
                             dc.NGAYBAO = this.dcNgayYC.Value.Date;
                             dc.MODIFYDATE = DateTime.Now;
@@ -553,7 +560,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             dc.HIEU = DC_HIEU;
                             dc.CO = DC_CO;
                             dc.SOTHAN = SOTHANDH;
-                            dc.TYPE = this.comboBoxDutChi.SelectedIndex;
+                            dc.TYPE = comboBoxDutChi.SelectedIndex;
+                            dc.SONAM = comboBoxTitle.SelectedIndex;
                             dc.NGAYBAO = this.dcNgayYC.Value.Date;
                             dc.CREATEDATE = DateTime.Now;
                             dc.CREATEBY = DAL.SYS.C_USERS._userName;
@@ -564,16 +572,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
             }
             listDanhBa = listDanhBa.Remove(listDanhBa.Length - 1, 1);
-            if (this.comboBoxDutChi.SelectedIndex == 0)
+
+            if (comboBoxDutChi.SelectedIndex == 0)
             {
                 ReportDocument rp = new rpt_TLKDutChi();
-                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString(), 0));
-                rp.SetParameterValue("type",this.comboBoxTitle.Text);
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString(), 0, comboBoxTitle.SelectedIndex));
+                rp.SetParameterValue("type", this.comboBoxTitle.Text);
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
             }
-            else {
-
+            else if (comboBoxDutChi.SelectedIndex == 1)
+            {
                 ReportDocument rp = new rpt_TLKDutChi_Goc_();
                 rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString(), 1));
                 rp.SetParameterValue("NGUOILAP", DAL.SYS.C_USERS._fullName.ToUpper());

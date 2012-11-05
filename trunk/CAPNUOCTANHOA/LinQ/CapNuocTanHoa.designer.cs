@@ -19658,6 +19658,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private System.Nullable<int> _TYPE;
 		
+		private System.Nullable<int> _SONAM;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -19700,6 +19702,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnMODIFYBYChanged();
     partial void OnTYPEChanging(System.Nullable<int> value);
     partial void OnTYPEChanged();
+    partial void OnSONAMChanging(System.Nullable<int> value);
+    partial void OnSONAMChanged();
     #endregion
 		
 		public TB_TLKDUTCHI()
@@ -20083,6 +20087,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._TYPE = value;
 					this.SendPropertyChanged("TYPE");
 					this.OnTYPEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONAM", DbType="Int")]
+		public System.Nullable<int> SONAM
+		{
+			get
+			{
+				return this._SONAM;
+			}
+			set
+			{
+				if ((this._SONAM != value))
+				{
+					this.OnSONAMChanging(value);
+					this.SendPropertyChanging();
+					this._SONAM = value;
+					this.SendPropertyChanged("SONAM");
+					this.OnSONAMChanged();
 				}
 			}
 		}

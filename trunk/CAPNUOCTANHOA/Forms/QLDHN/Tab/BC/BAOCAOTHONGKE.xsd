@@ -3,8 +3,32 @@
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-        <Connections />
-        <Tables />
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CAPNUOCTANHOAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CAPNUOCTANHOAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CAPNUOCTANHOA.Properties.Settings.GlobalReference.Default.CAPNUOCTANHOAConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="THONGKE_HOADONTableAdapter" GeneratorDataComponentClassName="THONGKE_HOADONTableAdapter" Name="THONGKE_HOADON" UserDataComponentName="THONGKE_HOADONTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString (Settings)" DbObjectName="CAPNUOCTANHOA.dbo.THONGKE_HOADON" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DOT, HD0, HD1, HD2, HD3, HD4 FROM dbo.THONGKE_HOADON</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DOT" DataSetColumn="DOT" />
+              <Mapping SourceColumn="HD0" DataSetColumn="HD0" />
+              <Mapping SourceColumn="HD1" DataSetColumn="HD1" />
+              <Mapping SourceColumn="HD2" DataSetColumn="HD2" />
+              <Mapping SourceColumn="HD3" DataSetColumn="HD3" />
+              <Mapping SourceColumn="HD4" DataSetColumn="HD4" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
@@ -70,6 +94,24 @@
               <xs:element name="DANHBO" msprop:Generator_ColumnVarNameInTable="columnDANHBO" msprop:Generator_ColumnPropNameInRow="DANHBO" msprop:Generator_ColumnPropNameInTable="DANHBOColumn" msprop:Generator_UserColumnName="DANHBO" type="xs:string" minOccurs="0" />
               <xs:element name="LTCU" msprop:Generator_ColumnVarNameInTable="columnLTCU" msprop:Generator_ColumnPropNameInRow="LTCU" msprop:Generator_ColumnPropNameInTable="LTCUColumn" msprop:Generator_UserColumnName="LTCU" type="xs:string" minOccurs="0" />
               <xs:element name="LTMOI" msprop:Generator_ColumnVarNameInTable="columnLTMOI" msprop:Generator_ColumnPropNameInRow="LTMOI" msprop:Generator_ColumnPropNameInTable="LTMOIColumn" msprop:Generator_UserColumnName="LTMOI" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="THONGKE_HOADON" msprop:Generator_TableClassName="THONGKE_HOADONDataTable" msprop:Generator_TableVarName="tableTHONGKE_HOADON" msprop:Generator_TablePropName="THONGKE_HOADON" msprop:Generator_RowDeletingName="THONGKE_HOADONRowDeleting" msprop:Generator_UserTableName="THONGKE_HOADON" msprop:Generator_RowChangingName="THONGKE_HOADONRowChanging" msprop:Generator_RowEvHandlerName="THONGKE_HOADONRowChangeEventHandler" msprop:Generator_RowDeletedName="THONGKE_HOADONRowDeleted" msprop:Generator_RowEvArgName="THONGKE_HOADONRowChangeEvent" msprop:Generator_RowChangedName="THONGKE_HOADONRowChanged" msprop:Generator_RowClassName="THONGKE_HOADONRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOT" msprop:Generator_ColumnVarNameInTable="columnDOT" msprop:Generator_ColumnPropNameInRow="DOT" msprop:Generator_ColumnPropNameInTable="DOTColumn" msprop:Generator_UserColumnName="DOT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HD0" msprop:Generator_ColumnVarNameInTable="columnHD0" msprop:Generator_ColumnPropNameInRow="HD0" msprop:Generator_ColumnPropNameInTable="HD0Column" msprop:Generator_UserColumnName="HD0" type="xs:int" minOccurs="0" />
+              <xs:element name="HD1" msprop:Generator_ColumnVarNameInTable="columnHD1" msprop:Generator_ColumnPropNameInRow="HD1" msprop:Generator_ColumnPropNameInTable="HD1Column" msprop:Generator_UserColumnName="HD1" type="xs:int" minOccurs="0" />
+              <xs:element name="HD2" msprop:Generator_ColumnVarNameInTable="columnHD2" msprop:Generator_ColumnPropNameInRow="HD2" msprop:Generator_ColumnPropNameInTable="HD2Column" msprop:Generator_UserColumnName="HD2" type="xs:int" minOccurs="0" />
+              <xs:element name="HD3" msprop:Generator_ColumnVarNameInTable="columnHD3" msprop:Generator_ColumnPropNameInRow="HD3" msprop:Generator_ColumnPropNameInTable="HD3Column" msprop:Generator_UserColumnName="HD3" type="xs:int" minOccurs="0" />
+              <xs:element name="HD4" msprop:Generator_ColumnVarNameInTable="columnHD4" msprop:Generator_ColumnPropNameInRow="HD4" msprop:Generator_ColumnPropNameInTable="HD4Column" msprop:Generator_UserColumnName="HD4" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

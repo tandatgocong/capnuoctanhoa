@@ -37,7 +37,12 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 cbLoaiChungTu.DataSource = DAL.LinQConnection.getDataTable("SELECT * FROM KTKS_LOAICHUNGTU ");
                 cbLoaiChungTu.DisplayMember = "TENCT";
                 cbLoaiChungTu.ValueMember = "MACT";
-               // hsDinhmuc =int.Parse();
+
+                cbDonViChuyen.DataSource = DAL.LinQConnection.getDataTable("SELECT * FROM KTKS_DONVICAPNUOC ");
+                cbDonViChuyen.DisplayMember = "NAME";
+                cbDonViChuyen.ValueMember = "MACN";
+
+                hsDinhmuc = int.Parse(ConfigurationManager.AppSettings["hsDinhmuc"].ToString());
             }
             catch (Exception ex)
             {
@@ -102,6 +107,19 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         {
             if (e.KeyChar == 13) {
                 LoadThongTinDB();
+            }
+        }
+
+        private void checkChuyen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkChuyen.Checked)
+            {
+                cbDonViChuyen.Visible = true;
+                txtDiaChiChuyen.Visible = true;
+            }
+            else {
+                cbDonViChuyen.Visible = false;
+                txtDiaChiChuyen.Visible = false;
             }
         }
     }

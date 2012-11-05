@@ -118,6 +118,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.splitContainer1.Panel2.Controls.Add(new N_tab_DongHoHieuCu());
         }
 
+        private void radioTKHOADON_Click(object sender, EventArgs e)
+        {
+             this.splitContainer1.Panel2.Controls.Clear();
+             this.splitContainer1.Panel2.Controls.Add(new M_tab_ThongHoaDon());
+            
+        }
+
       
     }
 }
