@@ -6,6 +6,7 @@ using System.Data;
 using CAPNUOCTANHOA.LinQ;
 using System.Data.SqlClient;
 using log4net;
+using System.Data.Linq.SqlClient;
 
 namespace CAPNUOCTANHOA.DAL.DULIEUKH
 {
@@ -194,11 +195,11 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
 
             return ds;
         }
-        public static List<TB_DULIEUKHACHHANG> getSoThanDHN(string sothan)
+        public static List<TB_DULIEUKHACHHANG> getSoThanDHN(string sothan, string hieu)
         {
             try
             {
-                var query = from q in db.TB_DULIEUKHACHHANGs where q.SOTHANDH == sothan select q;
+                var query = from q in db.TB_DULIEUKHACHHANGs where q.SOTHANDH == sothan && q.HIEUDH.StartsWith(hieu) select q;
                 return query.ToList();
             }
             catch (Exception ex)
@@ -207,7 +208,6 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             }
             return null;
         }
-
 
         public static bool InsertGHICHU(TB_GHICHU gc)
         {

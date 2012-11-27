@@ -27,7 +27,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             cbCode.DataSource = DAL.LinQConnection.getDataTable("SELECT CODE FROM TB_CODE");
             cbCode.DisplayMember = "CODE";
             cbCode.ValueMember = "CODE";
-
+            cbDotDS.SelectedIndex = 1;
         }
 
         public DataSet getTheoDoiBienDocChiSo(int dot, int ky, int nam, string code)

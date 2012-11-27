@@ -169,9 +169,9 @@
       <DependentUpon>LinhTaLinhTinh.xsd</DependentUpon>
     </None>
     <None Include="LinhTinh\LinhTaLinhTinh.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>LinhTaLinhTinh.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="LinhTinh\LinhTaLinhTinh.xss">
       <DependentUpon>LinhTaLinhTinh.xsd</DependentUpon>

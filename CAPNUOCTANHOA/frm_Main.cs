@@ -404,7 +404,11 @@ namespace CAPNUOCTANHOA
 
         private void toolNhanDon_Click(object sender, EventArgs e)
         {
-
+            PanelContent.Controls.Clear();
+            frm_NhanDon_ baothay = new frm_NhanDon_();
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
         }
 
         private void toolDmChungCu_Click(object sender, EventArgs e)

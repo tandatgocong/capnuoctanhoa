@@ -981,6 +981,151 @@
       <Column Name="SONAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.KTKS_DCDINHMUC" Member="KTKS_DCDINHMUCs">
+    <Type Name="KTKS_DCDINHMUC">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HIEULUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HD_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COTLK_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GB_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GIAMGIA_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SOHO_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SONK_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEN_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HD_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COTLK_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GB_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GIAMGIA_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SOHO_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SONK_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEN_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KTKS_DMCHUNGCU" Member="KTKS_DMCHUNGCUs">
+    <Type Name="KTKS_DMCHUNGCU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="YCDC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TONGNK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TONGDM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DMCU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DMMOI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAYDK" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="KTKS_YEUCAUDIEUCHINH_KTKS_DMCHUNGCU" Member="KTKS_YEUCAUDIEUCHINH" ThisKey="YCDC" OtherKey="ID" Type="KTKS_YEUCAUDIEUCHINH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KTKS_DONVICAPNUOC" Member="KTKS_DONVICAPNUOCs">
+    <Type Name="KTKS_DONVICAPNUOC">
+      <Column Name="MACN" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="KTKS_DONVICAPNUOC_KTKS_THONGTINDINHMUC" Member="KTKS_THONGTINDINHMUCs" ThisKey="MACN" OtherKey="DONVICN" Type="KTKS_THONGTINDINHMUC" />
+      <Association Name="KTKS_DONVICAPNUOC_KTKS_THONGTINDINHMUC_TMP" Member="KTKS_THONGTINDINHMUC_TMPs" ThisKey="MACN" OtherKey="DONVICN" Type="KTKS_THONGTINDINHMUC_TMP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KTKS_LOAICHUNGTU" Member="KTKS_LOAICHUNGTUs">
+    <Type Name="KTKS_LOAICHUNGTU">
+      <Column Name="MACT" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENCT" Type="System.String" DbType="NVarChar(155) NOT NULL" CanBeNull="false" />
+      <Column Name="HANMUC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KTKS_LOAICHUNGTU_KTKS_THONGTINDINHMUC" Member="KTKS_THONGTINDINHMUCs" ThisKey="MACT" OtherKey="LOAICT" Type="KTKS_THONGTINDINHMUC" />
+      <Association Name="KTKS_LOAICHUNGTU_KTKS_THONGTINDINHMUC_TMP" Member="KTKS_THONGTINDINHMUC_TMPs" ThisKey="MACT" OtherKey="LOAICT" Type="KTKS_THONGTINDINHMUC_TMP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KTKS_THONGTINDINHMUC" Member="KTKS_THONGTINDINHMUCs">
+    <Type Name="KTKS_THONGTINDINHMUC">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="YCDC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LOAICT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SOCHUNGTU" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NGAYHETHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SOPHONG" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SONK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CHUYEN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DONVICN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="KTKS_LOAICHUNGTU_KTKS_THONGTINDINHMUC" Member="KTKS_LOAICHUNGTU" ThisKey="LOAICT" OtherKey="MACT" Type="KTKS_LOAICHUNGTU" IsForeignKey="true" />
+      <Association Name="KTKS_DONVICAPNUOC_KTKS_THONGTINDINHMUC" Member="KTKS_DONVICAPNUOC" ThisKey="DONVICN" OtherKey="MACN" Type="KTKS_DONVICAPNUOC" IsForeignKey="true" />
+      <Association Name="KTKS_YEUCAUDIEUCHINH_KTKS_THONGTINDINHMUC" Member="KTKS_YEUCAUDIEUCHINH" ThisKey="YCDC" OtherKey="ID" Type="KTKS_YEUCAUDIEUCHINH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KTKS_YEUCAUDIEUCHINH" Member="KTKS_YEUCAUDIEUCHINHs">
+    <Type Name="KTKS_YEUCAUDIEUCHINH">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HIEULUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HD_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COTLK_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GB_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GIAMGIA_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SOHO_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SONK_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEN_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI_CU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HD_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COTLK_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GB_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GIAMGIA_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SOHO_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SONK_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEN_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI_MOI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="KTKS_YEUCAUDIEUCHINH_KTKS_DMCHUNGCU" Member="KTKS_DMCHUNGCUs" ThisKey="ID" OtherKey="YCDC" Type="KTKS_DMCHUNGCU" />
+      <Association Name="KTKS_YEUCAUDIEUCHINH_KTKS_THONGTINDINHMUC" Member="KTKS_THONGTINDINHMUCs" ThisKey="ID" OtherKey="YCDC" Type="KTKS_THONGTINDINHMUC" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KTKS_THONGTINDINHMUC_TMP" Member="KTKS_THONGTINDINHMUC_TMPs">
+    <Type Name="KTKS_THONGTINDINHMUC_TMP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LOAICT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SOCHUNGTU" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NGAYHETHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SOPHONG" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SONK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CHUYEN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DONVICN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CAPDINHMUC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="KTKS_LOAICHUNGTU_KTKS_THONGTINDINHMUC_TMP" Member="KTKS_LOAICHUNGTU" ThisKey="LOAICT" OtherKey="MACT" Type="KTKS_LOAICHUNGTU" IsForeignKey="true" />
+      <Association Name="KTKS_DONVICAPNUOC_KTKS_THONGTINDINHMUC_TMP" Member="KTKS_DONVICAPNUOC" ThisKey="DONVICN" OtherKey="MACN" Type="KTKS_DONVICAPNUOC" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">
     <Parameter Name="KY" Parameter="kY" Type="System.Int32" DbType="Int" />
     <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />

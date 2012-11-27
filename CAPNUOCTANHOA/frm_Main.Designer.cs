@@ -80,7 +80,9 @@
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel6 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip5 = new System.Windows.Forms.MenuStrip();
+            this.toolNhanDon = new System.Windows.Forms.ToolStripMenuItem();
             this.toolDmChungCu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuThayDoiGBDM = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInPhieuTieuTHu = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel7 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip7 = new System.Windows.Forms.MenuStrip();
@@ -113,8 +115,6 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolNhanDon = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuThayDoiGBDM = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
@@ -675,6 +675,15 @@
             this.menuStrip5.TabIndex = 3;
             this.menuStrip5.Text = "menuStrip5";
             // 
+            // toolNhanDon
+            // 
+            this.toolNhanDon.ForeColor = System.Drawing.Color.Black;
+            this.toolNhanDon.Image = global::CAPNUOCTANHOA.Properties.Resources.Clipboard_Paste;
+            this.toolNhanDon.Name = "toolNhanDon";
+            this.toolNhanDon.Size = new System.Drawing.Size(106, 23);
+            this.toolNhanDon.Text = "Nhận Đơn";
+            this.toolNhanDon.Click += new System.EventHandler(this.toolNhanDon_Click);
+            // 
             // toolDmChungCu
             // 
             this.toolDmChungCu.ForeColor = System.Drawing.Color.Black;
@@ -683,6 +692,15 @@
             this.toolDmChungCu.Size = new System.Drawing.Size(137, 23);
             this.toolDmChungCu.Text = "ĐM Chung Cư";
             this.toolDmChungCu.Click += new System.EventHandler(this.toolDmChungCu_Click);
+            // 
+            // menuThayDoiGBDM
+            // 
+            this.menuThayDoiGBDM.ForeColor = System.Drawing.Color.Black;
+            this.menuThayDoiGBDM.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
+            this.menuThayDoiGBDM.Name = "menuThayDoiGBDM";
+            this.menuThayDoiGBDM.Size = new System.Drawing.Size(157, 23);
+            this.menuThayDoiGBDM.Text = "Y/Cầu Điều Chỉnh";
+            this.menuThayDoiGBDM.Click += new System.EventHandler(this.menuThayDoiGBDM_Click);
             // 
             // menuInPhieuTieuTHu
             // 
@@ -998,24 +1016,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
             this.statusStrip1.TabIndex = 36;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolNhanDon
-            // 
-            this.toolNhanDon.ForeColor = System.Drawing.Color.Black;
-            this.toolNhanDon.Image = global::CAPNUOCTANHOA.Properties.Resources.Clipboard_Paste;
-            this.toolNhanDon.Name = "toolNhanDon";
-            this.toolNhanDon.Size = new System.Drawing.Size(106, 23);
-            this.toolNhanDon.Text = "Nhận Đơn";
-            this.toolNhanDon.Click += new System.EventHandler(this.toolNhanDon_Click);
-            // 
-            // menuThayDoiGBDM
-            // 
-            this.menuThayDoiGBDM.ForeColor = System.Drawing.Color.Black;
-            this.menuThayDoiGBDM.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
-            this.menuThayDoiGBDM.Name = "menuThayDoiGBDM";
-            this.menuThayDoiGBDM.Size = new System.Drawing.Size(157, 23);
-            this.menuThayDoiGBDM.Text = "Y/Cầu Điều Chỉnh";
-            this.menuThayDoiGBDM.Click += new System.EventHandler(this.menuThayDoiGBDM_Click);
             // 
             // frm_Main
             // 

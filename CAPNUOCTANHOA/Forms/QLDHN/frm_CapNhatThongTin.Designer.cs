@@ -1399,7 +1399,7 @@
             this.comboBoxDutChi.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBoxDutChi.FormattingEnabled = true;
             this.comboBoxDutChi.Items.AddRange(new object[] {
-            "Đức chì thân",
+            "Đứt chì thân",
             "Đứt chì gốc"});
             this.comboBoxDutChi.Location = new System.Drawing.Point(609, 12);
             this.comboBoxDutChi.Name = "comboBoxDutChi";

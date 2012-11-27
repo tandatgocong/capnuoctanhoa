@@ -142,11 +142,23 @@
     <Compile Include="Forms\BanKTKS\frmPhieuChepTieuThu.Designer.cs">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BanKTKS\frm_NhanDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frm_NhanDon.Designer.cs">
+      <DependentUpon>frm_NhanDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BanKTKS\frm_DMChungCu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\BanKTKS\frm_DMChungCu.Designer.cs">
       <DependentUpon>frm_DMChungCu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frm_NhanDon_.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frm_NhanDon_.Designer.cs">
+      <DependentUpon>frm_NhanDon_.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DoiTCTB\BC\HOANCONGNHANH.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1205,8 +1217,14 @@
     <EmbeddedResource Include="Forms\BanKTKS\frmPhieuChepTieuThu.resx">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\frm_NhanDon.resx">
+      <DependentUpon>frm_NhanDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frm_DMChungCu.resx">
       <DependentUpon>frm_DMChungCu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\frm_NhanDon_.resx">
+      <DependentUpon>frm_NhanDon_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\BC\rpt_BCHoanCong_A4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
