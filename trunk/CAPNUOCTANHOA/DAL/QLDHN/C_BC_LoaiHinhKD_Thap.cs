@@ -52,11 +52,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static void CAPNHATSOLIEU_BAOCAO_LOAIKD_KYTRUOC(string nam, int ky)
         {
             string sql = "UPDATE 	W_BAOCAO_LOAIKD_THAP ";
-            sql += " SET KT_SH0 =t2.KT_SH0,KT_SH4=t2.KT_SH4 ,";
-            sql += " KT_SX0 =t2.KT_SX0,KT_SX4=t2.KT_SX4 ,";
-            sql += " KT_KD0 =t2.KT_KD0,KT_KD4=t2.KT_KD4 ,";
-            sql += " KT_CC0 =t2.KT_CC0,KT_CC4=t2.KT_CC4 ,";
-            sql += " KT_HCSN0 =t2.KT_HCSN0,KT_HCSN4=t2.KT_HCSN4 ";
+            sql += " SET KT_SH0 =t2.KN_SH0,KT_SH4=t2.KN_SH4 ,";
+            sql += " KT_SX0 =t2.KN_SX0,KT_SX4=t2.KN_SX4 ,";
+            sql += " KT_KD0 =t2.KN_KD0,KT_KD4=t2.KN_KD4 ,";
+            sql += " KT_CC0 =t2.KN_CC0,KT_CC4=t2.KN_CC4 ,";
+            sql += " KT_HCSN0 =t2.KN_HCSN0,KT_HCSN4=t2.KN_HCSN4 ";
             sql += " FROM W_BAOCAO_LOAIKD_THAP INNER JOIN";
             sql += " (";
             sql += " SELECT TODS,";

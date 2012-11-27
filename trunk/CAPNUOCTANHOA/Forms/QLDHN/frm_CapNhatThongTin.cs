@@ -264,7 +264,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string dot = kdDot.Items[kdDot.SelectedIndex].ToString();
             string ky = kdKy.Items[kdKy.SelectedIndex].ToString();
             string nam = kdNam.Text.Trim();
-            string list = "SELECT DANHBA FROM [DocSo_PHT].[dbo].[DS" + nam + "] where KY=" + int.Parse(ky) + " AND DOT=" + int.Parse(dot) + " " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "MALOTRINH") + " AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 AND  ( GHICHUMOI NOT LIKE N'%Đức chì thân%' AND GHICHUMOI NOT LIKE N'%Đứt chì gốc%' AND GHICHUMOI NOT LIKE N'%CHẠY%')";
+            string list = "SELECT DANHBA FROM [DocSo_PHT].[dbo].[DS" + nam + "] where KY=" + int.Parse(ky) + " AND DOT=" + int.Parse(dot) + " " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "MALOTRINH") + " AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 AND  ( GHICHUMOI NOT LIKE N'%Đứt chì thân%' AND GHICHUMOI NOT LIKE N'%Đứt chì gốc%' AND GHICHUMOI NOT LIKE N'%CHẠY%')";
             DataTable listdb = DAL.LinQConnection.getDataTable(list);
 
             for (int i = 0; i < listdb.Rows.Count; i++)

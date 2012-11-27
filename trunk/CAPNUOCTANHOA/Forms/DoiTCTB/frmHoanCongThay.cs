@@ -140,7 +140,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 txtSoThanGo.Text = HCT_SOTHANGO;
 
                 string HCT_HIEUDHNGAN = dataBangKe.Rows[i].Cells["HCT_HIEUDHNGAN"].Value + "";
-                txtHieuDHGan.Text = !HCT_HIEUDHNGAN.Equals("") ? HCT_HIEUDHNGAN : "KENT";
+                txtHieuDHGan.Text = !HCT_HIEUDHNGAN.Equals("") ? HCT_HIEUDHNGAN : ConfigurationManager.AppSettings["defautHieu"].ToString();
 
                 string HCT_CODHNGAN = dataBangKe.Rows[i].Cells["HCT_CODHNGAN"].Value + "";
                 txtGoGan.Text = !HCT_CODHNGAN.Equals("") ? HCT_CODHNGAN : "15";
@@ -149,7 +149,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 txtSoThanGan.Text = HCT_SOTHANGAN;
 
                 string HCT_CAP = dataBangKe.Rows[i].Cells["HCT_CAP"].Value + "";
-                txtCapGan.Text = !HCT_CAP.Equals("") ? HCT_CAP : "C";
+                txtCapGan.Text = !HCT_CAP.Equals("") ? HCT_CAP : ConfigurationManager.AppSettings["defautCap"].ToString();
 
                 string HCT_CHISOGAN = dataBangKe.Rows[i].Cells["HCT_CHISOGAN"].Value + "";
                 txtChiSoGan.Text = !HCT_CHISOGAN.Equals("") ? HCT_CHISOGAN : "0"; ;
@@ -168,7 +168,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
 
 
                 string HCT_CHITHAN = dataBangKe.Rows[i].Cells["GCHITHAN"].Value + "";
-                txtChiThan.Text = !HCT_CHITHAN.Equals("") ? HCT_CHITHAN : "VN/217";
+                txtChiThan.Text = !HCT_CHITHAN.Equals("") ? HCT_CHITHAN : ConfigurationManager.AppSettings["defautChi"].ToString();
 
                 string HCT_CHIGOC = dataBangKe.Rows[i].Cells["GCHIGOC"].Value + "";
                 txtChiGoc.Text = dataBangKe.Rows[i].Cells["GCHIGOC"].Value + "";
@@ -490,7 +490,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 }
                 else
                 {
-                    List<TB_DULIEUKHACHHANG> cothantrung = DAL.DULIEUKH.C_DuLieuKhachHang.getSoThanDHN(this.txtSoThanGan.Text.Replace(" ", ""));
+                    List<TB_DULIEUKHACHHANG> cothantrung = DAL.DULIEUKH.C_DuLieuKhachHang.getSoThanDHN(this.txtSoThanGan.Text.Replace(" ", ""), this.txtHieuDHGan.Text.Substring(0,3));
                     if (cothantrung.Count > 0)
                     {
                         if (cothantrung.Count == 1)

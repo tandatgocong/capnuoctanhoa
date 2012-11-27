@@ -59,7 +59,25 @@ namespace GIAMHOADON
 
            adapter.Fill(ds, "THIDUA_GIAMHOADON");
 
-   
+           query = "SELECT  ";
+           query += " COUNT(CASE WHEN TTKY7 = 0 THEN 1 ELSE NULL END) AS '7_0', ";
+           query += " COUNT(CASE WHEN TTKY8 = 0 THEN 1 ELSE NULL END) AS '8_0', ";
+           query += " COUNT(CASE WHEN TTKY9 = 0 THEN 1 ELSE NULL END) AS '9_0', ";
+           query += " COUNT(CASE WHEN TTKY10 = 0 THEN 1 ELSE NULL END) AS '10_0', ";
+           query += " COUNT(CASE WHEN TTKY11 = 0 THEN 1 ELSE NULL END) AS '11_0', ";
+           query += " COUNT(CASE WHEN TTKY12 = 0 THEN 1 ELSE NULL END) AS '12_0', ";
+           query += " COUNT(CASE WHEN TTKY7 > 0 THEN 1 ELSE NULL END) AS '7_1', ";
+           query += " COUNT(CASE WHEN TTKY8 > 0 THEN 1 ELSE NULL END) AS '8_1', ";
+           query += " COUNT(CASE WHEN TTKY9 > 0 THEN 1 ELSE NULL END) AS '9_1', ";
+           query += " COUNT(CASE WHEN TTKY10 > 0 THEN 1 ELSE NULL END) AS '10_1', ";
+           query += " COUNT(CASE WHEN TTKY11 > 0  THEN 1 ELSE NULL END) AS '11_1', ";
+           query += " COUNT(CASE WHEN TTKY12 > 0 THEN 1 ELSE NULL END) AS '12_1' ";
+           query += " FROM THIDUA_GIAMHOADON td, W_GIAMHOADON gm WHERE td.DANHBO=gm.DANHBO ";
+           query += "   AND gm.NHANVIEN= " + cbNhanVien.SelectedValue;
+
+           adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+
+           adapter.Fill(ds, "GIAM_HOADON_0");
             return ds;
         }
 

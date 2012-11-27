@@ -25,6 +25,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             this.txtNam.Text = DateTime.Now.Year.ToString();
             cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
             this.dateTime.Value = DateTime.Now.Date;
+            cbDotDS.SelectedIndex = 2;
 
         }
 
