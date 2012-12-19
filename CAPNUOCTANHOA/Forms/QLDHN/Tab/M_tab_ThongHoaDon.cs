@@ -24,7 +24,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             InitializeComponent();
             this.txtNam.Text = DateTime.Now.Year.ToString();
-            cbKyDS.SelectedIndex = DateTime.Now.Month;
+            cbKyDS.SelectedIndex = DateTime.Now.Month -1;
 
         }
         DataSet getTheoDoiBienDocChiSo(string ky)
