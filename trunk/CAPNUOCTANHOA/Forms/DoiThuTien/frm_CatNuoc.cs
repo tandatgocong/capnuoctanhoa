@@ -193,39 +193,33 @@ namespace CAPNUOCTANHOA.Forms.DoiThuTien
 
         private void dataBangKe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //try
-            //{
-            //    string ID_ = dataBangKe.Rows[e.RowIndex].Cells["G_ID"].Value + "";
-            //    string DANHBO_ = dataBangKe.Rows[e.RowIndex].Cells["G_DANHBO"].Value + "";
-            //    string HOPDONG_ = dataBangKe.Rows[e.RowIndex].Cells["G_HOPDONG"].Value + "";
-            //    string HOTEN_ = dataBangKe.Rows[e.RowIndex].Cells["G_TENKH"].Value + "";
-            //    string SONHA_ = dataBangKe.Rows[e.RowIndex].Cells["G_SONHA"].Value + "";
-            //    string TENDUONG_ = dataBangKe.Rows[e.RowIndex].Cells["G_TENDUONG"].Value + "";
-            //    string PHUONG_ = dataBangKe.Rows[e.RowIndex].Cells["G_PHUONG"].Value + "";
-            //    string QUAN_ = dataBangKe.Rows[e.RowIndex].Cells["G_QUAN"].Value + "";
-            //    object NGAYDONGNUOC_ = dataBangKe.Rows[e.RowIndex].Cells["G_NGAYDONG"].Value;
-            //    object NGAYMONUOC_ = dataBangKe.Rows[e.RowIndex].Cells["G_NGAYMO"].Value;
-            //    string NOIDUNG_ = dataBangKe.Rows[e.RowIndex].Cells["G_NOIDUNG"].Value + "";
+            try
+            {
+                string s_thaotat = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["deltete"].Value + "";
+                if (dataBangKe.CurrentCell.OwningColumn.Name == "deltete")
+                {
+                    string _shs = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["G_ID"].Value + "";
+                    try
+                    {
+                        string sql = "DELETE FROM TB_DONGNUOC WHERE ID='"+_shs+"'";
+                        MessageBox.Show(this, "" + _shs);
+                        DAL.LinQConnection.ExecuteCommand_(sql);
+                        dataBangKe.Rows.RemoveAt(dataBangKe.CurrentRow.Index);
+                        //dataBangKe.DataSource = C_ThuTien.getDongNuocByDate(DateTime.Now.Month.ToString());
+                        //Utilities.DataGridV.formatRows(dataBangKe);
 
-            //    txtid.Text = ID_;
-            //    txtDanhBo.Text = DANHBO_.Replace(" ","");
-            //    HOPDONG.Text = DANHBO_;
-            //    HOTEN.Text = HOTEN_;
-            //    SONHA.Text = SONHA_;
-            //    TENDUONG.Text = TENDUONG_;
-            //    QUAN.Text = QUAN_;
-            //    PHUONGT.Text = PHUONG_;
-            //    NGAYDONG.ValueObject = NGAYDONGNUOC_;
-            //    NGAYMO.ValueObject = NGAYMONUOC_;
-            //    txtGhiChu.Text = NOIDUNG_;
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Error("Them Dot THi Cong Loi " + ex.Message);
+                    }
+                    
+                }
+            }
+            catch (Exception)
+            {
 
-            //    btcapNhat.Enabled = true;
-            //    btXoa.Enabled = true;
-            //}
-            //catch (Exception)
-            //{
-
-            //}
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)

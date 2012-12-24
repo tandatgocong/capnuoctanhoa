@@ -66,7 +66,7 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
 
         public static DataTable getDongNuocByDate(string month)
         {
-            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY NGAYDONGNUOC  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC,CSDONG, NGAYMONUOC,CSMO, NOIDUNG, HOPDONG,QUAN,PHUONG ";
+            string sql = "SELECT 'Xóa' as 'DEL', ROW_NUMBER() OVER (ORDER BY NGAYDONGNUOC  DESC) [STT],ID, DANHBO, HOTEN, SONHA, TENDUONG, NGAYDONGNUOC,CSDONG, NGAYMONUOC,CSMO, NOIDUNG, HOPDONG,QUAN,PHUONG ";
             sql += " FROM TB_DONGNUOC WHERE MONTH(NGAYDONGNUOC)='" + month + "'  AND YEAR(NGAYDONGNUOC)='" + DateTime.Now.Date.Year.ToString() + "' ORDER BY NGAYDONGNUOC DESC";
             return LinQConnection.getDataTable(sql);
         }
