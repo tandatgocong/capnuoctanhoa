@@ -67,6 +67,7 @@
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.CSDONG = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.CSMO = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.deltete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.G_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_QUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_PHUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -432,6 +433,7 @@
             this.dataBangKe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataBangKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataBangKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.deltete,
             this.G_ID,
             this.G_QUAN,
             this.G_PHUONG,
@@ -587,6 +589,16 @@
             this.CSMO.Size = new System.Drawing.Size(129, 27);
             this.CSMO.TabIndex = 139;
             // 
+            // deltete
+            // 
+            this.deltete.DataPropertyName = "DEL";
+            this.deltete.Frozen = true;
+            this.deltete.HeaderText = "Xóa";
+            this.deltete.Name = "deltete";
+            this.deltete.ReadOnly = true;
+            this.deltete.Text = "Xóa";
+            this.deltete.Width = 50;
+            // 
             // G_ID
             // 
             this.G_ID.DataPropertyName = "ID";
@@ -653,7 +665,7 @@
             this.G_SONHA.HeaderText = "ĐỊA CHỈ";
             this.G_SONHA.Name = "G_SONHA";
             this.G_SONHA.ReadOnly = true;
-            this.G_SONHA.Width = 150;
+            this.G_SONHA.Width = 120;
             // 
             // G_TENDUONG
             // 
@@ -797,6 +809,7 @@
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.Controls.TextBoxX CSDONG;
         private DevComponents.DotNetBar.Controls.TextBoxX CSMO;
+        private System.Windows.Forms.DataGridViewButtonColumn deltete;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_QUAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_PHUONG;
