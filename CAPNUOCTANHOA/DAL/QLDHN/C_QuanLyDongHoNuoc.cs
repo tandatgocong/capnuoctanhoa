@@ -308,7 +308,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
             db.Connection.Open();
             
-            string query = "SELECT * FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY STT ASC ";
+            string query = "SELECT * FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY MAYDS ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_BANGCHAMCONG");
