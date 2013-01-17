@@ -162,7 +162,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             ds.Tables["TIEUTHU"].Merge(TB_HD);
 
             int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
-            if (scl > 0)
+            while (scl > 0)
             {
                 nam = nam - 1;
                 query = "SELECT  TOP(" + scl + ")   " +
