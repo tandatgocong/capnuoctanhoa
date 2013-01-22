@@ -803,7 +803,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             else
             {
-                ReportDocument rp = new rpt_SoDocSo_GANMOI();
+                ReportDocument rp = new rpt_SoDocSo();
                 rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_GM(SO_LT.Text, SO_KY.Text, SO_NAM.Text));
                 rp.SetParameterValue("HIEULUC",String.Format("{0:00}",int.Parse(SO_KY.Text)) + "/" + SO_NAM.Text);
                 crystalReportViewer2.ReportSource = rp;
