@@ -18,3 +18,13 @@ D:\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroCh
 D:\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Properties.Resources.resources
 D:\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\GenerateResource.write.1.tlog
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.exe.config
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.exe
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.pdb
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.exe
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.pdb
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Form1.resources
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Properties.Resources.resources
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\GenerateResource.read.1.tlog
+H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\GenerateResource.write.1.tlog

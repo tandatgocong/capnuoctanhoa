@@ -479,8 +479,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             DAL.OledbConnection.ExecuteCommand_UpdatLoTrinh(connectionString, DANHBO, LOTRINH);
 
                             ////
-                            string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH,DIENTHOAI) VALUES ";
-                            insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "','" + _dt + "')";
+                            string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH,DIENTHOAI,KY_) VALUES ";
+                            insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "','" + _dt + "','" + ky + "')";
                             if (DAL.LinQConnection.ExecuteCommand_(insert) > 0)
                             {
                                 log.Info("+++++++++++ TB_DULIEUKHACHHANG : " + DANHBO + "");
@@ -804,8 +804,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             else
             {
                 ReportDocument rp = new rpt_SoDocSo();
-                rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_GM(SO_LT.Text, SO_KY.Text, SO_NAM.Text));
-                rp.SetParameterValue("HIEULUC",String.Format("{0:00}",int.Parse(SO_KY.Text)) + "/" + SO_NAM.Text);
+                rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_GM_A4(SO_LT.Text, SO_KY.Text, SO_NAM.Text));
+          //      rp.SetParameterValue("HIEULUC",String.Format("{0:00}",int.Parse(SO_KY.Text)) + "/" + SO_NAM.Text);
                 crystalReportViewer2.ReportSource = rp;
                 this.crystalReportViewer2.Visible = true;
 
@@ -815,9 +815,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void SO_LT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
-                ReportDocument rp = new rpt_SoDocSo_GANMOI();
-                rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_GM(SO_LT.Text, SO_KY.Text, SO_NAM.Text));
-                rp.SetParameterValue("HIEULUC", String.Format("{0:00}", int.Parse(SO_KY.Text)) + "/" + SO_NAM.Text);
+                ReportDocument rp = new rpt_SoDocSo();
+                rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_GM_A4(SO_LT.Text, SO_KY.Text, SO_NAM.Text));
+                //rp.SetParameterValue("HIEULUC", String.Format("{0:00}", int.Parse(SO_KY.Text)) + "/" + SO_NAM.Text);
                 crystalReportViewer2.ReportSource = rp;
                 this.crystalReportViewer2.Visible = true;
             }

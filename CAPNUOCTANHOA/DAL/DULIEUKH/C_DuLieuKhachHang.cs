@@ -121,6 +121,29 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             adapter.Fill(ds, "TB_DULIEUKHACHHANG");
             return ds;
         }
+
+        public static DataSet SoDocSo_GM_A4(string sobangke, string ky, string nam)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT * FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + sobangke + "' AND KY='" + ky + "' AND NAM='" + nam + "' ORDER BY LOTRINH ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DULIEUKHACHHANG");
+            return ds;
+        }
+
+        public static DataSet SoDocSo_GM_A4_(string sobangke, string ky, string nam)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT * FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + sobangke + "' AND KY<='" + ky + "' AND NAM<='" + nam + "' ORDER BY LOTRINH ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DULIEUKHACHHANG");
+            return ds;
+        }
+
         public static DataSet SoDocSo_A3(string tulotrinh, string denlotrinh)
         {
             DataSet ds = new DataSet();
