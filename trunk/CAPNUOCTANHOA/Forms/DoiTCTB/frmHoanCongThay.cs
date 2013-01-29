@@ -41,6 +41,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             txtChiThan.DisplayMember = "MACHI";
             txtChiThan.ValueMember = "MACHI";
             //
+            txtSoBangKe.Text = "TB01-" + DateTime.Now.Year.ToString().Substring(2, 2) + "000";
             this.txtSoBangKe.Focus();
             cbLoaiDHN.SelectedIndex = 0;
             txtCapGan.SelectedIndex = 0;
@@ -53,7 +54,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             {
                 checkMepNgan.Checked = false;
             }
-
+            
         }
 
         private Control txtKeypress;
