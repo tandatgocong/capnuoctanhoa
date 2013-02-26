@@ -30,7 +30,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             cbHLNam.Text = nam + "";
             try
             {
-                cbhlKyDS.SelectedIndex = ky;
+                cbhlKyDS.SelectedIndex = ky-1;
             }
             catch (Exception)
             {

@@ -387,7 +387,7 @@
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(151, 382);
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(357, 96);
+            this.txtGhiChu.Size = new System.Drawing.Size(320, 96);
             this.txtGhiChu.TabIndex = 21;
             this.txtGhiChu.Text = "";
             // 
