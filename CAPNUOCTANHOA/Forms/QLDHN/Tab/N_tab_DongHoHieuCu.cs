@@ -48,7 +48,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
             if (!"".Equals(this.txtCoDHN.Text.Replace(" ", "")))
             {
-                query += " AND CODH  " + this.txtCoDHN.Text.Replace(" ", "") ;
+                query += " AND CODH = " + this.txtCoDHN.Text.Replace(" ", "") ;
             }
             
             query+= DAL.SYS.C_USERS._gioihan + " ORDER BY NAME ASC,LOTRINH ASC ";
