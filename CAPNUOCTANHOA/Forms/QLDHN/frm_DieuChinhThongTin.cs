@@ -351,6 +351,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 hKhacHang.GHICHU = this.GHICHU.Text; ;
                 hKhacHang.CREATEDATE = DateTime.Now;
                 hKhacHang.CREATEBY = DAL.SYS.C_USERS._userName;
+                hKhacHang.DMA = huyDanhBo.DMA;
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.HuyDanhBo(hKhacHang, huyDanhBo))
                 {
                     MessageBox.Show(this, "Hủy Danh Bộ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
