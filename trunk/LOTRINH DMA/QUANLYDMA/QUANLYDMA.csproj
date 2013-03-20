@@ -95,6 +95,7 @@
     <Compile Include="DAL\SYS\C_PHUONG.cs" />
     <Compile Include="DAL\SYS\C_QUAN.cs" />
     <Compile Include="DAL\SYS\C_Users.cs" />
+    <Compile Include="Forms\GNKDT\Export.cs" />
     <Compile Include="Forms\GNKDT\frm_QuanLyDMA.cs">
       <SubType>UserControl</SubType>
     </Compile>
