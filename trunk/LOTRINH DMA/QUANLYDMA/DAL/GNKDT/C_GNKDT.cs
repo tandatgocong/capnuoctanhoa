@@ -24,7 +24,7 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
             query += "              SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC , N'Hủy' as 'HIEULUC' ";
             query += "              FROM TB_DULIEUKHACHHANG_HUYDB WHERE MADMA='"+madma+"'";
             query += "             ) as tb1 ";
-            query += "   INNER JOIN HOADONTH" + ky + "_" + nam + " tb2 ";
+            query += "   LEFT JOIN HOADONTH" + ky + "_" + nam + " tb2 ";
             query += "   ON tb1.DANHBO = tb2.DANHBO";
             query += "   ORDER BY LOTRINH";
             return DAL.LinQConnection.getDataTable(query);
@@ -40,7 +40,7 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
             query += "   SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC , N'Hủy' as 'HIEULUC',CHUKYDS  ";
             query += "         FROM TB_DULIEUKHACHHANG_HUYDB WHERE MADMA='" + madma + "'";
             query += "   ) as tb1  ";
-            query += "   INNER JOIN [DocSo_PHT].[dbo].[DS" + nam + "] tb2 ";
+            query += "   LEFT JOIN [DocSo_PHT].[dbo].[DS" + nam + "] tb2 ";
             query += "   ON tb1.DANHBO = tb2.DANHBA ";
             query += "   where tb2.KY=" + ky;
             query += "   ORDER BY LOTRINH";
