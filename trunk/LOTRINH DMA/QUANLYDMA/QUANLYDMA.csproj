@@ -89,6 +89,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DULIEUKH\C_DieuChinhDanhBo.cs" />
+    <Compile Include="DAL\DULIEUKH\C_DuLieuKhachHang.cs" />
+    <Compile Include="DAL\DULIEUKH\C_GanMoi.cs" />
+    <Compile Include="DAL\DULIEUKH\C_PhienLoTrinh.cs" />
+    <Compile Include="DAL\GNKDT\C_GNKDT.cs" />
     <Compile Include="DAL\Lib.cs" />
     <Compile Include="DAL\LinQConnectionDS.cs" />
     <Compile Include="DAL\LinQConnection.cs" />
@@ -96,6 +101,12 @@
     <Compile Include="DAL\SYS\C_QUAN.cs" />
     <Compile Include="DAL\SYS\C_Users.cs" />
     <Compile Include="Forms\GNKDT\Export.cs" />
+    <Compile Include="Forms\GNKDT\frmDieuChinhDMA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GNKDT\frmDieuChinhDMA.Designer.cs">
+      <DependentUpon>frmDieuChinhDMA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GNKDT\frm_QuanLyDMA.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,6 +183,9 @@
     <None Include="LinQ\CapNuocTanHoa.dbml.layout">
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Forms\GNKDT\frmDieuChinhDMA.resx">
+      <DependentUpon>frmDieuChinhDMA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GNKDT\frm_QuanLyDMA.resx">
       <DependentUpon>frm_QuanLyDMA.cs</DependentUpon>
     </EmbeddedResource>

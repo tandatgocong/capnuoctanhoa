@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HoaDon" Class="HoaDonDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=AGRIBANK-TANHOA\SQLAGRIBANK;Initial Catalog=HoaDon;Persist Security Info=True;User ID=website" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="HoaDonConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP_G7;Initial Catalog=HoaDon;Persist Security Info=True;User ID=website" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="HoaDonConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.AGB" Member="AGBs">
     <Type Name="AGB">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

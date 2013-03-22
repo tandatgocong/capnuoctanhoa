@@ -43,7 +43,7 @@ namespace CAPNUOCTANHOA.Utilities
                 }
                 try
                 {
-                    dview.Rows[i].Cells[rows].Value = dview.Rows[i].Cells[rows].Value != null ? Utilities.FormatSoHoSoDanhBo.sodanhbo(dview.Rows[i].Cells[rows].Value + "") : dview.Rows[i].Cells[rows].Value;
+                    dview.Rows[i].Cells[rows].Value = (i+1);
                 }
                 catch (Exception)
                 {
