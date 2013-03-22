@@ -18,7 +18,7 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
 {
     class Export
     {
-        public static string export(DataGridView dataGridView1, int ky, int nam)
+        public static string export(DataGridView dataGridView1,string dma)
         {
             ExcelCOM.Application exApp = new ExcelCOM.Application();
             string workbookPath = AppDomain.CurrentDomain.BaseDirectory + @"\LOTRINH.xls";
@@ -27,48 +27,46 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
         true, false, 0, true, false, false);
             ExcelCOM.Worksheet exSheet = (ExcelCOM.Worksheet)exBook.Worksheets[1];
 
-            exSheet.Name = ky + "." + nam;
-            exSheet.Cells[4, 5] = "TP.Hồ Chí Minh, ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
-
-            int rows = 16;
+            //exSheet.Name = ky + "." + nam;
+            //exSheet.Cells[4, 5] = "TP.Hồ Chí Minh, ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
+            exSheet.Cells[1, 1] = "DANH SÁCH NHỮNG ĐỒNG HỒ NƯỚC TRONG VÙNG DMA " + dma;
+            int rows = 4;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                string stt = dataGridView1.Rows[i].Cells["DC_STT"].Value + "";
-                string danhbo = dataGridView1.Rows[i].Cells["DC_DANHBO"].Value + "";
-                string lotrinhMoi = dataGridView1.Rows[i].Cells["DC_LOTRINHMOI"].Value + "";
-                string lotrinhCu = dataGridView1.Rows[i].Cells["DC_LT_CU"].Value + "";
-                exSheet.Cells[rows, 2] = stt;
-                exSheet.Cells[rows, 3] = danhbo;
-                exSheet.Cells[rows, 4] = lotrinhMoi;
-                exSheet.Cells[rows, 5] = lotrinhCu;
-                if (lotrinhMoi.Substring(0, 2).Equals(lotrinhCu.Substring(0, 2)) == false)
-                {
-                    exSheet.Cells[rows, 6] = "Chuyển Đơt";
-                }
+                string STT =dataGridView1.Rows[i].Cells["STT"].Value + "";
+                string DANHBO=dataGridView1.Rows[i].Cells["DANHBO"].Value + "";
+                string CODH=dataGridView1.Rows[i].Cells["CODHN"].Value + "";
+                string HOPDONG=dataGridView1.Rows[i].Cells["HOPDONG"].Value + "";
+                string TENKH=dataGridView1.Rows[i].Cells["HOTEN"].Value + "";
+                string SONHA=dataGridView1.Rows[i].Cells["SONHA"].Value + "";
+                string DUONG=dataGridView1.Rows[i].Cells["TENDUONG"].Value + "";
+                string GIABIEU=dataGridView1.Rows[i].Cells["GB"].Value + "";
+                string DINHMUC=dataGridView1.Rows[i].Cells["DM"].Value + "";
+                string CODE=dataGridView1.Rows[i].Cells["CODE"].Value + "";
+                string CHUKY=dataGridView1.Rows[i].Cells["CHUKY"].Value + "";
+                string SANLUONG=dataGridView1.Rows[i].Cells["TIEUTHU"].Value + "";
+                string BINHQUAN=dataGridView1.Rows[i].Cells["BINHQUAN"].Value + "";
+
+                exSheet.Cells[rows, 1] = STT;
+                exSheet.Cells[rows, 2] = DANHBO;
+                exSheet.Cells[rows, 3] = CODH;
+                exSheet.Cells[rows, 4] = HOPDONG;
+                exSheet.Cells[rows, 5] = TENKH;
+                exSheet.Cells[rows, 6] = SONHA;
+                exSheet.Cells[rows, 7] = DUONG;
+                exSheet.Cells[rows, 8] = GIABIEU;
+                exSheet.Cells[rows, 9] = DINHMUC;
+                exSheet.Cells[rows, 10] = CODE;
+                exSheet.Cells[rows, 11] = CHUKY;
+                exSheet.Cells[rows, 12] = SANLUONG;
+                exSheet.Cells[rows, 13] = BINHQUAN;
+               
 
                 rows++;
 
             }
-            rows = rows + 1;
-            exSheet.Cells[rows, 2] = "Trân trọng kính chào !";
-            exSheet.Cells[rows + 1, 2] = "* Nơi Nhận";
-            exSheet.Cells[rows + 2, 2] = "  - Như trên.";
-            exSheet.Cells[rows + 3, 2] = "  - Đội Thu Tiền để biết.";
-            exSheet.Cells[rows + 4, 2] = "  - Ban KTKS để biết.";
-            exSheet.Cells[rows + 5, 2] = "  - Lưu.";
 
-            exSheet.Cells[rows, 6] = "KT.GIÁM ĐỐC";
-            exSheet.Cells[rows + 1, 6] = "PHÓ GIÁM ĐỐC KINH DOANH";
-            exSheet.Cells[rows + 3, 6] = "  (đã ký)";
-            exSheet.Cells[rows + 5, 6] = " LÊ VĂN SƠN ";
-
-            //ExcelCOM.Range tR;
-            //tR = exSheet.get_Range("X11", "X" + (rows - 1));
-            //tR.VerticalAlignment = ExcelCOM.XlVAlign.xlVAlignCenter;
-            //tR.ShrinkToFit = false;
-            //tR.MergeCells = true;
-            //tR.Value2 = "Sau khi thi công xong(chậm nhất là 48 giờ tính từ khi bắt đầu khởi công)";
-            string file = "ThayDoiPhienLoTrinh." + ky + "." + nam + ".xls";
+            string file = "SAN LUONG DHN TRONG DMA " + dma + ".xls";
             exApp.Visible = false;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.InitialDirectory = @"C:\";
