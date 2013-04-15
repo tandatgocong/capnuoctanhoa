@@ -99,6 +99,7 @@
     </Compile>
     <Compile Include="DAL\BANKTKS\C_BANKTKS.cs" />
     <Compile Include="DAL\BANKTKS\C_DinhMucChungCu.cs" />
+    <Compile Include="DAL\BANKTKS\C_TheoDoiDM.cs" />
     <Compile Include="DAL\Lib.cs" />
     <Compile Include="DAL\LinQConnectionDS.cs" />
     <Compile Include="DAL\DoiTCTB\C_HoanCongThay.cs" />
@@ -141,6 +142,12 @@
     </Compile>
     <Compile Include="Forms\BanKTKS\frmPhieuChepTieuThu.Designer.cs">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frm_TheoDoiDM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frm_TheoDoiDM.Designer.cs">
+      <DependentUpon>frm_TheoDoiDM.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BanKTKS\frm_NhanDon.cs">
       <SubType>UserControl</SubType>
@@ -1216,6 +1223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frmPhieuChepTieuThu.resx">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\frm_TheoDoiDM.resx">
+      <DependentUpon>frm_TheoDoiDM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frm_NhanDon.resx">
       <DependentUpon>frm_NhanDon.cs</DependentUpon>
