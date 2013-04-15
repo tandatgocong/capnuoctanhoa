@@ -420,9 +420,14 @@ namespace CAPNUOCTANHOA
             PanelContent.Controls.Add(baothay);
         }
 
-        private void menuThayDoiGBDM_Click(object sender, EventArgs e)
+        private void menuTheoDoiDM_Click(object sender, EventArgs e)
         {
-
+             PanelContent.Controls.Clear();
+             frm_TheoDoiDM baothay = new frm_TheoDoiDM();
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+            
         }
         
     }
