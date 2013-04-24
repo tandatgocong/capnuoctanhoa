@@ -915,7 +915,6 @@
             // 
             // 
             this.HOPDONG.Border.Class = "TextBoxBorder";
-            this.HOPDONG.Enabled = false;
             this.HOPDONG.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HOPDONG.ForeColor = System.Drawing.Color.Red;
             this.HOPDONG.Location = new System.Drawing.Point(151, 90);
