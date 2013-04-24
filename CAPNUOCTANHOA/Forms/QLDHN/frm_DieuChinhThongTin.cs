@@ -182,7 +182,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             if (khachhang != null)
             {
-                khachhang.HOTEN = HOTEN.Text.ToUpper();
+                khachhang.HOPDONG = HOPDONG.Text.ToUpper();
+                khachhang.HOTEN = HOTEN.Text.ToUpper();               
                 khachhang.SONHA = SONHA.Text.ToUpper();
                 khachhang.TENDUONG = TENDUONG.Text.ToUpper();
                 khachhang.DIENTHOAI = txtDienThoai.Text;

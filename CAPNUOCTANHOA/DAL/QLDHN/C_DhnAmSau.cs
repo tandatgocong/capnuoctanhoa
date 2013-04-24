@@ -18,6 +18,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             try
             {
+               // CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
                 db.TB_DHNAMSAUs.InsertOnSubmit(chuyendm);
                 db.SubmitChanges();
             }
