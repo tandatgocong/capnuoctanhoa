@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CAPNUOCTANHOA" Class="CapNuocTanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HP_G7;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="CAPNUOCTANHOAConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVER9;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="CAPNUOCTANHOAConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DULIEUDOCSOVE" Member="DULIEUDOCSOVEs">
     <Type Name="DULIEUDOCSOVE">
       <Column Name="[Column 0]" Member="Column_0" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -1110,21 +1110,6 @@
       <Column Name="CHUKYDS" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.KTKS_THEODOIDM" Member="KTKS_THEODOIDMs">
-    <Type Name="KTKS_THEODOIDM">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="LOAICT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DANHBO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SOPHIEUYC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HIEULUC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DMCU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DMMOI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NGAYDK" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NGAYHETHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="KTKS_LOAICHUNGTU_KTKS_THEODOIDM" Member="KTKS_LOAICHUNGTU" ThisKey="LOAICT" OtherKey="MACT" Type="KTKS_LOAICHUNGTU" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.TB_DHNAMSAU" Member="TB_DHNAMSAUs">
     <Type Name="TB_DHNAMSAU">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -1145,6 +1130,25 @@
       <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KTKS_THEODOIDM" Member="KTKS_THEODOIDMs">
+    <Type Name="KTKS_THEODOIDM">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LOAICT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SOPHIEUYC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HIEULUC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DMCU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DMMOI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAYDK" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYHETHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="KTKS_LOAICHUNGTU_KTKS_THEODOIDM" Member="KTKS_LOAICHUNGTU" ThisKey="LOAICT" OtherKey="MACT" Type="KTKS_LOAICHUNGTU" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">
