@@ -11,6 +11,8 @@ using log4net;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
+using CAPNUOCTANHOA.Forms.BanKTKS.BC;
+using System.Data.SqlClient;
 
 namespace CAPNUOCTANHOA.Forms.BanKTKS
 {
@@ -31,12 +33,17 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         void formLoad()
         {
 
-            txtNgayGan.Value = DateTime.Now.Date;
-          //  dateNgayGan.Value = DateTime.Now.Date;
+            dateNgayKy.Value = DateTime.Now.Date;
+            dateNgayHetHan.Value = DateTime.Now.Date;
+            searchDate.Value = DateTime.Now.Date;
+            //  dateNgayGan.Value = DateTime.Now.Date;
             LoadData();
             cbLoaiChungTu.DataSource = DAL.LinQConnection.getDataTable("SELECT * FROM KTKS_LOAICHUNGTU ");
             cbLoaiChungTu.DisplayMember = "TENCT";
             cbLoaiChungTu.ValueMember = "MACT";
+            cbLoaiChungTu.SelectedIndex = 1;
+            cbTypeView.SelectedIndex = 1;
+            LoadDataGridByDate();
         }
         public void setSTT()
         {
@@ -45,30 +52,37 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 dataBangKe.Rows[i].Cells["DHN_STT"].Value = i + 1;
             }
         }
+        string sql_report = "";
         private void btIn_Click(object sender, EventArgs e)
         {
 
-            ////  ReportDocument rp = new rpt_GanHopBaoVe();
+            ReportDocument rp = new rpt_DSTheoDoiDM();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            DataSet ds = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql_report, db.Connection.ConnectionString);
+            adapter.Fill(ds, "V_KTKS_THEODOIDM");
 
-            //      rp.SetDataSource(DAL.QLDHN.C_GanHopBaoVe.getReport(this.txtNgayGan.Value.ToShortDateString()));
-            //      frm_Reports frm = new frm_Reports(rp);
-            //      frm.ShowDialog();
+
+
+            rp.SetDataSource(ds);
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
 
         }
 
 
         public void LoadData()
         {
-            try
-            {
-                dataBangKe.DataSource = DAL.QLDHN.C_GanHopBaoVe.getListGanHopByDate(this.txtNgayGan.Value.ToShortDateString());
-                Utilities.DataGridV.formatRows(dataBangKe);
-                setSTT();
-            }
-            catch (Exception ex)
-            {
-                log.Error("Loi Load Du Lieu Thay " + ex.Message);
-            }
+            //try
+            //{
+            //    dataBangKe.DataSource = DAL.QLDHN.C_GanHopBaoVe.getListGanHopByDate(this.txtNgayGan.Value.ToShortDateString());
+            //    Utilities.DataGridV.formatRows(dataBangKe);
+            //    setSTT();
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error("Loi Load Du Lieu Thay " + ex.Message);
+            //}
 
         }
         private void txtSoBangKe_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,28 +99,32 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             try
             {
                 string ID = dataBangKe.Rows[e.RowIndex].Cells["ID"].Value + "";
-                string LOTRINH = dataBangKe.Rows[e.RowIndex].Cells["LOTRINH"].Value + "";
                 string G_DANHBO = dataBangKe.Rows[e.RowIndex].Cells["G_DANHBO"].Value + "";
                 string G_TENKH = dataBangKe.Rows[e.RowIndex].Cells["G_TENKH"].Value + "";
                 string G_DIACHI = dataBangKe.Rows[e.RowIndex].Cells["G_DIACHI"].Value + "";
                 string HOPDONG = dataBangKe.Rows[e.RowIndex].Cells["HOPDONG"].Value + "";
                 string GB = dataBangKe.Rows[e.RowIndex].Cells["GB"].Value + "";
-                string DM = dataBangKe.Rows[e.RowIndex].Cells["DM"].Value + "";
-                string HIEUDHN = dataBangKe.Rows[e.RowIndex].Cells["HIEUDHN"].Value + "";
-                string CO = dataBangKe.Rows[e.RowIndex].Cells["CO"].Value + "";
+                string DMCU = dataBangKe.Rows[e.RowIndex].Cells["DMCU"].Value + "";
+                string DMMOI = dataBangKe.Rows[e.RowIndex].Cells["DMMOI"].Value + "";
+                string LOAICT = dataBangKe.Rows[e.RowIndex].Cells["LOAICT"].Value + "";
+                string NGAYDK = dataBangKe.Rows[e.RowIndex].Cells["NGAYDK"].Value + "";
+                string NGAYHH = dataBangKe.Rows[e.RowIndex].Cells["NGAYHH"].Value + "";
+                string HIEULUC = dataBangKe.Rows[e.RowIndex].Cells["HIEULUC"].Value + "";
+                string SOPHIEUYC = dataBangKe.Rows[e.RowIndex].Cells["SOPHIEUYC"].Value + "";
                 string GHICHU = dataBangKe.Rows[e.RowIndex].Cells["GHICHU"].Value + "";
 
-                this.txtCoDHN.Text = CO;
-                this.txtLoTrinh.Text = LOTRINH;
                 this.txtSoDanhBo.Text = G_DANHBO.Replace(" ", "");
-                this.txtTenKH.Text = G_TENKH;
-                this.txtDiaChi.Text = G_DIACHI;
+                this.txtID.Text = ID;
+                txtTenKH.Text = G_TENKH;
+                txtDiaChi.Text = G_DIACHI;
+                this.txtSoPhieu.Text = SOPHIEUYC;
+                this.txtHieuLuc.Text = HIEULUC;
                 this.txtHopDong.Text = HOPDONG;
-                this.txtGB.Text = GB;
-                this.txtDMCu.Text = DM;
-                this.txtHieuDHN.Text = HIEUDHN;
-                this.txtSoPhieu.Text = GHICHU;
-                btcapNhat.Enabled = true;
+                this.txtDMCu.Text = DMCU;
+                this.txtDMMoi.Text = DMMOI;
+                this.dateNgayKy.ValueObject = dataBangKe.Rows[e.RowIndex].Cells["NGAYDK"].Value;
+                this.dateNgayHetHan.ValueObject = dataBangKe.Rows[e.RowIndex].Cells["NGAYHH"].Value;
+                this.txtGhiChu.Text = "";
                 btXoa.Enabled = true;
             }
             catch (Exception)
@@ -194,7 +212,15 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             gb.NGAYDK = this.dateNgayKy.Value;
             gb.NGAYHETHAN = this.dateNgayHetHan.Value;
             gb.GHICHU = this.txtGhiChu.Text;
-            DAL.BANKTKS.C_TheoDoiDM.InsertThongTinDM(gb);
+            gb.CREATEBY = DAL.SYS.C_USERS._userName;
+            gb.CREATEDATE = DateTime.Now.Date;
+            if (DAL.BANKTKS.C_TheoDoiDM.InsertThongTinDM(gb))
+            {
+                MessageBox.Show(this, "Thêm Thông Tin ĐM Thành Công ! ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else {
+                MessageBox.Show(this, "Thêm Thông Tin ĐM Thất Bại ! ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
@@ -205,25 +231,23 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             txtSoDanhBo.Text = "";
             txtTenKH.Text = "";
             txtDiaChi.Text = "";
-            txtNgayGan.ValueObject = null;
-            //txtHieu.Text = "";
-            //txtCo.Text = "";
-            //txtSoThan.Text = "";
-            //txtChiThan.Text = "";
-            //txtChiGoc.Text = "";
-            //txtChiSoThay.Text = "";
-            //txtMaLoTrinh.Text = "";
-            btcapNhat.Enabled = false;
+            this.txtSoPhieu.Text = "";
+            this.txtHieuLuc.Text = "";
+            this.txtDMCu.Text = "";
+            this.txtDMMoi.Text = "";
+            this.dateNgayKy.ValueObject = null;
+            this.dateNgayHetHan.ValueObject = null;
+            this.txtGhiChu.Text = "";
             btXoa.Enabled = false;
             txtSoDanhBo.Focus();
-
         }
         private void btThem_Click(object sender, EventArgs e)
         {
             try
             {
                 Add();
-
+                LoadDataGridByDate();
+                refeshInser();
             }
             catch (Exception ex)
             {
@@ -237,13 +261,14 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             try
             {
 
-                string ID = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID"].Value + "";
+            
 
-                string mess = "Xóa Gắn Hộp Bảo Vệ Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
+                string mess = "Xóa Thông Tin ệ Danh Bộ " + this.txtSoDanhBo.Text + " ?";
                 if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    DAL.QLDHN.C_GanHopBaoVe.DeleteBYID(ID);
-                    LoadData();
+                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM KTKS_THEODOIDM WHERE ID='" + this.txtID.Text + "'");
+                    dataBangKe.Rows.RemoveAt(dataBangKe.CurrentRow.Index);
+                    setSTT();
                 }
             }
             catch (Exception ex)
@@ -334,7 +359,6 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             txtHopDong.Text = "";
             txtSoDanhBo.Text = "";
             txtSoDanhBo.Focus();
-            btcapNhat.Enabled = false;
             btXoa.Enabled = false;
         }
         private void btTaoMoi_Click_1(object sender, EventArgs e)
@@ -355,5 +379,203 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             setSTT();
         }
 
+        public void CalcNgay()
+        {
+            try
+            {
+                if ("HKH".Equals(cbLoaiChungTu.SelectedValue + ""))
+                {
+
+                }
+                else if ("KT3".Equals(cbLoaiChungTu.SelectedValue + ""))
+                {
+                    dateNgayHetHan.Value = dateNgayKy.Value.Date.AddMonths(12);
+                }
+                else if ("TAT".Equals(cbLoaiChungTu.SelectedValue + ""))
+                {
+                    dateNgayHetHan.Value = dateNgayKy.Value.Date.AddMonths(6);
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+        public void LoadDataGridByDate()
+        {
+            string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.GHICHU ";
+            sql += " FROM KTKS_THEODOIDM dm, TB_DULIEUKHACHHANG kh ";
+            sql += " WHERE dm.DANHBO=kh.DANHBO ";
+            sql += " AND CONVERT(DATETIME,NGAYDK,103) = CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(searchDate.Value.Date) + "',103) ";
+            sql += " ORDER BY dm.NGAYDK DESC ";
+            dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
+            sql_report = sql;
+            Utilities.DataGridV.formatRows(dataBangKe, "STT");
+            setSTT();
+
+        }
+        private void cbLoaiChungTu_SelectedValueChanged(object sender, EventArgs e)
+        {
+            CalcNgay();
+        }
+
+        private void dateNgayKy_ValueChanged(object sender, EventArgs e)
+        {
+            CalcNgay();
+        }
+
+        private void searchText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+
+                try
+                {
+                    string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.GHICHU ";
+                    sql += " FROM KTKS_THEODOIDM dm, TB_DULIEUKHACHHANG kh ";
+                    sql += " WHERE dm.DANHBO=kh.DANHBO ";
+
+                    if (cbTypeView.SelectedIndex == 0)
+                    {
+                    }
+                    else if (cbTypeView.SelectedIndex == 1)
+                    {
+                        sql += " AND CONVERT(DATETIME,NGAYDK,103) = CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(searchDate.Value.Date) + "',103) ";
+                    }
+                    else if (cbTypeView.SelectedIndex == 2)
+                    {
+                        sql += " AND MONTH(NGAYDK)=  '" + this.searchText.Text + "' ";
+                    }
+                    else if (cbTypeView.SelectedIndex == 3)
+                    {
+                        sql += " AND YEAR(NGAYDK)=  '" + this.searchText.Text + "' ";
+                    }
+                    else if (cbTypeView.SelectedIndex == 4)
+                    {
+                        sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) <0 AND  (DATEDIFF (D , NGAYHETHAN , GETDATE() ) + " + this.searchText.Text + ")>=0";
+                    }
+                    else if (cbTypeView.SelectedIndex == 5)
+                    {
+                        sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) > 0";
+                    }
+
+                    sql += " ORDER BY dm.NGAYDK DESC ";
+                    dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
+                    Utilities.DataGridV.formatRows(dataBangKe, "STT");
+                    setSTT();
+                    sql_report = sql;
+                }
+                catch (Exception)
+                {
+
+
+                }
+
+            }
+        }
+
+        private void searchDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void cbTypeView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.searchText.Visible = false;
+                this.searchText.Visible = false;
+                btXoaHetHan.Visible = false;
+                string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.GHICHU ";
+                sql += " FROM KTKS_THEODOIDM dm, TB_DULIEUKHACHHANG kh ";
+                sql += " WHERE dm.DANHBO=kh.DANHBO ";
+
+                if (cbTypeView.SelectedIndex == 0)
+                {
+                }
+                else if (cbTypeView.SelectedIndex == 1)
+                {
+                    this.searchText.Visible = false;
+                    this.searchDate.Visible = true;
+                    sql += " AND CONVERT(DATETIME,NGAYDK,103) = CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(searchDate.Value.Date) + "',103) ";
+                }
+                else if (cbTypeView.SelectedIndex == 2)
+                {
+                    this.searchText.Visible = true;
+                    this.searchDate.Visible = false;
+                    this.searchText.Text = DateTime.Now.Month.ToString();
+                    sql += " AND MONTH(NGAYDK)=  '" + this.searchText.Text + "' ";
+                }
+                else if (cbTypeView.SelectedIndex == 3)
+                {
+                    this.searchText.Visible = true;
+                    this.searchDate.Visible = false;
+
+                    this.searchText.Text = DateTime.Now.Year.ToString();
+                    sql += " AND YEAR(NGAYDK)=  '" + this.searchText.Text + "' ";
+                }
+                else if (cbTypeView.SelectedIndex == 4)
+                {
+                    this.searchText.Visible = true;
+                    this.searchDate.Visible = false;
+
+                    this.searchText.Text = "20";
+                    sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) <0 AND  (DATEDIFF (D , NGAYHETHAN , GETDATE() ) + " + this.searchText.Text + ")>=0";
+                }
+                else if (cbTypeView.SelectedIndex == 5)
+                {
+                    btXoaHetHan.Visible = true;
+                    sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) > 0";
+                }
+                sql += " ORDER BY dm.NGAYDK DESC ";
+                dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
+                sql_report = sql;
+                Utilities.DataGridV.formatRows(dataBangKe, "STT");
+                setSTT();
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+
+            
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                for (int i = 0; i < dataBangKe.Rows.Count; i++)
+                {
+                     string ID = dataBangKe.Rows[i].Cells["ID"].Value + "";
+                     DAL.LinQConnection.ExecuteCommand_("DELETE FROM KTKS_THEODOIDM WHERE ID='" + ID + "'");
+                     dataBangKe.Rows.RemoveAt(dataBangKe.CurrentRow.Index);
+                }
+                   
+               
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+
+        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+                string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU ";
+                sql += " FROM KTKS_THEODOIDM dm, TB_DULIEUKHACHHANG kh ";
+                sql += " WHERE dm.DANHBO=kh.DANHBO AND dm.DANHBO='"+this.maskedTextBox1.Text.Replace("-","")+"'";                
+                sql += " ORDER BY dm.NGAYDK DESC ";
+                dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
+                Utilities.DataGridV.formatRows(dataBangKe, "STT");
+                setSTT();
+                sql_report = sql;
+            }
+        }
     }
 }
