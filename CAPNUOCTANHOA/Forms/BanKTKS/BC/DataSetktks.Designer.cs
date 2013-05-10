@@ -20,9 +20,9 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("V_KTKS_THEODOIDM")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetktks")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class V_KTKS_THEODOIDM : global::System.Data.DataSet {
+    public partial class DataSetktks : global::System.Data.DataSet {
         
         private V_KTKS_THEODOIDMDataTable tableV_KTKS_THEODOIDM;
         
@@ -30,7 +30,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public V_KTKS_THEODOIDM() {
+        public DataSetktks() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected V_KTKS_THEODOIDM(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetktks(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -79,7 +79,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public V_KTKS_THEODOIDMDataTable _V_KTKS_THEODOIDM {
+        public V_KTKS_THEODOIDMDataTable V_KTKS_THEODOIDM {
             get {
                 return this.tableV_KTKS_THEODOIDM;
             }
@@ -127,7 +127,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            V_KTKS_THEODOIDM cln = ((V_KTKS_THEODOIDM)(base.Clone()));
+            DataSetktks cln = ((DataSetktks)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "V_KTKS_THEODOIDM";
+            this.DataSetName = "DataSetktks";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/V_KTKS_THEODOIDM.xsd";
+            this.Namespace = "http://tempuri.org/DataSetktks.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableV_KTKS_THEODOIDM = new V_KTKS_THEODOIDMDataTable();
@@ -210,7 +210,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerialize_V_KTKS_THEODOIDM() {
+        private bool ShouldSerializeV_KTKS_THEODOIDM() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            V_KTKS_THEODOIDM ds = new V_KTKS_THEODOIDM();
+            DataSetktks ds = new DataSetktks();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -300,6 +300,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
             private global::System.Data.DataColumn columnDMCU;
             
             private global::System.Data.DataColumn columnDMMOI;
+            
+            private global::System.Data.DataColumn columnDIENTHOAI;
             
             private global::System.Data.DataColumn columnGHICHU;
             
@@ -426,6 +428,14 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DIENTHOAIColumn {
+                get {
+                    return this.columnDIENTHOAI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn GHICHUColumn {
                 get {
                     return this.columnGHICHU;
@@ -469,7 +479,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_KTKS_THEODOIDMRow AddV_KTKS_THEODOIDMRow(string DANHBO, string LOAICT, System.DateTime NGAYDK, System.DateTime NGAYHETHAN, int SONGAY, string HOTEN, string DIACHI, string HOPDONG, string GIABIEU, string DMCU, string DMMOI, string GHICHU) {
+            public V_KTKS_THEODOIDMRow AddV_KTKS_THEODOIDMRow(string DANHBO, string LOAICT, System.DateTime NGAYDK, System.DateTime NGAYHETHAN, int SONGAY, string HOTEN, string DIACHI, string HOPDONG, string GIABIEU, string DMCU, string DMMOI, string DIENTHOAI, string GHICHU) {
                 V_KTKS_THEODOIDMRow rowV_KTKS_THEODOIDMRow = ((V_KTKS_THEODOIDMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DANHBO,
@@ -483,6 +493,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
                         GIABIEU,
                         DMCU,
                         DMMOI,
+                        DIENTHOAI,
                         GHICHU};
                 rowV_KTKS_THEODOIDMRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_KTKS_THEODOIDMRow);
@@ -517,6 +528,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
                 this.columnGIABIEU = base.Columns["GIABIEU"];
                 this.columnDMCU = base.Columns["DMCU"];
                 this.columnDMMOI = base.Columns["DMMOI"];
+                this.columnDIENTHOAI = base.Columns["DIENTHOAI"];
                 this.columnGHICHU = base.Columns["GHICHU"];
             }
             
@@ -545,6 +557,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
                 base.Columns.Add(this.columnDMCU);
                 this.columnDMMOI = new global::System.Data.DataColumn("DMMOI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDMMOI);
+                this.columnDIENTHOAI = new global::System.Data.DataColumn("DIENTHOAI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIENTHOAI);
                 this.columnGHICHU = new global::System.Data.DataColumn("GHICHU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGHICHU);
                 this.columnDANHBO.AllowDBNull = false;
@@ -559,9 +573,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
                 this.columnGIABIEU.MaxLength = 255;
                 this.columnDMCU.MaxLength = 50;
                 this.columnDMMOI.MaxLength = 50;
+                this.columnDIENTHOAI.MaxLength = 2147483647;
                 this.columnGHICHU.MaxLength = 2147483647;
-                this.ExtendedProperties.Add("Generator_TablePropName", "_V_KTKS_THEODOIDM");
-                this.ExtendedProperties.Add("Generator_UserTableName", "V_KTKS_THEODOIDM");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -629,7 +642,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                V_KTKS_THEODOIDM ds = new V_KTKS_THEODOIDM();
+                DataSetktks ds = new DataSetktks();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -870,6 +883,22 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DIENTHOAI {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_KTKS_THEODOIDM.DIENTHOAIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DIENTHOAI\' in table \'V_KTKS_THEODOIDM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_KTKS_THEODOIDM.DIENTHOAIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string GHICHU {
                 get {
                     try {
@@ -994,6 +1023,18 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDIENTHOAINull() {
+                return this.IsNull(this.tableV_KTKS_THEODOIDM.DIENTHOAIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDIENTHOAINull() {
+                this[this.tableV_KTKS_THEODOIDM.DIENTHOAIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsGHICHUNull() {
                 return this.IsNull(this.tableV_KTKS_THEODOIDM.GHICHUColumn);
             }
@@ -1040,7 +1081,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         }
     }
 }
-namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.V_KTKS_THEODOIDMTableAdapters {
+namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.DataSetktksTableAdapters {
     
     
     /// <summary>
@@ -1175,6 +1216,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.V_KTKS_THEODOIDMTableAdapters {
             tableMapping.ColumnMappings.Add("GIABIEU", "GIABIEU");
             tableMapping.ColumnMappings.Add("DMCU", "DMCU");
             tableMapping.ColumnMappings.Add("DMMOI", "DMMOI");
+            tableMapping.ColumnMappings.Add("DIENTHOAI", "DIENTHOAI");
             tableMapping.ColumnMappings.Add("GHICHU", "GHICHU");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1193,7 +1235,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.V_KTKS_THEODOIDMTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT DANHBO, LOAICT, NGAYDK, NGAYHETHAN, SONGAY, HOTEN, DIACHI, HOPDONG, GIABIE" +
-                "U, DMCU, DMMOI, GHICHU FROM dbo.V_KTKS_THEODOIDM";
+                "U, DMCU, DMMOI, DIENTHOAI, GHICHU FROM dbo.V_KTKS_THEODOIDM";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1201,7 +1243,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.V_KTKS_THEODOIDMTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(V_KTKS_THEODOIDM.V_KTKS_THEODOIDMDataTable dataTable) {
+        public virtual int Fill(DataSetktks.V_KTKS_THEODOIDMDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1214,9 +1256,9 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.V_KTKS_THEODOIDMTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual V_KTKS_THEODOIDM.V_KTKS_THEODOIDMDataTable GetData() {
+        public virtual DataSetktks.V_KTKS_THEODOIDMDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            V_KTKS_THEODOIDM.V_KTKS_THEODOIDMDataTable dataTable = new V_KTKS_THEODOIDM.V_KTKS_THEODOIDMDataTable();
+            DataSetktks.V_KTKS_THEODOIDMDataTable dataTable = new DataSetktks.V_KTKS_THEODOIDMDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1290,7 +1332,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.V_KTKS_THEODOIDMTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(V_KTKS_THEODOIDM dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetktks dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1300,7 +1342,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.V_KTKS_THEODOIDMTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(V_KTKS_THEODOIDM dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetktks dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1310,7 +1352,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.V_KTKS_THEODOIDMTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(V_KTKS_THEODOIDM dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetktks dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1344,7 +1386,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC.V_KTKS_THEODOIDMTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(V_KTKS_THEODOIDM dataSet) {
+        public virtual int UpdateAll(DataSetktks dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

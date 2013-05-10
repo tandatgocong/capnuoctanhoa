@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="V_KTKS_THEODOIDM" targetNamespace="http://tempuri.org/V_KTKS_THEODOIDM.xsd" xmlns:mstns="http://tempuri.org/V_KTKS_THEODOIDM.xsd" xmlns="http://tempuri.org/V_KTKS_THEODOIDM.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DataSetktks" targetNamespace="http://tempuri.org/DataSetktks.xsd" xmlns:mstns="http://tempuri.org/DataSetktks.xsd" xmlns="http://tempuri.org/DataSetktks.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString (Settings)" DbObjectName="CAPNUOCTANHOA.dbo.V_KTKS_THEODOIDM" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT DANHBO, LOAICT, NGAYDK, NGAYHETHAN, SONGAY, HOTEN, DIACHI, HOPDONG, GIABIEU, DMCU, DMMOI, GHICHU FROM dbo.V_KTKS_THEODOIDM</CommandText>
+                    <CommandText>SELECT DANHBO, LOAICT, NGAYDK, NGAYHETHAN, SONGAY, HOTEN, DIACHI, HOPDONG, GIABIEU, DMCU, DMMOI, DIENTHOAI, GHICHU FROM dbo.V_KTKS_THEODOIDM</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -30,6 +30,7 @@
               <Mapping SourceColumn="GIABIEU" DataSetColumn="GIABIEU" />
               <Mapping SourceColumn="DMCU" DataSetColumn="DMCU" />
               <Mapping SourceColumn="DMMOI" DataSetColumn="DMMOI" />
+              <Mapping SourceColumn="DIENTHOAI" DataSetColumn="DIENTHOAI" />
               <Mapping SourceColumn="GHICHU" DataSetColumn="GHICHU" />
             </Mappings>
             <Sources />
@@ -39,10 +40,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="V_KTKS_THEODOIDM" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="V_KTKS_THEODOIDM" msprop:Generator_UserDSName="V_KTKS_THEODOIDM">
+  <xs:element name="DataSetktks" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetktks" msprop:Generator_UserDSName="DataSetktks">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_KTKS_THEODOIDM" msprop:Generator_TableClassName="V_KTKS_THEODOIDMDataTable" msprop:Generator_TableVarName="tableV_KTKS_THEODOIDM" msprop:Generator_TablePropName="_V_KTKS_THEODOIDM" msprop:Generator_RowDeletingName="V_KTKS_THEODOIDMRowDeleting" msprop:Generator_UserTableName="V_KTKS_THEODOIDM" msprop:Generator_RowChangingName="V_KTKS_THEODOIDMRowChanging" msprop:Generator_RowEvHandlerName="V_KTKS_THEODOIDMRowChangeEventHandler" msprop:Generator_RowDeletedName="V_KTKS_THEODOIDMRowDeleted" msprop:Generator_RowEvArgName="V_KTKS_THEODOIDMRowChangeEvent" msprop:Generator_RowChangedName="V_KTKS_THEODOIDMRowChanged" msprop:Generator_RowClassName="V_KTKS_THEODOIDMRow">
+        <xs:element name="V_KTKS_THEODOIDM" msprop:Generator_TableClassName="V_KTKS_THEODOIDMDataTable" msprop:Generator_TableVarName="tableV_KTKS_THEODOIDM" msprop:Generator_TablePropName="V_KTKS_THEODOIDM" msprop:Generator_RowDeletingName="V_KTKS_THEODOIDMRowDeleting" msprop:Generator_UserTableName="V_KTKS_THEODOIDM" msprop:Generator_RowChangingName="V_KTKS_THEODOIDMRowChanging" msprop:Generator_RowEvHandlerName="V_KTKS_THEODOIDMRowChangeEventHandler" msprop:Generator_RowDeletedName="V_KTKS_THEODOIDMRowDeleted" msprop:Generator_RowEvArgName="V_KTKS_THEODOIDMRowChangeEvent" msprop:Generator_RowChangedName="V_KTKS_THEODOIDMRowChanged" msprop:Generator_RowClassName="V_KTKS_THEODOIDMRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DANHBO" msprop:Generator_ColumnVarNameInTable="columnDANHBO" msprop:Generator_ColumnPropNameInRow="DANHBO" msprop:Generator_ColumnPropNameInTable="DANHBOColumn" msprop:Generator_UserColumnName="DANHBO">
@@ -101,6 +102,13 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIENTHOAI" msprop:Generator_ColumnVarNameInTable="columnDIENTHOAI" msprop:Generator_ColumnPropNameInRow="DIENTHOAI" msprop:Generator_ColumnPropNameInTable="DIENTHOAIColumn" msprop:Generator_UserColumnName="DIENTHOAI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

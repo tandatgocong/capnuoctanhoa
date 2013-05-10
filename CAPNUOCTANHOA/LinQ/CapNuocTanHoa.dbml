@@ -1143,6 +1143,7 @@
       <Column Name="DMMOI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NGAYDK" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NGAYHETHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
