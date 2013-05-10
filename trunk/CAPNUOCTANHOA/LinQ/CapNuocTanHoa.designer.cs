@@ -23592,6 +23592,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private System.Nullable<System.DateTime> _NGAYHETHAN;
 		
+		private string _DIENTHOAI;
+		
 		private string _GHICHU;
 		
 		private System.Nullable<System.DateTime> _CREATEDATE;
@@ -23626,6 +23628,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnNGAYDKChanged();
     partial void OnNGAYHETHANChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYHETHANChanged();
+    partial void OnDIENTHOAIChanging(string value);
+    partial void OnDIENTHOAIChanged();
     partial void OnGHICHUChanging(string value);
     partial void OnGHICHUChanged();
     partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
@@ -23824,6 +23828,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._NGAYHETHAN = value;
 					this.SendPropertyChanged("NGAYHETHAN");
 					this.OnNGAYHETHANChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(MAX)")]
+		public string DIENTHOAI
+		{
+			get
+			{
+				return this._DIENTHOAI;
+			}
+			set
+			{
+				if ((this._DIENTHOAI != value))
+				{
+					this.OnDIENTHOAIChanging(value);
+					this.SendPropertyChanging();
+					this._DIENTHOAI = value;
+					this.SendPropertyChanged("DIENTHOAI");
+					this.OnDIENTHOAIChanged();
 				}
 			}
 		}

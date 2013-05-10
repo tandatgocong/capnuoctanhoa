@@ -212,6 +212,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             gb.NGAYDK = this.dateNgayKy.Value;
             gb.NGAYHETHAN = this.dateNgayHetHan.Value;
             gb.GHICHU = this.txtGhiChu.Text;
+            gb.DIENTHOAI = this.txtDienThoai.Text;
             gb.CREATEBY = DAL.SYS.C_USERS._userName;
             gb.CREATEDATE = DateTime.Now.Date;
             if (DAL.BANKTKS.C_TheoDoiDM.InsertThongTinDM(gb))
@@ -364,7 +365,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         private void btTaoMoi_Click_1(object sender, EventArgs e)
         {
 
-            CLEAR();
+            refeshInser();
 
         }
 
@@ -405,7 +406,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         }
         public void LoadDataGridByDate()
         {
-            string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.GHICHU ";
+            string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.DIENTHOAI,dm.GHICHU ";
             sql += " FROM KTKS_THEODOIDM dm, TB_DULIEUKHACHHANG kh ";
             sql += " WHERE dm.DANHBO=kh.DANHBO ";
             sql += " AND CONVERT(DATETIME,NGAYDK,103) = CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(searchDate.Value.Date) + "',103) ";
@@ -432,7 +433,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
                 try
                 {
-                    string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.GHICHU ";
+                    string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.DIENTHOAI,dm.GHICHU ";
                     sql += " FROM KTKS_THEODOIDM dm, TB_DULIEUKHACHHANG kh ";
                     sql += " WHERE dm.DANHBO=kh.DANHBO ";
 
@@ -488,7 +489,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 this.searchText.Visible = false;
                 this.searchText.Visible = false;
                 btXoaHetHan.Visible = false;
-                string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.GHICHU ";
+                string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.DIENTHOAI,dm.GHICHU ";
                 sql += " FROM KTKS_THEODOIDM dm, TB_DULIEUKHACHHANG kh ";
                 sql += " WHERE dm.DANHBO=kh.DANHBO ";
 
@@ -567,7 +568,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
-                string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU ";
+                string sql = "SELECT dm.ID,dm.DANHBO,dm.LOAICT,dm.NGAYDK,dm.NGAYHETHAN,DATEDIFF (D , NGAYHETHAN , GETDATE() ) as 'SONGAY',SOPHIEUYC,HIEULUC, dm.DMCU, dm.DMMOI,kh.HOTEN, (kh.SONHA + ' ' + kh.TENDUONG) AS 'DIACHI', kh.HOPDONG,kh.GIABIEU,dm.DIENTHOAI,dm.GHICHU ";
                 sql += " FROM KTKS_THEODOIDM dm, TB_DULIEUKHACHHANG kh ";
                 sql += " WHERE dm.DANHBO=kh.DANHBO AND dm.DANHBO='"+this.maskedTextBox1.Text.Replace("-","")+"'";                
                 sql += " ORDER BY dm.NGAYDK DESC ";
