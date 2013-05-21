@@ -32,6 +32,10 @@
             this.menuHeThong = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
+            this.subdangnhap = new System.Windows.Forms.ToolStripMenuItem();
+            this.subDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
+            this.subDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.subThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonItem9 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem8 = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem8 = new DevComponents.DotNetBar.LabelItem();
@@ -48,6 +52,13 @@
             this.congcu = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
+            this.caculator = new System.Windows.Forms.ToolStripMenuItem();
+            this.microsoftWord = new System.Windows.Forms.ToolStripMenuItem();
+            this.microsoftExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.microsoftAccess = new System.Windows.Forms.ToolStripMenuItem();
+            this.webBrowserTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDieuChinhThongSo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
@@ -60,6 +71,7 @@
             this.panelHome = new System.Windows.Forms.Panel();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.reflectionImage1 = new DevComponents.DotNetBar.Controls.ReflectionImage();
             this.label1 = new System.Windows.Forms.Label();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.lb3 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
@@ -68,27 +80,15 @@
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel7 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip7 = new System.Windows.Forms.MenuStrip();
+            this.toolQuanLyDMA = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuTheoDoiHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoiQLDHN = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonGNKDT = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.reflectionImage1 = new DevComponents.DotNetBar.Controls.ReflectionImage();
-            this.subdangnhap = new System.Windows.Forms.ToolStripMenuItem();
-            this.subDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
-            this.subDangXuat = new System.Windows.Forms.ToolStripMenuItem();
-            this.subThoat = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuTheoDoiHoaDon = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolQuanLyDMA = new System.Windows.Forms.ToolStripMenuItem();
-            this.caculator = new System.Windows.Forms.ToolStripMenuItem();
-            this.microsoftWord = new System.Windows.Forms.ToolStripMenuItem();
-            this.microsoftExcel = new System.Windows.Forms.ToolStripMenuItem();
-            this.microsoftAccess = new System.Windows.Forms.ToolStripMenuItem();
-            this.webBrowserTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDieuChinhThongSo = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
@@ -106,6 +106,7 @@
             // 
             // menuHeThong
             // 
+            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -120,7 +121,6 @@
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel1.Size = new System.Drawing.Size(1178, 30);
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip3
             // 
@@ -136,6 +136,44 @@
             this.menuStrip3.Size = new System.Drawing.Size(1172, 25);
             this.menuStrip3.TabIndex = 1;
             this.menuStrip3.Text = "menuStrip3";
+            // 
+            // subdangnhap
+            // 
+            this.subdangnhap.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.subdangnhap.Image = global::CAPNUOCTANHOA.Properties.Resources.mokhoa;
+            this.subdangnhap.Name = "subdangnhap";
+            this.subdangnhap.Size = new System.Drawing.Size(108, 21);
+            this.subdangnhap.Text = "Đăng Nhập";
+            this.subdangnhap.Click += new System.EventHandler(this.subdangnhap_Click);
+            // 
+            // subDoiMatKhau
+            // 
+            this.subDoiMatKhau.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.subDoiMatKhau.Image = global::CAPNUOCTANHOA.Properties.Resources.doimk;
+            this.subDoiMatKhau.Name = "subDoiMatKhau";
+            this.subDoiMatKhau.Size = new System.Drawing.Size(123, 21);
+            this.subDoiMatKhau.Text = "Đổi mật khẩu";
+            this.subDoiMatKhau.Visible = false;
+            this.subDoiMatKhau.Click += new System.EventHandler(this.subDoiMatKhau_Click);
+            // 
+            // subDangXuat
+            // 
+            this.subDangXuat.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.subDangXuat.Image = global::CAPNUOCTANHOA.Properties.Resources.Lock;
+            this.subDangXuat.Name = "subDangXuat";
+            this.subDangXuat.Size = new System.Drawing.Size(102, 21);
+            this.subDangXuat.Text = "Đăng xuất";
+            this.subDangXuat.Visible = false;
+            this.subDangXuat.Click += new System.EventHandler(this.subDangXuat_Click);
+            // 
+            // subThoat
+            // 
+            this.subThoat.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.subThoat.Image = global::CAPNUOCTANHOA.Properties.Resources.thoat;
+            this.subThoat.Name = "subThoat";
+            this.subThoat.Size = new System.Drawing.Size(74, 21);
+            this.subThoat.Text = "Thoát";
+            this.subThoat.Click += new System.EventHandler(this.subThoat_Click);
             // 
             // buttonItem9
             // 
@@ -279,6 +317,70 @@
             this.menuStrip4.TabIndex = 1;
             this.menuStrip4.Text = "menuStrip4";
             // 
+            // caculator
+            // 
+            this.caculator.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.caculator.ForeColor = System.Drawing.Color.Black;
+            this.caculator.Image = global::CAPNUOCTANHOA.Properties.Resources.calc;
+            this.caculator.Name = "caculator";
+            this.caculator.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.caculator.Size = new System.Drawing.Size(106, 23);
+            this.caculator.Text = "Calculator";
+            this.caculator.Click += new System.EventHandler(this.caculator_Click);
+            // 
+            // microsoftWord
+            // 
+            this.microsoftWord.ForeColor = System.Drawing.Color.Black;
+            this.microsoftWord.Image = global::CAPNUOCTANHOA.Properties.Resources.WINWORD;
+            this.microsoftWord.Name = "microsoftWord";
+            this.microsoftWord.Size = new System.Drawing.Size(148, 23);
+            this.microsoftWord.Text = "Microsoft Word ";
+            this.microsoftWord.Click += new System.EventHandler(this.microsoftWord_Click);
+            // 
+            // microsoftExcel
+            // 
+            this.microsoftExcel.ForeColor = System.Drawing.Color.Black;
+            this.microsoftExcel.Image = global::CAPNUOCTANHOA.Properties.Resources.Excel;
+            this.microsoftExcel.Name = "microsoftExcel";
+            this.microsoftExcel.Size = new System.Drawing.Size(144, 23);
+            this.microsoftExcel.Text = "Microsoft Excel";
+            this.microsoftExcel.Click += new System.EventHandler(this.microsoftExcel_Click);
+            // 
+            // microsoftAccess
+            // 
+            this.microsoftAccess.ForeColor = System.Drawing.Color.Black;
+            this.microsoftAccess.Image = global::CAPNUOCTANHOA.Properties.Resources.MSACCESS;
+            this.microsoftAccess.Name = "microsoftAccess";
+            this.microsoftAccess.Size = new System.Drawing.Size(154, 23);
+            this.microsoftAccess.Text = "Microsoft Access";
+            this.microsoftAccess.Click += new System.EventHandler(this.microsoftAccess_Click);
+            // 
+            // webBrowserTool
+            // 
+            this.webBrowserTool.ForeColor = System.Drawing.Color.Black;
+            this.webBrowserTool.Image = global::CAPNUOCTANHOA.Properties.Resources.icon1;
+            this.webBrowserTool.Name = "webBrowserTool";
+            this.webBrowserTool.Size = new System.Drawing.Size(114, 23);
+            this.webBrowserTool.Text = "Portl Office";
+            this.webBrowserTool.Click += new System.EventHandler(this.webBrowserTool_Click);
+            // 
+            // menuDieuChinhThongSo
+            // 
+            this.menuDieuChinhThongSo.ForeColor = System.Drawing.Color.Black;
+            this.menuDieuChinhThongSo.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
+            this.menuDieuChinhThongSo.Name = "menuDieuChinhThongSo";
+            this.menuDieuChinhThongSo.Size = new System.Drawing.Size(179, 23);
+            this.menuDieuChinhThongSo.Text = "Điều Chỉnh Thông Số";
+            this.menuDieuChinhThongSo.Visible = false;
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.Black;
+            this.toolStripMenuItem2.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(114, 23);
+            this.toolStripMenuItem2.Text = "In Thư Báo";
+            // 
             // office2007StartButton1
             // 
             this.office2007StartButton1.AutoExpandOnClick = true;
@@ -409,9 +511,18 @@
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Blue;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(536, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(490, 17);
             this.toolStripStatusLabel1.Text = "© Copyright  2012 - Tan Hoa Water Supply Company Limted. Developed by Lê Tấn Đạt " +
                 "- 0909933397";
+            // 
+            // reflectionImage1
+            // 
+            this.reflectionImage1.Image = global::CAPNUOCTANHOA.Properties.Resources.logocty;
+            this.reflectionImage1.Location = new System.Drawing.Point(400, 172);
+            this.reflectionImage1.Name = "reflectionImage1";
+            this.reflectionImage1.ReflectionEnabled = false;
+            this.reflectionImage1.Size = new System.Drawing.Size(219, 219);
+            this.reflectionImage1.TabIndex = 34;
             // 
             // label1
             // 
@@ -471,9 +582,9 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -506,6 +617,7 @@
             this.ribbonPanel7.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel7.Size = new System.Drawing.Size(1178, 30);
             this.ribbonPanel7.TabIndex = 9;
+            this.ribbonPanel7.Visible = false;
             // 
             // menuStrip7
             // 
@@ -518,6 +630,17 @@
             this.menuStrip7.Size = new System.Drawing.Size(1172, 27);
             this.menuStrip7.TabIndex = 3;
             this.menuStrip7.Text = "menuStrip7";
+            // 
+            // toolQuanLyDMA
+            // 
+            this.toolQuanLyDMA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.toolQuanLyDMA.ForeColor = System.Drawing.Color.Black;
+            this.toolQuanLyDMA.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
+            this.toolQuanLyDMA.Name = "toolQuanLyDMA";
+            this.toolQuanLyDMA.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.toolQuanLyDMA.Size = new System.Drawing.Size(142, 23);
+            this.toolQuanLyDMA.Text = "Theo Dõi DMA";
+            this.toolQuanLyDMA.Click += new System.EventHandler(this.toolQuanLyDMA_Click);
             // 
             // ribbonPanel2
             // 
@@ -543,6 +666,14 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // menuTheoDoiHoaDon
+            // 
+            this.menuTheoDoiHoaDon.ForeColor = System.Drawing.Color.Black;
+            this.menuTheoDoiHoaDon.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
+            this.menuTheoDoiHoaDon.Name = "menuTheoDoiHoaDon";
+            this.menuTheoDoiHoaDon.Size = new System.Drawing.Size(164, 23);
+            this.menuTheoDoiHoaDon.Text = "Theo Dõi Hóa Đơn";
+            // 
             // menuDoiQLDHN
             // 
             this.menuDoiQLDHN.Name = "menuDoiQLDHN";
@@ -552,7 +683,6 @@
             // 
             // ribbonGNKDT
             // 
-            this.ribbonGNKDT.Checked = true;
             this.ribbonGNKDT.Name = "ribbonGNKDT";
             this.ribbonGNKDT.Panel = this.ribbonPanel7;
             this.ribbonGNKDT.Text = "Phòng GNKDT";
@@ -578,136 +708,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
             this.statusStrip1.TabIndex = 36;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // reflectionImage1
-            // 
-            this.reflectionImage1.Image = global::CAPNUOCTANHOA.Properties.Resources.logocty;
-            this.reflectionImage1.Location = new System.Drawing.Point(400, 172);
-            this.reflectionImage1.Name = "reflectionImage1";
-            this.reflectionImage1.ReflectionEnabled = false;
-            this.reflectionImage1.Size = new System.Drawing.Size(219, 219);
-            this.reflectionImage1.TabIndex = 34;
-            // 
-            // subdangnhap
-            // 
-            this.subdangnhap.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.subdangnhap.Image = global::CAPNUOCTANHOA.Properties.Resources.mokhoa;
-            this.subdangnhap.Name = "subdangnhap";
-            this.subdangnhap.Size = new System.Drawing.Size(108, 21);
-            this.subdangnhap.Text = "Đăng Nhập";
-            this.subdangnhap.Click += new System.EventHandler(this.subdangnhap_Click);
-            // 
-            // subDoiMatKhau
-            // 
-            this.subDoiMatKhau.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.subDoiMatKhau.Image = global::CAPNUOCTANHOA.Properties.Resources.doimk;
-            this.subDoiMatKhau.Name = "subDoiMatKhau";
-            this.subDoiMatKhau.Size = new System.Drawing.Size(123, 21);
-            this.subDoiMatKhau.Text = "Đổi mật khẩu";
-            this.subDoiMatKhau.Visible = false;
-            this.subDoiMatKhau.Click += new System.EventHandler(this.subDoiMatKhau_Click);
-            // 
-            // subDangXuat
-            // 
-            this.subDangXuat.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.subDangXuat.Image = global::CAPNUOCTANHOA.Properties.Resources.Lock;
-            this.subDangXuat.Name = "subDangXuat";
-            this.subDangXuat.Size = new System.Drawing.Size(102, 21);
-            this.subDangXuat.Text = "Đăng xuất";
-            this.subDangXuat.Visible = false;
-            this.subDangXuat.Click += new System.EventHandler(this.subDangXuat_Click);
-            // 
-            // subThoat
-            // 
-            this.subThoat.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.subThoat.Image = global::CAPNUOCTANHOA.Properties.Resources.thoat;
-            this.subThoat.Name = "subThoat";
-            this.subThoat.Size = new System.Drawing.Size(74, 21);
-            this.subThoat.Text = "Thoát";
-            this.subThoat.Click += new System.EventHandler(this.subThoat_Click);
-            // 
-            // menuTheoDoiHoaDon
-            // 
-            this.menuTheoDoiHoaDon.ForeColor = System.Drawing.Color.Black;
-            this.menuTheoDoiHoaDon.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
-            this.menuTheoDoiHoaDon.Name = "menuTheoDoiHoaDon";
-            this.menuTheoDoiHoaDon.Size = new System.Drawing.Size(164, 23);
-            this.menuTheoDoiHoaDon.Text = "Theo Dõi Hóa Đơn";
-            // 
-            // toolQuanLyDMA
-            // 
-            this.toolQuanLyDMA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.toolQuanLyDMA.ForeColor = System.Drawing.Color.Black;
-            this.toolQuanLyDMA.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
-            this.toolQuanLyDMA.Name = "toolQuanLyDMA";
-            this.toolQuanLyDMA.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.toolQuanLyDMA.Size = new System.Drawing.Size(142, 23);
-            this.toolQuanLyDMA.Text = "Theo Dõi DMA";
-            this.toolQuanLyDMA.Click += new System.EventHandler(this.toolQuanLyDMA_Click);
-            // 
-            // caculator
-            // 
-            this.caculator.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.caculator.ForeColor = System.Drawing.Color.Black;
-            this.caculator.Image = global::CAPNUOCTANHOA.Properties.Resources.calc;
-            this.caculator.Name = "caculator";
-            this.caculator.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.caculator.Size = new System.Drawing.Size(106, 23);
-            this.caculator.Text = "Calculator";
-            this.caculator.Click += new System.EventHandler(this.caculator_Click);
-            // 
-            // microsoftWord
-            // 
-            this.microsoftWord.ForeColor = System.Drawing.Color.Black;
-            this.microsoftWord.Image = global::CAPNUOCTANHOA.Properties.Resources.WINWORD;
-            this.microsoftWord.Name = "microsoftWord";
-            this.microsoftWord.Size = new System.Drawing.Size(147, 23);
-            this.microsoftWord.Text = "Microsoft Word ";
-            this.microsoftWord.Click += new System.EventHandler(this.microsoftWord_Click);
-            // 
-            // microsoftExcel
-            // 
-            this.microsoftExcel.ForeColor = System.Drawing.Color.Black;
-            this.microsoftExcel.Image = global::CAPNUOCTANHOA.Properties.Resources.Excel;
-            this.microsoftExcel.Name = "microsoftExcel";
-            this.microsoftExcel.Size = new System.Drawing.Size(144, 23);
-            this.microsoftExcel.Text = "Microsoft Excel";
-            this.microsoftExcel.Click += new System.EventHandler(this.microsoftExcel_Click);
-            // 
-            // microsoftAccess
-            // 
-            this.microsoftAccess.ForeColor = System.Drawing.Color.Black;
-            this.microsoftAccess.Image = global::CAPNUOCTANHOA.Properties.Resources.MSACCESS;
-            this.microsoftAccess.Name = "microsoftAccess";
-            this.microsoftAccess.Size = new System.Drawing.Size(153, 23);
-            this.microsoftAccess.Text = "Microsoft Access";
-            this.microsoftAccess.Click += new System.EventHandler(this.microsoftAccess_Click);
-            // 
-            // webBrowserTool
-            // 
-            this.webBrowserTool.ForeColor = System.Drawing.Color.Black;
-            this.webBrowserTool.Image = global::CAPNUOCTANHOA.Properties.Resources.icon1;
-            this.webBrowserTool.Name = "webBrowserTool";
-            this.webBrowserTool.Size = new System.Drawing.Size(114, 23);
-            this.webBrowserTool.Text = "Portl Office";
-            this.webBrowserTool.Click += new System.EventHandler(this.webBrowserTool_Click);
-            // 
-            // menuDieuChinhThongSo
-            // 
-            this.menuDieuChinhThongSo.ForeColor = System.Drawing.Color.Black;
-            this.menuDieuChinhThongSo.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
-            this.menuDieuChinhThongSo.Name = "menuDieuChinhThongSo";
-            this.menuDieuChinhThongSo.Size = new System.Drawing.Size(179, 23);
-            this.menuDieuChinhThongSo.Text = "Điều Chỉnh Thông Số";
-            this.menuDieuChinhThongSo.Visible = false;
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.Black;
-            this.toolStripMenuItem2.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(114, 23);
-            this.toolStripMenuItem2.Text = "In Thư Báo";
             // 
             // frm_Main
             // 

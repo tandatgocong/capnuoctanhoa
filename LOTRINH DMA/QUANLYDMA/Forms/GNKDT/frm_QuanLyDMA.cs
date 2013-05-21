@@ -33,20 +33,32 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
 
         }
-        public void Load() {
+
+        DataTable tableThay = new DataTable();
+        public void Load(string ky, string nam, string madma) {
             try
             {
-                string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
-                string nam = this.txtNam.Text;
-                string madm = cbMaDMA.SelectedValue.ToString();
+               
                 if (this.rptHanheld.Checked)
                 {
-                    dataBangKe.DataSource = DAL.GNKDT.C_GNKDT.getThongTinDMAByHandheld(madm, ky, nam);
-                    Utilities.DataGridV.formatRows(dataBangKe, "STT");
+                    dataBangKe.DataSource = DAL.GNKDT.C_GNKDT.getThongTinDMAByHandheld(madma, ky, nam);
+                    tableThay = DAL.GNKDT.C_GNKDT.getThongTinDMAByHandheld_Thay(madma, ky, nam);
+                  
                 }
                 else if (this.rptHoaDon.Checked)
                 {
-                    dataBangKe.DataSource = DAL.GNKDT.C_GNKDT.getThongTinDMAByHoaDon(madm, ky, nam);
+                    string sql = "SELECT 1  FROM INFORMATION_SCHEMA.TABLES  WHERE TABLE_TYPE='BASE TABLE'  AND TABLE_NAME='HOADONTH" + ky + "_" + nam + "'";
+                    if (DAL.LinQConnection.getDataTable(sql).Rows.Count > 0)
+                    {
+                        label1.Text = "";
+                    }
+                    else
+                    {
+                        label1.Text = "Chưa có dữ liệu hóa đơn Tổng công ty !";
+                    }
+
+                    dataBangKe.DataSource = DAL.GNKDT.C_GNKDT.getThongTinDMAByHoaDon(madma, ky, nam);
+                    tableThay = DAL.GNKDT.C_GNKDT.getThongTinDMAByHoaDon_Thay(madma, ky, nam);                    
                     Utilities.DataGridV.formatRows(dataBangKe, "STT");
                 }
 
@@ -58,7 +70,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 }
         private void btCapNhatThongTin_Click(object sender, EventArgs e)
         {
-            Load();
+           
+            // Thonng Ke
+            string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+            string nam = this.txtNam.Text;
+            string madma = cbMaDMA.SelectedValue.ToString();
+            Load(ky, nam, madma);
+            lbTongDHN.Text = dataBangKe.Rows.Count + "";
+            lbTongGanMoi.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG kh   WHERE kh.NAM>=" + nam + " AND kh.KY_>=" + ky + " AND MADMA='" + madma + "'  ") + "";
+            lbTongHuy.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG_HUYDB kh   WHERE  MADMA='" + madma + "'  ") + "";
+            lbTongThay.Text = tableThay == null ? "0" : tableThay.Rows.Count + "";
+
+            lbSanLuong.Text = (dataBangKe.DataSource as DataTable).Compute("Sum(LNCC)", "") + "";
+
+          
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
@@ -80,8 +105,102 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             frmDieuChinhDMA of = new frmDieuChinhDMA();
             if (of.ShowDialog() == DialogResult.OK) {
-                Load();
+                string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+                string nam = this.txtNam.Text;
+                string madm = cbMaDMA.SelectedValue.ToString();
+                Load(ky, nam, madm);
             }
+        }
+
+        private void rptHoaDon_CheckedChanged(object sender, EventArgs e)
+        {
+                string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+                string nam = this.txtNam.Text;                
+                string sql = "SELECT 1  FROM INFORMATION_SCHEMA.TABLES  WHERE TABLE_TYPE='BASE TABLE'  AND TABLE_NAME='HOADONTH" + ky + "_" + nam + "'";
+                if (DAL.LinQConnection.getDataTable(sql).Rows.Count > 0) {
+                    label1.Text = "";
+                } else {
+                    label1.Text = "Chưa có dữ liệu hóa đơn Tổng công ty !";
+                }
+        }
+
+        private void rptHanheld_CheckedChanged(object sender, EventArgs e)
+        {
+            label1.Text = "";
+        }
+
+        private void dataBangKe_Click(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataBangKe, "STT");
+        }
+
+        private void tabItem2_Click(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataBangKe, "STT");
+        }
+
+        void GanMoi()
+        {
+            string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+            string nam = this.txtNam.Text;
+            string madma = cbMaDMA.SelectedValue.ToString();
+            string sql = "   SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS            ";
+            sql += "  		FROM TB_DULIEUKHACHHANG kh   WHERE kh.NAM>=" + nam + " AND kh.KY_>=" + ky + " AND MADMA='" + madma + "' ";
+            dataGanMoi.DataSource = DAL.LinQConnection.getDataTable(sql);
+         
+
+        }
+        void Huy() {
+            string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+            string nam = this.txtNam.Text;
+            string madma = cbMaDMA.SelectedValue.ToString();
+            string sql = "SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC ,( N'Hủy ' + HIEULUCHUY) as 'HIEULUC',CHUKYDS   ";
+            sql += "FROM TB_DULIEUKHACHHANG_HUYDB WHERE  MADMA='" + madma + "' ";
+            dataHuy.DataSource = DAL.LinQConnection.getDataTable(sql);
+           
+        }
+        void Thay() {
+            dataThay.DataSource = tableThay;
+          
+        }
+        private void tabItem3_Click(object sender, EventArgs e)
+        {
+            GanMoi();
+            
+        }
+
+        private void tabControl2_Click(object sender, EventArgs e)
+        {
+            if (tabControl2.SelectedIndex == 0) {
+
+                GanMoi();
+                Utilities.DataGridV.formatRows(dataGanMoi, "GM_STT");
+            } else if (tabControl2.SelectedIndex == 1) {
+
+                Thay();
+                Utilities.DataGridV.formatRows(dataThay, "THAY_STT");
+
+            } else {
+
+                Huy();
+                Utilities.DataGridV.formatRows(dataHuy, "HUY_STT");
+            }
+            
+        }
+
+        private void dataThay_Click(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataThay, "THAY_STT");
+        }
+
+        private void dataGanMoi_Click(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataGanMoi, "GM_STT");
+        }
+
+        private void dataHuy_Click(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataHuy, "HUY_STT");
         }
     }
 }
