@@ -98,3 +98,69 @@ H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\LOTRINH DMA\QUANLYDMA\obj\x86\Debug\Genera
 H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\LOTRINH DMA\QUANLYDMA\obj\x86\Debug\GenerateResource.read.1702.tlog
 H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\LOTRINH DMA\QUANLYDMA\obj\x86\Debug\GenerateResource.read.1710.tlog
 H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\LOTRINH DMA\QUANLYDMA\obj\x86\Debug\GenerateResource.write.1645.tlog
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.GNKDT.frmDieuChinhDMA.resources
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.QLDHN.frm_BaoThayDHN.resources
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.Reports.frm_Reports.resources
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.View.Users.frm_ChangePassword.resources
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.View.Users.frm_Login.resources
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.frm_Main.resources
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.LayDuLieu.frm_baothay_lay.resources
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Properties.Resources.resources
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.exe.licenses
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\GenerateResource.read.360.tlog
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\GenerateResource.read.361.tlog
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\GenerateResource.read.364.tlog
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\GenerateResource.read.366.tlog
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\GenerateResource.read.368.tlog
+E:\du_an_O\QUANLYDMA\QUANLYDMA\obj\x86\Debug\GenerateResource.write.368.tlog
+C:\Users\oanhle\Downloads\QUANLYDMA_duaO\QUANLYDMA_duaO\QUANLYDMA\bin\Debug\CAPNUOCTANHOA.exe.config
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\bin\Debug\CAPNUOCTANHOA.exe.config
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.GNKDT.frmDieuChinhDMA.resources
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.QLDHN.frm_BaoThayDHN.resources
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.Reports.frm_Reports.resources
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.View.Users.frm_ChangePassword.resources
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.View.Users.frm_Login.resources
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.frm_Main.resources
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.LayDuLieu.frm_baothay_lay.resources
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Properties.Resources.resources
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\GenerateResource.read.360.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\GenerateResource.read.361.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\GenerateResource.read.364.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\GenerateResource.read.366.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\GenerateResource.read.368.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\GenerateResource.write.368.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\tan hoa\Desktop\Bai moi\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.exe.licenses
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\CAPNUOCTANHOA.exe.config
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\CAPNUOCTANHOA.exe
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\CAPNUOCTANHOA.pdb
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\CNTANHOA.dll
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\log4net.dll
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\String_Indentity.dll
+C:\Users\Administrator\Desktop\QUANLYDMA\bin\Debug\VniToUnicode.dll
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.GNKDT.frmDieuChinhDMA.resources
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.QLDHN.frm_BaoThayDHN.resources
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.Reports.frm_Reports.resources
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.View.Users.frm_ChangePassword.resources
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.View.Users.frm_Login.resources
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.frm_Main.resources
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.LayDuLieu.frm_baothay_lay.resources
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Properties.Resources.resources
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\GenerateResource-ResGen.read.7.tlog
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.exe.licenses
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.exe
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.pdb
+C:\Users\Administrator\Desktop\QUANLYDMA\obj\x86\Debug\CAPNUOCTANHOA.Forms.GNKDT.Progress.resources

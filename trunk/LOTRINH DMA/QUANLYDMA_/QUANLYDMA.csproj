@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FB742EE-F4CE-48E3-A059-DC6D0A978C56}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAPNUOCTANHOA</RootNamespace>
+    <AssemblyName>CAPNUOCTANHOA</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>O %2852%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CAPNUOCTANHOA.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CNTANHOA">
+      <HintPath>lib\CNTANHOA.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\..\..\SOURCE CODE\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="String_Indentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\String_Indentity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VniToUnicode">
+      <HintPath>lib\VniToUnicode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\DULIEUKH\C_DieuChinhDanhBo.cs" />
+    <Compile Include="DAL\DULIEUKH\C_DuLieuKhachHang.cs" />
+    <Compile Include="DAL\DULIEUKH\C_GanMoi.cs" />
+    <Compile Include="DAL\DULIEUKH\C_PhienLoTrinh.cs" />
+    <Compile Include="DAL\GNKDT\C_GNKDT.cs" />
+    <Compile Include="DAL\Lib.cs" />
+    <Compile Include="DAL\LinQConnectionDS.cs" />
+    <Compile Include="DAL\LinQConnection.cs" />
+    <Compile Include="DAL\SYS\C_PHUONG.cs" />
+    <Compile Include="DAL\SYS\C_QUAN.cs" />
+    <Compile Include="DAL\SYS\C_Users.cs" />
+    <Compile Include="Forms\GNKDT\Export.cs" />
+    <Compile Include="Forms\GNKDT\frmDieuChinhDMA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GNKDT\frmDieuChinhDMA.Designer.cs">
+      <DependentUpon>frmDieuChinhDMA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GNKDT\frm_QuanLyDMA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\GNKDT\frm_QuanLyDMA.designer.cs">
+      <DependentUpon>frm_QuanLyDMA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\frm_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\frm_Reports.Designer.cs">
+      <DependentUpon>frm_Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frm_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frm_ChangePassword.Designer.cs">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayDuLieu\frm_baothay_lay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LayDuLieu\frm_baothay_lay.Designer.cs">
+      <DependentUpon>frm_baothay_lay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lib\app.Designer.cs" />
+    <Compile Include="LinQ\CapNuocTanHoa.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\OledbConnection.cs" />
+    <Compile Include="LinQ\DocSo.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocSo.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LinQ\HoaDon.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\AddValueCombox.cs" />
+    <Compile Include="Utilities\cNetworkDrive_0017.cs" />
+    <Compile Include="Utilities\DataGridV.cs" />
+    <Compile Include="Utilities\DateToString.cs" />
+    <Compile Include="Utilities\Doctien.cs" />
+    <Compile Include="Utilities\Files.cs" />
+    <Compile Include="Utilities\FormatNumber.cs" />
+    <Compile Include="Utilities\FormatSoHoSoDanhBo.cs" />
+    <Compile Include="Utilities\LogIn.cs" />
+    <Compile Include="Utilities\Strings.cs" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lib\app.conf" />
+    <None Include="lib\app.settings" />
+    <None Include="lib\LOTRINH.xls" />
+    <None Include="lib\News.xls" />
+    <None Include="lib\user.dat" />
+    <None Include="LinQ\CapNuocTanHoa.dbml.layout">
+      <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Forms\GNKDT\frmDieuChinhDMA.resx">
+      <DependentUpon>frmDieuChinhDMA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GNKDT\frm_QuanLyDMA.resx">
+      <DependentUpon>frm_QuanLyDMA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\frm_Reports.resx">
+      <DependentUpon>frm_Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frm_ChangePassword.resx">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayDuLieu\frm_baothay_lay.resx">
+      <DependentUpon>frm_baothay_lay.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="LinQ\DocSo.dbml.layout">
+      <DependentUpon>DocSo.dbml</DependentUpon>
+    </None>
+    <None Include="LinQ\HoaDon.dbml.layout">
+      <DependentUpon>HoaDon.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="LinQ\CapNuocTanHoa.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CapNuocTanHoa.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LinQ\DocSo.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DocSo.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LinQ\HoaDon.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>HoaDon.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Applications.png" />
+    <None Include="Resources\Arrow2 Right.png" />
+    <None Include="Resources\calc.ico" />
+    <None Include="Resources\daoduong.png" />
+    <None Include="Resources\doimk.png" />
+    <None Include="Resources\Excel.ico" />
+    <None Include="Resources\First.png" />
+    <None Include="Resources\icon.ico" />
+    <None Include="Resources\Last.png" />
+    <None Include="Resources\Lock.png" />
+    <None Include="Resources\logocty.png" />
+    <None Include="Resources\mokhoa.png" />
+    <None Include="Resources\MSACCESS.ico" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\Plus.png" />
+    <None Include="Resources\Puzzle.png" />
+    <None Include="Resources\Stats2.png" />
+    <None Include="Resources\Symbol Blue Add.jpg" />
+    <None Include="Resources\thoat.png" />
+    <None Include="Resources\WINWORD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CAPNUOCTANHOA.vshost.exe" />
+    <Content Include="lib\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="lib\DevComponents.DotNetBar2.dll" />
+    <Content Include="lib\icon.ico" />
+    <Content Include="lib\IrisSkin2.dll" />
+    <Content Include="lib\log4net.dll" />
+    <Content Include="lib\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="lib\String_Indentity.dll" />
+    <Content Include="lib\String_Indentity_.dll" />
+    <Content Include="lib\VniToUnicode.dll" />
+    <Content Include="O %2852%29.ico" />
+    <None Include="Resources\24.png" />
+    <Content Include="Resources\Arrow2 Left.png" />
+    <Content Include="Resources\bt_bg.png" />
+    <Content Include="Resources\calendar.gif" />
+    <Content Include="Resources\check2.ico" />
+    <Content Include="Resources\Clipboard Cut.png" />
+    <Content Include="Resources\Clipboard Paste.png" />
+    <Content Include="Resources\Currency Euro.png" />
+    <Content Include="Resources\currency_dollar.ico" />
+    <Content Include="Resources\daoduong.jpg" />
+    <Content Include="Resources\Database.png" />
+    <Content Include="Resources\delete.ico" />
+    <Content Include="Resources\delete2.ico" />
+    <Content Include="Resources\document_add.ico" />
+    <Content Include="Resources\document_edit.ico" />
+    <Content Include="Resources\document_edit1.ico" />
+    <Content Include="Resources\document_into.ico" />
+    <Content Include="Resources\document_into.png" />
+    <Content Include="Resources\document_into1.png" />
+    <Content Include="Resources\document_out.ico" />
+    <Content Include="Resources\donkh.png" />
+    <Content Include="Resources\dotnhandon.png" />
+    <Content Include="Resources\dutoan.png" />
+    <Content Include="Resources\ex.gif" />
+    <Content Include="Resources\exit Icon.jpg" />
+    <Content Include="Resources\exits.jpg" />
+    <Content Include="Resources\giaohoso.png" />
+    <Content Include="Resources\head.png" />
+    <Content Include="Resources\home.ico" />
+    <Content Include="Resources\hosokh.ico" />
+    <Content Include="Resources\icon.png" />
+    <Content Include="Resources\Icon_maps.png" />
+    <Content Include="Resources\ie.ico" />
+    <Content Include="Resources\imageres.dll_I0062_0409.ico" />
+    <Content Include="Resources\InkWatson.exe_I012c_0409.ico" />
+    <Content Include="Resources\key.ico" />
+    <Content Include="Resources\key1.ico" />
+    <Content Include="Resources\lock2.ico" />
+    <Content Include="Resources\login.png" />
+    <Content Include="Resources\logo.ico" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\Loop.png" />
+    <Content Include="Resources\Man.png" />
+    <Content Include="Resources\Next.png" />
+    <Content Include="Resources\note_add.ico" />
+    <Content Include="Resources\note_edit.ico" />
+    <Content Include="Resources\Previous.png" />
+    <Content Include="Resources\print.ico" />
+    <Content Include="Resources\ReFFlective %2810%29.ico" />
+    <Content Include="Resources\refresh.ico" />
+    <Content Include="Resources\save.ico" />
+    <Content Include="Resources\search.png" />
+    <Content Include="Resources\stop.ico" />
+    <Content Include="Resources\thicong.png" />
+    <Content Include="Resources\undo.jpg" />
+    <Content Include="Resources\update.ico" />
+    <Content Include="Resources\User.png" />
+    <Content Include="Resources\users1.ico" />
+    <Content Include="Resources\user_add.ico" />
+    <Content Include="Resources\user_delete.ico" />
+    <Content Include="Resources\user_find.ico" />
+    <Content Include="Resources\view.ico" />
+    <Content Include="Resources\Write2.png" />
+    <Content Include="Resources\Write3.png" />
+    <Content Include="Resources\x.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
