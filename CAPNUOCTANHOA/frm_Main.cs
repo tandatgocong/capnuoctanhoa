@@ -429,6 +429,15 @@ namespace CAPNUOCTANHOA
             PanelContent.Controls.Add(baothay);
             
         }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_GiamHoaDon baothay = new frm_GiamHoaDon();
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+        }
         
     }
 }

@@ -154,6 +154,12 @@
     <Compile Include="Forms\BanKTKS\frmPhieuChepTieuThu.Designer.cs">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BanKTKS\frm_GiamHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frm_GiamHoaDon.Designer.cs">
+      <DependentUpon>frm_GiamHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BanKTKS\frm_TheoDoiDM.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1249,6 +1255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frmPhieuChepTieuThu.resx">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\frm_GiamHoaDon.resx">
+      <DependentUpon>frm_GiamHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frm_TheoDoiDM.resx">
       <DependentUpon>frm_TheoDoiDM.cs</DependentUpon>

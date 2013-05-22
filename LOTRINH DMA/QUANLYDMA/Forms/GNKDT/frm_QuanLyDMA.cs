@@ -12,6 +12,9 @@ using log4net;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.GNKDT;
+using System.IO;
+using System.Threading;
+
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -80,7 +83,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             lbTongGanMoi.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG kh   WHERE kh.NAM>=" + nam + " AND kh.KY_>=" + ky + " AND MADMA='" + madma + "'  ") + "";
             lbTongHuy.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG_HUYDB kh   WHERE  MADMA='" + madma + "'  ") + "";
             lbTongThay.Text = tableThay == null ? "0" : tableThay.Rows.Count + "";
-
             lbSanLuong.Text = (dataBangKe.DataSource as DataTable).Compute("Sum(LNCC)", "") + "";
 
           
@@ -88,7 +90,28 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void buttonX2_Click(object sender, EventArgs e)
         {
-            GNKDT.Export.export(dataBangKe, cbMaDMA.SelectedValue.ToString());
+             GNKDT.Export.export(dataBangKe, cbMaDMA.SelectedValue.ToString());
+           /*
+            //oanh stt
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Excel file *.xls|*.xls";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                DataTable view = (DataTable)dataBangKe.DataSource ;
+                //view.Columns.Remove("KY");
+                //view.Columns.Remove("NAM");
+                //view.Columns.Remove("LOTRINH");
+                //view.Columns.Remove("MADMA");
+                Forms.GNKDT.xmlExcel ex = new Forms.GNKDT.xmlExcel();
+                string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+                string nam = this.txtNam.Text;
+                string madma = cbMaDMA.SelectedValue.ToString();
+                ex.BuildWorkbook(save.FileName, view, nam, ky , madma );
+                MessageBox.Show("Xuất file thành công");
+
+            }
+            //oanh end
+            */
         }
 
         private void dataBangKe_MouseClick(object sender, MouseEventArgs e)
@@ -201,6 +224,89 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void dataHuy_Click(object sender, EventArgs e)
         {
             Utilities.DataGridV.formatRows(dataHuy, "HUY_STT");
+        }
+        // lam choi
+        public string title_ = "Vui lòng chờ";
+        public int time = 30;
+        ThreadStart t;
+        Thread tt;
+        Progress p;
+        private void startWait()
+        {
+            p = new Progress();
+            p.text = title_;
+            p.itv = time;
+            p.ShowDialog();
+        }
+        private void BeginWait(string til, int tim)
+        {
+            try
+            {
+                title_ = til;
+                time = tim;
+                t = new ThreadStart(startWait);
+                tt = new Thread(t);
+                tt.Start();
+            }
+            catch (ThreadStartException) { }
+        }
+        private void StopWait()
+        {
+            try
+            {
+                if (tt.IsAlive)
+                {
+                    tt.Join(20);
+                    tt.Abort();
+                }
+            }
+            catch (ThreadAbortException) { }
+        }
+
+       // oanh stt
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "xls files (*.xls)|*.xls|xlsx files(*.xlsx)|.xlsx";
+            open.ShowDialog();
+
+            string duongdan = open.FileName;
+
+            if (duongdan != "")
+            {
+                FileInfo TheFile = new FileInfo(duongdan);
+                string msg = "";
+                if (TheFile.Exists)
+                {
+                    //this.BeginWait("Lưu chỉ số đã đọc số", 1000);
+                    //this.StopWait();
+                    this.BeginWait(title_, 120);
+                    try
+                    {
+
+                        import importfileExcel = new import();
+                        msg = importfileExcel.ImportFile(duongdan);
+                      this.StopWait();
+                        MessageBox.Show(this, msg, "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error" + ex.Message);
+                    }
+                //    this.StopWait();
+
+                }
+                else
+                {
+
+                    MessageBox.Show(this, "File không tồn tại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                }
+              
+
+            }
+            // oanh end
+          
+
         }
     }
 }
