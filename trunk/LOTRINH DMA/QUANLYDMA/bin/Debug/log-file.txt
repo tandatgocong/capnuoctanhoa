@@ -1,0 +1,80 @@
+ERROR2013-05-21 09:30:28 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 09:52:56 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 09:53:40 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 09:55:48 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 09:55:52 – LinQConnection getDataTableInvalid column name 'DANHBO'.
+Invalid column name 'DANHBA'.
+ERROR2013-05-21 09:55:54 – LinQConnection getDataTableInvalid column name 'DANHBO'.
+Invalid column name 'DANHBA'.
+ERROR2013-05-21 09:55:57 – LinQConnection getDataTableInvalid column name 'DANHBO'.
+Invalid column name 'DANHBA'.
+ERROR2013-05-21 09:56:29 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 09:58:58 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 09:59:00 – LinQConnection getDataTableIncorrect syntax near 'b1'.
+Incorrect syntax near the keyword 'as'.
+Incorrect syntax near the keyword 'as'.
+ERROR2013-05-21 09:59:01 – LinQConnection getDataTableIncorrect syntax near 'b1'.
+Incorrect syntax near the keyword 'as'.
+Incorrect syntax near the keyword 'as'.
+ERROR2013-05-21 10:00:02 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 10:02:54 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 10:08:52 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 10:11:27 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 10:21:40 – LinQConnection getDataTableInvalid object name 'HOADONTH05_2013'.
+ERROR2013-05-21 10:26:38 – LinQConnection getDataTableInvalid column name 'KY'.
+Invalid column name 'NAM'.
+ERROR2013-05-21 10:27:36 – LinQConnection getDataTableInvalid column name 'KY'.
+Invalid column name 'NAM'.
+ERROR2013-05-21 12:42:50 – LinQConnection getDataTableIncorrect syntax near the keyword 'WHERE'.
+ERROR2013-05-21 12:42:52 – LinQConnection getDataTableIncorrect syntax near the keyword 'WHERE'.
+ERROR2013-05-21 12:42:53 – LinQConnection getDataTableIncorrect syntax near the keyword 'WHERE'.
+ERROR2013-05-21 12:44:30 – LinQConnection getDataTableIncorrect syntax near the keyword 'WHERE'.
+ERROR2013-05-21 06:34:26 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:34:26 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:34:39 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:34:39 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:34:44 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:34:44 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:37:05 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:37:05 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:37:55 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:37:55 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:38:08 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:38:08 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:38:56 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2012'.
+ERROR2013-05-21 06:38:56 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2012'.
+ERROR2013-05-21 06:40:17 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 06:40:17 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 07:18:42 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 07:18:42 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 07:18:47 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2012'.
+ERROR2013-05-21 07:18:47 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2012'.
+ERROR2013-05-21 11:07:09 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-21 11:07:09 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-22 09:35:10 – LinQConnection getDataTableLogin failed for user 'sa'.
+ERROR2013-05-22 09:35:42 – LinQConnection getDataTableLogin failed for user 'sa'.
+ERROR2013-05-23 09:23:01 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:23:01 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:25:48 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:25:48 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:10 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:10 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:13 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:13 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:16 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:16 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:18 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:18 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:18 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:18 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:18 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:18 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:19 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:19 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:19 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:19 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:19 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:19 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:19 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:26:19 – LinQConnection getDataTableInvalid object name 'DocSo_PHT.dbo.DS2013'.
+ERROR2013-05-23 09:29:26 – Kiem Tra Ket Noi ServerA network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
