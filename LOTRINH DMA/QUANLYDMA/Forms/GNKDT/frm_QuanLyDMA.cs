@@ -83,8 +83,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             try
             {
                 lbTongDHN.Text = dataBangKe.Rows.Count + "";
-                lbTongGanMoi.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG kh   WHERE kh.NAM>=" + nam + " AND kh.KY_>=" + ky + " AND MADMA='" + madma + "'  ") + "";
-                lbTongHuy.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG_HUYDB kh   WHERE  MADMA='" + madma + "'  ") + "";
+                lbTongGanMoi.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG kh WHERE kh.NAM=" + nam + " AND kh.KY_=" + ky + " AND MADMA='" + madma + "'  ") + "";
+                lbTongHuy.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG_HUYDB kh WHERE HIEULUCHUY='" + ky +"/" + nam + "' AND  MADMA='" + madma + "'  ") + "";
                 lbTongThay.Text = tableThay == null ? "0" : tableThay.Rows.Count + "";
                 lbSanLuong.Text = (dataBangKe.DataSource as DataTable).Compute("Sum(LNCC)", "") + "";
             }
@@ -92,21 +92,23 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 log.Error(ex.Message);
             }
+            tabPage4.Text = "ĐHN Gắn Mới ĐMA " + madma;
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
         {
+            string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+            string nam = this.txtNam.Text;
+            string madma = cbMaDMA.SelectedValue.ToString();
               string mep = ConfigurationManager.AppSettings["mep"].ToString();
               if ("2".Equals(mep))
               {
-                  GNKDT.Export.export(dataBangKe, cbMaDMA.SelectedValue.ToString());
+                  GNKDT.Export.export(dataBangKe, madma, ky, nam);
               }
               else {
                   // 
                   //oanh stt
-                  string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
-                  string nam = this.txtNam.Text;
-                  string madma = cbMaDMA.SelectedValue.ToString();
+                 
                   SaveFileDialog save = new SaveFileDialog();
                   save.Filter = "Excel file *.xls|*.xls";
                   save.FileName = "SAN LUONG DHN DMA " + madma;
@@ -183,19 +185,26 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string nam = this.txtNam.Text;
             string madma = cbMaDMA.SelectedValue.ToString();
             string sql = "   SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS            ";
-            sql += "  		FROM TB_DULIEUKHACHHANG kh   WHERE kh.NAM>=" + nam + " AND kh.KY_>=" + ky + " AND MADMA='" + madma + "' ";
-            dataGanMoi.DataSource = DAL.LinQConnection.getDataTable(sql);
-         
+            sql += "  		FROM TB_DULIEUKHACHHANG kh   WHERE kh.NAM=" + nam + " AND kh.KY_=" + ky + " AND MADMA='" + madma + "' ";
+            dataGridView1.DataSource = DAL.LinQConnection.getDataTable(sql);
+        }
 
+        void GanMoiAll()
+        {
+            string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+            string nam = this.txtNam.Text;
+            string madma = cbMaDMA.SelectedValue.ToString();
+            string sql = "   SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS,MADMA  ";
+            sql += "  		FROM TB_DULIEUKHACHHANG kh   WHERE kh.NAM=" + nam + " AND kh.KY_=" + ky + " ";
+            dataGridView2.DataSource = DAL.LinQConnection.getDataTable(sql);
         }
         void Huy() {
             string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
             string nam = this.txtNam.Text;
             string madma = cbMaDMA.SelectedValue.ToString();
             string sql = "SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC ,( N'Hủy ' + HIEULUCHUY) as 'HIEULUC',CHUKYDS   ";
-            sql += "FROM TB_DULIEUKHACHHANG_HUYDB WHERE  MADMA='" + madma + "' ";
+            sql += "FROM TB_DULIEUKHACHHANG_HUYDB WHERE HIEULUCHUY='" + ky + "/" + nam + "' AND  MADMA='" + madma + "' ";
             dataHuy.DataSource = DAL.LinQConnection.getDataTable(sql);
-           
         }
         void Thay() {
             dataThay.DataSource = tableThay;
@@ -203,25 +212,26 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         }
         private void tabItem3_Click(object sender, EventArgs e)
         {
-            GanMoi();
-            
+            GanMoiAll();
         }
 
         private void tabControl2_Click(object sender, EventArgs e)
         {
             if (tabControl2.SelectedIndex == 0) {
-
-                GanMoi();
-                Utilities.DataGridV.formatRows(dataGanMoi, "GM_STT");
+                GanMoiAll();
+                Utilities.DataGridV.formatRows(dataGridView2, "GM_STT");
             } else if (tabControl2.SelectedIndex == 1) {
 
                 Thay();
                 Utilities.DataGridV.formatRows(dataThay, "THAY_STT");
-
-            } else {
-
+            }
+            else if (tabControl2.SelectedIndex == 2)
+            {
                 Huy();
                 Utilities.DataGridV.formatRows(dataHuy, "HUY_STT");
+            }else{
+                 GanMoi();
+                 Utilities.DataGridV.formatRows(dataGridView1, "MOI_STT");
             }
             
         }
@@ -233,7 +243,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void dataGanMoi_Click(object sender, EventArgs e)
         {
-            Utilities.DataGridV.formatRows(dataGanMoi, "GM_STT");
+            Utilities.DataGridV.formatRows(dataGridView2, "GM_STT");
         }
 
         private void dataHuy_Click(object sender, EventArgs e)

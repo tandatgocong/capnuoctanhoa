@@ -18,7 +18,7 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
 {
     class Export
     {
-        public static string export(DataGridView dataGridView1,string dma)
+        public static string export(DataGridView dataGridView1,string dma, string ky, string nam)
         {
             ExcelCOM.Application exApp = new ExcelCOM.Application();
             string workbookPath = AppDomain.CurrentDomain.BaseDirectory + @"\LOTRINH.xls";
@@ -29,7 +29,7 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
 
             //exSheet.Name = ky + "." + nam;
             //exSheet.Cells[4, 5] = "TP.Hồ Chí Minh, ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
-            exSheet.Cells[1, 1] = "DANH SÁCH NHỮNG ĐỒNG HỒ NƯỚC TRONG VÙNG DMA " + dma;
+            exSheet.Cells[1, 1] = "DANH SÁCH NHỮNG ĐỒNG HỒ NƯỚC TRONG VÙNG DMA " + dma + " KỲ " + ky + "/"+nam;
             int rows = 4;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -46,7 +46,7 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
                 string CHUKY=dataGridView1.Rows[i].Cells["CHUKY"].Value + "";
                 string SANLUONG=dataGridView1.Rows[i].Cells["TIEUTHU"].Value + "";
                 string BINHQUAN=dataGridView1.Rows[i].Cells["BINHQUAN"].Value + "";
-
+                string NAMLD = dataGridView1.Rows[i].Cells["NAMLD"].Value + "";
                 exSheet.Cells[rows, 1] = STT;
                 exSheet.Cells[rows, 2] = DANHBO;
                 exSheet.Cells[rows, 3] = CODH;
@@ -60,7 +60,7 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
                 exSheet.Cells[rows, 11] = CHUKY;
                 exSheet.Cells[rows, 12] = SANLUONG;
                 exSheet.Cells[rows, 13] = BINHQUAN;
-               
+                exSheet.Cells[rows, 14] = NAMLD;
 
                 rows++;
 
