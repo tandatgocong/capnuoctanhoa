@@ -17,7 +17,7 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
         public static DataTable getThongTinDMAByHoaDon(string madma, string ky, string nam)
         {
 
-            string query = "  SELECT DISTINCT tb1.*, tb2.CHUKY, tb2.CODE,tb2.LNCC,(convert(float,tb2.LNCC)/tb2.CHUKY) as 'TBTT' ";
+            string query = "  SELECT DISTINCT ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT], tb1.*, tb2.CHUKY, tb2.CODE,tb2.LNCC,(convert(float,tb2.LNCC)/tb2.CHUKY) as 'TBTT' ";
             query += "       FROM (SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',YEAR(NGAYTHAY) AS 'NAMLD' ";
             query += "              FROM TB_DULIEUKHACHHANG WHERE NAM<=" + nam + " AND KY_<=" + ky + " AND MADMA='" + madma + "'";
             query += "              UNION ";
@@ -33,7 +33,7 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
         public static DataTable getThongTinDMAByHandheld(string madma, string ky, string nam)
         {
 
-            string query = " SELECT DISTINCT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, HIEULUC ,CHUKYDS as 'CHUKY',NAMLD, tb2.CODE,tb2.TIEUTHU as 'LNCC',(convert(float,tb2.TIEUTHU)/tb1.CHUKYDS) as 'TBTT'    ";
+            string query = " SELECT DISTINCT ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT], LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, HIEULUC ,CHUKYDS as 'CHUKY',NAMLD, tb2.CODE,tb2.TIEUTHU as 'LNCC',(convert(float,tb2.TIEUTHU)/tb1.CHUKYDS) as 'TBTT'    ";
             query += "      FROM ( SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS,YEAR(NGAYTHAY) AS 'NAMLD'            ";
             query += "  		FROM TB_DULIEUKHACHHANG WHERE  NAM<="+nam+" AND KY_<="+ky+" AND MADMA='" + madma + "'";
             query += "  		 UNION      ";
@@ -50,7 +50,7 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
         public static DataTable getThongTinDMAByHandheld_Thay(string madma, string ky, string nam)
         {
 
-            string query = " SELECT DISTINCT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, HIEULUC ,CHUKYDS as 'CHUKY', tb2.CODE,tb2.TIEUTHU as 'LNCC',(convert(float,tb2.TIEUTHU)/tb1.CHUKYDS) as 'TBTT'    ";
+            string query = " SELECT DISTINCT  ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT], LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, HIEULUC ,CHUKYDS as 'CHUKY', tb2.CODE,tb2.TIEUTHU as 'LNCC',(convert(float,tb2.TIEUTHU)/tb1.CHUKYDS) as 'TBTT'    ";
             query += "      FROM ( SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS            ";
             query += "  		FROM TB_DULIEUKHACHHANG WHERE  MADMA='" + madma + "'";
             query += "  		 UNION      ";
@@ -67,7 +67,7 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
         public static DataTable getThongTinDMAByHoaDon_Thay(string madma, string ky, string nam)
         {
 
-            string query = "  SELECT DISTINCT tb1.*, tb2.CHUKY, tb2.CODE,tb2.LNCC,(convert(float,tb2.LNCC)/tb2.CHUKY) as 'TBTT' ";
+            string query = "  SELECT DISTINCT  ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT],tb1.*, tb2.CHUKY, tb2.CODE,tb2.LNCC,(convert(float,tb2.LNCC)/tb2.CHUKY) as 'TBTT' ";
             query += "       FROM (SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC' ";
             query += "              FROM TB_DULIEUKHACHHANG WHERE MADMA='" + madma + "'";
             query += "              UNION ";
