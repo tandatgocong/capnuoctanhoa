@@ -184,7 +184,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
             string nam = this.txtNam.Text;
             string madma = cbMaDMA.SelectedValue.ToString();
-            string sql = "   SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS            ";
+            string sql = "   SELECT ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT],LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS            ";
             sql += "  		FROM TB_DULIEUKHACHHANG kh   WHERE kh.NAM=" + nam + " AND kh.KY_=" + ky + " AND MADMA='" + madma + "' ";
             dataGridView1.DataSource = DAL.LinQConnection.getDataTable(sql);
         }
@@ -194,15 +194,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
             string nam = this.txtNam.Text;
             string madma = cbMaDMA.SelectedValue.ToString();
-            string sql = "   SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS,MADMA  ";
-            sql += "  		FROM TB_DULIEUKHACHHANG kh   WHERE kh.NAM=" + nam + " AND kh.KY_=" + ky + " ";
+            string sql = "   SELECT ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT],LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS,MADMA  ";
+            sql += "  		FROM TB_DULIEUKHACHHANG kh   WHERE kh.NAM>=" + nam + " AND kh.KY_>=" + ky + " ";
             dataGridView2.DataSource = DAL.LinQConnection.getDataTable(sql);
         }
         void Huy() {
             string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
             string nam = this.txtNam.Text;
             string madma = cbMaDMA.SelectedValue.ToString();
-            string sql = "SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC ,( N'Hủy ' + HIEULUCHUY) as 'HIEULUC',CHUKYDS   ";
+            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT],LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC ,( N'Hủy ' + HIEULUCHUY) as 'HIEULUC',CHUKYDS   ";
             sql += "FROM TB_DULIEUKHACHHANG_HUYDB WHERE HIEULUCHUY='" + ky + "/" + nam + "' AND  MADMA='" + madma + "' ";
             dataHuy.DataSource = DAL.LinQConnection.getDataTable(sql);
         }
