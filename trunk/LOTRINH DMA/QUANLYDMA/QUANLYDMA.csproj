@@ -127,6 +127,35 @@
     <Compile Include="DAL\SYS\C_PHUONG.cs" />
     <Compile Include="DAL\SYS\C_QUAN.cs" />
     <Compile Include="DAL\SYS\C_Users.cs" />
+    <Compile Include="Forms\GNKDT\BAOCAO\BC_GanMoi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BC_GanMoi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\GNKDT\BAOCAO\BC_GanMoiVungDMA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BC_GanMoiVungDMA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\GNKDT\BAOCAO\BC_Huy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BC_Huy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\GNKDT\BAOCAO\BC_Thay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BC_Thay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\GNKDT\BAOCAO\dsDMA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDMA.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GNKDT\Export.cs" />
     <Compile Include="Forms\GNKDT\frmDieuChinhDMA.cs">
       <SubType>Form</SubType>
@@ -216,6 +245,17 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Forms\GNKDT\BAOCAO\dsDMA.xsc">
+      <DependentUpon>dsDMA.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\GNKDT\BAOCAO\dsDMA.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDMA.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\GNKDT\BAOCAO\dsDMA.xss">
+      <DependentUpon>dsDMA.xsd</DependentUpon>
+    </None>
     <None Include="lib\app.conf" />
     <None Include="lib\app.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -227,6 +267,22 @@
     <None Include="LinQ\CapNuocTanHoa.dbml.layout">
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Forms\GNKDT\BAOCAO\BC_GanMoi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BC_GanMoi.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GNKDT\BAOCAO\BC_GanMoiVungDMA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BC_GanMoiVungDMA.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GNKDT\BAOCAO\BC_Huy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BC_Huy.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GNKDT\BAOCAO\BC_Thay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BC_Thay.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GNKDT\frmDieuChinhDMA.resx">
       <DependentUpon>frmDieuChinhDMA.cs</DependentUpon>
     </EmbeddedResource>

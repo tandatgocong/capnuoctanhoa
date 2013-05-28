@@ -15,6 +15,7 @@ using CAPNUOCTANHOA.Forms.GNKDT;
 using System.IO;
 using System.Threading;
 using System.Configuration;
+using CAPNUOCTANHOA.Forms.GNKDT.BAOCAO;
 
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
@@ -39,7 +40,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         }
 
         DataTable tableThay = new DataTable();
-        public void Load(string ky, string nam, string madma) {
+        void Load(string ky, string nam, string madma) {
             try
             {
                
@@ -177,6 +178,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void tabItem2_Click(object sender, EventArgs e)
         {
             Utilities.DataGridV.formatRows(dataBangKe, "STT");
+            this.btInDS.Visible = false;
         }
 
         void GanMoi()
@@ -213,6 +215,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void tabItem3_Click(object sender, EventArgs e)
         {
             GanMoiAll();
+            this.btInDS.Visible = true;
         }
 
         private void tabControl2_Click(object sender, EventArgs e)
@@ -332,6 +335,99 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             // oanh end
           
 
+        }
+
+        private void tabItem1_Click(object sender, EventArgs e)
+        {
+            this.btInDS.Visible = false;
+        }
+        //OANH STT 
+        public void XuatReportTab0()
+        {
+            ReportDocument rptDoc = new BC_GanMoi();
+            DataTable dt = new DataTable();
+            GNKDT.BAOCAO.dsDMA ds = new GNKDT.BAOCAO.dsDMA();
+            dt.TableName = "GANMOI";
+            dt = (DataTable)dataGridView2.DataSource;
+            ds.Tables["GANMOI"].Merge(dt);
+            ////set dataset to the report viewer.
+            rptDoc.SetDataSource(ds);
+            Reports.frm_Reports frm = new Reports.frm_Reports(rptDoc);
+            frm.Show();
+
+        }
+        public void XuatReportTab1()
+        {
+            ReportDocument rptDoc = new BC_Thay();
+            DataTable dt = new DataTable();
+            GNKDT.BAOCAO.dsDMA ds = new GNKDT.BAOCAO.dsDMA();
+            dt.TableName = "THAY";
+            dt = (DataTable)dataThay.DataSource;
+            ds.Tables["THAY"].Merge(dt);           
+            //set dataset to the report viewer.
+            rptDoc.SetDataSource(ds);
+            string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+            string nam = this.txtNam.Text;
+            string madma = cbMaDMA.SelectedValue.ToString();
+            rptDoc.SetParameterValue("KY", ky);
+            rptDoc.SetParameterValue("NAM", nam);
+            rptDoc.SetParameterValue("MADMA", madma);
+            Reports.frm_Reports frm = new Reports.frm_Reports(rptDoc);
+            frm.Show();
+        }
+        public void XuatReportTab2()
+        {
+
+            DataTable dt = new DataTable();
+            GNKDT.BAOCAO.dsDMA ds = new GNKDT.BAOCAO.dsDMA();
+            dt.TableName = "HUY";
+            dt = (DataTable)dataHuy.DataSource;
+            ReportDocument rptDoc = new BC_Huy();
+            ds.Tables["HUY"].Merge(dt);
+            //set dataset to the report viewer.
+            rptDoc.SetDataSource(ds);
+            string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+            string nam = this.txtNam.Text;
+            string madma = cbMaDMA.SelectedValue.ToString();
+            rptDoc.SetParameterValue("KY", ky);
+            rptDoc.SetParameterValue("NAM", nam);
+            rptDoc.SetParameterValue("MADMA", madma);
+            Reports.frm_Reports frm = new Reports.frm_Reports(rptDoc);
+            frm.Show();
+        }
+        public void XuatReportTab3()
+        {
+
+            DataTable dt = new DataTable();
+            GNKDT.BAOCAO.dsDMA ds = new GNKDT.BAOCAO.dsDMA();
+            dt.TableName = "HUY";
+            dt = (DataTable)dataGridView1.DataSource;
+            ReportDocument rptDoc = new BC_GanMoiVungDMA();
+            ds.Tables["HUY"].Merge(dt);
+            //set dataset to the report viewer.
+            rptDoc.SetDataSource(ds);
+            string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+            string nam = this.txtNam.Text;
+            string madma = cbMaDMA.SelectedValue.ToString();
+            rptDoc.SetParameterValue("KY", ky);
+            rptDoc.SetParameterValue("NAM", nam);
+            rptDoc.SetParameterValue("MADMA", madma);
+            Reports.frm_Reports frm = new Reports.frm_Reports(rptDoc);
+            frm.Show();
+        }
+        private void btInDS_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTabIndex.ToString() == "2")
+            {
+                string mes = tabControl2.SelectedIndex.ToString();
+                switch (mes)
+                {
+                    case "0": XuatReportTab0(); break;
+                    case "1": XuatReportTab1(); break;
+                    case "2": XuatReportTab2(); break;
+                    case "3": XuatReportTab3(); break;
+                }
+            }
         }
     }
 }
