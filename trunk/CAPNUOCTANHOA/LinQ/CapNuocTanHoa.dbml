@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CAPNUOCTANHOA" Class="CapNuocTanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVER9;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="CAPNUOCTANHOAConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.90.8\KD;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="CAPNUOCTANHOAConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DULIEUDOCSOVE" Member="DULIEUDOCSOVEs">
     <Type Name="DULIEUDOCSOVE">
       <Column Name="[Column 0]" Member="Column_0" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -1150,6 +1150,42 @@
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="KTKS_LOAICHUNGTU_KTKS_THEODOIDM" Member="KTKS_LOAICHUNGTU" ThisKey="LOAICT" OtherKey="MACT" Type="KTKS_LOAICHUNGTU" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DK_GIAMHOADON" Member="DK_GIAMHOADONs">
+    <Type Name="DK_GIAMHOADON">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DHN_SOBANGKE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DHN_STT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_DANHBO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DHN_NGAYGHINHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_KY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_DOT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_TODS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_CAMKET" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DHN_BAMHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DHN_HUYCAMKET" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DHN_GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DHN_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_NGAYTIEPXUC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KTKS_CAMKET" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_BAMHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_NGAYBAMCHI" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KTKS_MAKIEMBC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_HIEU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_CO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_SOTHAN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_CHISO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_MAKIEM" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KTKS_NHANVIEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KTKS_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KTKS_MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">

@@ -11,6 +11,7 @@ using log4net;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
+using CAPNUOCTANHOA.Forms.BanKTKS.BC;
 
 namespace CAPNUOCTANHOA.Forms.BanKTKS
 {
@@ -18,22 +19,17 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
     {
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_GiamHoaDon).Name);
+        int selectedindex = -1;
+        DK_GIAMHOADON hd;
+        string flag;
+
         public frm_GiamHoaDon()
         {
             InitializeComponent();
-            // this.cbLoaiBangKe.Focus(); 
-            formLoad();
-            //  MessageBox.Show(this, DAL.SYS.C_USERS._tenDocSo);
-            //     MessageBox.Show(this, DAL.QLDHN.C_BaoThay.getMaxBangKe() + "");
-
         }
 
-        void formLoad()
-        {
+        #region Method
 
-            txtNgayGan.Value = DateTime.Now.Date;
-            LoadData();
-        }
         public void setSTT()
         {
             for (int i = 0; i < dataBangKe.Rows.Count; i++)
@@ -41,294 +37,352 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 dataBangKe.Rows[i].Cells["DHN_STT"].Value = i + 1;
             }
         }
-        private void btIn_Click(object sender, EventArgs e)
-        {
-             
-                //ReportDocument rp = new rpt_PhieuChuyenDinhMuc();                         
-                //rp.SetDataSource(DAL.QLDHN.C_ChuyenDinhMuc.getReport(this.txtNgayGan.Value.ToShortDateString()));
-                //frm_Reports frm = new frm_Reports(rp);
-                //frm.ShowDialog();
-            
-        }
 
-       
         public void LoadData()
         {
             try
             {
-                dataBangKe.DataSource = DAL.QLDHN.C_ChuyenDinhMuc.getListDCByDate(this.txtNgayGan.Value.ToShortDateString());
+                switch (flag)
+                {
+                    case "bangke":                     
+                        dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeBySoBangKe(txtSoBangKe.Text.ToUpper());
+                        break;
+                    case "danhbo":
+                        dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeBySoDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", ""));
+                        break;
+                    case "yeucau":
+                        dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeByNgayYeuCau(dateYeuCau.Value);
+                        break;
+                }
                 Utilities.DataGridV.formatRows(dataBangKe);
-              //  setSTT();
+                setSTT();
+                Clear();
             }
+
             catch (Exception ex)
             {
                 log.Error("Loi Load Du Lieu Thay " + ex.Message);
             }
-
         }
+
+        public void Clear()
+        {
+            txtSoDanhBo.Text = "";
+            txtLoTrinh.Text = "";
+            txtDot.Text = "";
+            txtSoThan.Text = "";
+            txtTenKH.Text = "";
+            txtDiaChi.Text = "";
+            dateTiepXuc.Value = new DateTime();
+            txtCamKet.Text = "";
+            txtGhiChu.Text = "";
+            txtMaKiemKhoaNuoc.Text = "";
+            dateKhoaNuoc.Value = new DateTime();
+            txtMaKiemThuHoi.Text = "";
+            txtHieu.Text = "";
+            txtCo.Text = "";
+            txtKTKSSoThan.Text = "";
+            txtChiSo.Text = "";
+            txtNhanVien.Text = "";
+            dateThuHoi.Value = new DateTime();
+            selectedindex = -1;
+            btncapNhat.Enabled = false;
+        }
+
+        public void LoadLichSuHoaDon0(string sodanhbo)
+        {
+            DataTable dt = DAL.BANKTKS.C_GiamHoaDon.getLichSuHoaDon0(sodanhbo);
+            DataSetktks ds = new DataSetktks();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = ds.Tables["LichSuHoaDon0"].NewRow();
+                dr["STT"] = i + 1;
+                dr["SOBANGKE"] = dt.Rows[i]["DHN_SOBANGKE"].ToString();
+                dr["DHN_NGAYGHINHAN"] = dt.Rows[i]["DHN_NGAYGHINHAN"].ToString();
+                if (dt.Rows[i]["DHN_BAMHI"].ToString() != "")
+                    dr["BC"] = "X";
+                else
+                    if (dt.Rows[i]["DHN_CAMKET"].ToString() != "")
+                        dr["DHN_CK"] = "X";
+                    else
+                        if (dt.Rows[i]["DHN_HUYCAMKET"].ToString() != "")
+                            dr["HCK"] = "X";
+                dr["KTKS_NGAYTIEPXUC"] = dt.Rows[i]["KTKS_NGAYTIEPXUC"].ToString();
+                if (dt.Rows[i]["KTKS_CAMKET"].ToString() != "")
+                    dr["KTKS_CK"] = "X";
+                else
+                    if (dt.Rows[i]["KTKS_BAMHI"].ToString() == "khoanuoc")
+                        dr["BCKN"] = "X";
+                    else
+                        if (dt.Rows[i]["KTKS_BAMHI"].ToString() == "thuhoi")
+                            dr["BCTH"] = "X";
+                ds.Tables["LichSuHoaDon0"].Rows.Add(dr);
+            }
+            if (ds.Tables["LichSuHoaDon0"].Rows.Count > 0)
+            {
+                dataLichSuHoaDon0.DataSource = ds.Tables["LichSuHoaDon0"];
+                panelLichSuHoaDon0.Visible = true;
+            }
+        }
+
+        #endregion
+
+        private void frm_GiamHoaDon_Load(object sender, EventArgs e)
+        {
+            txtSoBangKe.Focus();
+            DataTable table = DAL.LinQConnection.getDataTable("SELECT TENDONGHO FROM TB_HIEUDONGHO");
+            foreach (var item in table.Rows)
+            {
+                DataRow r = (DataRow)item;
+                namesCollection.Add(r["TENDONGHO"].ToString());
+            }
+            txtHieu.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtHieu.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtHieu.AutoCompleteCustomSource = namesCollection;
+        }
+
+        private void radCamKet_CheckedChanged(object sender, EventArgs e)
+        {
+            panelCamKet.Visible = true;
+            panelBamChiKhoaNuoc.Visible = false;
+            panelBamChiThuHoi.Visible = false;
+            txtCamKet.Focus();
+        }
+        
+        private void radKTKSBamChiKhoaNuoc_CheckedChanged(object sender, EventArgs e)
+        {
+            panelCamKet.Visible = false;
+            panelBamChiKhoaNuoc.Visible = true;
+            panelBamChiThuHoi.Visible = false;
+            txtMaKiemKhoaNuoc.Focus();
+        }
+
+        private void radKTKSBamChiThuHoi_CheckedChanged(object sender, EventArgs e)
+        {
+            panelCamKet.Visible = false;
+            panelBamChiKhoaNuoc.Visible = false;
+            panelBamChiThuHoi.Visible = true;
+            txtMaKiemThuHoi.Focus();
+        }
+
         private void txtSoBangKe_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
+                flag = "bangke";
                 LoadData();
-                //btIn.Enabled = true;
+                //dateYeuCau.Value = new DateTime();
+                txtSoDanhBo.Text = "";
+                panelLichSuHoaDon0.Visible = false;
             }
-        }
-
-        private void dataBangKe_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                string ID = dataBangKe.Rows[e.RowIndex].Cells["ID"].Value + "";
-                string LOTRINH = dataBangKe.Rows[e.RowIndex].Cells["LOTRINH"].Value + "";
-                string ky = dataBangKe.Rows[e.RowIndex].Cells["ky"].Value + "";
-                string DOT = dataBangKe.Rows[e.RowIndex].Cells["DOT"].Value + "";
-                string NAM = dataBangKe.Rows[e.RowIndex].Cells["NAM"].Value + "";
-                string G_DANHBO = dataBangKe.Rows[e.RowIndex].Cells["G_DANHBO"].Value + "";
-                string G_TENKH = dataBangKe.Rows[e.RowIndex].Cells["G_TENKH"].Value + "";
-                string G_DIACHI = dataBangKe.Rows[e.RowIndex].Cells["G_DIACHI"].Value + "";
-                string HOPDONG = dataBangKe.Rows[e.RowIndex].Cells["HOPDONG"].Value + "";
-                string GB = dataBangKe.Rows[e.RowIndex].Cells["GB"].Value + "";
-                string DM = dataBangKe.Rows[e.RowIndex].Cells["DM"].Value + "";
-                string TTBQ = dataBangKe.Rows[e.RowIndex].Cells["TTBQ"].Value + "";
-                string CONGDUNG = dataBangKe.Rows[e.RowIndex].Cells["CONGDUNG"].Value + "";
-
-              //  this.TXTid.Text = ID;
-                this.txtLoTrinh.Text = LOTRINH;
-          //      this.txtKY.Text = ky;
-                this.txtDot.Text = DOT;
-                this.txtSoDanhBo.Text = G_DANHBO.Replace(" ","");
-                this.txtTenKH.Text = G_TENKH;
-                this.txtDiaChi.Text = G_DIACHI;
-                this.txtHopDong.Text = HOPDONG;
-                this.txtGB.Text = GB;
-                this.txtDM.Text = DM;
-            //    this.txtBQ.Text = TTBQ;
-           //     this.txtCongDung.Text = CONGDUNG;
-                btcapNhat.Enabled = true;
-                btXoa.Enabled = true;
-            }
-            catch (Exception)
-            {
-
-            }
-
-        }
-
-        private void btTaoMoi_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        void LoadThongTinDB()
-        {
-            string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
-            if (sodanhbo.Length == 11)
-            {
-                DataTable table = DAL.QLDHN.C_ChuyenDinhMuc.getThonTinDieuChinh(sodanhbo);
-                if (table.Rows.Count > 0)
-                {
-                    txtDot.Text = table.Rows[0]["DOT"] + "";
-                    txtLoTrinh.Text = table.Rows[0]["MALOTRINH"] + "";
-               //     txtKY.Text = table.Rows[0]["KY"] + "";                     
-                    txtTenKH.Text = table.Rows[0]["HOTEN"] + "";
-                    txtDiaChi.Text = table.Rows[0]["DIACHI"] + "";
-                    txtGB.Text = table.Rows[0]["GB"] + "";
-                    txtDM.Text = table.Rows[0]["DM"] + "";
-                 ///   txtBQ.Text = table.Rows[0]["TBTHU"] + "";
-                    txtHopDong.Text = table.Rows[0]["HOPDONG"] + "";
-                }
-
-            }
-        }
-        private void txtSoDanhBo_Leave(object sender, EventArgs e)
-        {
-            LoadThongTinDB();
         }
 
         private void txtSoDanhBo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
-                LoadThongTinDB();
+                flag = "danhbo";
+                LoadData();
+                //dateYeuCau.Value = new DateTime();
+                txtSoBangKe.Text = "";
+                panelLichSuHoaDon0.Visible = false;
+                if (dataBangKe.RowCount > 0)
+                    dataBangKe_CellContentClick(sender, new DataGridViewCellEventArgs(0, 0));
             }
         }
 
-        public void Add()
+        private void dateYeuCau_TextChanged(object sender, EventArgs e)
         {
-
-            TB_CHUYENDINHMUC chuyendm = new TB_CHUYENDINHMUC();
-       //     chuyendm.KY = int.Parse(txtKY.Text);
-            chuyendm.DOT = int.Parse(txtDot.Text);
-            chuyendm.NAM = DateTime.Now.Date.Year;
-            chuyendm.TODS = DAL.SYS.C_USERS._toDocSo;
-            chuyendm.DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
-            chuyendm.LOTRINH = this.txtLoTrinh.Text;
-            chuyendm.HOTEN = this.txtTenKH.Text;
-            chuyendm.DIACHI = this.txtDiaChi.Text;
-            chuyendm.HOPDONG = this.txtHopDong.Text;
-            chuyendm.GB = this.txtGB.Text;
-            chuyendm.DM = this.txtDM.Text;
-        //    chuyendm.TTBQ = int.Parse(this.txtBQ.Text);
-         //   chuyendm.CONGDUNG = this.txtCongDung.Text;
-            chuyendm.NGAYLAP = this.txtNgayGan.Value.Date;
-            chuyendm.CREATEDATE = DateTime.Now;
-            chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
-            DAL.QLDHN.C_ChuyenDinhMuc.Insert(chuyendm);
-            // DAL.DULIEUKH.C_DuLieuKhachHang.UpdateBaoThay(this.txtSoDanhBo.Text.Replace("-", ""), "True");
+            flag = "yeucau";
             LoadData();
-            CLEAR();
-        }
-
-        public void refeshInser()
-        {
-
             txtSoDanhBo.Text = "";
-            txtTenKH.Text = "";
-            txtDiaChi.Text = "";
-            txtNgayGan.ValueObject = null;
-            //txtHieu.Text = "";
-            //txtCo.Text = "";
-            //txtSoThan.Text = "";
-            //txtChiThan.Text = "";
-            //txtChiGoc.Text = "";
-            //txtChiSoThay.Text = "";
-            //txtMaLoTrinh.Text = "";
-            btcapNhat.Enabled = false;
-            btXoa.Enabled = false;
-            txtSoDanhBo.Focus();
-
+            txtSoBangKe.Text = "";
+            panelLichSuHoaDon0.Visible = false;
         }
-        private void btThem_Click(object sender, EventArgs e)
+
+        private void dataBangKe_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                Add();
-
+                txtSoDanhBo.Text = dataBangKe["G_DANHBO", e.RowIndex].Value.ToString().Replace(" ", "");
+                txtLoTrinh.Text = dataBangKe["LOTRINH", e.RowIndex].Value.ToString();
+                txtDot.Text = dataBangKe["DHN_DOT", e.RowIndex].Value.ToString();
+                txtSoThan.Text = dataBangKe["SOTHANDH", e.RowIndex].Value.ToString();
+                txtTenKH.Text = dataBangKe["HOTEN", e.RowIndex].Value.ToString();
+                txtDiaChi.Text = dataBangKe["DIACHI", e.RowIndex].Value.ToString();
+                txtCamKet.Text = dataBangKe["KTKS_CAMKET", e.RowIndex].Value.ToString();
+                txtGhiChu.Text = dataBangKe["KTKS_GHICHU", e.RowIndex].Value.ToString();
+                //Ngày tiếp xúc
+                if (dataBangKe["KTKS_NGAYTIEPXUC", e.RowIndex].Value.ToString() != "")
+                    dateTiepXuc.Value = (DateTime)dataBangKe["KTKS_NGAYTIEPXUC", e.RowIndex].Value;
+                else
+                    dateTiepXuc.Value = new DateTime();
+                //Bấm chì
+                if (dataBangKe["KTKS_CAMKET", e.RowIndex].Value.ToString() != "")
+                    radCamKet.Checked = true;
+                else
+                    if (dataBangKe["KTKS_BAMHI", e.RowIndex].Value.ToString() == "khoanuoc")
+                        radKTKSBamChiKhoaNuoc.Checked = true;
+                    else
+                        if (dataBangKe["KTKS_BAMHI", e.RowIndex].Value.ToString() == "thuhoi")
+                            radKTKSBamChiThuHoi.Checked = true;
+                        else
+                        {
+                            radCamKet.Checked = false;
+                            radKTKSBamChiKhoaNuoc.Checked = false;
+                            radKTKSBamChiThuHoi.Checked = false;
+                            panelCamKet.Visible = false;
+                            panelBamChiKhoaNuoc.Visible = false;
+                            panelBamChiThuHoi.Visible = false;
+                        }
+                //panel Bấm chì khóa nước
+                txtMaKiemKhoaNuoc.Text = dataBangKe["KTKS_MAKIEMBC", e.RowIndex].Value.ToString();
+                if (dataBangKe["KTKS_NGAYBAMCHI", e.RowIndex].Value.ToString() != "")
+                    dateKhoaNuoc.Value = (DateTime)dataBangKe["KTKS_NGAYBAMCHI", e.RowIndex].Value;
+                else
+                    dateKhoaNuoc.Value = new DateTime();
+                //panel Bấm chì thu hồi
+                txtMaKiemThuHoi.Text = dataBangKe["KTKS_TH_MAKIEM", e.RowIndex].Value.ToString();
+                txtHieu.Text = dataBangKe["KTKS_TH_HIEU", e.RowIndex].Value.ToString();
+                txtCo.Text = dataBangKe["KTKS_TH_CO", e.RowIndex].Value.ToString();
+                txtKTKSSoThan.Text = dataBangKe["KTKS_TH_SOTHAN", e.RowIndex].Value.ToString();
+                txtChiSo.Text = dataBangKe["KTKS_TH_CHISO", e.RowIndex].Value.ToString();
+                txtNhanVien.Text = dataBangKe["KTKS_NHANVIEN", e.RowIndex].Value.ToString();
+                if (dataBangKe["KTKS_TH_NGAY", e.RowIndex].Value.ToString() != "")
+                    dateThuHoi.Value = (DateTime)dataBangKe["KTKS_TH_NGAY", e.RowIndex].Value;
+                else
+                    dateThuHoi.Value = new DateTime();
+                //Set
+                selectedindex = e.RowIndex;
+                btncapNhat.Enabled = true;
+                LoadLichSuHoaDon0(dataBangKe["G_DANHBO", e.RowIndex].Value.ToString().Replace(" ", ""));
+                txtSoDanhBo.Focus();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                log.Error("Them Bao Thay Ko Thanh Cong" + ex.Message);
             }
-
         }
 
-        private void btXoa_Click(object sender, EventArgs e)
+        private void btncapNhat_Click(object sender, EventArgs e)
         {
-            try
-            {
-                 
-                string ID = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID"].Value + "";
-                
-                string mess = "Xóa Thay Đổi Định Mức Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
-                if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            hd = DAL.BANKTKS.C_GiamHoaDon.findByID(int.Parse(dataBangKe["ID", selectedindex].Value.ToString()));
+            hd.KTKS_GHICHU = txtGhiChu.Text.Trim().ToUpper();
+            if (!"".Equals(dateTiepXuc.ValueObject + ""))
+                hd.KTKS_NGAYTIEPXUC = dateTiepXuc.Value;
+            if (radCamKet.Checked)
+                hd.KTKS_CAMKET = txtCamKet.Text.Trim().ToUpper();
+            else
+                if (radKTKSBamChiKhoaNuoc.Checked)
                 {
-                    DAL.QLDHN.C_ChuyenDinhMuc.DeleteBYID(ID);
-                    LoadData();
+                    hd.KTKS_BAMHI = "khoanuoc";
+                    //panel Bấm chì khóa nước
+                    hd.KTKS_MAKIEMBC = txtMaKiemKhoaNuoc.Text.Trim().ToUpper();
+                    if (!"".Equals(dateKhoaNuoc.ValueObject + ""))
+                        hd.KTKS_NGAYBAMCHI = dateKhoaNuoc.Value;
                 }
-            }
-            catch (Exception ex)
+                else
+                    if (radKTKSBamChiThuHoi.Checked)
+                    {
+                        hd.KTKS_BAMHI = "thuhoi";
+                        //panel Bấm chì thu hồi
+                        hd.KTKS_TH_MAKIEM = txtMaKiemThuHoi.Text.Trim().ToUpper();
+                        hd.KTKS_TH_HIEU = txtHieu.Text.Trim().ToUpper();
+                        hd.KTKS_TH_CO = txtCo.Text.Trim();
+                        hd.KTKS_TH_SOTHAN = txtKTKSSoThan.Text.Trim().ToUpper();
+                        hd.KTKS_TH_CHISO = txtChiSo.Text.Trim();               
+                        if (!"".Equals(dateThuHoi.ValueObject + ""))
+                            hd.KTKS_TH_NGAY = dateThuHoi.Value;
+                    }
+                    else
+                    {
+                        hd.KTKS_CAMKET = "";
+                        hd.KTKS_BAMHI = "";
+                    }
+            hd.KTKS_NHANVIEN = txtNhanVien.Text.Trim().ToUpper();
+            hd.KTKS_MODIFYDATE = DateTime.Now;
+            hd.KTKS_MODIFYBY = DAL.SYS.C_USERS._userName;
+            if (DAL.BANKTKS.C_GiamHoaDon.Update())
             {
-                log.Error(ex.Message);
+                MessageBox.Show("Cập nhật thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
+                LoadData();
             }
-
+            else
+                MessageBox.Show("Cập nhật thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void btcapNhat_Click(object sender, EventArgs e)
+        private void btnIn_Click(object sender, EventArgs e)
         {
-            try
+            if (dataBangKe.RowCount > 0)
             {
-                string ID = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID"].Value + "";
-                TB_CHUYENDINHMUC thaydh = DAL.QLDHN.C_ChuyenDinhMuc.findByID(int.Parse(ID));
-                string mess = "Cập Nhật Thay Đổi Định Mức Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
-                if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && thaydh != null)
+                DataSetktks ds = new DataSetktks();
+                for (int i = 0; i < dataBangKe.RowCount; i++)
                 {
-                 //   thaydh.KY = int.Parse(txtKY.Text);
-                    thaydh.DOT = int.Parse(txtDot.Text);
-                    thaydh.NAM = DateTime.Now.Date.Year;
-                    thaydh.TODS = DAL.SYS.C_USERS._toDocSo;
-                    thaydh.DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
-                    thaydh.LOTRINH = this.txtLoTrinh.Text;
-                    thaydh.HOTEN = this.txtTenKH.Text;
-                    thaydh.DIACHI = this.txtDiaChi.Text;
-                    thaydh.HOPDONG = this.txtHopDong.Text;
-                    thaydh.GB = this.txtGB.Text;
-                    thaydh.DM = this.txtDM.Text;
-                    //thaydh.TTBQ = int.Parse(this.txtBQ.Text);
-                    //thaydh.CONGDUNG = this.txtCongDung.Text;
-                    thaydh.MODIFYDATE = DateTime.Now;
-                    thaydh.MODIFYBY = DAL.SYS.C_USERS._userName;
-
-                    DAL.QLDHN.C_ChuyenDinhMuc.Update();
-                    LoadData();
+                    DataRow dr = ds.Tables["GiamHoaDon"].NewRow();
+                    dr["DHN_STT"] = dataBangKe["DHN_STT", i].Value.ToString();
+                    dr["DHN_NGAYGHINHAN"] = dataBangKe["DHN_NGAYGHINHAN", i].Value.ToString();
+                    dr["DHN_TODS"] = dataBangKe["DHN_TODS", i].Value.ToString();
+                    dr["G_DANHBO"] = dataBangKe["G_DANHBO", i].Value.ToString().Replace(" ", "");
+                    dr["LOTRINH"] = dataBangKe["LOTRINH", i].Value.ToString();
+                    dr["SOTHANDH"] = dataBangKe["SOTHANDH", i].Value.ToString();
+                    dr["HOTEN"] = dataBangKe["HOTEN", i].Value.ToString();
+                    dr["DIACHI"] = dataBangKe["DIACHI", i].Value.ToString();
+                    dr["DHN_CAMKET"] = dataBangKe["DHN_CAMKET", i].Value.ToString();
+                    dr["DHN_BAMHI"] = dataBangKe["DHN_BAMHI", i].Value.ToString();
+                    dr["KTKS_CAMKET"] = dataBangKe["KTKS_CAMKET", i].Value.ToString();
+                    if (dataBangKe["KTKS_BAMHI", i].Value.ToString() == "khoanuoc" || dataBangKe["KTKS_BAMHI", i].Value.ToString() == "thuhoi")
+                        dr["KTKS_KHOANUOC"] = "X";
+                    dr["KTKS_GHICHU"] = dataBangKe["KTKS_GHICHU", i].Value.ToString();
+                    dr["DHN_DOT"] = dataBangKe["DHN_DOT", i].Value.ToString();
+                    dr["DHN_SOBANGKE"] = dataBangKe["DHN_SOBANGKE", i].Value.ToString();
+                    dr["DHN_KY"] = dataBangKe["DHN_KY", i].Value.ToString();
+                    ds.Tables["GiamHoaDon"].Rows.Add(dr);
                 }
+                rpt_GiamHoaDon rp = new rpt_GiamHoaDon();
+                rp.SetDataSource(ds);
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
             }
-            catch (Exception ex)
+        }
+
+        private void btnInDSThuHoi_Click(object sender, EventArgs e)
+        {
+            DataTable dt = DAL.BANKTKS.C_GiamHoaDon.getDSThuHoi();
+            if (dt.Rows.Count > 0)
             {
-                log.Error(ex.Message);
+                DataSetktks ds = new DataSetktks();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow dr = ds.Tables["DSThuHoi"].NewRow();
+                    dr["DHN_STT"] = i + 1;
+                    dr["DHN_DANHBO"] = dt.Rows[i]["DHN_DANHBO"].ToString();
+                    dr["HOTEN"] = dt.Rows[i]["HOTEN"].ToString();
+                    dr["DIACHI"] = dt.Rows[i]["DIACHI"].ToString();
+                    dr["HOPDONG"] = dt.Rows[i]["HOPDONG"].ToString();
+                    dr["KTKS_TH_HIEU"] = dt.Rows[i]["KTKS_TH_HIEU"].ToString();
+                    dr["KTKS_TH_CO"] = dt.Rows[i]["KTKS_TH_CO"].ToString();
+                    dr["KTKS_TH_SOTHAN"] = dt.Rows[i]["KTKS_TH_SOTHAN"].ToString();
+                    dr["KTKS_TH_CHISO"] = dt.Rows[i]["KTKS_TH_CHISO"].ToString();
+                    dr["KTKS_TH_MAKIEM"] = dt.Rows[i]["KTKS_TH_MAKIEM"].ToString();
+                    dr["KTKS_TH_NGAY"] = dt.Rows[i]["KTKS_TH_NGAY"].ToString();
+                    ds.Tables["DSThuHoi"].Rows.Add(dr);
+                }
+                rpt_DSThuHoi rp = new rpt_DSThuHoi();
+                rp.SetDataSource(ds);
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
             }
-
         }
 
-        private void txtChiSoThay_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnXoaBamChi_Click(object sender, EventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            radCamKet.Checked = false;
+            radKTKSBamChiKhoaNuoc.Checked = false;
+            radKTKSBamChiThuHoi.Checked = false;
+            panelBamChiKhoaNuoc.Visible = false;
+            panelBamChiThuHoi.Visible = false;
+            panelCamKet.Visible = false;
         }
 
-        private void txtSoDanhBo_TextChanged(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
-            //    DataTable table = DAL.QLDHN.C_BaoThay.HistoryThay(sodanhbo);
-            //    if (table.Rows.Count > 0)
-            //    {
-            //        histotyThay.DataSource = table;
-            //        histotyThay.Visible = true;
-            //        resultBT.Visible = true;
-            //        resultBT.Text = "CÓ " + table.Rows.Count + " LẦN THAY >>";
-            //    }
-            //    else
-            //    {
-            //        histotyThay.Visible = false;
-            //        resultBT.Visible = false;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    log.Error(ex.Message);
-            //}
-
-        }
-
-        public void CLEAR() {
-            txtDot.Text = "";
-            txtLoTrinh.Text = "";
-       //     txtKY.Text = "";
-            txtTenKH.Text = "";
-            txtDiaChi.Text = "";
-            txtGB.Text = "";
-            txtDM.Text = "";
-        //    txtBQ.Text = "";
-            txtHopDong.Text = "";
-            txtSoDanhBo.Text = "";
-            txtSoDanhBo.Focus();
-            btcapNhat.Enabled = false;
-            btXoa.Enabled = false;
-        }
-        private void btTaoMoi_Click_1(object sender, EventArgs e)
-        {
-
-            CLEAR();
-            
-        }
-
-        private void txtNgayGan_ValueChanged(object sender, EventArgs e)
-        {
-            LoadData();
-        }
     }
 }

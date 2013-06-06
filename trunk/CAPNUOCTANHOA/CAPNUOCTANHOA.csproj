@@ -99,6 +99,7 @@
     </Compile>
     <Compile Include="DAL\BANKTKS\C_BANKTKS.cs" />
     <Compile Include="DAL\BANKTKS\C_DinhMucChungCu.cs" />
+    <Compile Include="DAL\BANKTKS\C_GiamHoaDon.cs" />
     <Compile Include="DAL\BANKTKS\C_TheoDoiDM.cs" />
     <Compile Include="DAL\Lib.cs" />
     <Compile Include="DAL\LinQConnectionDS.cs" />
@@ -129,6 +130,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetktks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\BC\rpt_DSThuHoi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DSThuHoi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\BC\rpt_GiamHoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_GiamHoaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\BanKTKS\BC\rpt_PhieuKiemTra.cs">
       <DependentUpon>rpt_PhieuKiemTra.rpt</DependentUpon>
@@ -1241,6 +1254,14 @@
     <None Include="LinQ\CapNuocTanHoa.dbml.layout">
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Forms\BanKTKS\BC\rpt_DSThuHoi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DSThuHoi.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\BC\rpt_GiamHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_GiamHoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\BC\rpt_PhieuKiemTra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_PhieuKiemTra.cs</LastGenOutput>
