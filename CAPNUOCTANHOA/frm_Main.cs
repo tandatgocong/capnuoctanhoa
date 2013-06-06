@@ -88,10 +88,16 @@ namespace CAPNUOCTANHOA
                 }
                 else if ("BANKTKS".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
+                    menuTheoDoiDM.Visible = false;
                     ribbonDoiThuTien.Visible = false;
                     this.menuDoiQLDHN.Visible = false;
                     this.menuDTCTB.Visible = false;
                     this.banKTKS.Visible = true;
+                    if ("DM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    {
+                        menuTheoDoiDM.Visible = true;
+                    }
+                    
                 }
                 else if ("THUTIEN".Equals(DAL.SYS.C_USERS._maphong.Trim())){
                     ribbonDoiThuTien.Visible = true;
@@ -438,6 +444,13 @@ namespace CAPNUOCTANHOA
             baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
         }
+
+        private void mnHoaDon0_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
         
     }
 }

@@ -117,6 +117,7 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.mnHoaDon0 = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
@@ -140,7 +141,6 @@
             // 
             // menuHeThong
             // 
-            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -156,6 +156,7 @@
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel1.Size = new System.Drawing.Size(1178, 30);
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip3
             // 
@@ -619,10 +620,10 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel7);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
@@ -649,6 +650,7 @@
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
+           
             // 
             // ribbonPanel6
             // 
@@ -686,6 +688,7 @@
             this.toolNhanDon.Name = "toolNhanDon";
             this.toolNhanDon.Size = new System.Drawing.Size(106, 23);
             this.toolNhanDon.Text = "Nhận Đơn";
+            this.toolNhanDon.Visible = false;
             this.toolNhanDon.Click += new System.EventHandler(this.toolNhanDon_Click);
             // 
             // toolDmChungCu
@@ -695,6 +698,7 @@
             this.toolDmChungCu.Name = "toolDmChungCu";
             this.toolDmChungCu.Size = new System.Drawing.Size(137, 23);
             this.toolDmChungCu.Text = "ĐM Chung Cư";
+            this.toolDmChungCu.Visible = false;
             this.toolDmChungCu.Click += new System.EventHandler(this.toolDmChungCu_Click);
             // 
             // toolStripMenuItem1
@@ -704,6 +708,7 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(157, 23);
             this.toolStripMenuItem1.Text = "Y/Cầu Điều Chỉnh";
+            this.toolStripMenuItem1.Visible = false;
             // 
             // menuInPhieuTieuTHu
             // 
@@ -721,6 +726,7 @@
             this.menuTheoDoiDM.Name = "menuTheoDoiDM";
             this.menuTheoDoiDM.Size = new System.Drawing.Size(131, 23);
             this.menuTheoDoiDM.Text = "Theo Dõi ĐM";
+            this.menuTheoDoiDM.Visible = false;
             this.menuTheoDoiDM.Click += new System.EventHandler(this.menuTheoDoiDM_Click);
             // 
             // toolStripMenuItem3
@@ -755,6 +761,7 @@
             this.btLoTrinh,
             this.yeucaukiemtra,
             this.handHeld,
+            this.mnHoaDon0,
             this.baocaoTongKet});
             this.menuStrip1.Location = new System.Drawing.Point(3, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -837,7 +844,6 @@
             this.ribbonPanel7.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel7.Size = new System.Drawing.Size(1178, 30);
             this.ribbonPanel7.TabIndex = 9;
-            this.ribbonPanel7.Visible = false;
             // 
             // menuStrip7
             // 
@@ -991,6 +997,7 @@
             // 
             // ribbonDoiThuTien
             // 
+            this.ribbonDoiThuTien.Checked = true;
             this.ribbonDoiThuTien.Name = "ribbonDoiThuTien";
             this.ribbonDoiThuTien.Panel = this.ribbonPanel7;
             this.ribbonDoiThuTien.Text = "Đội Thu Tiền";
@@ -1037,6 +1044,15 @@
             this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
             this.statusStrip1.TabIndex = 36;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // mnHoaDon0
+            // 
+            this.mnHoaDon0.ForeColor = System.Drawing.Color.Black;
+            this.mnHoaDon0.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
+            this.mnHoaDon0.Name = "mnHoaDon0";
+            this.mnHoaDon0.Size = new System.Drawing.Size(144, 23);
+            this.mnHoaDon0.Text = "Theo Dõi HĐ=0";
+            this.mnHoaDon0.Click += new System.EventHandler(this.mnHoaDon0_Click);
             // 
             // frm_Main
             // 
@@ -1183,6 +1199,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuTheoDoiDM;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem mnHoaDon0;
 
 
     }
