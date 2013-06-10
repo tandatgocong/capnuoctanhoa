@@ -447,7 +447,11 @@ namespace CAPNUOCTANHOA
 
         private void mnHoaDon0_Click(object sender, EventArgs e)
         {
-
+            PanelContent.Controls.Clear();
+            frm_TheoDoiHD_0 baothay = new frm_TheoDoiHD_0();
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
         }
 
         
