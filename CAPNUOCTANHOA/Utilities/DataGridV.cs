@@ -52,6 +52,35 @@ namespace CAPNUOCTANHOA.Utilities
 
             }
         }
+        public static void formatRowsSTT(DataGridView dview, string rows,string STT)
+        {
+            for (int i = 0; i < dview.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    dview.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(217)))));
+                }
+                else
+                {
+                    dview.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                }
+                try
+                {
+                    dview.Rows[i].Cells[rows].Value = dview.Rows[i].Cells[rows].Value != null ? Utilities.FormatSoHoSoDanhBo.sodanhbo(dview.Rows[i].Cells[rows].Value + "") : dview.Rows[i].Cells[rows].Value;
+                }
+                catch (Exception)
+                {
+                }
+
+                try
+                {
+                     dview.Rows[i].Cells[STT].Value = i + 1;
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
         public static void formatRows(DataGridView dview, string rows, string lotrinh)
         {
             for (int i = 0; i < dview.Rows.Count; i++)

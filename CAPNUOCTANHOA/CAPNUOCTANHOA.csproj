@@ -118,6 +118,7 @@
     <Compile Include="DAL\QLDHN\C_BaoThay.cs" />
     <Compile Include="DAL\QLDHN\C_ChuyenDinhMuc.cs" />
     <Compile Include="DAL\QLDHN\C_GanHopBaoVe.cs" />
+    <Compile Include="DAL\QLDHN\C_HoaDon_0.cs" />
     <Compile Include="DAL\QLDHN\C_PhieuKiemTra.cs" />
     <Compile Include="DAL\QLDHN\C_QuanLyDongHoNuoc.cs" />
     <Compile Include="DAL\QLDHN\C_tab_BaoCao.cs" />
@@ -475,6 +476,29 @@
     </Compile>
     <Compile Include="Forms\QLDHN\frm_PhieuKiemTra.Designer.cs">
       <DependentUpon>frm_PhieuKiemTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_TheoDoiHD=0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_TheoDoiHD=0.designer.cs">
+      <DependentUpon>frm_TheoDoiHD=0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\HoaDon0M3\DATASET_DK_GIAMHOADON_.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DATASET_DK_GIAMHOADON_.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\HoaDon0M3\rpt_KhongCamKetSD_T.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_KhongCamKetSD_T.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\HoaDon0M3\rpt_TheoDoiHD_0.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_TheoDoiHD_0.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\PHIEUTAILAPDANHBO.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1147,6 +1171,17 @@
     <None Include="Forms\QLDHN\BC\TLKDUTCHITAHN.xss">
       <DependentUpon>TLKDUTCHITAHN.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\HoaDon0M3\DATASET_DK_GIAMHOADON_.xsc">
+      <DependentUpon>DATASET_DK_GIAMHOADON_.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\HoaDon0M3\DATASET_DK_GIAMHOADON_.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DATASET_DK_GIAMHOADON_.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\QLDHN\HoaDon0M3\DATASET_DK_GIAMHOADON_.xss">
+      <DependentUpon>DATASET_DK_GIAMHOADON_.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\PHIEUTAILAPDANHBO.xsc">
       <DependentUpon>PHIEUTAILAPDANHBO.xsd</DependentUpon>
     </None>
@@ -1420,6 +1455,17 @@
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_DongHoHieuCu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DongHoHieuCu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_TheoDoiHD=0.resx">
+      <DependentUpon>frm_TheoDoiHD=0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\HoaDon0M3\rpt_KhongCamKetSD_T.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_KhongCamKetSD_T.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\HoaDon0M3\rpt_TheoDoiHD_0.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TheoDoiHD_0.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_A3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
