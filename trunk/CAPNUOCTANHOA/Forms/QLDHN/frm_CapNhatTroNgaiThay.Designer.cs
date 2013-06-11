@@ -348,9 +348,11 @@
             // txtBoPhanChuyen
             // 
             this.txtBoPhanChuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtBoPhanChuyen.ForeColor = System.Drawing.Color.Red;
             this.txtBoPhanChuyen.FormattingEnabled = true;
             this.txtBoPhanChuyen.Items.AddRange(new object[] {
-            "ĐỘI TCTB"});
+            "ĐỘI TCTB",
+            "BAN KTKS"});
             this.txtBoPhanChuyen.Location = new System.Drawing.Point(168, 316);
             this.txtBoPhanChuyen.Name = "txtBoPhanChuyen";
             this.txtBoPhanChuyen.Size = new System.Drawing.Size(121, 27);

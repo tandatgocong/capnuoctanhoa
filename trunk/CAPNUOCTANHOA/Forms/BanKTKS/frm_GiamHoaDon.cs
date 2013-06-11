@@ -99,14 +99,14 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 dr["STT"] = i + 1;
                 dr["SOBANGKE"] = dt.Rows[i]["DHN_SOBANGKE"].ToString();
                 dr["DHN_NGAYGHINHAN"] = dt.Rows[i]["DHN_NGAYGHINHAN"].ToString();
-                if (dt.Rows[i]["DHN_BAMHI"].ToString() != "")
-                    dr["BC"] = "X";
+                if (dt.Rows[i]["DHN_HUYCAMKET"].ToString() != "")
+                    dr["HCK"] = "X";
                 else
                     if (dt.Rows[i]["DHN_CAMKET"].ToString() != "")
                         dr["DHN_CK"] = "X";
                     else
-                        if (dt.Rows[i]["DHN_HUYCAMKET"].ToString() != "")
-                            dr["HCK"] = "X";
+                        if (dt.Rows[i]["DHN_BAMHI"].ToString() != "")
+                            dr["BC"] = "X";
                 dr["KTKS_NGAYTIEPXUC"] = dt.Rows[i]["KTKS_NGAYTIEPXUC"].ToString();
                 if (dt.Rows[i]["KTKS_CAMKET"].ToString() != "")
                     dr["KTKS_CK"] = "X";

@@ -12,7 +12,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 {
     public partial class frm_CapNhatTroNgaiThay : Form
     {
+        CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
         TB_THAYDHN thaydhn = null;
+        TB_GHICHU ghichu = null;
+        TB_TLKDUTCHI dutchi = null;
+        TB_DULIEUKHACHHANG kh = null;
+
         public frm_CapNhatTroNgaiThay(string id)
         {
             InitializeComponent();
@@ -23,7 +28,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
 
                     txtSoDanhBo.Text = thaydhn.DHN_DANHBO;
-                    TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(thaydhn.DHN_DANHBO);
+                    kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(thaydhn.DHN_DANHBO);
                     if (kh != null)
                     {
                         txtDiaChi.Text = kh.SONHA + " " + kh.TENDUONG;
@@ -35,15 +40,19 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     txtHieuDHN.Text = thaydhn.DHN_HIEUDHN;
                     txtSoThan.Text = thaydhn.DHN_SOTHAN;
                     txtTroNgaiThay.Text = thaydhn.HCT_LYDOTRONGAI;
-                    txtBoPhanChuyen.Text = thaydhn.XLT_CHUYENXL;
+                    ///thaydhn.XLT_CHUYENXL lưu 2 giá trị TCTB hoặc KTKS
+                    if (thaydhn.XLT_CHUYENXL.Equals("TCTB"))
+                        txtBoPhanChuyen.Text = "ĐỘI TCTB";
+                    else
+                        if (thaydhn.XLT_CHUYENXL.Equals("KTKS"))
+                            txtBoPhanChuyen.Text = "BAN KTKS";
+
+                    txtKetQuaThucHien.Text = thaydhn.XLT_KETQUA;
                 }
             }
             catch (Exception)
             {
-
-
             }
-
         }
 
         public void Add()
@@ -97,36 +106,78 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void btCapNhat_Click(object sender, EventArgs e)
         {
+            //if (thaydhn != null)
+            //{
+            //    thaydhn.XLT_XULY = true;
+            //    if (txtBoPhanChuyen.Text.Equals("ĐỘI TCTB"))
+            //    {
+            //        Add();
+            //        thaydhn.XLT_XULY = true;
+            //        thaydhn.XLT_CHUYENXL = "TCTB";
+            //        thaydhn.XLT_NGAYCHUYEN = DateTime.Now.Date;
+            //        if (this.baothaylai.Checked == true)
+            //        {
+            //            DAL.LinQConnection.ExecuteCommand(" UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='False' WHERE DANHBO='" + thaydhn.DHN_DANHBO + "'");
+            //        }
+            //        DAL.QLDHN.C_BaoThay.Update();
+            //    }
+            //    else
+            //    {
+            //        if ("".Equals(this.txtKetQuaThucHien.Text) == false)
+            //        {
+            //            thaydhn.XLT_TRAKQ = true;
+            //            thaydhn.XLT_KETQUA = txtKetQuaThucHien.Text;
+            //            thaydhn.XLT_NGAYCAPNHAT = DateTime.Now.Date;
+            //            if (this.baothaylai.Checked == true)
+            //            {
+            //                DAL.LinQConnection.ExecuteCommand(" UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='False' WHERE DANHBO='" + thaydhn.DHN_DANHBO + "'");
+            //            }
+            //            DAL.QLDHN.C_BaoThay.Update();
+            //        }
+            //    }
+            //}
             if (thaydhn != null)
-            {
-                thaydhn.XLT_XULY = true;
-                if (txtBoPhanChuyen.Text.Equals("ĐỘI TCTB"))
+                try
                 {
-                    Add();
-                    thaydhn.XLT_XULY = true;
-                    thaydhn.XLT_CHUYENXL = "TCTB";
-                    thaydhn.XLT_NGAYCHUYEN = DateTime.Now.Date;
-                    if (this.baothaylai.Checked == true)
-                    {
-                        DAL.LinQConnection.ExecuteCommand(" UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='False' WHERE DANHBO='" + thaydhn.DHN_DANHBO + "'");
-                    }
-                    DAL.QLDHN.C_BaoThay.Update();
-                }
-                else
-                {
-                    if ("".Equals(this.txtKetQuaThucHien.Text) == false)
+                    if (txtBoPhanChuyen.Text.Equals("ĐỘI TCTB"))
+                        thaydhn.XLT_CHUYENXL = "TCTB";
+                    else
+                        if (txtBoPhanChuyen.Text.Equals("BAN KTKS"))
+                        {
+                            thaydhn.XLT_CHUYENXL = "KTKS";
+                            dutchi = new TB_TLKDUTCHI();
+                            
+                        }
+
+                    if (!"".Equals(this.txtKetQuaThucHien.Text.Trim()) && !thaydhn.XLT_KETQUA.Equals(this.txtKetQuaThucHien.Text.Trim()))
                     {
                         thaydhn.XLT_TRAKQ = true;
                         thaydhn.XLT_KETQUA = txtKetQuaThucHien.Text;
                         thaydhn.XLT_NGAYCAPNHAT = DateTime.Now.Date;
-                        if (this.baothaylai.Checked == true)
-                        {
-                            DAL.LinQConnection.ExecuteCommand(" UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='False' WHERE DANHBO='" + thaydhn.DHN_DANHBO + "'");
-                        }
-                        DAL.QLDHN.C_BaoThay.Update();
                     }
+
+                    thaydhn.XLT_XULY = true;
+                    thaydhn.XLT_NGAYCHUYEN = DateTime.Now.Date;
+
+                    if (this.baothaylai.Checked == true)
+                        DAL.LinQConnection.ExecuteCommand(" UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='False' WHERE DANHBO='" + thaydhn.DHN_DANHBO + "'");
+
+                    DAL.QLDHN.C_BaoThay.Update();
+
+                    ///Ghi nhận thay đổi vào TB_GhiChu
+                    ghichu = new TB_GHICHU();
+                    ghichu.DANHBO = thaydhn.DHN_DANHBO;
+                    ghichu.NOIDUNG = txtKetQuaThucHien.Text.Trim();
+                    ghichu.DONVI = DAL.SYS.C_USERS._maphong;
+                    ghichu.CREATEDATE = DateTime.Now.Date;
+                    ghichu.CREATEBY = DAL.SYS.C_USERS._userName;
+                    db.TB_GHICHUs.InsertOnSubmit(ghichu);
+                    db.SubmitChanges();
                 }
-            }
+                catch (Exception)
+                {
+                    MessageBox.Show("Cập nhật thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
     }
 }

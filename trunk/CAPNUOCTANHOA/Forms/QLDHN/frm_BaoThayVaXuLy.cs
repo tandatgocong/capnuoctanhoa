@@ -21,6 +21,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_DieuChinhThongTin).Name);
         string listDanhBa = "";
+        string sql_trongai = "";
+        string sql_chuyentt = "";
+        string sql_chuyenkt = "";
+        
         public frm_BaoThayVaXuLy()
         {
             InitializeComponent();
@@ -34,15 +38,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 tabControl2.SelectedTabIndex = 1;
             }
-            
-            dateTuNgay.ValueObject = DateTime.Now.Date;
-            dateDenNgay.ValueObject = DateTime.Now.Date;
 
+            dateTuNgay.ValueObject = DateTime.Parse("1/5/2013");
+            dateDenNgay.ValueObject = DateTime.Now.Date;
+            //nhớ set lai tabcontrol & dateTuNgay
+            tabControl2.SelectedTabIndex = 1;
         }
 
-        string sql_trongai = "";
-        string sql_chuyentt = "";
-        string sql_chuyenkt = "";
         private void btXemThongTin_Click(object sender, EventArgs e)
         {
             try
@@ -113,8 +115,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
 
-        
-
         private void buttonX1_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new rpt_NangDHN();
@@ -178,8 +178,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 Add((this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["GG_DANHBO"].Value + "").Replace(" ", ""));
                 MessageBox.Show(this, "Chuyển Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         private void menuChuyenTT_Click(object sender, EventArgs e)
@@ -203,9 +201,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 MessageBox.Show(this, "Chuyển Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-
-
-
         }
 
         private void chuyenTCTB_Click(object sender, EventArgs e)
@@ -228,17 +223,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["XL"].Value = "True";
                 MessageBox.Show(this, "Chuyển Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         private void menuCapNhatKetQua_Click(object sender, EventArgs e)
         {
-            string ID_BAOTHAY = this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["ID_BAOTHAY"].Value + "";
-            frm_CapNhatTroNgaiThay frm = new frm_CapNhatTroNgaiThay(ID_BAOTHAY);
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (dataGridLoi.RowCount > 0)
             {
-                this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["XL"].Value = "True";
+                string ID_BAOTHAY = this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["ID_BAOTHAY"].Value + "";
+                frm_CapNhatTroNgaiThay frm = new frm_CapNhatTroNgaiThay(ID_BAOTHAY);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    this.dataGridLoi.Rows[dataGridLoi.CurrentRow.Index].Cells["XL"].Value = "True";
+                }
             }
         }
 
