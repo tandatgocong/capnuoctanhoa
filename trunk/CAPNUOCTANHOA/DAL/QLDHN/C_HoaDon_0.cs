@@ -51,7 +51,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static int UpdateSoBangKe(string danhbo,string sobangke,string ngayghinhan,string nam,string tods,string ghichu,string bamchi,int ky,string dot,string chisoky,string huycamket)
         {
             int kq = 0;
-            string sql = "update DK_GIAMHOADON set DHN_NGAYGHINHAN='" + ngayghinhan + "',DHN_NAM=" + nam + ",DHN_TODS='" + tods + "',DHN_GHICHU='" + ghichu + "',DHN_DOT='" + dot + "',DHN_KY='"+chisoky +"'";
+            string sql = "UPDATE DK_GIAMHOADON set DHN_NGAYGHINHAN='" + ngayghinhan + "',DHN_NAM=" + nam + ",DHN_TODS='" + tods + "',DHN_GHICHU='" + ghichu + "',DHN_DOT='" + dot + "',DHN_KY='"+chisoky +"'";
             if(bamchi=="X"){
                 sql = sql + ",DHN_BAMHI='" + bamchi  + "'";
             }
@@ -75,7 +75,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             {
                 sql = sql + ",DHN_HUYCAMKET=null";
             }
-            sql = sql + " where DHN_DANHBO='" + danhbo + "' and DHN_SOBANGKE='" + sobangke + "'";
+            sql = sql + ",DHN_MODIFYDATE=getDate(),DHN_MODIFYBY='"+DAL.SYS.C_USERS._userName+"' where DHN_DANHBO='" + danhbo + "' and DHN_SOBANGKE='" + sobangke + "'";
             kq = LinQConnection.ExecuteCommand_(sql);
             return kq;
         }
