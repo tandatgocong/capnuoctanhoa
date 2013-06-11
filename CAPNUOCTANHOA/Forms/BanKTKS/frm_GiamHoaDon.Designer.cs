@@ -38,6 +38,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
@@ -1274,9 +1280,9 @@
             this.panelLichSuHoaDon0.Controls.Add(this.textBoxX2);
             this.panelLichSuHoaDon0.Controls.Add(this.textBoxX1);
             this.panelLichSuHoaDon0.Controls.Add(this.dataLichSuHoaDon0);
-            this.panelLichSuHoaDon0.Location = new System.Drawing.Point(818, 10);
+            this.panelLichSuHoaDon0.Location = new System.Drawing.Point(850, 10);
             this.panelLichSuHoaDon0.Name = "panelLichSuHoaDon0";
-            this.panelLichSuHoaDon0.Size = new System.Drawing.Size(526, 223);
+            this.panelLichSuHoaDon0.Size = new System.Drawing.Size(504, 223);
             this.panelLichSuHoaDon0.TabIndex = 623;
             this.panelLichSuHoaDon0.Visible = false;
             // 
@@ -1285,7 +1291,7 @@
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.BackColor = System.Drawing.Color.Black;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(523, 3);
+            this.buttonX1.Location = new System.Drawing.Point(502, 3);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(2, 203);
             this.buttonX1.TabIndex = 629;
@@ -1299,7 +1305,7 @@
             this.textBoxX2.Border.Class = "TextBoxBorder";
             this.textBoxX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxX2.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX2.Location = new System.Drawing.Point(525, 3);
+            this.textBoxX2.Location = new System.Drawing.Point(504, 3);
             this.textBoxX2.Name = "textBoxX2";
             this.textBoxX2.ReadOnly = true;
             this.textBoxX2.Size = new System.Drawing.Size(320, 27);
@@ -1316,7 +1322,7 @@
             this.textBoxX1.Border.Class = "TextBoxBorder";
             this.textBoxX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxX1.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX1.Location = new System.Drawing.Point(224, 3);
+            this.textBoxX1.Location = new System.Drawing.Point(203, 3);
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.ReadOnly = true;
             this.textBoxX1.Size = new System.Drawing.Size(299, 27);
@@ -1344,7 +1350,7 @@
             this.dataLichSuHoaDon0.Location = new System.Drawing.Point(3, 30);
             this.dataLichSuHoaDon0.Name = "dataLichSuHoaDon0";
             this.dataLichSuHoaDon0.RowHeadersWidth = 20;
-            this.dataLichSuHoaDon0.Size = new System.Drawing.Size(845, 175);
+            this.dataLichSuHoaDon0.Size = new System.Drawing.Size(822, 174);
             this.dataLichSuHoaDon0.TabIndex = 627;
             // 
             // STT
@@ -1371,6 +1377,8 @@
             // DHN_CK
             // 
             this.DHN_CK.DataPropertyName = "DHN_CK";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DHN_CK.DefaultCellStyle = dataGridViewCellStyle11;
             this.DHN_CK.HeaderText = "CK";
             this.DHN_CK.Name = "DHN_CK";
             this.DHN_CK.Width = 40;
@@ -1378,6 +1386,8 @@
             // HCK
             // 
             this.HCK.DataPropertyName = "HCK";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.HCK.DefaultCellStyle = dataGridViewCellStyle12;
             this.HCK.HeaderText = "HCK";
             this.HCK.Name = "HCK";
             this.HCK.Width = 50;
@@ -1385,6 +1395,8 @@
             // BC
             // 
             this.BC.DataPropertyName = "BC";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BC.DefaultCellStyle = dataGridViewCellStyle13;
             this.BC.HeaderText = "BC";
             this.BC.Name = "BC";
             this.BC.Width = 40;
@@ -1399,6 +1411,8 @@
             // KTKS_CK
             // 
             this.KTKS_CK.DataPropertyName = "KTKS_CK";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.KTKS_CK.DefaultCellStyle = dataGridViewCellStyle14;
             this.KTKS_CK.HeaderText = "CK";
             this.KTKS_CK.Name = "KTKS_CK";
             this.KTKS_CK.Width = 40;
@@ -1406,6 +1420,8 @@
             // BCKN
             // 
             this.BCKN.DataPropertyName = "BCKN";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BCKN.DefaultCellStyle = dataGridViewCellStyle15;
             this.BCKN.HeaderText = "BCKN";
             this.BCKN.Name = "BCKN";
             this.BCKN.Width = 60;
@@ -1413,6 +1429,8 @@
             // BCTH
             // 
             this.BCTH.DataPropertyName = "BCTH";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BCTH.DefaultCellStyle = dataGridViewCellStyle16;
             this.BCTH.HeaderText = "BCTH";
             this.BCTH.Name = "BCTH";
             this.BCTH.Width = 60;
@@ -1535,16 +1553,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
         private DevComponents.DotNetBar.ButtonX buttonX1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOBANGKE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DHN_CK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HCK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KTKS_CK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BCKN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BCTH;
         private System.Windows.Forms.RadioButton radCamKet;
         private System.Windows.Forms.Panel panelCamKet;
         private System.Windows.Forms.Label label2;
@@ -1578,5 +1586,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_BAMHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_HUYCAMKET;
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_GHICHU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOBANGKE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DHN_CK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HCK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KTKS_CK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BCKN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BCTH;
     }
 }

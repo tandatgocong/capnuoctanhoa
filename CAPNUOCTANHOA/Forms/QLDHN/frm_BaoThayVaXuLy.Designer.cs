@@ -103,8 +103,8 @@
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 0.45F),
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 1F)});
             this.tabControl2.ColorScheme.TabItemSelectedText = System.Drawing.Color.Red;
-            this.tabControl2.Controls.Add(this.tabControlPanel1);
             this.tabControl2.Controls.Add(this.tabDieuChinhKH);
+            this.tabControl2.Controls.Add(this.tabControlPanel1);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
@@ -557,7 +557,7 @@
             this.menuChuyenKT,
             this.menuCapNhatKetQua});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 74);
             // 
             // menuChuyenKT
             // 
@@ -567,6 +567,7 @@
             this.menuChuyenKT.Name = "menuChuyenKT";
             this.menuChuyenKT.Size = new System.Drawing.Size(205, 24);
             this.menuChuyenKT.Text = "Chuyển Ban KTKS";
+            this.menuChuyenKT.Visible = false;
             this.menuChuyenKT.Click += new System.EventHandler(this.menuChuyenKT_Click);
             // 
             // menuCapNhatKetQua
@@ -575,7 +576,7 @@
             this.menuCapNhatKetQua.ForeColor = System.Drawing.Color.Red;
             this.menuCapNhatKetQua.Image = global::CAPNUOCTANHOA.Properties.Resources.Write2;
             this.menuCapNhatKetQua.Name = "menuCapNhatKetQua";
-            this.menuCapNhatKetQua.Size = new System.Drawing.Size(286, 24);
+            this.menuCapNhatKetQua.Size = new System.Drawing.Size(205, 24);
             this.menuCapNhatKetQua.Text = "Cập Nhật Xử Lý";
             this.menuCapNhatKetQua.Click += new System.EventHandler(this.menuCapNhatKetQua_Click);
             // 
