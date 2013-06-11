@@ -39,10 +39,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 tabControl2.SelectedTabIndex = 1;
             }
 
-            dateTuNgay.ValueObject = DateTime.Parse("1/5/2013");
+            dateTuNgay.ValueObject = DateTime.Now.Date;
             dateDenNgay.ValueObject = DateTime.Now.Date;
-            //nhớ set lai tabcontrol & dateTuNgay
-            tabControl2.SelectedTabIndex = 1;
         }
 
         private void btXemThongTin_Click(object sender, EventArgs e)
@@ -271,8 +269,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void btInDanhSachChuyenKT_Click(object sender, EventArgs e)
         {
-            ReportDocument rp = new rpt_TLKDutChi();
-            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(DateTime.Now.Date.ToShortDateString(),0));
+            rpt_TLKDutChiNew rp = new rpt_TLKDutChiNew();
+            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(dateInDSDutChi.Value.ToString("dd/MM/yyyy")));
+            //rp.SetParameterValue("type", "");
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
