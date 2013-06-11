@@ -456,7 +456,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             DK_GIAMHOADON DHN_Giam = new DK_GIAMHOADON();
             DHN_Giam.DHN_SOBANGKE = txtSoBangKe_Thongtin.Text;
             DHN_Giam.DHN_DANHBO = txtSoDanhBo.Text.Replace("-", "");
-            DHN_Giam.DHN_NGAYGHINHAN = txtNgayGhiNhan.Value;
+            DHN_Giam.DHN_NGAYGHINHAN = txtNgayGhiNhan.Value.Date;
             DHN_Giam.DHN_GHICHU = txtGhiChu.Text;
             DHN_Giam.DHN_NAM = int.Parse(DateTime.Now.Year.ToString());
             DHN_Giam.DHN_TODS = txtToDS.Text;
@@ -477,6 +477,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 DHN_Giam.DHN_HUYCAMKET = "X";
             }
+            DHN_Giam.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
+            DHN_Giam.DHN_CREATEDATE = DateTime.Now;
+
             DAL.QLDHN.C_HoaDon_0.Insert(DHN_Giam);
 
         }
@@ -499,7 +502,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 //if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 //{
                 Add();
-                MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               // MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 refresh();
                 LoadData_ThongTin();
                 //try

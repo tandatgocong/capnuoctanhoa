@@ -384,5 +384,10 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelCamKet.Visible = false;
         }
 
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
