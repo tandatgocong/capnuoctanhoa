@@ -167,6 +167,18 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return ds;
         }
 
+        public static DataSet getReportDutChi(string ngay)
+        {
+            DataSet ds = new DataSet();
+            string query = " SELECT *  FROM TB_TLKDUTCHI WHERE TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND  CONVERT(VARCHAR(10), NGAYBAO, 103)='" + ngay + "' ORDER BY LOTRINH ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_TLKDUTCHI");
+
+            query = "select * FROM TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+            return ds;
+        }
         public static DataSet getReportDutChi(string ngay, int type)
         {
             DataSet ds = new DataSet();

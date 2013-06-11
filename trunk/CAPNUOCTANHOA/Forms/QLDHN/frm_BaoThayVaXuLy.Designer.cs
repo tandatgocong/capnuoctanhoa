@@ -32,6 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl2 = new DevComponents.DotNetBar.TabControl();
+            this.tabDieuChinhKH = new DevComponents.DotNetBar.TabControlPanel();
+            this.panelBaoThay = new System.Windows.Forms.Panel();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.panelTroNgai = new System.Windows.Forms.Panel();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
@@ -61,15 +64,15 @@
             this.txtSoBangKe = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabDieuChinh = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabDieuChinhKH = new DevComponents.DotNetBar.TabControlPanel();
-            this.panelBaoThay = new System.Windows.Forms.Panel();
-            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuChuyenKT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCapNhatKetQua = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateInDSDutChi = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
             this.tabControl2.SuspendLayout();
+            this.tabDieuChinhKH.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.panelTroNgai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLoi)).BeginInit();
@@ -79,8 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay)).BeginInit();
             this.tabControlPanel3.SuspendLayout();
-            this.tabDieuChinhKH.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateInDSDutChi)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl2
@@ -103,8 +106,8 @@
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 0.45F),
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 1F)});
             this.tabControl2.ColorScheme.TabItemSelectedText = System.Drawing.Color.Red;
-            this.tabControl2.Controls.Add(this.tabDieuChinhKH);
             this.tabControl2.Controls.Add(this.tabControlPanel1);
+            this.tabControl2.Controls.Add(this.tabDieuChinhKH);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
@@ -117,6 +120,41 @@
             this.tabControl2.Tabs.Add(this.tabItem3);
             this.tabControl2.Tabs.Add(this.tabDieuChinh);
             this.tabControl2.Text = "tabControl2";
+            // 
+            // tabDieuChinhKH
+            // 
+            this.tabDieuChinhKH.Controls.Add(this.panelBaoThay);
+            this.tabDieuChinhKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabDieuChinhKH.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.tabDieuChinhKH.Location = new System.Drawing.Point(0, 28);
+            this.tabDieuChinhKH.Name = "tabDieuChinhKH";
+            this.tabDieuChinhKH.Padding = new System.Windows.Forms.Padding(1);
+            this.tabDieuChinhKH.Size = new System.Drawing.Size(1295, 581);
+            this.tabDieuChinhKH.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
+            this.tabDieuChinhKH.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
+            this.tabDieuChinhKH.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabDieuChinhKH.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabDieuChinhKH.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabDieuChinhKH.Style.GradientAngle = 90;
+            this.tabDieuChinhKH.TabIndex = 1;
+            this.tabDieuChinhKH.TabItem = this.tabItem3;
+            // 
+            // panelBaoThay
+            // 
+            this.panelBaoThay.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelBaoThay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBaoThay.Location = new System.Drawing.Point(1, 1);
+            this.panelBaoThay.Name = "panelBaoThay";
+            this.panelBaoThay.Size = new System.Drawing.Size(1293, 579);
+            this.panelBaoThay.TabIndex = 1;
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabDieuChinhKH;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "BẢNG KÊ BÁO THAY ĐHN";
+            this.tabItem3.Visible = false;
             // 
             // tabControlPanel1
             // 
@@ -140,6 +178,8 @@
             // 
             this.panelTroNgai.AutoScroll = true;
             this.panelTroNgai.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelTroNgai.Controls.Add(this.dateInDSDutChi);
+            this.panelTroNgai.Controls.Add(this.labelX1);
             this.panelTroNgai.Controls.Add(this.buttonX1);
             this.panelTroNgai.Controls.Add(this.btInDanhSachChuyenKT);
             this.panelTroNgai.Controls.Add(this.indsTroNgai);
@@ -511,41 +551,6 @@
             this.tabDieuChinh.Name = "tabDieuChinh";
             this.tabDieuChinh.Text = "XỬ LÝ TRỞ NGẠI THAY";
             // 
-            // tabDieuChinhKH
-            // 
-            this.tabDieuChinhKH.Controls.Add(this.panelBaoThay);
-            this.tabDieuChinhKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabDieuChinhKH.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.tabDieuChinhKH.Location = new System.Drawing.Point(0, 28);
-            this.tabDieuChinhKH.Name = "tabDieuChinhKH";
-            this.tabDieuChinhKH.Padding = new System.Windows.Forms.Padding(1);
-            this.tabDieuChinhKH.Size = new System.Drawing.Size(1295, 581);
-            this.tabDieuChinhKH.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
-            this.tabDieuChinhKH.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
-            this.tabDieuChinhKH.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabDieuChinhKH.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabDieuChinhKH.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabDieuChinhKH.Style.GradientAngle = 90;
-            this.tabDieuChinhKH.TabIndex = 1;
-            this.tabDieuChinhKH.TabItem = this.tabItem3;
-            // 
-            // panelBaoThay
-            // 
-            this.panelBaoThay.BackColor = System.Drawing.Color.AliceBlue;
-            this.panelBaoThay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBaoThay.Location = new System.Drawing.Point(1, 1);
-            this.panelBaoThay.Name = "panelBaoThay";
-            this.panelBaoThay.Size = new System.Drawing.Size(1293, 579);
-            this.panelBaoThay.TabIndex = 1;
-            // 
-            // tabItem3
-            // 
-            this.tabItem3.AttachedControl = this.tabDieuChinhKH;
-            this.tabItem3.Name = "tabItem3";
-            this.tabItem3.Text = "BẢNG KÊ BÁO THAY ĐHN";
-            this.tabItem3.Visible = false;
-            // 
             // tabItem2
             // 
             this.tabItem2.Name = "tabItem2";
@@ -557,7 +562,7 @@
             this.menuChuyenKT,
             this.menuCapNhatKetQua});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 74);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 52);
             // 
             // menuChuyenKT
             // 
@@ -580,6 +585,58 @@
             this.menuCapNhatKetQua.Text = "Cập Nhật Xử Lý";
             this.menuCapNhatKetQua.Click += new System.EventHandler(this.menuCapNhatKetQua_Click);
             // 
+            // dateInDSDutChi
+            // 
+            // 
+            // 
+            // 
+            this.dateInDSDutChi.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateInDSDutChi.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateInDSDutChi.ButtonDropDown.Visible = true;
+            this.dateInDSDutChi.CustomFormat = "dd/MM/yyyy";
+            this.dateInDSDutChi.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dateInDSDutChi.Location = new System.Drawing.Point(679, 25);
+            // 
+            // 
+            // 
+            this.dateInDSDutChi.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateInDSDutChi.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateInDSDutChi.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateInDSDutChi.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateInDSDutChi.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateInDSDutChi.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateInDSDutChi.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateInDSDutChi.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateInDSDutChi.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateInDSDutChi.MonthCalendar.DisplayMonth = new System.DateTime(2012, 5, 1, 0, 0, 0, 0);
+            this.dateInDSDutChi.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateInDSDutChi.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateInDSDutChi.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateInDSDutChi.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateInDSDutChi.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateInDSDutChi.MonthCalendar.TodayButtonVisible = true;
+            this.dateInDSDutChi.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateInDSDutChi.Name = "dateInDSDutChi";
+            this.dateInDSDutChi.Size = new System.Drawing.Size(100, 27);
+            this.dateInDSDutChi.TabIndex = 4;
+            // 
+            // labelX1
+            // 
+            this.labelX1.Location = new System.Drawing.Point(631, 29);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(42, 23);
+            this.labelX1.TabIndex = 3;
+            this.labelX1.Text = "Ngày";
+            // 
             // frm_BaoThayVaXuLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -592,6 +649,7 @@
             this.Size = new System.Drawing.Size(1295, 609);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).EndInit();
             this.tabControl2.ResumeLayout(false);
+            this.tabDieuChinhKH.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.panelTroNgai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLoi)).EndInit();
@@ -601,8 +659,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay)).EndInit();
             this.tabControlPanel3.ResumeLayout(false);
-            this.tabDieuChinhKH.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateInDSDutChi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -646,6 +704,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateInDSDutChi;
+        private DevComponents.DotNetBar.LabelX labelX1;
 
     }
 }
