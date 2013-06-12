@@ -15,7 +15,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
         public static DataTable getBangKeBaoThay(int sobangke)
         {
-            string sql = "SELECT DHN_SOBANGKE, DHN_DANHBO,DHN_HUYCAMKET,DHN_CAMKET,DHN_BAMHI,DHN_GHICHU,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',CODH,SOTHANDH,DHN_DOT,DHN_KY,DHN_NAM,DHN_NGAYGHINHAN,DHN_TODS,LOTRINH";
+            string sql = "SELECT GHD.ID,DHN_SOBANGKE, DHN_DANHBO,DHN_HUYCAMKET,DHN_CAMKET,DHN_BAMHI,DHN_GHICHU,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',CODH,SOTHANDH,DHN_DOT,DHN_KY,DHN_NAM,DHN_NGAYGHINHAN,DHN_TODS,LOTRINH";
             sql += " FROM DK_GIAMHOADON GHD,TB_DULIEUKHACHHANG kh WHERE  kh.DANHBO=GHD.DHN_DANHBO AND DHN_SOBANGKE='" + sobangke + "' ORDER BY DHN_DANHBO ASC ";
             return LinQConnection.getDataTable(sql);
         }
@@ -91,20 +91,36 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 log.Error(ex.Message);
             }
         }
-        //public static int Insert(DK_GIAMHOADON ghd)
-        //{
-        //    int kq = 0;
-        //    string sql = "insert into DK_GIAMHOADON(DHN_SOBANGKE,DHN_NAM,DHN_DANHBO,DHN_NGAYGHINHAN,DHN_KY,DHN_DOT,DHN_TODS,DHN_CAMKET,DHN_BAMHI,DHN_GHICHU,DHN_HUYCAMKET)values "('DHN_SOBANGKE='" + ghd.DHN_SOBANGKE +"' DHN_NAM='"+ ghd.DHN_NAM +"' DHN_DANHBO='" + ghd.DHN_DANHBO+ "')";
-        //    kq = LinQConnection.ExecuteCommand_(sql);
-        //    return kq;
-        //}
        
-        public static int DeleteThongTin(DK_GIAMHOADON ghd)
+
+        public static int DeleteThongTin(string id)
         {
             int kq = 0;
-            string sql = "delete from DK_GIAMHOADON where DHN_DANHBO='" + ghd.DHN_DANHBO + "' and DHN_SOBANGKE='"+ ghd.DHN_SOBANGKE +"' ";
+            string sql = "delete from DK_GIAMHOADON where ID='" + id + "'";
             kq = LinQConnection.ExecuteCommand_(sql);
             return kq;
+        }
+      
+        public static DataTable getBCCamKet(int tungay, int denngay, int sobangke)
+        {
+            string sql = "SELECT DHN_SOBANGKE,DHN_DANHBO,HOTEN,SONHA + '' + TENDUONG AS 'DIACHI',DHN_NGAYGHINHAN,DHN_CAMKET";
+            sql += "FROM DK_GIAMHOADON GHD , TB_DULIEUKHACHHANG KH ";
+            sql += "WHERE KH.DANHBO=GHD.DHN_DANHBO ";
+            return LinQConnection.getDataTable(sql);
+        }
+        public static DataTable getBCBamChi(int tungay, int denngay, int sobangke)
+        {
+            string sql = "SELECT DHN_SOBANGKE,DHN_DANHBO,HOTEN,SONHA + '' + TENDUONG AS 'DIACHI',DHN_NGAYGHINHAN,DHN_BAMHI";
+            sql += "FROM DK_GIAMHOADON GHD, TB_DULIEUKHACHHANG KH";
+            sql += "WHERE KH.DANHBO = GHD.DHN_DANHBO AND GHD.DHN_BAMHI = 'X'";
+            return LinQConnection.getDataTable(sql);
+        }
+        public static DataTable getBCHuyCamKet(int tungay, int denngay, int sobangke)
+        {
+            string sql = "SELECT DHN_SOBANGKE,DHN_DANHBO,HOTEN,SONHA +'' + TENDUONG AS 'DIACHI',DHN_NGAYGHINHAN,DHN_BAMHI";
+            sql += "FROM DK_GIAMHOADON GHD,TB_DULIEUKHACHHANG KH";
+            sql += "WHERE KH.DANHBO = GHD.DHN_DANHBO AND GHD.DHN_HUYCAMKET = 'X'";
+            return LinQConnection.getDataTable(sql);
         }
     }
 }
