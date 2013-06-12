@@ -1163,6 +1163,7 @@
       <Column Name="DHN_KY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="DHN_DOT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="DHN_TODS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_CHUADANHDAU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DHN_CAMKET" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DHN_BAMHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DHN_HUYCAMKET" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />

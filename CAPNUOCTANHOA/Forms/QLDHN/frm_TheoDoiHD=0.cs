@@ -142,6 +142,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             txtMaLoTrinh.Text = "";
             //txtGhiChu = " ";
             btcapNhat.Enabled = false;
+            checkChuaDanhDau.Checked = false;
             //btXoa.Enabled = false;
 
 
@@ -477,6 +478,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 DHN_Giam.DHN_HUYCAMKET = "X";
             }
+
+            DHN_Giam.DHN_CHUADANHDAU = null;
+            if (checkChuaDanhDau.Checked == true)
+            {
+                DHN_Giam.DHN_CHUADANHDAU = "X";
+            }
+
             DHN_Giam.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
             DHN_Giam.DHN_CREATEDATE = DateTime.Now;
 

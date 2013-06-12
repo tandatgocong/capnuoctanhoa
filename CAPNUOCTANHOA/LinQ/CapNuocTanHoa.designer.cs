@@ -24042,6 +24042,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private string _DHN_TODS;
 		
+		private string _DHN_CHUADANHDAU;
+		
 		private string _DHN_CAMKET;
 		
 		private string _DHN_BAMHI;
@@ -24110,6 +24112,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnDHN_DOTChanged();
     partial void OnDHN_TODSChanging(string value);
     partial void OnDHN_TODSChanged();
+    partial void OnDHN_CHUADANHDAUChanging(string value);
+    partial void OnDHN_CHUADANHDAUChanged();
     partial void OnDHN_CAMKETChanging(string value);
     partial void OnDHN_CAMKETChanged();
     partial void OnDHN_BAMHIChanging(string value);
@@ -24339,6 +24343,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._DHN_TODS = value;
 					this.SendPropertyChanged("DHN_TODS");
 					this.OnDHN_TODSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHN_CHUADANHDAU", DbType="NVarChar(100)")]
+		public string DHN_CHUADANHDAU
+		{
+			get
+			{
+				return this._DHN_CHUADANHDAU;
+			}
+			set
+			{
+				if ((this._DHN_CHUADANHDAU != value))
+				{
+					this.OnDHN_CHUADANHDAUChanging(value);
+					this.SendPropertyChanging();
+					this._DHN_CHUADANHDAU = value;
+					this.SendPropertyChanged("DHN_CHUADANHDAU");
+					this.OnDHN_CHUADANHDAUChanged();
 				}
 			}
 		}
