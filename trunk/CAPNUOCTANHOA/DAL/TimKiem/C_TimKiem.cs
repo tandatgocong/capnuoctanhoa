@@ -43,9 +43,9 @@ namespace CAPNUOCTANHOA.DAL.TimKiem
             {
                 sql += " AND LOTRINH='" + searchLoTrinh + "'";
             }
-            if (!"".Equals(searchNgayGan) && !"1/1/0001".Equals(searchNgayGan))
+            if (!"1/1/0001".Equals(searchNgayGan) && !"01/01/0001".Equals(searchNgayGan) && !"01-01-0001".Equals(searchNgayGan))
             {
-                sql += " AND CONVERT(DATETIME,HCT_NGAYGAN,103) ='" + searchNgayGan + "' ";
+              sql += " AND CONVERT(DATETIME,HCT_NGAYGAN,103) ='" + searchNgayGan + "' ";
             }
 
             if (!"".Equals(searchSoThan_.Replace(" ","")))
