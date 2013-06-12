@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CAPNUOCTANHOA.LinQ;
+using log4net;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
     public partial class frm_CapNhatTroNgaiThay : Form
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(frm_CapNhatTroNgaiThay).Name);
         CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
         TB_THAYDHN thaydhn = null;
         TB_GHICHU ghichu = null;
@@ -147,13 +149,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             thaydhn.XLT_CHUYENXL = "KTKS";
                             dutchi = new TB_TLKDUTCHI();
                             ///lấy tên tổ đọc số từ lộ trình
-                            if (int.Parse(kh.LOTRINH.Substring(3, 2)) >= 1 && int.Parse(kh.LOTRINH.Substring(3, 2)) <= 15)
+                            if (int.Parse(kh.LOTRINH.Substring(2, 2)) >= 1 && int.Parse(kh.LOTRINH.Substring(2, 2)) <= 15)
                                 dutchi.TODS = "TB01";
                             else
-                                if (int.Parse(kh.LOTRINH.Substring(3, 2)) >= 16 && int.Parse(kh.LOTRINH.Substring(3, 2)) <= 30)
+                                if (int.Parse(kh.LOTRINH.Substring(2, 2)) >= 16 && int.Parse(kh.LOTRINH.Substring(2, 2)) <= 30)
                                     dutchi.TODS = "TB02";
                                 else
-                                    if (int.Parse(kh.LOTRINH.Substring(3, 2)) >= 31 && int.Parse(kh.LOTRINH.Substring(3, 2)) <= 46)
+                                    if (int.Parse(kh.LOTRINH.Substring(2, 2)) >= 31 && int.Parse(kh.LOTRINH.Substring(2, 2)) <= 46)
                                         dutchi.TODS = "TP";
                             dutchi.DANHBO = kh.DANHBO;
                             dutchi.LOTRINH = kh.LOTRINH;
@@ -172,13 +174,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                             db.TB_TLKDUTCHIs.InsertOnSubmit(dutchi);
                         }
 
-                    if (!"".Equals(this.txtKetQuaThucHien.Text.Trim()) && !thaydhn.XLT_KETQUA.Equals(this.txtKetQuaThucHien.Text.Trim()))
-                    {
-                        thaydhn.XLT_TRAKQ = true;
-                        thaydhn.XLT_KETQUA = txtKetQuaThucHien.Text;
-                        thaydhn.XLT_NGAYCAPNHAT = DateTime.Now.Date;
-                    }
-
+                    if (!"".Equals(this.txtKetQuaThucHien.Text.Trim()) && thaydhn.XLT_KETQUA != this.txtKetQuaThucHien.Text.Trim())
+                        {
+                            thaydhn.XLT_TRAKQ = true;
+                            thaydhn.XLT_KETQUA = txtKetQuaThucHien.Text;
+                            thaydhn.XLT_NGAYCAPNHAT = DateTime.Now.Date;
+                        }
+      
+                    
                     thaydhn.XLT_XULY = true;
                     thaydhn.XLT_NGAYCHUYEN = DateTime.Now.Date;
 
@@ -197,8 +200,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     db.TB_GHICHUs.InsertOnSubmit(ghichu);
                     db.SubmitChanges();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    log.Error(ex.Message);
+                    this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
                     MessageBox.Show("Cập nhật thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
         }
