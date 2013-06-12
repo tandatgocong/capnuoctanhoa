@@ -16,6 +16,7 @@ using System.Configuration;
 using CAPNUOCTANHOA.Forms.QLDHN;
 using CAPNUOCTANHOA.Forms.BanKTKS.BC;
 using CAPNUOCTANHOA.Forms.QLDHN.HoaDon0M3;
+using CAPNUOCTANHOA.Utilities;
 
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
@@ -104,6 +105,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             txtCo.Text = "";
             txtSoThan.Text = "";
             txtMaLoTrinh.Text = "";
+            //txtID.Text = "";
 
             txtGhiChu.Text = "";
             this.dgvThongTinHD_0.DataSource = DAL.QLDHN.C_HoaDon_0.getBangKeBaoThay(999999);
@@ -144,6 +146,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             btcapNhat.Enabled = false;
             checkChuaDanhDau.Checked = false;
             //btXoa.Enabled = false;
+            //txtID.Text = "";
 
 
         }
@@ -364,7 +367,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string DIACHI = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DIACHI"].Value + "";
                 string DHN_SOBANGKE = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_SOBANGKE"].Value + "";
 
-
+                //int ID = int.Parse(dgvThongTinHD_0.Rows[e.RowIndex].Cells["ID"].Value + "");
                 string DHN_CODH = dgvThongTinHD_0.Rows[e.RowIndex].Cells["CODH"].Value + "";
                 string DHN_SOTHAN = dgvThongTinHD_0.Rows[e.RowIndex].Cells["SOTHANDH"].Value + "";
                 string DHN_TODS = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_TODS"].Value + "";
@@ -464,6 +467,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             DHN_Giam.DHN_BAMHI = null;
             DHN_Giam.DHN_KY = cbChiSoKy.Text;
             DHN_Giam.DHN_DOT = cbDot.Text;
+           
             if (checkBoxBamChi.Checked == true)
             {
                 DHN_Giam.DHN_BAMHI = "X";
@@ -560,6 +564,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string where = "DHN_KY='" + cbChiSoKy.Text + "'";
             dtfilter = tbFilter(dt, where);
             dtfilter.TableName = "TABLEHD";
+         
             ds.Tables["TABLEHD"].Merge(dtfilter);
             //set dataset to the report viewer.
             rptDoc.SetDataSource(ds);
@@ -595,6 +600,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             dtfilter = tbFilter(dt, where);
             dtfilter.TableName = "TABLEHD";
+            //format danh bo
+            for (int i = 0; i < dtfilter.Rows.Count; i++)
+            {
+                dtfilter.Rows[0]["DHN_DANHBO"] = FormatSoHoSoDanhBo.sodanhbo(dtfilter.Rows[0]["DHN_DANHBO"].ToString());
+            }
             ds.Tables["TABLEHD"].Merge(dtfilter);
             //set dataset to the report viewer.
             rptDoc.SetDataSource(ds);
@@ -729,12 +739,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 return;
             }
-            string dth = dt.Rows[0]["DHN_CAMKET"].ToString();
+            
+
             DataTable dtfilter = new DataTable();
             // string where = "DHN_KY='" + cbChiSoKy.Text + "' AND ((DHN_CAMKET is null AND DHN_BAMHI is null) OR DHN_HUYCAMKET='X')";
             string where = "DHN_KY='" + cbChiSoKy.Text + "' AND  DHN_HUYCAMKET='X'";
             dtfilter = tbFilter(dt, where);
             dtfilter.TableName = "TABLEHD";
+           //format danh bo
+            for (int i = 0; i < dtfilter.Rows.Count; i++)
+            {
+                dtfilter.Rows[0]["DHN_DANHBO"] = FormatSoHoSoDanhBo.sodanhbo(dtfilter.Rows[0]["DHN_DANHBO"].ToString());
+            }
             ds.Tables["TABLEHD"].Merge(dtfilter);
             //set dataset to the report viewer.
             rptDoc.SetDataSource(ds);
@@ -793,13 +809,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string sobangke = txtSoBangKe_Thongtin.Text;
             string chisoky = cbChiSoKy.Text;
             string dot = cbDot.Text;
-            DK_GIAMHOADON ghd = new DK_GIAMHOADON();
-            ghd.DHN_DANHBO = danhbo;
-            ghd.DHN_SOBANGKE = sobangke;
+            //DK_GIAMHOADON ghd = new DK_GIAMHOADON();
+            //ghd.DHN_DANHBO = danhbo;
+            //ghd.DHN_SOBANGKE = sobangke;
+            string id = dgvThongTinHD_0.CurrentRow.Cells["ID"].Value.ToString();
+           
             //string mess = "Xóa Danh Bộ  " + danhbo;
             //if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             //{
-            int kq = DAL.QLDHN.C_HoaDon_0.DeleteThongTin(ghd);
+            int kq = DAL.QLDHN.C_HoaDon_0.DeleteThongTin(id);
             if (kq > 0)
             {
                 MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -812,5 +830,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
 
         }
+
+        private void dgvThongTinHD_0_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+                    }
     }
 }
