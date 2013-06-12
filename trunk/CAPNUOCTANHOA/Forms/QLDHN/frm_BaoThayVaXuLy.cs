@@ -41,6 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             dateTuNgay.ValueObject = DateTime.Now.Date;
             dateDenNgay.ValueObject = DateTime.Now.Date;
+            dateInDSDutChi.ValueObject = DateTime.Now.Date;
         }
 
         private void btXemThongTin_Click(object sender, EventArgs e)
