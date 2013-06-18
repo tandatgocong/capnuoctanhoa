@@ -20,7 +20,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         /// <returns></returns>
         public static DataTable getBangKeBySoBangKe(string sobangke)
         {
-            string sql = "SELECT hd.ID,DHN_DANHBO,DHN_SOBANGKE,CONVERT(VARCHAR(10), DHN_NGAYGHINHAN, 103) AS DHN_NGAYGHINHAN,LOTRINH,SOTHANDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_KY,DHN_DOT,DHN_NAM,";
+            string sql = "SELECT hd.ID,DHN_DANHBO,DHN_SOBANGKE,CONVERT(VARCHAR(10), DHN_NGAYGHINHAN, 103) AS DHN_NGAYGHINHAN,LOTRINH,SOTHANDH,CODH,HIEUDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_KY,DHN_DOT,DHN_NAM,";
             sql += "DHN_BAMHI,DHN_CAMKET,DHN_HUYCAMKET,DHN_GHICHU,DHN_TODS,KTKS_NGAYTIEPXUC,KTKS_CAMKET,KTKS_BAMHI,KTKS_NGAYBAMCHI,KTKS_MAKIEMBC,KTKS_TH_HIEU,KTKS_TH_CO,KTKS_TH_SOTHAN,KTKS_TH_CHISO,KTKS_TH_MAKIEM,KTKS_TH_NGAY,KTKS_NHANVIEN,KTKS_GHICHU";
             sql += " FROM DK_GIAMHOADON hd,TB_DULIEUKHACHHANG kh WHERE DHN_SOBANGKE='" + sobangke + "' AND kh.DANHBO=hd.DHN_DANHBO ORDER BY DHN_DANHBO ASC";
             return LinQConnection.getDataTable(sql);
@@ -33,7 +33,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         /// <returns></returns>
         public static DataTable getBangKeBySoDanhBo(string sodanhbo)
         {
-            string sql = "SELECT hd.ID,DHN_DANHBO,DHN_SOBANGKE,DHN_NGAYGHINHAN,LOTRINH,SOTHANDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_KY,DHN_DOT,DHN_NAM,";
+            string sql = "SELECT hd.ID,DHN_DANHBO,DHN_SOBANGKE,CONVERT(VARCHAR(10), DHN_NGAYGHINHAN, 103) AS DHN_NGAYGHINHAN,LOTRINH,SOTHANDH,CODH,HIEUDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_KY,DHN_DOT,DHN_NAM,";
             sql += "DHN_BAMHI,DHN_CAMKET,DHN_HUYCAMKET,DHN_GHICHU,DHN_TODS,KTKS_NGAYTIEPXUC,KTKS_CAMKET,KTKS_BAMHI,KTKS_NGAYBAMCHI,KTKS_MAKIEMBC,KTKS_TH_HIEU,KTKS_TH_CO,KTKS_TH_SOTHAN,KTKS_TH_CHISO,KTKS_TH_MAKIEM,KTKS_TH_NGAY,KTKS_NHANVIEN,KTKS_GHICHU";
             sql += " FROM DK_GIAMHOADON hd,TB_DULIEUKHACHHANG kh WHERE DHN_DANHBO='" + sodanhbo + "' AND kh.DANHBO=hd.DHN_DANHBO ORDER BY DHN_DANHBO ASC";
             return LinQConnection.getDataTable(sql);
@@ -46,10 +46,40 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         /// <returns></returns>
         public static DataTable getBangKeByNgayYeuCau(DateTime date)
         {
-            string sql = "SELECT hd.ID,DHN_DANHBO,DHN_SOBANGKE,DHN_NGAYGHINHAN,LOTRINH,SOTHANDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_KY,DHN_DOT,DHN_NAM,";
+            string sql = "SELECT hd.ID,DHN_DANHBO,DHN_SOBANGKE,CONVERT(VARCHAR(10), DHN_NGAYGHINHAN, 103) AS DHN_NGAYGHINHAN,LOTRINH,SOTHANDH,CODH,HIEUDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_KY,DHN_DOT,DHN_NAM,";
             sql += "DHN_BAMHI,DHN_CAMKET,DHN_HUYCAMKET,DHN_GHICHU,DHN_TODS,KTKS_NGAYTIEPXUC,KTKS_CAMKET,KTKS_BAMHI,KTKS_NGAYBAMCHI,KTKS_MAKIEMBC,KTKS_TH_HIEU,KTKS_TH_CO,KTKS_TH_SOTHAN,KTKS_TH_CHISO,KTKS_TH_MAKIEM,KTKS_TH_NGAY,KTKS_NHANVIEN,KTKS_GHICHU";
             sql += " FROM DK_GIAMHOADON hd,TB_DULIEUKHACHHANG kh WHERE CONVERT(VARCHAR(10), DHN_CREATEDATE, 103)='" + date.ToString("dd/MM/yyyy") + "' AND kh.DANHBO=hd.DHN_DANHBO ORDER BY DHN_DANHBO ASC";
             return LinQConnection.getDataTable(sql);
+        }
+
+        /// <summary>
+        /// Lấy thông tin khách hàng theo danh bộ
+        /// </summary>
+        /// <param name="danhbo"></param>
+        /// <returns></returns>
+        public static DataTable getThongTinKhachHang(string danhbo)
+        {
+            string sql = "SELECT DANHBO,LOTRINH,SOTHANDH,CODH,HIEUDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI' FROM TB_DULIEUKHACHHANG WHERE DANHBO='" + danhbo + "'";
+            return LinQConnection.getDataTable(sql);
+        }
+
+        /// <summary>
+        /// Thêm 1 danh bộ vào bảng DK_GIAMHOADON
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public static bool Insert(DK_GIAMHOADON item)
+        {
+            try
+            {
+                db.DK_GIAMHOADONs.InsertOnSubmit(item);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
         }
 
         /// <summary>
@@ -90,10 +120,20 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         /// Tìm DK_GIAMHOADON theo ID
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>class DK_GIAMHOADON</returns>
         public static DK_GIAMHOADON findByID(int id)
         {
             return db.DK_GIAMHOADONs.Single(item => item.ID == id);
+        }
+
+        /// <summary>
+        /// Kiểm tra danh bộ có trong bảng DK_GIAMHOADON
+        /// </summary>
+        /// <param name="danhbo"></param>
+        /// <returns>true/false</returns>
+        public static bool findByDanhBo(string danhbo)
+        {
+            return db.DK_GIAMHOADONs.Any(item => item.DHN_DANHBO == danhbo);
         }
 
         /// <summary>

@@ -48,6 +48,18 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                         dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeBySoBangKe(txtSoBangKe.Text.ToUpper());
                         break;
                     case "danhbo":
+                        if (!DAL.BANKTKS.C_GiamHoaDon.findByDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", "")))
+                        {
+                            DK_GIAMHOADON item = new DK_GIAMHOADON();
+                            DataTable table = DAL.BANKTKS.C_GiamHoaDon.getThongTinKhachHang(txtSoDanhBo.Text.ToUpper().Replace("-", ""));
+                            item.DHN_DANHBO = txtSoDanhBo.Text.ToUpper().Replace("-", "");
+                            item.DHN_KY = DateTime.Now.Month.ToString();
+                            item.DHN_NAM = DateTime.Now.Year;
+                            item.DHN_DOT = table.Rows[0]["LOTRINH"].ToString().Substring(0, 2);
+                            item.DHN_CREATEDATE = DateTime.Now.Date;
+                            item.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
+                            DAL.BANKTKS.C_GiamHoaDon.Insert(item);
+                        }
                         dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeBySoDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", ""));
                         break;
                     case "yeucau":
@@ -141,6 +153,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             txtHieu.AutoCompleteCustomSource = namesCollection;
         }
 
+        #region Method Static Control
+
         private void radCamKet_CheckedChanged(object sender, EventArgs e)
         {
             panelCamKet.Visible = true;
@@ -148,7 +162,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelBamChiThuHoi.Visible = false;
             txtCamKet.Focus();
         }
-        
+
         private void radKTKSBamChiKhoaNuoc_CheckedChanged(object sender, EventArgs e)
         {
             panelCamKet.Visible = false;
@@ -200,6 +214,15 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelLichSuHoaDon0.Visible = false;
         }
 
+        private void dateTiepXuc_TextChanged(object sender, EventArgs e)
+        {
+            dateKhoaNuoc.Value = dateThuHoi.Value = dateTiepXuc.Value;
+        }
+
+        #endregion
+
+        #region Method Action Control
+
         private void dataBangKe_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -243,8 +266,17 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     dateKhoaNuoc.Value = new DateTime();
                 //panel Bấm chì thu hồi
                 txtMaKiemThuHoi.Text = dataBangKe["KTKS_TH_MAKIEM", e.RowIndex].Value.ToString();
-                txtHieu.Text = dataBangKe["KTKS_TH_HIEU", e.RowIndex].Value.ToString();
-                txtCo.Text = dataBangKe["KTKS_TH_CO", e.RowIndex].Value.ToString();
+                if (dataBangKe["KTKS_TH_HIEU", e.RowIndex].Value.ToString() == "")
+                    txtHieu.Text = dataBangKe["HIEUDH", e.RowIndex].Value.ToString();
+                else
+                    txtHieu.Text = dataBangKe["KTKS_TH_HIEU", e.RowIndex].Value.ToString();
+                if (dataBangKe["KTKS_TH_CO", e.RowIndex].Value.ToString() == "")
+                    txtCo.Text = dataBangKe["CODH", e.RowIndex].Value.ToString();
+                else
+                    txtCo.Text = dataBangKe["KTKS_TH_CO", e.RowIndex].Value.ToString();
+                if(dataBangKe["KTKS_TH_SOTHAN", e.RowIndex].Value.ToString()=="")
+                    txtKTKSSoThan.Text = dataBangKe["SOTHANDH", e.RowIndex].Value.ToString();
+                else
                 txtKTKSSoThan.Text = dataBangKe["KTKS_TH_SOTHAN", e.RowIndex].Value.ToString();
                 txtChiSo.Text = dataBangKe["KTKS_TH_CHISO", e.RowIndex].Value.ToString();
                 txtNhanVien.Text = dataBangKe["KTKS_NHANVIEN", e.RowIndex].Value.ToString();
@@ -289,7 +321,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                         hd.KTKS_TH_HIEU = txtHieu.Text.Trim().ToUpper();
                         hd.KTKS_TH_CO = txtCo.Text.Trim();
                         hd.KTKS_TH_SOTHAN = txtKTKSSoThan.Text.Trim().ToUpper();
-                        hd.KTKS_TH_CHISO = txtChiSo.Text.Trim();               
+                        hd.KTKS_TH_CHISO = txtChiSo.Text.Trim();
                         if (!"".Equals(dateThuHoi.ValueObject + ""))
                             hd.KTKS_TH_NGAY = dateThuHoi.Value;
                     }
@@ -299,7 +331,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                         hd.KTKS_BAMHI = "";
                     }
             hd.KTKS_NHANVIEN = txtNhanVien.Text.Trim().ToUpper();
-            hd.KTKS_MODIFYDATE = DateTime.Now;
+            hd.KTKS_MODIFYDATE = DateTime.Now.Date;
             hd.KTKS_MODIFYBY = DAL.SYS.C_USERS._userName;
             if (DAL.BANKTKS.C_GiamHoaDon.Update())
             {
@@ -389,5 +421,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         }
 
+        #endregion
+        
     }
 }
