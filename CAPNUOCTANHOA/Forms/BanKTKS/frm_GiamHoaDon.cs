@@ -338,6 +338,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 MessageBox.Show("Cập nhật thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Clear();
                 LoadData();
+                txtSoDanhBo.Focus();
             }
             else
                 MessageBox.Show("Cập nhật thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -421,7 +422,14 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         }
 
-        #endregion
+        
+        #endregion        
+
+        private void txtChiSo_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
         
     }
 }
