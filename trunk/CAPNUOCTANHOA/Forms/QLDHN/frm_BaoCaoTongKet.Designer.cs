@@ -30,6 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.radioTheoDoiHD0 = new System.Windows.Forms.RadioButton();
+            this.radioTKHOADON = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.rptThayDoi = new System.Windows.Forms.RadioButton();
@@ -45,7 +47,6 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rtThongKeDHN = new System.Windows.Forms.RadioButton();
             this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
-            this.radioTKHOADON = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.Color.AliceBlue;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.expandablePanel1.Controls.Add(this.radioTheoDoiHD0);
             this.expandablePanel1.Controls.Add(this.radioTKHOADON);
             this.expandablePanel1.Controls.Add(this.radioButton10);
             this.expandablePanel1.Controls.Add(this.radioButton9);
@@ -110,6 +112,31 @@
             this.expandablePanel1.TitleStyle.ForeColor.Color = System.Drawing.Color.Firebrick;
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "Danh Mục Báo Cáo";
+            // 
+            // radioTheoDoiHD0
+            // 
+            this.radioTheoDoiHD0.AutoSize = true;
+            this.radioTheoDoiHD0.Location = new System.Drawing.Point(10, 498);
+            this.radioTheoDoiHD0.Name = "radioTheoDoiHD0";
+            this.radioTheoDoiHD0.Size = new System.Drawing.Size(183, 23);
+            this.radioTheoDoiHD0.TabIndex = 0;
+            this.radioTheoDoiHD0.TabStop = true;
+            this.radioTheoDoiHD0.Text = "Theo Dõi Hóa Đơn = 0";
+            this.radioTheoDoiHD0.UseVisualStyleBackColor = true;
+            this.radioTheoDoiHD0.CheckedChanged += new System.EventHandler(this.radioTheoDoiHD0_CheckedChanged);
+            this.radioTheoDoiHD0.Click += new System.EventHandler(this.radioTheoDoiHD0_Click);
+            // 
+            // radioTKHOADON
+            // 
+            this.radioTKHOADON.AutoSize = true;
+            this.radioTKHOADON.Location = new System.Drawing.Point(10, 469);
+            this.radioTKHOADON.Name = "radioTKHOADON";
+            this.radioTKHOADON.Size = new System.Drawing.Size(158, 23);
+            this.radioTKHOADON.TabIndex = 6;
+            this.radioTKHOADON.TabStop = true;
+            this.radioTKHOADON.Text = "Thống Kê Hóa Đơn";
+            this.radioTKHOADON.UseVisualStyleBackColor = true;
+            this.radioTKHOADON.Click += new System.EventHandler(this.radioTKHOADON_Click);
             // 
             // radioButton10
             // 
@@ -265,6 +292,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Theo Dõi Báo Thay ĐHN";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
             // 
             // rtThongKeDHN
@@ -290,18 +318,6 @@
             this.radioThayDinhKy.Text = "Dự Trù Thay Định Kỳ";
             this.radioThayDinhKy.UseVisualStyleBackColor = true;
             this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
-            // 
-            // radioTKHOADON
-            // 
-            this.radioTKHOADON.AutoSize = true;
-            this.radioTKHOADON.Location = new System.Drawing.Point(10, 469);
-            this.radioTKHOADON.Name = "radioTKHOADON";
-            this.radioTKHOADON.Size = new System.Drawing.Size(158, 23);
-            this.radioTKHOADON.TabIndex = 6;
-            this.radioTKHOADON.TabStop = true;
-            this.radioTKHOADON.Text = "Thống Kê Hóa Đơn";
-            this.radioTKHOADON.UseVisualStyleBackColor = true;
-            this.radioTKHOADON.Click += new System.EventHandler(this.radioTKHOADON_Click);
             // 
             // frm_BaoCaoTongKet
             // 
@@ -341,6 +357,7 @@
         private System.Windows.Forms.RadioButton radioButton9;
         private System.Windows.Forms.RadioButton radioButton10;
         private System.Windows.Forms.RadioButton radioTKHOADON;
+        private System.Windows.Forms.RadioButton radioTheoDoiHD0;
 
     }
 }
