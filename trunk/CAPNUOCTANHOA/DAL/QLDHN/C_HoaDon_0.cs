@@ -19,6 +19,13 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " FROM DK_GIAMHOADON GHD,TB_DULIEUKHACHHANG kh WHERE  kh.DANHBO=GHD.DHN_DANHBO AND DHN_SOBANGKE='" + sobangke + "' ORDER BY DHN_DANHBO ASC ";
             return LinQConnection.getDataTable(sql);
         }
+        public static DataTable getDanhBo (string danhbo)
+        {
+            string sql = "SELECT GHD.ID,DHN_SOBANGKE, DHN_DANHBO,DHN_HUYCAMKET,DHN_CAMKET,DHN_BAMHI,DHN_GHICHU,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',CODH,SOTHANDH,DHN_DOT,DHN_KY,DHN_NAM,DHN_NGAYGHINHAN,DHN_TODS,LOTRINH";
+            sql += " FROM DK_GIAMHOADON GHD,TB_DULIEUKHACHHANG kh WHERE  kh.DANHBO=GHD.DHN_DANHBO AND DHN_DANHBO='" + danhbo + "' ORDER BY DHN_DANHBO ASC ";
+            return LinQConnection.getDataTable(sql);
+
+        }
         public static DataTable DataSoSanhKyTruoc(string sobangke,string danhbo,string ky,string nam)
         {
             string sql = "SELECT DHN_SOBANGKE, DHN_DANHBO,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',CODH,SOTHANDH,DHN_DOT,DHN_KY,DHN_NAM,DHN_NGAYGHINHAN,DHN_CAMKET,DHN_BAMHI,DHN_TODS,DHN_GHICHU,LOTRINH,DHN_HUYCAMKET";
@@ -101,26 +108,6 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return kq;
         }
       
-        public static DataTable getBCCamKet(int tungay, int denngay, int sobangke)
-        {
-            string sql = "SELECT DHN_SOBANGKE,DHN_DANHBO,HOTEN,SONHA + '' + TENDUONG AS 'DIACHI',DHN_NGAYGHINHAN,DHN_CAMKET";
-            sql += "FROM DK_GIAMHOADON GHD , TB_DULIEUKHACHHANG KH ";
-            sql += "WHERE KH.DANHBO=GHD.DHN_DANHBO ";
-            return LinQConnection.getDataTable(sql);
-        }
-        public static DataTable getBCBamChi(int tungay, int denngay, int sobangke)
-        {
-            string sql = "SELECT DHN_SOBANGKE,DHN_DANHBO,HOTEN,SONHA + '' + TENDUONG AS 'DIACHI',DHN_NGAYGHINHAN,DHN_BAMHI";
-            sql += "FROM DK_GIAMHOADON GHD, TB_DULIEUKHACHHANG KH";
-            sql += "WHERE KH.DANHBO = GHD.DHN_DANHBO AND GHD.DHN_BAMHI = 'X'";
-            return LinQConnection.getDataTable(sql);
-        }
-        public static DataTable getBCHuyCamKet(int tungay, int denngay, int sobangke)
-        {
-            string sql = "SELECT DHN_SOBANGKE,DHN_DANHBO,HOTEN,SONHA +'' + TENDUONG AS 'DIACHI',DHN_NGAYGHINHAN,DHN_BAMHI";
-            sql += "FROM DK_GIAMHOADON GHD,TB_DULIEUKHACHHANG KH";
-            sql += "WHERE KH.DANHBO = GHD.DHN_DANHBO AND GHD.DHN_HUYCAMKET = 'X'";
-            return LinQConnection.getDataTable(sql);
-        }
+       
     }
 }
