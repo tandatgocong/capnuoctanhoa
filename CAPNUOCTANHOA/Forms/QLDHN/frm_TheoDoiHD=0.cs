@@ -25,6 +25,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
     {
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_BaoThayDHN).Name);
+        bool flagDanhBo = false;//Flag xoa tu danh bo hay bang ke
+
+
         public frm_TheoDoiHD_0()
         {
             InitializeComponent();
@@ -254,6 +257,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             if (e.KeyChar == 13)
             {
+                flagDanhBo = false;
                 LoadData_ThongTin();
                 refresh();
 
@@ -827,7 +831,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 refresh();
-                LoadData_ThongTin();
+                if (flagDanhBo)
+                    LoadData_DanhBo();
+                else
+                    LoadData_ThongTin();
             }
 
             //}
@@ -843,6 +850,41 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
+        }
+        public void LoadData_DanhBo()
+        {
+            try
+            {
+                string sodanhbo = this.maskedTextdanhbo.Text.Replace("-","");
+
+                DataTable dt = new DataTable();
+                TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
+                dt = DAL.QLDHN.C_HoaDon_0.getDanhBo(sodanhbo);
+                dgvThongTinHD_0.DataSource = dt;
+                Utilities.DataGridV.formatRowsSTT(dgvThongTinHD_0, "DHN_DANHBO", "DHN_STT");
+                btnXoa.Visible = true;
+                btcapNhat.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Du Lieu Thay " + ex.Message);
+            }
+             
+
+
+        }
+
+        private void maskedTextdanhbo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                flagDanhBo = true;
+                LoadData_DanhBo();
+                
+
+
+            }
+
         }
     }
 }
