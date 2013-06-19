@@ -143,7 +143,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             txtSoThan.Text = "";
             txtMaLoTrinh.Text = "";
             //txtGhiChu = " ";
-            btcapNhat.Enabled = false;
+            //btcapNhat.Enabled = false;
             checkChuaDanhDau.Checked = false;
             //btXoa.Enabled = false;
             //txtID.Text = "";
@@ -155,6 +155,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         void LoadThongTinDB()
         {
             string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+            string sobangke = this.txtSoBangKe_Thongtin.Text;
             if (sodanhbo.Length == 11)
             {
                 DataTable table = DAL.QLDHN.C_BaoThay.HistoryThay(sodanhbo);
@@ -173,6 +174,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     //end
                     txtToDS.Text = GetTOds(txtMaLoTrinh.Text);
                     txtNam.Text = DateTime.Now.Year.ToString();
+                    btnXoa.Enabled = true;
+                    btcapNhat.Enabled = true;
 
 
                 }
@@ -238,6 +241,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 dt = DAL.QLDHN.C_HoaDon_0.getBangKeBaoThay(int.Parse(txtSoBangKe_Thongtin.Text.Trim()));
                 dgvThongTinHD_0.DataSource = dt;
                 Utilities.DataGridV.formatRowsSTT(dgvThongTinHD_0, "DHN_DANHBO", "DHN_STT");
+                btnXoa.Visible = true;
+                btcapNhat.Visible = true;
             }
             catch (Exception ex)
             {
@@ -838,6 +843,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-                    }
+        }
     }
 }
