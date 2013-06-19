@@ -454,6 +454,11 @@ namespace CAPNUOCTANHOA
             PanelContent.Controls.Add(baothay);
         }
 
+        private void banKTKS_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
         
     }
