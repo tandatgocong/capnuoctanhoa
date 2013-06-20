@@ -82,6 +82,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         }
         string sql = "";
         string sql1 = "";
+        public static void formatRowsSTT(DataGridView dview, string STT)
+        {
+            for (int i = 0; i < dview.Rows.Count; i++)
+            {
+
+            }
+        }
+
         private void btXemThongTin_Click(object sender, EventArgs e)
         {
             try { 
@@ -134,7 +142,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     Utilities.DataGridV.formatRows(dataGridView1);
                     DataTable dt1 = DAL.LinQConnection.getDataTable(sql_camket);
                     dgv_CamKet.DataSource = dt1;
-                    Utilities.DataGridV.formatRowsSTT(dgv_CamKet, "", "STT");
+                    Utilities.DataGridV.formatRows(dgv_CamKet, "");
+                    Utilities.DataGridV.setSTT(dgv_CamKet, "STT");
+                  // Utilities.DataGridV.formatRowsSTT(dgv_CamKet, "", "STT");
+       
                     DataTable dt2 = DAL.LinQConnection.getDataTable(sql_bamchi);
                     dgv_BamChi.DataSource = dt2;
                     Utilities.DataGridV.formatRowsSTT(dgv_BamChi, "", "G_STT");
@@ -298,10 +309,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             dt.TableName = "BAOCAOHD0";
             ds.Tables["BAOCAOHD0"].Merge(dt);
             //set dataset to the report viewer.
-            int i=0;
-            if (i == 0)
-            {
-                rptDoc.SetDataSource(ds);
+            //int i=0;
+            if (tabControl1.SelectedTabIndex ==0){
+rptDoc.SetDataSource(ds);
                 rptDoc.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(dateTuNgay));
                 rptDoc.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(dateDenNgay));
 
@@ -319,6 +329,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
             }
           
+        }
+
+        private void tabCamKet_Click(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.setSTT(dgv_CamKet, "STT");
+        
+        }
+
+        private void tabBamChi_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }
