@@ -178,5 +178,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 db.Connection.Close();
             }
         }
+
+        private void tb_TinhHinhBaoThay_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
