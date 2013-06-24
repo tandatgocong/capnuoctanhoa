@@ -609,6 +609,7 @@
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\BC\BaoCaoHD0.cs">
       <DependentUpon>BaoCaoHD0.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\BC\BaoCaoHD0.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -619,6 +620,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BAOCAOTHONGKE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\rpt_BCSoLuong_SoBangKe.cs">
+      <DependentUpon>rpt_BCSoLuong_SoBangKe.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\rpt_BCSoLuong.cs">
+      <DependentUpon>rpt_BCSoLuong.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\BC\rpt_BCTheoDoiHD_0_SoBangKe.cs">
       <DependentUpon>rpt_BCTheoDoiHD_0_SoBangKe.rpt</DependentUpon>
@@ -655,6 +668,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_ThongKeHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\TONGSL.cs">
+      <DependentUpon>TONGSL.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\TONGSL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TONGSL.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\M_tab_ThongHoaDon.cs">
       <SubType>UserControl</SubType>
@@ -1271,6 +1293,17 @@
     <None Include="Forms\QLDHN\Tab\BC\BAOCAOTHONGKE.xss">
       <DependentUpon>BAOCAOTHONGKE.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\Tab\BC\TONGSL.xsc">
+      <DependentUpon>TONGSL.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\Tab\BC\TONGSL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TONGSL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\Tab\BC\TONGSL.xss">
+      <DependentUpon>TONGSL.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODEK.xsc">
       <DependentUpon>DANHSACHCODEK.xsd</DependentUpon>
     </None>
@@ -1566,6 +1599,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_BCSoLuong_SoBangKe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BCSoLuong_SoBangKe.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_BCSoLuong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BCSoLuong.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_BCTheoDoiHD_0_SoBangKe.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
