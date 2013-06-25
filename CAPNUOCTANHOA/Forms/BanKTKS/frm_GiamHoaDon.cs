@@ -25,7 +25,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         public frm_GiamHoaDon()
         {
-            InitializeComponent();
+            InitializeComponent();         
         }
 
         #region Method
@@ -36,6 +36,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             {
                 dataBangKe.Rows[i].Cells["DHN_STT"].Value = i + 1;
             }
+            
         }
 
         public void LoadData()
@@ -76,7 +77,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 log.Error("Loi Load Du Lieu Thay " + ex.Message);
             }
         }
-
+        
         public void Clear()
         {
             txtSoDanhBo.Text = "";
@@ -99,6 +100,9 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             dateThuHoi.Value = new DateTime();
             selectedindex = -1;
             btncapNhat.Enabled = false;
+            radCamKet.Checked = false;
+            radKTKSBamChiKhoaNuoc.Checked = false;
+            radKTKSBamChiThuHoi.Checked = false;
         }
 
         public void LoadLichSuHoaDon0(string sodanhbo)
@@ -137,6 +141,15 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             }
         }
 
+        public void LoadTieuThu(string danhba, int nam, int ky)
+        {
+            if (DAL.BANKTKS.C_GiamHoaDon.getListHoaDonReport(danhba, nam, ky).Tables["TIEUTHU"].Rows.Count > 0)
+            {
+                dataTieuThu.DataSource = DAL.BANKTKS.C_GiamHoaDon.getListHoaDonReport(danhba, nam, ky).Tables["TIEUTHU"];
+                panelTieuThu.Visible = true;
+            }
+        }
+
         #endregion
 
         private void frm_GiamHoaDon_Load(object sender, EventArgs e)
@@ -160,7 +173,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelCamKet.Visible = true;
             panelBamChiKhoaNuoc.Visible = false;
             panelBamChiThuHoi.Visible = false;
-            txtCamKet.Focus();
+            //txtCamKet.Focus();
         }
 
         private void radKTKSBamChiKhoaNuoc_CheckedChanged(object sender, EventArgs e)
@@ -168,7 +181,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelCamKet.Visible = false;
             panelBamChiKhoaNuoc.Visible = true;
             panelBamChiThuHoi.Visible = false;
-            txtMaKiemKhoaNuoc.Focus();
+            //txtMaKiemKhoaNuoc.Focus();
         }
 
         private void radKTKSBamChiThuHoi_CheckedChanged(object sender, EventArgs e)
@@ -176,7 +189,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelCamKet.Visible = false;
             panelBamChiKhoaNuoc.Visible = false;
             panelBamChiThuHoi.Visible = true;
-            txtMaKiemThuHoi.Focus();
+            //txtMaKiemThuHoi.Focus();
         }
 
         private void txtSoBangKe_KeyPress(object sender, KeyPressEventArgs e)
@@ -188,6 +201,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 //dateYeuCau.Value = new DateTime();
                 txtSoDanhBo.Text = "";
                 panelLichSuHoaDon0.Visible = false;
+                panelTieuThu.Visible = false;
             }
         }
 
@@ -200,6 +214,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 //dateYeuCau.Value = new DateTime();
                 txtSoBangKe.Text = "";
                 panelLichSuHoaDon0.Visible = false;
+                panelTieuThu.Visible = false;
                 if (dataBangKe.RowCount > 0)
                     dataBangKe_CellContentClick(sender, new DataGridViewCellEventArgs(0, 0));
             }
@@ -212,11 +227,41 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             txtSoDanhBo.Text = "";
             txtSoBangKe.Text = "";
             panelLichSuHoaDon0.Visible = false;
+            panelTieuThu.Visible = false;
         }
 
         private void dateTiepXuc_TextChanged(object sender, EventArgs e)
         {
             dateKhoaNuoc.Value = dateThuHoi.Value = dateTiepXuc.Value;
+        }
+
+        private void txtGhiChu_Leave(object sender, EventArgs e)
+        {
+            radCamKet.Focus();
+        }
+
+        private void radCamKet_Leave(object sender, EventArgs e)
+        {
+            if (!radCamKet.Checked)
+                radKTKSBamChiKhoaNuoc.Focus();
+            else
+                txtCamKet.Focus();
+        }
+
+        private void radKTKSBamChiKhoaNuoc_Leave(object sender, EventArgs e)
+        {
+            if (!radKTKSBamChiKhoaNuoc.Checked)
+                radKTKSBamChiThuHoi.Focus();
+            else
+                txtMaKiemKhoaNuoc.Focus();
+        }
+
+        private void radKTKSBamChiThuHoi_Leave(object sender, EventArgs e)
+        {
+            if (!radKTKSBamChiThuHoi.Checked)
+                btncapNhat.Focus();
+            else
+                txtMaKiemThuHoi.Focus();
         }
 
         #endregion
@@ -284,10 +329,15 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     dateThuHoi.Value = (DateTime)dataBangKe["KTKS_TH_NGAY", e.RowIndex].Value;
                 else
                     dateThuHoi.Value = new DateTime();
+                if (dataBangKe["KTKS_DONGTIEN", e.RowIndex].Value.ToString() == "True")
+                    chkDongTien.Checked = true;
+                else
+                    chkDongTien.Checked = false;
                 //Set
                 selectedindex = e.RowIndex;
                 btncapNhat.Enabled = true;
                 LoadLichSuHoaDon0(dataBangKe["G_DANHBO", e.RowIndex].Value.ToString().Replace(" ", ""));
+                LoadTieuThu(txtSoDanhBo.Text.Replace("-", ""), int.Parse(dataBangKe["DHN_NAM", e.RowIndex].Value.ToString()), DateTime.Now.Month);
                 txtSoDanhBo.Focus();
             }
             catch (Exception)
@@ -330,6 +380,10 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                         hd.KTKS_CAMKET = "";
                         hd.KTKS_BAMHI = "";
                     }
+            if (chkDongTien.Checked)
+                hd.KTKS_DONGTIEN = true;
+            else
+                hd.KTKS_DONGTIEN = false;
             hd.KTKS_NHANVIEN = txtNhanVien.Text.Trim().ToUpper();
             hd.KTKS_MODIFYDATE = DateTime.Now.Date;
             hd.KTKS_MODIFYBY = DAL.SYS.C_USERS._userName;
@@ -417,19 +471,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelCamKet.Visible = false;
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         
         #endregion        
-
-        private void txtChiSo_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
         
     }
 }
