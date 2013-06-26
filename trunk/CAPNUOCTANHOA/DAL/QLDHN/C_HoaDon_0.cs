@@ -58,7 +58,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static int UpdateSoBangKe(string danhbo,string sobangke,string ngayghinhan,string nam,string tods,string ghichu,string bamchi,int ky,string dot,string chisoky,string huycamket)
         {
             int kq = 0;
-            string sql = "UPDATE DK_GIAMHOADON set DHN_NGAYGHINHAN='" + ngayghinhan + "',DHN_NAM=" + nam + ",DHN_TODS='" + tods + "',DHN_GHICHU='" + ghichu + "',DHN_DOT='" + dot + "',DHN_KY='"+chisoky +"'";
+            string sql = "UPDATE DK_GIAMHOADON set DHN_NGAYGHINHAN='" + ngayghinhan + "',DHN_NAM=" + nam + ",DHN_TODS='" + tods + "',DHN_GHICHU=N'" + ghichu + "',DHN_DOT='" + dot + "',DHN_KY='"+chisoky +"'";
             if(bamchi=="X"){
                 sql = sql + ",DHN_BAMHI='" + bamchi  + "'";
             }
