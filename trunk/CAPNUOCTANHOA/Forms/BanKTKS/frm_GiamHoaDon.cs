@@ -132,6 +132,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     else
                         if (dt.Rows[i]["KTKS_BAMHI"].ToString() == "thuhoi")
                             dr["BCTH"] = "X";
+                dr["KTKS_DONGTIEN"] = dt.Rows[i]["KTKS_DONGTIEN"];
                 ds.Tables["LichSuHoaDon0"].Rows.Add(dr);
             }
             if (ds.Tables["LichSuHoaDon0"].Rows.Count > 0)
