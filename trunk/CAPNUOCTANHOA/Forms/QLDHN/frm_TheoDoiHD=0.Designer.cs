@@ -875,7 +875,7 @@
             this.checkBoxHUYCAMKET.ForeColor = System.Drawing.SystemColors.ControlText;
             this.checkBoxHUYCAMKET.Location = new System.Drawing.Point(324, 232);
             this.checkBoxHUYCAMKET.Name = "checkBoxHUYCAMKET";
-            this.checkBoxHUYCAMKET.Size = new System.Drawing.Size(139, 23);
+            this.checkBoxHUYCAMKET.Size = new System.Drawing.Size(138, 23);
             this.checkBoxHUYCAMKET.TabIndex = 11;
             this.checkBoxHUYCAMKET.Text = "HỦY CAM KẾT";
             this.checkBoxHUYCAMKET.UseVisualStyleBackColor = true;
@@ -1206,7 +1206,7 @@
             this.checkChuaDanhDau.ForeColor = System.Drawing.SystemColors.ControlText;
             this.checkChuaDanhDau.Location = new System.Drawing.Point(61, 233);
             this.checkChuaDanhDau.Name = "checkChuaDanhDau";
-            this.checkChuaDanhDau.Size = new System.Drawing.Size(164, 23);
+            this.checkChuaDanhDau.Size = new System.Drawing.Size(163, 23);
             this.checkChuaDanhDau.TabIndex = 658;
             this.checkChuaDanhDau.Text = "CHƯA ĐÁNH DẤU";
             this.checkChuaDanhDau.UseVisualStyleBackColor = true;

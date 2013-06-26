@@ -598,7 +598,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 return;
             }
             DataTable dtfilter = new DataTable();
-            string where = "DHN_KY='" + cbChiSoKy.Text + "'";
+            string where = "DHN_SOBANGKE='" + txtSoBangKe_Thongtin.Text + "'";
             if (checkBoxBamChi.Checked == true)
             {
                 where = where + " AND DHN_BAMHI='X'";
@@ -617,7 +617,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             ds.Tables["TABLEHD"].Merge(dtfilter);
             //set dataset to the report viewer.
             rptDoc.SetDataSource(ds);
-            rptDoc.SetParameterValue("Ky", cbChiSoKy.Text);
+            //rptDoc.SetParameterValue("Ky", cbChiSoKy.Text);
+            rptDoc.SetParameterValue("bangke",txtSoBangKe_Thongtin.Text);
 
             frm_Reports frm = new frm_Reports(rptDoc);
             frm.Show();
@@ -752,7 +753,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             DataTable dtfilter = new DataTable();
             // string where = "DHN_KY='" + cbChiSoKy.Text + "' AND ((DHN_CAMKET is null AND DHN_BAMHI is null) OR DHN_HUYCAMKET='X')";
-            string where = "DHN_KY='" + cbChiSoKy.Text + "' AND  DHN_HUYCAMKET='X'";
+            string where = "DHN_SOBANGKE='" + txtSoBangKe_Thongtin.Text + "' AND  DHN_HUYCAMKET='X'";
             dtfilter = tbFilter(dt, where);
             dtfilter.TableName = "TABLEHD";
            //format danh bo
@@ -763,7 +764,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             ds.Tables["TABLEHD"].Merge(dtfilter);
             //set dataset to the report viewer.
             rptDoc.SetDataSource(ds);
-            rptDoc.SetParameterValue("Ky", cbChiSoKy.Text);
+            //rptDoc.SetParameterValue("Ky", cbChiSoKy.Text);
+            rptDoc.SetParameterValue("bangke", txtSoBangKe_Thongtin.Text);
 
 
             frm_Reports frm = new frm_Reports(rptDoc);

@@ -106,7 +106,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_tungay {
+        public CrystalDecisions.Shared.IParameterField Parameter_TUNGAY {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -114,7 +114,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_denngay {
+        public CrystalDecisions.Shared.IParameterField Parameter_DENNGAY {
             get {
                 return this.DataDefinition.ParameterFields[3];
             }

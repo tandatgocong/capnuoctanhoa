@@ -90,7 +90,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.HoaDon0M3 {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Ky {
+        public CrystalDecisions.Shared.IParameterField Parameter_bangke {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
