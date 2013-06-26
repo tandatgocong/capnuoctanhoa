@@ -459,6 +459,17 @@ namespace CAPNUOCTANHOA
 
         }
 
+        private void ToolStripMenuBaoCao_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_Baocao baocao = new frm_Baocao();
+            baocao.Height = PanelContent.Size.Height - 5;
+            baocao.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baocao);
+        }
+
+       
+
         
         
     }
