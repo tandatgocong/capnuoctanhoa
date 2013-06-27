@@ -22,7 +22,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         public static DataTable getBangKeBySoBangKe(string sobangke)
         {
             string sql = "SELECT hd.ID,DHN_DANHBO,DHN_SOBANGKE,CONVERT(VARCHAR(10), DHN_NGAYGHINHAN, 103) AS DHN_NGAYGHINHAN,LOTRINH,SOTHANDH,CODH,HIEUDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_KY,DHN_DOT,DHN_NAM,";
-            sql += "DHN_BAMHI,DHN_CAMKET,DHN_HUYCAMKET,DHN_GHICHU,DHN_TODS,KTKS_NGAYTIEPXUC,KTKS_CAMKET,KTKS_BAMHI,KTKS_NGAYBAMCHI,KTKS_MAKIEMBC,KTKS_TH_HIEU,KTKS_TH_CO,KTKS_TH_SOTHAN,KTKS_TH_CHISO,KTKS_TH_MAKIEM,KTKS_TH_NGAY,KTKS_NHANVIEN,KTKS_GHICHU,KTKS_DONGTIEN";
+            sql += "DHN_BAMHI,DHN_CAMKET,DHN_HUYCAMKET,DHN_GHICHU,DHN_TODS,KTKS_NGAYTIEPXUC,KTKS_CAMKET,KTKS_BAMHI,KTKS_NGAYBAMCHI,KTKS_MAKIEMBC,KTKS_TH_HIEU,KTKS_TH_CO,KTKS_TH_SOTHAN,KTKS_TH_CHISO,KTKS_TH_MAKIEM,KTKS_TH_NGAY,KTKS_NHANVIEN,KTKS_GHICHU,KTKS_DONGTIEN,KTKS_SODON";
             sql += " FROM DK_GIAMHOADON hd,TB_DULIEUKHACHHANG kh WHERE DHN_SOBANGKE='" + sobangke + "' AND kh.DANHBO=hd.DHN_DANHBO ORDER BY DHN_DANHBO ASC";
             return LinQConnection.getDataTable(sql);
         }
@@ -35,7 +35,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         public static DataTable getBangKeBySoDanhBo(string sodanhbo)
         {
             string sql = "SELECT hd.ID,DHN_DANHBO,DHN_SOBANGKE,CONVERT(VARCHAR(10), DHN_NGAYGHINHAN, 103) AS DHN_NGAYGHINHAN,LOTRINH,SOTHANDH,CODH,HIEUDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_KY,DHN_DOT,DHN_NAM,";
-            sql += "DHN_BAMHI,DHN_CAMKET,DHN_HUYCAMKET,DHN_GHICHU,DHN_TODS,KTKS_NGAYTIEPXUC,KTKS_CAMKET,KTKS_BAMHI,KTKS_NGAYBAMCHI,KTKS_MAKIEMBC,KTKS_TH_HIEU,KTKS_TH_CO,KTKS_TH_SOTHAN,KTKS_TH_CHISO,KTKS_TH_MAKIEM,KTKS_TH_NGAY,KTKS_NHANVIEN,KTKS_GHICHU,KTKS_DONGTIEN";
+            sql += "DHN_BAMHI,DHN_CAMKET,DHN_HUYCAMKET,DHN_GHICHU,DHN_TODS,KTKS_NGAYTIEPXUC,KTKS_CAMKET,KTKS_BAMHI,KTKS_NGAYBAMCHI,KTKS_MAKIEMBC,KTKS_TH_HIEU,KTKS_TH_CO,KTKS_TH_SOTHAN,KTKS_TH_CHISO,KTKS_TH_MAKIEM,KTKS_TH_NGAY,KTKS_NHANVIEN,KTKS_GHICHU,KTKS_DONGTIEN,KTKS_SODON";
             sql += " FROM DK_GIAMHOADON hd,TB_DULIEUKHACHHANG kh WHERE DHN_DANHBO='" + sodanhbo + "' AND kh.DANHBO=hd.DHN_DANHBO ORDER BY DHN_DANHBO ASC";
             return LinQConnection.getDataTable(sql);
         }
@@ -48,7 +48,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         public static DataTable getBangKeByNgayYeuCau(DateTime date)
         {
             string sql = "SELECT hd.ID,DHN_DANHBO,DHN_SOBANGKE,CONVERT(VARCHAR(10), DHN_NGAYGHINHAN, 103) AS DHN_NGAYGHINHAN,LOTRINH,SOTHANDH,CODH,HIEUDH,HOTEN,SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_KY,DHN_DOT,DHN_NAM,";
-            sql += "DHN_BAMHI,DHN_CAMKET,DHN_HUYCAMKET,DHN_GHICHU,DHN_TODS,KTKS_NGAYTIEPXUC,KTKS_CAMKET,KTKS_BAMHI,KTKS_NGAYBAMCHI,KTKS_MAKIEMBC,KTKS_TH_HIEU,KTKS_TH_CO,KTKS_TH_SOTHAN,KTKS_TH_CHISO,KTKS_TH_MAKIEM,KTKS_TH_NGAY,KTKS_NHANVIEN,KTKS_GHICHU,KTKS_DONGTIEN";
+            sql += "DHN_BAMHI,DHN_CAMKET,DHN_HUYCAMKET,DHN_GHICHU,DHN_TODS,KTKS_NGAYTIEPXUC,KTKS_CAMKET,KTKS_BAMHI,KTKS_NGAYBAMCHI,KTKS_MAKIEMBC,KTKS_TH_HIEU,KTKS_TH_CO,KTKS_TH_SOTHAN,KTKS_TH_CHISO,KTKS_TH_MAKIEM,KTKS_TH_NGAY,KTKS_NHANVIEN,KTKS_GHICHU,KTKS_DONGTIEN,KTKS_SODON";
             sql += " FROM DK_GIAMHOADON hd,TB_DULIEUKHACHHANG kh WHERE CONVERT(VARCHAR(10), DHN_CREATEDATE, 103)='" + date.ToString("dd/MM/yyyy") + "' AND kh.DANHBO=hd.DHN_DANHBO ORDER BY DHN_DANHBO ASC";
             return LinQConnection.getDataTable(sql);
         }
@@ -91,22 +91,6 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         {
             try
             {
-                //DK_GIAMHOADON hdtam = db.DK_GIAMHOADONs.Single(item => item.ID == hd.ID);
-                //hdtam.KTKS_CAMKET = hd.KTKS_CAMKET;
-                //hdtam.KTKS_GHICHU = hd.KTKS_GHICHU;
-                //hdtam.KTKS_NGAYTIEPXUC = hd.KTKS_NGAYTIEPXUC;
-                //hdtam.KTKS_BAMHI = hd.KTKS_BAMHI;
-                //hdtam.KTKS_MAKIEMBC = hd.KTKS_MAKIEMBC;
-                //hdtam.KTKS_NGAYBAMCHI = hd.KTKS_NGAYBAMCHI;
-                //hdtam.KTKS_TH_MAKIEM = hd.KTKS_TH_MAKIEM;
-                //hdtam.KTKS_TH_HIEU = hd.KTKS_TH_HIEU;
-                //hdtam.KTKS_TH_CO = hd.KTKS_TH_CO;
-                //hdtam.KTKS_TH_SOTHAN = hd.KTKS_TH_SOTHAN;
-                //hdtam.KTKS_TH_CHISO = hd.KTKS_TH_CHISO;
-                //hdtam.KTKS_NHANVIEN = hd.KTKS_NHANVIEN;
-                //hdtam.KTKS_TH_NGAY = hd.KTKS_TH_NGAY;
-                //hdtam.KTKS_MODIFYDATE = hd.KTKS_MODIFYDATE;
-                //hdtam.KTKS_MODIFYBY = hd.KTKS_MODIFYBY;
                 db.SubmitChanges();
                 return true;
             }
@@ -135,6 +119,23 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         public static bool findByDanhBo(string danhbo)
         {
             return db.DK_GIAMHOADONs.Any(item => item.DHN_DANHBO == danhbo);
+        }
+
+        /// <summary>
+        /// Kiểm tra số đơn có trong bảng DK_GIAMHOADON
+        /// </summary>
+        /// <param name="sodon"></param>
+        /// <param name="danhbo"></param>
+        /// <returns></returns>
+        public static bool findBySoDon(string sodon,string danhbo)
+        {
+            return db.DK_GIAMHOADONs.Any(item => item.KTKS_SODON == sodon && item.DHN_DANHBO != danhbo);
+        }
+
+
+        public static string getMaxSoDon()
+        {
+            return db.DK_GIAMHOADONs.Max(item => item.KTKS_SODON);
         }
 
         /// <summary>

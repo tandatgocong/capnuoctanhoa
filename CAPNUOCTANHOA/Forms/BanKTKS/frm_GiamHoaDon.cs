@@ -25,7 +25,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         public frm_GiamHoaDon()
         {
-            InitializeComponent();         
+            InitializeComponent();
         }
 
         #region Method
@@ -98,6 +98,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             txtChiSo.Text = "";
             txtNhanVien.Text = "";
             dateThuHoi.Value = new DateTime();
+            txtSoDon.Text = "";
             selectedindex = -1;
             btncapNhat.Enabled = false;
             radCamKet.Checked = false;
@@ -334,6 +335,10 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     chkDongTien.Checked = true;
                 else
                     chkDongTien.Checked = false;
+                if (dataBangKe["KTKS_SODON", e.RowIndex].Value.ToString() == "")
+                    txtSoDon.Text = (int.Parse(DAL.BANKTKS.C_GiamHoaDon.getMaxSoDon()) + 1).ToString();
+                else
+                    txtSoDon.Text = dataBangKe["KTKS_SODON", e.RowIndex].Value.ToString();
                 //Set
                 selectedindex = e.RowIndex;
                 btncapNhat.Enabled = true;
@@ -385,6 +390,13 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 hd.KTKS_DONGTIEN = true;
             else
                 hd.KTKS_DONGTIEN = false;
+            if (DAL.BANKTKS.C_GiamHoaDon.findBySoDon(txtSoDon.Text.Trim().ToUpper(),txtSoDanhBo.Text.Replace("-","")))
+            {
+                MessageBox.Show("Số Đơn bị trùng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+                hd.KTKS_SODON = txtSoDon.Text.Trim().ToUpper();
             hd.KTKS_NHANVIEN = txtNhanVien.Text.Trim().ToUpper();
             hd.KTKS_MODIFYDATE = DateTime.Now.Date;
             hd.KTKS_MODIFYBY = DAL.SYS.C_USERS._userName;
