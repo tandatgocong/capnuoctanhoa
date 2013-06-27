@@ -24088,6 +24088,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private System.Nullable<bool> _KTKS_DONGTIEN;
 		
+		private string _KTKS_SODON;
+		
 		private System.Nullable<System.DateTime> _KTKS_MODIFYDATE;
 		
 		private string _KTKS_MODIFYBY;
@@ -24160,6 +24162,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnKTKS_GHICHUChanged();
     partial void OnKTKS_DONGTIENChanging(System.Nullable<bool> value);
     partial void OnKTKS_DONGTIENChanged();
+    partial void OnKTKS_SODONChanging(string value);
+    partial void OnKTKS_SODONChanged();
     partial void OnKTKS_MODIFYDATEChanging(System.Nullable<System.DateTime> value);
     partial void OnKTKS_MODIFYDATEChanged();
     partial void OnKTKS_MODIFYBYChanging(string value);
@@ -24807,6 +24811,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._KTKS_DONGTIEN = value;
 					this.SendPropertyChanged("KTKS_DONGTIEN");
 					this.OnKTKS_DONGTIENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KTKS_SODON", DbType="VarChar(20)")]
+		public string KTKS_SODON
+		{
+			get
+			{
+				return this._KTKS_SODON;
+			}
+			set
+			{
+				if ((this._KTKS_SODON != value))
+				{
+					this.OnKTKS_SODONChanging(value);
+					this.SendPropertyChanging();
+					this._KTKS_SODON = value;
+					this.SendPropertyChanged("KTKS_SODON");
+					this.OnKTKS_SODONChanged();
 				}
 			}
 		}

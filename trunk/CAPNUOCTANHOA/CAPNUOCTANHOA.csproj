@@ -615,7 +615,6 @@
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\BC\BaoCaoHD0.cs">
       <DependentUpon>BaoCaoHD0.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\BC\BaoCaoHD0.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -677,7 +676,6 @@
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\BC\TONGSL.cs">
       <DependentUpon>TONGSL.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\BC\TONGSL.Designer.cs">
       <AutoGen>True</AutoGen>
