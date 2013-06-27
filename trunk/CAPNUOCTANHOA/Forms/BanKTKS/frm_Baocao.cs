@@ -339,5 +339,20 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         {
 
         }
+
+        private void tabControl3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_HuyCamKet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgv_KTKSCamKet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
