@@ -447,31 +447,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         private void btnInDSThuHoi_Click(object sender, EventArgs e)
         {
-            DataTable dt = DAL.BANKTKS.C_GiamHoaDon.getDSThuHoi();
-            if (dt.Rows.Count > 0)
-            {
-                DataSetktks ds = new DataSetktks();
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    DataRow dr = ds.Tables["DSThuHoi"].NewRow();
-                    dr["DHN_STT"] = i + 1;
-                    dr["DHN_DANHBO"] = dt.Rows[i]["DHN_DANHBO"].ToString();
-                    dr["HOTEN"] = dt.Rows[i]["HOTEN"].ToString();
-                    dr["DIACHI"] = dt.Rows[i]["DIACHI"].ToString();
-                    dr["HOPDONG"] = dt.Rows[i]["HOPDONG"].ToString();
-                    dr["KTKS_TH_HIEU"] = dt.Rows[i]["KTKS_TH_HIEU"].ToString();
-                    dr["KTKS_TH_CO"] = dt.Rows[i]["KTKS_TH_CO"].ToString();
-                    dr["KTKS_TH_SOTHAN"] = dt.Rows[i]["KTKS_TH_SOTHAN"].ToString();
-                    dr["KTKS_TH_CHISO"] = dt.Rows[i]["KTKS_TH_CHISO"].ToString();
-                    dr["KTKS_TH_MAKIEM"] = dt.Rows[i]["KTKS_TH_MAKIEM"].ToString();
-                    dr["KTKS_TH_NGAY"] = dt.Rows[i]["KTKS_TH_NGAY"].ToString();
-                    ds.Tables["DSThuHoi"].Rows.Add(dr);
-                }
-                rpt_DSThuHoi rp = new rpt_DSThuHoi();
-                rp.SetDataSource(ds);
-                frm_Reports frm = new frm_Reports(rp);
-                frm.ShowDialog();
-            }
+            frm_InDSThuHoi frm = new frm_InDSThuHoi();
+            frm.ShowDialog();
         }
 
         private void btnXoaBamChi_Click(object sender, EventArgs e)
