@@ -336,7 +336,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 else
                     chkDongTien.Checked = false;
                 if (dataBangKe["KTKS_SODON", e.RowIndex].Value.ToString() == "")
-                    txtSoDon.Text = (int.Parse(DAL.BANKTKS.C_GiamHoaDon.getMaxSoDon()) + 1).ToString();
+                    txtSoDon.Text = (DAL.BANKTKS.C_GiamHoaDon.getMaxSoDon() + 1).ToString();
                 else
                     txtSoDon.Text = dataBangKe["KTKS_SODON", e.RowIndex].Value.ToString();
                 //Set
@@ -390,13 +390,13 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 hd.KTKS_DONGTIEN = true;
             else
                 hd.KTKS_DONGTIEN = false;
-            if (DAL.BANKTKS.C_GiamHoaDon.findBySoDon(txtSoDon.Text.Trim().ToUpper(),txtSoDanhBo.Text.Replace("-","")))
+            if (DAL.BANKTKS.C_GiamHoaDon.findBySoDon(int.Parse(txtSoDon.Text.Trim().ToUpper()),txtSoDanhBo.Text.Replace("-","")))
             {
                 MessageBox.Show("Số Đơn bị trùng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
-                hd.KTKS_SODON = txtSoDon.Text.Trim().ToUpper();
+                hd.KTKS_SODON = int.Parse(txtSoDon.Text.Trim().ToUpper());
             hd.KTKS_NHANVIEN = txtNhanVien.Text.Trim().ToUpper();
             hd.KTKS_MODIFYDATE = DateTime.Now.Date;
             hd.KTKS_MODIFYBY = DAL.SYS.C_USERS._userName;

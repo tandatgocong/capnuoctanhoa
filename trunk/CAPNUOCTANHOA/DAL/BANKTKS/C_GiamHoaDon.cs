@@ -127,7 +127,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         /// <param name="sodon"></param>
         /// <param name="danhbo"></param>
         /// <returns></returns>
-        public static bool findBySoDon(string sodon,string danhbo)
+        public static bool findBySoDon(int sodon,string danhbo)
         {
             return db.DK_GIAMHOADONs.Any(item => item.KTKS_SODON == sodon && item.DHN_DANHBO != danhbo);
         }
@@ -136,9 +136,9 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         /// Lấy Số Đơn lớn nhất
         /// </summary>
         /// <returns></returns>
-        public static string getMaxSoDon()
+        public static int getMaxSoDon()
         {
-            return db.DK_GIAMHOADONs.Max(item => item.KTKS_SODON);
+            return Convert.ToInt32(db.DK_GIAMHOADONs.Max(item=>item.KTKS_SODON));
         }
 
         /// <summary>
