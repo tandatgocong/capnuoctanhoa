@@ -159,7 +159,7 @@ namespace CAPNUOCTANHOA.LinQ
     #endregion
 		
 		public CapNuocTanHoaDataContext() : 
-				base(global::CAPNUOCTANHOA.Properties.Settings.Default.CAPNUOCTANHOAConnectionString, mappingSource)
+				base(global::CAPNUOCTANHOA.Properties.Settings.Default.CAPNUOCTANHOAConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -24088,7 +24088,7 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private System.Nullable<bool> _KTKS_DONGTIEN;
 		
-		private string _KTKS_SODON;
+		private System.Nullable<int> _KTKS_SODON;
 		
 		private System.Nullable<System.DateTime> _KTKS_MODIFYDATE;
 		
@@ -24162,7 +24162,7 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnKTKS_GHICHUChanged();
     partial void OnKTKS_DONGTIENChanging(System.Nullable<bool> value);
     partial void OnKTKS_DONGTIENChanged();
-    partial void OnKTKS_SODONChanging(string value);
+    partial void OnKTKS_SODONChanging(System.Nullable<int> value);
     partial void OnKTKS_SODONChanged();
     partial void OnKTKS_MODIFYDATEChanging(System.Nullable<System.DateTime> value);
     partial void OnKTKS_MODIFYDATEChanged();
@@ -24815,8 +24815,8 @@ namespace CAPNUOCTANHOA.LinQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KTKS_SODON", DbType="VarChar(20)")]
-		public string KTKS_SODON
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KTKS_SODON", DbType="Int")]
+		public System.Nullable<int> KTKS_SODON
 		{
 			get
 			{
