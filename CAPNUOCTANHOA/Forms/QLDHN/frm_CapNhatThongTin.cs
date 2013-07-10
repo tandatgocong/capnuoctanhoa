@@ -13,6 +13,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
+using System.Configuration;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -30,6 +31,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.txtNam.Text = DateTime.Now.Year.ToString();
             cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
             cbDotDS.SelectedIndex = 1;
+
+            this.cnNam.Text = DateTime.Now.Year.ToString();
+            cnKy.SelectedIndex = DateTime.Now.Month - 1;
+            chDot.SelectedIndex = 1;
+
 
             this.qlNam.Text = DateTime.Now.Year.ToString();
             qlKy.SelectedIndex = DateTime.Now.Month - 1;
@@ -669,6 +675,58 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string SQL = " SELECT (CONVERT(VARCHAR,[KY])+'/'+CONVERT(VARCHAR,[NAM])) AS HL,LTCU,LTMOI FROM [CAPNUOCTANHOA].[dbo].[TB_YEUCAUDC]  WHERE DANHBO='" + txtSoDanhBo.Text.Replace("-", "").Replace(" ", "") + "'";
                 dataGridView3.DataSource = DAL.LinQConnection.getDataTable(SQL);
             }
+        }
+
+        public void LoadGieng() {
+            string dot = chDot.Items[chDot.SelectedIndex].ToString();
+            string ky = cnKy.Items[cnKy.SelectedIndex].ToString();
+            string nam = cnNam.Text.Trim();            
+            string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
+            sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
+            sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND ds.DOT=" + int.Parse(dot) + "  AND GHICHUMOI LIKE N'%GIẾ%' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
+            dataGridView4.DataSource=  DAL.LinQConnection.getDataTable(sql);
+             
+        }
+        public int CapNhatGhiChu() {
+            string dot = chDot.Items[chDot.SelectedIndex].ToString();
+            string ky = cnKy.Items[cnKy.SelectedIndex].ToString();
+            string nam = cnNam.Text.Trim();
+            string sql = "UPDATE DocSo_PHT.dbo.DS" + nam + " SET GHICHUMOI =N'" + this.txtGhiChuMoi.Text + "' WHERE DANHBA='" + this.txtDanhBo.Text.Replace("-","") + "' AND  KY=" + int.Parse(ky) + " AND DOT=" + int.Parse(dot);
+            return DAL.LinQConnectionDS.ExecuteCommand(sql);
+        }
+
+
+
+        private void txtDanhBo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtGhiChuMoi.Focus();
+            }
+            
+        }
+
+        private void txtGhiChuMoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                if (CapNhatGhiChu() > 0)
+                {
+                    LoadGieng();
+                    this.txtDanhBo.Text = "";                    
+                    txtDanhBo.Focus();
+                    this.txtGhiChuMoi.Text = ConfigurationManager.AppSettings["txtGhiChuMoi"].ToString() + "/";
+                }
+                else
+                {
+                    MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tabItem6_Click(object sender, EventArgs e)
+        {
+            LoadGieng();
         }
     }
 }

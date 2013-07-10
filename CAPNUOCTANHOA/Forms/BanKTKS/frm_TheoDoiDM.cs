@@ -36,6 +36,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             dateNgayKy.Value = DateTime.Now.Date;
             dateNgayHetHan.Value = DateTime.Now.Date;
             searchDate.Value = DateTime.Now.Date;
+            txtNam.Text = DateTime.Now.Date.Year + "";
             //  dateNgayGan.Value = DateTime.Now.Date;
             LoadData();
             cbLoaiChungTu.DataSource = DAL.LinQConnection.getDataTable("SELECT * FROM KTKS_LOAICHUNGTU ");
@@ -113,6 +114,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 string SOPHIEUYC = dataBangKe.Rows[e.RowIndex].Cells["SOPHIEUYC"].Value + "";
                 string GHICHU = dataBangKe.Rows[e.RowIndex].Cells["GHICHU"].Value + "";
 
+                this.lbID.Text = ID; 
                 this.txtSoDanhBo.Text = G_DANHBO.Replace(" ", "");
                 this.txtID.Text = ID;
                 txtTenKH.Text = G_TENKH;
@@ -458,6 +460,10 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     }
                     else if (cbTypeView.SelectedIndex == 5)
                     {
+                        sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) > 0 AND MONTH(NGAYHETHAN)=  '" + this.searchText.Text + "' AND YEAR(NGAYHETHAN)=" + this.txtNam.Text;
+                    }
+                    else if (cbTypeView.SelectedIndex == 6)
+                    {
                         sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) > 0";
                     }
 
@@ -507,7 +513,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     this.searchText.Visible = true;
                     this.searchDate.Visible = false;
                     this.searchText.Text = DateTime.Now.Month.ToString();
-                    sql += " AND MONTH(NGAYDK)=  '" + this.searchText.Text + "' ";
+                    sql += " AND MONTH(NGAYDK)=  '" + this.searchText.Text + "' AND YEAR(NGAYDK)=" + this.txtNam.Text;
                 }
                 else if (cbTypeView.SelectedIndex == 3)
                 {
@@ -528,8 +534,18 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 else if (cbTypeView.SelectedIndex == 5)
                 {
                     btXoaHetHan.Visible = true;
+                    this.searchText.Visible = true;
+                    this.searchDate.Visible = false;
+                    this.searchText.Text = DateTime.Now.Month.ToString();
+                    sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) > 0 AND MONTH(NGAYHETHAN)=  '" + this.searchText.Text + "' AND YEAR(NGAYHETHAN)=" + this.txtNam.Text;
+                }
+
+                else if (cbTypeView.SelectedIndex == 6)
+                {
+                    btXoaHetHan.Visible = true;
                     sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) > 0";
                 }
+
                 sql += " ORDER BY dm.NGAYDK DESC ";
                 dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
                 sql_report = sql;
@@ -577,6 +593,45 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 setSTT();
                 sql_report = sql;
             }
+        }
+
+        private void btCapNhat_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+                KTKS_THEODOIDM gb = DAL.BANKTKS.C_TheoDoiDM.findThongTiDMbyID(int.Parse(this.lbID.Text));
+                if (gb != null) { 
+                    gb.DANHBO = sodanhbo;
+                    gb.LOAICT = this.cbLoaiChungTu.SelectedValue.ToString();
+                    gb.SOPHIEUYC = this.txtSoPhieu.Text;
+                    gb.HIEULUC = this.txtHieuLuc.Text;
+                    gb.DMCU = this.txtDMCu.Text;
+                    gb.DMMOI = this.txtDMMoi.Text;
+                    gb.NGAYDK = this.dateNgayKy.Value;
+                    gb.NGAYHETHAN = this.dateNgayHetHan.Value;
+                    gb.GHICHU = this.txtGhiChu.Text;
+                    gb.DIENTHOAI = this.txtDienThoai.Text;
+                    gb.CREATEBY = DAL.SYS.C_USERS._userName;
+                    gb.CREATEDATE = DateTime.Now.Date;
+                    if (DAL.BANKTKS.C_TheoDoiDM.Update())
+                    {
+                        MessageBox.Show(this, "Cập Nhật Thông Tin ĐM Thành Công ! ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cbTypeView_SelectedIndexChanged(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "Cập Nhật  Thông Tin ĐM Thất Bại ! ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+           
+                
+            
         }
     }
 }

@@ -23,7 +23,7 @@
               <Mapping SourceColumn="LOAICT" DataSetColumn="LOAICT" />
               <Mapping SourceColumn="NGAYDK" DataSetColumn="NGAYDK" />
               <Mapping SourceColumn="NGAYHETHAN" DataSetColumn="NGAYHETHAN" />
-              <Mapping SourceColumn="SONGAY" DataSetColumn="SONGAY" />
+              <Mapping SourceColumn="SONGAY" DataSetColumn="SOPHIEUYC" />
               <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
               <Mapping SourceColumn="DIACHI" DataSetColumn="DIACHI" />
               <Mapping SourceColumn="HOPDONG" DataSetColumn="HOPDONG" />
@@ -62,7 +62,7 @@
               </xs:element>
               <xs:element name="NGAYDK" msprop:Generator_ColumnVarNameInTable="columnNGAYDK" msprop:Generator_ColumnPropNameInRow="NGAYDK" msprop:Generator_ColumnPropNameInTable="NGAYDKColumn" msprop:Generator_UserColumnName="NGAYDK" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAYHETHAN" msprop:Generator_ColumnVarNameInTable="columnNGAYHETHAN" msprop:Generator_ColumnPropNameInRow="NGAYHETHAN" msprop:Generator_ColumnPropNameInTable="NGAYHETHANColumn" msprop:Generator_UserColumnName="NGAYHETHAN" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="SONGAY" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSONGAY" msprop:Generator_ColumnPropNameInRow="SONGAY" msprop:Generator_ColumnPropNameInTable="SONGAYColumn" msprop:Generator_UserColumnName="SONGAY" type="xs:int" minOccurs="0" />
+              <xs:element name="SOPHIEUYC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSOPHIEUYC" msprop:Generator_ColumnPropNameInRow="SOPHIEUYC" msprop:Generator_ColumnPropNameInTable="SOPHIEUYCColumn" msprop:Generator_UserColumnName="SOPHIEUYC" type="xs:string" minOccurs="0" />
               <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
