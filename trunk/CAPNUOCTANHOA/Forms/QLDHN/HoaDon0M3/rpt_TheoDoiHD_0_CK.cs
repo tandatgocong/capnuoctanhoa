@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
+namespace CAPNUOCTANHOA.Forms.QLDHN.HoaDon0M3 {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_BCTheoDoiHD_0_SoBangKe : ReportClass {
+    public class rpt_TheoDoiHD_0_CK : ReportClass {
         
-        public rpt_BCTheoDoiHD_0_SoBangKe() {
+        public rpt_TheoDoiHD_0_CK() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_BCTheoDoiHD_0_SoBangKe.rpt";
+                return "rpt_TheoDoiHD_0_CK.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.BC.rpt_BCTheoDoiHD_0_SoBangKe.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.HoaDon0M3.rpt_TheoDoiHD_0_CK.rpt";
             }
             set {
                 // Do nothing
@@ -90,57 +90,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Ky {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.Shared.IParameterField Parameter_bangke {
             get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_TUNGAY {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DENNGAY {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_countcamket {
-            get {
-                return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_countbamchi {
-            get {
-                return this.DataDefinition.ParameterFields[5];
+                return this.DataDefinition.ParameterFields[0];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_BCTheoDoiHD_0_SoBangKe : Component, ICachedReport {
+    public class Cachedrpt_TheoDoiHD_0_CK : Component, ICachedReport {
         
-        public Cachedrpt_BCTheoDoiHD_0_SoBangKe() {
+        public Cachedrpt_TheoDoiHD_0_CK() {
         }
         
         [Browsable(false)]
@@ -177,7 +137,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_BCTheoDoiHD_0_SoBangKe rpt = new rpt_BCTheoDoiHD_0_SoBangKe();
+            rpt_TheoDoiHD_0_CK rpt = new rpt_TheoDoiHD_0_CK();
             rpt.Site = this.Site;
             return rpt;
         }

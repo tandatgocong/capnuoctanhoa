@@ -112,7 +112,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     sql1 += " WHERE  CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
                     sql1 += "GROUP BY ghd.DHN_SOBANGKE,ghd.KTKS_BAMHI,ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC";
 
-
+                   
                     string sql_camket = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STT,ghd.DHN_SOBANGKE,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CAMKET,ghd.DHN_GHICHU";
                     sql_camket += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
                     sql_camket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_CAMKET <>'' or ghd.DHN_CAMKET is not null )  AND CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
@@ -208,6 +208,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     sql1 += " WHERE  ghd.DHN_SOBANGKE='" + txtSoBangKe.Text  + "'";
                     sql1 += "GROUP BY ghd.DHN_SOBANGKE,ghd.KTKS_BAMHI,ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC";
 
+
                     string sql_camket = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STT,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CAMKET,ghd.DHN_GHICHU";
                     sql_camket += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
                     sql_camket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_CAMKET <>'' or ghd.DHN_CAMKET is not null )  AND ghd.DHN_SOBANGKE='" +txtSoBangKe.Text + "'ORDER BY DHN_DANHBO ASC";
@@ -281,7 +282,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     dataTongKet.Rows[0].Cells["KTKS_DI"].Value = sum_DI.ToString();
                     
                 }
-
+                else if (tabItem5.IsSelected == true)
+                {
+                    string sql = "select convert (int,DHN_DOT) as 'DHN_DOT' ,count (DHN_DANHBO) as 'TONGCONG' , COUNT (case when DHN_CAMKET<> '' and DHN_CAMKET is not null then 1 end) as 'DHN_CAMKET',COUNT (case when DHN_BAMHI='X' or DHN_BAMHI='x' then 1 end)as 'DHN_BAMHI',COUNT (DHN_GANMOI) as 'DHN_GANMOI' , COUNT (DHN_CHUADANHDAU) as 'DHN_CHUADANHDAU' ";
+                    sql += "from DK_GIAMHOADON ";
+                    sql += "where DHN_KY ='" + cbKy.SelectedIndex + "'";
+                    sql += "GROUP BY DHN_DOT ";
+                    sql += "ORDER BY DHN_DOT ASC";
+                    DataTable dt = DAL.LinQConnection.getDataTable(sql);
+                    dataTheoKy.DataSource = dt;
+                    Utilities.DataGridV.formatRows(dataTheoKy);
+                    
+                
+                                
+                }
                
             }
             catch (Exception ex)
@@ -382,6 +396,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             string type = dt.Rows[0]["DHN_CAMKET"].GetType().ToString();
             dt.TableName = "BAOCAOHD0";
             ds.Tables["BAOCAOHD0"].Merge(dt);
+            string countcamket = dataTongKet.Rows[0].Cells["DHN_CAMKET"].Value.ToString();
+            string countbamchi = dataTongKet.Rows[0].Cells["DHN_BAMHI"].Value.ToString();
+        
+       
             //set dataset to the report viewer.
             //int i=0;
             if (tabControl1.SelectedTabIndex == 0)
@@ -389,15 +407,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 rptDoc.SetDataSource(ds);
                 rptDoc.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(dateTuNgay));
                 rptDoc.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(dateDenNgay));
-
+                rptDoc.SetParameterValue("countcamket", countcamket);
+                rptDoc.SetParameterValue("countbamchi", countbamchi);
                 frm_Reports frm = new frm_Reports(rptDoc);
                 frm.Show();
 
             }
             else
             {
+               
                 rptDoc_bangke.SetDataSource(ds);
                 rptDoc_bangke.SetParameterValue("bangke", txtSoBangKe.Text);
+                rptDoc_bangke.SetParameterValue("countcamket",countcamket);
+                rptDoc_bangke.SetParameterValue("countbamchi", countbamchi);
+                
 
                 frm_Reports frm = new frm_Reports(rptDoc_bangke);
                 frm.Show();
@@ -438,6 +461,32 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
         private void tab_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnInTheoKy_Click(object sender, EventArgs e)
+        {
+            ReportDocument rptSL = new rpt_BCTheoDoiHD_0Theoky();
+      
+            DataTable dt = new DataTable();
+            BCTHEOKY bcky = new BCTHEOKY();
+         
+            dt = GetDataTableFromDGV(dataTheoKy);
+            //string ss = dt.Rows[0]["DHN_DOT"].GetType().ToString();
+            dt.TableName = "BCTHEOKY";
+
+            bcky.Tables["BCTHEOKY"].Merge(dt);
+            //set dataset to the report viewer.
+
+           
+                rptSL.SetDataSource(bcky);
+                
+                rptSL.SetParameterValue("Ky", cbKy.SelectedIndex);
+
+                frm_Reports frm = new frm_Reports(rptSL);
+                frm.Show();
+
+
 
         }
     }

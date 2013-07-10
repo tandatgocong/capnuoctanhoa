@@ -496,11 +496,23 @@
     <Compile Include="Forms\QLDHN\frm_PhieuKiemTra.Designer.cs">
       <DependentUpon>frm_PhieuKiemTra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\frm_TheoDoiCamKet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_TheoDoiCamKet.Designer.cs">
+      <DependentUpon>frm_TheoDoiCamKet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\frm_TheoDoiHD=0.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\QLDHN\frm_TheoDoiHD=0.designer.cs">
       <DependentUpon>frm_TheoDoiHD=0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\HoaDon0M3\rpt_TheoDoiHD_0_CK.cs">
+      <DependentUpon>rpt_TheoDoiHD_0_CK.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Forms\QLDHN\HoaDon0M3\DATASET_DK_GIAMHOADON_.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -631,6 +643,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BAOCAOTHONGKE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\BCTHEOKY.cs">
+      <DependentUpon>BCTHEOKY.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\BCTHEOKY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BCTHEOKY.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\BC\rpt_BCTheoDoiHD_0Theoky.cs">
+      <DependentUpon>rpt_BCTheoDoiHD_0Theoky.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\BC\rpt_BCTheoDoiHD_0_SoBangKe.cs">
       <DependentUpon>rpt_BCTheoDoiHD_0_SoBangKe.rpt</DependentUpon>
@@ -1303,6 +1330,17 @@
     <None Include="Forms\QLDHN\Tab\BC\BAOCAOTHONGKE.xss">
       <DependentUpon>BAOCAOTHONGKE.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\Tab\BC\BCTHEOKY.xsc">
+      <DependentUpon>BCTHEOKY.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\Tab\BC\BCTHEOKY.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BCTHEOKY.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\Tab\BC\BCTHEOKY.xss">
+      <DependentUpon>BCTHEOKY.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\Tab\BC\TONGSL.xsc">
       <DependentUpon>TONGSL.xsd</DependentUpon>
     </None>
@@ -1554,8 +1592,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DongHoHieuCu.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_TheoDoiCamKet.resx">
+      <DependentUpon>frm_TheoDoiCamKet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_TheoDoiHD=0.resx">
       <DependentUpon>frm_TheoDoiHD=0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\HoaDon0M3\rpt_TheoDoiHD_0_CK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TheoDoiHD_0_CK.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\HoaDon0M3\rpt_KhongCamKetSD_T.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1615,6 +1660,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\AA_tab_ThongKeDHN.resx">
       <DependentUpon>AA_tab_ThongKeDHN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_BCTheoDoiHD_0Theoky.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BCTheoDoiHD_0Theoky.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_BCTheoDoiHD_0_SoBangKe.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
