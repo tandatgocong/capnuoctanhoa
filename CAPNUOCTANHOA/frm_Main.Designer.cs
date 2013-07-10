@@ -87,6 +87,7 @@
             this.menuTheoDoiDM = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuBaoCao = new System.Windows.Forms.ToolStripMenuItem();
+            this.theoDõiCamKếtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel7 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip7 = new System.Windows.Forms.MenuStrip();
             this.toolDongNuoc = new System.Windows.Forms.ToolStripMenuItem();
@@ -675,7 +676,8 @@
             this.menuInPhieuTieuTHu,
             this.menuTheoDoiDM,
             this.toolStripMenuItem3,
-            this.ToolStripMenuBaoCao});
+            this.ToolStripMenuBaoCao,
+            this.theoDõiCamKếtToolStripMenuItem});
             this.menuStrip5.Location = new System.Drawing.Point(3, 0);
             this.menuStrip5.Name = "menuStrip5";
             this.menuStrip5.Size = new System.Drawing.Size(1172, 27);
@@ -746,6 +748,13 @@
             this.ToolStripMenuBaoCao.Size = new System.Drawing.Size(95, 23);
             this.ToolStripMenuBaoCao.Text = "Báo Cáo";
             this.ToolStripMenuBaoCao.Click += new System.EventHandler(this.ToolStripMenuBaoCao_Click);
+            // 
+            // theoDõiCamKếtToolStripMenuItem
+            // 
+            this.theoDõiCamKếtToolStripMenuItem.Name = "theoDõiCamKếtToolStripMenuItem";
+            this.theoDõiCamKếtToolStripMenuItem.Size = new System.Drawing.Size(147, 23);
+            this.theoDõiCamKếtToolStripMenuItem.Text = "Theo Dõi Cam Kết";
+            this.theoDõiCamKếtToolStripMenuItem.Click += new System.EventHandler(this.theoDõiCamKếtToolStripMenuItem_Click);
             // 
             // ribbonPanel7
             // 
@@ -1211,6 +1220,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem mnHoaDon0;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuBaoCao;
+        private System.Windows.Forms.ToolStripMenuItem theoDõiCamKếtToolStripMenuItem;
 
 
     }

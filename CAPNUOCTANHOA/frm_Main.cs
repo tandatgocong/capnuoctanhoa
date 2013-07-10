@@ -468,6 +468,15 @@ namespace CAPNUOCTANHOA
             PanelContent.Controls.Add(baocao);
         }
 
+        private void theoDõiCamKếtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_TheoDoiCamKet camket = new frm_TheoDoiCamKet();
+            camket.Height = PanelContent.Size.Height - 5;
+            camket.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(camket);
+        }
+
        
 
         

@@ -159,7 +159,7 @@ namespace CAPNUOCTANHOA.LinQ
     #endregion
 		
 		public CapNuocTanHoaDataContext() : 
-				base(global::CAPNUOCTANHOA.Properties.Settings.Default.CAPNUOCTANHOAConnectionString, mappingSource)
+				base(global::CAPNUOCTANHOA.Properties.Settings.Default.CAPNUOCTANHOAConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -24086,13 +24086,15 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private string _KTKS_GHICHU;
 		
+		private System.Nullable<System.DateTime> _KTKS_MODIFYDATE;
+		
+		private string _KTKS_MODIFYBY;
+		
 		private System.Nullable<bool> _KTKS_DONGTIEN;
 		
 		private System.Nullable<int> _KTKS_SODON;
 		
-		private System.Nullable<System.DateTime> _KTKS_MODIFYDATE;
-		
-		private string _KTKS_MODIFYBY;
+		private string _DHN_GANMOI;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -24160,14 +24162,16 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnKTKS_NHANVIENChanged();
     partial void OnKTKS_GHICHUChanging(string value);
     partial void OnKTKS_GHICHUChanged();
-    partial void OnKTKS_DONGTIENChanging(System.Nullable<bool> value);
-    partial void OnKTKS_DONGTIENChanged();
-    partial void OnKTKS_SODONChanging(System.Nullable<int> value);
-    partial void OnKTKS_SODONChanged();
     partial void OnKTKS_MODIFYDATEChanging(System.Nullable<System.DateTime> value);
     partial void OnKTKS_MODIFYDATEChanged();
     partial void OnKTKS_MODIFYBYChanging(string value);
     partial void OnKTKS_MODIFYBYChanged();
+    partial void OnKTKS_DONGTIENChanging(System.Nullable<bool> value);
+    partial void OnKTKS_DONGTIENChanged();
+    partial void OnKTKS_SODONChanging(System.Nullable<int> value);
+    partial void OnKTKS_SODONChanged();
+    partial void OnDHN_GANMOIChanging(string value);
+    partial void OnDHN_GANMOIChanged();
     #endregion
 		
 		public DK_GIAMHOADON()
@@ -24795,6 +24799,46 @@ namespace CAPNUOCTANHOA.LinQ
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KTKS_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> KTKS_MODIFYDATE
+		{
+			get
+			{
+				return this._KTKS_MODIFYDATE;
+			}
+			set
+			{
+				if ((this._KTKS_MODIFYDATE != value))
+				{
+					this.OnKTKS_MODIFYDATEChanging(value);
+					this.SendPropertyChanging();
+					this._KTKS_MODIFYDATE = value;
+					this.SendPropertyChanged("KTKS_MODIFYDATE");
+					this.OnKTKS_MODIFYDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KTKS_MODIFYBY", DbType="NVarChar(100)")]
+		public string KTKS_MODIFYBY
+		{
+			get
+			{
+				return this._KTKS_MODIFYBY;
+			}
+			set
+			{
+				if ((this._KTKS_MODIFYBY != value))
+				{
+					this.OnKTKS_MODIFYBYChanging(value);
+					this.SendPropertyChanging();
+					this._KTKS_MODIFYBY = value;
+					this.SendPropertyChanged("KTKS_MODIFYBY");
+					this.OnKTKS_MODIFYBYChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KTKS_DONGTIEN", DbType="Bit")]
 		public System.Nullable<bool> KTKS_DONGTIEN
 		{
@@ -24835,42 +24879,22 @@ namespace CAPNUOCTANHOA.LinQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KTKS_MODIFYDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> KTKS_MODIFYDATE
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHN_GANMOI", DbType="NVarChar(100)")]
+		public string DHN_GANMOI
 		{
 			get
 			{
-				return this._KTKS_MODIFYDATE;
+				return this._DHN_GANMOI;
 			}
 			set
 			{
-				if ((this._KTKS_MODIFYDATE != value))
+				if ((this._DHN_GANMOI != value))
 				{
-					this.OnKTKS_MODIFYDATEChanging(value);
+					this.OnDHN_GANMOIChanging(value);
 					this.SendPropertyChanging();
-					this._KTKS_MODIFYDATE = value;
-					this.SendPropertyChanged("KTKS_MODIFYDATE");
-					this.OnKTKS_MODIFYDATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KTKS_MODIFYBY", DbType="NVarChar(100)")]
-		public string KTKS_MODIFYBY
-		{
-			get
-			{
-				return this._KTKS_MODIFYBY;
-			}
-			set
-			{
-				if ((this._KTKS_MODIFYBY != value))
-				{
-					this.OnKTKS_MODIFYBYChanging(value);
-					this.SendPropertyChanging();
-					this._KTKS_MODIFYBY = value;
-					this.SendPropertyChanged("KTKS_MODIFYBY");
-					this.OnKTKS_MODIFYBYChanged();
+					this._DHN_GANMOI = value;
+					this.SendPropertyChanged("DHN_GANMOI");
+					this.OnDHN_GANMOIChanged();
 				}
 			}
 		}

@@ -295,6 +295,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 cbKy.SelectedIndex = 0;
                 cbKy.Visible = true;
                 checkBoxBamChi.Checked = false;
+                checkGanMoi.Checked = false;
             }
             else
             {
@@ -330,6 +331,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 huycamket = "X";
             }
+            string ganmoi = "";
+            if (checkGanMoi.Checked == true)
+            {
+                ganmoi = "X";
+            }
+
             //if (checkBoxBamChi.Checked == false && chk_CamKet.Checked == false)
             //{
             //    if (txtGhiChu.Text == "")
@@ -354,7 +361,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string chisoky = cbChiSoKy.Text;
             string dot = cbDot.Text;
             int kq = 0;
-            kq = DAL.QLDHN.C_HoaDon_0.UpdateSoBangKe(danhbo, sobangke, ngayghinhan, nam, tods, ghichu, bamchi, ky, dot, chisoky, huycamket);
+            kq = DAL.QLDHN.C_HoaDon_0.UpdateSoBangKe(danhbo, sobangke, ngayghinhan, nam, tods, ghichu, bamchi, ky, dot, chisoky, huycamket,ganmoi);
             if (kq > 0)
             {
                 MessageBox.Show("Đã cập nhật thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -386,6 +393,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string dhn_bamchi = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_BAMHI"].Value + "";
                 string dhn_camketsudung = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_CAMKET"].Value + "";
                 string dhn_huycamket = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_HUYCAMKET"].Value + "";
+                string dhn_ganmoi = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_GANMOI"].Value + "";
                 string DHN_GHICHU = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_GHICHU"].Value + "";
                 DateTime Ngayghinhan;
                 Ngayghinhan = DateTime.Parse(DHN_NGAYGHINHANs);
@@ -434,6 +442,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 else if (dhn_huycamket != "X")
                 {
                     checkBoxHUYCAMKET.Checked = false;
+                }
+                if (dhn_ganmoi == "X")
+                {
+                    checkGanMoi.Checked = true;
+
+                }
+                else if (dhn_ganmoi != "X")
+                {
+                    checkGanMoi.Checked = false;
                 }
                 try
                 {
@@ -491,7 +508,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 DHN_Giam.DHN_HUYCAMKET = "X";
             }
-
+            DHN_Giam.DHN_GANMOI = null;
+            if (checkGanMoi.Checked == true)
+            {
+                DHN_Giam.DHN_GANMOI = "X";
+            }
             DHN_Giam.DHN_CHUADANHDAU = null;
             if (checkChuaDanhDau.Checked == true)
             {
@@ -513,9 +534,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string danhbo = txtSoDanhBo.Text.Replace("-", "");
                 //string mess = "Thêm Cho Danh Bộ  " + danhbo;
 
-                if (checkBoxBamChi.Checked == true && chk_CamKet.Checked == true)
+                if (checkBoxBamChi.Checked == true && chk_CamKet.Checked == true && checkGanMoi.Checked ==true)
                 {
-                    MessageBox.Show("Không thể thêm sử dụng cam kết và bấm chì cùng lúc", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không thể thêm sử dụng cam kết và bấm chì và gắn mới cùng lúc", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -589,6 +610,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
 
             ReportDocument rptDoc = new rpt_TheoDoiHD_0();
+            ReportDocument rptck = new rpt_TheoDoiHD_0_CK();
             DataTable dt = new DataTable();
             DATASET_DK_GIAMHOADON_ ds = new DATASET_DK_GIAMHOADON_();
 
@@ -616,12 +638,27 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             ds.Tables["TABLEHD"].Merge(dtfilter);
             //set dataset to the report viewer.
-            rptDoc.SetDataSource(ds);
-            //rptDoc.SetParameterValue("Ky", cbChiSoKy.Text);
-            rptDoc.SetParameterValue("bangke",txtSoBangKe_Thongtin.Text);
+            if (chk_CamKet.Checked == true)
+            {
 
-            frm_Reports frm = new frm_Reports(rptDoc);
-            frm.Show();
+                rptck.SetDataSource(ds);
+                rptck.SetParameterValue("bangke", txtSoBangKe_Thongtin.Text);
+                frm_Reports frm = new frm_Reports(rptck);
+                frm.Show();
+            }
+            else
+            {
+               
+                rptDoc.SetDataSource(ds);
+                rptDoc.SetParameterValue("bangke", txtSoBangKe_Thongtin.Text);
+                frm_Reports frm = new frm_Reports(rptDoc);
+                frm.Show();
+            }
+            //rptDoc.SetParameterValue("Ky", cbChiSoKy.Text);
+           
+
+           
+            
         }
 
         public void LoadPhieuTieuTHU(string danhba, int nam, int ky)

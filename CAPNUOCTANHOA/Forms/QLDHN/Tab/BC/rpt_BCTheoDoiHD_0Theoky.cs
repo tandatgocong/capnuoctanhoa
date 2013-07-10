@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_BCTheoDoiHD_0_SoBangKe : ReportClass {
+    public class rpt_BCTheoDoiHD_0Theoky : ReportClass {
         
-        public rpt_BCTheoDoiHD_0_SoBangKe() {
+        public rpt_BCTheoDoiHD_0Theoky() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_BCTheoDoiHD_0_SoBangKe.rpt";
+                return "rpt_BCTheoDoiHD_0Theoky.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.BC.rpt_BCTheoDoiHD_0_SoBangKe.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.Tab.BC.rpt_BCTheoDoiHD_0Theoky.rpt";
             }
             set {
                 // Do nothing
@@ -106,7 +106,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_TUNGAY {
+        public CrystalDecisions.Shared.IParameterField Parameter_countcamket {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -114,33 +114,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DENNGAY {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_countcamket {
-            get {
-                return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.Shared.IParameterField Parameter_countbamchi {
             get {
-                return this.DataDefinition.ParameterFields[5];
+                return this.DataDefinition.ParameterFields[3];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_BCTheoDoiHD_0_SoBangKe : Component, ICachedReport {
+    public class Cachedrpt_BCTheoDoiHD_0Theoky : Component, ICachedReport {
         
-        public Cachedrpt_BCTheoDoiHD_0_SoBangKe() {
+        public Cachedrpt_BCTheoDoiHD_0Theoky() {
         }
         
         [Browsable(false)]
@@ -177,7 +161,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_BCTheoDoiHD_0_SoBangKe rpt = new rpt_BCTheoDoiHD_0_SoBangKe();
+            rpt_BCTheoDoiHD_0Theoky rpt = new rpt_BCTheoDoiHD_0Theoky();
             rpt.Site = this.Site;
             return rpt;
         }
