@@ -159,7 +159,7 @@ namespace CAPNUOCTANHOA.LinQ
     #endregion
 		
 		public CapNuocTanHoaDataContext() : 
-				base(global::CAPNUOCTANHOA.Properties.Settings.Default.CAPNUOCTANHOAConnectionString2, mappingSource)
+				base(global::CAPNUOCTANHOA.Properties.Settings.Default.CAPNUOCTANHOAConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
