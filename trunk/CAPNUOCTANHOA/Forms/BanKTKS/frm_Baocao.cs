@@ -35,7 +35,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 if (tabItem2.IsSelected == true)
                 {
 
-                    string sql1 = "SELECT ghd.DHN_SOBANGKE AS 'TENBK',ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC, COUNT (ghd.DHN_DANHBO) AS 'SOLUONG' ";
+                    string sql1 = "SELECT ghd.DHN_SOBANGKE AS 'TENBK',ghd.KTKS_NGAYTIEPXUC, COUNT (ghd.DHN_DANHBO) AS 'SOLUONG' ";
                     sql1 += ",COUNT (case when ghd.DHN_CAMKET<> '' and ghd.DHN_CAMKET is not null then 1 end ) AS 'DHN_CAMKET'";
                     sql1 += ",COUNT(case when ghd.DHN_BAMHI='X' or ghd.DHN_BAMHI='x' then 1 end) AS 'DHN_BAMHI'";
                     sql1 += ",COUNT(case when ghd.DHN_HUYCAMKET='X' or ghd.DHN_HUYCAMKET='x' then 1 end) AS 'DHN_HUYCAMKET'";
@@ -46,34 +46,34 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     sql1 += ",COUNT (ghd.DHN_CHUADANHDAU) AS 'DHN_CHUADANHDAU'";
                     sql1 += ",(COUNT (ghd.KTKS_CAMKET) + COUNT (ghd.KTKS_BAMHI)) AS 'KTKS_SOLUONGDHNDI' ";
                     sql1 += "FROM DK_GIAMHOADON ghd";
-                    sql1 += " WHERE  CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
-                    sql1 += "GROUP BY ghd.DHN_SOBANGKE,ghd.KTKS_BAMHI,ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC";
+                    sql1 += " WHERE  CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
+                    sql1 += "GROUP BY ghd.DHN_SOBANGKE,ghd.KTKS_BAMHI,ghd.KTKS_NGAYTIEPXUC";
 
 
                     string sql_camket = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STT,ghd.DHN_SOBANGKE,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CAMKET,ghd.DHN_GHICHU";
                     sql_camket += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
-                    sql_camket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_CAMKET <>'' or ghd.DHN_CAMKET is not null )  AND CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
+                    sql_camket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_CAMKET <>'' or ghd.DHN_CAMKET is not null )  AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
 
                     string sql_bamchi = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS G_STT,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_BAMHI,ghd.DHN_GHICHU";
                     sql_bamchi += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
-                    sql_bamchi += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_BAMHI <>'' or ghd.DHN_BAMHI is not null )  AND CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
+                    sql_bamchi += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_BAMHI <>'' or ghd.DHN_BAMHI is not null )  AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
 
                     string sql_huycamket = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTH,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_HUYCAMKET,ghd.DHN_GHICHU";
                     sql_huycamket += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
-                    sql_huycamket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_HUYCAMKET <>'' or ghd.DHN_HUYCAMKET is not null )  AND CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
+                    sql_huycamket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_HUYCAMKET <>'' or ghd.DHN_HUYCAMKET is not null )  AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
 
                     string sql_ktkscamket = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTKTC,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.KTKS_NGAYTIEPXUC,ghd.KTKS_CAMKET,ghd.DHN_GHICHU";
                     sql_ktkscamket += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
-                    sql_ktkscamket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.KTKS_CAMKET <>'' or ghd.KTKS_CAMKET is not null )  AND CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
+                    sql_ktkscamket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.KTKS_CAMKET <>'' or ghd.KTKS_CAMKET is not null )  AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
 
 
                     string sql_ktksbamchi = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTKTB,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.KTKS_BAMHI,ghd.KTKS_NGAYTIEPXUC,ghd.KTKS_NGAYBAMCHI,ghd.KTKS_MAKIEMBC,ghd.KTKS_TH_MAKIEM,ghd.DHN_GHICHU";
                     sql_ktksbamchi += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
-                    sql_ktksbamchi += "WHERE ghd.DHN_DANHBO = kh.DANHBO AND (ghd.KTKS_BAMHI <>'' or ghd.KTKS_BAMHI is not null )   AND CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
+                    sql_ktksbamchi += "WHERE ghd.DHN_DANHBO = kh.DANHBO AND (ghd.KTKS_BAMHI <>'' or ghd.KTKS_BAMHI is not null )   AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
 
                     string sql_chuadanhdau = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTV,ghd.DHN_SOBANGKE ,kh.HOTEN,ghd.DHN_DANHBO,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CHUADANHDAU,ghd.DHN_GHICHU";
                     sql_chuadanhdau += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
-                    sql_chuadanhdau += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_CHUADANHDAU <>'' or ghd.DHN_CHUADANHDAU is not null )  AND CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ORDER BY DHN_DANHBO ASC";
+                    sql_chuadanhdau += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_CHUADANHDAU <>'' or ghd.DHN_CHUADANHDAU is not null )  AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ORDER BY DHN_DANHBO ASC";
 
                     DataTable dt = DAL.LinQConnection.getDataTable(sql1);
                     dataGridView1.DataSource = dt;
@@ -220,12 +220,17 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 }
                 else if (tabItem5.IsSelected == true)
                 {
-                    string sql = "select convert (int,DHN_DOT) as 'DHN_DOT' ,count (DHN_DANHBO) as 'TONGCONG' , COUNT (case when DHN_CAMKET<> '' and DHN_CAMKET is not null then 1 end) as 'DHN_CAMKET',COUNT (case when DHN_BAMHI='X' or DHN_BAMHI='x' then 1 end)as 'DHN_BAMHI',COUNT (DHN_GANMOI) as 'DHN_GANMOI' , COUNT (DHN_CHUADANHDAU) as 'DHN_CHUADANHDAU' ";
-                    sql += "from DK_GIAMHOADON ";
-                    sql += "where DHN_KY ='" + cbKy.SelectedIndex + "'";
-                    sql += "GROUP BY DHN_DOT ";
-                    sql += "ORDER BY DHN_DOT ASC";
-                  
+                    string sql = "select k.DHN_DOT ,COUNT (k.DHN_DANHBO) as 'TONGCONG'";
+                    sql += ",count (case when k.DHN_CAMKET<> 'X' and k.DHN_CAMKET IS  not null and k.DHN_CAMKET <> ''  then 1 end)as 'DHN_CAMKET'";
+                    sql += ",count (case when k.DHN_BAMHI <>'' and k.DHN_BAMHI is not null and k.DHN_HUYCAMKET IS null then 1 end ) as 'DHN_BAMHI'";
+                    sql += ",COUNT (case when k.DHN_GANMOI <>'' and k.DHN_GANMOI IS not null then 1 end ) as 'DHN_GANMOI'";
+                    sql += ",count (case when k.DHN_CHUADANHDAU <>'' and k.DHN_CHUADANHDAU is not null then 1 end) as 'DHN_CHUADANHDAU'";
+                    sql += "from  (";
+                    sql += "select  convert(int, g.DHN_DOT) as 'DHN_DOT',DHN_DANHBO ,DHN_CAMKET,DHN_BAMHI,DHN_GANMOI,DHN_CHUADANHDAU,DHN_HUYCAMKET ";
+                    sql += "from DK_GIAMHOADON g ";
+                    sql += "where DHN_KY = '" + cbKy.SelectedIndex + "') k ";
+                    sql += "GROUP BY k.DHN_DOT ";
+                    sql += "ORDER BY k.DHN_DOT ASC";
                     DataTable dt = DAL.LinQConnection.getDataTable(sql);
                     dataTheoKy.DataSource = dt;
                     Utilities.DataGridV.formatRows(dataTheoKy);
