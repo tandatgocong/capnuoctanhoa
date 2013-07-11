@@ -22,6 +22,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         int selectedindex = -1;
         DK_GIAMHOADON hd;
         string flag;
+        bool flagInsert = false;///Cờ kiểm tra là insert hay update danhbo
+        string danhbovalue = "";
 
         public frm_GiamHoaDon()
         {
@@ -43,35 +45,45 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         {
             try
             {
+                while (dataBangKe.Rows.Count > 0)
+                {
+                    dataBangKe.Rows.RemoveAt(0);
+                }
                 switch (flag)
                 {
-                    case "bangke":                     
+                    case "bangke":
                         dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeBySoBangKe(txtSoBangKe.Text.ToUpper());
                         break;
                     case "danhbo":
-                        if (!DAL.BANKTKS.C_GiamHoaDon.findByDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", "")))
-                        {
-                            DK_GIAMHOADON item = new DK_GIAMHOADON();
-                            DataTable table = DAL.BANKTKS.C_GiamHoaDon.getThongTinKhachHang(txtSoDanhBo.Text.ToUpper().Replace("-", ""));
-                            item.DHN_DANHBO = txtSoDanhBo.Text.ToUpper().Replace("-", "");
-                            item.DHN_KY = DateTime.Now.Month.ToString();
-                            item.DHN_NAM = DateTime.Now.Year;
-                            item.DHN_DOT = table.Rows[0]["LOTRINH"].ToString().Substring(0, 2);
-                            item.DHN_CREATEDATE = DateTime.Now.Date;
-                            item.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
-                            DAL.BANKTKS.C_GiamHoaDon.Insert(item);
-                        }
-                        dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeBySoDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", ""));
+                        if (DAL.BANKTKS.C_GiamHoaDon.checkByDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", "")))
+                            dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeBySoDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", ""));
+                        else
+                            if (DAL.BANKTKS.C_GiamHoaDon.checkKHByDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", "")))
+                            {
+                                flagInsert = true;
+                                DataTable table = DAL.BANKTKS.C_GiamHoaDon.getThongTinKhachHang(txtSoDanhBo.Text.ToUpper().Replace("-", ""));
+                                txtDot.Text = table.Rows[0]["LOTRINH"].ToString().Substring(0, 2);
+                                txtLoTrinh.Text = table.Rows[0]["LOTRINH"].ToString();
+                                txtSoThan.Text = table.Rows[0]["SOTHANDH"].ToString();
+                                txtTenKH.Text = table.Rows[0]["HOTEN"].ToString();
+                                txtDiaChi.Text = table.Rows[0]["DIACHI"].ToString();
+                                dateTiepXuc.Focus();
+                            }
+                            else
+                                Clear();
+                        danhbovalue = txtSoDanhBo.Text.ToUpper();
                         break;
                     case "yeucau":
                         dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeByNgayYeuCau(dateYeuCau.Value);
                         break;
                 }
-                Utilities.DataGridV.formatRows(dataBangKe);
-                setSTT();
-                Clear();
+                if (!flagInsert)
+                {
+                    Utilities.DataGridV.formatRows(dataBangKe);
+                    setSTT();
+                    Clear();
+                }
             }
-
             catch (Exception ex)
             {
                 log.Error("Loi Load Du Lieu Thay " + ex.Message);
@@ -100,10 +112,11 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             dateThuHoi.Value = new DateTime();
             txtSoDon.Text = "";
             selectedindex = -1;
-            btncapNhat.Enabled = false;
+            flagInsert = false;
             radCamKet.Checked = false;
             radKTKSBamChiKhoaNuoc.Checked = false;
             radKTKSBamChiThuHoi.Checked = false;
+            chkDongTien.Checked = false;     
         }
 
         public void LoadLichSuHoaDon0(string sodanhbo)
@@ -217,8 +230,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 txtSoBangKe.Text = "";
                 panelLichSuHoaDon0.Visible = false;
                 panelTieuThu.Visible = false;
-                if (dataBangKe.RowCount > 0)
-                    dataBangKe_CellContentClick(sender, new DataGridViewCellEventArgs(0, 0));
+                //if (dataBangKe.RowCount > 0)
+                //    dataBangKe_CellContentClick(sender, new DataGridViewCellEventArgs(0, 0));
             }
         }
 
@@ -266,6 +279,18 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 txtMaKiemThuHoi.Focus();
         }
 
+        private void dateTiepXuc_Leave(object sender, EventArgs e)
+        {
+            if (selectedindex != -1)
+            {
+                if (dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString() != "" || DateTime.Parse(dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString()) != dateTiepXuc.Value)
+                    txtSoDon.Text = (DAL.BANKTKS.C_GiamHoaDon.getMaxSoDon() + 1).ToString();
+            }
+            else
+                if (flagInsert)
+                    txtSoDon.Text = (DAL.BANKTKS.C_GiamHoaDon.getMaxSoDon() + 1).ToString();
+        }
+
         #endregion
 
         #region Method Action Control
@@ -282,12 +307,12 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 txtDiaChi.Text = dataBangKe["DIACHI", e.RowIndex].Value.ToString();
                 txtCamKet.Text = dataBangKe["KTKS_CAMKET", e.RowIndex].Value.ToString();
                 txtGhiChu.Text = dataBangKe["KTKS_GHICHU", e.RowIndex].Value.ToString();
-                //Ngày tiếp xúc
+                ///Ngày tiếp xúc
                 if (dataBangKe["KTKS_NGAYTIEPXUC", e.RowIndex].Value.ToString() != "")
                     dateTiepXuc.Value = (DateTime)dataBangKe["KTKS_NGAYTIEPXUC", e.RowIndex].Value;
                 else
                     dateTiepXuc.Value = new DateTime();
-                //Bấm chì
+                ///Bấm chì
                 if (dataBangKe["KTKS_CAMKET", e.RowIndex].Value.ToString() != "")
                     radCamKet.Checked = true;
                 else
@@ -305,13 +330,13 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                             panelBamChiKhoaNuoc.Visible = false;
                             panelBamChiThuHoi.Visible = false;
                         }
-                //panel Bấm chì khóa nước
+                ///panel Bấm chì khóa nước
                 txtMaKiemKhoaNuoc.Text = dataBangKe["KTKS_MAKIEMBC", e.RowIndex].Value.ToString();
                 if (dataBangKe["KTKS_NGAYBAMCHI", e.RowIndex].Value.ToString() != "")
                     dateKhoaNuoc.Value = (DateTime)dataBangKe["KTKS_NGAYBAMCHI", e.RowIndex].Value;
                 else
                     dateKhoaNuoc.Value = new DateTime();
-                //panel Bấm chì thu hồi
+                ///panel Bấm chì thu hồi
                 txtMaKiemThuHoi.Text = dataBangKe["KTKS_TH_MAKIEM", e.RowIndex].Value.ToString();
                 if (dataBangKe["KTKS_TH_HIEU", e.RowIndex].Value.ToString() == "")
                     txtHieu.Text = dataBangKe["HIEUDH", e.RowIndex].Value.ToString();
@@ -339,12 +364,11 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     txtSoDon.Text = (DAL.BANKTKS.C_GiamHoaDon.getMaxSoDon() + 1).ToString();
                 else
                     txtSoDon.Text = dataBangKe["KTKS_SODON", e.RowIndex].Value.ToString();
-                //Set
+                ///Set
                 selectedindex = e.RowIndex;
-                btncapNhat.Enabled = true;
                 LoadLichSuHoaDon0(dataBangKe["G_DANHBO", e.RowIndex].Value.ToString().Replace(" ", ""));
                 LoadTieuThu(txtSoDanhBo.Text.Replace("-", ""), int.Parse(dataBangKe["DHN_NAM", e.RowIndex].Value.ToString()), DateTime.Now.Month);
-                txtSoDanhBo.Focus();
+                dateTiepXuc.Focus();
             }
             catch (Exception)
             {
@@ -353,62 +377,96 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         private void btncapNhat_Click(object sender, EventArgs e)
         {
-            hd = DAL.BANKTKS.C_GiamHoaDon.findByID(int.Parse(dataBangKe["ID", selectedindex].Value.ToString()));
-            hd.KTKS_GHICHU = txtGhiChu.Text.Trim().ToUpper();
-            if (!"".Equals(dateTiepXuc.ValueObject + ""))
-                hd.KTKS_NGAYTIEPXUC = dateTiepXuc.Value;
-            if (radCamKet.Checked)
-                hd.KTKS_CAMKET = txtCamKet.Text.Trim().ToUpper();
-            else
-                if (radKTKSBamChiKhoaNuoc.Checked)
+            if (selectedindex != -1 || flagInsert)
+            {
+                if (selectedindex != -1)
                 {
-                    hd.KTKS_BAMHI = "khoanuoc";
-                    //panel Bấm chì khóa nước
-                    hd.KTKS_MAKIEMBC = txtMaKiemKhoaNuoc.Text.Trim().ToUpper();
-                    if (!"".Equals(dateKhoaNuoc.ValueObject + ""))
-                        hd.KTKS_NGAYBAMCHI = dateKhoaNuoc.Value;
-                }
-                else
-                    if (radKTKSBamChiThuHoi.Checked)
-                    {
-                        hd.KTKS_BAMHI = "thuhoi";
-                        //panel Bấm chì thu hồi
-                        hd.KTKS_TH_MAKIEM = txtMaKiemThuHoi.Text.Trim().ToUpper();
-                        hd.KTKS_TH_HIEU = txtHieu.Text.Trim().ToUpper();
-                        hd.KTKS_TH_CO = txtCo.Text.Trim();
-                        hd.KTKS_TH_SOTHAN = txtKTKSSoThan.Text.Trim().ToUpper();
-                        hd.KTKS_TH_CHISO = txtChiSo.Text.Trim();
-                        if (!"".Equals(dateThuHoi.ValueObject + ""))
-                            hd.KTKS_TH_NGAY = dateThuHoi.Value;
-                    }
+                    ///Kiểm tra nếu DHN_NGAYGHINHAN != KTKS_NGAYTIEPXUC thì thêm mới
+                    if (dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString() == "" || DateTime.Parse(dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString()) == dateTiepXuc.Value)
+                        hd = DAL.BANKTKS.C_GiamHoaDon.findByID(int.Parse(dataBangKe["ID", selectedindex].Value.ToString()));
                     else
                     {
-                        hd.KTKS_CAMKET = "";
-                        hd.KTKS_BAMHI = "";
+                        hd = new DK_GIAMHOADON();
+                        hd.DHN_DANHBO = txtSoDanhBo.Text.ToUpper().Replace("-", "");
+                        hd.DHN_KY = DateTime.Now.Month.ToString();
+                        hd.DHN_NAM = DateTime.Now.Year;
+                        hd.DHN_DOT = txtDot.Text;
+                        hd.DHN_CREATEDATE = DateTime.Now.Date;
+                        hd.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
+                        DAL.BANKTKS.C_GiamHoaDon.Insert(hd);
                     }
-            if (chkDongTien.Checked)
-                hd.KTKS_DONGTIEN = true;
-            else
-                hd.KTKS_DONGTIEN = false;
-            if (DAL.BANKTKS.C_GiamHoaDon.findBySoDon(int.Parse(txtSoDon.Text.Trim().ToUpper()),txtSoDanhBo.Text.Replace("-","")))
-            {
-                MessageBox.Show("Số Đơn bị trùng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                }
+                else
+                    ///Kiểm tra thêm mới khi danhbo chưa có trong db
+                    if (flagInsert)
+                    {
+                        hd = new DK_GIAMHOADON();
+                        hd.DHN_DANHBO = txtSoDanhBo.Text.ToUpper().Replace("-", "");
+                        hd.DHN_KY = DateTime.Now.Month.ToString();
+                        hd.DHN_NAM = DateTime.Now.Year;
+                        hd.DHN_DOT = txtDot.Text;
+                        hd.DHN_CREATEDATE = DateTime.Now.Date;
+                        hd.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
+                        DAL.BANKTKS.C_GiamHoaDon.Insert(hd);
+                    }
+                hd.KTKS_GHICHU = txtGhiChu.Text.Trim().ToUpper();
+                if (!"".Equals(dateTiepXuc.ValueObject + ""))
+                    hd.KTKS_NGAYTIEPXUC = dateTiepXuc.Value;
+                if (radCamKet.Checked)
+                    hd.KTKS_CAMKET = txtCamKet.Text.Trim().ToUpper();
+                else
+                    if (radKTKSBamChiKhoaNuoc.Checked)
+                    {
+                        hd.KTKS_BAMHI = "khoanuoc";
+                        //panel Bấm chì khóa nước
+                        hd.KTKS_MAKIEMBC = txtMaKiemKhoaNuoc.Text.Trim().ToUpper();
+                        if (!"".Equals(dateKhoaNuoc.ValueObject + ""))
+                            hd.KTKS_NGAYBAMCHI = dateKhoaNuoc.Value;
+                    }
+                    else
+                        if (radKTKSBamChiThuHoi.Checked)
+                        {
+                            hd.KTKS_BAMHI = "thuhoi";
+                            //panel Bấm chì thu hồi
+                            hd.KTKS_TH_MAKIEM = txtMaKiemThuHoi.Text.Trim().ToUpper();
+                            hd.KTKS_TH_HIEU = txtHieu.Text.Trim().ToUpper();
+                            hd.KTKS_TH_CO = txtCo.Text.Trim();
+                            hd.KTKS_TH_SOTHAN = txtKTKSSoThan.Text.Trim().ToUpper();
+                            hd.KTKS_TH_CHISO = txtChiSo.Text.Trim();
+                            if (!"".Equals(dateThuHoi.ValueObject + ""))
+                                hd.KTKS_TH_NGAY = dateThuHoi.Value;
+                        }
+                        else
+                        {
+                            hd.KTKS_CAMKET = "";
+                            hd.KTKS_BAMHI = "";
+                        }
+                if (chkDongTien.Checked)
+                    hd.KTKS_DONGTIEN = true;
+                else
+                    hd.KTKS_DONGTIEN = false;
+                if (DAL.BANKTKS.C_GiamHoaDon.checkBySoDon(int.Parse(txtSoDon.Text.Trim().ToUpper()), txtSoDanhBo.Text.Replace("-", "")))
+                {
+                    MessageBox.Show("Số Đơn bị trùng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                    hd.KTKS_SODON = int.Parse(txtSoDon.Text.Trim().ToUpper());
+                hd.KTKS_NHANVIEN = txtNhanVien.Text.Trim().ToUpper();
+                hd.KTKS_MODIFYDATE = DateTime.Now.Date;
+                hd.KTKS_MODIFYBY = DAL.SYS.C_USERS._userName;
+                if (DAL.BANKTKS.C_GiamHoaDon.Update())
+                {
+                    MessageBox.Show("Cập nhật thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                    if (flag == "danhbo")
+                        txtSoDanhBo.Text = danhbovalue;
+                    LoadData();
+                    txtSoDanhBo.Focus();
+                }
+                else
+                    MessageBox.Show("Cập nhật thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-                hd.KTKS_SODON = int.Parse(txtSoDon.Text.Trim().ToUpper());
-            hd.KTKS_NHANVIEN = txtNhanVien.Text.Trim().ToUpper();
-            hd.KTKS_MODIFYDATE = DateTime.Now.Date;
-            hd.KTKS_MODIFYBY = DAL.SYS.C_USERS._userName;
-            if (DAL.BANKTKS.C_GiamHoaDon.Update())
-            {
-                MessageBox.Show("Cập nhật thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Clear();
-                LoadData();
-                txtSoDanhBo.Focus();
-            }
-            else
-                MessageBox.Show("Cập nhật thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnIn_Click(object sender, EventArgs e)
@@ -460,9 +518,10 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelBamChiThuHoi.Visible = false;
             panelCamKet.Visible = false;
         }
+     
+        #endregion        
 
         
-        #endregion        
         
     }
 }

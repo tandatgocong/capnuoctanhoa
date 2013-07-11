@@ -116,7 +116,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         /// </summary>
         /// <param name="danhbo"></param>
         /// <returns>true/false</returns>
-        public static bool findByDanhBo(string danhbo)
+        public static bool checkByDanhBo(string danhbo)
         {
             return db.DK_GIAMHOADONs.Any(item => item.DHN_DANHBO == danhbo);
         }
@@ -127,9 +127,19 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         /// <param name="sodon"></param>
         /// <param name="danhbo"></param>
         /// <returns></returns>
-        public static bool findBySoDon(int sodon,string danhbo)
+        public static bool checkBySoDon(int sodon,string danhbo)
         {
             return db.DK_GIAMHOADONs.Any(item => item.KTKS_SODON == sodon && item.DHN_DANHBO != danhbo);
+        }
+
+        /// <summary>
+        /// Kiểm tra thông tin khách hàng trong bảng TB_DULIEUKHACHHANG
+        /// </summary>
+        /// <param name="danhbo"></param>
+        /// <returns></returns>
+        public static bool checkKHByDanhBo(string danhbo)
+        {
+            return db.TB_DULIEUKHACHHANGs.Any(item => item.DANHBO == danhbo);
         }
 
         /// <summary>
