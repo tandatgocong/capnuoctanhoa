@@ -84,6 +84,7 @@ namespace CAPNUOCTANHOA
                     ribbonDoiThuTien.Visible = false;
                     this.menuDoiQLDHN.Visible = false;
                     this.menuDTCTB.Visible = true;
+                    menuDieuChinhThongSo.Visible = true;
 
                 }
                 else if ("BANKTKS".Equals(DAL.SYS.C_USERS._maphong.Trim()))
