@@ -371,7 +371,7 @@
             this.microsoftWord.ForeColor = System.Drawing.Color.Black;
             this.microsoftWord.Image = global::CAPNUOCTANHOA.Properties.Resources.WINWORD;
             this.microsoftWord.Name = "microsoftWord";
-            this.microsoftWord.Size = new System.Drawing.Size(147, 23);
+            this.microsoftWord.Size = new System.Drawing.Size(148, 23);
             this.microsoftWord.Text = "Microsoft Word ";
             this.microsoftWord.Click += new System.EventHandler(this.microsoftWord_Click);
             // 
@@ -389,7 +389,7 @@
             this.microsoftAccess.ForeColor = System.Drawing.Color.Black;
             this.microsoftAccess.Image = global::CAPNUOCTANHOA.Properties.Resources.MSACCESS;
             this.microsoftAccess.Name = "microsoftAccess";
-            this.microsoftAccess.Size = new System.Drawing.Size(153, 23);
+            this.microsoftAccess.Size = new System.Drawing.Size(154, 23);
             this.microsoftAccess.Text = "Microsoft Access";
             this.microsoftAccess.Click += new System.EventHandler(this.microsoftAccess_Click);
             // 
@@ -551,7 +551,7 @@
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Blue;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(536, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(490, 17);
             this.toolStripStatusLabel1.Text = "© Copyright  2012 - Tan Hoa Water Supply Company Limted. Developed by Lê Tấn Đạt " +
                 "- 0909933397";
             // 
@@ -623,11 +623,11 @@
             // 
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel7);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -807,7 +807,7 @@
             this.menuTraCuu.ForeColor = System.Drawing.Color.Black;
             this.menuTraCuu.Image = global::CAPNUOCTANHOA.Properties.Resources.Ok;
             this.menuTraCuu.Name = "menuTraCuu";
-            this.menuTraCuu.Size = new System.Drawing.Size(165, 23);
+            this.menuTraCuu.Size = new System.Drawing.Size(166, 23);
             this.menuTraCuu.Text = "Tra Cứu Thông Tin";
             this.menuTraCuu.Click += new System.EventHandler(this.menuTraCuu_Click);
             // 
@@ -854,7 +854,7 @@
             this.tracuuThay.Image = global::CAPNUOCTANHOA.Properties.Resources.Clipboard_Paste;
             this.tracuuThay.Name = "tracuuThay";
             this.tracuuThay.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.tracuuThay.Size = new System.Drawing.Size(171, 23);
+            this.tracuuThay.Size = new System.Drawing.Size(172, 23);
             this.tracuuThay.Text = "Tra Cứu Thay ĐHN";
             this.tracuuThay.Click += new System.EventHandler(this.tracuuThay_Click);
             // 
@@ -922,7 +922,7 @@
             this.btLoTrinh.ForeColor = System.Drawing.Color.Black;
             this.btLoTrinh.Image = global::CAPNUOCTANHOA.Properties.Resources.Arrow2_Right1;
             this.btLoTrinh.Name = "btLoTrinh";
-            this.btLoTrinh.Size = new System.Drawing.Size(146, 23);
+            this.btLoTrinh.Size = new System.Drawing.Size(147, 23);
             this.btLoTrinh.Text = "Lộ Trình Đọc Số";
             this.btLoTrinh.Click += new System.EventHandler(this.btChuyenBK_Click);
             // 
@@ -931,7 +931,7 @@
             this.yeucaukiemtra.ForeColor = System.Drawing.Color.Black;
             this.yeucaukiemtra.Image = global::CAPNUOCTANHOA.Properties.Resources.Stats2;
             this.yeucaukiemtra.Name = "yeucaukiemtra";
-            this.yeucaukiemtra.Size = new System.Drawing.Size(144, 23);
+            this.yeucaukiemtra.Size = new System.Drawing.Size(146, 23);
             this.yeucaukiemtra.Text = "Y.Cầu Kiểm Tra";
             this.yeucaukiemtra.Click += new System.EventHandler(this.yeucaukiemtra_Click);
             // 
@@ -1003,7 +1003,7 @@
             this.hcXuLyTroNgaiThay.ForeColor = System.Drawing.Color.Black;
             this.hcXuLyTroNgaiThay.Image = global::CAPNUOCTANHOA.Properties.Resources.daoduong;
             this.hcXuLyTroNgaiThay.Name = "hcXuLyTroNgaiThay";
-            this.hcXuLyTroNgaiThay.Size = new System.Drawing.Size(182, 23);
+            this.hcXuLyTroNgaiThay.Size = new System.Drawing.Size(183, 23);
             this.hcXuLyTroNgaiThay.Text = "Xử Lý Trở Ngại Thay";
             this.hcXuLyTroNgaiThay.Click += new System.EventHandler(this.hcXuLyTroNgaiThay_Click);
             // 

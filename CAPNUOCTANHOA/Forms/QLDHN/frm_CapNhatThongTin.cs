@@ -54,6 +54,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.ksdlNam.Text = DateTime.Now.Year.ToString();
             ksdlKy.SelectedIndex = DateTime.Now.Month - 1;
             ksdlDot.SelectedIndex = 1;
+            cnMayDS.DataSource = DAL.LinQConnection.getDataTable("SELECT MAYDS FROM TB_NHANVIENDOCSO ORDER BY MAYDS ASC");
+            cnMayDS.ValueMember = "MAYDS";
+            cnMayDS.DisplayMember = "MAYDS";
 
 
         }
@@ -679,11 +682,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         public void LoadGieng() {
             string dot = chDot.Items[chDot.SelectedIndex].ToString();
+            string may = cnMayDS.Text;
             string ky = cnKy.Items[cnKy.SelectedIndex].ToString();
             string nam = cnNam.Text.Trim();            
             string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
-            sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND ds.DOT=" + int.Parse(dot) + "  AND GHICHUMOI LIKE N'%GIẾ%' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
+            sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.MAY=" + may + " AND ds.KY=" + int.Parse(ky) + " AND ds.DOT=" + int.Parse(dot) + "  AND GHICHUMOI LIKE N'%GIẾ%' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
             dataGridView4.DataSource=  DAL.LinQConnection.getDataTable(sql);
              
         }
@@ -727,6 +731,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void tabItem6_Click(object sender, EventArgs e)
         {
             LoadGieng();
+        }
+
+        private void cnMayDS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadGieng();
+            }
+            catch (Exception)
+            {
+                                
+            }
         }
     }
 }
