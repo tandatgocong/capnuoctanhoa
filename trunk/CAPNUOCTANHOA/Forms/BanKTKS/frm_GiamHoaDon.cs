@@ -56,7 +56,9 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                         break;
                     case "danhbo":
                         if (DAL.BANKTKS.C_GiamHoaDon.checkByDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", "")))
+                        {
                             dataBangKe.DataSource = DAL.BANKTKS.C_GiamHoaDon.getBangKeBySoDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", ""));
+                        }
                         else
                             if (DAL.BANKTKS.C_GiamHoaDon.checkKHByDanhBo(txtSoDanhBo.Text.ToUpper().Replace("-", "")))
                             {
@@ -188,6 +190,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelCamKet.Visible = true;
             panelBamChiKhoaNuoc.Visible = false;
             panelBamChiThuHoi.Visible = false;
+            txtCamKet.Text = "X";
             //txtCamKet.Focus();
         }
 
@@ -196,6 +199,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelCamKet.Visible = false;
             panelBamChiKhoaNuoc.Visible = true;
             panelBamChiThuHoi.Visible = false;
+            txtCamKet.Text = "";
             //txtMaKiemKhoaNuoc.Focus();
         }
 
@@ -204,6 +208,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             panelCamKet.Visible = false;
             panelBamChiKhoaNuoc.Visible = false;
             panelBamChiThuHoi.Visible = true;
+            txtCamKet.Text = "";
             //txtMaKiemThuHoi.Focus();
         }
 
@@ -230,8 +235,11 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 txtSoBangKe.Text = "";
                 panelLichSuHoaDon0.Visible = false;
                 panelTieuThu.Visible = false;
-                //if (dataBangKe.RowCount > 0)
-                //    dataBangKe_CellContentClick(sender, new DataGridViewCellEventArgs(0, 0));
+                if (dataBangKe.RowCount > 0)
+                {
+                    dataBangKe_CellContentClick(sender, new DataGridViewCellEventArgs(0, dataBangKe.Rows.Count - 1));
+                    dataBangKe.CurrentCell = dataBangKe[0, dataBangKe.Rows.Count - 1];
+                }
             }
         }
 
@@ -283,8 +291,11 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         {
             if (selectedindex != -1)
             {
-                if (dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString() != "" || DateTime.Parse(dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString()) != dateTiepXuc.Value)
+                if (dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString() == "")
                     txtSoDon.Text = (DAL.BANKTKS.C_GiamHoaDon.getMaxSoDon() + 1).ToString();
+                else
+                    if(dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString() != dateTiepXuc.Value.ToString("dd/MM/yyyy"))
+                        txtSoDon.Text = (DAL.BANKTKS.C_GiamHoaDon.getMaxSoDon() + 1).ToString();
             }
             else
                 if (flagInsert)
@@ -309,7 +320,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 txtGhiChu.Text = dataBangKe["KTKS_GHICHU", e.RowIndex].Value.ToString();
                 ///Ngày tiếp xúc
                 if (dataBangKe["KTKS_NGAYTIEPXUC", e.RowIndex].Value.ToString() != "")
-                    dateTiepXuc.Value = (DateTime)dataBangKe["KTKS_NGAYTIEPXUC", e.RowIndex].Value;
+                    dateTiepXuc.Value = DateTime.Parse(dataBangKe["KTKS_NGAYTIEPXUC", e.RowIndex].Value.ToString());
                 else
                     dateTiepXuc.Value = new DateTime();
                 ///Bấm chì
