@@ -1,6 +1,6 @@
 ﻿namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 {
-    partial class H_tab_BienDocCS
+    partial class P_tab_ThongKeGhiChu
     {
         /// <summary> 
         /// Required designer variable.
@@ -41,8 +41,6 @@
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dateTime = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.cbKyDS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem13 = new DevComponents.Editors.ComboItem();
             this.comboItem14 = new DevComponents.Editors.ComboItem();
@@ -57,38 +55,14 @@
             this.comboItem23 = new DevComponents.Editors.ComboItem();
             this.comboItem24 = new DevComponents.Editors.ComboItem();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.cbDotDS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem45 = new DevComponents.Editors.ComboItem();
-            this.comboItem25 = new DevComponents.Editors.ComboItem();
-            this.comboItem26 = new DevComponents.Editors.ComboItem();
-            this.comboItem27 = new DevComponents.Editors.ComboItem();
-            this.comboItem28 = new DevComponents.Editors.ComboItem();
-            this.comboItem29 = new DevComponents.Editors.ComboItem();
-            this.comboItem30 = new DevComponents.Editors.ComboItem();
-            this.comboItem31 = new DevComponents.Editors.ComboItem();
-            this.comboItem32 = new DevComponents.Editors.ComboItem();
-            this.comboItem33 = new DevComponents.Editors.ComboItem();
-            this.comboItem34 = new DevComponents.Editors.ComboItem();
-            this.comboItem35 = new DevComponents.Editors.ComboItem();
-            this.comboItem36 = new DevComponents.Editors.ComboItem();
-            this.comboItem37 = new DevComponents.Editors.ComboItem();
-            this.comboItem38 = new DevComponents.Editors.ComboItem();
-            this.comboItem39 = new DevComponents.Editors.ComboItem();
-            this.comboItem40 = new DevComponents.Editors.ComboItem();
-            this.comboItem41 = new DevComponents.Editors.ComboItem();
-            this.comboItem42 = new DevComponents.Editors.ComboItem();
-            this.comboItem43 = new DevComponents.Editors.ComboItem();
-            this.comboItem44 = new DevComponents.Editors.ComboItem();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.btThem = new DevComponents.DotNetBar.ButtonX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTime)).BeginInit();
             this.SuspendLayout();
             // 
             // comboItem12
@@ -172,14 +146,10 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dateTime);
-            this.splitContainer1.Panel1.Controls.Add(this.labelX4);
             this.splitContainer1.Panel1.Controls.Add(this.cbKyDS);
             this.splitContainer1.Panel1.Controls.Add(this.labelX3);
-            this.splitContainer1.Panel1.Controls.Add(this.cbDotDS);
             this.splitContainer1.Panel1.Controls.Add(this.labelX2);
             this.splitContainer1.Panel1.Controls.Add(this.btThem);
-            this.splitContainer1.Panel1.Controls.Add(this.labelX1);
             this.splitContainer1.Panel1.Controls.Add(this.txtNam);
             this.splitContainer1.Panel1.Controls.Add(this.title);
             // 
@@ -189,59 +159,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.SplitterDistance = 80;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // dateTime
-            // 
-            // 
-            // 
-            // 
-            this.dateTime.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTime.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTime.ButtonDropDown.Visible = true;
-            this.dateTime.CustomFormat = "dd/MM/yyyy";
-            this.dateTime.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateTime.Location = new System.Drawing.Point(80, 48);
-            // 
-            // 
-            // 
-            this.dateTime.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTime.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTime.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTime.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTime.MonthCalendar.DisplayMonth = new System.DateTime(2012, 3, 1, 0, 0, 0, 0);
-            this.dateTime.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTime.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTime.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTime.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTime.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTime.MonthCalendar.TodayButtonVisible = true;
-            this.dateTime.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(126, 27);
-            this.dateTime.TabIndex = 40;
-            this.dateTime.Value = new System.DateTime(2012, 3, 1, 22, 34, 31, 0);
-            // 
-            // labelX4
-            // 
-            this.labelX4.Location = new System.Drawing.Point(12, 50);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(62, 23);
-            this.labelX4.TabIndex = 39;
-            this.labelX4.Text = "NGÀY :";
             // 
             // cbKyDS
             // 
@@ -263,7 +180,7 @@
             this.comboItem22,
             this.comboItem23,
             this.comboItem24});
-            this.cbKyDS.Location = new System.Drawing.Point(472, 47);
+            this.cbKyDS.Location = new System.Drawing.Point(195, 45);
             this.cbKyDS.Name = "cbKyDS";
             this.cbKyDS.Size = new System.Drawing.Size(86, 27);
             this.cbKyDS.TabIndex = 30;
@@ -342,175 +259,15 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(431, 51);
+            this.labelX3.Location = new System.Drawing.Point(154, 49);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(55, 23);
             this.labelX3.TabIndex = 38;
             this.labelX3.Text = "KỲ :";
             // 
-            // cbDotDS
-            // 
-            this.cbDotDS.DisplayMember = "Text";
-            this.cbDotDS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDotDS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDotDS.FormattingEnabled = true;
-            this.cbDotDS.ItemHeight = 21;
-            this.cbDotDS.Items.AddRange(new object[] {
-            this.comboItem45,
-            this.comboItem25,
-            this.comboItem26,
-            this.comboItem27,
-            this.comboItem28,
-            this.comboItem29,
-            this.comboItem30,
-            this.comboItem31,
-            this.comboItem32,
-            this.comboItem33,
-            this.comboItem34,
-            this.comboItem35,
-            this.comboItem36,
-            this.comboItem37,
-            this.comboItem38,
-            this.comboItem39,
-            this.comboItem40,
-            this.comboItem41,
-            this.comboItem42,
-            this.comboItem43,
-            this.comboItem44});
-            this.cbDotDS.Location = new System.Drawing.Point(328, 50);
-            this.cbDotDS.Name = "cbDotDS";
-            this.cbDotDS.Size = new System.Drawing.Size(86, 27);
-            this.cbDotDS.TabIndex = 37;
-            // 
-            // comboItem45
-            // 
-            this.comboItem45.Text = "0";
-            this.comboItem45.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem45.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem25
-            // 
-            this.comboItem25.Text = "1";
-            this.comboItem25.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem25.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem26
-            // 
-            this.comboItem26.Text = "2";
-            this.comboItem26.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem26.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem27
-            // 
-            this.comboItem27.Text = "3";
-            this.comboItem27.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem27.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem28
-            // 
-            this.comboItem28.Text = "4";
-            this.comboItem28.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem28.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem29
-            // 
-            this.comboItem29.Text = "5";
-            this.comboItem29.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem29.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem30
-            // 
-            this.comboItem30.Text = "6";
-            this.comboItem30.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem30.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem31
-            // 
-            this.comboItem31.Text = "7";
-            this.comboItem31.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem31.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem32
-            // 
-            this.comboItem32.Text = "8";
-            this.comboItem32.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem32.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem33
-            // 
-            this.comboItem33.Text = "9";
-            this.comboItem33.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem33.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem34
-            // 
-            this.comboItem34.Text = "10";
-            this.comboItem34.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem34.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem35
-            // 
-            this.comboItem35.Text = "11";
-            this.comboItem35.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem35.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem36
-            // 
-            this.comboItem36.Text = "12";
-            this.comboItem36.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem36.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem37
-            // 
-            this.comboItem37.Text = "13";
-            this.comboItem37.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem37.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem38
-            // 
-            this.comboItem38.Text = "14";
-            this.comboItem38.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem38.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem39
-            // 
-            this.comboItem39.Text = "15";
-            this.comboItem39.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem39.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem40
-            // 
-            this.comboItem40.Text = "16";
-            this.comboItem40.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem40.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem41
-            // 
-            this.comboItem41.Text = "17";
-            this.comboItem41.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem41.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem42
-            // 
-            this.comboItem42.Text = "18";
-            this.comboItem42.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem42.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem43
-            // 
-            this.comboItem43.Text = "19";
-            this.comboItem43.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem43.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // comboItem44
-            // 
-            this.comboItem44.Text = "20";
-            this.comboItem44.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.comboItem44.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(568, 51);
+            this.labelX2.Location = new System.Drawing.Point(291, 49);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(46, 23);
             this.labelX2.TabIndex = 26;
@@ -522,7 +279,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(721, 47);
+            this.btThem.Location = new System.Drawing.Point(444, 45);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(163, 27);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -530,21 +287,13 @@
             this.btThem.Text = "XEM THÔNG TIN";
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
-            // labelX1
-            // 
-            this.labelX1.Location = new System.Drawing.Point(216, 51);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(128, 23);
-            this.labelX1.TabIndex = 25;
-            this.labelX1.Text = "ĐỢT ĐỌC SỐ :";
-            // 
             // txtNam
             // 
             // 
             // 
             // 
             this.txtNam.Border.Class = "TextBoxBorder";
-            this.txtNam.Location = new System.Drawing.Point(614, 48);
+            this.txtNam.Location = new System.Drawing.Point(337, 46);
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(100, 27);
             this.txtNam.TabIndex = 27;
@@ -560,7 +309,7 @@
             this.title.ReflectionEnabled = false;
             this.title.Size = new System.Drawing.Size(704, 54);
             this.title.TabIndex = 28;
-            this.title.Text = "THEO DÕI KẾT QUẢ BIÊN ĐỌC CHỈ SỐ NƯỚC";
+            this.title.Text = "THỐNG KÊ KHÁCH HÀNG SỬ DỤNG 2 NGUỒN NƯỚC";
             // 
             // crystalReportViewer1
             // 
@@ -574,7 +323,7 @@
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // H_tab_BienDocCS
+            // P_tab_ThongKeGhiChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -583,12 +332,11 @@
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "H_tab_BienDocCS";
+            this.Name = "P_tab_ThongKeGhiChu";
             this.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTime)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -623,34 +371,9 @@
         private DevComponents.Editors.ComboItem comboItem23;
         private DevComponents.Editors.ComboItem comboItem24;
         private DevComponents.DotNetBar.ButtonX btThem;
-        private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNam;
         private DevComponents.DotNetBar.Controls.ReflectionLabel title;
-        private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbDotDS;
-        private DevComponents.Editors.ComboItem comboItem45;
-        private DevComponents.Editors.ComboItem comboItem25;
-        private DevComponents.Editors.ComboItem comboItem26;
-        private DevComponents.Editors.ComboItem comboItem27;
-        private DevComponents.Editors.ComboItem comboItem28;
-        private DevComponents.Editors.ComboItem comboItem29;
-        private DevComponents.Editors.ComboItem comboItem30;
-        private DevComponents.Editors.ComboItem comboItem31;
-        private DevComponents.Editors.ComboItem comboItem32;
-        private DevComponents.Editors.ComboItem comboItem33;
-        private DevComponents.Editors.ComboItem comboItem34;
-        private DevComponents.Editors.ComboItem comboItem35;
-        private DevComponents.Editors.ComboItem comboItem36;
-        private DevComponents.Editors.ComboItem comboItem37;
-        private DevComponents.Editors.ComboItem comboItem38;
-        private DevComponents.Editors.ComboItem comboItem39;
-        private DevComponents.Editors.ComboItem comboItem40;
-        private DevComponents.Editors.ComboItem comboItem41;
-        private DevComponents.Editors.ComboItem comboItem42;
-        private DevComponents.Editors.ComboItem comboItem43;
-        private DevComponents.Editors.ComboItem comboItem44;
-        private DevComponents.DotNetBar.LabelX labelX4;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTime;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private DevComponents.DotNetBar.LabelX labelX3;
     }
 }

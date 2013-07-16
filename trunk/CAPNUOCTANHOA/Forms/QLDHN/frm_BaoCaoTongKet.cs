@@ -142,6 +142,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
          
         }
 
+        private void radioButton11_CheckedChanged(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new O_tab_TheoDoiHoaDon0());
+        }
+
+        private void radioButton11_Click(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new P_tab_ThongKeGhiChu());
+        }
+
       
     }
 }
