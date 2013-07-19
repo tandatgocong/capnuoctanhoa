@@ -1,40 +1,47 @@
 ALTER VIEW HOADON0KY12
 AS
-	SELECT g05.*,tb01.CODE as 'CODE06',tb01.LNCC as 'LNCC06'
-	FROM
-	(
-			select g04.*,tb01.CODE as 'CODE05',tb01.LNCC as 'LNCC05'
-			from
+	SELECT g06.*,tb01.CODE as 'CODE07',tb01.LNCC as 'LNCC07'
+		FROM
+		(
+			SELECT g05.*,tb01.CODE as 'CODE06',tb01.LNCC as 'LNCC06'
+			FROM
 			(
-				select g03.*,tb01.CODE as 'CODE04',tb01.LNCC as 'LNCC04'
-				from
-					(select g02.*,tb01.CODE as 'CODE03',tb01.LNCC as 'LNCC03'
-					 from
-						(select g01.*,tb01.CODE as 'CODE02',tb01.LNCC as 'LNCC02'
+					select g04.*,tb01.CODE as 'CODE05',tb01.LNCC as 'LNCC05'
+					from
+					(
+						select g03.*,tb01.CODE as 'CODE04',tb01.LNCC as 'LNCC04'
 						from
-							( select t12.*,tb01.CODE as 'CODE01',tb01.LNCC as 'LNCC01'
-							  from (select SUBSTRING(t12.KHU,1,2) as DOT, t12.KHU,t12.DANHBO,t12.HOPDONG,t12.TENKH,t12.SONHA,
-								t12.DUONG,t12.PHUONG,t12.QUAN, t12.GIABIEU,t12.DINHMUC,t12.HIEUDH,t12.CODH,t12.NGAYTHAY,MADMA,NHANVIEN
-								,t12.CODE as 'CODE12',t12.LNCC as 'LNCC12'			
-							from HOADONTH12_2012 t12 where t12.LNCC=0 ) as t12 
-							LEFT JOIN HOADONTH01_2013 tb01
-							ON t12.DANHBO = tb01.DANHBO
-							
-							) as g01
-						LEFT JOIN HOADONTH02_2013 tb01
-						ON g01.DANHBO = tb01.DANHBO
-						) as g02
-					LEFT JOIN HOADONTH03_2013 tb01
-					ON g02.DANHBO = tb01.DANHBO
-					) as g03
-				LEFT JOIN  HOADONTH04_2013 tb01
-				ON g03.DANHBO = tb01.Danhbo
-			 ) as g04
-			LEFT JOIN HOADONTH05_2013 tb01
-			ON g04.DANHBO = tb01.DANHBO
-		) AS g05
-		LEFT JOIN  HOADONTH06_2013 tb01
-		ON g05.DANHBO = tb01.DANHBO
+							(select g02.*,tb01.CODE as 'CODE03',tb01.LNCC as 'LNCC03'
+							 from
+								(select g01.*,tb01.CODE as 'CODE02',tb01.LNCC as 'LNCC02'
+								from
+									( select t12.*,tb01.CODE as 'CODE01',tb01.LNCC as 'LNCC01'
+									  from (select SUBSTRING(t12.KHU,1,2) as DOT, t12.KHU,t12.DANHBO,t12.HOPDONG,t12.TENKH,t12.SONHA,
+										t12.DUONG,t12.PHUONG,t12.QUAN, t12.GIABIEU,t12.DINHMUC,t12.HIEUDH,t12.CODH,t12.NGAYTHAY,MADMA,NHANVIEN
+										,t12.CODE as 'CODE12',t12.LNCC as 'LNCC12'			
+									from HOADONTH12_2012 t12 where t12.LNCC=0 ) as t12 
+									LEFT JOIN HOADONTH01_2013 tb01
+									ON t12.DANHBO = tb01.DANHBO
+									
+									) as g01
+								LEFT JOIN HOADONTH02_2013 tb01
+								ON g01.DANHBO = tb01.DANHBO
+								) as g02
+							LEFT JOIN HOADONTH03_2013 tb01
+							ON g02.DANHBO = tb01.DANHBO
+							) as g03
+						LEFT JOIN  HOADONTH04_2013 tb01
+						ON g03.DANHBO = tb01.Danhbo
+					 ) as g04
+					LEFT JOIN HOADONTH05_2013 tb01
+					ON g04.DANHBO = tb01.DANHBO
+				) AS g05
+				LEFT JOIN  HOADONTH06_2013 tb01
+				ON g05.DANHBO = tb01.DANHBO
+			) AS g06
+			LEFT JOIN   HOADONTH07_2013 tb01
+			ON g06.DANHBO = tb01.DANHBO
+			
 		
 
 
