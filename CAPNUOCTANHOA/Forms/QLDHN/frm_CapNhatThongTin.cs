@@ -684,8 +684,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string dot = chDot.Items[chDot.SelectedIndex].ToString();
             string may = cnMayDS.Text;
             string ky = cnKy.Items[cnKy.SelectedIndex].ToString();
-            string nam = cnNam.Text.Trim();            
-            string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
+            string nam = cnNam.Text.Trim();
+            string sql = " SELECT ROW_NUMBER() OVER (ORDER BY ds.ID  DESC) [STT], kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
             sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
             sql += " WHERE  ds.DANHBA=kh.DANHBO AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.MAY=" + may + " AND ds.KY=" + int.Parse(ky) + " AND ds.DOT=" + int.Parse(dot) + "  AND GHICHUMOI LIKE N'%GIẾ%' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
             dataGridView4.DataSource=  DAL.LinQConnection.getDataTable(sql);
