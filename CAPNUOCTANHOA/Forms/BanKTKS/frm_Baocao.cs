@@ -220,7 +220,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 }
                 else if (tabItem5.IsSelected == true)
                 {
-                    string sql = "select k.DHN_DOT ,COUNT (k.DHN_DANHBO) as 'TONGCONG'";
+                    string sql = "select k.DHN_DOT ";
+                    sql += ",(count (case when k.DHN_CAMKET<> 'X' and k.DHN_CAMKET IS  not null and k.DHN_CAMKET <> ''  then 1 end)+count (case when k.DHN_BAMHI <>'' and k.DHN_BAMHI is not null and k.DHN_HUYCAMKET IS null then 1 end )+ COUNT(k.DHN_GANMOI)+ COUNT (k.DHN_CHUADANHDAU)) as 'TONGCONG'";
                     sql += ",count (case when k.DHN_CAMKET<> 'X' and k.DHN_CAMKET IS  not null and k.DHN_CAMKET <> ''  then 1 end)as 'DHN_CAMKET'";
                     sql += ",count (case when k.DHN_BAMHI <>'' and k.DHN_BAMHI is not null and k.DHN_HUYCAMKET IS null then 1 end ) as 'DHN_BAMHI'";
                     sql += ",COUNT (case when k.DHN_GANMOI <>'' and k.DHN_GANMOI IS not null then 1 end ) as 'DHN_GANMOI'";
