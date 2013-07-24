@@ -763,6 +763,12 @@
     <Compile Include="Forms\QLDHN\Tab\O_tab_TheoDoiHoaDon0.Designer.cs">
       <DependentUpon>O_tab_TheoDoiHoaDon0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\Tab\P_tab_TheoDoiCamKet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\P_tab_TheoDoiCamKet.Designer.cs">
+      <DependentUpon>P_tab_TheoDoiCamKet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\Tab\rpt_BCTheoDoiHD_0_SoBangKe.cs" />
     <Compile Include="Forms\QLDHN\Tab\TabBC\Rpt_TongKetBaoThayDHN_TOTHAY.cs">
       <DependentUpon>Rpt_TongKetBaoThayDHN_TOTHAY.rpt</DependentUpon>
@@ -1742,6 +1748,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\O_tab_TheoDoiHoaDon0.resx">
       <DependentUpon>O_tab_TheoDoiHoaDon0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\P_tab_TheoDoiCamKet.resx">
+      <DependentUpon>P_tab_TheoDoiCamKet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\Rpt_TongKetBaoThayDHN_TOTHAY.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

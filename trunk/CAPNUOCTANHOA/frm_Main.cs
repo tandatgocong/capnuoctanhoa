@@ -478,6 +478,13 @@ namespace CAPNUOCTANHOA
             PanelContent.Controls.Add(camket);
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+      
+
        
 
         
