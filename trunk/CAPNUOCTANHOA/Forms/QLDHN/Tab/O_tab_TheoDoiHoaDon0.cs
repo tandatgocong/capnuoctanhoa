@@ -284,12 +284,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 }
                 else if (tabItem5.IsSelected == true)
                 {
-                    //string sql = "select convert (int,DHN_DOT) as 'DHN_DOT' ,count (DHN_DANHBO) as 'TONGCONG' , COUNT (case when DHN_CAMKET<> '' and DHN_CAMKET is not null then 1 end) as 'DHN_CAMKET',COUNT (case when DHN_BAMHI='X' or DHN_BAMHI='x' then 1 end)as 'DHN_BAMHI',COUNT (DHN_GANMOI) as 'DHN_GANMOI' , COUNT (DHN_CHUADANHDAU) as 'DHN_CHUADANHDAU' ";
-                    //sql += "from DK_GIAMHOADON ";
-                    //sql += "where DHN_KY ='" + cbKy.SelectedIndex + "'";
-                    //sql += "GROUP BY DHN_DOT ";
-                    //sql += "ORDER BY DHN_DOT ASC";
-                    string sql =  "select k.DHN_DOT ,COUNT (k.DHN_DANHBO) as 'TONGCONG'"; 
+                   
+                    string sql = "select k.DHN_DOT ";
+                    sql += ",(count (case when k.DHN_CAMKET<> 'X' and k.DHN_CAMKET IS  not null and k.DHN_CAMKET <> ''  then 1 end)+count (case when k.DHN_BAMHI <>'' and k.DHN_BAMHI is not null and k.DHN_HUYCAMKET IS null then 1 end )+ COUNT(k.DHN_GANMOI)+ COUNT (k.DHN_CHUADANHDAU)) as 'TONGCONG'";
                     sql += ",count (case when k.DHN_CAMKET<> 'X' and k.DHN_CAMKET IS  not null and k.DHN_CAMKET <> ''  then 1 end)as 'DHN_CAMKET'";
                     sql += ",count (case when k.DHN_BAMHI <>'' and k.DHN_BAMHI is not null and k.DHN_HUYCAMKET IS null then 1 end ) as 'DHN_BAMHI'";
                     sql += ",COUNT (case when k.DHN_GANMOI <>'' and k.DHN_GANMOI IS not null then 1 end ) as 'DHN_GANMOI'";

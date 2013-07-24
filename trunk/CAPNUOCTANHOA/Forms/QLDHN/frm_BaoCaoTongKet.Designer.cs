@@ -30,6 +30,7 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.radioButtonTheodoicamKet = new System.Windows.Forms.RadioButton();
             this.radioButton11 = new System.Windows.Forms.RadioButton();
             this.radioTheoDoiHD0 = new System.Windows.Forms.RadioButton();
             this.radioTKHOADON = new System.Windows.Forms.RadioButton();
@@ -75,6 +76,7 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.Color.AliceBlue;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.expandablePanel1.Controls.Add(this.radioButtonTheodoicamKet);
             this.expandablePanel1.Controls.Add(this.radioButton11);
             this.expandablePanel1.Controls.Add(this.radioTheoDoiHD0);
             this.expandablePanel1.Controls.Add(this.radioTKHOADON);
@@ -114,6 +116,18 @@
             this.expandablePanel1.TitleStyle.ForeColor.Color = System.Drawing.Color.Firebrick;
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "Danh Mục Báo Cáo";
+            // 
+            // radioButtonTheodoicamKet
+            // 
+            this.radioButtonTheodoicamKet.AutoSize = true;
+            this.radioButtonTheodoicamKet.Location = new System.Drawing.Point(10, 527);
+            this.radioButtonTheodoicamKet.Name = "radioButtonTheodoicamKet";
+            this.radioButtonTheodoicamKet.Size = new System.Drawing.Size(155, 23);
+            this.radioButtonTheodoicamKet.TabIndex = 7;
+            this.radioButtonTheodoicamKet.TabStop = true;
+            this.radioButtonTheodoicamKet.Text = "Theo Dõi Cam Kết";
+            this.radioButtonTheodoicamKet.UseVisualStyleBackColor = true;
+            this.radioButtonTheodoicamKet.CheckedChanged += new System.EventHandler(this.radioButtonTheodoicamKet_CheckedChanged);
             // 
             // radioButton11
             // 
@@ -181,7 +195,7 @@
             this.rptThayDoi.AutoSize = true;
             this.rptThayDoi.Location = new System.Drawing.Point(10, 382);
             this.rptThayDoi.Name = "rptThayDoi";
-            this.rptThayDoi.Size = new System.Drawing.Size(152, 23);
+            this.rptThayDoi.Size = new System.Drawing.Size(151, 23);
             this.rptThayDoi.TabIndex = 5;
             this.rptThayDoi.TabStop = true;
             this.rptThayDoi.Text = "Lộ Trình Thay Đổi";
@@ -253,7 +267,7 @@
             this.radioButton5.AutoSize = true;
             this.radioButton5.Location = new System.Drawing.Point(10, 208);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(189, 23);
+            this.radioButton5.Size = new System.Drawing.Size(188, 23);
             this.radioButton5.TabIndex = 4;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Loại KH Tiêu Thụ  Thấp";
@@ -265,7 +279,7 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(10, 179);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(177, 23);
+            this.radioButton4.Size = new System.Drawing.Size(176, 23);
             this.radioButton4.TabIndex = 4;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Theo Dõi SL Loại KH";
@@ -277,7 +291,7 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(10, 149);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(190, 23);
+            this.radioButton3.Size = new System.Drawing.Size(189, 23);
             this.radioButton3.TabIndex = 4;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Theo Dõi Tiêu Thụ Thấp";
@@ -326,7 +340,7 @@
             this.radioThayDinhKy.AutoSize = true;
             this.radioThayDinhKy.Location = new System.Drawing.Point(10, 62);
             this.radioThayDinhKy.Name = "radioThayDinhKy";
-            this.radioThayDinhKy.Size = new System.Drawing.Size(172, 23);
+            this.radioThayDinhKy.Size = new System.Drawing.Size(171, 23);
             this.radioThayDinhKy.TabIndex = 1;
             this.radioThayDinhKy.TabStop = true;
             this.radioThayDinhKy.Text = "Dự Trù Thay Định Kỳ";
@@ -372,7 +386,11 @@
         private System.Windows.Forms.RadioButton radioButton10;
         private System.Windows.Forms.RadioButton radioTKHOADON;
         private System.Windows.Forms.RadioButton radioTheoDoiHD0;
+//<<<<<<< .mine
+        private System.Windows.Forms.RadioButton radioButtonTheodoicamKet;
+//=======
         private System.Windows.Forms.RadioButton radioButton11;
+//>>>>>>> .r275
 
     }
 }
