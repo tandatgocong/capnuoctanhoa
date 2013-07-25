@@ -336,7 +336,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 ganmoi = "X";
             }
-
+            string chuadanhdau = "";
+            if (checkChuaDanhDau.Checked == true)
+            {
+                chuadanhdau = "X";
+            }
+            if (checkChuaDanhDau.Checked == false && chk_CamKet.Checked == false && checkBoxBamChi.Checked == false && checkBoxHUYCAMKET.Checked == false && checkGanMoi.Checked == false)
+            {
+                chuadanhdau = "X";
+            }
             //if (checkBoxBamChi.Checked == false && chk_CamKet.Checked == false)
             //{
             //    if (txtGhiChu.Text == "")
@@ -361,7 +369,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string chisoky = cbChiSoKy.Text;
             string dot = cbDot.Text;
             int kq = 0;
-            kq = DAL.QLDHN.C_HoaDon_0.UpdateSoBangKe(danhbo, sobangke, ngayghinhan, nam, tods, ghichu, bamchi, ky, dot, chisoky, huycamket,ganmoi);
+            kq = DAL.QLDHN.C_HoaDon_0.UpdateSoBangKe(danhbo, sobangke, ngayghinhan, nam, tods, ghichu, bamchi, ky, dot, chisoky, huycamket,ganmoi,chuadanhdau);
             if (kq > 0)
             {
                 MessageBox.Show("Đã cập nhật thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -394,6 +402,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string dhn_camketsudung = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_CAMKET"].Value + "";
                 string dhn_huycamket = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_HUYCAMKET"].Value + "";
                 string dhn_ganmoi = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_GANMOI"].Value + "";
+               // string dhn_chuadanhdau = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_CHUADANHDAU"].Value + "";
                 string DHN_GHICHU = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_GHICHU"].Value + "";
                 DateTime Ngayghinhan;
                 Ngayghinhan = DateTime.Parse(DHN_NGAYGHINHANs);
@@ -452,6 +461,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
                     checkGanMoi.Checked = false;
                 }
+                //if (dhn_chuadanhdau == "X")
+                //{
+                //    checkChuaDanhDau.Checked = true;
+                //}
+                //else if (dhn_chuadanhdau != "X")
+                //{
+                //    checkChuaDanhDau.Checked = false;
+                //}
+
                 try
                 {
                     txtMaLoTrinh.Text = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(DHN_DANHBO.Replace(" ", "").Replace("-", "")).LOTRINH;
@@ -515,6 +533,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             DHN_Giam.DHN_CHUADANHDAU = null;
             if (checkChuaDanhDau.Checked == true)
+            {
+                DHN_Giam.DHN_CHUADANHDAU = "X";
+            }
+            if (checkChuaDanhDau.Checked == false && checkBoxBamChi.Checked == false && chk_CamKet.Checked == false && checkBoxHUYCAMKET.Checked == false && checkGanMoi.Checked == false)
             {
                 DHN_Giam.DHN_CHUADANHDAU = "X";
             }
