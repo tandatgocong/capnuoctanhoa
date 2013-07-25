@@ -61,7 +61,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " FROM DK_GIAMHOADON GHD,TB_DULIEUKHACHHANG kh WHERE (DHN_GANMOI <>'' or DHN_GANMOI is not null) AND kh.DANHBO=GHD.DHN_DANHBO AND DHN_SOBANGKE='" + sobangke + "' ORDER BY DHN_DANHBO ASC ";
             return LinQConnection.getDataTable(sql);
         }
-        public static int UpdateSoBangKe(string danhbo,string sobangke,string ngayghinhan,string nam,string tods,string ghichu,string bamchi,int ky,string dot,string chisoky,string huycamket,string ganmoi)
+        public static int UpdateSoBangKe(string danhbo,string sobangke,string ngayghinhan,string nam,string tods,string ghichu,string bamchi,int ky,string dot,string chisoky,string huycamket,string ganmoi,string chuadanhdau)
         {
             int kq = 0;
             string sql = "UPDATE DK_GIAMHOADON set DHN_NGAYGHINHAN='" + ngayghinhan + "',DHN_NAM=" + nam + ",DHN_TODS='" + tods + "',DHN_GHICHU=N'" + ghichu + "',DHN_DOT='" + dot + "',DHN_KY='"+chisoky +"'";
@@ -95,6 +95,14 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             else if (ganmoi != "X")
             {
                 sql = sql + ",DHN_GANMOI=null";
+            }
+            if (chuadanhdau == "X")
+            {
+                sql = sql + ",DHN_CHUADANHDAU='" + chuadanhdau + "'";
+            }
+            else if (chuadanhdau != "X")
+            {
+                sql = sql + ",DHN_CHUADANHDAU =null";
             }
 
             sql = sql + ",DHN_MODIFYDATE=getDate(),DHN_MODIFYBY='"+DAL.SYS.C_USERS._userName+"' where DHN_DANHBO='" + danhbo + "' and DHN_SOBANGKE='" + sobangke + "'";
