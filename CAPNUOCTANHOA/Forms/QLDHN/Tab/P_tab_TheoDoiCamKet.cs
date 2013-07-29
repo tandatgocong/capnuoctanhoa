@@ -149,7 +149,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             }
             if (tabControl1.SelectedIndex == 1)
             {
-                if (tabControl2.SelectedIndex == 0)
+                if (tab.SelectedIndex == 0)
                 {
                     dt = (DataTable)dataKTKSB0.DataSource;
                     string ss = dt.Rows[0]["DHN_SOBANGKE"].GetType().ToString();
