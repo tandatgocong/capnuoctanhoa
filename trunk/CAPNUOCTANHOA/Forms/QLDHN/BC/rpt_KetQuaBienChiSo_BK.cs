@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_DongHoHieuCu : ReportClass {
+    public class rpt_KetQuaBienChiSo_BK : ReportClass {
         
-        public rpt_DongHoHieuCu() {
+        public rpt_KetQuaBienChiSo_BK() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_DongHoHieuCu.rpt";
+                return "rpt_KetQuaBienChiSo_BK.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_DongHoHieuCu.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_KetQuaBienChiSo_BK.rpt";
             }
             set {
                 // Do nothing
@@ -90,25 +90,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_NAM {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.Shared.IParameterField Parameter_title {
             get {
-                return this.DataDefinition.ParameterFields[1];
+                return this.DataDefinition.ParameterFields[0];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_DongHoHieuCu : Component, ICachedReport {
+    public class Cachedrpt_KetQuaBienChiSo_BK : Component, ICachedReport {
         
-        public Cachedrpt_DongHoHieuCu() {
+        public Cachedrpt_KetQuaBienChiSo_BK() {
         }
         
         [Browsable(false)]
@@ -145,7 +137,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_DongHoHieuCu rpt = new rpt_DongHoHieuCu();
+            rpt_KetQuaBienChiSo_BK rpt = new rpt_KetQuaBienChiSo_BK();
             rpt.Site = this.Site;
             return rpt;
         }

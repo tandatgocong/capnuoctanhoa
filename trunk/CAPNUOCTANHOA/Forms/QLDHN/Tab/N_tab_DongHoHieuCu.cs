@@ -65,6 +65,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             ReportDocument rp = new rpt_DongHoHieuCu();
             rp.SetDataSource(getTheoDoiBienDocChiSo(hieuluc));
             rp.SetParameterValue("NAM", hieuluc);
+            rp.SetParameterValue("title", "DANH SÁCH KHÁCH HÀNG ");            
             crystalReportViewer1.ReportSource = rp ;
         }
     }

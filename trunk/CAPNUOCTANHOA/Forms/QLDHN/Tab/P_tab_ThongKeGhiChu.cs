@@ -25,10 +25,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             InitializeComponent();
             this.txtNam.Text = DateTime.Now.Year.ToString();
             cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
+            cbDotDS.SelectedIndex =0;
           
 
         }
-
+        
         public DataSet getTheoDoiBienDocChiSo(string ky, string nam)
         {
             DataSet ds = new DataSet();
@@ -62,12 +63,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "THONGKEGM");
+            db.Connection.Close();
+            return ds;
+        }
+        string title__ = "";
+        public DataSet getDanhSach(string dot,string ky, string nam)
+        {
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            title__ = "DANH SÁCH KHÁCH HÀNG SỬ DỤNG 2 NGUỒN NƯỚC KỲ " + ky + "/" + nam;
+            DataSet ds = new DataSet();
+            db.Connection.Open();
+            string query = "SELECT  dh.* ";
+            query += " FROM W_DH_HIEUCU dh, [DocSo_PHT].[dbo].[DS" + nam + "] ds";
+            query += " WHERE ds.KY=" + ky + " AND GHICHUMOI LIKE N'%GIẾ%' AND dh.DANHBO=ds.DANHBA ";
+            if (!"0".Equals(dot)) {
+                query += " AND ds.DOT=" + dot;
+                title__ = "DANH SÁCH KHÁCH HÀNG SỬ DỤNG 2 NGUỒN NƯỚC ĐỢT "+dot+" KỲ " + ky + "/" + nam;
+            }
+            query += " ORDER BY LOTRINH ASC";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "W_DH_HIEUCU");
             return ds;
         }
 
         private void btThem_Click(object sender, EventArgs e)
         {
             string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+            string dot = cbDotDS.Items[cbDotDS.SelectedIndex].ToString();
             string nam = this.txtNam.Text;
             ReportDocument rp = new rpt_ThongKeKH2NguonNuoc();
 
@@ -75,8 +97,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
             rp.SetDataSource(getTheoDoiBienDocChiSo(ky,nam));
             rp.SetParameterValue("title_", title_);
-
             crystalReportViewer1.ReportSource = rp;
+
+            rp = new rpt_DongHoHieuCu();
+            
+            rp.SetDataSource(getDanhSach(dot,ky, nam));
+            rp.SetParameterValue("NAM", nam);
+            rp.SetParameterValue("title", title__);
+            crystalReportViewer2.ReportSource = rp;
+
+
+
         }
 
     }
