@@ -27,6 +27,7 @@
               <xs:element name="DHN_NGAYGHINHAN" msprop:Generator_ColumnVarNameInTable="columnDHN_NGAYGHINHAN" msprop:Generator_ColumnPropNameInRow="DHN_NGAYGHINHAN" msprop:Generator_ColumnPropNameInTable="DHN_NGAYGHINHANColumn" msprop:Generator_UserColumnName="DHN_NGAYGHINHAN" type="xs:dateTime" minOccurs="0" />
               <xs:element name="KTKS_BAMHIKN" msprop:Generator_ColumnVarNameInTable="columnKTKS_BAMHIKN" msprop:Generator_ColumnPropNameInRow="KTKS_BAMHIKN" msprop:Generator_ColumnPropNameInTable="KTKS_BAMHIKNColumn" msprop:Generator_UserColumnName="KTKS_BAMHIKN" type="xs:int" minOccurs="0" />
               <xs:element name="KTKS_BAMHITH" msprop:Generator_ColumnVarNameInTable="columnKTKS_BAMHITH" msprop:Generator_ColumnPropNameInRow="KTKS_BAMHITH" msprop:Generator_ColumnPropNameInTable="KTKS_BAMHITHColumn" msprop:Generator_UserColumnName="KTKS_BAMHITH" type="xs:int" minOccurs="0" />
+              <xs:element name="DHN_GANMOI" msprop:Generator_ColumnVarNameInTable="columnDHN_GANMOI" msprop:Generator_ColumnPropNameInRow="DHN_GANMOI" msprop:Generator_ColumnPropNameInTable="DHN_GANMOIColumn" msprop:Generator_UserColumnName="DHN_GANMOI" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

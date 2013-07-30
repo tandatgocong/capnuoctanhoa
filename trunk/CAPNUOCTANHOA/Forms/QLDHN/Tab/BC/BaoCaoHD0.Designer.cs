@@ -338,6 +338,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             
             private global::System.Data.DataColumn columnKTKS_BAMHITH;
             
+            private global::System.Data.DataColumn columnDHN_GANMOI;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public BAOCAOHD0DataTable() {
@@ -469,6 +471,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DHN_GANMOIColumn {
+                get {
+                    return this.columnDHN_GANMOI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -504,7 +514,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BAOCAOHD0Row AddBAOCAOHD0Row(string TENBK, int SOLUONG, int DHN_CAMKET, int DHN_BAMHI, int DHN_HUYCAMKET, int DHN_CHUADANHDAU, int KTKS_BAMHI, int KTKS_CAMKET, int KTKS_SOLUONGDHNDI, System.DateTime DHN_NGAYGHINHAN, int KTKS_BAMHIKN, int KTKS_BAMHITH) {
+            public BAOCAOHD0Row AddBAOCAOHD0Row(string TENBK, int SOLUONG, int DHN_CAMKET, int DHN_BAMHI, int DHN_HUYCAMKET, int DHN_CHUADANHDAU, int KTKS_BAMHI, int KTKS_CAMKET, int KTKS_SOLUONGDHNDI, System.DateTime DHN_NGAYGHINHAN, int KTKS_BAMHIKN, int KTKS_BAMHITH, int DHN_GANMOI) {
                 BAOCAOHD0Row rowBAOCAOHD0Row = ((BAOCAOHD0Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TENBK,
@@ -518,7 +528,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
                         KTKS_SOLUONGDHNDI,
                         DHN_NGAYGHINHAN,
                         KTKS_BAMHIKN,
-                        KTKS_BAMHITH};
+                        KTKS_BAMHITH,
+                        DHN_GANMOI};
                 rowBAOCAOHD0Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBAOCAOHD0Row);
                 return rowBAOCAOHD0Row;
@@ -553,6 +564,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
                 this.columnDHN_NGAYGHINHAN = base.Columns["DHN_NGAYGHINHAN"];
                 this.columnKTKS_BAMHIKN = base.Columns["KTKS_BAMHIKN"];
                 this.columnKTKS_BAMHITH = base.Columns["KTKS_BAMHITH"];
+                this.columnDHN_GANMOI = base.Columns["DHN_GANMOI"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -582,6 +594,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
                 base.Columns.Add(this.columnKTKS_BAMHIKN);
                 this.columnKTKS_BAMHITH = new global::System.Data.DataColumn("KTKS_BAMHITH", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKTKS_BAMHITH);
+                this.columnDHN_GANMOI = new global::System.Data.DataColumn("DHN_GANMOI", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDHN_GANMOI);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1303,6 +1317,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DHN_GANMOI {
+                get {
+                    try {
+                        return ((int)(this[this.tableBAOCAOHD0.DHN_GANMOIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DHN_GANMOI\' in table \'BAOCAOHD0\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBAOCAOHD0.DHN_GANMOIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTENBKNull() {
                 return this.IsNull(this.tableBAOCAOHD0.TENBKColumn);
             }
@@ -1443,6 +1473,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetKTKS_BAMHITHNull() {
                 this[this.tableBAOCAOHD0.KTKS_BAMHITHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDHN_GANMOINull() {
+                return this.IsNull(this.tableBAOCAOHD0.DHN_GANMOIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDHN_GANMOINull() {
+                this[this.tableBAOCAOHD0.DHN_GANMOIColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -301,6 +301,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             
             private global::System.Data.DataColumn columnDHN_CHUADANHDAUCT;
             
+            private global::System.Data.DataColumn columnDHN_GANMOI;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TONGSOLUONGDataTable() {
@@ -424,6 +426,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DHN_GANMOIColumn {
+                get {
+                    return this.columnDHN_GANMOI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +469,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TONGSOLUONGRow AddTONGSOLUONGRow(int TONG, int SOLUONGDHN, int DHN_CAMKET, int DHN_BAMHI, int DHN_HUYCAMKET, int KTKS_DI, int KTKS_CAMKET, int KTKS_BAMHI, int KTKS_BAMHIK, int KTKS_BAMHIT, int DHN_CHUADANHDAUCT) {
+            public TONGSOLUONGRow AddTONGSOLUONGRow(int TONG, int SOLUONGDHN, int DHN_CAMKET, int DHN_BAMHI, int DHN_HUYCAMKET, int KTKS_DI, int KTKS_CAMKET, int KTKS_BAMHI, int KTKS_BAMHIK, int KTKS_BAMHIT, int DHN_CHUADANHDAUCT, int DHN_GANMOI) {
                 TONGSOLUONGRow rowTONGSOLUONGRow = ((TONGSOLUONGRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TONG,
@@ -472,7 +482,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
                         KTKS_BAMHI,
                         KTKS_BAMHIK,
                         KTKS_BAMHIT,
-                        DHN_CHUADANHDAUCT};
+                        DHN_CHUADANHDAUCT,
+                        DHN_GANMOI};
                 rowTONGSOLUONGRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTONGSOLUONGRow);
                 return rowTONGSOLUONGRow;
@@ -506,6 +517,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
                 this.columnKTKS_BAMHIK = base.Columns["KTKS_BAMHIK"];
                 this.columnKTKS_BAMHIT = base.Columns["KTKS_BAMHIT"];
                 this.columnDHN_CHUADANHDAUCT = base.Columns["DHN_CHUADANHDAUCT"];
+                this.columnDHN_GANMOI = base.Columns["DHN_GANMOI"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,6 +545,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
                 base.Columns.Add(this.columnKTKS_BAMHIT);
                 this.columnDHN_CHUADANHDAUCT = new global::System.Data.DataColumn("DHN_CHUADANHDAUCT", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDHN_CHUADANHDAUCT);
+                this.columnDHN_GANMOI = new global::System.Data.DataColumn("DHN_GANMOI", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDHN_GANMOI);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -851,6 +865,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DHN_GANMOI {
+                get {
+                    try {
+                        return ((int)(this[this.tableTONGSOLUONG.DHN_GANMOIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DHN_GANMOI\' in table \'TONGSOLUONG\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTONGSOLUONG.DHN_GANMOIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTONGNull() {
                 return this.IsNull(this.tableTONGSOLUONG.TONGColumn);
             }
@@ -979,6 +1009,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.BC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDHN_CHUADANHDAUCTNull() {
                 this[this.tableTONGSOLUONG.DHN_CHUADANHDAUCTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDHN_GANMOINull() {
+                return this.IsNull(this.tableTONGSOLUONG.DHN_GANMOIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDHN_GANMOINull() {
+                this[this.tableTONGSOLUONG.DHN_GANMOIColumn] = global::System.Convert.DBNull;
             }
         }
         
