@@ -26,6 +26,7 @@
               <xs:element name="KTKS_BAMHIK" msprop:Generator_ColumnVarNameInTable="columnKTKS_BAMHIK" msprop:Generator_ColumnPropNameInRow="KTKS_BAMHIK" msprop:Generator_ColumnPropNameInTable="KTKS_BAMHIKColumn" msprop:Generator_UserColumnName="KTKS_BAMHIK" type="xs:int" minOccurs="0" />
               <xs:element name="KTKS_BAMHIT" msprop:Generator_ColumnVarNameInTable="columnKTKS_BAMHIT" msprop:Generator_ColumnPropNameInRow="KTKS_BAMHIT" msprop:Generator_ColumnPropNameInTable="KTKS_BAMHITColumn" msprop:Generator_UserColumnName="KTKS_BAMHIT" type="xs:int" minOccurs="0" />
               <xs:element name="DHN_CHUADANHDAUCT" msprop:Generator_ColumnVarNameInTable="columnDHN_CHUADANHDAUCT" msprop:Generator_ColumnPropNameInRow="DHN_CHUADANHDAUCT" msprop:Generator_ColumnPropNameInTable="DHN_CHUADANHDAUCTColumn" msprop:Generator_UserColumnName="DHN_CHUADANHDAUCT" type="xs:int" minOccurs="0" />
+              <xs:element name="DHN_GANMOI" msprop:Generator_ColumnVarNameInTable="columnDHN_GANMOI" msprop:Generator_ColumnPropNameInRow="DHN_GANMOI" msprop:Generator_ColumnPropNameInTable="DHN_GANMOIColumn" msprop:Generator_UserColumnName="DHN_GANMOI" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
