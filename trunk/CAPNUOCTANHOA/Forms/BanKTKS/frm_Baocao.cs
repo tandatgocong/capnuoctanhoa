@@ -14,6 +14,7 @@ using CAPNUOCTANHOA.LinQ;
 using System.Data.SqlClient;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CAPNUOCTANHOA.Forms.QLDHN.Tab.BC;
+using CAPNUOCTANHOA.Forms.BanKTKS.BC;
 
 
 namespace CAPNUOCTANHOA.Forms.BanKTKS
@@ -67,7 +68,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     sql_ktkscamket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.KTKS_CAMKET <>'' or ghd.KTKS_CAMKET is not null )  AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
 
 
-                    string sql_ktksbamchi = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTKTB,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.KTKS_BAMHI,ghd.KTKS_NGAYTIEPXUC,ghd.KTKS_NGAYBAMCHI,ghd.KTKS_MAKIEMBC,ghd.KTKS_TH_MAKIEM,ghd.DHN_GHICHU";
+                    string sql_ktksbamchi = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTKTB,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.LOTRINH,kh.HOPDONG,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.KTKS_BAMHI,ghd.DHN_NGAYGHINHAN,ghd.KTKS_TH_NGAY,ghd.KTKS_NGAYTIEPXUC,ghd.KTKS_MAKIEMBC,ghd.KTKS_TH_MAKIEM,ghd.DHN_GHICHU";
                     sql_ktksbamchi += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
                     sql_ktksbamchi += "WHERE ghd.DHN_DANHBO = kh.DANHBO AND (ghd.KTKS_BAMHI <>'' or ghd.KTKS_BAMHI is not null )   AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103)ORDER BY DHN_DANHBO ASC";
 
@@ -161,7 +162,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     sql_ktkscamket += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
                     sql_ktkscamket += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.KTKS_CAMKET <>'' or ghd.KTKS_CAMKET is not null )  AND ghd.DHN_SOBANGKE='" + txtSoBangKe.Text + "'ORDER BY DHN_DANHBO ASC";
 
-                    string sql_ktksbamchi = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTKTB,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.KTKS_BAMHI,ghd.KTKS_NGAYTIEPXUC,ghd.KTKS_NGAYBAMCHI,ghd.KTKS_MAKIEMBC,ghd.KTKS_TH_MAKIEM,ghd.DHN_GHICHU";
+                    string sql_ktksbamchi = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTKTB,ghd.DHN_SOBANGKE ,kh.LOTRINH,ghd.DHN_DANHBO,kh.HOPDONG,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.KTKS_BAMHI,ghd.DHN_NGAYGHINHAN,ghd.KTKS_TH_NGAY,ghd.KTKS_NGAYTIEPXUC,ghd.KTKS_MAKIEMBC,ghd.KTKS_TH_MAKIEM,ghd.DHN_GHICHU";
                     sql_ktksbamchi += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
                     sql_ktksbamchi += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_CAMKET <>'' or ghd.DHN_CAMKET is not null )  AND ghd.DHN_SOBANGKE='" + txtSoBangKe.Text + "'ORDER BY DHN_DANHBO ASC";
 
@@ -404,6 +405,52 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
             frm_Reports frm = new frm_Reports(rptSL);
             frm.Show();
+
+
+        }
+
+        private void btnInBaoCao_Click(object sender, EventArgs e)
+        {
+            ReportDocument rptBC = new rpt_BaoCao();
+            ReportDocument rptBCBK = new rpt_BaoCao_SoBangKe();
+            
+            DataTable dt = new DataTable();
+            BAOCAO bc = new BAOCAO();
+
+            dt = (DataTable)dgvKTKSBamChi.DataSource; ;
+            //string ss = dt.Rows[0]["LOTRINH"].GetType().ToString();
+            dt.TableName = "BAOCAO_KTKSBAMCHI";
+          
+            bc.Tables["BAOCAO_KTKSBAMCHI"].Merge(dt);
+            //set dataset to the report viewer.
+            if (tab.SelectedTabIndex == 5)
+            {
+
+                if (tabControl1.SelectedTabIndex == 0)
+                {
+                    rptBC.SetDataSource(bc);
+                    rptBC.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(dateTuNgay));
+                    rptBC.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(dateDenNgay));
+                    rptBC.SetParameterValue("ten", "BẤM CHÌ");
+
+                    frm_Reports frm = new frm_Reports(rptBC);
+                    frm.Show();
+
+                }
+                else
+                {
+
+                    rptBCBK.SetDataSource(bc);
+                    rptBCBK.SetParameterValue("bangke", txtSoBangKe.Text);
+                    rptBC.SetParameterValue("ten", "BẤM CHÌ");
+                    frm_Reports frm = new frm_Reports(rptBCBK);
+                    frm.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn tab KTKS Bấm Chì ", "Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
 
 
         }
