@@ -460,7 +460,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     }
                     else if (cbTypeView.SelectedIndex == 5)
                     {
-                        sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) > 0 AND MONTH(NGAYHETHAN)=  '" + this.searchText.Text + "' AND YEAR(NGAYHETHAN)=" + this.txtNam.Text;
+                        sql += " AND MONTH(NGAYHETHAN)=  '" + this.searchText.Text + "' AND YEAR(NGAYHETHAN)=" + this.txtNam.Text;
                     }
                     else if (cbTypeView.SelectedIndex == 6)
                     {
@@ -537,7 +537,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     this.searchText.Visible = true;
                     this.searchDate.Visible = false;
                     this.searchText.Text = DateTime.Now.Month.ToString();
-                    sql += " AND DATEDIFF (D , NGAYHETHAN , GETDATE() ) > 0 AND MONTH(NGAYHETHAN)=  '" + this.searchText.Text + "' AND YEAR(NGAYHETHAN)=" + this.txtNam.Text;
+                    sql += " AND MONTH(NGAYHETHAN)=  '" + this.searchText.Text + "' AND YEAR(NGAYHETHAN)=" + this.txtNam.Text;
                 }
 
                 else if (cbTypeView.SelectedIndex == 6)
