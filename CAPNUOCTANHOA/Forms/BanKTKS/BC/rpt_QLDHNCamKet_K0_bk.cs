@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_QLDHNCamKetSD_0 : ReportClass {
+    public class rpt_QLDHNCamKet_K0_bk : ReportClass {
         
-        public rpt_QLDHNCamKetSD_0() {
+        public rpt_QLDHNCamKet_K0_bk() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_QLDHNCamKetSD_0.rpt";
+                return "rpt_QLDHNCamKet_K0_bk.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.BanKTKS.BC.rpt_QLDHNCamKetSD_0.rpt";
+                return "CAPNUOCTANHOA.Forms.BanKTKS.BC.rpt_QLDHNCamKet_K0_bk.rpt";
             }
             set {
                 // Do nothing
@@ -114,9 +114,9 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_QLDHNCamKetSD_0 : Component, ICachedReport {
+    public class Cachedrpt_QLDHNCamKet_K0_bk : Component, ICachedReport {
         
-        public Cachedrpt_QLDHNCamKetSD_0() {
+        public Cachedrpt_QLDHNCamKet_K0_bk() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_QLDHNCamKetSD_0 rpt = new rpt_QLDHNCamKetSD_0();
+            rpt_QLDHNCamKet_K0_bk rpt = new rpt_QLDHNCamKet_K0_bk();
             rpt.Site = this.Site;
             return rpt;
         }
