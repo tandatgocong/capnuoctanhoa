@@ -861,7 +861,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 LoadThongTinDB();
                 LoadPhieuTieuTHU(txtSoDanhBo.Text.Replace("-", ""), int.Parse(txtNam.Text), DateTime.Now.Month);
                 LoadLichSuHoaDon0(txtSoDanhBo.Text.Replace("-", ""));
-                txtTenKH.Focus();
+                txtSoDanhBo.Focus();
 
 
             }

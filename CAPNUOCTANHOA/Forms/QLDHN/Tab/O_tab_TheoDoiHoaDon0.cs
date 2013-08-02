@@ -98,7 +98,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 if (tabItem2.IsSelected == true)
                 {
                   
-                    sql1 = "SELECT ghd.DHN_SOBANGKE AS 'TENBK',ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC ";
+                    sql1 = "SELECT ghd.DHN_SOBANGKE AS 'TENBK',ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC,ghd.DHN_DANHBO ";
                     sql1 += ",(COUNT (ghd.DHN_CAMKET) + COUNT (ghd.DHN_BAMHI) + COUNT (ghd.DHN_HUYCAMKET) + COUNT (ghd.DHN_GANMOI) + COUNT (ghd.DHN_CHUADANHDAU)) AS 'SOLUONG' ";
                     sql1 += ",COUNT (case when ghd.DHN_CAMKET<> '' and ghd.DHN_CAMKET is not null then 1 end ) AS 'DHN_CAMKET'";
                     sql1 += ",COUNT (ghd.DHN_GANMOI) AS 'DHN_GANMOI'";
@@ -112,7 +112,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     sql1 += ",(COUNT (ghd.KTKS_CAMKET) + COUNT (ghd.KTKS_BAMHI)) AS 'KTKS_SOLUONGDHNDI' ";
                     sql1 += "FROM DK_GIAMHOADON ghd";
                     sql1 += " WHERE  CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
-                    sql1 += "GROUP BY ghd.DHN_SOBANGKE,ghd.KTKS_BAMHI,ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC";
+                    sql1 += "GROUP BY ghd.DHN_SOBANGKE,ghd.KTKS_BAMHI,ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC,ghd.DHN_DANHBO";
 
                    
                     string sql_camket = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STT,ghd.DHN_SOBANGKE,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CAMKET,ghd.DHN_GHICHU";
@@ -210,7 +210,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 else if (tabItem3.IsSelected == true)
                 {
 
-                    sql1 = "SELECT ghd.DHN_SOBANGKE AS 'TENBK',ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC, COUNT (ghd.DHN_DANHBO) AS 'SOLUONG' ";
+                    sql1 = "SELECT ghd.DHN_SOBANGKE AS 'TENBK',ghd.DHN_NGAYGHINHAN,ghd.KTKS_NGAYTIEPXUC";
+                    sql1 += ",(COUNT (ghd.DHN_CAMKET) + COUNT (ghd.DHN_BAMHI) + COUNT (ghd.DHN_HUYCAMKET) + COUNT (ghd.DHN_GANMOI) + COUNT (ghd.DHN_CHUADANHDAU)) AS 'SOLUONG' ";
                     sql1 += ",COUNT (case when ghd.DHN_CAMKET<> '' and ghd.DHN_CAMKET is not null then 1 end ) AS 'DHN_CAMKET'";
                     sql1 += ",COUNT (ghd.DHN_GANMOI) AS 'DHN_GANMOI'";
                     sql1 += ",COUNT(case when ghd.DHN_BAMHI='X' or ghd.DHN_BAMHI='x' then 1 end) AS 'DHN_BAMHI'";
@@ -323,11 +324,47 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     sql += "where DHN_KY = '" + cbKy.SelectedIndex + "') k ";
                     sql += "GROUP BY k.DHN_DOT ";
                     sql += "ORDER BY k.DHN_DOT ASC";
+
+                    string sql_camket = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS STT,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CAMKET,ghd.DHN_GHICHU";
+                    sql_camket += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                    sql_camket += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and  ghd.DHN_CAMKET is not null  and ghd.DHN_HUYCAMKET is null  order by ghd.DHN_DOT ASC ";
+
+                string sql_bamchi = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS G_STT,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_BAMHI,ghd.DHN_GHICHU";
+                sql_bamchi += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                sql_bamchi += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and  ghd.DHN_BAMHI is not null and ghd.DHN_BAMHI = 'X' and ghd.DHN_HUYCAMKET is null  order by ghd.DHN_DOT ASC ";
+
+                string sql_huycamket = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS STTH,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_HUYCAMKET,ghd.DHN_GHICHU";
+                sql_huycamket += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                sql_huycamket += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and ghd.DHN_HUYCAMKET is not null and ghd.DHN_HUYCAMKET = 'X'  order by ghd.DHN_DOT ASC ";
+
+                string sql_chuadanhdau = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS STTV,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CHUADANHDAU,ghd.DHN_GHICHU";
+                sql_chuadanhdau += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                sql_chuadanhdau += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and ghd.DHN_CHUADANHDAU is not null and ghd.DHN_CHUADANHDAU = 'X'  order by ghd.DHN_DOT ASC ";
+
+                string sql_ganmoi = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS DHN_STTM,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_GANMOI,ghd.DHN_GHICHU";
+                sql_ganmoi += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                sql_ganmoi += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and ghd.DHN_GANMOi is not null and ghd.DHN_GANMOI = 'X'  order by ghd.DHN_DOT ASC ";
+
+
                     DataTable dt = DAL.LinQConnection.getDataTable(sql);
                     dataTheoKy.DataSource = dt;
                     Utilities.DataGridV.formatRows(dataTheoKy);
-                    
-                
+                    DataTable dt1 = DAL.LinQConnection.getDataTable(sql_camket);
+                    dgv_CamKet.DataSource = dt1;
+                    Utilities.DataGridV.formatRowsSTT(dgv_CamKet, "", "STT");
+                    DataTable dt2 = DAL.LinQConnection.getDataTable(sql_bamchi);
+                    dgv_BamChi.DataSource = dt2;
+                    Utilities.DataGridV.formatRowsSTT(dgv_BamChi, "", "G_STT");
+                    DataTable dt3 = DAL.LinQConnection.getDataTable(sql_huycamket);
+                    dgv_HuyCamKet.DataSource = dt3;
+                    Utilities.DataGridV.formatRowsSTT(dgv_HuyCamKet, "", "STTH");
+                    Utilities.DataGridV.formatRowsSTT(dgvKTKSBamChi, "", "STTKTB");
+                    DataTable dt6 = DAL.LinQConnection.getDataTable(sql_chuadanhdau);
+                    dgv_DHNVangChuNha.DataSource = dt6;
+                    Utilities.DataGridV.formatRowsSTT(dgv_DHNVangChuNha, "", "STTV");
+                    DataTable dt7 = DAL.LinQConnection.getDataTable(sql_ganmoi);
+                    dgv_GanMoi.DataSource = dt7;
+                    Utilities.DataGridV.formatRowsSTT(dgv_GanMoi, "", "DHN_STTM");
                                 
                 }
                

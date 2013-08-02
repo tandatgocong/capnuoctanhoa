@@ -263,7 +263,44 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     dataTheoKy.DataSource = dt;
                     Utilities.DataGridV.formatRows(dataTheoKy);
 
+                    string sql_camket = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS STT,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CAMKET,ghd.DHN_GHICHU";
+                    sql_camket += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                    sql_camket += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and  ghd.DHN_CAMKET is not null  and ghd.DHN_HUYCAMKET is null  order by ghd.DHN_DOT ASC ";
 
+                    string sql_bamchi = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS G_STT,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_BAMHI,ghd.DHN_GHICHU";
+                    sql_bamchi += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                    sql_bamchi += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and  ghd.DHN_BAMHI is not null and ghd.DHN_BAMHI = 'X' and ghd.DHN_HUYCAMKET is null  order by ghd.DHN_DOT ASC ";
+
+                    string sql_huycamket = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS STTH,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_HUYCAMKET,ghd.DHN_GHICHU";
+                    sql_huycamket += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                    sql_huycamket += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and ghd.DHN_HUYCAMKET is not null and ghd.DHN_HUYCAMKET = 'X'  order by ghd.DHN_DOT ASC ";
+
+                    string sql_chuadanhdau = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS STTV,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CHUADANHDAU,ghd.DHN_GHICHU";
+                    sql_chuadanhdau += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                    sql_chuadanhdau += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and ghd.DHN_CHUADANHDAU is not null and ghd.DHN_CHUADANHDAU = 'X'  order by ghd.DHN_DOT ASC ";
+
+                    string sql_ganmoi = "SELECT ROW_NUMBER() Over (order by ghd.DHN_DANHBO) AS DHN_STTM,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.HOTEN,kh.SONHA + '' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_GANMOI,ghd.DHN_GHICHU";
+                    sql_ganmoi += " from DK_GIAMHOADON ghd , TB_DULIEUKHACHHANG kh ";
+                    sql_ganmoi += " where ghd.DHN_DANHBO = kh.DANHBO and  ghd.DHN_KY = '" + cbKy.SelectedIndex + "' and ghd.DHN_GANMOi is not null and ghd.DHN_GANMOI = 'X'  order by ghd.DHN_DOT ASC ";
+
+
+                    DataTable dt1 = DAL.LinQConnection.getDataTable(sql_camket);
+                    dgv_CamKet.DataSource = dt1;
+                    Utilities.DataGridV.formatRowsSTT(dgv_CamKet, "", "STT");
+                    DataTable dt2 = DAL.LinQConnection.getDataTable(sql_bamchi);
+                    dgv_BamChi.DataSource = dt2;
+                    Utilities.DataGridV.formatRowsSTT(dgv_BamChi, "", "G_STT");
+                    DataTable dt3 = DAL.LinQConnection.getDataTable(sql_huycamket);
+                    dgv_HuyCamKet.DataSource = dt3;
+                    Utilities.DataGridV.formatRowsSTT(dgv_HuyCamKet, "", "STTH");
+                    Utilities.DataGridV.formatRowsSTT(dgvKTKSBamChi, "", "STTKTB");
+                    DataTable dt6 = DAL.LinQConnection.getDataTable(sql_chuadanhdau);
+                    dgv_DHNVangChuNha.DataSource = dt6;
+                    Utilities.DataGridV.formatRowsSTT(dgv_DHNVangChuNha, "", "STTV");
+                    DataTable dt7 = DAL.LinQConnection.getDataTable(sql_ganmoi);
+                    dgv_GanMoi.DataSource = dt7;
+                    Utilities.DataGridV.formatRowsSTT(dgv_GanMoi, "", "DHN_STTM");
+                                
 
                 }
 
