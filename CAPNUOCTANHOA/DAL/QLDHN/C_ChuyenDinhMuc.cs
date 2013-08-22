@@ -38,6 +38,21 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
         }
 
+
+        public static TB_CHUYENDINHMUC findByTB_CHUYENDINHMUC_khacgnay(string danhbo, DateTime ngayyc)
+        {
+            try
+            {
+                var query = from q in db.TB_CHUYENDINHMUCs where q.DANHBO == danhbo && q.NGAYLAP != ngayyc select q;
+                return query.ToList()[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
         public static DataTable getThonTinDieuChinh(string danhbo)
         {
             string sql = "SELECT TOP(1) ds.KY,ds.DOT,YEAR(ds.NGAYGHI) AS 'NAM', ds.TODS, DANHBO, ds.MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.TBTHU";

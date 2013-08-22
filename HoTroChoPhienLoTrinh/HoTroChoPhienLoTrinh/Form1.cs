@@ -119,15 +119,15 @@ namespace HoTroChoPhienLoTrinh
         }
         public static DataTable getPhienLoTrinh(string lotrinh)
         {
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + lotrinh + "' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL', YEAR(NGAYTHAY) AS N'NĂM GẮN'  FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + lotrinh + "' ORDER BY LOTRINH ASC ";
             return getDataTable(sql);
         }
         public static DataTable DIACHI(string diachi)
         {
             DataTable tb = new DataTable();
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE (SONHA+' '+ TENDUONG) LIKE '" + diachi.Replace("*", "%") + "' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  , YEAR(NGAYTHAY) AS N'NĂM GẮN' FROM TB_DULIEUKHACHHANG WHERE (SONHA+' '+ TENDUONG) LIKE '" + diachi.Replace("*", "%") + "' ORDER BY LOTRINH ASC ";
             tb = getDataTable(sql);
-            sql = " SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPUONG ,LOTRINH, HOTEN,HOPDONG, N'Hủy ' +HIEULUCHUY AS N'HL'  FROM TB_DULIEUKHACHHANG_HUYDB  WHERE (SONHA+' '+ TENDUONG) LIKE '" + diachi.Replace("*", "%") + "' ORDER BY LOTRINH ASC ";
+            sql = " SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPUONG ,LOTRINH, HOTEN,HOPDONG, N'Hủy ' +HIEULUCHUY AS N'HL'   FROM TB_DULIEUKHACHHANG_HUYDB  WHERE (SONHA+' '+ TENDUONG) LIKE '" + diachi.Replace("*", "%") + "' ORDER BY LOTRINH ASC ";
             tb.Merge(getDataTable(sql));
             return tb;
         }
@@ -138,7 +138,7 @@ namespace HoTroChoPhienLoTrinh
 
 
             DataTable tb = new DataTable();
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE DANHBO = '" + danhbo + "' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL', YEAR(NGAYTHAY) AS N'NĂM GẮN'  FROM TB_DULIEUKHACHHANG WHERE DANHBO = '" + danhbo + "' ORDER BY LOTRINH ASC ";
             tb = getDataTable(sql);
             sql = " SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPUONG ,LOTRINH, HOTEN,HOPDONG, N'Hủy ' +HIEULUCHUY AS N'HL'  FROM TB_DULIEUKHACHHANG_HUYDB  WHERE DANHBO = '" + danhbo + "' ORDER BY LOTRINH ASC ";
             tb.Merge(getDataTable(sql));
@@ -150,7 +150,7 @@ namespace HoTroChoPhienLoTrinh
 
         public static DataTable LOTRINH(string LT)
         {
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE LOTRINH = '" + LT + "' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL' , YEAR(NGAYTHAY) AS N'NĂM GẮN' FROM TB_DULIEUKHACHHANG WHERE LOTRINH = '" + LT + "' ORDER BY LOTRINH ASC ";
             return getDataTable(sql);
         }
         private void cbMay_SelectedIndexChanged(object sender, EventArgs e)
@@ -231,7 +231,7 @@ namespace HoTroChoPhienLoTrinh
 
         public static DataTable HOPDONG(string danhbo)
         {
-            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  FROM TB_DULIEUKHACHHANG WHERE HOPDONG LIKE '%" + danhbo + "%' ORDER BY LOTRINH ASC ";
+            string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL' , YEAR(NGAYTHAY) AS N'NĂM GẮN'  FROM TB_DULIEUKHACHHANG WHERE HOPDONG LIKE '%" + danhbo + "%' ORDER BY LOTRINH ASC ";
             return getDataTable(sql);
         }
 
