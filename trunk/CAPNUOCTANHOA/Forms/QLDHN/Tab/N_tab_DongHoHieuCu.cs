@@ -51,7 +51,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 query += " AND CODH = " + this.txtCoDHN.Text.Replace(" ", "") ;
             }
             
-            query+= DAL.SYS.C_USERS._gioihan + " ORDER BY NAME ASC,LOTRINH ASC ";
+            query+= DAL.SYS.C_USERS._gioihan + " ORDER BY LOTRINH ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "W_DH_HIEUCU");

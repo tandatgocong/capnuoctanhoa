@@ -203,7 +203,23 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-                Add();
+                string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+                TB_CHUYENDINHMUC dc = DAL.QLDHN.C_ChuyenDinhMuc.findByTB_CHUYENDINHMUC_khacgnay(sodanhbo.Replace(" ", ""), this.txtNgayGan.Value.Date);
+                if (dc != null)
+                {
+                    string ngay = Utilities.DateToString.NgayVNVN(dc.NGAYLAP.Value);
+                    string mess = "Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " đã báo ngày " + ngay + " , Báo tiếp ?";
+                    if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Add();
+                    }
+                }
+                else
+                {
+                    Add();
+                }
+
+              
 
             }
             catch (Exception ex)

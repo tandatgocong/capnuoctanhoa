@@ -142,6 +142,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return null;
         }
 
+
         public static DataSet getReportDutChi(string listDanhbo, string ngay, int type)
         {
             DataSet ds = new DataSet();
