@@ -302,6 +302,31 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     txtSoDon.Text = (DAL.BANKTKS.C_GiamHoaDon.getMaxSoDon() + 1).ToString();
         }
 
+        private void txtSoDon_Leave(object sender, EventArgs e)
+        {
+            chkDongTien.Focus();
+        }
+
+        private void txtMaKiemKhoaNuoc_Leave(object sender, EventArgs e)
+        {
+            btncapNhat.Focus();
+        }
+
+        private void txtMaKiemThuHoi_Leave(object sender, EventArgs e)
+        {
+            txtChiSo.Focus();
+        }
+
+        private void txtChiSo_Leave(object sender, EventArgs e)
+        {
+            btncapNhat.Focus();
+        }
+
+        private void txtCamKet_Leave(object sender, EventArgs e)
+        {
+            btncapNhat.Focus();
+        }
+
         #endregion
 
         #region Method Action Control
@@ -531,6 +556,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         }
      
         #endregion        
+
+       
 
         
         
