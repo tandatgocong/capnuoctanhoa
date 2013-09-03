@@ -417,7 +417,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             {
                 if (selectedindex != -1)
                 {
-                    ///Kiểm tra nếu DHN_NGAYGHINHAN != KTKS_NGAYTIEPXUC thì thêm mới
+                    ///Kiểm tra nếu dateTiepXuc != KTKS_NGAYTIEPXUC thì thêm mới
                     if (dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString() == "" || DateTime.Parse(dataBangKe["KTKS_NGAYTIEPXUC", selectedindex].Value.ToString()) == dateTiepXuc.Value)
                         hd = DAL.BANKTKS.C_GiamHoaDon.findByID(int.Parse(dataBangKe["ID", selectedindex].Value.ToString()));
                     else
@@ -556,6 +556,28 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         }
      
         #endregion        
+
+        private void btnCapNhatNgay_Click(object sender, EventArgs e)
+        {
+            if (selectedindex != -1)
+            {
+                hd = DAL.BANKTKS.C_GiamHoaDon.findByID(int.Parse(dataBangKe["ID", selectedindex].Value.ToString()));
+                hd.KTKS_NGAYTIEPXUC = dateTiepXuc.Value;
+                hd.KTKS_MODIFYDATE = DateTime.Now.Date;
+                hd.KTKS_MODIFYBY = DAL.SYS.C_USERS._userName;
+                if (DAL.BANKTKS.C_GiamHoaDon.Update())
+                {
+                    MessageBox.Show("Cập nhật Ngày thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                    if (flag == "danhbo")
+                        txtSoDanhBo.Text = danhbovalue;
+                    LoadData();
+                    txtSoDanhBo.Focus();
+                }
+                else
+                    MessageBox.Show("Cập nhật Ngày thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
        
 
