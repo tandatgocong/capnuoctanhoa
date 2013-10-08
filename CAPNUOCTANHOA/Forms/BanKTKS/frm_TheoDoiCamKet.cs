@@ -14,7 +14,6 @@ using CAPNUOCTANHOA.LinQ;
 using System.Data.SqlClient;
 using CAPNUOCTANHOA.Forms.BanKTKS.BC;
 using CAPNUOCTANHOA.Forms.QLDHN.Tab.BC;
-using CAPNUOCTANHOA.Forms.QLDHN.Tab.BC;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {

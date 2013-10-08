@@ -107,7 +107,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         public void UpdateChiChu(string dot, string ky, string nam)
         {
             string sql = " UPDATE DocSo_PHT.dbo.DS" + nam + " SET  GHICHUVANPHONG=t2.NOIDUNG ";
-            sql += " FROM (SELECT NOIDUNG,DANHBO FROM CAPNUOCTANHOA.dbo.TB_GHICHU as t2 WHERE DONVI='QLDHN' ) as t2  ";
+            sql += " FROM (SELECT NOIDUNG,DANHBO,CREATEDATE FROM CAPNUOCTANHOA.dbo.TB_GHICHU as t2 WHERE DONVI='QLDHN' group by NOIDUNG,DANHBO,CREATEDATE having CREATEDATE = MAX(CREATEDATE) ) as t2  ";
             sql += "  WHERE DANHBA= t2.DANHBO AND LEFT(MALOTRINH,2)='" + dot + "' AND KY='" + int.Parse(ky) + "' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "MALOTRINH"); ;
             DAL.LinQConnection.ExecuteCommand_(sql);
         }
@@ -273,7 +273,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string dot = kdDot.Items[kdDot.SelectedIndex].ToString();
             string ky = kdKy.Items[kdKy.SelectedIndex].ToString();
             string nam = kdNam.Text.Trim();
-            string list = "SELECT DANHBA FROM [DocSo_PHT].[dbo].[DS" + nam + "] where KY=" + int.Parse(ky) + " AND DOT=" + int.Parse(dot) + " " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "MALOTRINH") + " AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 AND  ( GHICHUMOI NOT LIKE N'%Đứt chì thân%' AND GHICHUMOI NOT LIKE N'%Đứt chì gốc%' AND GHICHUMOI NOT LIKE N'%CHẠY%')";
+            string list = "SELECT DANHBA FROM [DocSo_PHT].[dbo].[DS" + nam + "] where KY=" + int.Parse(ky) + " AND DOT=" + int.Parse(dot) + " " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "MALOTRINH") + " AND LEN(REPLACE(GHICHUMOI,'/',''))>=2 AND  (GHICHUMOI NOT LIKE N'%Đức%' AND GHICHUMOI NOT LIKE N'%Đứt%' AND  GHICHUMOI NOT LIKE N'%GIẾ%' AND GHICHUMOI NOT LIKE N'%CHẠY%')";
             DataTable listdb = DAL.LinQConnection.getDataTable(list);
 
             for (int i = 0; i < listdb.Rows.Count; i++)
@@ -399,7 +399,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string sql = " SELECT kh.DANHBO, ds.MALOTRINH as LOTRINH ,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM,hieu.TENDONGHO, ds.CO, kh.SOTHANDH ,ds.GHICHUMOI  ";
                 sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh, TB_HIEUDONGHO hieu ";
                 sql += " WHERE  ds.DANHBA=kh.DANHBO " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "kh.LOTRINH");
-                sql += " AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + " AND GHICHUMOI LIKE N'%"+this.comboBoxDutChi.Text +"%' ";
+                sql += " AND LEFT(kh.HIEUDH,3)= hieu.HIEUDH AND ds.KY=" + int.Parse(ky) + "  AND  GHICHUMOI NOT LIKE N'%GIẾ%' AND  GHICHUMOI LIKE N'%" + this.comboBoxDutChi.Text + "%' ";
                 sql += " ORDER BY ds.MALOTRINH ASC";
 
                 return DAL.LinQConnection.getDataTable(sql);
@@ -651,7 +651,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             catch (Exception ex)
             {
-
+                log.Error(ex.Message);
                 MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -128,7 +128,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             catch (Exception ex)
             {
-
+                log.Error(ex.Message);
             }
         }
 

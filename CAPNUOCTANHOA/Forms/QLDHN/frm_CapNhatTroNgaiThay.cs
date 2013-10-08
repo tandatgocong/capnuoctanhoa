@@ -61,7 +61,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
             //ID, , , , , , , , , HIEU, CO, GHICHU, NGAYLAP, GANHOP, GH_GHICHU, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY
-            TB_DHNAMSAU chuyendm = DAL.QLDHN.C_DhnAmSau.findByDanhBo(sodanhbo);
+            TB_DHNAMSAU chuyendm = DAL.QLDHN.C_DhnAmSau.findByDanhBo(sodanhbo,DateTime.Now.Date);
             TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
             if (chuyendm != null)
             {

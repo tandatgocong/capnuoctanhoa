@@ -33,7 +33,6 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
            
         }
 
-        private Control txtKeypress;
         private void KeyPressHandle(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
             if (!Char.IsControl(e.KeyChar) && !Char.IsNumber(e.KeyChar))

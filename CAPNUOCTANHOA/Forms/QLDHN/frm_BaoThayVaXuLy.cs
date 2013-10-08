@@ -20,7 +20,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
     {
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_DieuChinhThongTin).Name);
-        string listDanhBa = "";
         string sql_trongai = "";
         string sql_chuyentt = "";
         string sql_chuyenkt = "";

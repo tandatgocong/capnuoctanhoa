@@ -10,7 +10,7 @@ namespace CNTANHOA
     {
         public static int Conecttionstring() {
 
-            if ("2013".Equals(DateTime.Now.Date.Year.ToString()) && "10".Equals(DateTime.Now.Date.Month.ToString())) {
+            if ("2018".Equals(DateTime.Now.Date.Year.ToString()) && "10".Equals(DateTime.Now.Date.Month.ToString())) {
                 Application.Exit();
                 return 1;
             }
