@@ -56,7 +56,8 @@
     <StartupObject>CAPNUOCTANHOA.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CNTANHOA">
+    <Reference Include="CNTANHOA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\CNTANHOA.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -66,15 +67,6 @@
     <Reference Include="DevComponents.DotNetBar2, Version=8.0.0.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\DevComponents.DotNetBar2.dll</HintPath>
-    </Reference>
-    <Reference Include="devexpress.data.v10.1">
-      <HintPath>C:\Users\KINH\Downloads\devexpress.data.v10.1.dll</HintPath>
-    </Reference>
-    <Reference Include="devexpress.utils.v10.1">
-      <HintPath>C:\Users\KINH\Downloads\devexpress.utils.v10.1.dll</HintPath>
-    </Reference>
-    <Reference Include="devexpress.xtraeditors.v10.1">
-      <HintPath>C:\Users\KINH\Downloads\devexpress.xtraeditors.v10.1.dll</HintPath>
     </Reference>
     <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

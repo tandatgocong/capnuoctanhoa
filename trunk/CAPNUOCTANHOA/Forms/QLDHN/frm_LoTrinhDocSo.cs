@@ -412,20 +412,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string TODS = "TB01";
                 string LOTRINH = this.txtLoTrinhTam.Text;
                 string _dt = this.txtDienThoai.Text;
-                int tods = 1;
                 if (this.cbToDocSo.SelectedIndex == 1)
                 {
                     TODS = "TB02";
-                    tods = 2;
                 }
                 else if (this.cbToDocSo.SelectedIndex == 2)
                 {
-                    tods = 3;
                     TODS = "TP";
                 }
                 else
                 {
-                    tods = 1;
                     TODS = "TB01";
                 }
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(DANHBO) == null && "".Equals(LOTRINH.Replace(" ", "")) == false)

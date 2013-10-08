@@ -181,7 +181,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
             //ID, , , , , , , , , HIEU, CO, GHICHU, NGAYLAP, GANHOP, GH_GHICHU, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY
-            TB_DHNAMSAU chuyendm = DAL.QLDHN.C_DhnAmSau.findByDanhBo(sodanhbo);
+            TB_DHNAMSAU chuyendm = DAL.QLDHN.C_DhnAmSau.findByDanhBo(sodanhbo, this.txtNgayGan.Value.Date);
             if (chuyendm != null) {
                 string mess = "Danh Bộ Đã Nâng ĐHN Ngày " + Utilities.DateToString.NgayVNVN(chuyendm.NGAYLAP.Value) + ", Có Muốn Tiếp Tục Gắn Hộp ?";
                 if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {

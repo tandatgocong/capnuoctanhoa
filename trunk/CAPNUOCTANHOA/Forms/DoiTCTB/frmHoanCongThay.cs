@@ -376,9 +376,9 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
 
                                     string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
                                     " VALUES     ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " +
-                                    " '" + kh.HOTEN + "', " +
-                                    " '" + kh.SONHA + "' ," +
-                                    " '" + kh.TENDUONG + "' , " +
+                                    " '" + kh.HOTEN.TrimEnd() + "', " +
+                                    " '" + kh.SONHA.TrimEnd() + "' ," +
+                                    " '" + kh.TENDUONG.TrimEnd() +"' , " +
                                     " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
                                     " " + kh.CODH + ", " +
                                     " '" + txtNgayGan.Value + "', " +
@@ -394,9 +394,9 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
 
                                         sql = "UPDATE  BAOTHAYDHN  " +
                                         " SET  " +
-                                        " TENKH='" + kh.HOTEN + "', " +
-                                        " SO='" + kh.SONHA + "' ," +
-                                        " DUONG='" + kh.TENDUONG + "' , " +
+                                        " TENKH='" + kh.HOTEN.TrimEnd() + "', " +
+                                        " SO='" + kh.SONHA.TrimEnd() + "' ," +
+                                        " DUONG='" + kh.TENDUONG.TrimEnd() + "' , " +
                                         " HIEUMOI='" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
                                         " COMOI=" + kh.CODH + ", " +
                                         " NGAYTHAY='" + txtNgayGan.Value + "', " +
@@ -414,6 +414,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                 catch (Exception ex)
                                 {
                                     log.Error("Cap Nhat Du Lieu Cho HandHeld : " + ex.Message);
+                                    MessageBox.Show(this, "Cập Nhật Hoàn Công Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                                 //// END
 
@@ -422,6 +423,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         catch (Exception ex)
                         {
                             log.Error("Cap Nhat Ho So Khach Hang : " + ex.Message);
+                            MessageBox.Show(this, "Cập Nhật Hoàn Công Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     //else {

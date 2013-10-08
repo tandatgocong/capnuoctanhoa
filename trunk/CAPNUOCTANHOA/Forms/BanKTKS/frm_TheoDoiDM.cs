@@ -386,6 +386,9 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         {
             try
             {
+                this.txtSoThangHD.Visible = false;
+                this.txtSoThangHD1.Visible = false;
+                this.txtSoThangHD2.Visible = false;
                 if ("HKH".Equals(cbLoaiChungTu.SelectedValue + ""))
                 {
 
@@ -397,6 +400,12 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 else if ("TAT".Equals(cbLoaiChungTu.SelectedValue + ""))
                 {
                     dateNgayHetHan.Value = dateNgayKy.Value.Date.AddMonths(6);
+                }
+                else if ("HDT".Equals(cbLoaiChungTu.SelectedValue + ""))
+                {
+                    this.txtSoThangHD.Visible = true;
+                    this.txtSoThangHD1.Visible = true;
+                    this.txtSoThangHD2.Visible = true;
                 }
 
             }
@@ -632,6 +641,28 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
            
                 
             
+        }
+
+        private void txtSoThangHD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                 dateNgayHetHan.Value = dateNgayKy.Value.Date.AddMonths(int.Parse(txtSoThangHD.Text));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void txtSoThangHD_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                dateNgayHetHan.Value = dateNgayKy.Value.Date.AddMonths(int.Parse(txtSoThangHD.Text));
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

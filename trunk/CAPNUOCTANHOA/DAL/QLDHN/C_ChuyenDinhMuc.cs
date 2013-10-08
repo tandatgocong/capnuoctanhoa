@@ -43,7 +43,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             try
             {
-                var query = from q in db.TB_CHUYENDINHMUCs where q.DANHBO == danhbo && q.NGAYLAP != ngayyc select q;
+                var query = from q in db.TB_CHUYENDINHMUCs where q.DANHBO == danhbo && q.NGAYLAP != ngayyc orderby q.NGAYLAP descending select q;
                 return query.ToList()[0];
             }
             catch (Exception ex)

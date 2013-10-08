@@ -114,6 +114,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
+            this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbSanLuong = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.lbTongThay = new DevComponents.DotNetBar.LabelX();
+            this.lbTongHuy = new DevComponents.DotNetBar.LabelX();
+            this.lbTongGanMoi = new DevComponents.DotNetBar.LabelX();
+            this.lbTongDHN = new DevComponents.DotNetBar.LabelX();
+            this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabHoSoDuAn = new DevComponents.DotNetBar.TabControlPanel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -182,19 +195,6 @@
             this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbSanLuong = new DevComponents.DotNetBar.LabelX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.lbTongThay = new DevComponents.DotNetBar.LabelX();
-            this.lbTongHuy = new DevComponents.DotNetBar.LabelX();
-            this.lbTongGanMoi = new DevComponents.DotNetBar.LabelX();
-            this.lbTongDHN = new DevComponents.DotNetBar.LabelX();
-            this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.dataBangKe = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,6 +218,8 @@
             this.btInDS = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabDanhSachDot.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabHoSoDuAn.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -228,8 +230,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataHuy)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabDanhSachDot.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tabCapNhatDS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             this.SuspendLayout();
@@ -380,7 +380,7 @@
             // 
             // comboItem21
             // 
-            this.comboItem21.Text = "08";
+            this.comboItem21.Text = "09";
             this.comboItem21.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem21.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
@@ -522,6 +522,155 @@
             this.tabControl1.Tabs.Add(this.tabItem2);
             this.tabControl1.Tabs.Add(this.tabItem3);
             this.tabControl1.Text = "tabControl1";
+            // 
+            // tabDanhSachDot
+            // 
+            this.tabDanhSachDot.Controls.Add(this.panel1);
+            this.tabDanhSachDot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabDanhSachDot.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.tabDanhSachDot.Location = new System.Drawing.Point(0, 28);
+            this.tabDanhSachDot.Name = "tabDanhSachDot";
+            this.tabDanhSachDot.Padding = new System.Windows.Forms.Padding(1);
+            this.tabDanhSachDot.Size = new System.Drawing.Size(1193, 433);
+            this.tabDanhSachDot.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
+            this.tabDanhSachDot.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
+            this.tabDanhSachDot.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabDanhSachDot.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabDanhSachDot.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabDanhSachDot.Style.GradientAngle = 90;
+            this.tabDanhSachDot.TabIndex = 1;
+            this.tabDanhSachDot.TabItem = this.tabItem1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbSanLuong);
+            this.panel1.Controls.Add(this.labelX10);
+            this.panel1.Controls.Add(this.lbTongThay);
+            this.panel1.Controls.Add(this.lbTongHuy);
+            this.panel1.Controls.Add(this.lbTongGanMoi);
+            this.panel1.Controls.Add(this.lbTongDHN);
+            this.panel1.Controls.Add(this.labelX8);
+            this.panel1.Controls.Add(this.labelX7);
+            this.panel1.Controls.Add(this.labelX6);
+            this.panel1.Controls.Add(this.labelX5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1191, 431);
+            this.panel1.TabIndex = 0;
+            // 
+            // lbSanLuong
+            // 
+            this.lbSanLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbSanLuong.ForeColor = System.Drawing.Color.Red;
+            this.lbSanLuong.Location = new System.Drawing.Point(220, 131);
+            this.lbSanLuong.Name = "lbSanLuong";
+            this.lbSanLuong.Size = new System.Drawing.Size(60, 23);
+            this.lbSanLuong.TabIndex = 5;
+            this.lbSanLuong.Text = "0";
+            this.lbSanLuong.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX10
+            // 
+            this.labelX10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelX10.Location = new System.Drawing.Point(24, 131);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(189, 23);
+            this.labelX10.TabIndex = 4;
+            this.labelX10.Text = "Tổng Sản Lượng ĐHN :";
+            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // lbTongThay
+            // 
+            this.lbTongThay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbTongThay.ForeColor = System.Drawing.Color.Red;
+            this.lbTongThay.Location = new System.Drawing.Point(220, 102);
+            this.lbTongThay.Name = "lbTongThay";
+            this.lbTongThay.Size = new System.Drawing.Size(60, 23);
+            this.lbTongThay.TabIndex = 3;
+            this.lbTongThay.Text = "0";
+            this.lbTongThay.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // lbTongHuy
+            // 
+            this.lbTongHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbTongHuy.ForeColor = System.Drawing.Color.Red;
+            this.lbTongHuy.Location = new System.Drawing.Point(220, 73);
+            this.lbTongHuy.Name = "lbTongHuy";
+            this.lbTongHuy.Size = new System.Drawing.Size(60, 23);
+            this.lbTongHuy.TabIndex = 3;
+            this.lbTongHuy.Text = "0";
+            this.lbTongHuy.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // lbTongGanMoi
+            // 
+            this.lbTongGanMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbTongGanMoi.ForeColor = System.Drawing.Color.Red;
+            this.lbTongGanMoi.Location = new System.Drawing.Point(220, 44);
+            this.lbTongGanMoi.Name = "lbTongGanMoi";
+            this.lbTongGanMoi.Size = new System.Drawing.Size(60, 23);
+            this.lbTongGanMoi.TabIndex = 3;
+            this.lbTongGanMoi.Text = "0";
+            this.lbTongGanMoi.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // lbTongDHN
+            // 
+            this.lbTongDHN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbTongDHN.ForeColor = System.Drawing.Color.Red;
+            this.lbTongDHN.Location = new System.Drawing.Point(220, 15);
+            this.lbTongDHN.Name = "lbTongDHN";
+            this.lbTongDHN.Size = new System.Drawing.Size(60, 23);
+            this.lbTongDHN.TabIndex = 3;
+            this.lbTongDHN.Text = "0";
+            this.lbTongDHN.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX8
+            // 
+            this.labelX8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelX8.Location = new System.Drawing.Point(24, 102);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(189, 23);
+            this.labelX8.TabIndex = 2;
+            this.labelX8.Text = "Tổng Số ĐHN Thay  :";
+            this.labelX8.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX7
+            // 
+            this.labelX7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelX7.Location = new System.Drawing.Point(24, 73);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(189, 23);
+            this.labelX7.TabIndex = 1;
+            this.labelX7.Text = "Tổng Số ĐHN Hủy  :";
+            this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX6
+            // 
+            this.labelX6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelX6.Location = new System.Drawing.Point(24, 44);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(189, 23);
+            this.labelX6.TabIndex = 0;
+            this.labelX6.Text = "Tổng Số ĐHN Gắn Mới  :";
+            this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX5
+            // 
+            this.labelX5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelX5.Location = new System.Drawing.Point(33, 15);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(180, 23);
+            this.labelX5.TabIndex = 0;
+            this.labelX5.Text = "Tổng Số ĐHN :";
+            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tabItem1
+            // 
+            this.tabItem1.AttachedControl = this.tabDanhSachDot;
+            this.tabItem1.Name = "tabItem1";
+            this.tabItem1.Text = "Thống Kê Tổng Kết";
+            this.tabItem1.Click += new System.EventHandler(this.tabItem1_Click);
             // 
             // tabHoSoDuAn
             // 
@@ -1293,155 +1442,6 @@
             this.tabItem3.Text = "Quản Lý ĐHN";
             this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
             // 
-            // tabDanhSachDot
-            // 
-            this.tabDanhSachDot.Controls.Add(this.panel1);
-            this.tabDanhSachDot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabDanhSachDot.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.tabDanhSachDot.Location = new System.Drawing.Point(0, 28);
-            this.tabDanhSachDot.Name = "tabDanhSachDot";
-            this.tabDanhSachDot.Padding = new System.Windows.Forms.Padding(1);
-            this.tabDanhSachDot.Size = new System.Drawing.Size(1193, 433);
-            this.tabDanhSachDot.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
-            this.tabDanhSachDot.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
-            this.tabDanhSachDot.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabDanhSachDot.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabDanhSachDot.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabDanhSachDot.Style.GradientAngle = 90;
-            this.tabDanhSachDot.TabIndex = 1;
-            this.tabDanhSachDot.TabItem = this.tabItem1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lbSanLuong);
-            this.panel1.Controls.Add(this.labelX10);
-            this.panel1.Controls.Add(this.lbTongThay);
-            this.panel1.Controls.Add(this.lbTongHuy);
-            this.panel1.Controls.Add(this.lbTongGanMoi);
-            this.panel1.Controls.Add(this.lbTongDHN);
-            this.panel1.Controls.Add(this.labelX8);
-            this.panel1.Controls.Add(this.labelX7);
-            this.panel1.Controls.Add(this.labelX6);
-            this.panel1.Controls.Add(this.labelX5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1191, 431);
-            this.panel1.TabIndex = 0;
-            // 
-            // lbSanLuong
-            // 
-            this.lbSanLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbSanLuong.ForeColor = System.Drawing.Color.Red;
-            this.lbSanLuong.Location = new System.Drawing.Point(220, 131);
-            this.lbSanLuong.Name = "lbSanLuong";
-            this.lbSanLuong.Size = new System.Drawing.Size(60, 23);
-            this.lbSanLuong.TabIndex = 5;
-            this.lbSanLuong.Text = "0";
-            this.lbSanLuong.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX10
-            // 
-            this.labelX10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX10.Location = new System.Drawing.Point(24, 131);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(189, 23);
-            this.labelX10.TabIndex = 4;
-            this.labelX10.Text = "Tổng Sản Lượng ĐHN :";
-            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // lbTongThay
-            // 
-            this.lbTongThay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTongThay.ForeColor = System.Drawing.Color.Red;
-            this.lbTongThay.Location = new System.Drawing.Point(220, 102);
-            this.lbTongThay.Name = "lbTongThay";
-            this.lbTongThay.Size = new System.Drawing.Size(60, 23);
-            this.lbTongThay.TabIndex = 3;
-            this.lbTongThay.Text = "0";
-            this.lbTongThay.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // lbTongHuy
-            // 
-            this.lbTongHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTongHuy.ForeColor = System.Drawing.Color.Red;
-            this.lbTongHuy.Location = new System.Drawing.Point(220, 73);
-            this.lbTongHuy.Name = "lbTongHuy";
-            this.lbTongHuy.Size = new System.Drawing.Size(60, 23);
-            this.lbTongHuy.TabIndex = 3;
-            this.lbTongHuy.Text = "0";
-            this.lbTongHuy.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // lbTongGanMoi
-            // 
-            this.lbTongGanMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTongGanMoi.ForeColor = System.Drawing.Color.Red;
-            this.lbTongGanMoi.Location = new System.Drawing.Point(220, 44);
-            this.lbTongGanMoi.Name = "lbTongGanMoi";
-            this.lbTongGanMoi.Size = new System.Drawing.Size(60, 23);
-            this.lbTongGanMoi.TabIndex = 3;
-            this.lbTongGanMoi.Text = "0";
-            this.lbTongGanMoi.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // lbTongDHN
-            // 
-            this.lbTongDHN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTongDHN.ForeColor = System.Drawing.Color.Red;
-            this.lbTongDHN.Location = new System.Drawing.Point(220, 15);
-            this.lbTongDHN.Name = "lbTongDHN";
-            this.lbTongDHN.Size = new System.Drawing.Size(60, 23);
-            this.lbTongDHN.TabIndex = 3;
-            this.lbTongDHN.Text = "0";
-            this.lbTongDHN.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX8
-            // 
-            this.labelX8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX8.Location = new System.Drawing.Point(24, 102);
-            this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(189, 23);
-            this.labelX8.TabIndex = 2;
-            this.labelX8.Text = "Tổng Số ĐHN Thay  :";
-            this.labelX8.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX7
-            // 
-            this.labelX7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX7.Location = new System.Drawing.Point(24, 73);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(189, 23);
-            this.labelX7.TabIndex = 1;
-            this.labelX7.Text = "Tổng Số ĐHN Hủy  :";
-            this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX6
-            // 
-            this.labelX6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX6.Location = new System.Drawing.Point(24, 44);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(189, 23);
-            this.labelX6.TabIndex = 0;
-            this.labelX6.Text = "Tổng Số ĐHN Gắn Mới  :";
-            this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX5
-            // 
-            this.labelX5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX5.Location = new System.Drawing.Point(33, 15);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(180, 23);
-            this.labelX5.TabIndex = 0;
-            this.labelX5.Text = "Tổng Số ĐHN :";
-            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tabItem1
-            // 
-            this.tabItem1.AttachedControl = this.tabDanhSachDot;
-            this.tabItem1.Name = "tabItem1";
-            this.tabItem1.Text = "Thống Kê Tổng Kết";
-            this.tabItem1.Click += new System.EventHandler(this.tabItem1_Click);
-            // 
             // tabCapNhatDS
             // 
             this.tabCapNhatDS.Controls.Add(this.dataBangKe);
@@ -1723,6 +1723,8 @@
             this.Size = new System.Drawing.Size(1238, 629);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabDanhSachDot.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.tabHoSoDuAn.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1733,8 +1735,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataHuy)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabDanhSachDot.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.tabCapNhatDS.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).EndInit();
             this.ResumeLayout(false);

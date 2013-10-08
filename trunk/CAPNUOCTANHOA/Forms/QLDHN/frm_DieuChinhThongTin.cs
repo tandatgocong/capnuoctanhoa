@@ -293,7 +293,49 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
                 else
                 {
-                    MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TB_DULIEUKHACHHANG_HUYDB khachhanghuy = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
+                    if (khachhanghuy != null)
+                    {
+                        LOTRINH.Text = khachhanghuy.LOTRINH;
+                        DOT.Text = khachhanghuy.DOT;
+                        HOPDONG.Text = khachhanghuy.HOPDONG;
+                        HOTEN.Text = khachhanghuy.HOTEN;
+                        SONHA.Text = khachhanghuy.SONHA;
+                        TENDUONG.Text = khachhanghuy.TENDUONG;
+                        try
+                        {
+                            LinQ.QUAN q = DAL.SYS.C_Quan.finByMaQuan(int.Parse(khachhanghuy.QUAN));
+                            if (q != null)
+                            {
+                                QUAN.Text = q.TENQUAN;
+                                LinQ.PHUONG ph = DAL.SYS.C_Phuong.finbyPhuong(q.MAQUAN, khachhanghuy.PHUONG.Trim());
+                                PHUONGT.Text = ph.TENPHUONG;
+                            }
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        txtHieuLuc.Text = "Hết HL " + khachhanghuy.HIEULUCHUY;
+                        GIABIEU.Text = khachhanghuy.GIABIEU;
+                        DINHMUC.Text = khachhanghuy.DINHMUC;
+                        NGAYGAN.ValueObject = khachhanghuy.NGAYTHAY;
+                        KIEMDINH.ValueObject = khachhanghuy.NGAYKIEMDINH;
+                        HIEUDH.Text = khachhanghuy.HIEUDH;
+                        CO.Text = khachhanghuy.CODH;
+                        CAP.Text = khachhanghuy.CAP;
+                        SOTHAN.Text = khachhanghuy.SOTHANDH;
+                        VITRI.Text = khachhanghuy.VITRIDHN;
+                        CHITHAN.Text = khachhanghuy.CHITHAN;
+                        CHIGOC.Text = khachhanghuy.CHIGOC;
+                        btCapNhatHuy.Enabled = true;
+
+                    }
+                    else
+                    {
+
+                        MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Refesh();
+                    }
                 }
             }
         }
@@ -516,6 +558,81 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             panel6.Controls.Clear();
             panel6.Controls.Add(new frm_DUTCHITHAN());
+        }
+
+        private void btCapNhatHuy_Click(object sender, EventArgs e)
+        {
+            string sodanhbo = this.huy_danhbo.Text.Replace("-", "");
+            TB_DULIEUKHACHHANG_HUYDB hKhacHang = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
+            if (hKhacHang != null)
+            {
+                
+                hKhacHang.KHU = huyDanhBo.KHU;
+                hKhacHang.DOT = huyDanhBo.DOT;
+                hKhacHang.CUON_GCS = huyDanhBo.CUON_GCS;
+                hKhacHang.CUON_STT = huyDanhBo.CUON_STT;
+                hKhacHang.DANHBO = huyDanhBo.DANHBO;
+                hKhacHang.LOTRINH = huyDanhBo.LOTRINH;
+                hKhacHang.NGAYGANDH = huyDanhBo.NGAYGANDH;
+                hKhacHang.HOPDONG = huyDanhBo.HOPDONG;
+                hKhacHang.HOTEN = huyDanhBo.HOTEN;
+                hKhacHang.SONHA = huyDanhBo.SONHA;
+                hKhacHang.TENDUONG = huyDanhBo.TENDUONG;
+                hKhacHang.PHUONG = huyDanhBo.PHUONG;
+                hKhacHang.QUAN = huyDanhBo.QUAN;
+                hKhacHang.CHUKY = huyDanhBo.CHUKY;
+                hKhacHang.CODE = huyDanhBo.CODE;
+                hKhacHang.CODEFU = huyDanhBo.CODEFU;
+                hKhacHang.GIABIEU = huyDanhBo.GIABIEU;
+                hKhacHang.DINHMUC = huyDanhBo.DINHMUC;
+                hKhacHang.SH = huyDanhBo.SH;
+                hKhacHang.HCSN = huyDanhBo.HCSN;
+                hKhacHang.SX = huyDanhBo.SX;
+                hKhacHang.DV = huyDanhBo.DV;
+                hKhacHang.CODH = huyDanhBo.CODH;
+                hKhacHang.HIEUDH = huyDanhBo.HIEUDH;
+                hKhacHang.CAP = huyDanhBo.CAP;
+                hKhacHang.SOTHANDH = huyDanhBo.SOTHANDH;
+                hKhacHang.CHITHAN = huyDanhBo.CHITHAN;
+                hKhacHang.CHIGOC = huyDanhBo.CHIGOC;
+                hKhacHang.VITRIDHN = huyDanhBo.VITRIDHN;
+                hKhacHang.NGAYTHAY = huyDanhBo.NGAYTHAY;
+                hKhacHang.NGAYKIEMDINH = huyDanhBo.NGAYKIEMDINH;
+                hKhacHang.SODHN = huyDanhBo.SODHN;
+                hKhacHang.MSTHUE = huyDanhBo.MSTHUE;
+                hKhacHang.SOHO = huyDanhBo.SOHO;
+                hKhacHang.CHISOKYTRUOC = huyDanhBo.CHISOKYTRUOC;
+                hKhacHang.SOPHIEU = this.H_SOPHIEU.Text;
+                hKhacHang.NGAYHUY = DateTime.Now.Date;
+                hKhacHang.HIEULUCHUY = cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + this.txtNam.Text;
+                hKhacHang.NGUYENNHAN = this.NGUYENNHAN.Text;
+                hKhacHang.GHICHU = this.GHICHU.Text; ;
+                hKhacHang.CREATEDATE = DateTime.Now;
+                hKhacHang.CREATEBY = DAL.SYS.C_USERS._userName;
+                hKhacHang.MADMA = huyDanhBo.MADMA;
+                hKhacHang.CHUKYDS = huyDanhBo.CHUKYDS;
+                if (DAL.DULIEUKH.C_DuLieuKhachHang.HuyDanhBo(hKhacHang, huyDanhBo))
+                {
+                    MessageBox.Show(this, "Hủy Danh Bộ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    H_LOTRINH.Text = "";
+                    H_DOT.Text = "";
+                    H_HOPDONG.Text = "";
+                    H_HOTEN.Text = "";
+                    H_SONHA.Text = "";
+                    H_TENDUONG.Text = "";
+                    H_QUAN.Text = "";
+                    H_PHUONG.Text = "";
+                    H_GIABIEU.Text = "";
+                    H_DINHMUC.Text = "";
+                    huy_danhbo.Text = "";
+
+                    this.huy_danhbo.Focus();
+                }
+                else
+                {
+                    MessageBox.Show(this, "Hủy Danh Bộ Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
     }

@@ -65,11 +65,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return null;
         }
 
-        public static TB_DHNAMSAU findByDanhBo(string danhbo)
+        public static TB_DHNAMSAU findByDanhBo(string danhbo, DateTime ngayyc)
         {
             try
             {
-                var query = from q in db.TB_DHNAMSAUs where q.DANHBO == danhbo select q;
+                var query = from q in db.TB_DHNAMSAUs where q.DANHBO == danhbo && ngayyc != q.NGAYLAP orderby q.NGAYLAP descending select q;
                 return query.ToList()[0];
             }
             catch (Exception ex)
@@ -132,7 +132,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             try
             {
-                var query = from q in db.TB_TLKDUTCHIs where q.DANHBO == danhbo && q.NGAYBAO != ngayyc select q;
+                var query = from q in db.TB_TLKDUTCHIs where q.DANHBO == danhbo && q.NGAYBAO != ngayyc orderby q.NGAYBAO descending select q;
                 return query.ToList()[0];
             }
             catch (Exception ex)

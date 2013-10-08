@@ -34,7 +34,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string dk = "";
             string query = "SELECT * FROM W_DH_HIEUCU WHERE DANHBO IS NOT NULL ";
             if (!"".Equals(nam))
             {

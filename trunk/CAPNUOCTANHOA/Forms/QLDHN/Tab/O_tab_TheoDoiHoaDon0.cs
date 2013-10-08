@@ -81,7 +81,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
 
         }
-        string sql = "";
         string sql1 = "";
         public static void formatRowsSTT(DataGridView dview, string STT)
         {
