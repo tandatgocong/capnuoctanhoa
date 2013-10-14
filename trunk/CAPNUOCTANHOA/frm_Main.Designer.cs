@@ -624,8 +624,8 @@
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Controls.Add(this.ribbonPanel6);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
@@ -652,6 +652,7 @@
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // ribbonPanel2
             // 
@@ -850,9 +851,8 @@
             this.toolNhanDon.ForeColor = System.Drawing.Color.Black;
             this.toolNhanDon.Image = global::CAPNUOCTANHOA.Properties.Resources.Clipboard_Paste;
             this.toolNhanDon.Name = "toolNhanDon";
-            this.toolNhanDon.Size = new System.Drawing.Size(106, 23);
-            this.toolNhanDon.Text = "Nhận Đơn";
-            this.toolNhanDon.Visible = false;
+            this.toolNhanDon.Size = new System.Drawing.Size(129, 23);
+            this.toolNhanDon.Text = "Y/C Kiểm Tra";
             this.toolNhanDon.Click += new System.EventHandler(this.toolNhanDon_Click);
             // 
             // toolDmChungCu
