@@ -2,9 +2,10 @@
 <xs:schema id="DataSetktks" targetNamespace="http://tempuri.org/DataSetktks.xsd" xmlns:mstns="http://tempuri.org/DataSetktks.xsd" xmlns="http://tempuri.org/DataSetktks.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CAPNUOCTANHOAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CAPNUOCTANHOAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CAPNUOCTANHOA.Properties.Settings.GlobalReference.Default.CAPNUOCTANHOAConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CAPNUOCTANHOAConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CAPNUOCTANHOAConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CAPNUOCTANHOA.Properties.Settings.GlobalReference.Default.CAPNUOCTANHOAConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_KTKS_THEODOIDMTableAdapter" GeneratorDataComponentClassName="V_KTKS_THEODOIDMTableAdapter" Name="V_KTKS_THEODOIDM" UserDataComponentName="V_KTKS_THEODOIDMTableAdapter">
@@ -32,6 +33,167 @@
               <Mapping SourceColumn="DMMOI" DataSetColumn="DMMOI" />
               <Mapping SourceColumn="DIENTHOAI" DataSetColumn="DIENTHOAI" />
               <Mapping SourceColumn="GHICHU" DataSetColumn="GHICHU" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KTKS_DANHSACHKTTableAdapter" GeneratorDataComponentClassName="KTKS_DANHSACHKTTableAdapter" Name="KTKS_DANHSACHKT" UserDataComponentName="KTKS_DANHSACHKTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString1 (Settings)" DbObjectName="CAPNUOCTANHOA.dbo.KTKS_DANHSACHKT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[KTKS_DANHSACHKT] WHERE (([ID] = @Original_ID) AND ((@IsNull_DANHBO = 1 AND [DANHBO] IS NULL) OR ([DANHBO] = @Original_DANHBO)) AND ((@IsNull_LOTRINH = 1 AND [LOTRINH] IS NULL) OR ([LOTRINH] = @Original_LOTRINH)) AND ((@IsNull_HOTEN = 1 AND [HOTEN] IS NULL) OR ([HOTEN] = @Original_HOTEN)) AND ((@IsNull_DIACHI = 1 AND [DIACHI] IS NULL) OR ([DIACHI] = @Original_DIACHI)) AND ((@IsNull_HOPDONG = 1 AND [HOPDONG] IS NULL) OR ([HOPDONG] = @Original_HOPDONG)) AND ((@IsNull_HIEUDHN = 1 AND [HIEUDHN] IS NULL) OR ([HIEUDHN] = @Original_HIEUDHN)) AND ((@IsNull_CODHN = 1 AND [CODHN] IS NULL) OR ([CODHN] = @Original_CODHN)) AND ((@IsNull_SOTHAN = 1 AND [SOTHAN] IS NULL) OR ([SOTHAN] = @Original_SOTHAN)) AND ((@IsNull_GB = 1 AND [GB] IS NULL) OR ([GB] = @Original_GB)) AND ((@IsNull_DM = 1 AND [DM] IS NULL) OR ([DM] = @Original_DM)) AND ((@IsNull_CHISO = 1 AND [CHISO] IS NULL) OR ([CHISO] = @Original_CHISO)) AND ((@IsNull_CONGDUNG = 1 AND [CONGDUNG] IS NULL) OR ([CONGDUNG] = @Original_CONGDUNG)) AND ((@IsNull_NGAYLAP = 1 AND [NGAYLAP] IS NULL) OR ([NGAYLAP] = @Original_NGAYLAP)) AND ((@IsNull_CREATEDATE = 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@IsNull_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Original_MODIFYDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYBY] = @Original_MODIFYBY)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DANHBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DANHBO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DANHBO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DANHBO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LOTRINH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LOTRINH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_LOTRINH" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LOTRINH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HOTEN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HOTEN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HOTEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HOTEN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DIACHI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DIACHI" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DIACHI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIACHI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HOPDONG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HOPDONG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HOPDONG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HOPDONG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HIEUDHN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HIEUDHN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HIEUDHN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HIEUDHN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CODHN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODHN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CODHN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CODHN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SOTHAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SOTHAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SOTHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SOTHAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GB" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GB" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_GB" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GB" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CHISO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CHISO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CHISO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CHISO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CONGDUNG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CONGDUNG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CONGDUNG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CONGDUNG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAYLAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAYLAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAYLAP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAYLAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CREATEDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CREATEDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CREATEBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CREATEBY" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MODIFYDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_MODIFYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MODIFYBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MODIFYBY" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[KTKS_DANHSACHKT] ([DANHBO], [LOTRINH], [HOTEN], [DIACHI], [HOPDONG], [HIEUDHN], [CODHN], [SOTHAN], [GB], [DM], [CHISO], [CONGDUNG], [NGAYLAP], [CREATEDATE], [CREATEBY], [MODIFYDATE], [MODIFYBY]) VALUES (@DANHBO, @LOTRINH, @HOTEN, @DIACHI, @HOPDONG, @HIEUDHN, @CODHN, @SOTHAN, @GB, @DM, @CHISO, @CONGDUNG, @NGAYLAP, @CREATEDATE, @CREATEBY, @MODIFYDATE, @MODIFYBY);
+SELECT ID, DANHBO, LOTRINH, HOTEN, DIACHI, HOPDONG, HIEUDHN, CODHN, SOTHAN, GB, DM, CHISO, CONGDUNG, NGAYLAP, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM KTKS_DANHSACHKT WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DANHBO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DANHBO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LOTRINH" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LOTRINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HOTEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HOTEN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DIACHI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIACHI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HOPDONG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HOPDONG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HIEUDHN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HIEUDHN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CODHN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CODHN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SOTHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SOTHAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@GB" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GB" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CHISO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CHISO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CONGDUNG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CONGDUNG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAYLAP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAYLAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CREATEDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CREATEBY" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@MODIFYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MODIFYBY" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, DANHBO, LOTRINH, HOTEN, DIACHI, HOPDONG, HIEUDHN, CODHN, SOTHAN, GB, DM, CHISO, CONGDUNG, NGAYLAP, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM dbo.KTKS_DANHSACHKT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[KTKS_DANHSACHKT] SET [DANHBO] = @DANHBO, [LOTRINH] = @LOTRINH, [HOTEN] = @HOTEN, [DIACHI] = @DIACHI, [HOPDONG] = @HOPDONG, [HIEUDHN] = @HIEUDHN, [CODHN] = @CODHN, [SOTHAN] = @SOTHAN, [GB] = @GB, [DM] = @DM, [CHISO] = @CHISO, [CONGDUNG] = @CONGDUNG, [NGAYLAP] = @NGAYLAP, [CREATEDATE] = @CREATEDATE, [CREATEBY] = @CREATEBY, [MODIFYDATE] = @MODIFYDATE, [MODIFYBY] = @MODIFYBY WHERE (([ID] = @Original_ID) AND ((@IsNull_DANHBO = 1 AND [DANHBO] IS NULL) OR ([DANHBO] = @Original_DANHBO)) AND ((@IsNull_LOTRINH = 1 AND [LOTRINH] IS NULL) OR ([LOTRINH] = @Original_LOTRINH)) AND ((@IsNull_HOTEN = 1 AND [HOTEN] IS NULL) OR ([HOTEN] = @Original_HOTEN)) AND ((@IsNull_DIACHI = 1 AND [DIACHI] IS NULL) OR ([DIACHI] = @Original_DIACHI)) AND ((@IsNull_HOPDONG = 1 AND [HOPDONG] IS NULL) OR ([HOPDONG] = @Original_HOPDONG)) AND ((@IsNull_HIEUDHN = 1 AND [HIEUDHN] IS NULL) OR ([HIEUDHN] = @Original_HIEUDHN)) AND ((@IsNull_CODHN = 1 AND [CODHN] IS NULL) OR ([CODHN] = @Original_CODHN)) AND ((@IsNull_SOTHAN = 1 AND [SOTHAN] IS NULL) OR ([SOTHAN] = @Original_SOTHAN)) AND ((@IsNull_GB = 1 AND [GB] IS NULL) OR ([GB] = @Original_GB)) AND ((@IsNull_DM = 1 AND [DM] IS NULL) OR ([DM] = @Original_DM)) AND ((@IsNull_CHISO = 1 AND [CHISO] IS NULL) OR ([CHISO] = @Original_CHISO)) AND ((@IsNull_CONGDUNG = 1 AND [CONGDUNG] IS NULL) OR ([CONGDUNG] = @Original_CONGDUNG)) AND ((@IsNull_NGAYLAP = 1 AND [NGAYLAP] IS NULL) OR ([NGAYLAP] = @Original_NGAYLAP)) AND ((@IsNull_CREATEDATE = 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@IsNull_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Original_MODIFYDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYBY] = @Original_MODIFYBY)));
+SELECT ID, DANHBO, LOTRINH, HOTEN, DIACHI, HOPDONG, HIEUDHN, CODHN, SOTHAN, GB, DM, CHISO, CONGDUNG, NGAYLAP, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM KTKS_DANHSACHKT WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DANHBO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DANHBO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LOTRINH" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LOTRINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HOTEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HOTEN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DIACHI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIACHI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HOPDONG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HOPDONG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HIEUDHN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HIEUDHN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CODHN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CODHN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SOTHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SOTHAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@GB" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GB" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CHISO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CHISO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CONGDUNG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CONGDUNG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAYLAP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAYLAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CREATEDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CREATEBY" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@MODIFYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MODIFYBY" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DANHBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DANHBO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DANHBO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DANHBO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LOTRINH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LOTRINH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_LOTRINH" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LOTRINH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HOTEN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HOTEN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HOTEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HOTEN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DIACHI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DIACHI" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DIACHI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIACHI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HOPDONG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HOPDONG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HOPDONG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HOPDONG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HIEUDHN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HIEUDHN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HIEUDHN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HIEUDHN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CODHN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODHN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CODHN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CODHN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SOTHAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SOTHAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SOTHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SOTHAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GB" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GB" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_GB" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GB" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CHISO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CHISO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CHISO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CHISO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CONGDUNG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CONGDUNG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CONGDUNG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CONGDUNG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAYLAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAYLAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAYLAP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAYLAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CREATEDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CREATEDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CREATEBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CREATEBY" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MODIFYDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_MODIFYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MODIFYBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MODIFYBY" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="DANHBO" DataSetColumn="DANHBO" />
+              <Mapping SourceColumn="LOTRINH" DataSetColumn="LOTRINH" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="DIACHI" DataSetColumn="DIACHI" />
+              <Mapping SourceColumn="HOPDONG" DataSetColumn="HOPDONG" />
+              <Mapping SourceColumn="HIEUDHN" DataSetColumn="HIEUDHN" />
+              <Mapping SourceColumn="CODHN" DataSetColumn="CODHN" />
+              <Mapping SourceColumn="SOTHAN" DataSetColumn="SOTHAN" />
+              <Mapping SourceColumn="GB" DataSetColumn="GB" />
+              <Mapping SourceColumn="DM" DataSetColumn="DM" />
+              <Mapping SourceColumn="CHISO" DataSetColumn="CHISO" />
+              <Mapping SourceColumn="CONGDUNG" DataSetColumn="CONGDUNG" />
+              <Mapping SourceColumn="NGAYLAP" DataSetColumn="NGAYLAP" />
+              <Mapping SourceColumn="CREATEDATE" DataSetColumn="CREATEDATE" />
+              <Mapping SourceColumn="CREATEBY" DataSetColumn="CREATEBY" />
+              <Mapping SourceColumn="MODIFYDATE" DataSetColumn="MODIFYDATE" />
+              <Mapping SourceColumn="MODIFYBY" DataSetColumn="MODIFYBY" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -178,7 +340,119 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="KTKS_DANHSACHKT" msprop:Generator_TableClassName="KTKS_DANHSACHKTDataTable" msprop:Generator_TableVarName="tableKTKS_DANHSACHKT" msprop:Generator_TablePropName="KTKS_DANHSACHKT" msprop:Generator_RowDeletingName="KTKS_DANHSACHKTRowDeleting" msprop:Generator_UserTableName="KTKS_DANHSACHKT" msprop:Generator_RowChangingName="KTKS_DANHSACHKTRowChanging" msprop:Generator_RowEvHandlerName="KTKS_DANHSACHKTRowChangeEventHandler" msprop:Generator_RowDeletedName="KTKS_DANHSACHKTRowDeleted" msprop:Generator_RowEvArgName="KTKS_DANHSACHKTRowChangeEvent" msprop:Generator_RowChangedName="KTKS_DANHSACHKTRowChanged" msprop:Generator_RowClassName="KTKS_DANHSACHKTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="DANHBO" msprop:Generator_ColumnVarNameInTable="columnDANHBO" msprop:Generator_ColumnPropNameInRow="DANHBO" msprop:Generator_ColumnPropNameInTable="DANHBOColumn" msprop:Generator_UserColumnName="DANHBO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOTRINH" msprop:Generator_ColumnVarNameInTable="columnLOTRINH" msprop:Generator_ColumnPropNameInRow="LOTRINH" msprop:Generator_ColumnPropNameInTable="LOTRINHColumn" msprop:Generator_UserColumnName="LOTRINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIACHI" msprop:Generator_ColumnVarNameInTable="columnDIACHI" msprop:Generator_ColumnPropNameInRow="DIACHI" msprop:Generator_ColumnPropNameInTable="DIACHIColumn" msprop:Generator_UserColumnName="DIACHI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOPDONG" msprop:Generator_ColumnVarNameInTable="columnHOPDONG" msprop:Generator_ColumnPropNameInRow="HOPDONG" msprop:Generator_ColumnPropNameInTable="HOPDONGColumn" msprop:Generator_UserColumnName="HOPDONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HIEUDHN" msprop:Generator_ColumnVarNameInTable="columnHIEUDHN" msprop:Generator_ColumnPropNameInRow="HIEUDHN" msprop:Generator_ColumnPropNameInTable="HIEUDHNColumn" msprop:Generator_UserColumnName="HIEUDHN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODHN" msprop:Generator_ColumnVarNameInTable="columnCODHN" msprop:Generator_ColumnPropNameInRow="CODHN" msprop:Generator_ColumnPropNameInTable="CODHNColumn" msprop:Generator_UserColumnName="CODHN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOTHAN" msprop:Generator_ColumnVarNameInTable="columnSOTHAN" msprop:Generator_ColumnPropNameInRow="SOTHAN" msprop:Generator_ColumnPropNameInTable="SOTHANColumn" msprop:Generator_UserColumnName="SOTHAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GB" msprop:Generator_ColumnVarNameInTable="columnGB" msprop:Generator_ColumnPropNameInRow="GB" msprop:Generator_ColumnPropNameInTable="GBColumn" msprop:Generator_UserColumnName="GB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DM" msprop:Generator_ColumnVarNameInTable="columnDM" msprop:Generator_ColumnPropNameInRow="DM" msprop:Generator_ColumnPropNameInTable="DMColumn" msprop:Generator_UserColumnName="DM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CHISO" msprop:Generator_ColumnVarNameInTable="columnCHISO" msprop:Generator_ColumnPropNameInRow="CHISO" msprop:Generator_ColumnPropNameInTable="CHISOColumn" msprop:Generator_UserColumnName="CHISO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONGDUNG" msprop:Generator_ColumnVarNameInTable="columnCONGDUNG" msprop:Generator_ColumnPropNameInRow="CONGDUNG" msprop:Generator_ColumnPropNameInTable="CONGDUNGColumn" msprop:Generator_UserColumnName="CONGDUNG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAYLAP" msprop:Generator_ColumnVarNameInTable="columnNGAYLAP" msprop:Generator_ColumnPropNameInRow="NGAYLAP" msprop:Generator_ColumnPropNameInTable="NGAYLAPColumn" msprop:Generator_UserColumnName="NGAYLAP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CREATEDATE" msprop:Generator_ColumnVarNameInTable="columnCREATEDATE" msprop:Generator_ColumnPropNameInRow="CREATEDATE" msprop:Generator_ColumnPropNameInTable="CREATEDATEColumn" msprop:Generator_UserColumnName="CREATEDATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CREATEBY" msprop:Generator_ColumnVarNameInTable="columnCREATEBY" msprop:Generator_ColumnPropNameInRow="CREATEBY" msprop:Generator_ColumnPropNameInTable="CREATEBYColumn" msprop:Generator_UserColumnName="CREATEBY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MODIFYDATE" msprop:Generator_ColumnVarNameInTable="columnMODIFYDATE" msprop:Generator_ColumnPropNameInRow="MODIFYDATE" msprop:Generator_ColumnPropNameInTable="MODIFYDATEColumn" msprop:Generator_UserColumnName="MODIFYDATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MODIFYBY" msprop:Generator_ColumnVarNameInTable="columnMODIFYBY" msprop:Generator_ColumnPropNameInRow="MODIFYBY" msprop:Generator_ColumnPropNameInTable="MODIFYBYColumn" msprop:Generator_UserColumnName="MODIFYBY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:KTKS_DANHSACHKT" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

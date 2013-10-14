@@ -16,6 +16,7 @@ using CAPNUOCTANHOA.Forms.QLDHN.SODOCSO;
 using CAPNUOCTANHOA.Forms.TimKiem;
 using CAPNUOCTANHOA.Forms.BanKTKS;
 using CAPNUOCTANHOA.Forms.DoiThuTien;
+using CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh;
 namespace CAPNUOCTANHOA
 {
     public partial class frm_Main : Form
@@ -412,7 +413,7 @@ namespace CAPNUOCTANHOA
         private void toolNhanDon_Click(object sender, EventArgs e)
         {
             PanelContent.Controls.Clear();
-            frm_NhanDon_ baothay = new frm_NhanDon_();
+            frm_DanhSachKT baothay = new frm_DanhSachKT();
             baothay.Height = PanelContent.Size.Height - 5;
             baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
@@ -479,6 +480,11 @@ namespace CAPNUOCTANHOA
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
         }
