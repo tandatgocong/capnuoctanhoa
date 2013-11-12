@@ -47,6 +47,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
 
                 string nam = this.dateDenNgay.Value.Year.ToString();
+                //string sql = "select ROW_NUMBER() Over (order by t.DHN_DANHBO) AS STT, t.DHN_SOBANGKE, t.DHN_DANHBO, t.HOPDONG,t.LOTRINH,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.DHN_NGAYGHINHAN,103) AS 'DHN_NGAYGHINHAN',t.DHN_KY,t.DHN_CAMKET,max (ds.KY) as 'KY',ds.TIEUTHU,t.DHN_GHICHU ";
+                //sql += "from DOCSO_PHT.dbo.DS" + nam + " ds inner join";
+                //sql += " (select ghd.DHN_SOBANGKE, ghd.DHN_DANHBO,kh.LOTRINH,kh.HOPDONG,kh.HOTEN,(kh.SONHA + kh.TENDUONG) as DIACHI,ghd.DHN_NGAYGHINHAN,ghd.DHN_KY,ghd.DHN_CAMKET,ghd.DHN_GHICHU ";
+                //sql += " from CAPNUOCTANHOA.dbo.DK_GIAMHOADON ghd ,CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG kh ";
+                //sql += " where  ghd.DHN_DANHBO = kh.DANHBO and CONVERT(DATETIME,ghd.DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ";
+                //sql += " and ghd.DHN_CAMKET is not null ";
+                //sql += " and ghd.DHN_HUYCAMKET is null) as t ";
+                //sql += " on ds.DANHBA = t.DHN_DANHBO ";
+                //sql += " where ds.TIEUTHU = 0 ";
+                //sql += " group by t.DHN_SOBANGKE ,t.DHN_DANHBO,t.LOTRINH,t.HOPDONG,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.DHN_NGAYGHINHAN,103),t.DHN_KY,t.DHN_CAMKET,ds.TIEUTHU,t.DHN_GHICHU";
+                //sql += " having  MAX (ds.KY) = t.DHN_KY ";
                 string sql = "select ROW_NUMBER() Over (order by t.DHN_DANHBO) AS STT, t.DHN_SOBANGKE, t.DHN_DANHBO, t.HOPDONG,t.LOTRINH,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.DHN_NGAYGHINHAN,103) AS 'DHN_NGAYGHINHAN',t.DHN_KY,t.DHN_CAMKET,max (ds.KY) as 'KY',ds.TIEUTHU,t.DHN_GHICHU ";
                 sql += "from DOCSO_PHT.dbo.DS" + nam + " ds inner join";
                 sql += " (select ghd.DHN_SOBANGKE, ghd.DHN_DANHBO,kh.LOTRINH,kh.HOPDONG,kh.HOTEN,(kh.SONHA + kh.TENDUONG) as DIACHI,ghd.DHN_NGAYGHINHAN,ghd.DHN_KY,ghd.DHN_CAMKET,ghd.DHN_GHICHU ";
@@ -55,9 +66,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 sql += " and ghd.DHN_CAMKET is not null ";
                 sql += " and ghd.DHN_HUYCAMKET is null) as t ";
                 sql += " on ds.DANHBA = t.DHN_DANHBO ";
-                sql += " where ds.TIEUTHU = 0 ";
+                sql += " where ds.KY = (select MAX (ds1.KY) from DOCSO_PHT.dbo.DS" + nam + " ds1 WHERE ds1.DANHBA=t.DHN_DANHBO) ";
                 sql += " group by t.DHN_SOBANGKE ,t.DHN_DANHBO,t.LOTRINH,t.HOPDONG,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.DHN_NGAYGHINHAN,103),t.DHN_KY,t.DHN_CAMKET,ds.TIEUTHU,t.DHN_GHICHU";
-                sql += " having  MAX (ds.KY) = t.DHN_KY ";
+                sql += " having ds.TIEUTHU = 0 order by t.DHN_DANHBO ASC ";
 
                 DataTable dt = DAL.LinQConnection.getDataTable(sql);
                 dataQLDHNB0.DataSource = dt;
@@ -74,15 +85,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 sql1 += " and ghd.DHN_CAMKET is not null ";
                 sql1 += " and ghd.DHN_HUYCAMKET is null) as t ";
                 sql1 += " on ds.DANHBA = t.DHN_DANHBO ";
-                sql1 += " where ds.KY = (select MAX (ds1.KY) from DOCSO_PHT.dbo.DS" + nam + " ds1 ) ";
+                sql1 += " where ds.KY = (select MAX (ds1.KY) from DOCSO_PHT.dbo.DS" + nam + " ds1 WHERE ds1.DANHBA=t.DHN_DANHBO) ";
                 sql1 += " group by t.DHN_SOBANGKE ,t.DHN_DANHBO,t.LOTRINH,t.HOPDONG,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.DHN_NGAYGHINHAN,103),t.DHN_KY,t.DHN_CAMKET,ds.TIEUTHU,t.DHN_GHICHU";
-                sql1 += " having ds.TIEUTHU <> 0 ";
+                sql1 += " having ds.TIEUTHU <> 0 order by t.DHN_DANHBO ASC ";
 
                 DataTable dt1 = DAL.LinQConnection.getDataTable(sql1);
                 dataQLDHNK0.DataSource = dt1;
                 Utilities.DataGridV.formatRows(dataQLDHNK0);
 
-                string sql2 = "select ROW_NUMBER() Over (order by t.DHN_DANHBO) AS STT, t.DHN_SOBANGKE, t.DHN_DANHBO, t.HOPDONG,t.LOTRINH,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.KTKS_NGAYTIEPXUC,103) AS 'KTKS_NGAYTIEPXUC',t.DHN_KY,t.KTKS_CAMKET,max (ds.KY) as 'KY',ds.TIEUTHU,t.KTKS_GHICHU ";
+                string sql2 = "select ROW_NUMBER() Over (order by t.DHN_DANHBO) AS STT, t.DHN_SOBANGKE, t.DHN_DANHBO, t.HOPDONG,t.LOTRINH,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.KTKS_NGAYTIEPXUC,103) AS 'KTKS_NGAYTIEPXUC',t.DHN_KY,ds.CODE+'-'+replace(str(ds.CSMOI,5),' ','0') as 'KTKS_CAMKET',max (ds.KY) as 'KY',ds.TIEUTHU,t.KTKS_GHICHU ";
                 sql2 += "from DOCSO_PHT.dbo.DS" + nam + " ds inner join";
                 sql2 += " (select ghd.DHN_SOBANGKE, ghd.DHN_DANHBO,kh.LOTRINH,kh.HOPDONG,kh.HOTEN,(kh.SONHA + kh.TENDUONG) as DIACHI,ghd.KTKS_NGAYTIEPXUC,ghd.DHN_KY,ghd.KTKS_CAMKET,ghd.KTKS_GHICHU ";
                 sql2 += " from CAPNUOCTANHOA.dbo.DK_GIAMHOADON ghd ,CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG kh ";
@@ -90,9 +101,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 sql2 += " and ghd.KTKS_CAMKET is not null ";
                 sql2 += " ) as t ";
                 sql2 += " on ds.DANHBA = t.DHN_DANHBO ";
-                sql2 += " where ds.KY = (select MAX (ds1.KY) from DOCSO_PHT.dbo.DS" + nam + " ds1 ) ";
-                sql2 += " group by t.DHN_SOBANGKE ,t.DHN_DANHBO,t.LOTRINH,t.HOPDONG,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.KTKS_NGAYTIEPXUC,103),t.DHN_KY,t.KTKS_CAMKET,ds.TIEUTHU,t.KTKS_GHICHU";
-                sql2 += " having ds.TIEUTHU = 0 order by t.LOTRINH ASC";
+                sql2 += " where ds.KY = (select MAX (ds1.KY) from DOCSO_PHT.dbo.DS" + nam + " ds1 WHERE ds1.DANHBA=t.DHN_DANHBO) ";
+                sql2 += " group by t.DHN_SOBANGKE, t.DHN_DANHBO, t.HOPDONG,t.LOTRINH,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.KTKS_NGAYTIEPXUC,103) ,t.DHN_KY,ds.CODE+'-'+replace(str(ds.CSMOI,5),' ','0'),ds.TIEUTHU,t.KTKS_GHICHU ";
+                sql2 += " having ds.TIEUTHU = 0 order by t.DHN_DANHBO ASC ";
 
                 DataTable dt2 = DAL.LinQConnection.getDataTable(sql2);
                 dataKTKSB0.DataSource = dt2;
@@ -106,9 +117,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 sql3 += " and ghd.KTKS_CAMKET is not null ";
                 sql3 += " ) as t ";
                 sql3 += " on ds.DANHBA = t.DHN_DANHBO ";
-                sql3 += " where ds.KY = (select MAX (ds1.KY) from DOCSO_PHT.dbo.DS" + nam + " ds1 ) ";
+                sql3 += " where ds.KY = (select MAX (ds1.KY) from DOCSO_PHT.dbo.DS" + nam + " ds1 WHERE ds1.DANHBA=t.DHN_DANHBO) ";
                 sql3 += " group by t.DHN_SOBANGKE ,t.DHN_DANHBO,t.LOTRINH,t.HOPDONG,t.HOTEN,t.DIACHI,CONVERT(VARCHAR(20),t.KTKS_NGAYTIEPXUC,103),t.DHN_KY,t.KTKS_CAMKET,ds.TIEUTHU,t.KTKS_GHICHU";
-                sql3 += " having ds.TIEUTHU <> 0 order by t.LOTRINH ASC";
+                sql3 += " having ds.TIEUTHU <> 0 order by t.DHN_DANHBO ASC ";
 
                 DataTable dt3 = DAL.LinQConnection.getDataTable(sql3);
                 dataKTKSK0.DataSource = dt3;

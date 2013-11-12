@@ -859,6 +859,7 @@
             this.KTKS_CAMKET_B0.DefaultCellStyle = dataGridViewCellStyle33;
             this.KTKS_CAMKET_B0.HeaderText = "CAM KẾT";
             this.KTKS_CAMKET_B0.Name = "KTKS_CAMKET_B0";
+            this.KTKS_CAMKET_B0.Visible = false;
             this.KTKS_CAMKET_B0.Width = 80;
             // 
             // KTKS_KYBANG0

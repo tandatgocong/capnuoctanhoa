@@ -44,7 +44,27 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             {
                 query += " AND ds.DOT=" + dot;
             }
-            query += " ORDER BY  nv.NAME ASC,kh.LOTRINH ASC";
+            query += " ORDER BY  kh.LOTRINH ASC";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DSCODE");
+            return ds;
+        }
+
+        public DataSet getTheoDoiBienDocChiSo_LNCC(int dot, int ky, int nam, string code,string lncc)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+
+            string query = "SELECT kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.HIEUDH, kh.CODH, convert(varchar(20),YEAR(kh.NGAYTHAY)) AS 'NAM', nv.NAME, ds.GHICHUVANPHONG ";
+            query += " FROM  DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv ";
+            query += " WHERE ds.DANHBA = kh.DANHBO AND CONVERT(int,SUBSTRING(kh.LOTRINH,3,2))= nv.MAYDS ";
+            query += " AND ds.CODE LIKE '" + code + "%' AND ds.TIEUTHU='"+lncc+"' AND ds.KY=" + ky;
+            if (dot != 0)
+            {
+                query += " AND ds.DOT=" + dot;
+            }
+            query += " ORDER BY kh.LOTRINH ASC";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DSCODE");
             return ds;
@@ -56,15 +76,32 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
             int nam = int.Parse(txtNam.Text.Trim());
             string code = cbCode.SelectedValue.ToString();
+            string lncc = this.txtTieuThu.Text.Replace(" ", "");
             ReportDocument rp = new rpt_DanhSachByCode();
-            string title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + "   KỲ " + ky;
-            if (dot != 0)
+
+            if ("".Equals(this.txtTieuThu.Text.Replace(" ", "")))
             {
-                title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + "   ĐỢT " + dot + "   KỲ " + ky;
+                string title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + "   KỲ " + ky;
+                if (dot != 0)
+                {
+                    title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + "   ĐỢT " + dot + "   KỲ " + ky;
+                }
+                rp.SetDataSource(getTheoDoiBienDocChiSo(dot, ky, nam, code));
+                rp.SetParameterValue("title", title_);
+                crystalReportViewer1.ReportSource = rp;
             }
-            rp.SetDataSource(getTheoDoiBienDocChiSo(dot, ky, nam, code));
-            rp.SetParameterValue("title", title_);
-            crystalReportViewer1.ReportSource = rp;
+            else {
+                string title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + " TIÊU THỤ =" + this.txtTieuThu.Text + "M3  KỲ " + ky;
+                if (dot != 0)
+                {
+                    title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + " TIÊU THỤ =" + this.txtTieuThu.Text + "M3 ĐỢT " + dot + "   KỲ " + ky;
+                }
+                rp.SetDataSource(getTheoDoiBienDocChiSo_LNCC(dot, ky, nam, code,lncc));
+                rp.SetParameterValue("title", title_);
+                crystalReportViewer1.ReportSource = rp;
+            
+            }
+            
         }
     }
 }

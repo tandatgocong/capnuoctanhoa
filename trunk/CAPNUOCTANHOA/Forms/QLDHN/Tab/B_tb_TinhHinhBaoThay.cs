@@ -40,17 +40,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 string gioihan = "";
                 if (checkTanBinh1.Checked)
                 {
-                    gioihan = DAL.SYS.C_USERS.findByToDS("TB01") != null ? DAL.SYS.C_USERS.findByToDS("TB01").GIOIHAN : "";
+                    gioihan = "AND DHN_TODS ='TB01' ";
                     tenbangke = "TỔ TÂN BÌNH 01";
                 }
                 else if (checkTanBinh2.Checked)
                 {
-                    gioihan = DAL.SYS.C_USERS.findByToDS("TB02") != null ? DAL.SYS.C_USERS.findByToDS("TB02").GIOIHAN : "";
+                    gioihan = "AND DHN_TODS ='TB02' ";
                     tenbangke = "TỔ TÂN BÌNH 02";
                 }
                 else if (checkTanPhu.Checked)
                 {
-                    gioihan = DAL.SYS.C_USERS.findByToDS("TP") != null ? DAL.SYS.C_USERS.findByToDS("TP").GIOIHAN : "";
+                    gioihan = "AND DHN_TODS ='TP' ";
                     tenbangke = "TỔ TÂN PHÚ";
                 }
                 else
