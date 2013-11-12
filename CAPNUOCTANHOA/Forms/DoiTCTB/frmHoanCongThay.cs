@@ -673,5 +673,11 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 log.Error(ex.Message);
             }
         }
+
+        private void btMachi_Click(object sender, EventArgs e)
+        {
+            frmMaChi opt = new frmMaChi();
+            opt.ShowDialog();
+        }
     }
 }

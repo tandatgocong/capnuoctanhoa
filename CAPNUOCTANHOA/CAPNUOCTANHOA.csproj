@@ -345,6 +345,12 @@
     <Compile Include="Forms\DoiTCTB\frmHoanCongThay.Designer.cs">
       <DependentUpon>frmHoanCongThay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoiTCTB\frmMaChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\frmMaChi.Designer.cs">
+      <DependentUpon>frmMaChi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DoiTCTB\frm_BaoCaoTCTB.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -644,6 +650,12 @@
     </Compile>
     <Compile Include="Forms\QLDHN\tabDieuChinh\CONGVANDIEUCHINH.cs">
       <DependentUpon>CONGVANDIEUCHINH.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\QLDHN\tabDieuChinh\rpt_DonCuaNhieuKY.cs">
+      <DependentUpon>rpt_DonCuaNhieuKY.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -1658,6 +1670,9 @@
     <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThay.resx">
       <DependentUpon>frmHoanCongThay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\frmMaChi.resx">
+      <DependentUpon>frmMaChi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\frm_BaoCaoTCTB.resx">
       <DependentUpon>frm_BaoCaoTCTB.cs</DependentUpon>
     </EmbeddedResource>
@@ -1798,6 +1813,10 @@
     <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\CONGVANDIEUCHINH.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CONGVANDIEUCHINH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\rpt_DonCuaNhieuKY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DonCuaNhieuKY.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\tabDieuChinh\frm_DUTCHITHAN.resx">
       <DependentUpon>frm_DUTCHITHAN.cs</DependentUpon>

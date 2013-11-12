@@ -45,7 +45,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         private void btIn_Click(object sender, EventArgs e)
         {
 
-            ReportDocument rp = new rpt_GanHopBaoVe();
+            ReportDocument rp = new rpt_DonCuaNhieuKY();
                          
                 rp.SetDataSource(DAL.QLDHN.C_GanHopBaoVe.getReport(this.txtNgayGan.Value.ToShortDateString()));
                 frm_Reports frm = new frm_Reports(rp);

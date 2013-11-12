@@ -41,6 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
 
             DateTime date = dateTime.Value;
+            date = date.AddMonths(1);
             string codh = "=" + cbCoDH.Text;
             if (cbCoDH.SelectedIndex == 1 || cbCoDH.SelectedIndex == 2)
             {

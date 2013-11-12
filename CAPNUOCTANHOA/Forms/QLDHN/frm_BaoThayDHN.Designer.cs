@@ -835,7 +835,7 @@
             this.resultBT.ForeColor = System.Drawing.Color.Red;
             this.resultBT.Location = new System.Drawing.Point(590, 95);
             this.resultBT.Name = "resultBT";
-            this.resultBT.Size = new System.Drawing.Size(167, 19);
+            this.resultBT.Size = new System.Drawing.Size(164, 19);
             this.resultBT.TabIndex = 105;
             this.resultBT.Text = "CÓ 33 LẦN THAY >>";
             this.resultBT.Visible = false;

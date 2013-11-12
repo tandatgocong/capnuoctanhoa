@@ -406,6 +406,13 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     this.txtSoThangHD.Visible = true;
                     this.txtSoThangHD1.Visible = true;
                     this.txtSoThangHD2.Visible = true;
+                    try
+                    {
+                        dateNgayHetHan.Value = dateNgayKy.Value.Date.AddMonths(int.Parse(txtSoThangHD.Text));
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
 
             }

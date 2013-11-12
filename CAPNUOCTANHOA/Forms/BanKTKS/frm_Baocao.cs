@@ -72,7 +72,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
                     string sql_ktksbamchi = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTKTB,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.LOTRINH,kh.HOPDONG,kh.HOTEN,kh.SONHA + ' ' +kh.TENDUONG AS 'DIACHI',ghd.KTKS_BAMHI,ghd.DHN_NGAYGHINHAN,ghd.KTKS_TH_NGAY,ghd.KTKS_NGAYTIEPXUC,ghd.KTKS_MAKIEMBC,ghd.KTKS_TH_MAKIEM,ghd.DHN_GHICHU";
                     sql_ktksbamchi += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
-                    sql_ktksbamchi += "WHERE ghd.DHN_DANHBO = kh.DANHBO AND (ghd.KTKS_BAMHI <>'' or ghd.KTKS_BAMHI is not null )   AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ORDER BY kh.TENDUONG ASC, kh.SONHA ASC ";
+                    sql_ktksbamchi += "WHERE ghd.KTKS_DONGTIEN <> 1 AND  ghd.DHN_DANHBO = kh.DANHBO AND (ghd.KTKS_BAMHI <>'' or ghd.KTKS_BAMHI is not null )   AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ORDER BY kh.TENDUONG ASC, kh.SONHA ASC ";
 
                     string sql_chuadanhdau = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTV,ghd.DHN_SOBANGKE ,kh.HOTEN,ghd.DHN_DANHBO,kh.SONHA + ' ' +kh.TENDUONG AS 'DIACHI',ghd.DHN_NGAYGHINHAN,ghd.DHN_CHUADANHDAU,ghd.DHN_GHICHU";
                     sql_chuadanhdau += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
@@ -82,9 +82,22 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     sql_ganmoi += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
                     sql_ganmoi += "WHERE ghd.DHN_DANHBO = kh.DANHBO and (ghd.DHN_GANMOI <>'' or ghd.DHN_GANMOI is not null )  AND CONVERT(DATETIME,DHN_NGAYGHINHAN) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ORDER BY DHN_DANHBO ASC";
 
+                    string sql_ktksbamchi_SDL = "SELECT ROW_NUMBER() Over (order by DHN_DANHBO) AS STTKTB,ghd.DHN_SOBANGKE ,ghd.DHN_DANHBO,kh.LOTRINH,kh.HOPDONG,kh.HOTEN,kh.SONHA + ' ' +kh.TENDUONG AS 'DIACHI',ghd.KTKS_BAMHI,ghd.DHN_NGAYGHINHAN,ghd.KTKS_TH_NGAY,ghd.KTKS_NGAYTIEPXUC,ghd.KTKS_MAKIEMBC,ghd.KTKS_TH_MAKIEM,ghd.DHN_GHICHU";
+                    sql_ktksbamchi_SDL += " FROM DK_GIAMHOADON ghd, TB_DULIEUKHACHHANG kh ";
+                    sql_ktksbamchi_SDL += "WHERE ghd.KTKS_DONGTIEN = 1 AND  ghd.DHN_DANHBO = kh.DANHBO AND (ghd.KTKS_BAMHI <>'' or ghd.KTKS_BAMHI is not null )   AND CONVERT(DATETIME,ghd.KTKS_NGAYTIEPXUC) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay) + "',103) ORDER BY kh.TENDUONG ASC, kh.SONHA ASC ";
+
+
+                      DataTable dt0 = DAL.LinQConnection.getDataTable(sql_ktksbamchi_SDL);
+                      dataGridViewDTSDL.DataSource = dt0;
+                      Utilities.DataGridV.formatRows(dataGridViewDTSDL);
+
+                    
+
+
                     DataTable dt = DAL.LinQConnection.getDataTable(sql1);
                     dataGridView1.DataSource = dt;
                     Utilities.DataGridV.formatRows(dataGridView1);
+
                     DataTable dt1 = DAL.LinQConnection.getDataTable(sql_camket);
                     dgv_CamKet.DataSource = dt1;
                     Utilities.DataGridV.formatRowsSTT(dgv_CamKet, "", "STT");
@@ -533,6 +546,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     frm.Show();
 
                 }
+                
                 else
                 {
                      dt = (DataTable)dgvKTKSBamChi.DataSource;
@@ -545,6 +559,20 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                     frm_Reports frm = new frm_Reports(rptBCBK);
                     frm.Show();
                 }
+            }
+            if (tab.SelectedTabIndex == 6)
+            {
+                dt = (DataTable)dataGridViewDTSDL.DataSource;
+                dt.TableName = "BAOCAO_KTKSBAMCHI";
+
+                bc.Tables["BAOCAO_KTKSBAMCHI"].Merge(dt);
+                rptBC.SetDataSource(bc);
+                rptBC.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(dateTuNgay));
+                rptBC.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(dateDenNgay));
+                rptBC.SetParameterValue("ten", "SỬ DỤNG LẠI");
+
+                frm_Reports frm = new frm_Reports(rptBC);
+                frm.Show();
             }
            
 

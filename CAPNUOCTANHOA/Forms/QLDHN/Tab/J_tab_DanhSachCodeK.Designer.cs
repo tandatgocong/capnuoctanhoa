@@ -41,6 +41,7 @@
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cbCode = new System.Windows.Forms.ComboBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.cbKyDS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem13 = new DevComponents.Editors.ComboItem();
@@ -84,7 +85,8 @@
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.cbCode = new System.Windows.Forms.ComboBox();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.txtTieuThu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -171,6 +173,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txtTieuThu);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX5);
             this.splitContainer1.Panel1.Controls.Add(this.cbCode);
             this.splitContainer1.Panel1.Controls.Add(this.labelX4);
             this.splitContainer1.Panel1.Controls.Add(this.cbKyDS);
@@ -188,6 +192,15 @@
             this.splitContainer1.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.SplitterDistance = 80;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // cbCode
+            // 
+            this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCode.FormattingEnabled = true;
+            this.cbCode.Location = new System.Drawing.Point(70, 48);
+            this.cbCode.Name = "cbCode";
+            this.cbCode.Size = new System.Drawing.Size(63, 27);
+            this.cbCode.TabIndex = 40;
             // 
             // labelX4
             // 
@@ -217,7 +230,7 @@
             this.comboItem22,
             this.comboItem23,
             this.comboItem24});
-            this.cbKyDS.Location = new System.Drawing.Point(402, 46);
+            this.cbKyDS.Location = new System.Drawing.Point(581, 44);
             this.cbKyDS.Name = "cbKyDS";
             this.cbKyDS.Size = new System.Drawing.Size(86, 27);
             this.cbKyDS.TabIndex = 30;
@@ -296,7 +309,7 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(361, 50);
+            this.labelX3.Location = new System.Drawing.Point(540, 48);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(55, 23);
             this.labelX3.TabIndex = 38;
@@ -331,7 +344,7 @@
             this.comboItem42,
             this.comboItem43,
             this.comboItem44});
-            this.cbDotDS.Location = new System.Drawing.Point(258, 49);
+            this.cbDotDS.Location = new System.Drawing.Point(437, 47);
             this.cbDotDS.Name = "cbDotDS";
             this.cbDotDS.Size = new System.Drawing.Size(86, 27);
             this.cbDotDS.TabIndex = 37;
@@ -464,7 +477,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(498, 50);
+            this.labelX2.Location = new System.Drawing.Point(677, 48);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(46, 23);
             this.labelX2.TabIndex = 26;
@@ -476,7 +489,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(651, 46);
+            this.btThem.Location = new System.Drawing.Point(834, 46);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(163, 27);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -486,7 +499,7 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(146, 50);
+            this.labelX1.Location = new System.Drawing.Point(325, 48);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(128, 23);
             this.labelX1.TabIndex = 25;
@@ -498,7 +511,7 @@
             // 
             // 
             this.txtNam.Border.Class = "TextBoxBorder";
-            this.txtNam.Location = new System.Drawing.Point(544, 47);
+            this.txtNam.Location = new System.Drawing.Point(723, 45);
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(100, 27);
             this.txtNam.TabIndex = 27;
@@ -528,14 +541,25 @@
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // cbCode
+            // labelX5
             // 
-            this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCode.FormattingEnabled = true;
-            this.cbCode.Location = new System.Drawing.Point(70, 48);
-            this.cbCode.Name = "cbCode";
-            this.cbCode.Size = new System.Drawing.Size(63, 27);
-            this.cbCode.TabIndex = 40;
+            this.labelX5.Location = new System.Drawing.Point(141, 50);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(86, 23);
+            this.labelX5.TabIndex = 41;
+            this.labelX5.Text = "TIÊU THỤ";
+            // 
+            // txtTieuThu
+            // 
+            // 
+            // 
+            // 
+            this.txtTieuThu.Border.Class = "TextBoxBorder";
+            this.txtTieuThu.Location = new System.Drawing.Point(223, 47);
+            this.txtTieuThu.Name = "txtTieuThu";
+            this.txtTieuThu.Size = new System.Drawing.Size(87, 27);
+            this.txtTieuThu.TabIndex = 42;
+            this.txtTieuThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // J_tab_DanhSachCodeK
             // 
@@ -614,5 +638,7 @@
         private DevComponents.Editors.ComboItem comboItem44;
         private DevComponents.DotNetBar.LabelX labelX4;
         private System.Windows.Forms.ComboBox cbCode;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTieuThu;
+        private DevComponents.DotNetBar.LabelX labelX5;
     }
 }

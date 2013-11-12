@@ -399,6 +399,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.HuyDanhBo(hKhacHang, huyDanhBo))
                 {
                     MessageBox.Show(this, "Hủy Danh Bộ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM DK_GIAMHOADON WHERE DHN_DANHBO='" + huyDanhBo.DANHBO + "'");
                     H_LOTRINH.Text = "";
                     H_DOT.Text = "";
                     H_HOPDONG.Text = "";

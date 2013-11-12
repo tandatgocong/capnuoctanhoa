@@ -68,8 +68,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             try
             {
-                var query = from q in db.TB_GANHOPBVs where q.DANHBO == danhbo select q;
-                return query.SingleOrDefault();
+                var query = from q in db.TB_GANHOPBVs where q.DANHBO == danhbo orderby q.NGAYLAP descending select q;
+                return query.ToList()[0];
             }
             catch (Exception ex)
             {
