@@ -250,7 +250,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     txtChiThan.Text = "CON";
                     txtChiGoc.Text = "CON";
                     txtChiSoThay.Text = khachhang.CHISOKYTRUOC;
-                    
+                    KIEMDINH.ValueObject = khachhang.NGAYKIEMDINH;
                     txtDot.Text = khachhang.DOT;
                     txtMaLoTrinh.Text = khachhang.LOTRINH;
                 }
@@ -497,6 +497,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 log.Error(ex.Message);
             }
+        }
+
+        private void txtSoDanhBo_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
