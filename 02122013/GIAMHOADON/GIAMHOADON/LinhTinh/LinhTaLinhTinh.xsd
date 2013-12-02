@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LinhTaLinhTinh" targetNamespace="http://tempuri.org/LinhTaLinhTinh.xsd" xmlns:mstns="http://tempuri.org/LinhTaLinhTinh.xsd" xmlns="http://tempuri.org/LinhTaLinhTinh.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GIAMHOADONConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GIAMHOADONConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GIAMHOADON.Properties.Settings.GlobalReference.Default.GIAMHOADONConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="THIDUA_GIAMHOADONTableAdapter" GeneratorDataComponentClassName="THIDUA_GIAMHOADONTableAdapter" Name="THIDUA_GIAMHOADON" UserDataComponentName="THIDUA_GIAMHOADONTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GIAMHOADONConnectionString (Settings)" DbObjectName="GIAMHOADON.dbo.THIDUA_GIAMHOADON" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DANHBO, LOTRINH, HOTEN, HOPDONG, DIACHI, CSKY1, TTKY1, CSKY2, TTKY2, CSKY3, TTKY3, CSKY4, TTKY4, CSKY5, TTKY5, CSKY6, TTKY6, CSKY7, TTKY7, CSKY8, TTKY8, CSKY9, TTKY9, CSKY10, TTKY10, CSKY11, TTKY11, CSKY12, TTKY12 FROM dbo.THIDUA_GIAMHOADON</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DANHBO" DataSetColumn="DANHBO" />
+              <Mapping SourceColumn="LOTRINH" DataSetColumn="LOTRINH" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="HOPDONG" DataSetColumn="HOPDONG" />
+              <Mapping SourceColumn="DIACHI" DataSetColumn="DIACHI" />
+              <Mapping SourceColumn="CSKY1" DataSetColumn="CSKY1" />
+              <Mapping SourceColumn="TTKY1" DataSetColumn="TTKY1" />
+              <Mapping SourceColumn="CSKY2" DataSetColumn="CSKY2" />
+              <Mapping SourceColumn="TTKY2" DataSetColumn="TTKY2" />
+              <Mapping SourceColumn="CSKY3" DataSetColumn="CSKY3" />
+              <Mapping SourceColumn="TTKY3" DataSetColumn="TTKY3" />
+              <Mapping SourceColumn="CSKY4" DataSetColumn="CSKY4" />
+              <Mapping SourceColumn="TTKY4" DataSetColumn="TTKY4" />
+              <Mapping SourceColumn="CSKY5" DataSetColumn="CSKY5" />
+              <Mapping SourceColumn="TTKY5" DataSetColumn="TTKY5" />
+              <Mapping SourceColumn="CSKY6" DataSetColumn="CSKY6" />
+              <Mapping SourceColumn="TTKY6" DataSetColumn="TTKY6" />
+              <Mapping SourceColumn="CSKY7" DataSetColumn="CSKY7" />
+              <Mapping SourceColumn="TTKY7" DataSetColumn="TTKY7" />
+              <Mapping SourceColumn="CSKY8" DataSetColumn="CSKY8" />
+              <Mapping SourceColumn="TTKY8" DataSetColumn="TTKY8" />
+              <Mapping SourceColumn="CSKY9" DataSetColumn="CSKY9" />
+              <Mapping SourceColumn="TTKY9" DataSetColumn="TTKY9" />
+              <Mapping SourceColumn="CSKY10" DataSetColumn="CSKY10" />
+              <Mapping SourceColumn="TTKY10" DataSetColumn="TTKY10" />
+              <Mapping SourceColumn="CSKY11" DataSetColumn="CSKY11" />
+              <Mapping SourceColumn="TTKY11" DataSetColumn="TTKY11" />
+              <Mapping SourceColumn="CSKY12" DataSetColumn="CSKY12" />
+              <Mapping SourceColumn="TTKY12" DataSetColumn="TTKY12" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GIAM_HOADON_0TableAdapter" GeneratorDataComponentClassName="GIAM_HOADON_0TableAdapter" Name="GIAM_HOADON_0" UserDataComponentName="GIAM_HOADON_0TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GIAMHOADONConnectionString (Settings)" DbObjectName="GIAMHOADON.dbo.GIAM_HOADON_0" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [7_0], [8_0], [9_0], [10_0], [11_0], [12_0], [7_1], [8_1], [9_1], [10_1], [11_1], [12_1] FROM dbo.GIAM_HOADON_0</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="7_0" DataSetColumn="7_0" />
+              <Mapping SourceColumn="8_0" DataSetColumn="8_0" />
+              <Mapping SourceColumn="9_0" DataSetColumn="9_0" />
+              <Mapping SourceColumn="10_0" DataSetColumn="10_0" />
+              <Mapping SourceColumn="11_0" DataSetColumn="11_0" />
+              <Mapping SourceColumn="12_0" DataSetColumn="12_0" />
+              <Mapping SourceColumn="7_1" DataSetColumn="7_1" />
+              <Mapping SourceColumn="8_1" DataSetColumn="8_1" />
+              <Mapping SourceColumn="9_1" DataSetColumn="9_1" />
+              <Mapping SourceColumn="10_1" DataSetColumn="10_1" />
+              <Mapping SourceColumn="11_1" DataSetColumn="11_1" />
+              <Mapping SourceColumn="12_1" DataSetColumn="12_1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LinhTaLinhTinh" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LinhTaLinhTinh" msprop:Generator_UserDSName="LinhTaLinhTinh">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="THIDUA_GIAMHOADON" msprop:Generator_TableClassName="THIDUA_GIAMHOADONDataTable" msprop:Generator_TableVarName="tableTHIDUA_GIAMHOADON" msprop:Generator_TablePropName="THIDUA_GIAMHOADON" msprop:Generator_RowDeletingName="THIDUA_GIAMHOADONRowDeleting" msprop:Generator_UserTableName="THIDUA_GIAMHOADON" msprop:Generator_RowChangingName="THIDUA_GIAMHOADONRowChanging" msprop:Generator_RowEvHandlerName="THIDUA_GIAMHOADONRowChangeEventHandler" msprop:Generator_RowDeletedName="THIDUA_GIAMHOADONRowDeleted" msprop:Generator_RowEvArgName="THIDUA_GIAMHOADONRowChangeEvent" msprop:Generator_RowChangedName="THIDUA_GIAMHOADONRowChanged" msprop:Generator_RowClassName="THIDUA_GIAMHOADONRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DANHBO" msprop:Generator_ColumnVarNameInTable="columnDANHBO" msprop:Generator_ColumnPropNameInRow="DANHBO" msprop:Generator_ColumnPropNameInTable="DANHBOColumn" msprop:Generator_UserColumnName="DANHBO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOTRINH" msprop:Generator_ColumnVarNameInTable="columnLOTRINH" msprop:Generator_ColumnPropNameInRow="LOTRINH" msprop:Generator_ColumnPropNameInTable="LOTRINHColumn" msprop:Generator_UserColumnName="LOTRINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOPDONG" msprop:Generator_ColumnVarNameInTable="columnHOPDONG" msprop:Generator_ColumnPropNameInRow="HOPDONG" msprop:Generator_ColumnPropNameInTable="HOPDONGColumn" msprop:Generator_UserColumnName="HOPDONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIACHI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDIACHI" msprop:Generator_ColumnPropNameInRow="DIACHI" msprop:Generator_ColumnPropNameInTable="DIACHIColumn" msprop:Generator_UserColumnName="DIACHI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CSKY1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY1" msprop:Generator_ColumnPropNameInRow="CSKY1" msprop:Generator_ColumnPropNameInTable="CSKY1Column" msprop:Generator_UserColumnName="CSKY1" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY1" msprop:Generator_ColumnPropNameInRow="TTKY1" msprop:Generator_ColumnPropNameInTable="TTKY1Column" msprop:Generator_UserColumnName="TTKY1" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY2" msprop:Generator_ColumnPropNameInRow="CSKY2" msprop:Generator_ColumnPropNameInTable="CSKY2Column" msprop:Generator_UserColumnName="CSKY2" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY2" msprop:Generator_ColumnPropNameInRow="TTKY2" msprop:Generator_ColumnPropNameInTable="TTKY2Column" msprop:Generator_UserColumnName="TTKY2" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY3" msprop:Generator_ColumnPropNameInRow="CSKY3" msprop:Generator_ColumnPropNameInTable="CSKY3Column" msprop:Generator_UserColumnName="CSKY3" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY3" msprop:Generator_ColumnPropNameInRow="TTKY3" msprop:Generator_ColumnPropNameInTable="TTKY3Column" msprop:Generator_UserColumnName="TTKY3" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY4" msprop:Generator_ColumnPropNameInRow="CSKY4" msprop:Generator_ColumnPropNameInTable="CSKY4Column" msprop:Generator_UserColumnName="CSKY4" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY4" msprop:Generator_ColumnPropNameInRow="TTKY4" msprop:Generator_ColumnPropNameInTable="TTKY4Column" msprop:Generator_UserColumnName="TTKY4" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY5" msprop:Generator_ColumnPropNameInRow="CSKY5" msprop:Generator_ColumnPropNameInTable="CSKY5Column" msprop:Generator_UserColumnName="CSKY5" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY5" msprop:Generator_ColumnPropNameInRow="TTKY5" msprop:Generator_ColumnPropNameInTable="TTKY5Column" msprop:Generator_UserColumnName="TTKY5" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY6" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY6" msprop:Generator_ColumnPropNameInRow="CSKY6" msprop:Generator_ColumnPropNameInTable="CSKY6Column" msprop:Generator_UserColumnName="CSKY6" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY6" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY6" msprop:Generator_ColumnPropNameInRow="TTKY6" msprop:Generator_ColumnPropNameInTable="TTKY6Column" msprop:Generator_UserColumnName="TTKY6" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY7" msprop:Generator_ColumnPropNameInRow="CSKY7" msprop:Generator_ColumnPropNameInTable="CSKY7Column" msprop:Generator_UserColumnName="CSKY7" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY7" msprop:Generator_ColumnPropNameInRow="TTKY7" msprop:Generator_ColumnPropNameInTable="TTKY7Column" msprop:Generator_UserColumnName="TTKY7" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY8" msprop:Generator_ColumnPropNameInRow="CSKY8" msprop:Generator_ColumnPropNameInTable="CSKY8Column" msprop:Generator_UserColumnName="CSKY8" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY8" msprop:Generator_ColumnPropNameInRow="TTKY8" msprop:Generator_ColumnPropNameInTable="TTKY8Column" msprop:Generator_UserColumnName="TTKY8" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY9" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY9" msprop:Generator_ColumnPropNameInRow="CSKY9" msprop:Generator_ColumnPropNameInTable="CSKY9Column" msprop:Generator_UserColumnName="CSKY9" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY9" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY9" msprop:Generator_ColumnPropNameInRow="TTKY9" msprop:Generator_ColumnPropNameInTable="TTKY9Column" msprop:Generator_UserColumnName="TTKY9" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY10" msprop:Generator_ColumnPropNameInRow="CSKY10" msprop:Generator_ColumnPropNameInTable="CSKY10Column" msprop:Generator_UserColumnName="CSKY10" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY10" msprop:Generator_ColumnPropNameInRow="TTKY10" msprop:Generator_ColumnPropNameInTable="TTKY10Column" msprop:Generator_UserColumnName="TTKY10" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY11" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY11" msprop:Generator_ColumnPropNameInRow="CSKY11" msprop:Generator_ColumnPropNameInTable="CSKY11Column" msprop:Generator_UserColumnName="CSKY11" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY11" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY11" msprop:Generator_ColumnPropNameInRow="TTKY11" msprop:Generator_ColumnPropNameInTable="TTKY11Column" msprop:Generator_UserColumnName="TTKY11" type="xs:int" minOccurs="0" />
+              <xs:element name="CSKY12" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCSKY12" msprop:Generator_ColumnPropNameInRow="CSKY12" msprop:Generator_ColumnPropNameInTable="CSKY12Column" msprop:Generator_UserColumnName="CSKY12" type="xs:int" minOccurs="0" />
+              <xs:element name="TTKY12" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTKY12" msprop:Generator_ColumnPropNameInRow="TTKY12" msprop:Generator_ColumnPropNameInTable="TTKY12Column" msprop:Generator_UserColumnName="TTKY12" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GIAM_HOADON_0" msprop:Generator_TableClassName="GIAM_HOADON_0DataTable" msprop:Generator_TableVarName="tableGIAM_HOADON_0" msprop:Generator_TablePropName="GIAM_HOADON_0" msprop:Generator_RowDeletingName="GIAM_HOADON_0RowDeleting" msprop:Generator_UserTableName="GIAM_HOADON_0" msprop:Generator_RowChangingName="GIAM_HOADON_0RowChanging" msprop:Generator_RowEvHandlerName="GIAM_HOADON_0RowChangeEventHandler" msprop:Generator_RowDeletedName="GIAM_HOADON_0RowDeleted" msprop:Generator_RowEvArgName="GIAM_HOADON_0RowChangeEvent" msprop:Generator_RowChangedName="GIAM_HOADON_0RowChanged" msprop:Generator_RowClassName="GIAM_HOADON_0Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="_x0037__0" msprop:Generator_ColumnVarNameInTable="column7_0" msprop:Generator_ColumnPropNameInRow="_7_0" msprop:Generator_ColumnPropNameInTable="_7_0Column" msprop:Generator_UserColumnName="7_0" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0038__0" msprop:Generator_ColumnVarNameInTable="column8_0" msprop:Generator_ColumnPropNameInRow="_8_0" msprop:Generator_ColumnPropNameInTable="_8_0Column" msprop:Generator_UserColumnName="8_0" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0039__0" msprop:Generator_ColumnVarNameInTable="column9_0" msprop:Generator_ColumnPropNameInRow="_9_0" msprop:Generator_ColumnPropNameInTable="_9_0Column" msprop:Generator_UserColumnName="9_0" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0031_0_0" msprop:Generator_ColumnVarNameInTable="column10_0" msprop:Generator_ColumnPropNameInRow="_10_0" msprop:Generator_ColumnPropNameInTable="_10_0Column" msprop:Generator_UserColumnName="10_0" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0031_1_0" msprop:Generator_ColumnVarNameInTable="column11_0" msprop:Generator_ColumnPropNameInRow="_11_0" msprop:Generator_ColumnPropNameInTable="_11_0Column" msprop:Generator_UserColumnName="11_0" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0031_2_0" msprop:Generator_ColumnVarNameInTable="column12_0" msprop:Generator_ColumnPropNameInRow="_12_0" msprop:Generator_ColumnPropNameInTable="_12_0Column" msprop:Generator_UserColumnName="12_0" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0037__1" msprop:Generator_ColumnVarNameInTable="column7_1" msprop:Generator_ColumnPropNameInRow="_7_1" msprop:Generator_ColumnPropNameInTable="_7_1Column" msprop:Generator_UserColumnName="7_1" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0038__1" msprop:Generator_ColumnVarNameInTable="column8_1" msprop:Generator_ColumnPropNameInRow="_8_1" msprop:Generator_ColumnPropNameInTable="_8_1Column" msprop:Generator_UserColumnName="8_1" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0039__1" msprop:Generator_ColumnVarNameInTable="column9_1" msprop:Generator_ColumnPropNameInRow="_9_1" msprop:Generator_ColumnPropNameInTable="_9_1Column" msprop:Generator_UserColumnName="9_1" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0031_0_1" msprop:Generator_ColumnVarNameInTable="column10_1" msprop:Generator_ColumnPropNameInRow="_10_1" msprop:Generator_ColumnPropNameInTable="_10_1Column" msprop:Generator_UserColumnName="10_1" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0031_1_1" msprop:Generator_ColumnVarNameInTable="column11_1" msprop:Generator_ColumnPropNameInRow="_11_1" msprop:Generator_ColumnPropNameInTable="_11_1Column" msprop:Generator_UserColumnName="11_1" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0031_2_1" msprop:Generator_ColumnVarNameInTable="column12_1" msprop:Generator_ColumnPropNameInRow="_12_1" msprop:Generator_ColumnPropNameInTable="_12_1Column" msprop:Generator_UserColumnName="12_1" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:THIDUA_GIAMHOADON" />
+      <xs:field xpath="mstns:DANHBO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

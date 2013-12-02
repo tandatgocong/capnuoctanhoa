@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 36, 41.625" name="GIAMHOADON">
+  <DataContextMoniker Name="/GIAMHOADONDataContext" />
+  <nestedChildShapes>
+    <classShape Id="55038e25-a45f-4595-be2e-3b40e7a9111a" absoluteBounds="9.75, 3.75, 2, 7.3476383463541666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/BAOCAO_KINHDOANH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81102551-6801-4154-a132-69752c84d84f" absoluteBounds="9.765, 4.21, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d74d3f3-671a-4e06-a15d-eab1fd441887" absoluteBounds="12.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_THUMOI_" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a2b28a6-9f8f-460a-aa31-022b07b04994" absoluteBounds="12.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="08b7c07a-c459-4623-b6ac-0ac5713241f7" absoluteBounds="12.75, 3.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/BAOCAO_TONGKET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="123ddf14-9822-4ec0-a689-45526ffba24d" absoluteBounds="12.765, 4.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4f6e49a-1e26-4a13-bf67-7ea10caa7723" absoluteBounds="12.75, 7.75, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/CHART_BIENDONGDHN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27086dca-e392-4a6c-915f-637c08eebfe7" absoluteBounds="12.765, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8fc36a51-0ad8-4347-8ba5-d1e6714ee9c6" absoluteBounds="9.75, 12.75, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/CHART_DOANHTHU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c2823eb-cd45-4f77-b03c-0e18e42d1c92" absoluteBounds="9.765, 13.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0b61bb4-ee56-40e0-a1a5-7d22d01db7dd" absoluteBounds="12.75, 10.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/CHART_SANLUONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="922b6d1f-c541-4392-b963-6828034d0386" absoluteBounds="12.765, 11.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba48560a-38ae-41ad-86c0-3f851c228e0d" absoluteBounds="15.75, 0.75, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/CHART_SANLUONG_TRUNGBINH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abf7d090-1407-4c1e-ac72-2c33ea73a36b" absoluteBounds="15.765, 1.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5cd41aa2-20f9-4a13-9735-6966f17aea4c" absoluteBounds="15.75, 5.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/DATKHUNG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="faceeafe-276b-449c-a1c6-04efb367ac99" absoluteBounds="15.765, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2c0b28b-0295-4ac1-88a9-da8196c0e239" absoluteBounds="15.75, 7.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/GANMOI_2012" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6501353a-0590-4064-bbca-431b615afc51" absoluteBounds="15.765, 8.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2200756f-cc72-4170-8db5-2bd5228cdfd0" absoluteBounds="15.75, 9.75, 2, 6.3861311848958309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/HOADONTH01" />
+      <nestedChildShapes>
+        <elementListCompartment Id="463a36bc-53d4-4339-8ad6-40cb042afeff" absoluteBounds="15.765, 10.21, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="efa560d9-8f47-4058-ad8c-8cba913459b9" absoluteBounds="0.75, 17.75, 2, 6.0015283203125023">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/HOADONTH02" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67ab7073-c509-405f-9ee3-ce0b8a11ed92" absoluteBounds="0.765, 18.21, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4549dfb3-d6f5-4913-a98e-07b76abf1e85" absoluteBounds="3.75, 17.75, 2, 6.1938297526041666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/HOADONTH03" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6820e374-0fdf-4543-9854-ad15c86fddc3" absoluteBounds="3.765, 18.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1db342b1-456b-4bce-8b06-f8ac6a5c6ef2" absoluteBounds="6.75, 17.75, 2, 6.7707340494791666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/HOADONTH04" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f40905f2-faf0-4672-bc19-6fea63bfd034" absoluteBounds="6.765, 18.21, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc06bf96-caad-470f-aed0-fe2d48db2526" absoluteBounds="9.75, 17.75, 2, 5.6169254557291666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/HOADONTH05" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f95e134-4c29-4b4c-bfb0-04d7b76d749a" absoluteBounds="9.765, 18.21, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="077ff481-ee7b-4f3a-b36e-de4417ea512c" absoluteBounds="12.75, 17.75, 2, 8.11684407552083">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/HOADONTH06" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95e964c9-194f-4844-ba65-89718c1968dc" absoluteBounds="12.765, 18.21, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2a85fbf-76d5-4f02-96ea-22076c06406b" absoluteBounds="15.75, 17.75, 2, 6.5784326171875023">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/HOADONTH07" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66dbed25-4fdb-4e10-aeeb-1baabdbcc59a" absoluteBounds="15.765, 18.21, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a894219e-980c-4aec-af3a-33f0041ff83b" absoluteBounds="18.75, 0.75, 2, 12.539777018229167">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/HOADONTH08" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb0c4dd0-05de-4131-a952-8f957965aa28" absoluteBounds="18.765, 1.21, 1.9700000000000002, 11.979777018229166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0dfa9aa-8385-4558-9bb0-dd4e2e56563e" absoluteBounds="18.75, 14.75, 2, 6.1938297526041666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/HOADONTH09" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efeac045-70f3-4e61-bc54-bf8e3017517a" absoluteBounds="18.765, 15.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="472ba496-9d41-4b8e-ada4-bb1c6f28cb14" absoluteBounds="9.5, 0.875, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/PHUONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25c6f615-5cd9-40ca-9b16-0c062bc167fd" absoluteBounds="9.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e79e71a4-15cf-4846-aee8-3a0ac70b9c16" absoluteBounds="6.75, 1, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/QUAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0ee2fc3-8d84-4f3f-8349-afb9aee26081" absoluteBounds="6.765, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90a0b4fa-b8fa-424c-b3af-71715ae6dff4" absoluteBounds="0.75, 5.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/SYS_PHONGBANDOI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be10bc62-01be-42b8-bc70-bdd2f3fac103" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8565ba85-7b17-4b9c-a233-d2013c60fc2c" absoluteBounds="0.75, 2.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/SYS_ROLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f17b45f-cb56-4637-816b-8e552f555572" absoluteBounds="0.765, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f042b70-f22c-4ee6-9c80-ec96d71b81ff" absoluteBounds="3.5, 1, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/SYS_USER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4bf830ba-6f18-4554-8231-60504616859a" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ee18e4d-adfa-4ed8-9676-3e6fbb7780bb" absoluteBounds="21.75, 0.75, 2, 13.308982747395831">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_BANGCHAMCONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b6df99c-edcb-43d6-8b22-dc53b9f7ad7c" absoluteBounds="21.765, 1.21, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdef482b-006b-47dd-b2b7-241fd7631214" absoluteBounds="21.75, 15.75, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_CHUYENDINHMUC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e4ce7f4-2054-43e9-9e2a-62c6f58ace5c" absoluteBounds="21.765, 16.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="49ab7a5e-6ac0-4432-835d-f1b6d24bb72d" absoluteBounds="18.75, 21.75, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_CHUYENKIEMTRA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f859dc91-db5f-473e-80d4-950f69d3c2e7" absoluteBounds="18.765, 22.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="adcd00a0-3fe7-41b6-b6ec-bc99da8c1304" absoluteBounds="21.75, 21.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_CODE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5dabc430-172e-48e8-96ad-0bdfc961b1ea" absoluteBounds="21.765, 22.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64259cbc-944e-477d-b6f8-54aa9276b338" absoluteBounds="21.75, 23.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_DHN_BAOCAO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0bb324b8-ec33-4165-9525-4fb61efbd064" absoluteBounds="21.765, 24.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8878657e-567d-48a2-8be9-5b85446cd16e" absoluteBounds="24.75, 0.75, 2, 4.2708154296874987">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_DHNAMSAU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3484cf3c-131e-4d91-b2cf-7985b6b5705c" absoluteBounds="24.765, 1.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56e2517e-4cc8-4554-831a-2d6d63f1e144" absoluteBounds="0.75, 24.75, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_DIEUCHINHDANHBO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76d59fff-574c-417a-8186-fd5e567fda6c" absoluteBounds="0.765, 25.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c57af276-9d34-4bee-b5f3-c200ffc56dfc" absoluteBounds="24.75, 6.75, 2, 4.0785139973958318">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_DONGNUOC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7eae81d2-3ae3-4948-84ae-4ba2f61d56c3" absoluteBounds="24.765, 7.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2097d50-3141-4f4e-a579-8b9843cac95d" absoluteBounds="24.75, 11.75, 2, 9.27065266927083">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_DULIEUKHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a47dd2d4-d9e5-4f29-bc6f-d4014f9c9909" absoluteBounds="24.765, 12.21, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b0756a5-0ef9-4c01-b83b-9363ce7ff337" absoluteBounds="24.75, 22.75, 2, 10.424461263020831">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_DULIEUKHACHHANG_HUYDB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dfc7e9a5-56bf-4f70-ab74-4b54a5eb977f" absoluteBounds="24.765, 23.21, 1.9700000000000002, 9.8644612630208321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="972df35e-df8a-4cea-97b5-3333d1aef981" absoluteBounds="3.75, 25.75, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_GANHOPBV" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc800511-6945-4385-8b0b-fcb0ab807ec4" absoluteBounds="3.765, 26.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4e64018-d22f-4222-8b1e-fde03ebdbcb0" absoluteBounds="6.75, 25.75, 2, 6.1938297526041666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_GANMOI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="494e214f-304f-452a-8a84-a32c62e2f8e0" absoluteBounds="6.765, 26.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="97c9f639-5d76-4fbf-9ef5-e4632524e866" absoluteBounds="9.75, 26.75, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_GHICHU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8cbc2e3-b5ba-45f1-bbcc-5277278ef082" absoluteBounds="9.765, 27.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c74c5ac-46c8-4080-9e3f-261d2b6654bf" absoluteBounds="12.75, 26.75, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_HIEUDONGHO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87872e62-97f6-4e52-9a29-a57453a42976" absoluteBounds="12.765, 27.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c1381c7-8627-4d2b-b3f7-b6e4af88b917" absoluteBounds="27.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_LOAIBANGKE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f46488d-a79d-49c5-a74e-d04b4d9c1d97" absoluteBounds="27.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fb22553-01e1-4181-b217-11b98e181ba5" absoluteBounds="27.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_MACHI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="42588a2a-e30e-49fe-8590-3e1b5b953d88" absoluteBounds="27.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c41b306c-e4a6-4453-946b-bb1a506bb690" absoluteBounds="27.75, 4.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_NHANVIENDOCSO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8d13443-28ad-46f5-b6de-f29b311a1568" absoluteBounds="27.765, 5.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4017a9d4-d850-4d0a-9363-c21c0a363203" absoluteBounds="3.75, 6.375, 2, 10.424461263020831">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_THAYDHN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9eb66814-0739-4a3d-909d-8a62f9505d6f" absoluteBounds="3.765, 6.835, 1.9700000000000002, 9.8644612630208321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="49cc4931-9e9d-4e85-b5fa-8ff244b0ad39" absoluteBounds="27.75, 8.75, 2, 6.7707340494791666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_THONGKEDHN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abf03a1a-d173-436c-8845-0dd658a8e316" absoluteBounds="27.765, 9.21, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="037a4d91-3406-4654-9feb-d3981bfc66f8" absoluteBounds="15.75, 27.75, 2, 4.2708154296875023">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_TLKDUTCHI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a911b6f9-c747-4a01-8b76-4798a6869316" absoluteBounds="15.765, 28.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f5cf06a9-3ffb-4dd1-9d09-d1ede3ace331" absoluteBounds="27.75, 16.75, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_VATUTHAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ad62c3f-083c-49d3-b394-335ff2aee000" absoluteBounds="27.765, 17.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a7df3b4-2395-43b5-bcef-5a82c4e687ee" absoluteBounds="6.5, 9.875, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_VATUTHAY_DHN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9fe142f8-f3cd-4469-8afd-6429c7ac7ea6" absoluteBounds="6.515, 10.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="085ba79b-714f-4c71-ac08-b0292f2d716e" absoluteBounds="18.75, 27.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/TB_YEUCAUDC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b979417-b59d-4003-8765-76dce7799335" absoluteBounds="18.765, 28.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c38c72ff-2a34-4b49-af3c-06f347d3b118" absoluteBounds="27.75, 20.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/truysuat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4e3f7be-57cd-4d89-8dab-0783737b4688" absoluteBounds="27.765, 21.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e4d4884-4384-423c-ba37-31d372e57911" absoluteBounds="27.75, 23.75, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_BAOCAO_CODE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15f9af5f-ffb0-46a5-acd1-403f55f4e6a2" absoluteBounds="27.765, 24.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ab1a274-393a-4e8d-af89-2ff57f2e4712" absoluteBounds="27.75, 29.75, 2, 6.9630354817708309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_BAOCAO_CODE_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27cc8ef1-bec0-4901-8a82-361574ab6f9d" absoluteBounds="27.765, 30.21, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7118d698-493d-4e41-98b0-584e11135841" absoluteBounds="30.75, 0.75, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_BAOCAO_CODE_MAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d075656-3efe-401d-aa01-d07c810473c0" absoluteBounds="30.765, 1.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5562ed3e-6540-4b6e-80bc-3cf899ee941b" absoluteBounds="30.75, 6.75, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_BAOCAO_LOAIKD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5892107-3b8b-45d3-8ec6-9ab544aaa442" absoluteBounds="30.765, 7.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="654a7675-2a8a-4cb1-88f4-eaaaee6a0bc4" absoluteBounds="9.75, 30.75, 2, 5.040021158854163">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_BAOCAO_LOAIKD_MAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7677c7d6-788f-40ac-b27e-711b80c5830f" absoluteBounds="9.765, 31.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a738bcb1-94c9-4734-94f3-8061c8183c37" absoluteBounds="30.75, 12.75, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_BAOCAO_LOAIKD_THAP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87c0fa41-f3d5-45f4-bde6-58ddc59d367c" absoluteBounds="30.765, 13.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a347a5a6-8183-4824-a5b4-c2419d251986" absoluteBounds="30.75, 18.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_BAOCAO_SANLUONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72bb5bd8-5069-4ea2-8078-8e72cbf527ff" absoluteBounds="30.765, 19.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4437435-b4b5-498b-b94a-419214da0f5b" absoluteBounds="30.75, 22.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_BAOCAO_SANLUONG_MAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c2c2239-6ca3-44cb-8cc5-e0721a16684a" absoluteBounds="30.765, 23.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="353c21d9-cccd-482d-8660-9ff48544bdaf" absoluteBounds="30.75, 26.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_GIAMHOADON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc2d227c-3934-4c7f-a562-7ea4ddfb3258" absoluteBounds="30.765, 27.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.75 : 1.59699625651042); (9.5 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GIAMHOADONDataContext/QUAN/QUAN_PHUONG" />
+      <nodes>
+        <classShapeMoniker Id="e79e71a4-15cf-4846-aee8-3a0ac70b9c16" />
+        <classShapeMoniker Id="472ba496-9d41-4b8e-ada4-bb1c6f28cb14" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.03125); (3.59375 : 6.03125); (3.59375 : 4.50160970052083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GIAMHOADONDataContext/SYS_PHONGBANDOI/SYS_PHONGBANDOI_SYS_USER" />
+      <nodes>
+        <classShapeMoniker Id="90a0b4fa-b8fa-424c-b3af-71715ae6dff4" />
+        <classShapeMoniker Id="1f042b70-f22c-4ee6-9c80-ec96d71b81ff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.72199625651042); (3.5 : 2.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GIAMHOADONDataContext/SYS_ROLE/SYS_ROLE_SYS_USER" />
+      <nodes>
+        <classShapeMoniker Id="8565ba85-7b17-4b9c-a233-d2013c60fc2c" />
+        <classShapeMoniker Id="1f042b70-f22c-4ee6-9c80-ec96d71b81ff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 11.5296541341146); (6.5 : 11.5296541341146)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GIAMHOADONDataContext/TB_THAYDHN/TB_THAYDHN_TB_VATUTHAY_DHN" />
+      <nodes>
+        <classShapeMoniker Id="4017a9d4-d850-4d0a-9363-c21c0a363203" />
+        <classShapeMoniker Id="7a7df3b4-2395-43b5-bcef-5a82c4e687ee" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a072977e-6a75-4c92-9661-85ade4374385" absoluteBounds="21.75, 27.75, 2, 9.078351236979163">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/db" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a8bd849-ca11-435a-b650-acc59b9fc185" absoluteBounds="21.765, 28.21, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="248f9c9e-3543-4847-a5fa-771d9fdd05e7" absoluteBounds="12.75, 28.75, 2, 9.4629541015625023">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_DH_HIEUCU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cde239c-851f-49c6-a420-ecb3dcb5d047" absoluteBounds="12.765, 29.21, 1.9700000000000002, 8.9029541015625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe3415e6-46e6-4cb9-9408-ebf711d82573" absoluteBounds="6.75, 3.75, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/GIAM_HOADON_0" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f32781e-4441-4bc7-9be3-9298f817b5ba" absoluteBounds="6.765, 4.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a7bd23cf-0576-4d5b-8306-d381bbf63dc8" absoluteBounds="0.75, 8.75, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/testter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0dfdecdf-8fa6-4edc-ae85-e613fa35d416" absoluteBounds="0.765, 9.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5cbff7ef-c0ee-45e0-8503-7c71e51fa190" absoluteBounds="0.75, 30.75, 2, 6.3861311848958309">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/THIDUA_GIAMHOADON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a88b7aaf-4314-42fd-9d12-0823c8cef059" absoluteBounds="0.765, 31.21, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f7c9adbd-3e9c-4e61-baf5-441e842264e7" absoluteBounds="30.75, 29.75, 2, 11.578269856770831">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/V_DHN_BANGKE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7da5fcdc-8bf5-496a-aec7-8ec59aaaa911" absoluteBounds="30.765, 30.21, 1.9700000000000002, 11.018269856770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8fb9db75-19aa-4513-82e1-365282ccf161" absoluteBounds="3.75, 31.75, 2, 6.770734049479163">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/V_SEARCH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94708429-e77e-4f40-9d8d-e2d8f9058d76" absoluteBounds="3.765, 32.21, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed80d27e-1b3f-45fc-b125-7f99ed37d425" absoluteBounds="0.75, 13.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/V_TCTB_HOANCONGNHANH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02285d77-f421-409d-afce-1cf9088e5005" absoluteBounds="0.765, 14.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4bf30dd-151f-4336-ad3d-6d0ea02a3376" absoluteBounds="6.75, 14.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/V_TCTB_TKVATTUTHAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ccd183cb-b3ee-44db-9fe4-1c940b04375c" absoluteBounds="6.765, 15.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ae50951a-18a6-461e-9961-82a8ae486f4d" absoluteBounds="6.75, 32.75, 2, 6.1938297526041595">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/V_THONGKEDHN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc7da5f2-e3e6-41e3-920b-9d9b405f43e8" absoluteBounds="6.765, 33.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="310baf5d-b2e8-4277-95b4-75f0e7882a9c" absoluteBounds="33.75, 0.75, 2, 6.1938297526041666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/V_THONGKEDHN_TB01" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61ef3f92-1d92-4c71-9032-efb54c1e554c" absoluteBounds="33.765, 1.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fca36216-05b3-44ee-ab9d-722aedcaaa31" absoluteBounds="33.75, 7.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/GIAMHOADONDataContext/W_BIENDOCCSTO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1182ad5f-6cb4-49e8-a843-d22903a49494" absoluteBounds="33.765, 8.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
