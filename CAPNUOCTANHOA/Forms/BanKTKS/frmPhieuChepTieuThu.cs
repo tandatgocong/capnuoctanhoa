@@ -30,6 +30,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             txtKy.Text = ky+"";
             txtNam.Text = nam+"";
             cbSoLuong.SelectedIndex = 9;
+            txtDanhBo.Focus();
            
         }
 
@@ -143,6 +144,12 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         }
         public DataSet getListHoaDonReport(string danhba, int nam, int ky)
         {
+            if (ky >= 12 && DateTime.Now.Day >= 21)
+            {
+                ky = 1;
+                nam = nam + 1;
+
+            }
            
             DocSoDataContext db = new DocSoDataContext();
             DataSet ds = new DataSet();
@@ -200,7 +207,14 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         public DataSet getListHoaDonReport_BC(string danhba, int nam, int ky)
         {
-            
+
+            if (ky >= 12 && DateTime.Now.Day >= 21)
+            {
+                ky = 1;
+                nam = nam + 1;
+
+            }
+
             DocSoDataContext db = new DocSoDataContext();
             DataSet ds = new DataSet();
             string query2 = "";
@@ -210,6 +224,15 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TIEUTHU");
+            if (ds.Tables["TIEUTHU"].Rows.Count == 0)
+            {
+                nam = nam - 1;
+                 query = "SELECT  TOP(1)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+                 " KH.CO,  H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
+               " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
+                 adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+                adapter.Fill(ds, "TIEUTHU");
+            }
 
             query = "SELECT  TOP(" + (int.Parse(cbSoLuong.Text) -1)+ ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
                 " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
@@ -289,15 +312,34 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         public DataSet getListHoaDonReport_BC_KT(string danhba, int nam, int ky)
         {
 
+          
+            string query2 = "";
+
+            if (ky >= 12 && DateTime.Now.Day >= 21)
+            {
+                ky = 1;
+                nam = nam + 1;
+
+            }
+
             DocSoDataContext db = new DocSoDataContext();
             DataSet ds = new DataSet();
-            string query2 = "";
 
             string query = "SELECT  TOP(1)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
                   " KH.CO,  H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
                 " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TIEUTHU");
+            if (ds.Tables["TIEUTHU"].Rows.Count == 0)
+            {
+                nam = nam - 1;
+                query = "SELECT  TOP(1)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
+                " KH.CO,  H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
+              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
+                adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+                adapter.Fill(ds, "TIEUTHU");
+            }
+
 
             query = "SELECT  TOP(" + (int.Parse(cbSoLuong.Text)-1) + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
                 " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +

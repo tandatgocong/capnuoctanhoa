@@ -583,7 +583,7 @@
             this.sanluongToDS.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.sanluongToDS.RowHeadersWidth = 10;
             this.sanluongToDS.RowTemplate.Height = 30;
-            this.sanluongToDS.Size = new System.Drawing.Size(1734, 190);
+            this.sanluongToDS.Size = new System.Drawing.Size(1756, 250);
             this.sanluongToDS.TabIndex = 57;
             this.sanluongToDS.Click += new System.EventHandler(this.sanluongToDS_Click);
             // 

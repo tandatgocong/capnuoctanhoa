@@ -52,17 +52,31 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                 this.txtTangBat.Text = "5";
             }
-            else if ("TP".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
+            else if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
             {
                 tods = 3;
                 List<MAYDOCSO> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(3);
-                this.lbToDocSo.Text = "     TỔ TÂN PHÚ";
+                this.lbToDocSo.Text = "     TỔ TÂN PHÚ 01";
                 this.txtTangBat.Text = "100";
                 this.cbTuMayDocSo.DataSource = list;
                 this.cbTuMayDocSo.DisplayMember = "MAY";
                 this.cbTuMayDocSo.DisplayMember = "MAY";
                 ///
                 this.cbDenMayDocSo.DataSource = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(3);
+                this.cbDenMayDocSo.DisplayMember = "MAY";
+                this.cbDenMayDocSo.DisplayMember = "MAY";
+            }
+            else if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
+            {
+                tods = 3;
+                List<MAYDOCSO> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(4);
+                this.lbToDocSo.Text = "     TỔ TÂN PHÚ 02";
+                this.txtTangBat.Text = "100";
+                this.cbTuMayDocSo.DataSource = list;
+                this.cbTuMayDocSo.DisplayMember = "MAY";
+                this.cbTuMayDocSo.DisplayMember = "MAY";
+                ///
+                this.cbDenMayDocSo.DataSource = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(4);
                 this.cbDenMayDocSo.DisplayMember = "MAY";
                 this.cbDenMayDocSo.DisplayMember = "MAY";
             }

@@ -37,10 +37,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                  tods = 2;
                  tento = "TỔ TÂN BÌNH 02";
             }
-            if ("TP".Equals(DAL.SYS.C_USERS._toDocSo))
+            if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
             {
                 tods = 3;
-                tento = "TỔ TÂN PHÚ";
+                tento = "TỔ TÂN PHÚ 01 ";
+            }
+            if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                tods = 4;
+                tento = "TỔ TÂN PHÚ 02";
             }
             rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong_1(txtNam.Text.Trim(), ky, tods));
             rp.SetParameterValue("TODS", tento);
@@ -61,10 +66,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 tods = 2;
                 tento = "TỔ TÂN BÌNH 02";
             }
-            if ("TP".Equals(DAL.SYS.C_USERS._toDocSo))
+            if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
             {
                 tods = 3;
-                tento = "TỔ TÂN PHÚ";
+                tento = "TỔ TÂN PHÚ 01 ";
+            }
+            if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                tods = 4;
+                tento = "TỔ TÂN PHÚ 02";
             }
             rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong(txtNam.Text.Trim(), ky, tods));
             rp.SetParameterValue("TODS", tento);
@@ -87,10 +97,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     tods = 2;
                     tento = "TỔ TÂN BÌNH 02";
                 }
-                if ("TP".Equals(DAL.SYS.C_USERS._toDocSo))
+                if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
                 {
                     tods = 3;
-                    tento = "TỔ TÂN PHÚ";
+                    tento = "TỔ TÂN PHÚ 01 ";
+                }
+                if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
+                {
+                    tods = 4;
+                    tento = "TỔ TÂN PHÚ 02";
                 }
                 rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong_1(txtNam.Text.Trim(), ky, tods));
                 rp.SetParameterValue("TODS", tento);

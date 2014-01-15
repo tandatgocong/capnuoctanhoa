@@ -412,16 +412,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string TODS = "TB01";
                 string LOTRINH = this.txtLoTrinhTam.Text;
                 string _dt = this.txtDienThoai.Text;
+                int tods = 1;
                 if (this.cbToDocSo.SelectedIndex == 1)
                 {
                     TODS = "TB02";
+                    tods = 2;
                 }
                 else if (this.cbToDocSo.SelectedIndex == 2)
                 {
-                    TODS = "TP";
+                    tods = 3;
+                    TODS = "TP01";
+                }
+                else if (this.cbToDocSo.SelectedIndex == 3)
+                {
+                    tods = 4;
+                    TODS = "TP02";
                 }
                 else
                 {
+                    tods = 1;
                     TODS = "TB01";
                 }
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(DANHBO) == null && "".Equals(LOTRINH.Replace(" ", "")) == false)
@@ -589,11 +598,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
                     this.cbToDocSo.SelectedIndex = 1;
                 }
-                else if (t2 > 30)
+                else if (t2 > 30 && t2 < 50)
                 {
                     this.cbToDocSo.SelectedIndex = 2;
 
                 }
+                else if (t2 > 50)
+                {
+                    this.cbToDocSo.SelectedIndex = 3;
+
+                }
+
                 string dot = t1 + "";
                 if (t1 < 10)
                 {
@@ -717,9 +732,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         string danhbo = dataGridView1.Rows[i].Cells["DC_DANHBO"].Value + "";
                         DAL.LinQConnection.ExecuteCommand("UPDATE TB_YEUCAUDC SET DACHUYEN='True', NGAYCHUYEN=GETDATE() ,CREATEBY='Chuyen " + DAL.SYS.C_USERS._userName + " ' WHERE DANHBO='" + danhbo.Replace(" ", "") + "' AND KY='" + KY + "' AND NAM='" + NAM + "'");
                     }
-                    dataGridView1.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,LTCU  ,LTMOI  FROM TB_YEUCAUDC WHERE KY ='" + KY + "' AND NAM='" + NAM + "' AND DACHUYEN ='False'  ORDER BY LTCU ASC");
-                    setSTT();
-                    Utilities.DataGridV.formatRows(dataGridView1, "DC_DANHBO");
+                    //dataGridView1.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,LTCU  ,LTMOI  FROM TB_YEUCAUDC WHERE KY ='" + KY + "' AND NAM='" + NAM + "' AND DACHUYEN ='False'  ORDER BY LTCU ASC");
+                    //setSTT();
+                    //Utilities.DataGridV.formatRows(dataGridView1, "DC_DANHBO");
                 }
                 catch (Exception)
                 {

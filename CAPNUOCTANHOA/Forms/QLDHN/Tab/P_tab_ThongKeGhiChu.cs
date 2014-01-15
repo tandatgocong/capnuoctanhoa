@@ -36,7 +36,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
 
-            string query = "SELECT  (case when (TODS=1)  then 'TB01' else case when (TODS=2)  then 'TB02' else 'TP' end end) AS TODS , COUNT(*) AS TONGCONG, ";
+            string query = "SELECT  (case when (TODS=1)  then 'TB01' else case when (TODS=2)  then 'TB02' else case when (TODS=3)  then 'TB01' else 'TP02' end end end) AS TODS , COUNT(*) AS TONGCONG, ";
             query += " COUNT(case when (SUBSTRING(MALOTRINH,1,2)='01')  then 1 else null end) AS DOT01, ";
             query += " COUNT(case when (SUBSTRING(MALOTRINH,1,2)='02')  then 1 else null end) AS DOT02, ";
             query += " COUNT(case when (SUBSTRING(MALOTRINH,1,2)='03')  then 1 else null end) AS DOT03, ";
@@ -59,7 +59,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             query += " COUNT(case when (SUBSTRING(MALOTRINH,1,2)='20')  then 1 else null end) AS DOT20 ";
             query += " FROM [DocSo_PHT].[dbo].[DS" + nam + "]";
             query += " WHERE KY="+ky+" AND GHICHUMOI LIKE N'%GIẾ%'";
-            query += " GROUP BY (case when (TODS=1)  then 'TB01' else case when (TODS=2)  then 'TB02' else 'TP' end end)";
+            query += " GROUP BY (case when (TODS=1)  then 'TB01' else case when (TODS=2)  then 'TB02' else case when (TODS=3)  then 'TB01' else 'TP02' end end end)";
         
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "THONGKEGM");

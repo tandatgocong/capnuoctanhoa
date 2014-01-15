@@ -47,6 +47,8 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
                 string SANLUONG=dataGridView1.Rows[i].Cells["TIEUTHU"].Value + "";
                 string BINHQUAN=dataGridView1.Rows[i].Cells["BINHQUAN"].Value + "";
                 string NAMLD = dataGridView1.Rows[i].Cells["NAMLD"].Value + "";
+                string HIEUDH = dataGridView1.Rows[i].Cells["HIEUDH"].Value + "";
+
                 exSheet.Cells[rows, 1] = STT;
                 exSheet.Cells[rows, 2] = DANHBO;
                 exSheet.Cells[rows, 3] = CODH;
@@ -61,6 +63,7 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
                 exSheet.Cells[rows, 12] = SANLUONG;
                 exSheet.Cells[rows, 13] = BINHQUAN;
                 exSheet.Cells[rows, 14] = NAMLD;
+                exSheet.Cells[rows, 15] = HIEUDH;
 
                 rows++;
 

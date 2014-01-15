@@ -214,7 +214,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::CAPNUOCTANHOA.Properties.Resources.print;
-            this.pictureBox1.Location = new System.Drawing.Point(1057, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(1057, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 34);
             this.pictureBox1.TabIndex = 28;
@@ -226,11 +226,11 @@
             this.tabControl2.BackColor = System.Drawing.Color.Transparent;
             this.tabControl2.CanReorderTabs = true;
             this.tabControl2.Controls.Add(this.tabControlPanel1);
-            this.tabControl2.Location = new System.Drawing.Point(4, 270);
+            this.tabControl2.Location = new System.Drawing.Point(4, 296);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedTabFont = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold);
             this.tabControl2.SelectedTabIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1088, 285);
+            this.tabControl2.Size = new System.Drawing.Size(1088, 259);
             this.tabControl2.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Document;
             this.tabControl2.TabIndex = 25;
             this.tabControl2.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
@@ -245,13 +245,13 @@
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 28);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(1088, 257);
+            this.tabControlPanel1.Size = new System.Drawing.Size(1088, 231);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
@@ -268,7 +268,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1, 1);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1086, 255);
+            this.panel6.Size = new System.Drawing.Size(1086, 229);
             this.panel6.TabIndex = 0;
             // 
             // panel11
@@ -423,7 +423,7 @@
             this.MAYDS.DataPropertyName = "MAYDS";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.MAYDS.DefaultCellStyle = dataGridViewCellStyle2;
-            this.MAYDS.HeaderText = "MÁY ĐS";
+            this.MAYDS.HeaderText = "MÁY";
             this.MAYDS.Name = "MAYDS";
             this.MAYDS.Width = 40;
             // 
@@ -442,7 +442,7 @@
             dataGridViewCellStyle4.Format = "N0";
             dataGridViewCellStyle4.NullValue = "0";
             this.MAY_KN_DHN.DefaultCellStyle = dataGridViewCellStyle4;
-            this.MAY_KN_DHN.HeaderText = "TT = 0m3";
+            this.MAY_KN_DHN.HeaderText = "TT=0m3";
             this.MAY_KN_DHN.Name = "MAY_KN_DHN";
             this.MAY_KN_DHN.Width = 90;
             // 
@@ -453,7 +453,7 @@
             dataGridViewCellStyle5.Format = "N0";
             dataGridViewCellStyle5.NullValue = "0";
             this.MAY_KN_SANLUONG.DefaultCellStyle = dataGridViewCellStyle5;
-            this.MAY_KN_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.MAY_KN_SANLUONG.HeaderText = "1->4m3";
             this.MAY_KN_SANLUONG.Name = "MAY_KN_SANLUONG";
             this.MAY_KN_SANLUONG.Width = 95;
             // 
@@ -464,7 +464,7 @@
             dataGridViewCellStyle6.Format = "N0";
             dataGridViewCellStyle6.NullValue = "0";
             this.MAY_KT_DHN.DefaultCellStyle = dataGridViewCellStyle6;
-            this.MAY_KT_DHN.HeaderText = "TT = 0m3";
+            this.MAY_KT_DHN.HeaderText = "TT=0m3";
             this.MAY_KT_DHN.Name = "MAY_KT_DHN";
             this.MAY_KT_DHN.Width = 90;
             // 
@@ -475,7 +475,7 @@
             dataGridViewCellStyle7.Format = "N0";
             dataGridViewCellStyle7.NullValue = "0";
             this.MAY_KT_SANLUONG.DefaultCellStyle = dataGridViewCellStyle7;
-            this.MAY_KT_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.MAY_KT_SANLUONG.HeaderText = "1->4m3";
             this.MAY_KT_SANLUONG.Name = "MAY_KT_SANLUONG";
             this.MAY_KT_SANLUONG.Width = 95;
             // 
@@ -486,7 +486,7 @@
             dataGridViewCellStyle8.Format = "N0";
             dataGridViewCellStyle8.NullValue = "0";
             this.MAY_TANGIAM_DHN.DefaultCellStyle = dataGridViewCellStyle8;
-            this.MAY_TANGIAM_DHN.HeaderText = "TT = 0m3";
+            this.MAY_TANGIAM_DHN.HeaderText = "TT=0m3";
             this.MAY_TANGIAM_DHN.Name = "MAY_TANGIAM_DHN";
             this.MAY_TANGIAM_DHN.Width = 80;
             // 
@@ -497,7 +497,7 @@
             dataGridViewCellStyle9.Format = "N0";
             dataGridViewCellStyle9.NullValue = "0";
             this.MAY_TANGIAM_SANLUONG.DefaultCellStyle = dataGridViewCellStyle9;
-            this.MAY_TANGIAM_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.MAY_TANGIAM_SANLUONG.HeaderText = "1->4m3";
             this.MAY_TANGIAM_SANLUONG.Name = "MAY_TANGIAM_SANLUONG";
             this.MAY_TANGIAM_SANLUONG.Width = 95;
             // 
@@ -508,7 +508,7 @@
             dataGridViewCellStyle10.Format = "N0";
             dataGridViewCellStyle10.NullValue = "0";
             this.MAY_NT_DHN.DefaultCellStyle = dataGridViewCellStyle10;
-            this.MAY_NT_DHN.HeaderText = "TT = 0m3";
+            this.MAY_NT_DHN.HeaderText = "TT=0m3";
             this.MAY_NT_DHN.Name = "MAY_NT_DHN";
             this.MAY_NT_DHN.Width = 90;
             // 
@@ -519,7 +519,7 @@
             dataGridViewCellStyle11.Format = "N0";
             dataGridViewCellStyle11.NullValue = "0";
             this.MAY_NT_SANLUONG.DefaultCellStyle = dataGridViewCellStyle11;
-            this.MAY_NT_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.MAY_NT_SANLUONG.HeaderText = "1->4m3";
             this.MAY_NT_SANLUONG.Name = "MAY_NT_SANLUONG";
             this.MAY_NT_SANLUONG.Width = 95;
             // 
@@ -530,7 +530,7 @@
             dataGridViewCellStyle12.Format = "N0";
             dataGridViewCellStyle12.NullValue = "0";
             this.MAY_NT_TANGIAM_DHN.DefaultCellStyle = dataGridViewCellStyle12;
-            this.MAY_NT_TANGIAM_DHN.HeaderText = "TT = 0m3";
+            this.MAY_NT_TANGIAM_DHN.HeaderText = "TT=0m3";
             this.MAY_NT_TANGIAM_DHN.Name = "MAY_NT_TANGIAM_DHN";
             this.MAY_NT_TANGIAM_DHN.Width = 80;
             // 
@@ -541,7 +541,7 @@
             dataGridViewCellStyle13.Format = "N0";
             dataGridViewCellStyle13.NullValue = "0";
             this.MAY_NT_TANGIAM_SANLUONG.DefaultCellStyle = dataGridViewCellStyle13;
-            this.MAY_NT_TANGIAM_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.MAY_NT_TANGIAM_SANLUONG.HeaderText = "1->4m3";
             this.MAY_NT_TANGIAM_SANLUONG.Name = "MAY_NT_TANGIAM_SANLUONG";
             this.MAY_NT_TANGIAM_SANLUONG.Width = 95;
             // 
@@ -652,7 +652,7 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.labelX6);
-            this.panel4.Location = new System.Drawing.Point(530, 64);
+            this.panel4.Location = new System.Drawing.Point(530, 50);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(184, 32);
             this.panel4.TabIndex = 22;
@@ -671,7 +671,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.labelX4);
-            this.panel2.Location = new System.Drawing.Point(330, 64);
+            this.panel2.Location = new System.Drawing.Point(330, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(205, 32);
             this.panel2.TabIndex = 20;
@@ -690,7 +690,7 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.labelX7);
-            this.panel5.Location = new System.Drawing.Point(912, 64);
+            this.panel5.Location = new System.Drawing.Point(912, 50);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(183, 32);
             this.panel5.TabIndex = 23;
@@ -709,7 +709,7 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.labelX5);
-            this.panel3.Location = new System.Drawing.Point(709, 64);
+            this.panel3.Location = new System.Drawing.Point(709, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 32);
             this.panel3.TabIndex = 21;
@@ -728,7 +728,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labelX3);
-            this.panel1.Location = new System.Drawing.Point(130, 64);
+            this.panel1.Location = new System.Drawing.Point(130, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 32);
             this.panel1.TabIndex = 19;
@@ -768,7 +768,7 @@
             this.NT_SANLUONG,
             this.NT_TANGIAM_DHN,
             this.NT_TANGIAM_SANLUONG});
-            this.sanluongToDS.Location = new System.Drawing.Point(1, 95);
+            this.sanluongToDS.Location = new System.Drawing.Point(1, 81);
             this.sanluongToDS.Name = "sanluongToDS";
             this.sanluongToDS.ReadOnly = true;
             dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -781,7 +781,7 @@
             this.sanluongToDS.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.sanluongToDS.RowHeadersWidth = 10;
             this.sanluongToDS.RowTemplate.Height = 30;
-            this.sanluongToDS.Size = new System.Drawing.Size(1094, 172);
+            this.sanluongToDS.Size = new System.Drawing.Size(1094, 209);
             this.sanluongToDS.TabIndex = 18;
             this.sanluongToDS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sanluongToDS_CellClick);
             this.sanluongToDS.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.sanluongToDS_DataError);
@@ -813,7 +813,7 @@
             dataGridViewCellStyle17.Format = "N0";
             dataGridViewCellStyle17.NullValue = "0";
             this.KN_DHN.DefaultCellStyle = dataGridViewCellStyle17;
-            this.KN_DHN.HeaderText = "TT = 0m3";
+            this.KN_DHN.HeaderText = "TT=0m3";
             this.KN_DHN.Name = "KN_DHN";
             this.KN_DHN.ReadOnly = true;
             // 
@@ -825,7 +825,7 @@
             dataGridViewCellStyle18.Format = "N0";
             dataGridViewCellStyle18.NullValue = "0";
             this.KN_SANLUONG.DefaultCellStyle = dataGridViewCellStyle18;
-            this.KN_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.KN_SANLUONG.HeaderText = "1->4m3";
             this.KN_SANLUONG.Name = "KN_SANLUONG";
             this.KN_SANLUONG.ReadOnly = true;
             // 
@@ -836,7 +836,7 @@
             dataGridViewCellStyle19.Format = "N0";
             dataGridViewCellStyle19.NullValue = "0";
             this.KT_DHN.DefaultCellStyle = dataGridViewCellStyle19;
-            this.KT_DHN.HeaderText = "TT  = 0m3";
+            this.KT_DHN.HeaderText = "TT=0m3";
             this.KT_DHN.Name = "KT_DHN";
             this.KT_DHN.ReadOnly = true;
             // 
@@ -847,7 +847,7 @@
             dataGridViewCellStyle20.Format = "N0";
             dataGridViewCellStyle20.NullValue = "0";
             this.KT_SANLUONG.DefaultCellStyle = dataGridViewCellStyle20;
-            this.KT_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.KT_SANLUONG.HeaderText = "1->4m3";
             this.KT_SANLUONG.Name = "KT_SANLUONG";
             this.KT_SANLUONG.ReadOnly = true;
             // 
@@ -858,7 +858,7 @@
             dataGridViewCellStyle21.Format = "N0";
             dataGridViewCellStyle21.NullValue = "0";
             this.TANGIAM_DHN.DefaultCellStyle = dataGridViewCellStyle21;
-            this.TANGIAM_DHN.HeaderText = "TT = 0m3";
+            this.TANGIAM_DHN.HeaderText = "TT=0m3";
             this.TANGIAM_DHN.Name = "TANGIAM_DHN";
             this.TANGIAM_DHN.ReadOnly = true;
             this.TANGIAM_DHN.Width = 80;
@@ -870,7 +870,7 @@
             dataGridViewCellStyle22.Format = "N0";
             dataGridViewCellStyle22.NullValue = "0";
             this.TANGIAM_SANLUONG.DefaultCellStyle = dataGridViewCellStyle22;
-            this.TANGIAM_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.TANGIAM_SANLUONG.HeaderText = "1->4m3";
             this.TANGIAM_SANLUONG.Name = "TANGIAM_SANLUONG";
             this.TANGIAM_SANLUONG.ReadOnly = true;
             // 
@@ -881,7 +881,7 @@
             dataGridViewCellStyle23.Format = "N0";
             dataGridViewCellStyle23.NullValue = "0";
             this.NT_DHN.DefaultCellStyle = dataGridViewCellStyle23;
-            this.NT_DHN.HeaderText = "TT = 0m3";
+            this.NT_DHN.HeaderText = "TT=0m3";
             this.NT_DHN.Name = "NT_DHN";
             this.NT_DHN.ReadOnly = true;
             // 
@@ -892,7 +892,7 @@
             dataGridViewCellStyle24.Format = "N0";
             dataGridViewCellStyle24.NullValue = "0";
             this.NT_SANLUONG.DefaultCellStyle = dataGridViewCellStyle24;
-            this.NT_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.NT_SANLUONG.HeaderText = "1->4m3";
             this.NT_SANLUONG.Name = "NT_SANLUONG";
             this.NT_SANLUONG.ReadOnly = true;
             // 
@@ -903,7 +903,7 @@
             dataGridViewCellStyle25.Format = "N0";
             dataGridViewCellStyle25.NullValue = "0";
             this.NT_TANGIAM_DHN.DefaultCellStyle = dataGridViewCellStyle25;
-            this.NT_TANGIAM_DHN.HeaderText = "TT = 0m3";
+            this.NT_TANGIAM_DHN.HeaderText = "TT=0m3";
             this.NT_TANGIAM_DHN.Name = "NT_TANGIAM_DHN";
             this.NT_TANGIAM_DHN.ReadOnly = true;
             this.NT_TANGIAM_DHN.Width = 80;
@@ -915,7 +915,7 @@
             dataGridViewCellStyle26.Format = "N0";
             dataGridViewCellStyle26.NullValue = "0";
             this.NT_TANGIAM_SANLUONG.DefaultCellStyle = dataGridViewCellStyle26;
-            this.NT_TANGIAM_SANLUONG.HeaderText = "TT = 1->4m3";
+            this.NT_TANGIAM_SANLUONG.HeaderText = "1->4m3";
             this.NT_TANGIAM_SANLUONG.Name = "NT_TANGIAM_SANLUONG";
             this.NT_TANGIAM_SANLUONG.ReadOnly = true;
             // 
@@ -1151,6 +1151,7 @@
         private System.Windows.Forms.DataGridView detail;
         private DevComponents.DotNetBar.TabItem tabItem1;
         private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TODS;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn KN_DHN;
@@ -1163,7 +1164,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NT_SANLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn NT_TANGIAM_DHN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NT_TANGIAM_SANLUONG;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAYDS;
         private System.Windows.Forms.DataGridViewTextBoxColumn NHAVIEN;

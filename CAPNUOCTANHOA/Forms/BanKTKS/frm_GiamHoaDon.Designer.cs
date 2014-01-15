@@ -1705,7 +1705,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_GiamHoaDon";
-            this.Size = new System.Drawing.Size(1099, 385);
+            this.Size = new System.Drawing.Size(1374, 663);
             this.Load += new System.EventHandler(this.frm_GiamHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateYeuCau)).EndInit();

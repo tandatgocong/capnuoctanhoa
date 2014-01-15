@@ -18,13 +18,21 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             InitializeComponent();
             int tods = 1;
+            string tento = "TỔ TÂN BÌNH 01";
             if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
             {
                 tods = 2;
+                tento = "TỔ TÂN BÌNH 02";
             }
-            if ("TP".Equals(DAL.SYS.C_USERS._toDocSo))
+            if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
             {
                 tods = 3;
+                tento = "TỔ TÂN PHÚ 01 ";
+            }
+            if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                tods = 4;
+                tento = "TỔ TÂN PHÚ 02";
             }
             cbNhanVien.DataSource = DAL.QLDHN.C_QuanLyDongHoNuoc.getTable_CHAMCONG(tods);
             cbNhanVien.DisplayMember = "FULLNAME";

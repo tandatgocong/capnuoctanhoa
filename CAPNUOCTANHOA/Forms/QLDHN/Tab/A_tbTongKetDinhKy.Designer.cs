@@ -46,6 +46,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dateTime = new System.Windows.Forms.DateTimePicker();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btXemThongTin = new DevComponents.DotNetBar.ButtonX();
             this.cbHieuDongHo = new System.Windows.Forms.ComboBox();
@@ -73,7 +74,7 @@
             this.G_CODH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAMGAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTime = new System.Windows.Forms.DateTimePicker();
+            this.checkTanPhu02 = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -102,6 +103,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.splitContainer1.Panel2.Controls.Add(this.checkTanPhu02);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.Controls.Add(this.checkTanPhu);
             this.splitContainer1.Panel2.Controls.Add(this.checkTanBinh2);
@@ -113,6 +115,15 @@
             this.splitContainer1.Size = new System.Drawing.Size(1023, 635);
             this.splitContainer1.SplitterDistance = 70;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // dateTime
+            // 
+            this.dateTime.CustomFormat = "dd/MM/yyyy";
+            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTime.Location = new System.Drawing.Point(152, 38);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(153, 27);
+            this.dateTime.TabIndex = 5;
             // 
             // labelX1
             // 
@@ -272,12 +283,12 @@
             // 
             this.checkTanPhu.AutoSize = true;
             this.checkTanPhu.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.checkTanPhu.Location = new System.Drawing.Point(416, 0);
+            this.checkTanPhu.Location = new System.Drawing.Point(430, -1);
             this.checkTanPhu.Name = "checkTanPhu";
-            this.checkTanPhu.Size = new System.Drawing.Size(116, 24);
+            this.checkTanPhu.Size = new System.Drawing.Size(139, 24);
             this.checkTanPhu.TabIndex = 3;
             this.checkTanPhu.TabStop = true;
-            this.checkTanPhu.Text = "Tổ Tân Phú";
+            this.checkTanPhu.Text = "Tổ Tân Phú 01";
             this.checkTanPhu.UseVisualStyleBackColor = true;
             this.checkTanPhu.CheckedChanged += new System.EventHandler(this.checkTanPhu_CheckedChanged);
             // 
@@ -478,14 +489,17 @@
             this.NAMGAN.ReadOnly = true;
             this.NAMGAN.Width = 120;
             // 
-            // dateTime
+            // checkTanPhu02
             // 
-            this.dateTime.CustomFormat = "dd/MM/yyyy";
-            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTime.Location = new System.Drawing.Point(152, 38);
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(153, 27);
-            this.dateTime.TabIndex = 5;
+            this.checkTanPhu02.AutoSize = true;
+            this.checkTanPhu02.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.checkTanPhu02.Location = new System.Drawing.Point(592, 0);
+            this.checkTanPhu02.Name = "checkTanPhu02";
+            this.checkTanPhu02.Size = new System.Drawing.Size(139, 24);
+            this.checkTanPhu02.TabIndex = 5;
+            this.checkTanPhu02.TabStop = true;
+            this.checkTanPhu02.Text = "Tổ Tân Phú 02";
+            this.checkTanPhu02.UseVisualStyleBackColor = true;
             // 
             // tbTongKetDinhKy
             // 
@@ -540,5 +554,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn gggg_sl;
         private System.Windows.Forms.DateTimePicker dateTime;
+        private System.Windows.Forms.RadioButton checkTanPhu02;
     }
 }
