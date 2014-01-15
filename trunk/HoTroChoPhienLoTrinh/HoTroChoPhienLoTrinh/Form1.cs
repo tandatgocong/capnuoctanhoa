@@ -15,7 +15,7 @@ namespace HoTroChoPhienLoTrinh
         public Form1()
         {
             InitializeComponent();
-            for (int i = 1; i <= 50; i++)
+            for (int i = 1; i <= 60; i++)
             {
                 string flag = i+"";
                 if (i < 10) {

@@ -73,7 +73,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
             string query = "select LEFT(LOTRINH,4) as LT, COUNT(*) as SOLUONG from dbo.TB_DULIEUKHACHHANG ";
             query += " WHERE KY=" + Ky + " AND NAM=" + nam;
-            query += " AND SUBSTRING(LOTRINH,3,2) IN ('01','02','03','04','05','06','07','08','09','10','11','12','13','14','15')";
+            query += "  " + DAL.SYS.C_USERS.findByToDS("TB01").GIOIHAN;
+            MessageBox.Show(this, DAL.SYS.C_USERS.findByToDS("TB01").GIOIHAN);
             query += " GROUP BY LEFT(LOTRINH,4)";
             query += " ORDER BY LEFT(LOTRINH,4) ASC";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
@@ -82,7 +83,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
             query = "select LEFT(LOTRINH,4) as LT, COUNT(*) as SOLUONG from dbo.TB_DULIEUKHACHHANG ";
             query += " WHERE KY=" + Ky + " AND NAM=" + nam;
-            query += " AND SUBSTRING(LOTRINH,3,2) IN ('16','17','18','19','20','21','22','23','24','25','26','27','28','29','30')";
+            query += "  " + DAL.SYS.C_USERS.findByToDS("TB02").GIOIHAN;
             query += " GROUP BY LEFT(LOTRINH,4)";
             query += " ORDER BY LEFT(LOTRINH,4) ASC";
             adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
@@ -91,11 +92,19 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
             query = "select LEFT(LOTRINH,4) as LT, COUNT(*) as SOLUONG from dbo.TB_DULIEUKHACHHANG ";
             query += " WHERE KY=" + Ky + " AND NAM=" + nam;
-            query += " AND SUBSTRING(LOTRINH,3,2) IN ('31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46')";
+            query += "  " + DAL.SYS.C_USERS.findByToDS("TP01").GIOIHAN;
             query += " GROUP BY LEFT(LOTRINH,4)";
             query += " ORDER BY LEFT(LOTRINH,4) ASC";
             adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TANPHU");
+
+            query = "select LEFT(LOTRINH,4) as LT, COUNT(*) as SOLUONG from dbo.TB_DULIEUKHACHHANG ";
+            query += " WHERE KY=" + Ky + " AND NAM=" + nam;
+            query += "  " + DAL.SYS.C_USERS.findByToDS("TP02").GIOIHAN;
+            query += " GROUP BY LEFT(LOTRINH,4)";
+            query += " ORDER BY LEFT(LOTRINH,4) ASC";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TANPHU02");
 
             return ds;
         }

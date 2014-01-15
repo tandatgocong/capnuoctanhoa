@@ -17,15 +17,21 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             LoadDataToGird();
             cbCoDH.SelectedIndex = 0;
             dateTime.Value = DateTime.Now;
-            if ("TP".Equals(DAL.SYS.C_USERS._toDocSo)) {
+            if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo)) {
                 this.checkTanPhu.Checked = true;
-            }else if ("TB01".Equals(DAL.SYS.C_USERS._toDocSo)){
+            }
+            else if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo)){
+                this.checkTanPhu02.Checked = true;
+            }
+            else if ("TB01".Equals(DAL.SYS.C_USERS._toDocSo)){
                 this.checkTanBinh1.Checked = true;
             }
             else if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
             {
                 this.checkTanBinh2.Checked = true;
             }
+
+            
 
         }
 
@@ -61,7 +67,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             else if (checkTanPhu.Checked)
             {
-                gioihan = DAL.SYS.C_USERS.findByToDS("TP") != null ? DAL.SYS.C_USERS.findByToDS("TP").GIOIHAN : "";
+                gioihan = DAL.SYS.C_USERS.findByToDS("TP01") != null ? DAL.SYS.C_USERS.findByToDS("TP01").GIOIHAN : "";
+            }
+            else if (checkTanPhu02.Checked)
+            {
+                gioihan = DAL.SYS.C_USERS.findByToDS("TP02") != null ? DAL.SYS.C_USERS.findByToDS("TP02").GIOIHAN : "";
             }
             else {
                 gioihan = "";

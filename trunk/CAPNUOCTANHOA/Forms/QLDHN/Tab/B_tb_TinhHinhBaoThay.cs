@@ -50,8 +50,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 }
                 else if (checkTanPhu.Checked)
                 {
-                    gioihan = "AND DHN_TODS ='TP' ";
-                    tenbangke = "TỔ TÂN PHÚ";
+                    gioihan = "AND DHN_TODS ='TP01' ";
+                    tenbangke = "TỔ TÂN PHÚ 01";
+                }
+                else if (checkTanPhu2.Checked)
+                {
+                    gioihan = "AND DHN_TODS ='TP02' ";
+                    tenbangke = "TỔ TÂN PHÚ 02";
                 }
                 else
                 {

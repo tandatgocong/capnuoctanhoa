@@ -213,7 +213,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::CAPNUOCTANHOA.Properties.Resources.print;
-            this.pictureBox1.Location = new System.Drawing.Point(1057, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(1057, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 34);
             this.pictureBox1.TabIndex = 27;
@@ -249,8 +249,8 @@
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
@@ -564,7 +564,7 @@
             this.comboItem22,
             this.comboItem23,
             this.comboItem24});
-            this.cbKyDS.Location = new System.Drawing.Point(169, 11);
+            this.cbKyDS.Location = new System.Drawing.Point(169, 6);
             this.cbKyDS.Name = "cbKyDS";
             this.cbKyDS.Size = new System.Drawing.Size(86, 27);
             this.cbKyDS.TabIndex = 24;
@@ -645,7 +645,7 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.labelX6);
-            this.panel4.Location = new System.Drawing.Point(530, 64);
+            this.panel4.Location = new System.Drawing.Point(530, 41);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(184, 32);
             this.panel4.TabIndex = 22;
@@ -664,7 +664,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.labelX4);
-            this.panel2.Location = new System.Drawing.Point(330, 64);
+            this.panel2.Location = new System.Drawing.Point(330, 41);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(205, 32);
             this.panel2.TabIndex = 20;
@@ -683,7 +683,7 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.labelX7);
-            this.panel5.Location = new System.Drawing.Point(912, 64);
+            this.panel5.Location = new System.Drawing.Point(912, 41);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(183, 32);
             this.panel5.TabIndex = 23;
@@ -702,7 +702,7 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.labelX5);
-            this.panel3.Location = new System.Drawing.Point(709, 64);
+            this.panel3.Location = new System.Drawing.Point(709, 41);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 32);
             this.panel3.TabIndex = 21;
@@ -721,7 +721,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labelX3);
-            this.panel1.Location = new System.Drawing.Point(130, 64);
+            this.panel1.Location = new System.Drawing.Point(130, 41);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 32);
             this.panel1.TabIndex = 19;
@@ -761,7 +761,7 @@
             this.NT_SANLUONG,
             this.NT_TANGIAM_DHN,
             this.NT_TANGIAM_SANLUONG});
-            this.sanluongToDS.Location = new System.Drawing.Point(1, 95);
+            this.sanluongToDS.Location = new System.Drawing.Point(1, 72);
             this.sanluongToDS.Name = "sanluongToDS";
             this.sanluongToDS.ReadOnly = true;
             dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -774,7 +774,7 @@
             this.sanluongToDS.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.sanluongToDS.RowHeadersWidth = 10;
             this.sanluongToDS.RowTemplate.Height = 30;
-            this.sanluongToDS.Size = new System.Drawing.Size(1094, 172);
+            this.sanluongToDS.Size = new System.Drawing.Size(1094, 203);
             this.sanluongToDS.TabIndex = 18;
             this.sanluongToDS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sanluongToDS_CellClick);
             this.sanluongToDS.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.sanluongToDS_DataError);
@@ -917,7 +917,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(435, 11);
+            this.btThem.Location = new System.Drawing.Point(435, 6);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(163, 27);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -931,7 +931,7 @@
             // 
             // 
             this.txtNam.Border.Class = "TextBoxBorder";
-            this.txtNam.Location = new System.Drawing.Point(312, 11);
+            this.txtNam.Location = new System.Drawing.Point(312, 6);
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(100, 27);
             this.txtNam.TabIndex = 3;
@@ -939,7 +939,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(266, 15);
+            this.labelX2.Location = new System.Drawing.Point(266, 10);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(53, 23);
             this.labelX2.TabIndex = 2;
@@ -947,7 +947,7 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(15, 15);
+            this.labelX1.Location = new System.Drawing.Point(15, 10);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(160, 23);
             this.labelX1.TabIndex = 0;

@@ -189,7 +189,6 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.labelX26 = new DevComponents.DotNetBar.LabelX();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this._TODS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAYDS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NHANVIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -213,6 +212,7 @@
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -250,7 +250,7 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.labelX9);
-            this.panel7.Location = new System.Drawing.Point(612, 93);
+            this.panel7.Location = new System.Drawing.Point(612, 77);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(163, 32);
             this.panel7.TabIndex = 32;
@@ -270,7 +270,7 @@
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.labelX8);
-            this.panel6.Location = new System.Drawing.Point(453, 93);
+            this.panel6.Location = new System.Drawing.Point(453, 77);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(163, 32);
             this.panel6.TabIndex = 31;
@@ -289,7 +289,7 @@
             // 
             this.labelX3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.labelX3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.Location = new System.Drawing.Point(133, 98);
+            this.labelX3.Location = new System.Drawing.Point(133, 82);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(158, 23);
             this.labelX3.TabIndex = 30;
@@ -301,7 +301,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.labelX4);
-            this.panel2.Location = new System.Drawing.Point(293, 93);
+            this.panel2.Location = new System.Drawing.Point(293, 77);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(162, 32);
             this.panel2.TabIndex = 29;
@@ -320,7 +320,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(129, 93);
+            this.panel1.Location = new System.Drawing.Point(129, 77);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 32);
             this.panel1.TabIndex = 28;
@@ -360,7 +360,7 @@
             this.KT_CC_SL,
             this.KT_HCSN_DH,
             this.KT_HCSN_SL});
-            this.sanluongToDS.Location = new System.Drawing.Point(3, 124);
+            this.sanluongToDS.Location = new System.Drawing.Point(3, 108);
             this.sanluongToDS.Name = "sanluongToDS";
             this.sanluongToDS.ReadOnly = true;
             dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -373,7 +373,7 @@
             this.sanluongToDS.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.sanluongToDS.RowHeadersWidth = 10;
             this.sanluongToDS.RowTemplate.Height = 30;
-            this.sanluongToDS.Size = new System.Drawing.Size(1734, 172);
+            this.sanluongToDS.Size = new System.Drawing.Size(1764, 233);
             this.sanluongToDS.TabIndex = 27;
             this.sanluongToDS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sanluongToDS_CellClick);
             // 
@@ -637,7 +637,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.labelX1);
-            this.panel3.Location = new System.Drawing.Point(1251, 93);
+            this.panel3.Location = new System.Drawing.Point(1251, 77);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(163, 32);
             this.panel3.TabIndex = 37;
@@ -658,7 +658,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.labelX2);
-            this.panel4.Location = new System.Drawing.Point(1092, 93);
+            this.panel4.Location = new System.Drawing.Point(1092, 77);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(163, 32);
             this.panel4.TabIndex = 36;
@@ -689,7 +689,7 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.labelX6);
-            this.panel5.Location = new System.Drawing.Point(930, 93);
+            this.panel5.Location = new System.Drawing.Point(930, 77);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(163, 32);
             this.panel5.TabIndex = 34;
@@ -710,7 +710,7 @@
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.labelX5);
-            this.panel8.Location = new System.Drawing.Point(775, 93);
+            this.panel8.Location = new System.Drawing.Point(775, 77);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(166, 32);
             this.panel8.TabIndex = 33;
@@ -720,7 +720,7 @@
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.labelX7);
-            this.panel9.Location = new System.Drawing.Point(1413, 93);
+            this.panel9.Location = new System.Drawing.Point(1413, 77);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(163, 32);
             this.panel9.TabIndex = 38;
@@ -741,7 +741,7 @@
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.labelX10);
-            this.panel10.Location = new System.Drawing.Point(1574, 93);
+            this.panel10.Location = new System.Drawing.Point(1574, 77);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(163, 32);
             this.panel10.TabIndex = 39;
@@ -772,7 +772,7 @@
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel11.Controls.Add(this.labelX11);
-            this.panel11.Location = new System.Drawing.Point(129, 63);
+            this.panel11.Location = new System.Drawing.Point(129, 47);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(808, 31);
             this.panel11.TabIndex = 40;
@@ -782,7 +782,7 @@
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel12.Controls.Add(this.labelX12);
-            this.panel12.Location = new System.Drawing.Point(930, 63);
+            this.panel12.Location = new System.Drawing.Point(930, 47);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(807, 31);
             this.panel12.TabIndex = 41;
@@ -1113,11 +1113,11 @@
             this.tabControl2.BackColor = System.Drawing.Color.Transparent;
             this.tabControl2.CanReorderTabs = true;
             this.tabControl2.Controls.Add(this.tabControlPanel1);
-            this.tabControl2.Location = new System.Drawing.Point(3, 300);
+            this.tabControl2.Location = new System.Drawing.Point(3, 347);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedTabFont = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold);
             this.tabControl2.SelectedTabIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1803, 308);
+            this.tabControl2.Size = new System.Drawing.Size(1803, 281);
             this.tabControl2.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Document;
             this.tabControl2.TabIndex = 58;
             this.tabControl2.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
@@ -1131,13 +1131,13 @@
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 28);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(1803, 280);
+            this.tabControlPanel1.Size = new System.Drawing.Size(1803, 253);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
@@ -1162,7 +1162,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(1, 1);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1801, 278);
+            this.panel14.Size = new System.Drawing.Size(1801, 251);
             this.panel14.TabIndex = 1;
             // 
             // panel23
@@ -1472,12 +1472,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1800, 187);
             this.dataGridView1.TabIndex = 56;
             // 
-            // tabItem1
-            // 
-            this.tabItem1.AttachedControl = this.tabControlPanel1;
-            this.tabItem1.Name = "tabItem1";
-            this.tabItem1.Text = "Chi Tiết Từng Máy HandHeld";
-            // 
             // _TODS
             // 
             this._TODS.DataPropertyName = "TODS";
@@ -1739,6 +1733,12 @@
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
             this.dataGridViewTextBoxColumn22.Width = 80;
+            // 
+            // tabItem1
+            // 
+            this.tabItem1.AttachedControl = this.tabControlPanel1;
+            this.tabItem1.Name = "tabItem1";
+            this.tabItem1.Text = "Chi Tiết Từng Máy HandHeld";
             // 
             // tab_tab_TongKetLoaiHinhKD
             // 

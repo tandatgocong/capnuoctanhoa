@@ -330,7 +330,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             try
             {
-                int ky = int.Parse(cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString());
+                int ky = int.Parse(cbKyDS_dot.Items[cbKyDS_dot.SelectedIndex].ToString());
                 int nam = int.Parse(txtNam_dot.Text.Trim());
                 int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                 // ky hien tai

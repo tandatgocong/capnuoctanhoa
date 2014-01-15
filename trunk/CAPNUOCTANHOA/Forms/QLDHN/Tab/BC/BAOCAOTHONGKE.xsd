@@ -115,6 +115,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="TANPHU02" msprop:Generator_TableClassName="TANPHU02DataTable" msprop:Generator_TableVarName="tableTANPHU02" msprop:Generator_TablePropName="TANPHU02" msprop:Generator_RowDeletingName="TANPHU02RowDeleting" msprop:Generator_UserTableName="TANPHU02" msprop:Generator_RowChangingName="TANPHU02RowChanging" msprop:Generator_RowEvHandlerName="TANPHU02RowChangeEventHandler" msprop:Generator_RowDeletedName="TANPHU02RowDeleted" msprop:Generator_RowEvArgName="TANPHU02RowChangeEvent" msprop:Generator_RowChangedName="TANPHU02RowChanged" msprop:Generator_RowClassName="TANPHU02Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LT" msprop:Generator_ColumnVarNameInTable="columnLT" msprop:Generator_ColumnPropNameInRow="LT" msprop:Generator_ColumnPropNameInTable="LTColumn" msprop:Generator_UserColumnName="LT" type="xs:string" minOccurs="0" />
+              <xs:element name="SOLUONG" msprop:Generator_ColumnVarNameInTable="columnSOLUONG" msprop:Generator_ColumnPropNameInRow="SOLUONG" msprop:Generator_ColumnPropNameInTable="SOLUONGColumn" msprop:Generator_UserColumnName="SOLUONG" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
