@@ -45,6 +45,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             // lbl_CountBamChi.Text = "";
             //lbl_CountCamKet.Text = "";
             //lblTroNgai.Text = "";
+            txtNamHuy.Text = DateTime.Now.Year.ToString();
             panelLichSuHoaDon0.Visible = false;
             dataGridView2.Visible = false;
             cbChiSoKy.SelectedIndex = DateTime.Now.Month - 1;
@@ -946,6 +947,28 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             }
 
+        }
+
+        private void btHuyCK_Click(object sender, EventArgs e)
+        {
+            string nam = this.txtNamHuy.Text;
+            string ky = cbChiSoKy.Text;
+            string sql = "select g.* ,ds.CODE,ds.CSCU,ds.CSMOI,ds.TIEUTHU ";
+            sql+=" FROM ( ";
+            sql+=" SELECT SUBSTRING(LOTRINH,1,2) as 'DOT',kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG,kh.PHUONG,kh.QUAN,kh.HIEUDH, kh.CODH,SOTHANDH, hd.DHN_CAMKET,hd.DHN_NGAYGHINHAN ";
+            sql+=" FROM  TB_DULIEUKHACHHANG kh, DK_GIAMHOADON hd ";
+            sql+=" where kh.DANHBO=hd.DHN_DANHBO ) g ";
+            sql+=" left join DocSo_PHT.dbo.DS"+nam+" ds ";
+            sql+=" on g.DANHBO = ds.DANHBA ";
+            sql += " where g.DHN_CAMKET ='" + ky + "' and YEAR(g.DHN_NGAYGHINHAN)=" + nam;
+            sql += " and ds.KY=" + ky + " and ds.TIEUTHU=0 ";
+
+            ReportDocument rp = new rpt_InDSHuyCamKet();
+            rp.SetDataSource(DAL.LinQConnection.getDataTable(sql));
+            rp.SetParameterValue("KY", ky);
+            rp.SetParameterValue("NAM", nam);
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
         }
     }
 }

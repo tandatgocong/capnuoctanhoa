@@ -448,11 +448,21 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             myDataRow = table.NewRow();
             myDataRow["STT"] = 3;
-            myDataRow["TODS"] = "TP";
-            myDataRow["TENTO"] = "TÂN PHÚ";
-            int tp = DAL.DULIEUKH.C_DuLieuKhachHang.SoLuongHuy("TP", hieuluc);
+            myDataRow["TODS"] = "TP01";
+            myDataRow["TENTO"] = "TÂN PHÚ 01";
+            int tp = DAL.DULIEUKH.C_DuLieuKhachHang.SoLuongHuy("TP01", hieuluc);
             myDataRow["SOLUONG"] = tp;
             table.Rows.Add(myDataRow);
+
+
+            myDataRow = table.NewRow();
+            myDataRow["STT"] = 4;
+            myDataRow["TODS"] = "TP02";
+            myDataRow["TENTO"] = "TÂN PHÚ 02";
+            int tp02 = DAL.DULIEUKH.C_DuLieuKhachHang.SoLuongHuy("TP02", hieuluc);
+            myDataRow["SOLUONG"] = tp02;
+            table.Rows.Add(myDataRow);
+
 
 
             // tong ket
