@@ -58,8 +58,6 @@
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.lbPaing = new System.Windows.Forms.Label();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkChon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DOT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +71,8 @@
             this.SOTHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODHN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BAOTHAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -308,6 +308,7 @@
             this.cbCoDH.FormattingEnabled = true;
             this.cbCoDH.Items.AddRange(new object[] {
             "15",
+            "20",
             "25",
             "40",
             "50",
@@ -404,23 +405,6 @@
             this.dataGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellEndEdit);
             this.dataGrid.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_ColumnHeaderMouseClick);
             this.dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGrid_MouseClick);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dafaToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(169, 26);
-            // 
-            // dafaToolStripMenuItem
-            // 
-            this.dafaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dafaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.dafaToolStripMenuItem.Image = global::CAPNUOCTANHOA.Properties.Resources.Plus;
-            this.dafaToolStripMenuItem.Name = "dafaToolStripMenuItem";
-            this.dafaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.dafaToolStripMenuItem.Text = "Tạo Mới Bảng Kê";
-            this.dafaToolStripMenuItem.Click += new System.EventHandler(this.dafaToolStripMenuItem_Click);
             // 
             // checkChon
             // 
@@ -530,6 +514,23 @@
             this.BAOTHAY.HeaderText = "BÁO THAY";
             this.BAOTHAY.Name = "BAOTHAY";
             this.BAOTHAY.Width = 300;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dafaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(169, 26);
+            // 
+            // dafaToolStripMenuItem
+            // 
+            this.dafaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dafaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.dafaToolStripMenuItem.Image = global::CAPNUOCTANHOA.Properties.Resources.Plus;
+            this.dafaToolStripMenuItem.Name = "dafaToolStripMenuItem";
+            this.dafaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.dafaToolStripMenuItem.Text = "Tạo Mới Bảng Kê";
+            this.dafaToolStripMenuItem.Click += new System.EventHandler(this.dafaToolStripMenuItem_Click);
             // 
             // frm_KiemTraThayDinhKy
             // 

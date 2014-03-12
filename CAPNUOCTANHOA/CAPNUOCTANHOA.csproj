@@ -602,6 +602,12 @@
     <Compile Include="Forms\QLDHN\frm_TheoDoiHD=0.designer.cs">
       <DependentUpon>frm_TheoDoiHD=0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\HoaDon0M3\rpt_InDSHuyCamKet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_InDSHuyCamKet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\QLDHN\HoaDon0M3\rpt_TheoDoiHD_0_CK.cs">
       <DependentUpon>rpt_TheoDoiHD_0_CK.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1789,6 +1795,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_TheoDoiHD=0.resx">
       <DependentUpon>frm_TheoDoiHD=0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\HoaDon0M3\rpt_InDSHuyCamKet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_InDSHuyCamKet.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\HoaDon0M3\rpt_TheoDoiHD_0_CK.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
