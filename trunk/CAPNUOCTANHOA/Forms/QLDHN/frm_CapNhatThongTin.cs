@@ -134,20 +134,44 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         }
         public void UpDateCSNuocGBDM(string dot, string ky, string nam)
         {
-            string sql = "  UPDATE TB_DULIEUKHACHHANG SET  GIABIEU=GB, DINHMUC=DM ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ";
-            sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSo_PHT.dbo.DS" + nam + ".DANHBA ";
-            sql += "		AND DocSo_PHT.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  AND DocSo_PHT.dbo.DS" + nam + ".DOT = " + int.Parse(dot) + "";
-            DAL.LinQConnection.ExecuteCommand_(sql);
+            if ("00".Equals(dot))
+            {
+                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  GIABIEU=GB, DINHMUC=DM ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + " ";
+                sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSo_PHT.dbo.DS" + nam + ".DANHBA ";
+                sql += "		AND DocSo_PHT.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "' ";
+                DAL.LinQConnection.ExecuteCommand_(sql);
+            }
+            else
+            {
+                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  GIABIEU=GB, DINHMUC=DM ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + " ";
+                sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSo_PHT.dbo.DS" + nam + ".DANHBA ";
+                sql += "		AND DocSo_PHT.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  AND DocSo_PHT.dbo.DS" + nam + ".DOT = " + int.Parse(dot) + "";
+                DAL.LinQConnection.ExecuteCommand_(sql);
+            }
         }
 
         public void UpDateCSNuoc(string dot, string ky, string nam)
         {
-            string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSo_PHT.dbo.DS" + nam + ".CODE,SODHN=TIEUTHU ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ";
-            sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSo_PHT.dbo.DS" + nam + ".DANHBA ";
-            sql += "		AND DocSo_PHT.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  AND DocSo_PHT.dbo.DS" + nam + ".DOT = " + int.Parse(dot) + "";
-            DAL.LinQConnection.ExecuteCommand_(sql);
+            if ("00".Equals(dot))
+            {
+                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSo_PHT.dbo.DS" + nam + ".CODE,SODHN=TIEUTHU ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + " ";
+                sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSo_PHT.dbo.DS" + nam + ".DANHBA ";
+                sql += "		AND DocSo_PHT.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  ";
+                DAL.LinQConnection.ExecuteCommand_(sql);
+            }
+            else
+            {
+                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSo_PHT.dbo.DS" + nam + ".CODE,SODHN=TIEUTHU ";
+                sql += " FROM DocSo_PHT.dbo.DS" + nam + " ";
+                sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSo_PHT.dbo.DS" + nam + ".DANHBA ";
+                sql += "		AND DocSo_PHT.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  AND DocSo_PHT.dbo.DS" + nam + ".DOT = " + int.Parse(dot) + "";
+                DAL.LinQConnection.ExecuteCommand_(sql);
+            
+            }
+
         }
         public void UpDateCSLoTrinh(string dot, string ky, string nam)
         {
