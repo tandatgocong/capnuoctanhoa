@@ -489,6 +489,24 @@ namespace CAPNUOCTANHOA
 
         }
 
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_BaoCaoTongKet_KTKS camket = new frm_BaoCaoTongKet_KTKS();
+            camket.Height = PanelContent.Size.Height - 5;
+            camket.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(camket);
+        }
+
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_DanhSachKT baothay = new frm_DanhSachKT();
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+        }
+
       
 
        

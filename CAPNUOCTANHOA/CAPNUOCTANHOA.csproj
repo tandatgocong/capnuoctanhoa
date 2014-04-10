@@ -247,6 +247,12 @@
     <Compile Include="Forms\BanKTKS\frmPhieuChepTieuThu.Designer.cs">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BanKTKS\frm_BaoCaoTongKet_KTKS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frm_BaoCaoTongKet_KTKS.Designer.cs">
+      <DependentUpon>frm_BaoCaoTongKet_KTKS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BanKTKS\frm_DanhSachKT.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -288,6 +294,35 @@
     </Compile>
     <Compile Include="Forms\BanKTKS\frm_NhanDon_.Designer.cs">
       <DependentUpon>frm_NhanDon_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\tab\BCKTKS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BCKTKS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\tab\rpt_theodoihd0.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_theodoihd0.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\tab\tbKiemTheoDoi0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\tab\tbKiemTheoDoi0.Designer.cs">
+      <DependentUpon>tbKiemTheoDoi0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\tab\rpt_hd0camket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_hd0camket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\tab\tbKiemTraCamket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\tab\tbKiemTraCamket.Designer.cs">
+      <DependentUpon>tbKiemTraCamket.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DoiTCTB\BC\HOANCONGNHANH.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1280,6 +1315,17 @@
     <None Include="Forms\BanKTKS\BC\TheoDoiCamKet.xss">
       <DependentUpon>TheoDoiCamKet.xsd</DependentUpon>
     </None>
+    <None Include="Forms\BanKTKS\tab\BCKTKS.xsc">
+      <DependentUpon>BCKTKS.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\BanKTKS\tab\BCKTKS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BCKTKS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\BanKTKS\tab\BCKTKS.xss">
+      <DependentUpon>BCKTKS.xsd</DependentUpon>
+    </None>
     <None Include="Forms\DoiTCTB\BC\HOANCONGNHANH.xsc">
       <DependentUpon>HOANCONGNHANH.xsd</DependentUpon>
     </None>
@@ -1629,6 +1675,9 @@
     <EmbeddedResource Include="Forms\BanKTKS\frm_Baocao.resx">
       <DependentUpon>frm_Baocao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\frm_BaoCaoTongKet_KTKS.resx">
+      <DependentUpon>frm_BaoCaoTongKet_KTKS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frm_DanhSachKT.resx">
       <DependentUpon>frm_DanhSachKT.cs</DependentUpon>
     </EmbeddedResource>
@@ -1649,6 +1698,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frm_NhanDon_.resx">
       <DependentUpon>frm_NhanDon_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\tab\rpt_theodoihd0.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_theodoihd0.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\tab\tbKiemTheoDoi0.resx">
+      <DependentUpon>tbKiemTheoDoi0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\tab\rpt_hd0camket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_hd0camket.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\tab\tbKiemTraCamket.resx">
+      <DependentUpon>tbKiemTraCamket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\BC\rpt_BCHoanCong_A4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

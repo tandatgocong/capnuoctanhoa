@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BCKTKS" targetNamespace="http://tempuri.org/BCKTKS.xsd" xmlns:mstns="http://tempuri.org/BCKTKS.xsd" xmlns="http://tempuri.org/BCKTKS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CAPNUOCTANHOAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CAPNUOCTANHOAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CAPNUOCTANHOA.Properties.Settings.GlobalReference.Default.CAPNUOCTANHOAConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="THEODOIDSTableAdapter" GeneratorDataComponentClassName="THEODOIDSTableAdapter" Name="THEODOIDS" UserDataComponentName="THEODOIDSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT kh.LOTRINH,kh.DANHBO,kh.HOTEN,(kh.SONHA + ' ' + kh.TENDUONG) as dc,YEAR(kh.NGAYTHAY) as NAMLD, ds.CODE,ds.CSMOI
+FROM [DocSo_PHT].[dbo].[DS2014] ds, TB_DULIEUKHACHHANG kh 
+WHERE  kh.DANHBO=ds.DANHBA AND ds.TIEUTHU=0 AND ds.KY=4
+AND kh.DANHBO IN (SELECT DANHBA FROM [DocSo_PHT].[dbo].[DS2014] ds WHERE ds.KY=3)
+AND kh.DANHBO NOT IN (SELECT DHN_DANHBO FROM DK_GIAMHOADON)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LOTRINH" DataSetColumn="LOTRINH" />
+              <Mapping SourceColumn="DANHBO" DataSetColumn="DANHBO" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="dc" DataSetColumn="dc" />
+              <Mapping SourceColumn="NAMLD" DataSetColumn="NAMLD" />
+              <Mapping SourceColumn="CODE" DataSetColumn="CODE" />
+              <Mapping SourceColumn="CSMOI" DataSetColumn="CSMOI" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DULIEUTableAdapter" GeneratorDataComponentClassName="DULIEUTableAdapter" Name="DULIEU" UserDataComponentName="DULIEUTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DHN_DANHBO,LOTRINH,HOTEN,SONHA, TENDUONG,CODE,CHISOKYTRUOC,ISNULL(DHN_CAMKET,KTKS_CAMKET) as 'CK','' as HD0
+   FROM DK_GIAMHOADON T1, TB_DULIEUKHACHHANG  T2 WHERE (DHN_CAMKET&lt;&gt;'' OR DHN_CAMKET IS NOT NULL) AND CONVERT(DATETIME,ISNULL(DHN_NGAYGHINHAN,KTKS_NGAYTIEPXUC)) BETWEEN CONVERT(DATETIME,'01/01/2014',103) AND CONVERT(DATETIME,'01/04/2014',103)  AND T1.DHN_DANHBO= T2.DANHBO GROUP BY DHN_DANHBO,LOTRINH,HOTEN,SONHA, TENDUONG,CODE,CHISOKYTRUOC,ISNULL(DHN_CAMKET,KTKS_CAMKET) ORDER BY LOTRINH ASC  </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DHN_DANHBO" DataSetColumn="DHN_DANHBO" />
+              <Mapping SourceColumn="LOTRINH" DataSetColumn="LOTRINH" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="SONHA" DataSetColumn="SONHA" />
+              <Mapping SourceColumn="TENDUONG" DataSetColumn="TENDUONG" />
+              <Mapping SourceColumn="CODE" DataSetColumn="CODE" />
+              <Mapping SourceColumn="CHISOKYTRUOC" DataSetColumn="CHISOKYTRUOC" />
+              <Mapping SourceColumn="CK" DataSetColumn="CK" />
+              <Mapping SourceColumn="HD0" DataSetColumn="HD0" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BCKTKS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BCKTKS" msprop:Generator_UserDSName="BCKTKS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="THEODOIDS" msprop:Generator_TableClassName="THEODOIDSDataTable" msprop:Generator_TableVarName="tableTHEODOIDS" msprop:Generator_TablePropName="THEODOIDS" msprop:Generator_RowDeletingName="THEODOIDSRowDeleting" msprop:Generator_UserTableName="THEODOIDS" msprop:Generator_RowChangingName="THEODOIDSRowChanging" msprop:Generator_RowEvHandlerName="THEODOIDSRowChangeEventHandler" msprop:Generator_RowDeletedName="THEODOIDSRowDeleted" msprop:Generator_RowEvArgName="THEODOIDSRowChangeEvent" msprop:Generator_RowChangedName="THEODOIDSRowChanged" msprop:Generator_RowClassName="THEODOIDSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LOTRINH" msprop:Generator_ColumnVarNameInTable="columnLOTRINH" msprop:Generator_ColumnPropNameInRow="LOTRINH" msprop:Generator_ColumnPropNameInTable="LOTRINHColumn" msprop:Generator_UserColumnName="LOTRINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DANHBO" msprop:Generator_ColumnVarNameInTable="columnDANHBO" msprop:Generator_ColumnPropNameInRow="DANHBO" msprop:Generator_ColumnPropNameInTable="DANHBOColumn" msprop:Generator_UserColumnName="DANHBO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndc" msprop:Generator_ColumnPropNameInRow="dc" msprop:Generator_ColumnPropNameInTable="dcColumn" msprop:Generator_UserColumnName="dc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAMLD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNAMLD" msprop:Generator_ColumnPropNameInRow="NAMLD" msprop:Generator_ColumnPropNameInTable="NAMLDColumn" msprop:Generator_UserColumnName="NAMLD" type="xs:int" minOccurs="0" />
+              <xs:element name="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CSMOI" msprop:Generator_ColumnVarNameInTable="columnCSMOI" msprop:Generator_ColumnPropNameInRow="CSMOI" msprop:Generator_ColumnPropNameInTable="CSMOIColumn" msprop:Generator_UserColumnName="CSMOI" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DULIEU" msprop:Generator_TableClassName="DULIEUDataTable" msprop:Generator_TableVarName="tableDULIEU" msprop:Generator_TablePropName="DULIEU" msprop:Generator_RowDeletingName="DULIEURowDeleting" msprop:Generator_UserTableName="DULIEU" msprop:Generator_RowChangingName="DULIEURowChanging" msprop:Generator_RowEvHandlerName="DULIEURowChangeEventHandler" msprop:Generator_RowDeletedName="DULIEURowDeleted" msprop:Generator_RowEvArgName="DULIEURowChangeEvent" msprop:Generator_RowChangedName="DULIEURowChanged" msprop:Generator_RowClassName="DULIEURow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DHN_DANHBO" msprop:Generator_ColumnVarNameInTable="columnDHN_DANHBO" msprop:Generator_ColumnPropNameInRow="DHN_DANHBO" msprop:Generator_ColumnPropNameInTable="DHN_DANHBOColumn" msprop:Generator_UserColumnName="DHN_DANHBO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOTRINH" msprop:Generator_ColumnVarNameInTable="columnLOTRINH" msprop:Generator_ColumnPropNameInRow="LOTRINH" msprop:Generator_ColumnPropNameInTable="LOTRINHColumn" msprop:Generator_UserColumnName="LOTRINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SONHA" msprop:Generator_ColumnVarNameInTable="columnSONHA" msprop:Generator_ColumnPropNameInRow="SONHA" msprop:Generator_ColumnPropNameInTable="SONHAColumn" msprop:Generator_UserColumnName="SONHA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENDUONG" msprop:Generator_ColumnVarNameInTable="columnTENDUONG" msprop:Generator_ColumnPropNameInRow="TENDUONG" msprop:Generator_ColumnPropNameInTable="TENDUONGColumn" msprop:Generator_UserColumnName="TENDUONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CHISOKYTRUOC" msprop:Generator_ColumnVarNameInTable="columnCHISOKYTRUOC" msprop:Generator_ColumnPropNameInRow="CHISOKYTRUOC" msprop:Generator_ColumnPropNameInTable="CHISOKYTRUOCColumn" msprop:Generator_UserColumnName="CHISOKYTRUOC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CK" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCK" msprop:Generator_ColumnPropNameInRow="CK" msprop:Generator_ColumnPropNameInTable="CKColumn" msprop:Generator_UserColumnName="CK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HD0" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHD0" msprop:Generator_ColumnPropNameInRow="HD0" msprop:Generator_ColumnPropNameInTable="HD0Column" msprop:Generator_UserColumnName="HD0" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:THEODOIDS" />
+      <xs:field xpath="mstns:DANHBO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
