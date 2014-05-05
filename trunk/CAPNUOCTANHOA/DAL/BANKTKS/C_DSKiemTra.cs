@@ -101,7 +101,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         public static DataSet getReport(string ngay)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT *  FROM KTKS_DANHSACHKT WHERE NGAYLAP='" + ngay + "' ORDER BY LOTRINH ASC ";
+            string query = " SELECT *  FROM KTKS_DANHSACHKT WHERE NGAYLAP='" + ngay + "' AND CREATEBY='" + DAL.SYS.C_USERS._userName + "' ORDER BY LOTRINH ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "KTKS_DANHSACHKT");
             
