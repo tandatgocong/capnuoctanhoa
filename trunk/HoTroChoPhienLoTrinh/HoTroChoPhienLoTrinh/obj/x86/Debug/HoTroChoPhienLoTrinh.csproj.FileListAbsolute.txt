@@ -28,3 +28,11 @@ H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\
 H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Properties.Resources.resources
 H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\GenerateResource.read.1.tlog
 H:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\GenerateResource.write.1.tlog
+G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.exe.config
+G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.exe
+G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.pdb
+G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.exe
+G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.pdb
+G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Form1.resources
+G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Properties.Resources.resources
+G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.csproj.GenerateResource.Cache
