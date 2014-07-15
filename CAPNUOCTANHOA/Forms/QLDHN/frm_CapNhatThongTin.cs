@@ -183,9 +183,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 tods = 2;
             }
-            if ("TP".Equals(DAL.SYS.C_USERS._toDocSo) == true)
+            if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo) == true)
             {
                 tods = 3;
+            }
+            if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo) == true)
+            {
+                tods = 4;
             }
             string sql = " UPDATE DocSo_PHT.dbo.KHACHHANG SET  MALOTRINH=t2.LOTRINH ,MALOTRINH2=t2.LOTRINH, DOT= LEFT(t2.LOTRINH,2), MAY=SUBSTRING(MALOTRINH,3,2), TODS='" + tods + "' ";
             sql += " FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as t2";
@@ -768,5 +772,89 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                                 
             }
         }
+
+        void dataLoadDocso()
+        {
+            tods = 1;
+            if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                tods = 2;
+            }
+            if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                tods = 3;
+            }
+            if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                tods = 4;
+            }
+            string sql = "SELECT MAYDS,FULLNAME,NAME FROM TB_NHANVIENDOCSO WHERE TODS=" + tods + " ORDER BY MAYDS ASC";
+            dataGridView5.DataSource = DAL.LinQConnection.getDataTable(sql);
+        }
+        private void tabItem7_Click(object sender, EventArgs e)
+        {
+
+            dataLoadDocso();
+        }
+
+        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxMayds.Text = dataGridView5.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBoxTennv.Text = dataGridView5.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBoxTenvt.Text = dataGridView5.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+        }
+        bool themmoi = false;
+        private void buttonX3_Click(object sender, EventArgs e)
+        {
+            textBoxMayds.ReadOnly = false;
+            themmoi = true;
+        }
+
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            if (themmoi)
+            {
+                string chamcong = "INSERT INTO TB_BANGCHAMCONG(STT,NAME,FULLNAME,MAYDS,TODS) VALUES ('" + this.textBoxMayds.Text + "',N'" + this.textBoxTenvt.Text + "',N'" + textBoxTennv.Text + "','" + this.textBoxMayds.Text + "','" + tods + "')";
+                DAL.LinQConnection.ExecuteCommand(chamcong);
+                string nhanvien = "INSERT INTO TB_NHANVIENDOCSO(NAME,FULLNAME,MAYDS,TODS) VALUES (N'" + this.textBoxTenvt.Text + "',N'" + textBoxTennv.Text + "','" + this.textBoxMayds.Text + "','"+tods+"')";
+                DAL.LinQConnection.ExecuteCommand(nhanvien);
+                string slh = "INSERT INTO [DocSo_PHT].[dbo].[NHANVIEN] ([TENNHANVIEN],[TENDANGNHAP],[MATKHAU] ,[TODS] ,[MAY],[BANDOI],[QUYEN])  VALUES ";
+                slh += " (N'" + textBoxTennv.Text + "',N'" + this.textBoxTenvt.Text + "',NULL," + tods + "," + this.textBoxMayds.Text + ",NULL,0)";
+                DAL.LinQConnection.ExecuteCommand(slh);
+
+                themmoi = false;
+                dataLoadDocso();
+            }
+            else {
+                string chamcong = "UPDATE TB_BANGCHAMCONG SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text+ "' WHERE MAYDS='" + this.textBoxMayds.Text + "'";
+                DAL.LinQConnection.ExecuteCommand(chamcong);
+                string nhanvien = "UPDATE TB_NHANVIENDOCSO SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "'";
+                DAL.LinQConnection.ExecuteCommand(nhanvien);
+                string slh = " UPDATE [DocSo_PHT].[dbo].[NHANVIEN]   SET [TENNHANVIEN] = N'" + textBoxTennv.Text + "'  ,[TENDANGNHAP] = N'" + this.textBoxTenvt.Text + "'  ,[QUYEN] =0 WHERE MAY='" + this.textBoxMayds.Text + "'";
+                DAL.LinQConnection.ExecuteCommand(slh);
+
+                themmoi = false;
+                dataLoadDocso();
+            }
+
+
+        }
+
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            string chamcong = "DELETE TB_BANGCHAMCONG  WHERE MAYDS='" + this.textBoxMayds.Text + "'";
+            DAL.LinQConnection.ExecuteCommand(chamcong);
+            string nhanvien = "DELETE TB_NHANVIENDOCSO  WHERE MAYDS='" + this.textBoxMayds.Text + "'";
+            DAL.LinQConnection.ExecuteCommand(nhanvien);
+            string slh = " DELETE [DocSo_PHT].[dbo].[NHANVIEN]   WHERE MAY='" + this.textBoxMayds.Text + "'";
+            DAL.LinQConnection.ExecuteCommand(slh);
+
+
+            dataLoadDocso();
+        }
+        /////   
+
     }
 }
