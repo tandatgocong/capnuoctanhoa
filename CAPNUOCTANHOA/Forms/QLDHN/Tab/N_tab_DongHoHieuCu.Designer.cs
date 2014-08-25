@@ -41,6 +41,12 @@
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txtGB = new System.Windows.Forms.TextBox();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.txtCoDHN = new System.Windows.Forms.TextBox();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.txtHieuLuc = new System.Windows.Forms.TextBox();
@@ -48,8 +54,7 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.txtCoDHN = new System.Windows.Forms.TextBox();
+            this.cbLoai = new System.Windows.Forms.ComboBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -136,6 +141,11 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.cbLoai);
+            this.splitContainer1.Panel1.Controls.Add(this.txtGB);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX5);
+            this.splitContainer1.Panel1.Controls.Add(this.txtCode);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX4);
             this.splitContainer1.Panel1.Controls.Add(this.txtCoDHN);
             this.splitContainer1.Panel1.Controls.Add(this.labelX3);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
@@ -151,6 +161,51 @@
             this.splitContainer1.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.SplitterDistance = 80;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // txtGB
+            // 
+            this.txtGB.Location = new System.Drawing.Point(648, 48);
+            this.txtGB.Name = "txtGB";
+            this.txtGB.Size = new System.Drawing.Size(81, 27);
+            this.txtGB.TabIndex = 38;
+            // 
+            // labelX5
+            // 
+            this.labelX5.Location = new System.Drawing.Point(614, 49);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(76, 23);
+            this.labelX5.TabIndex = 37;
+            this.labelX5.Text = "GB";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(518, 49);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(81, 27);
+            this.txtCode.TabIndex = 36;
+            // 
+            // labelX4
+            // 
+            this.labelX4.Location = new System.Drawing.Point(468, 49);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(76, 23);
+            this.labelX4.TabIndex = 35;
+            this.labelX4.Text = "CODE";
+            // 
+            // txtCoDHN
+            // 
+            this.txtCoDHN.Location = new System.Drawing.Point(372, 48);
+            this.txtCoDHN.Name = "txtCoDHN";
+            this.txtCoDHN.Size = new System.Drawing.Size(81, 27);
+            this.txtCoDHN.TabIndex = 34;
+            // 
+            // labelX3
+            // 
+            this.labelX3.Location = new System.Drawing.Point(341, 49);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(76, 23);
+            this.labelX3.TabIndex = 33;
+            this.labelX3.Text = "CỠ";
             // 
             // comboBox1
             // 
@@ -203,7 +258,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(476, 49);
+            this.btThem.Location = new System.Drawing.Point(865, 51);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(163, 27);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -227,9 +282,9 @@
             this.title.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.title.Name = "title";
             this.title.ReflectionEnabled = false;
-            this.title.Size = new System.Drawing.Size(543, 53);
+            this.title.Size = new System.Drawing.Size(717, 53);
             this.title.TabIndex = 28;
-            this.title.Text = "DANH SÁCH ĐỒNG HỒ HIỆU CỦ";
+            this.title.Text = "DANH SÁCH ĐỒNG HỒ HIỆU CỦ THEO";
             // 
             // crystalReportViewer1
             // 
@@ -243,20 +298,18 @@
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // labelX3
+            // cbLoai
             // 
-            this.labelX3.Location = new System.Drawing.Point(341, 49);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(76, 23);
-            this.labelX3.TabIndex = 33;
-            this.labelX3.Text = "CỠ";
-            // 
-            // txtCoDHN
-            // 
-            this.txtCoDHN.Location = new System.Drawing.Point(372, 48);
-            this.txtCoDHN.Name = "txtCoDHN";
-            this.txtCoDHN.Size = new System.Drawing.Size(81, 27);
-            this.txtCoDHN.TabIndex = 34;
+            this.cbLoai.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
+            this.cbLoai.ForeColor = System.Drawing.Color.Crimson;
+            this.cbLoai.FormattingEnabled = true;
+            this.cbLoai.Items.AddRange(new object[] {
+            "ĐỘI",
+            "TỔ ĐS"});
+            this.cbLoai.Location = new System.Drawing.Point(538, 3);
+            this.cbLoai.Name = "cbLoai";
+            this.cbLoai.Size = new System.Drawing.Size(121, 39);
+            this.cbLoai.TabIndex = 39;
             // 
             // N_tab_DongHoHieuCu
             // 
@@ -301,5 +354,10 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtCoDHN;
         private DevComponents.DotNetBar.LabelX labelX3;
+        private System.Windows.Forms.TextBox txtGB;
+        private DevComponents.DotNetBar.LabelX labelX5;
+        private System.Windows.Forms.TextBox txtCode;
+        private DevComponents.DotNetBar.LabelX labelX4;
+        private System.Windows.Forms.ComboBox cbLoai;
     }
 }

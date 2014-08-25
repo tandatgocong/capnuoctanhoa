@@ -26,6 +26,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             int nam = DateTime.Now.Year;
            
             txtHieuLuc.Text =  "<"+nam+"";
+            cbLoai.SelectedIndex = 0;
 
         }
 
@@ -49,6 +50,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             {
                 query += " AND CODH = " + this.txtCoDHN.Text.Replace(" ", "") ;
             }
+
+            if (!"".Equals(this.txtCode.Text.Replace(" ", "")))
+            {
+                query += " AND CODE = '" + this.txtCode.Text.Replace(" ", "") +"'";
+            }
+
+            if (!"".Equals(this.txtGB.Text.Replace(" ", "")))
+            {
+                query += " AND GIABIEU = '" + this.txtGB.Text.Replace(" ", "") + "'";
+            }
             
             query+= DAL.SYS.C_USERS._gioihan + " ORDER BY LOTRINH ASC ";
 
@@ -62,6 +73,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             string hieuluc = txtHieuLuc.Text.Trim();
             ReportDocument rp = new rpt_DongHoHieuCu();
+            if (cbLoai.SelectedIndex == 1)
+                rp = new rpt_DongHoHieuCu_TODS();
             rp.SetDataSource(getTheoDoiBienDocChiSo(hieuluc));
             rp.SetParameterValue("NAM", hieuluc);
             rp.SetParameterValue("title", "DANH SÁCH KHÁCH HÀNG ");            
