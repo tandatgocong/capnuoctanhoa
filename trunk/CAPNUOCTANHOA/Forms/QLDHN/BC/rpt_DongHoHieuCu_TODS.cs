@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_DongHoHieuCu : ReportClass {
+    public class rpt_DongHoHieuCu_TODS : ReportClass {
         
-        public rpt_DongHoHieuCu() {
+        public rpt_DongHoHieuCu_TODS() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_DongHoHieuCu.rpt";
+                return "rpt_DongHoHieuCu_TODS.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_DongHoHieuCu.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.BC.rpt_DongHoHieuCu_TODS.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,9 +82,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[6];
             }
         }
         
@@ -106,9 +122,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_DongHoHieuCu : Component, ICachedReport {
+    public class Cachedrpt_DongHoHieuCu_TODS : Component, ICachedReport {
         
-        public Cachedrpt_DongHoHieuCu() {
+        public Cachedrpt_DongHoHieuCu_TODS() {
         }
         
         [Browsable(false)]
@@ -145,7 +161,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_DongHoHieuCu rpt = new rpt_DongHoHieuCu();
+            rpt_DongHoHieuCu_TODS rpt = new rpt_DongHoHieuCu_TODS();
             rpt.Site = this.Site;
             return rpt;
         }
