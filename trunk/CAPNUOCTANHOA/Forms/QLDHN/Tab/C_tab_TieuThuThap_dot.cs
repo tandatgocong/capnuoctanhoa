@@ -162,12 +162,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
         }
 
-
+        string _tods = "";
         private void sanluongToDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (sanluongToDS.CurrentCell.OwningColumn.Name == "TENTO")
             {
                 string tods = sanluongToDS.Rows[e.RowIndex].Cells["TODS"].Value + "";
+                _tods = tods;
                 try
                 {
 
@@ -339,6 +340,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             ReportDocument rp = new rpt_tab_SanLuong_Thap();
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_SANLUONG ", "W_BAOCAO_SANLUONG"));
             rp.SetParameterValue("tenbk", "THỐNG KÊ KHÁCH HÀNG TIÊU THỤ THẤP ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ  " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam.Text.Trim());
+            rp.SetParameterValue("tiude", ""); 
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            string sql = "  SELECT nv.TODS, nv.NAME 'TENTO', KN_DHN, KN_SANLUONG, KT_DHN, KT_SANLUONG, TANGIAM_DHN, TANGIAM_SANLUONG, NT_DHN, NT_SANLUONG, NT_TANGIAM_DHN, NT_TANGIAM_SANLUONG ";
+            sql += " FROM W_BAOCAO_SANLUONG_MAY bc, TB_NHANVIENDOCSO nv ";
+            sql += " WHERE bc.MAYDS = nv.MAYDS  AND bc.TODS='" + _tods + "' ";
+            sql += " ORDER BY nv.MAYDS ASC ";
+            string tods_ = sanluongToDS.Rows[sanluongToDS.CurrentRow.Index].Cells["TENTO"].Value + "";
+            ReportDocument rp = new rpt_tab_SanLuong_Thap();
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "W_BAOCAO_SANLUONG"));
+            rp.SetParameterValue("tenbk", "THỐNG KÊ KHÁCH HÀNG TIÊU THỤ THẤP ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ  " + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam.Text.Trim() + " " + tods_);
+            rp.SetParameterValue("tiude", "NV"); 
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
