@@ -472,11 +472,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 string tods = dotToDs.Rows[e.RowIndex].Cells["GG_TODS"].Value + "";
                 try
                 {
-                    int ky = int.Parse(cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString());
+                    int ky = int.Parse(cbKyDS_dot.Items[cbKyDS_dot.SelectedIndex].ToString());
                     int nam = int.Parse(txtNam_dot.Text.Trim());
                     int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
 
-                    // ky hien tai
+                                      // ky hien tai
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_MAY_DOT(nam.ToString(), ky, dot);
                     // ky truoc
                     if (ky == 1)

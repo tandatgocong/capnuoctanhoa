@@ -206,6 +206,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 dc.SONAM = comboBoxTitle.SelectedIndex;
                 dc.SOTHAN = txtSoThan.Text;
                 dc.NGAYBAO = this.txtNgayGan.Value.Date;
+                dc.GHICHU = this.txtGhiCHu.Text;
                 dc.MODIFYDATE = DateTime.Now;
                 dc.MODIFYBY = DAL.SYS.C_USERS._userName;
                 DAL.QLDHN.C_DhnAmSau.Update();
@@ -227,6 +228,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 dc.SONAM = comboBoxTitle.SelectedIndex;
                 dc.SOTHAN = txtSoThan.Text;
                 dc.NGAYBAO = this.txtNgayGan.Value.Date;
+                dc.GHICHU = this.txtGhiCHu.Text;
                 dc.CREATEDATE = DateTime.Now;
                 dc.CREATEBY = DAL.SYS.C_USERS._userName;
                 DAL.QLDHN.C_DhnAmSau.Insert(dc);

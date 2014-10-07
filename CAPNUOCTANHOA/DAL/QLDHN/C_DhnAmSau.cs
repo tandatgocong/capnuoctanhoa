@@ -213,7 +213,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
         public static DataTable getListDutChiByDate(string ngay,int type)
         {
-            string sql = " SELECT ID,DANHBO ,LOTRINH ,HOTEN ,DIACHI ,HOPDONG ,GB,DM,HIEU,CO,SOTHAN  FROM TB_TLKDUTCHI  WHERE TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND NGAYBAO='" + ngay + "' AND [TYPE]='" + type + "' ORDER BY DANHBO ASC ";
+            string sql = " SELECT ID,DANHBO ,LOTRINH ,HOTEN ,DIACHI ,HOPDONG ,GB,DM,HIEU,CO,SOTHAN,GHICHU  FROM TB_TLKDUTCHI  WHERE TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND NGAYBAO='" + ngay + "' AND [TYPE]='" + type + "' ORDER BY DANHBO ASC ";
             return LinQConnection.getDataTable(sql);
 
         }

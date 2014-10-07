@@ -285,13 +285,13 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
         public static void CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_MAY_DOT(string nam, int ky, int dot)
         {
-            string sql = "UPDATE W_BAOCAO_CODE SET ";
-            sql += "  W_BAOCAO_CODE.KT_CODE4 = t2.CODE4, W_BAOCAO_CODE.KT_CODE5= t2.CODE5, ";
-            sql += "  W_BAOCAO_CODE.KT_CODE6 = t2.CODE6, W_BAOCAO_CODE.KT_CODE8= t2.CODE8, ";
-            sql += "  W_BAOCAO_CODE.KT_CODEM = t2.CODEM, W_BAOCAO_CODE.KT_CODEN= t2.CODEN, ";
-            sql += "  W_BAOCAO_CODE.KT_CODEQ = t2.CODEQ, W_BAOCAO_CODE.KT_CODEF= t2.CODEF, ";
-            sql += "  W_BAOCAO_CODE.KT_CODEK = t2.CODEK ";
-            sql += "FROM W_BAOCAO_CODE INNER JOIN ";
+            string sql = "UPDATE W_BAOCAO_CODE_MAY SET ";
+            sql += "  W_BAOCAO_CODE_MAY.KT_CODE4 = t2.CODE4, W_BAOCAO_CODE_MAY.KT_CODE5= t2.CODE5, ";
+            sql += "  W_BAOCAO_CODE_MAY.KT_CODE6 = t2.CODE6, W_BAOCAO_CODE_MAY.KT_CODE8= t2.CODE8, ";
+            sql += "  W_BAOCAO_CODE_MAY.KT_CODEM = t2.CODEM, W_BAOCAO_CODE_MAY.KT_CODEN= t2.CODEN, ";
+            sql += "  W_BAOCAO_CODE_MAY.KT_CODEQ = t2.CODEQ, W_BAOCAO_CODE_MAY.KT_CODEF= t2.CODEF, ";
+            sql += "  W_BAOCAO_CODE_MAY.KT_CODEK = t2.CODEK ";
+            sql += "FROM W_BAOCAO_CODE_MAY INNER JOIN ";
             sql += " ( ";
             sql += " SELECT TODS,MAY AS MAYDS,";
             sql += " COUNT(case when CODE LIKE '4%' then 1 else null end) AS CODE4,";
