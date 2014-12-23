@@ -57,7 +57,7 @@
             this.microsoftExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.microsoftAccess = new System.Windows.Forms.ToolStripMenuItem();
             this.webBrowserTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDieuChinhThongSo = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDieuChinhThongSo1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
@@ -346,7 +346,7 @@
             this.microsoftExcel,
             this.microsoftAccess,
             this.webBrowserTool,
-            this.menuDieuChinhThongSo,
+            this.menuDieuChinhThongSo1,
             this.toolStripMenuItem2});
             this.menuStrip4.Location = new System.Drawing.Point(3, 0);
             this.menuStrip4.Name = "menuStrip4";
@@ -401,15 +401,14 @@
             this.webBrowserTool.Text = "Portl Office";
             this.webBrowserTool.Click += new System.EventHandler(this.webBrowserTool_Click);
             // 
-            // menuDieuChinhThongSo
+            // menuDieuChinhThongSo1
             // 
-            this.menuDieuChinhThongSo.ForeColor = System.Drawing.Color.Black;
-            this.menuDieuChinhThongSo.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
-            this.menuDieuChinhThongSo.Name = "menuDieuChinhThongSo";
-            this.menuDieuChinhThongSo.Size = new System.Drawing.Size(179, 23);
-            this.menuDieuChinhThongSo.Text = "Điều Chỉnh Thông Số";
-            this.menuDieuChinhThongSo.Visible = false;
-            this.menuDieuChinhThongSo.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.menuDieuChinhThongSo1.ForeColor = System.Drawing.Color.Black;
+            this.menuDieuChinhThongSo1.Image = global::CAPNUOCTANHOA.Properties.Resources.Write3;
+            this.menuDieuChinhThongSo1.Name = "menuDieuChinhThongSo1";
+            this.menuDieuChinhThongSo1.Size = new System.Drawing.Size(179, 23);
+            this.menuDieuChinhThongSo1.Text = "Điều Chỉnh Thông Số";
+            this.menuDieuChinhThongSo1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -552,7 +551,7 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(536, 17);
             this.toolStripStatusLabel1.Text = "© Copyright  2012 - Tan Hoa Water Supply Company Limted. Developed by Lê Tấn Đạt " +
-                "- 0909933397";
+    "- 0909933397";
             // 
             // reflectionImage1
             // 
@@ -594,7 +593,7 @@
             this.lb3.Size = new System.Drawing.Size(624, 34);
             this.lb3.TabIndex = 32;
             this.lb3.Text = " <font size=\"+6\"><font color=\"#B02B2C\">CÔNG TY TNHH MTV CẤP NƯỚC TÂN HÒA</font></" +
-                "font>";
+    "font>";
             // 
             // lb2
             // 
@@ -605,7 +604,7 @@
             this.lb2.Size = new System.Drawing.Size(656, 34);
             this.lb2.TabIndex = 31;
             this.lb2.Text = "<b><font size=\"+6\"><font color=\"#B02B2C\">TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN </fon" +
-                "t></font></b>";
+    "t></font></b>";
             // 
             // lb1
             // 
@@ -616,18 +615,18 @@
             this.lb1.Size = new System.Drawing.Size(526, 34);
             this.lb1.TabIndex = 30;
             this.lb1.Text = "<font size=\"+6\"><font color=\"#B02B2C\">TỔNG CÔNG TY CẤP NƯỚC SÀI GÒN </font></font" +
-                ">";
+    ">";
             // 
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -1193,7 +1192,7 @@
         private System.Windows.Forms.MenuStrip menuStrip6;
         private System.Windows.Forms.ToolStripMenuItem chepTieuThu;
         private System.Windows.Forms.ToolStripMenuItem tracuuThay;
-        private System.Windows.Forms.ToolStripMenuItem menuDieuChinhThongSo;
+        private System.Windows.Forms.ToolStripMenuItem menuDieuChinhThongSo1;
         private System.Windows.Forms.ToolStripMenuItem handHeld;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel7;
