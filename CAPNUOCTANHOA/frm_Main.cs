@@ -51,13 +51,11 @@ namespace CAPNUOCTANHOA
             }
             else
             {
-                menuDieuChinhThongSo.Visible = false;
                 if ("QLDHN".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
                     ribbonDoiThuTien.Visible = false;
                     this.menuDoiQLDHN.Visible = true;
                     this.menuDTCTB.Visible = false;
-                    menuDieuChinhThongSo.Visible = true;
                     if ("GM,TH".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         cmdBaoThay.Visible=false;
@@ -85,7 +83,6 @@ namespace CAPNUOCTANHOA
                     ribbonDoiThuTien.Visible = false;
                     this.menuDoiQLDHN.Visible = false;
                     this.menuDTCTB.Visible = true;
-                    menuDieuChinhThongSo.Visible = true;
 
                 }
                 else if ("BANKTKS".Equals(DAL.SYS.C_USERS._maphong.Trim()))
