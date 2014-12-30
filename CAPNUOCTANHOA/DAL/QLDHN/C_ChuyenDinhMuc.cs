@@ -55,8 +55,15 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
         public static DataTable getThonTinDieuChinh(string danhbo)
         {
+            string  na= (DateTime.Now.Year )+"";
+                
+            if (DateTime.Now.Month > 11 && DateTime.Now.Day >= 21)
+            {
+                na = (DateTime.Now.Year + 1) + "";
+
+            }
             string sql = "SELECT TOP(1) ds.KY,ds.DOT,YEAR(ds.NGAYGHI) AS 'NAM', ds.TODS, DANHBO, ds.MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.TBTHU";
-            sql += " FROM DocSo_PHT.dbo.DS" + DateTime.Now.Year.ToString() + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
+            sql += " FROM DocSo_PHT.dbo.DS" + na + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
             sql += "  WHERE  ds.DANHBA=kh.DANHBO AND  ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
              return LinQConnection.getDataTable(sql);
         }
