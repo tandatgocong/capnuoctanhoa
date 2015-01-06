@@ -113,6 +113,7 @@
     <Compile Include="DAL\DULIEUKH\C_GanMoi.cs" />
     <Compile Include="DAL\DULIEUKH\C_PhienLoTrinh.cs" />
     <Compile Include="DAL\GNKDT\C_GNKDT.cs" />
+    <Compile Include="DAL\GNKDT\C_TONGHOP.cs" />
     <Compile Include="DAL\Lib.cs" />
     <Compile Include="DAL\LinQConnectionDS.cs" />
     <Compile Include="DAL\LinQConnection.cs" />
@@ -147,6 +148,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDMA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GNKDT\frm_PHANTICHDMA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\GNKDT\frm_PHANTICHDMA.designer.cs">
+      <DependentUpon>frm_PHANTICHDMA.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GNKDT\Export.cs" />
     <Compile Include="Forms\GNKDT\frmDieuChinhDMA.cs">
@@ -274,6 +281,9 @@
     <EmbeddedResource Include="Forms\GNKDT\BAOCAO\BC_Thay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BC_Thay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GNKDT\frm_PHANTICHDMA.resx">
+      <DependentUpon>frm_PHANTICHDMA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GNKDT\frmDieuChinhDMA.resx">
       <DependentUpon>frmDieuChinhDMA.cs</DependentUpon>
@@ -420,6 +430,7 @@
     <Content Include="Resources\login.png" />
     <Content Include="Resources\logo.ico" />
     <Content Include="Resources\logo.png" />
+    <None Include="Resources\logo1.png" />
     <Content Include="Resources\Loop.png" />
     <Content Include="Resources\Man.png" />
     <Content Include="Resources\Next.png" />

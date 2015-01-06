@@ -30,10 +30,23 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
             return DAL.LinQConnection.getDataTable(query);
         }
 
+        public static DataTable getDHN(string madma, string ky, string nam)
+        {
+            string query = " SELECT LEFT(tb1.HIEUDH,3) as HIEUDHN,CAP,COUNT(*) as SL ";
+            query += "      FROM ( SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS,YEAR(NGAYTHAY) AS 'NAMLD',HIEUDH,CAP            ";
+            query += "  		FROM TB_DULIEUKHACHHANG WHERE  NAM<=" + nam + " AND KY_<=" + ky + " AND MADMA='" + madma + "'";
+            query += "  		 UNION      ";
+            query += "  		SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC ,( N'Hủy ' + HIEULUCHUY) as 'HIEULUC',CHUKYDS,YEAR(NGAYTHAY) AS 'NAMLD',HIEUDH ,CAP ";
+            query += "  		FROM TB_DULIEUKHACHHANG_HUYDB WHERE HIEULUCHUY='" + ky + "/" + nam + "' AND   MADMA='" + madma + "'  ) as tb1       ";
+            query += "      GROUP BY LEFT(tb1.HIEUDH,3),CAP  ";
+
+            return DAL.LinQConnection.getDataTable(query.Replace("\t", ""));
+        }
+
         public static DataTable getThongTinDMAByHandheld(string madma, string ky, string nam)
         {
 
-            string query = " SELECT DISTINCT ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT], LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, HIEULUC ,CHUKYDS as 'CHUKY',NAMLD, tb2.CODE,tb2.TIEUTHU as 'LNCC',(convert(float,tb2.TIEUTHU)/tb1.CHUKYDS) as 'TBTT',HIEUDH    ";
+            string query = " SELECT DISTINCT ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT], LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC,DATEDIFF(DD,tb2.TUNGAYDOCSO,tb2.DENNGAYDOCSO) as 'CHUKY', HIEULUC ,NAMLD, tb2.CODE,tb2.TIEUTHU as 'LNCC',(convert(float,tb2.TIEUTHU)/DATEDIFF(DD,tb2.TUNGAYDOCSO,tb2.DENNGAYDOCSO)) as 'TBTT',HIEUDH    ";
             query += "      FROM ( SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS,YEAR(NGAYTHAY) AS 'NAMLD',HIEUDH            ";
             query += "  		FROM TB_DULIEUKHACHHANG WHERE  NAM<="+nam+" AND KY_<="+ky+" AND MADMA='" + madma + "'";
             query += "  		 UNION      ";
@@ -50,7 +63,7 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
         public static DataTable getThongTinDMAByHandheld_Thay(string madma, string ky, string nam)
         {
 
-            string query = " SELECT DISTINCT  ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT], LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, HIEULUC ,CHUKYDS as 'CHUKY', tb2.CODE,tb2.TIEUTHU as 'LNCC',(convert(float,tb2.TIEUTHU)/tb1.CHUKYDS) as 'TBTT',HIEUDH   ";
+            string query = " SELECT DISTINCT  ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT], LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, HIEULUC ,DATEDIFF(DD,tb2.TUNGAYDOCSO,tb2.DENNGAYDOCSO) as 'CHUKY', tb2.CODE,tb2.TIEUTHU as 'LNCC',(convert(float,tb2.TIEUTHU)/DATEDIFF(DD,tb2.TUNGAYDOCSO,tb2.DENNGAYDOCSO)) as 'TBTT',HIEUDH   ";
             query += "      FROM ( SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',CHUKYDS            ";
             query += "  		FROM TB_DULIEUKHACHHANG WHERE  MADMA='" + madma + "'";
             query += "  		 UNION      ";

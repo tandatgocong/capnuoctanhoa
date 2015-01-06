@@ -40,15 +40,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         }
 
         DataTable tableThay = new DataTable();
-        void Load(string ky, string nam, string madma) {
+        void Load_(string ky, string nam, string madma)
+        {
             try
             {
-               
+
                 if (this.rptHanheld.Checked)
                 {
                     dataBangKe.DataSource = DAL.GNKDT.C_GNKDT.getThongTinDMAByHandheld(madma, ky, nam);
                     tableThay = DAL.GNKDT.C_GNKDT.getThongTinDMAByHandheld_Thay(madma, ky, nam);
-                  
+
                 }
                 else if (this.rptHoaDon.Checked)
                 {
@@ -63,7 +64,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     }
 
                     dataBangKe.DataSource = DAL.GNKDT.C_GNKDT.getThongTinDMAByHoaDon(madma, ky, nam);
-                    tableThay = DAL.GNKDT.C_GNKDT.getThongTinDMAByHoaDon_Thay(madma, ky, nam);                    
+                    tableThay = DAL.GNKDT.C_GNKDT.getThongTinDMAByHoaDon_Thay(madma, ky, nam);
                     Utilities.DataGridV.formatRows(dataBangKe, "STT");
                 }
 
@@ -72,7 +73,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
 
             }
-}
+        }
+
+        
         private void btCapNhatThongTin_Click(object sender, EventArgs e)
         {
            
@@ -80,7 +83,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
             string nam = this.txtNam.Text;
             string madma = cbMaDMA.SelectedValue.ToString();
-            Load(ky, nam, madma);
+            Load_(ky, nam, madma);
+            dataGridView3.DataSource = DAL.GNKDT.C_GNKDT.getDHN(madma,ky, nam);
             try
             {
                 lbTongDHN.Text = dataBangKe.Rows.Count + "";
@@ -149,7 +153,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
                 string nam = this.txtNam.Text;
                 string madm = cbMaDMA.SelectedValue.ToString();
-                Load(ky, nam, madm);
+                Load_(ky, nam, madm);
             }
         }
 
