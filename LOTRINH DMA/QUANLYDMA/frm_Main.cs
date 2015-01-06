@@ -38,7 +38,7 @@ namespace CAPNUOCTANHOA
 
             if ("AD".Equals(DAL.SYS.C_USERS._roles.Trim()))
             {
-                this.menuDoiQLDHN.Visible = true;
+                //this.menuDoiQLDHN.Visible = true;
                   ribbonGNKDT.Visible = true;
             }
             else
@@ -47,7 +47,7 @@ namespace CAPNUOCTANHOA
                 if ("QLDHN".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
                     ribbonGNKDT.Visible = false;
-                    this.menuDoiQLDHN.Visible = true;                 
+                   // this.menuDoiQLDHN.Visible = true;                 
                     menuDieuChinhThongSo.Visible = true;
                    
                 }
@@ -55,7 +55,7 @@ namespace CAPNUOCTANHOA
                 else if ("GNKDT".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
                     ribbonGNKDT.Visible = true;
-                    this.menuDoiQLDHN.Visible = false;
+                 //   this.menuDoiQLDHN.Visible = false;
                    
                 }
             }
@@ -117,7 +117,7 @@ namespace CAPNUOCTANHOA
 
         private void subDangXuat_Click(object sender, EventArgs e)
         {
-            this.menuDoiQLDHN.Visible = false;
+           // this.menuDoiQLDHN.Visible = false;
             DAL.SYS.C_USERS._fullName = null;
             DAL.SYS.C_USERS._roles = null;
             DAL.SYS.C_USERS._userName = null;
@@ -145,6 +145,15 @@ namespace CAPNUOCTANHOA
         {
             PanelContent.Controls.Clear();
             frm_BaoThayDHN baothay = new frm_BaoThayDHN();
+            baothay.Height = PanelContent.Size.Height - 20;
+            baothay.Width = PanelContent.Size.Width - 20;
+            PanelContent.Controls.Add(baothay);
+        }
+
+        private void toolPhanTich_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_PHANTICHDMA baothay = new frm_PHANTICHDMA();
             baothay.Height = PanelContent.Size.Height - 20;
             baothay.Width = PanelContent.Size.Width - 20;
             PanelContent.Controls.Add(baothay);
