@@ -471,7 +471,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             myDataRow["STT"] = "";
             myDataRow["TODS"] = "";
             myDataRow["TENTO"] = "";
-            myDataRow["SOLUONG"] = tb01+tb02+tp;
+            myDataRow["SOLUONG"] = tb01 + tb02 + tp + tp02;
             table.Rows.Add(myDataRow);
             dataGridView1.DataSource = table;
 

@@ -149,6 +149,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             sanluongToDS.DataSource = DAL.GNKDT.C_TONGHOP.get_BAOCAO_SANLUONG();
            format();
+           lb8x.Text = (sanluongToDS.RowCount -1).ToString() + " ( Số liệu đoc số từ handheld )";
         }
     }
 }
