@@ -9,11 +9,12 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CAPNUOCTANHOA</RootNamespace>
-    <AssemblyName>CAPNUOCTANHOA</AssemblyName>
+    <AssemblyName>DMA</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>O %2852%29.ico</ApplicationIcon>
+    <ApplicationIcon>U %2856%29.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>CAPNUOCTANHOA.Program</StartupObject>
@@ -388,7 +388,7 @@
     <Content Include="lib\String_Indentity.dll" />
     <Content Include="lib\String_Indentity_.dll" />
     <Content Include="lib\VniToUnicode.dll" />
-    <Content Include="O %2852%29.ico" />
+    <Content Include="U %2856%29.ico" />
     <None Include="Resources\24.png" />
     <Content Include="Resources\Arrow2 Left.png" />
     <Content Include="Resources\bt_bg.png" />

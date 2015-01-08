@@ -80,12 +80,12 @@
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel7 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip7 = new System.Windows.Forms.MenuStrip();
+            this.toolPhanTich = new System.Windows.Forms.ToolStripMenuItem();
             this.toolQuanLyDMA = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonGNKDT = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolPhanTich = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
@@ -580,8 +580,8 @@
             // 
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -627,6 +627,17 @@
             this.menuStrip7.TabIndex = 3;
             this.menuStrip7.Text = "menuStrip7";
             // 
+            // toolPhanTich
+            // 
+            this.toolPhanTich.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.toolPhanTich.ForeColor = System.Drawing.Color.Black;
+            this.toolPhanTich.Image = global::CAPNUOCTANHOA.Properties.Resources.Database;
+            this.toolPhanTich.Name = "toolPhanTich";
+            this.toolPhanTich.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.toolPhanTich.Size = new System.Drawing.Size(146, 23);
+            this.toolPhanTich.Text = "Phân Tích DMA";
+            this.toolPhanTich.Click += new System.EventHandler(this.toolPhanTich_Click);
+            // 
             // toolQuanLyDMA
             // 
             this.toolQuanLyDMA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
@@ -666,17 +677,6 @@
             this.statusStrip1.TabIndex = 36;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolPhanTich
-            // 
-            this.toolPhanTich.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.toolPhanTich.ForeColor = System.Drawing.Color.Black;
-            this.toolPhanTich.Image = global::CAPNUOCTANHOA.Properties.Resources.Database;
-            this.toolPhanTich.Name = "toolPhanTich";
-            this.toolPhanTich.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.toolPhanTich.Size = new System.Drawing.Size(146, 23);
-            this.toolPhanTich.Text = "Phân Tích DMA";
-            this.toolPhanTich.Click += new System.EventHandler(this.toolPhanTich_Click);
-            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -688,7 +688,7 @@
             this.IsMdiContainer = true;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tan Hoa Water Co.., Ltd";
+            this.Text = "DMA - Tan Hoa Water JSC";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.frm_Main_Load);
