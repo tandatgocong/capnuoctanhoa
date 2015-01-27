@@ -269,8 +269,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void btInDanhSachChuyenKT_Click(object sender, EventArgs e)
         {
+            //int lan = 1;
+            //if (tabControl1.SelectedIndex == 1)
+            //{
+            //    lan = 2;
+            //}
             rpt_TLKDutChiNew rp = new rpt_TLKDutChiNew();
-            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(dateInDSDutChi.Value.ToString("dd/MM/yyyy")));
+            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(dateInDSDutChi.Value.ToString("dd/MM/yyyy"),1));
             //rp.SetParameterValue("type", "");
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();

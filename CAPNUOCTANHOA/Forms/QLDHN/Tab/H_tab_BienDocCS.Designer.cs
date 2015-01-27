@@ -85,6 +85,7 @@
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.dhnCL = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -172,6 +173,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.dhnCL);
             this.splitContainer1.Panel1.Controls.Add(this.dateTime);
             this.splitContainer1.Panel1.Controls.Add(this.labelX4);
             this.splitContainer1.Panel1.Controls.Add(this.cbKyDS);
@@ -263,7 +265,7 @@
             this.comboItem22,
             this.comboItem23,
             this.comboItem24});
-            this.cbKyDS.Location = new System.Drawing.Point(472, 47);
+            this.cbKyDS.Location = new System.Drawing.Point(615, 48);
             this.cbKyDS.Name = "cbKyDS";
             this.cbKyDS.Size = new System.Drawing.Size(86, 27);
             this.cbKyDS.TabIndex = 30;
@@ -342,7 +344,7 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(431, 51);
+            this.labelX3.Location = new System.Drawing.Point(574, 52);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(55, 23);
             this.labelX3.TabIndex = 38;
@@ -377,7 +379,7 @@
             this.comboItem42,
             this.comboItem43,
             this.comboItem44});
-            this.cbDotDS.Location = new System.Drawing.Point(328, 50);
+            this.cbDotDS.Location = new System.Drawing.Point(471, 51);
             this.cbDotDS.Name = "cbDotDS";
             this.cbDotDS.Size = new System.Drawing.Size(86, 27);
             this.cbDotDS.TabIndex = 37;
@@ -510,7 +512,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(568, 51);
+            this.labelX2.Location = new System.Drawing.Point(711, 52);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(46, 23);
             this.labelX2.TabIndex = 26;
@@ -522,7 +524,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(721, 47);
+            this.btThem.Location = new System.Drawing.Point(864, 48);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(163, 27);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -532,7 +534,7 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(216, 51);
+            this.labelX1.Location = new System.Drawing.Point(359, 52);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(128, 23);
             this.labelX1.TabIndex = 25;
@@ -544,7 +546,7 @@
             // 
             // 
             this.txtNam.Border.Class = "TextBoxBorder";
-            this.txtNam.Location = new System.Drawing.Point(614, 48);
+            this.txtNam.Location = new System.Drawing.Point(757, 49);
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(100, 27);
             this.txtNam.TabIndex = 27;
@@ -574,6 +576,18 @@
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
+            // dhnCL
+            // 
+            this.dhnCL.AutoSize = true;
+            this.dhnCL.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold);
+            this.dhnCL.ForeColor = System.Drawing.Color.Red;
+            this.dhnCL.Location = new System.Drawing.Point(224, 51);
+            this.dhnCL.Name = "dhnCL";
+            this.dhnCL.Size = new System.Drawing.Size(111, 23);
+            this.dhnCL.TabIndex = 41;
+            this.dhnCL.Text = "ĐH Cở Lớn";
+            this.dhnCL.UseVisualStyleBackColor = true;
+            // 
             // H_tab_BienDocCS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -586,6 +600,7 @@
             this.Name = "H_tab_BienDocCS";
             this.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateTime)).EndInit();
@@ -652,5 +667,6 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTime;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.CheckBox dhnCL;
     }
 }

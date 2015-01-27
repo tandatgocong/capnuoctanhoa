@@ -102,9 +102,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return ds;
         }
         static string khoi = ConfigurationManager.AppSettings["khoi"].ToString();
-        public static void CAPNHAT_BIENDOCCHISO(string nam, int ky, int dot)
+        public static void CAPNHAT_BIENDOCCHISO(string nam, int ky, int dot, bool colon)
         {
+            int codhn = int.Parse(ConfigurationManager.AppSettings["codhn"].ToString());
             string sql = " UPDATE TB_NHANVIENDOCSO ";
+
             if (dot == 0)
             {
                 sql += " SET SOLUONGDHN=t2.SOLUONG,SANLUONG=t2.SANLUONG,KHONGGHI=t2.KOGHI,TANG=t2.TANG,GIAM=t2.GAM ,NHAXD=t2.XAYDUNG,GIENG=t2.GIENG ";
@@ -117,10 +119,18 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 sql += " COUNT(case when (t.TIEUTHU <= (t.TBTHU * 0.51)) AND t.CODE='4' then 1 else null end) AS GAM,";
                 sql += " COUNT(case when t.GHICHUMOI LIKE N'%GIẾ%' then 1 else null end) AS GIENG";
                 sql += " FROM DocSo_PHT.dbo.DS" + nam + "  t ";
-                sql += " LEFT JOIN ( ";
-                sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + "  ) as t3";
-                sql += " ON t.DANHBA=t3.DANHBA";
-                sql += " WHERE  KY=" + ky;
+                //sql += " LEFT JOIN ( ";
+                //if (colon)
+                //    sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE CO >= " + codhn + " AND  KY=" + (ky - 1) + "  ) as t3";
+                //else
+                //    sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + "  ) as t3";
+                //sql += " ON t.DANHBA=t3.DANHBA";
+                if (colon)
+                    sql += " WHERE CO >= " + codhn + " AND KY=" + ky;
+                else
+                    sql += " WHERE  KY=" + ky;
+
+               
                 sql += " GROUP BY  MAY ";
                 sql += " ) as t2 ";
                 sql += " ON TB_NHANVIENDOCSO.MAYDS = t2.MAY";
@@ -137,14 +147,21 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 sql += " COUNT(case when (t.TIEUTHU <= (t.TBTHU * 0.51)) AND t.CODE='4' then 1 else null end) AS GAM,";
                 sql += " COUNT(case when t.GHICHUMOI LIKE N'%GIẾ%' then 1 else null end) AS GIENG";
                 sql += " FROM DocSo_PHT.dbo.DS" + nam + "  t ";
-                sql += " LEFT JOIN ( ";
-                sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE KY=" + (ky - 1) + " AND DOT=" + dot + " ) as t3";
-                sql += " ON t.DANHBA=t3.DANHBA";
-                sql += " WHERE  KY=" + ky + " AND DOT =" + dot + "";
+                //sql += " LEFT JOIN ( ";
+                //if (colon)
+                //    sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE CO >= " + codhn + " AND  KY=" + (ky) + " AND DOT=" + dot + " ) as t3";
+                //else
+                //    sql += " SELECT DANHBA,TIEUTHU FROM DocSo_PHT.dbo.DS" + nam + " WHERE  KY=" + (ky) + " AND DOT=" + dot + " ) as t3";
+                //sql += " ON t.DANHBA=t3.DANHBA";
+                if (colon)
+                    sql += " WHERE CO >= " + codhn + " AND KY=" + ky + " AND DOT =" + dot + "";
+                else
+                    sql += " WHERE  KY=" + ky + " AND DOT =" + dot + "";
                 sql += " GROUP BY  MAY ";
                 sql += " ) as t2 ";
                 sql += " ON TB_NHANVIENDOCSO.MAYDS = t2.MAY";
             }
+
 
             //string sql = "UPDATE TB_NHANVIENDOCSO ";
             //sql += " SET SET SOLUONGDHN=t2.SOLUONG,SANLUONG=t2.SANLUONG,KHONGGHI=t2.KOGHI,TANG=t2.TANG,GIAM=t2.GAM ";

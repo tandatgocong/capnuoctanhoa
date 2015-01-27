@@ -610,10 +610,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             listDanhBa = listDanhBa.Remove(listDanhBa.Length - 1, 1);
 
+            int lan = 1;
+            if (tabControl1.SelectedIndex == 1)
+            {
+                lan = 2;
+            }
+
             if (comboBoxDutChi.SelectedIndex == 0)
             {
                 ReportDocument rp = new rpt_TLKDutChi();
-                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString(), 0, comboBoxTitle.SelectedIndex));
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString(), 0, comboBoxTitle.SelectedIndex, lan));
                 rp.SetParameterValue("type", this.comboBoxTitle.Text);
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
@@ -621,7 +627,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             else if (comboBoxDutChi.SelectedIndex == 1)
             {
                 ReportDocument rp = new rpt_TLKDutChi_Goc_();
-                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString(), 1));
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(listDanhBa, this.dcNgayYC.Value.Date.ToShortDateString(), 1, lan));
                 rp.SetParameterValue("NGUOILAP", DAL.SYS.C_USERS._fullName.ToUpper());
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
