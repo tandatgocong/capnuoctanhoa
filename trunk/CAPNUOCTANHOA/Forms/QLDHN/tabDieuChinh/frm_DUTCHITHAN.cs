@@ -43,17 +43,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         }
         private void btIn_Click(object sender, EventArgs e)
         {
+            int lan = 1;
+            if (tabControl1.SelectedIndex == 1)
+            {
+                lan = 2;
+            }
+
             if (comboBoxDutChi.SelectedIndex == 0) {
                 ReportDocument rp = new rpt_TLKDutChi();
-                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),0, comboBoxTitle.SelectedIndex));
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),0, comboBoxTitle.SelectedIndex, lan));
                 rp.SetParameterValue("type", this.comboBoxTitle.Text);
+                rp.SetParameterValue("lan", lan);
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
             }
             else if (comboBoxDutChi.SelectedIndex == 1) {
                 ReportDocument rp = new rpt_TLKDutChi_Goc_();
-                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),1));
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(), 1, lan));
                 rp.SetParameterValue("NGUOILAP",DAL.SYS.C_USERS._fullName.ToUpper());
+                rp.SetParameterValue("lan", lan);
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
             }
@@ -66,7 +74,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-                dataBangKe.DataSource = DAL.QLDHN.C_DhnAmSau.getListDutChiByDate(this.txtNgayGan.Value.ToShortDateString(), comboBoxDutChi.SelectedIndex);
+               
+
+                dataBangKe.DataSource = DAL.QLDHN.C_DhnAmSau.getListDutChiByDate(this.txtNgayGan.Value.ToShortDateString(), comboBoxDutChi.SelectedIndex, 1);
+                dataGridViewL2.DataSource = DAL.QLDHN.C_DhnAmSau.getListDutChiByDate(this.txtNgayGan.Value.ToShortDateString(), comboBoxDutChi.SelectedIndex, 2);
                 Utilities.DataGridV.formatRows(dataBangKe);
                 setSTT();
             }
@@ -187,7 +198,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             }
         }
 
-        public void Add(string sodanhbo)
+        public void Add(string sodanhbo, int lan)
         {
             TB_TLKDUTCHI dc = DAL.QLDHN.C_DhnAmSau.findByDanhBoDutChi(sodanhbo.Replace(" ", ""), this.txtNgayGan.Value.Date);
             if (dc != null)
@@ -208,6 +219,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 dc.NGAYBAO = this.txtNgayGan.Value.Date;
                 dc.GHICHU = this.txtGhiCHu.Text;
                 dc.MODIFYDATE = DateTime.Now;
+                dc.LAN = lan;
                 dc.MODIFYBY = DAL.SYS.C_USERS._userName;
                 DAL.QLDHN.C_DhnAmSau.Update();
             }
@@ -229,6 +241,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 dc.SOTHAN = txtSoThan.Text;
                 dc.NGAYBAO = this.txtNgayGan.Value.Date;
                 dc.GHICHU = this.txtGhiCHu.Text;
+                dc.LAN = lan;
                 dc.CREATEDATE = DateTime.Now;
                 dc.CREATEBY = DAL.SYS.C_USERS._userName;
                 DAL.QLDHN.C_DhnAmSau.Insert(dc);
@@ -269,12 +282,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                          string mess = "Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " đã báo đứt chì ngày " + ngay +" , Báo tiếp ?" ;
                          if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                          {
-                             Add(sodanhbo);
+                             Add(sodanhbo,2);
                          }
                 }
                 else
                 {
-                    Add(sodanhbo);
+                    Add(sodanhbo,1);
                 }
 
             }
@@ -289,8 +302,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-                 
-                string ID = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID"].Value + "";
+                string ID = "";
+                if (tabControl1.SelectedIndex == 1)
+                {
+                    ID = dataGridViewL2.Rows[dataGridViewL2.CurrentRow.Index].Cells["dataGridViewTextBoxColumn1"].Value + "";
+                }
+                else
+                {
+                    ID = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID"].Value + "";
+                }
+                
 
                 string mess = "Xóa Nâng ĐHN Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " ?";
                 if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -439,6 +460,24 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 comboBoxTitle.SelectedIndex = 0;
             }
             LoadData();
+        }
+
+        private void dataGridViewL2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string ID = dataGridViewL2.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn1"].Value + "";
+                string G_DANHBO = dataGridViewL2.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn4"].Value + "";
+               
+                this.txtSoDanhBo.Text = G_DANHBO.Replace(" ", "");
+                btXoa.Enabled = true;
+            }
+            catch (Exception)
+            {
+
+            }
+            Utilities.DataGridV.formatRows(dataBangKe);
+            setSTT();
         }
     }
 }
