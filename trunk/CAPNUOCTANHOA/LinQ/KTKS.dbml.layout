@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="KTKS">
+  <DataContextMoniker Name="/KTKSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8c2aaca2-c531-423d-a8f9-dcce880e1a78" absoluteBounds="2.25, 1.25, 2, 6.7707340494791657">
+      <DataClassMoniker Name="/KTKSDataContext/CTBamChi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15d5b7cd-0c16-4c11-a1f0-c05847a7d3b5" absoluteBounds="2.265, 1.71, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
