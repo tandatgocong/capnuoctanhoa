@@ -28,7 +28,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             //     MessageBox.Show(this, DAL.QLDHN.C_BaoThay.getMaxBangKe() + "");
 
         }
-
+        public void loadghichu(string danhbo)
+        {
+            lichsuGhiCHu.DataSource = DAL.DULIEUKH.C_DuLieuKhachHang.lisGhiChu(danhbo);
+            dataGridView1.DataSource = DAL.LinQConnectionKT.getDataTable("SELECT CONVERT(varchar(20),NgayBC,103) as NGAYBC ,[TrangThaiBC] ,UPPER([TheoYeuCau]) as TheoYeuCau FROM [CTBamChi] WHERE DanhBo='" + danhbo + "' ");
+         
+        }
         void formLoad()
         {
 
@@ -61,6 +66,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             {
                 dataBangKe.DataSource = DAL.BANKTKS.C_DSKiemTra.getListDCByDate(this.txtNgayGan.Value.ToShortDateString());
                 Utilities.DataGridV.formatRows(dataBangKe);
+                lbTC.Text = "TỔNG CỘNG : " + dataBangKe.RowCount + " DANH BỘ";
               //  setSTT();
             }
             catch (Exception ex)
@@ -145,7 +151,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                     txtCS.Text = table.Rows[0]["CSMOI"] + "";
 
                 }
-
+                loadghichu(sodanhbo);
             }
         }
         private void txtSoDanhBo_Leave(object sender, EventArgs e)
