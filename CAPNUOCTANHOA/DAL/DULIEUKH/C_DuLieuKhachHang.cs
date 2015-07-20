@@ -247,10 +247,29 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             }
             return false;
         }
+        public static bool InsertGHICHU_TT(TB_GHICHU_TT gc)
+        {
+            try
+            {
+                db.TB_GHICHU_TTs.InsertOnSubmit(gc);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
 
         public static DataTable lisGhiChu(string danhbo)
         {
-            string sql = "SELECT ID,NOIDUNG,DONVI,CREATEDATE FROM TB_GHICHU WHERE DANHBO='" + danhbo + "' ORDER BY CREATEDATE DESC";
+            string sql = "SELECT ID,NOIDUNG,DONVI,CREATEDATE FROM TB_GHICHU WHERE DANHBO='" + danhbo + "'  ORDER BY CREATEDATE DESC";
+            return LinQConnection.getDataTable(sql);
+        }
+        public static DataTable lisGhiChu_TT(string danhbo)
+        {
+            string sql = "SELECT ID,NOIDUNG,DONVI,CREATEDATE FROM TB_GHICHU_TT WHERE DANHBO='" + danhbo + "' ORDER BY CREATEDATE DESC";
             return LinQConnection.getDataTable(sql);
         }
 

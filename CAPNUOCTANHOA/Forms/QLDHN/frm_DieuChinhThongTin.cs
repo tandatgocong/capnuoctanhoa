@@ -549,7 +549,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void menuCapNhatKetQua_Click(object sender, EventArgs e)
         {
             string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
-            DAL.LinQConnection.ExecuteCommand_("DELETE FROM TB_GHICHU WHERE ID='"+ID_+"'");
+            DAL.LinQConnection.ExecuteCommand_("DELETE FROM TB_GHICHU WHERE ID='" + ID_ + "' AND DONVI='" + DAL.SYS.C_USERS._maphong + "'");
             string sodanhbo = this.txtDanhBo.Text.Replace("-", "");
             loadghichu(sodanhbo);
         }

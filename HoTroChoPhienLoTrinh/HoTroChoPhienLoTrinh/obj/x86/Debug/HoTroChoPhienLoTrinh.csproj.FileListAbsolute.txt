@@ -36,3 +36,11 @@ G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\
 G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Form1.resources
 G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Properties.Resources.resources
 G:\DATA\TAN HOA\PROJECT\CAPNUOCTANHOA\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.csproj.GenerateResource.Cache
+G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.exe.config
+G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.exe
+G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.pdb
+G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.exe
+G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.pdb
+G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Form1.resources
+G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Properties.Resources.resources
+G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.csproj.GenerateResource.Cache

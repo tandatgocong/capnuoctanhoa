@@ -34,6 +34,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         void format()
         {
+            double sum_TONGDHN = 0;
             double sum_KN_DHN = 0;
             double sum_KN_SANLUONG = 0;
             double sum_KT_DHN = 0;
@@ -51,7 +52,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 double NT_TANGIAM_DHN = double.Parse(sanluongToDS.Rows[i].Cells["NT_TANGIAM_DHN"].Value + "");
                 double NT_TANGIAM_SANLUONG = double.Parse(sanluongToDS.Rows[i].Cells["NT_TANGIAM_SANLUONG"].Value + "");
 
+
+                sum_TONGDHN += double.Parse(sanluongToDS.Rows[i].Cells["SOLUONG"].Value + "");
+
                 sum_KN_DHN += double.Parse(sanluongToDS.Rows[i].Cells["KN_DHN"].Value + "");
+                
+
                 sum_KN_SANLUONG += double.Parse(sanluongToDS.Rows[i].Cells["KN_SANLUONG"].Value + "");
                 sum_KT_DHN += double.Parse(sanluongToDS.Rows[i].Cells["KT_DHN"].Value + "");
                 sum_KT_SANLUONG += double.Parse(sanluongToDS.Rows[i].Cells["KT_SANLUONG"].Value + "");
@@ -127,6 +133,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             sanluongToDS.Rows[index].Cells["NT_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_SANLUONG);
             sanluongToDS.Rows[index].Cells["NT_TANGIAM_DHN"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_DHN);
             sanluongToDS.Rows[index].Cells["NT_TANGIAM_SANLUONG"].Value = String.Format("{0:0,0}", sum_NT_TANGIAM_SANLUONG);
+            sanluongToDS.Rows[index].Cells["SOLUONG"].Value = String.Format("{0:0,0}", sum_TONGDHN);
 
             DataGridViewCellStyle style = new DataGridViewCellStyle();
             style.Font = new System.Drawing.Font(sanluongToDS.Font, FontStyle.Bold);
