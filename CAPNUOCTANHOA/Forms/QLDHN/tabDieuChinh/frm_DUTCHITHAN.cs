@@ -279,11 +279,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 if (dc != null)
                 {
                     string ngay= Utilities.DateToString.NgayVNVN(dc.NGAYBAO.Value);
-                         string mess = "Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " đã báo đứt chì ngày " + ngay +" , Báo tiếp ?" ;
-                         if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                         {
-                             Add(sodanhbo,2);
-                         }
+                    string mess = "Danh Bộ " + this.txtSoDanhBo.Text + " đã báo đứt chì ngày " + ngay + " , Báo Lần 2 chọn Yes, Báo Lần 1 Chọn No  ?";
+                    DialogResult dr =MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        Add(sodanhbo, 2);
+                    }
+                    else if (dr == DialogResult.No)
+                    { Add(sodanhbo, 1); }
+
                 }
                 else
                 {
