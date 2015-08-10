@@ -92,12 +92,12 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
             {
                 string result = "Nợ hóa đơn kỳ ";
                
-                var query = from q in hd.HDs where q.DBo == danhbo orderby q.KyHD ascending, q.NamHD descending select q;
-                foreach (var item in query.ToList())
-                {
-                    HD hd_ = (HD)item;
-                    result += " " + hd_.KyHD + "/" + hd_.NamHD + ": " + String.Format("{0:0,0}", hd_.TNuoc).Replace(",", ".") + " ; ";
-                }
+                //var query = from q in hd.HOADONs where q.DBo == danhbo orderby q.KyHD ascending, q.NamHD descending select q;
+                //foreach (var item in query.ToList())
+                //{
+                //    HD hd_ = (HD)item;
+                //    result += " " + hd_.KyHD + "/" + hd_.NamHD + ": " + String.Format("{0:0,0}", hd_.TNuoc).Replace(",", ".") + " ; ";
+                //}
                 return result;
         
             }
@@ -107,6 +107,23 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
             }
             return "";    
         }
+        public static DataTable getHoaDon(string danhbo)
+        {
+            DataSet ds = new DataSet();
+            hd.Connection.Open();
+            string query = "SELECT TOP(12)  ( CONVERT(VARCHAR(20),H.KY) +'/'+CONVERT(VARCHAR(20), h.NAM)) as NAM,H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY FROM HOADON H ";
+            query += "    WHERE DANHBA='" + danhbo + "' ORDER BY CAST(NAM as int) DESC,CAST(KY as int) DESC ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, hd.Connection.ConnectionString);
+            adapter.Fill(ds, "SANLUONG");
+
+            //query = "select * FROM TB_DHN_BAOCAO";
+            //adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            //adapter.Fill(ds, "TB_DHN_BAOCAO");
+
+            return ds.Tables["SANLUONG"];
+        }
+
        
         public static DataSet ReportByDate(string month)
         {

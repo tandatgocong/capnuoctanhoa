@@ -12,6 +12,7 @@ using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.BanKTKS.BC;
+using CAPNUOCTANHOA.DAL.THUTIEN;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 {
@@ -149,9 +150,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                     txtCo.Text = table.Rows[0]["CODH"] + "";
                     txtSoThan.Text = table.Rows[0]["SOTHANDH"] + "";
                     txtCS.Text = table.Rows[0]["CSMOI"] + "";
-
+                    dataGridView2.DataSource = C_ThuTien.getHoaDon(sodanhbo);
                 }
                 loadghichu(sodanhbo);
+                
             }
         }
         private void txtSoDanhBo_Leave(object sender, EventArgs e)
