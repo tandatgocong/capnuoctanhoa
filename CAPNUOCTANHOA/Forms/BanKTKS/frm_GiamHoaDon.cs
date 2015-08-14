@@ -12,6 +12,7 @@ using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.BanKTKS.BC;
+using CAPNUOCTANHOA.DAL.THUTIEN;
 
 namespace CAPNUOCTANHOA.Forms.BanKTKS
 {
@@ -160,11 +161,9 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         public void LoadTieuThu(string danhba, int nam, int ky)
         {
-            if (DAL.BANKTKS.C_GiamHoaDon.getListHoaDonReport(danhba, nam, ky).Tables["TIEUTHU"].Rows.Count > 0)
-            {
-                dataTieuThu.DataSource = DAL.BANKTKS.C_GiamHoaDon.getListHoaDonReport(danhba, nam, ky).Tables["TIEUTHU"];
+           
+                dataTieuThu.DataSource = C_ThuTien.getHoaDon(danhba);
                 panelTieuThu.Visible = true;
-            }
         }
 
         #endregion
@@ -403,7 +402,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 ///Set
                 selectedindex = e.RowIndex;
                 LoadLichSuHoaDon0(dataBangKe["G_DANHBO", e.RowIndex].Value.ToString().Replace(" ", ""));
-                LoadTieuThu(txtSoDanhBo.Text.Replace("-", ""), int.Parse(dataBangKe["DHN_NAM", e.RowIndex].Value.ToString()), DateTime.Now.Month);
+                LoadTieuThu(txtSoDanhBo.Text.Replace("-", ""),0,0);
                 dateTiepXuc.Focus();
             }
             catch (Exception)

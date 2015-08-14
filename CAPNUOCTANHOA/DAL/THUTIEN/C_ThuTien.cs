@@ -109,19 +109,32 @@ namespace CAPNUOCTANHOA.DAL.THUTIEN
         }
         public static DataTable getHoaDon(string danhbo)
         {
-            DataSet ds = new DataSet();
-            hd.Connection.Open();
-            string query = "SELECT TOP(12)  ( CONVERT(VARCHAR(20),H.KY) +'/'+CONVERT(VARCHAR(20), h.NAM)) as NAM,H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY FROM HOADON H ";
-            query += "    WHERE DANHBA='" + danhbo + "' ORDER BY CAST(NAM as int) DESC,CAST(KY as int) DESC ";
 
-            SqlDataAdapter adapter = new SqlDataAdapter(query, hd.Connection.ConnectionString);
-            adapter.Fill(ds, "SANLUONG");
 
-            //query = "select * FROM TB_DHN_BAOCAO";
-            //adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            //adapter.Fill(ds, "TB_DHN_BAOCAO");
+            DataTable table = new DataTable();
+            HoaDonDataContext hd = new HoaDonDataContext();
+            try
+            {
+                if (hd.Connection.State == ConnectionState.Open)
+                {
+                    hd.Connection.Close();
+                }
+                hd.Connection.Open();
+                string query = "SELECT TOP(12)  ( CONVERT(VARCHAR(20),H.KY) +'/'+CONVERT(VARCHAR(20), h.NAM)) as NAM,H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY FROM HOADON H ";
+                query += "    WHERE DANHBA='" + danhbo + "' ORDER BY CAST(NAM as int) DESC,CAST(KY as int) DESC ";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, hd.Connection.ConnectionString);
+                adapter.Fill(table);
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            return table;
 
-            return ds.Tables["SANLUONG"];
         }
 
        
