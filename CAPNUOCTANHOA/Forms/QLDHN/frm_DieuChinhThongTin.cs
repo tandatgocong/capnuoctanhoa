@@ -260,6 +260,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         /// <param name="sender"></param>
         /// <param name="e"></param>
         TB_DULIEUKHACHHANG huyDanhBo = null;
+        TB_DULIEUKHACHHANG_HUYDB khachhanghuy = null;
         void LoadThongTinHuy()
         {
             string sodanhbo = this.huy_danhbo.Text.Replace("-", "");
@@ -293,40 +294,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
                 else
                 {
-                    TB_DULIEUKHACHHANG_HUYDB khachhanghuy = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
+                    khachhanghuy = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
                     if (khachhanghuy != null)
                     {
-                        LOTRINH.Text = khachhanghuy.LOTRINH;
-                        DOT.Text = khachhanghuy.DOT;
-                        HOPDONG.Text = khachhanghuy.HOPDONG;
-                        HOTEN.Text = khachhanghuy.HOTEN;
-                        SONHA.Text = khachhanghuy.SONHA;
-                        TENDUONG.Text = khachhanghuy.TENDUONG;
+                        H_LOTRINH.Text = khachhanghuy.LOTRINH;
+                        H_DOT.Text = khachhanghuy.DOT;
+                        H_HOPDONG.Text = khachhanghuy.HOPDONG;
+                        H_HOTEN.Text = khachhanghuy.HOTEN;
+                        H_SONHA.Text = khachhanghuy.SONHA;
+                        H_TENDUONG.Text = khachhanghuy.TENDUONG;
                         try
                         {
                             LinQ.QUAN q = DAL.SYS.C_Quan.finByMaQuan(int.Parse(khachhanghuy.QUAN));
                             if (q != null)
                             {
-                                QUAN.Text = q.TENQUAN;
+                                H_QUAN.Text = q.TENQUAN;
                                 LinQ.PHUONG ph = DAL.SYS.C_Phuong.finbyPhuong(q.MAQUAN, khachhanghuy.PHUONG.Trim());
-                                PHUONGT.Text = ph.TENPHUONG;
+                                H_PHUONG.Text = ph.TENPHUONG;
                             }
                         }
                         catch (Exception)
                         {
                         }
-                        txtHieuLuc.Text = "Hết HL " + khachhanghuy.HIEULUCHUY;
-                        GIABIEU.Text = khachhanghuy.GIABIEU;
-                        DINHMUC.Text = khachhanghuy.DINHMUC;
-                        NGAYGAN.ValueObject = khachhanghuy.NGAYTHAY;
-                        KIEMDINH.ValueObject = khachhanghuy.NGAYKIEMDINH;
-                        HIEUDH.Text = khachhanghuy.HIEUDH;
-                        CO.Text = khachhanghuy.CODH;
-                        CAP.Text = khachhanghuy.CAP;
-                        SOTHAN.Text = khachhanghuy.SOTHANDH;
-                        VITRI.Text = khachhanghuy.VITRIDHN;
-                        CHITHAN.Text = khachhanghuy.CHITHAN;
-                        CHIGOC.Text = khachhanghuy.CHIGOC;
+                        H_GIABIEU.Text = khachhanghuy.GIABIEU;
+                        H_DINHMUC.Text = khachhanghuy.DINHMUC;
+                        H_SOPHIEU.Text = khachhanghuy.SOPHIEU;
+                        NGUYENNHAN.Text = khachhanghuy.NGUYENNHAN;
+                        GHICHU.Text = khachhanghuy.GHICHU;
                         btCapNhatHuy.Enabled = true;
 
                     }
@@ -575,44 +569,44 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             string sodanhbo = this.huy_danhbo.Text.Replace("-", "");
             TB_DULIEUKHACHHANG_HUYDB hKhacHang = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
-            if (hKhacHang != null)
+            if (hKhacHang != null && khachhanghuy != null)
             {
-                
-                hKhacHang.KHU = huyDanhBo.KHU;
-                hKhacHang.DOT = huyDanhBo.DOT;
-                hKhacHang.CUON_GCS = huyDanhBo.CUON_GCS;
-                hKhacHang.CUON_STT = huyDanhBo.CUON_STT;
-                hKhacHang.DANHBO = huyDanhBo.DANHBO;
-                hKhacHang.LOTRINH = huyDanhBo.LOTRINH;
-                hKhacHang.NGAYGANDH = huyDanhBo.NGAYGANDH;
-                hKhacHang.HOPDONG = huyDanhBo.HOPDONG;
-                hKhacHang.HOTEN = huyDanhBo.HOTEN;
-                hKhacHang.SONHA = huyDanhBo.SONHA;
-                hKhacHang.TENDUONG = huyDanhBo.TENDUONG;
-                hKhacHang.PHUONG = huyDanhBo.PHUONG;
-                hKhacHang.QUAN = huyDanhBo.QUAN;
-                hKhacHang.CHUKY = huyDanhBo.CHUKY;
-                hKhacHang.CODE = huyDanhBo.CODE;
-                hKhacHang.CODEFU = huyDanhBo.CODEFU;
-                hKhacHang.GIABIEU = huyDanhBo.GIABIEU;
-                hKhacHang.DINHMUC = huyDanhBo.DINHMUC;
-                hKhacHang.SH = huyDanhBo.SH;
-                hKhacHang.HCSN = huyDanhBo.HCSN;
-                hKhacHang.SX = huyDanhBo.SX;
-                hKhacHang.DV = huyDanhBo.DV;
-                hKhacHang.CODH = huyDanhBo.CODH;
-                hKhacHang.HIEUDH = huyDanhBo.HIEUDH;
-                hKhacHang.CAP = huyDanhBo.CAP;
-                hKhacHang.SOTHANDH = huyDanhBo.SOTHANDH;
-                hKhacHang.CHITHAN = huyDanhBo.CHITHAN;
-                hKhacHang.CHIGOC = huyDanhBo.CHIGOC;
-                hKhacHang.VITRIDHN = huyDanhBo.VITRIDHN;
-                hKhacHang.NGAYTHAY = huyDanhBo.NGAYTHAY;
-                hKhacHang.NGAYKIEMDINH = huyDanhBo.NGAYKIEMDINH;
-                hKhacHang.SODHN = huyDanhBo.SODHN;
-                hKhacHang.MSTHUE = huyDanhBo.MSTHUE;
-                hKhacHang.SOHO = huyDanhBo.SOHO;
-                hKhacHang.CHISOKYTRUOC = huyDanhBo.CHISOKYTRUOC;
+
+                hKhacHang.KHU = khachhanghuy.KHU;
+                hKhacHang.DOT = khachhanghuy.DOT;
+                hKhacHang.CUON_GCS = khachhanghuy.CUON_GCS;
+                hKhacHang.CUON_STT = khachhanghuy.CUON_STT;
+                hKhacHang.DANHBO = khachhanghuy.DANHBO;
+                hKhacHang.LOTRINH = khachhanghuy.LOTRINH;
+                hKhacHang.NGAYGANDH = khachhanghuy.NGAYGANDH;
+                hKhacHang.HOPDONG = khachhanghuy.HOPDONG;
+                hKhacHang.HOTEN = khachhanghuy.HOTEN;
+                hKhacHang.SONHA = khachhanghuy.SONHA;
+                hKhacHang.TENDUONG = khachhanghuy.TENDUONG;
+                hKhacHang.PHUONG = khachhanghuy.PHUONG;
+                hKhacHang.QUAN = khachhanghuy.QUAN;
+                hKhacHang.CHUKY = khachhanghuy.CHUKY;
+                hKhacHang.CODE = khachhanghuy.CODE;
+                hKhacHang.CODEFU = khachhanghuy.CODEFU;
+                hKhacHang.GIABIEU = khachhanghuy.GIABIEU;
+                hKhacHang.DINHMUC = khachhanghuy.DINHMUC;
+                hKhacHang.SH = khachhanghuy.SH;
+                hKhacHang.HCSN = khachhanghuy.HCSN;
+                hKhacHang.SX = khachhanghuy.SX;
+                hKhacHang.DV = khachhanghuy.DV;
+                hKhacHang.CODH = khachhanghuy.CODH;
+                hKhacHang.HIEUDH = khachhanghuy.HIEUDH;
+                hKhacHang.CAP = khachhanghuy.CAP;
+                hKhacHang.SOTHANDH = khachhanghuy.SOTHANDH;
+                hKhacHang.CHITHAN = khachhanghuy.CHITHAN;
+                hKhacHang.CHIGOC = khachhanghuy.CHIGOC;
+                hKhacHang.VITRIDHN = khachhanghuy.VITRIDHN;
+                hKhacHang.NGAYTHAY = khachhanghuy.NGAYTHAY;
+                hKhacHang.NGAYKIEMDINH = khachhanghuy.NGAYKIEMDINH;
+                hKhacHang.SODHN = khachhanghuy.SODHN;
+                hKhacHang.MSTHUE = khachhanghuy.MSTHUE;
+                hKhacHang.SOHO = khachhanghuy.SOHO;
+                hKhacHang.CHISOKYTRUOC = khachhanghuy.CHISOKYTRUOC;
                 hKhacHang.SOPHIEU = this.H_SOPHIEU.Text;
                 hKhacHang.NGAYHUY = DateTime.Now.Date;
                 hKhacHang.HIEULUCHUY = cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "/" + this.txtNam.Text;
@@ -620,9 +614,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 hKhacHang.GHICHU = this.GHICHU.Text; ;
                 hKhacHang.CREATEDATE = DateTime.Now;
                 hKhacHang.CREATEBY = DAL.SYS.C_USERS._userName;
-                hKhacHang.MADMA = huyDanhBo.MADMA;
-                hKhacHang.CHUKYDS = huyDanhBo.CHUKYDS;
-                if (DAL.DULIEUKH.C_DuLieuKhachHang.HuyDanhBo(hKhacHang, huyDanhBo))
+                hKhacHang.MADMA = khachhanghuy.MADMA;
+                hKhacHang.CHUKYDS = khachhanghuy.CHUKYDS;
+                if (DAL.DULIEUKH.C_DuLieuKhachHang.Update())
                 {
                     MessageBox.Show(this, "Hủy Danh Bộ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     H_LOTRINH.Text = "";
