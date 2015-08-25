@@ -61,7 +61,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 ReportDocument rp = new rpt_TLKDutChi_Goc_();
                 rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(), 1, lan));
                 rp.SetParameterValue("NGUOILAP",DAL.SYS.C_USERS._fullName.ToUpper());
-                rp.SetParameterValue("lan", lan);
+                rp.SetParameterValue("lan", "");
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
             }

@@ -434,6 +434,30 @@
     <Compile Include="Forms\DoiThuTien\frm_CatNuoc.Designer.cs">
       <DependentUpon>frm_CatNuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDA\frmHoanCongThay_DA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDA\frmHoanCongThay_DA.Designer.cs">
+      <DependentUpon>frmHoanCongThay_DA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDA\frm_BaoThayDHN_DA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDA\frm_BaoThayDHN_DA.Designer.cs">
+      <DependentUpon>frm_BaoThayDHN_DA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDA\rpt_BCBangKe_A4_DA.cs">
+      <DependentUpon>rpt_BCBangKe_A4_DA.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\QLDA\rpt_BCHoanCong_A4_DA.cs">
+      <DependentUpon>rpt_BCHoanCong_A4_DA.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Forms\QLDHN\BC\BAOCAOTONGKET.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1775,6 +1799,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiThuTien\frm_CatNuoc.resx">
       <DependentUpon>frm_CatNuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDA\frmHoanCongThay_DA.resx">
+      <DependentUpon>frmHoanCongThay_DA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDA\frm_BaoThayDHN_DA.resx">
+      <DependentUpon>frm_BaoThayDHN_DA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDA\rpt_BCBangKe_A4_DA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BCBangKe_A4_DA.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDA\rpt_BCHoanCong_A4_DA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BCHoanCong_A4_DA.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_DongHoHieuCu_TODS.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -17,6 +17,7 @@ using CAPNUOCTANHOA.Forms.TimKiem;
 using CAPNUOCTANHOA.Forms.BanKTKS;
 using CAPNUOCTANHOA.Forms.DoiThuTien;
 using CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh;
+using CAPNUOCTANHOA.Forms.QLDA;
 namespace CAPNUOCTANHOA
 {
     public partial class frm_Main : Form
@@ -51,6 +52,7 @@ namespace CAPNUOCTANHOA
             }
             else
             {
+                this.btDA.Visible = false;
                 if ("QLDHN".Equals(DAL.SYS.C_USERS._maphong.Trim()))
                 {
                     ribbonDoiThuTien.Visible = false;
@@ -103,6 +105,15 @@ namespace CAPNUOCTANHOA
                     this.menuDoiQLDHN.Visible = false;
                     this.menuDTCTB.Visible = false;
                     this.banKTKS.Visible = false;
+                }
+                else if ("QLDA".Equals(DAL.SYS.C_USERS._maphong.Trim()))
+                {
+                    ribbonDoiThuTien.Visible = false;
+                    this.menuDoiQLDHN.Visible = false;
+                    this.menuDTCTB.Visible = false;
+                    this.banKTKS.Visible = false;
+                    this.banKTKS.Visible = false;
+                    this.btDA.Visible = true;
                 }
             }
             this.subDoiMatKhau.Visible = true;
@@ -499,6 +510,29 @@ namespace CAPNUOCTANHOA
         {
             PanelContent.Controls.Clear();
             frm_DanhSachKT baothay = new frm_DanhSachKT();
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+        }
+
+        private void btDA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dmaBaoThay_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frm_BaoThayDHN_DA baothay = new frm_BaoThayDHN_DA();
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+        }
+
+        private void DMAHoanCong_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frmHoanCongThay_DA baothay = new frmHoanCongThay_DA();
             baothay.Height = PanelContent.Size.Height - 5;
             baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
