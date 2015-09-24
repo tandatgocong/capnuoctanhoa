@@ -91,7 +91,7 @@ namespace CAPNUOCTANHOA.Forms.QLDA
         {
             try
             {
-                dataBangKe.DataSource = DAL.DoiTCTB.C_HoanCongThay.getBangKeBaoThay(this.txtSoBangKe.Text.ToUpper());
+                dataBangKe.DataSource = DAL.DoiTCTB.C_HoanCongThay.getBangKeBaoThayDMA(this.txtSoBangKe.Text.ToUpper());
                 Utilities.DataGridV.formatRows(dataBangKe);
                 setSTT();
             }

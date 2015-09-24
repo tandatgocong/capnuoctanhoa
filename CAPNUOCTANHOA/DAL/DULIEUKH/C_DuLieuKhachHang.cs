@@ -30,6 +30,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
         public static TB_DULIEUKHACHHANG finByDanhBo(string danhbo) {
             try
             {
+                db = new CapNuocTanHoaDataContext();
                 var query = from q in db.TB_DULIEUKHACHHANGs where q.DANHBO == danhbo select q;
                 return query.SingleOrDefault();
             }
@@ -58,7 +59,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
         {
             try
             {
-                var query = from q in db.TB_DULIEUKHACHHANG_HUYDBs where q.DANHBO == danhbo select q;
+                var query = (from q in db.TB_DULIEUKHACHHANG_HUYDBs where q.DANHBO == danhbo orderby q.CREATEDATE descending select q).Take(1);
                 return query.SingleOrDefault();
             }
             catch (Exception ex)

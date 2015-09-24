@@ -53,15 +53,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
                 else if (this.rptHoaDon.Checked)
                 {
-                    string sql = "SELECT 1  FROM INFORMATION_SCHEMA.TABLES  WHERE TABLE_TYPE='BASE TABLE'  AND TABLE_NAME='HOADONTH" + ky + "_" + nam + "'";
-                    if (DAL.LinQConnection.getDataTable(sql).Rows.Count > 0)
-                    {
-                        label1.Text = "";
-                    }
-                    else
-                    {
-                        label1.Text = "Chưa có dữ liệu hóa đơn Tổng công ty !";
-                    }
+                    rptHoaDon.Text = " Số Liệu Hóa Đơn ( Hiện có " + DAL.LinQConnection.ExecuteCommand("SELECT MAX(DOT)  FROM [SERVER9].[HOADON_TA].[dbo].[HOADON] kh WHERE kh.NAM=" + nam + " AND kh.KY=" + ky) + " đợt )";
 
                     dataBangKe.DataSource = DAL.GNKDT.C_GNKDT.getThongTinDMAByHoaDon(madma, ky, nam);
                     tableThay = DAL.GNKDT.C_GNKDT.getThongTinDMAByHoaDon_Thay(madma, ky, nam);
@@ -83,6 +75,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
             string nam = this.txtNam.Text;
             string madma = cbMaDMA.SelectedValue.ToString();
+            
             Load_(ky, nam, madma);
             dataGridView3.DataSource = DAL.GNKDT.C_GNKDT.getDHN(madma,ky, nam);
             try
@@ -159,14 +152,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void rptHoaDon_CheckedChanged(object sender, EventArgs e)
         {
-                string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
-                string nam = this.txtNam.Text;                
-                string sql = "SELECT 1  FROM INFORMATION_SCHEMA.TABLES  WHERE TABLE_TYPE='BASE TABLE'  AND TABLE_NAME='HOADONTH" + ky + "_" + nam + "'";
-                if (DAL.LinQConnection.getDataTable(sql).Rows.Count > 0) {
-                    label1.Text = "";
-                } else {
-                    label1.Text = "Chưa có dữ liệu hóa đơn Tổng công ty !";
-                }
+                //string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
+                //string nam = this.txtNam.Text;                
+                //string sql = "SELECT 1  FROM INFORMATION_SCHEMA.TABLES  WHERE TABLE_TYPE='BASE TABLE'  AND TABLE_NAME='HOADONTH" + ky + "_" + nam + "'";
+                //if (DAL.LinQConnection.getDataTable(sql).Rows.Count > 0) {
+                //    label1.Text = "";
+                //} else {
+                //    label1.Text = "Chưa có dữ liệu hóa đơn Tổng công ty !";
+                //}
         }
 
         private void rptHanheld_CheckedChanged(object sender, EventArgs e)

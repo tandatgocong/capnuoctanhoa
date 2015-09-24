@@ -147,6 +147,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
             int nam = int.Parse(txtNam.Text.Trim());
+            
 
             DAL.GNKDT.C_TONGHOP.CAPNHAT_DHN_HH();
             DAL.GNKDT.C_TONGHOP.CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY(nam.ToString(), ky);
@@ -156,7 +157,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             sanluongToDS.DataSource = DAL.GNKDT.C_TONGHOP.get_BAOCAO_SANLUONG();
            format();
-           lb8x.Text = (sanluongToDS.RowCount -1).ToString() + " ( Số liệu đoc số từ handheld )";
+           lb8x.Text = (sanluongToDS.RowCount - 1).ToString() + " DMA ( Số Liệu Hóa Đơn hiện có " + DAL.LinQConnection.ExecuteCommand("SELECT MAX(DOT)  FROM [SERVER9].[HOADON_TA].[dbo].[HOADON] kh WHERE kh.NAM=" + nam + " AND kh.KY=" + ky) + " đợt )";
+           
         }
     }
 }

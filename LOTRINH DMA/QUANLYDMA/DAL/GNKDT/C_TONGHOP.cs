@@ -44,10 +44,12 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
             sql += " SET GNKDT_THONGTINDMA.KN_DHN = t2.COUNTDHN, GNKDT_THONGTINDMA.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM GNKDT_THONGTINDMA INNER JOIN ";
             sql += " ( ";
+
             sql += " SELECT  MADMA, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " ds, TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky + " AND   kh.NAM<=" + nam + " AND kh.KY_<=" + ky;
+            sql += " FROM [SERVER9].[HOADON_TA].[dbo].[HOADON] ds, TB_DULIEUKHACHHANG kh  ";
+            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky + " AND ds.NAM=" + nam + " AND kh.KY_<=" + ky;
             sql += " GROUP BY MADMA ";
+
             sql += " ) as t2 ";
             sql += " ON	GNKDT_THONGTINDMA.MADMA = t2.MADMA";
 
@@ -92,10 +94,14 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
             sql += " SET GNKDT_THONGTINDMA.KT_DHN = t2.COUNTDHN, GNKDT_THONGTINDMA.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM GNKDT_THONGTINDMA INNER JOIN ";
             sql += " ( ";
+       
             sql += " SELECT  MADMA, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam_ + " ds, TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky_ + " AND  kh.NAM<=" + nam + " AND kh.KY_<=" + ky;
+            sql += " FROM [SERVER9].[HOADON_TA].[dbo].[HOADON] ds, TB_DULIEUKHACHHANG kh  ";
+            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky_ + " AND ds.NAM=" + nam + " AND kh.KY_<=" + ky;
             sql += " GROUP BY MADMA ";
+
+
+        
             sql += " ) as t2 ";
             sql += " ON	GNKDT_THONGTINDMA.MADMA = t2.MADMA";
 
@@ -133,10 +139,12 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
             sql += " SET GNKDT_THONGTINDMA.NT_DHN = t2.COUNTDHN, GNKDT_THONGTINDMA.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM GNKDT_THONGTINDMA INNER JOIN ";
             sql += " ( ";
+
             sql += " SELECT  MADMA, COUNT(DANHBA) AS COUNTDHN,(case when SUM(TIEUTHU) IS NULL then 0 else SUM(TIEUTHU) end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam_ + " ds, TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky + " AND   kh.NAM<=" + nam + " AND kh.KY_<=" + ky;
+            sql += " FROM [SERVER9].[HOADON_TA].[dbo].[HOADON] ds, TB_DULIEUKHACHHANG kh  ";
+            sql += " WHERE kh.DANHBO=ds.DANHBA AND ds.KY=" + ky + " AND ds.NAM=" + nam_ + " AND kh.KY_<=" + ky;
             sql += " GROUP BY MADMA ";
+
             sql += " ) as t2 ";
             sql += " ON	GNKDT_THONGTINDMA.MADMA = t2.MADMA";
 

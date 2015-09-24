@@ -321,8 +321,6 @@ namespace CAPNUOCTANHOA.Forms.QLDA
         {
             try
             {
-                if (dataBangKe.Rows.Count <= (int.Parse(Utilities.Files.numberRecord)-1))
-                {
                     string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
                     if ("".Equals(this.txtSoBangKe.Text))
                     {
@@ -341,10 +339,6 @@ namespace CAPNUOCTANHOA.Forms.QLDA
                         
                         refeshInser();
                     }
-                }
-                else {
-                    MessageBox.Show(this, "Bảng Kê Báo Thay " + Utilities.Files.numberRecord + " Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
             catch (Exception ex)
             {

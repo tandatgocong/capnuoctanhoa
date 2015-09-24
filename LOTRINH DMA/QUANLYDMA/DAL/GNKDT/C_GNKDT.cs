@@ -14,22 +14,6 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
 
         static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
 
-        public static DataTable getThongTinDMAByHoaDon(string madma, string ky, string nam)
-        {
-
-            string query = "  SELECT DISTINCT ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT], tb1.*, tb2.CHUKY, tb2.CODE,tb2.LNCC,(convert(float,tb2.LNCC)/tb2.CHUKY) as 'TBTT' ";
-            query += "       FROM (SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',YEAR(NGAYTHAY) AS 'NAMLD',HIEUDH ";
-            query += "              FROM TB_DULIEUKHACHHANG WHERE NAM<=" + nam + " AND KY_<=" + ky + " AND MADMA='" + madma + "'";
-            query += "              UNION ";
-            query += "              SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC ,( N'Hủy ' + HIEULUCHUY) as 'HIEULUC',YEAR(NGAYTHAY) AS 'NAMLD',HIEUDH  ";
-            query += "              FROM TB_DULIEUKHACHHANG_HUYDB WHERE HIEULUCHUY='" + ky + "/" + nam + "' AND   MADMA='" + madma + "' ";
-            query += "             ) as tb1 ";
-            query += "   LEFT JOIN  HOADONTH" + ky + "_" + nam + " tb2 ";
-            query += "   ON tb2.DANHBO = tb1.DANHBO";
-            query += "   ORDER BY LOTRINH";
-            return DAL.LinQConnection.getDataTable(query);
-        }
-
         public static DataTable getDHN(string madma, string ky, string nam)
         {
             string query = " SELECT LEFT(tb1.HIEUDH,3) as HIEUDHN,CAP,COUNT(*) as SL ";
@@ -42,6 +26,23 @@ namespace CAPNUOCTANHOA.DAL.GNKDT
 
             return DAL.LinQConnection.getDataTable(query.Replace("\t", ""));
         }
+
+        public static DataTable getThongTinDMAByHoaDon(string madma, string ky, string nam)
+        {
+
+            string query = "  SELECT DISTINCT ROW_NUMBER() OVER (ORDER BY LOTRINH  DESC) [STT], tb1.*, DATEDIFF(DD,tb2.TUNGAY,tb2.DENNGAY) as 'CHUKY', tb2.CODE,tb2.TIEUTHU  as 'LNCC' ,(convert(float,tb2.TIEUTHU)/DATEDIFF(DD,tb2.TUNGAY,tb2.DENNGAY)) as 'TBTT' ";
+            query += "       FROM (SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC, (CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) as 'HIEULUC',YEAR(NGAYTHAY) AS 'NAMLD',HIEUDH ";
+            query += "              FROM TB_DULIEUKHACHHANG WHERE NAM<=" + nam + " AND KY_<=" + ky + " AND MADMA='" + madma + "'";
+            query += "              UNION ";
+            query += "              SELECT LOTRINH,DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,CODH,GIABIEU,DINHMUC ,( N'Hủy ' + HIEULUCHUY) as 'HIEULUC',YEAR(NGAYTHAY) AS 'NAMLD',HIEUDH  ";
+            query += "              FROM TB_DULIEUKHACHHANG_HUYDB WHERE HIEULUCHUY='" + ky + "/" + nam + "' AND   MADMA='" + madma + "' ";
+            query += "             ) as tb1 ";
+            query += "   LEFT JOIN  [SERVER9].[HOADON_TA].[dbo].[HOADON] tb2 ";
+            query += "   ON tb2.DANHBA = tb1.DANHBO AND tb2.KY=" + ky + " AND tb2.NAM="+nam;
+            query += "   ORDER BY LOTRINH";
+            return DAL.LinQConnection.getDataTable(query);
+        }
+        
 
         public static DataTable getThongTinDMAByHandheld(string madma, string ky, string nam)
         {

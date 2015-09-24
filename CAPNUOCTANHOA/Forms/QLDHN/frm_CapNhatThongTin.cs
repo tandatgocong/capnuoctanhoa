@@ -106,23 +106,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         public void UpdateChiChu(string dot, string ky, string nam)
         {
-            string sql = " UPDATE DocSo_PHT.dbo.DS" + nam + " SET  GHICHUVANPHONG=t2.NOIDUNG ";
-            sql += " FROM (SELECT NOIDUNG,DANHBO,CREATEDATE FROM CAPNUOCTANHOA.dbo.TB_GHICHU as t2 WHERE DONVI='QLDHN' group by NOIDUNG,DANHBO,CREATEDATE having CREATEDATE = MAX(CREATEDATE) ) as t2  ";
-            sql += "  WHERE DANHBA= t2.DANHBO AND LEFT(MALOTRINH,2)='" + dot + "' AND KY='" + int.Parse(ky) + "' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "MALOTRINH"); ;
+            string sql = " UPDATE DocSo_PHT.dbo.DS" + nam + " SET  GHICHUVANPHONG=LEFT(t2.NOIDUNG,500) ";
+            sql += " FROM ( SELECT  t2.NOIDUNG,t2.DANHBO,t2.CREATEDATE 	FROM CAPNUOCTANHOA.dbo.TB_GHICHU as t2 ,CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG kh ";
+            sql += " WHERE kh.DANHBO= t2.DANHBO AND LEFT(kh.LOTRINH,2)='" + dot + "' AND  DONVI='QLDHN' and t2.CREATEDATE = (SELECT MAX(CREATEDATE) FROM  TB_GHICHU WHERE DANHBO=t2.DANHBO)  ) as t2  ";
+                       sql += "  WHERE DANHBA= t2.DANHBO AND LEFT(MALOTRINH,2)='" + dot + "' AND KY='" + int.Parse(ky) + "' "  ;
             DAL.LinQConnection.ExecuteCommand_(sql);
+
         }
         public void UpDateSoNha(string dot, string ky, string nam)
         {
             string sql = " UPDATE DocSo_PHT.dbo.KHACHHANG SET  SO=t2.SONHA ,DUONG=t2.TENDUONG ";
             sql += "FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as t2 ";
-            sql += " WHERE  DANHBA = t2.DANHBO AND LEFT(t2.LOTRINH,2)='" + dot + "' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "t2.LOTRINH"); ;
+            sql += " WHERE  DANHBA = t2.DANHBO AND LEFT(t2.LOTRINH,2)='" + dot + "' " ;
             DAL.LinQConnection.ExecuteCommand_(sql);
         }
         public void UpDateHieuHH(string dot, string ky, string nam)
         {
             string sql = " UPDATE DocSo_PHT.dbo.KHACHHANG SET  VITRI=LEFT(t2.VITRIDHN,1) ,HIEU=t2.HIEUDH, SOTHAN= t2.SOTHANDH ";
             sql += " FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as t2";
-            sql += " WHERE  DANHBA = t2.DANHBO AND LEFT(t2.LOTRINH,2)='" + dot + "' " + DAL.SYS.C_USERS._gioihan.Replace("LOTRINH", "t2.LOTRINH"); ;
+            sql += " WHERE  DANHBA = t2.DANHBO AND LEFT(t2.LOTRINH,2)='" + dot + "' " ;
             DAL.LinQConnection.ExecuteCommand_(sql);
         }
         public void UpDateHieuGM(string dot, string ky, string nam)
