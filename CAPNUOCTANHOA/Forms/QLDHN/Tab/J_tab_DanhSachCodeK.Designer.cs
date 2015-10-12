@@ -41,6 +41,8 @@
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txtTieuThu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.cbCode = new System.Windows.Forms.ComboBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.cbKyDS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -85,8 +87,6 @@
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.txtTieuThu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -192,6 +192,26 @@
             this.splitContainer1.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.SplitterDistance = 80;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // txtTieuThu
+            // 
+            // 
+            // 
+            // 
+            this.txtTieuThu.Border.Class = "TextBoxBorder";
+            this.txtTieuThu.Location = new System.Drawing.Point(223, 47);
+            this.txtTieuThu.Name = "txtTieuThu";
+            this.txtTieuThu.Size = new System.Drawing.Size(87, 27);
+            this.txtTieuThu.TabIndex = 42;
+            this.txtTieuThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX5
+            // 
+            this.labelX5.Location = new System.Drawing.Point(141, 50);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(86, 23);
+            this.labelX5.TabIndex = 41;
+            this.labelX5.Text = "TIÊU THỤ";
             // 
             // cbCode
             // 
@@ -540,26 +560,6 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(1108, 546);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            // 
-            // labelX5
-            // 
-            this.labelX5.Location = new System.Drawing.Point(141, 50);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(86, 23);
-            this.labelX5.TabIndex = 41;
-            this.labelX5.Text = "TIÊU THỤ";
-            // 
-            // txtTieuThu
-            // 
-            // 
-            // 
-            // 
-            this.txtTieuThu.Border.Class = "TextBoxBorder";
-            this.txtTieuThu.Location = new System.Drawing.Point(223, 47);
-            this.txtTieuThu.Name = "txtTieuThu";
-            this.txtTieuThu.Size = new System.Drawing.Size(87, 27);
-            this.txtTieuThu.TabIndex = 42;
-            this.txtTieuThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // J_tab_DanhSachCodeK
             // 
