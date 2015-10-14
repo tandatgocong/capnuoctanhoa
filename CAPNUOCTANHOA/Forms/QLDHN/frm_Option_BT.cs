@@ -148,6 +148,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 thaydh.DHN_TODS = DAL.SYS.C_USERS._toDocSo;
                 thaydh.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
                 thaydh.DHN_CREATEDATE = DateTime.Now;
+                thaydh.TENKH = dataBangKe.Rows[i].Cells["G_TENKH"].Value + "";
+                thaydh.DIACHI = dataBangKe.Rows[i].Cells["G_DIACHI"].Value + "";       
+
                 DAL.QLDHN.C_BaoThay.Insert(thaydh);
                 DAL.DULIEUKH.C_DuLieuKhachHang.UpdateBaoThay(sodanhbo, "True");
                // LoadData();

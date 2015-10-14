@@ -22,7 +22,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         public frmHoanCongThayThu()
         {
             InitializeComponent();
-            dataVatTuThay.DataSource = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay();
+            //dataVatTuThay.DataSource = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay();
             DataTable table = DAL.LinQConnection.getDataTable("SELECT TENDONGHO FROM TB_HIEUDONGHO");
             foreach (var item in table.Rows)
             {
@@ -91,8 +91,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     DataTable table = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay_DATHAY(int.Parse(ID_BAOTHAY));
                     if (table.Rows.Count > 0)
                         dataVatTuThay.DataSource = table;
-                    else
-                        dataVatTuThay.DataSource = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay();
+                   // else
+                       // dataVatTuThay.DataSource = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay();
                 }
                 catch (Exception ex)
                 {

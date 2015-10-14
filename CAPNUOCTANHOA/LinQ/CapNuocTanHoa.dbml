@@ -330,36 +330,6 @@
       <Column Name="LONCO200" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TB_VATUTHAY" Member="TB_VATUTHAYs">
-    <Type Name="TB_VATUTHAY">
-      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MAVT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="TENVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TB_VATUTHAY_DHN" Member="TB_VATUTHAY_DHNs">
-    <Type Name="TB_VATUTHAY_DHN">
-      <Column Name="ID_BC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_BAOTHAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOTTHAY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MAVT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="TENVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="TB_THAYDHN_TB_VATUTHAY_DHN" Member="TB_THAYDHN" ThisKey="ID_BAOTHAY" OtherKey="ID_BAOTHAY" Type="TB_THAYDHN" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.W_BAOCAO_CODE" Member="W_BAOCAO_CODEs">
     <Type Name="W_BAOCAO_CODE">
       <Column Name="TODS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -597,61 +567,6 @@
       <Column Name="NGAYCHUYEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TB_THAYDHN" Member="TB_THAYDHNs">
-    <Type Name="TB_THAYDHN">
-      <Column Name="ID_BAOTHAY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DHN_LANTHAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DHN_LOAIBANGKE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_SOBANGKE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DHN_STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DHN_DANHBO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_NGAYBAOTHAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DHN_DOT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_TODS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_NGAYGAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DHN_CHITHAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_CHIGOC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_HIEUDHN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_CODH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_CAP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_SOTHAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_CHISO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DHN_LYDOTHAY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_NGAYCHUYEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DHN_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DHN_CREATEBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DHN_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DHN_MODIFYBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_CHISOGO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HCT_SOTHANGO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_HIEUDHNGAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_CODHNGAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_CAP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_SOTHANGAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_CHISOGAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HCT_LOAIDHGAN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="HCT_NGAYGAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="HCT_NGAYKIEMDINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="HCT_CHITHAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_CHIGOC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_TRONGAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="HCT_LYDOTRONGAI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="HCT_CREATEBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HCT_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="HCT_MODIFYBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="XLT_XULY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="XLT_CHUYENXL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="XLT_NGAYCHUYEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="XLT_KETQUA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="XLT_NGAYCAPNHAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="XLT_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="XLT_CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="XLT_TRAKQ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="TB_THAYDHN_TB_VATUTHAY_DHN" Member="TB_VATUTHAY_DHNs" ThisKey="ID_BAOTHAY" OtherKey="ID_BAOTHAY" Type="TB_VATUTHAY_DHN" />
     </Type>
   </Table>
   <Table Name="dbo.TB_GANMOI" Member="TB_GANMOIs">
@@ -1225,6 +1140,123 @@
       <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_VATUTHAY_DONGIA" Member="TB_VATUTHAY_DONGIAs">
+    <Type Name="TB_VATUTHAY_DONGIA">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAVT" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DGVATLIEU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DGNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NGAYHIEULUC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CHON" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_VATUTHAY_DONGIA_H" Member="TB_VATUTHAY_DONGIA_Hs">
+    <Type Name="TB_VATUTHAY_DONGIA_H">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAVT" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DGVATLIEU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DGNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NGAYHIEULUC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CHON" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_VATUTHAY_DHN" Member="TB_VATUTHAY_DHNs">
+    <Type Name="TB_VATUTHAY_DHN">
+      <Column Name="ID_BC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_BAOTHAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOTTHAY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAVT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SOLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="TB_THAYDHN_TB_VATUTHAY_DHN" Member="TB_THAYDHN" ThisKey="ID_BAOTHAY" OtherKey="ID_BAOTHAY" Type="TB_THAYDHN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_VATUTHAY" Member="TB_VATUTHAYs">
+    <Type Name="TB_VATUTHAY">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MAVT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="STT_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_THAYDHN" Member="TB_THAYDHNs">
+    <Type Name="TB_THAYDHN">
+      <Column Name="ID_BAOTHAY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DHN_LANTHAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DHN_LOAIBANGKE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_SOBANGKE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DHN_STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DHN_DANHBO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_NGAYBAOTHAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_DOT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_TODS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_NGAYGAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_CHITHAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_CHIGOC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_HIEUDHN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_CODH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_CAP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_SOTHAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_CHISO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DHN_LYDOTHAY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_NGAYCHUYEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_CREATEBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_MODIFYBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_CHISOGO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HCT_SOTHANGO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_HIEUDHNGAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_CODHNGAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_CAP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_SOTHANGAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_CHISOGAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HCT_LOAIDHGAN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HCT_NGAYGAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HCT_NGAYKIEMDINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HCT_CHITHAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_CHIGOC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_TRONGAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HCT_LYDOTRONGAI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HCT_CREATEBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HCT_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HCT_MODIFYBY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="XLT_XULY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="XLT_CHUYENXL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="XLT_NGAYCHUYEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="XLT_TRAKQ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="XLT_KETQUA" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="XLT_NGAYCAPNHAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="XLT_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="XLT_CREATEBY" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TENKH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="TB_THAYDHN_TB_VATUTHAY_DHN" Member="TB_VATUTHAY_DHNs" ThisKey="ID_BAOTHAY" OtherKey="ID_BAOTHAY" Type="TB_VATUTHAY_DHN" />
     </Type>
   </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">

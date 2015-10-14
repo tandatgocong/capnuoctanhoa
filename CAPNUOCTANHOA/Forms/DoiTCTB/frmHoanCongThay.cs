@@ -25,7 +25,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         public frmHoanCongThay()
         {
             InitializeComponent();
-            dataVatTuThay.DataSource = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay();
+           
             DataTable table = DAL.LinQConnection.getDataTable("SELECT TENDONGHO FROM TB_HIEUDONGHO");
             foreach (var item in table.Rows)
             {
@@ -104,16 +104,39 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         {
             try
             {
+                rbCoNho.Checked = false;
+                rpCoLon.Checked = false;
+
                 string ID_BAOTHAY = dataBangKe.Rows[i].Cells["ID_BAOTHAY"].Value + "";
+                string HCT_CODHNGAN_ = dataBangKe.Rows[i].Cells["HCT_CODHNGAN"].Value + "";
+                int flg=0;
+                try
+                {
+                    flg = int.Parse(HCT_CODHNGAN_);
+                }
+                catch (Exception)
+                {
+                }
                 lbResult.Text = "ID:" + ID_BAOTHAY;
 
                 try
                 {
                     DataTable table = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay_DATHAY(int.Parse(ID_BAOTHAY));
                     if (table.Rows.Count > 0)
+                    {
+                        
                         dataVatTuThay.DataSource = table;
+
+                    }
+
                     else
-                        dataVatTuThay.DataSource = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay();
+                    {
+                        if (rbCoNho.Checked)
+                            dataVatTuThay.DataSource = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay("25");
+                        else
+                            dataVatTuThay.DataSource = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay("50");
+                    }
+                        
                 }
                 catch (Exception ex)
                 {
@@ -327,18 +350,30 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                 string DVT = dataVatTuThay.Rows[i].Cells["DVT"].Value + ""; ;
                                 string SOLUONG = dataVatTuThay.Rows[i].Cells["SL"].Value + ""; ;
                                 string GHICHU = dataVatTuThay.Rows[i].Cells["GHICHU"].Value + ""; ;
-                                TB_VATUTHAY_DHN vtthay = new TB_VATUTHAY_DHN();
-                                vtthay.ID_BAOTHAY = id_bt;
-                                vtthay.DOTTHAY = txtSoBangKe.Text;
-                                vtthay.STT = int.Parse(STT);
-                                vtthay.MAVT = MAVT;
-                                vtthay.TENVT = TENVT;
-                                vtthay.DVT = DVT;
-                                vtthay.SOLUONG = int.Parse(SOLUONG.Trim()); ;
-                                vtthay.GHICHU = GHICHU;
-                                vtthay.CREATEBY = DAL.SYS.C_USERS._userName;
-                                vtthay.CREATEDATE = DateTime.Now;
-                                DAL.DoiTCTB.C_HoanCongThay.InsertVatTuThay(vtthay);
+
+                                double sl = 0;
+                                try
+                                {
+                                    sl = double.Parse(SOLUONG.Trim());
+                                }
+                                catch (Exception)
+                                {
+                                }
+                                if (sl != 0)
+                                {
+                                    TB_VATUTHAY_DHN vtthay = new TB_VATUTHAY_DHN();
+                                    vtthay.ID_BAOTHAY = id_bt;
+                                    vtthay.DOTTHAY = txtSoBangKe.Text;
+                                    vtthay.STT = int.Parse(STT);
+                                    vtthay.MAVT = MAVT;
+                                    vtthay.TENVT = TENVT;
+                                    vtthay.DVT = DVT;
+                                    vtthay.SOLUONG = sl;
+                                    vtthay.GHICHU = GHICHU;
+                                    vtthay.CREATEBY = DAL.SYS.C_USERS._userName;
+                                    vtthay.CREATEDATE = DateTime.Now;
+                                    DAL.DoiTCTB.C_HoanCongThay.InsertVatTuThay(vtthay);
+                                }
                             }
                             //
                         }
@@ -678,6 +713,83 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         {
             frmMaChi opt = new frmMaChi();
             opt.ShowDialog();
+        }
+
+        void getVatTu()
+        {
+            DataTable table = new DataTable("VATTUTHAY");
+            table.Columns.Add("STT", typeof(string));
+            table.Columns.Add("MAVT", typeof(string));
+            table.Columns.Add("TENVT", typeof(string));
+            table.Columns.Add("DVT", typeof(string));
+            table.Columns.Add("SL", typeof(double));
+            table.Columns.Add("GHICHU", typeof(string));
+         
+            DataTable t1 = null;
+            if (rbCoNho.Checked)
+                t1 = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay("25");
+            else
+                t1 = DAL.DoiTCTB.C_HoanCongThay.getVatTuThay("50");
+
+
+            DataRow myDataRow = table.NewRow();
+            myDataRow["STT"] ="1";
+            myDataRow["MAVT"] = "TLK" + txtGoGan.Text.Replace(" ", "") + txtHieuDHGan.Text.Replace(" ", "").Substring(0,3);
+            myDataRow["TENVT"] = "TLK " + txtHieuDHGan.Text.Replace(" ", "") + " " + txtGoGan.Text.Replace(" ", "") + " LY";
+            myDataRow["DVT"] = "Cái";
+            myDataRow["SL"] = "1";
+            myDataRow["GHICHU"] = "";  
+            table.Rows.Add(myDataRow);
+
+            myDataRow = table.NewRow();
+            myDataRow["STT"] = "2";
+            myDataRow["MAVT"] = "DDONG";
+            myDataRow["TENVT"] = "DÂY ĐỒNG  ";
+            myDataRow["DVT"] = "m";
+            myDataRow["SL"] = "0.6";
+            myDataRow["GHICHU"] = "";
+            table.Rows.Add(myDataRow);
+
+            myDataRow = table.NewRow();
+            myDataRow["STT"] = "3";
+            myDataRow["MAVT"] = "CVIEN";
+            myDataRow["TENVT"] = "CHÌ VIÊN  ";
+            myDataRow["DVT"] = "Viên";
+            myDataRow["SL"] = "1";
+            myDataRow["GHICHU"] = "";
+            table.Rows.Add(myDataRow);
+
+            myDataRow = table.NewRow();
+            myDataRow["STT"] = "4";
+            myDataRow["MAVT"] = "BKLUA";
+            myDataRow["TENVT"] = "BĂNG KEO LỤA ";
+            myDataRow["DVT"] = "Cuồn";
+            myDataRow["SL"] = "0.33";
+            myDataRow["GHICHU"] = "";
+            table.Rows.Add(myDataRow);
+
+            for (int i = 0; i < t1.Rows.Count; i++)
+            {
+                myDataRow = table.NewRow();
+                myDataRow["STT"] = i+5;
+                myDataRow["MAVT"] = t1.Rows[i]["MAVT"].ToString();
+                myDataRow["TENVT"] = t1.Rows[i]["TENVT"].ToString();
+                myDataRow["DVT"] = t1.Rows[i]["DVT"].ToString();
+                myDataRow["SL"] = t1.Rows[i]["SL"].ToString();
+                myDataRow["GHICHU"] = "";
+                table.Rows.Add(myDataRow);
+            }
+
+            dataVatTuThay.DataSource = table;
+        }
+        private void rbCoNho_CheckedChanged(object sender, EventArgs e)
+        {
+            getVatTu();
+        }
+
+        private void rpCoLon_CheckedChanged(object sender, EventArgs e)
+        {
+            getVatTu();
         }
     }
 }

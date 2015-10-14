@@ -46,10 +46,10 @@ namespace CAPNUOCTANHOA.DAL.DoiTCTB
             return ds;
         }
 
-        public static DataTable getVatTuThay()
+        public static DataTable getVatTuThay(string codh)
         {
-            string sql = "SELECT STT,MAVT,TENVT,DVT, SL='0', GHICHU=''";
-            sql += " FROM TB_VATUTHAY ORDER BY STT ASC ";
+            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY STT  DESC) [STT] ,MAVT,TENVT,DVT, SL='0', GHICHU='' ";
+            sql += " FROM TB_VATUTHAY WHERE CREATEBY='"+codh+"' ORDER BY STT ASC ";
             return LinQConnection.getDataTable(sql);
 
         }
