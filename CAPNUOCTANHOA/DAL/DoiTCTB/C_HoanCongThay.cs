@@ -21,6 +21,14 @@ namespace CAPNUOCTANHOA.DAL.DoiTCTB
             sql += " FROM TB_THAYDHN thay,TB_DULIEUKHACHHANG kh WHERE kh.DANHBO=thay.DHN_DANHBO AND (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) = '" + sobangke + "' ORDER BY kh.LOTRINH ASC ";
             return LinQConnection.getDataTable(sql);
         }
+
+        public static DataTable getBangKeBaoThayTHU(string sobangke)
+        {
+            string sql = "SELECT ID_BAOTHAY,DHN_LOAIBANGKE,DHN_SOBANGKE, DHN_DANHBO,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_NGAYBAOTHAY,DHN_NGAYGAN,DHN_CHITHAN,DHN_CHIGOC,DHN_HIEUDHN,DHN_CODH,DHN_SOTHAN,DHN_CHISO,DHN_LYDOTHAY ";
+            sql += " ,HCT_CAP , HCT_CHISOGO, HCT_SOTHANGO, HCT_HIEUDHNGAN, HCT_CODHNGAN, HCT_SOTHANGAN, HCT_CHISOGAN, HCT_LOAIDHGAN, HCT_NGAYGAN, HCT_CHITHAN, HCT_CHIGOC, HCT_TRONGAI, HCT_LYDOTRONGAI,HCT_NGAYKIEMDINH  ";
+            sql += " FROM TB_THAYDHN thay,TB_DULIEUKHACHHANG kh WHERE kh.DANHBO=thay.DHN_DANHBO AND thay.DHN_TODS = '" + sobangke + "' ORDER BY kh.LOTRINH ASC ";
+            return LinQConnection.getDataTable(sql);
+        }
         public static DataTable getBangKeBaoThayDMA(string sobangke)
         {
             string sql = "SELECT ID_BAOTHAY,DHN_LOAIBANGKE,DHN_SOBANGKE, DHN_DANHBO,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',DHN_NGAYBAOTHAY,DHN_NGAYGAN,DHN_CHITHAN,DHN_CHIGOC,DHN_HIEUDHN,DHN_CODH,DHN_SOTHAN,DHN_CHISO,DHN_LYDOTHAY ";
@@ -49,7 +57,7 @@ namespace CAPNUOCTANHOA.DAL.DoiTCTB
         public static DataTable getVatTuThay(string codh)
         {
             string sql = "SELECT ROW_NUMBER() OVER (ORDER BY STT  DESC) [STT] ,MAVT,TENVT,DVT, SL='0', GHICHU='' ";
-            sql += " FROM TB_VATUTHAY WHERE CREATEBY='"+codh+"' ORDER BY STT ASC ";
+            sql += " FROM TB_VATUTHAY WHERE CREATEBY='"+codh+"' ORDER BY STT_ ASC ";
             return LinQConnection.getDataTable(sql);
 
         }

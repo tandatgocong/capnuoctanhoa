@@ -1256,6 +1256,7 @@
       <Column Name="XLT_CREATEBY" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="TENKH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="T_LOTRINH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="TB_THAYDHN_TB_VATUTHAY_DHN" Member="TB_VATUTHAY_DHNs" ThisKey="ID_BAOTHAY" OtherKey="ID_BAOTHAY" Type="TB_VATUTHAY_DHN" />
     </Type>
   </Table>

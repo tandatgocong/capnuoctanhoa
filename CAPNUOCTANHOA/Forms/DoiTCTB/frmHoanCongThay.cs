@@ -528,14 +528,25 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 }
                 else
                 {
-                    List<TB_DULIEUKHACHHANG> cothantrung = DAL.DULIEUKH.C_DuLieuKhachHang.getSoThanDHN(this.txtSoThanGan.Text.Replace(" ", ""), this.txtHieuDHGan.Text.Substring(0,3));
-                    if (cothantrung.Count > 0)
+                    if (!rbCoNho.Checked || !rpCoLon.Checked)
                     {
-                        if (cothantrung.Count == 1)
+                        MessageBox.Show(this, "Chưa Chọn Vật Tư Thay ĐHN !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        List<TB_DULIEUKHACHHANG> cothantrung = DAL.DULIEUKH.C_DuLieuKhachHang.getSoThanDHN(this.txtSoThanGan.Text.Replace(" ", ""), this.txtHieuDHGan.Text.Substring(0, 3));
+                        if (cothantrung.Count > 0)
                         {
-                            if (this.txtSoDanhBo.Text.Replace("-", "").Equals(cothantrung[0].DANHBO))
+                            if (cothantrung.Count == 1)
                             {
-                                CapNhatCS(thaydh);
+                                if (this.txtSoDanhBo.Text.Replace("-", "").Equals(cothantrung[0].DANHBO))
+                                {
+                                    CapNhatCS(thaydh);
+                                }
+                                else
+                                {
+                                    ChoCapNhat(cothantrung, thaydh);
+                                }
                             }
                             else
                             {
@@ -544,13 +555,11 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         }
                         else
                         {
-                            ChoCapNhat(cothantrung, thaydh);
+                            CapNhatCS(thaydh);
                         }
+
                     }
-                    else
-                    {
-                        CapNhatCS(thaydh);
-                    }
+
                 }
                 //string mess = "Cập Nhật Báo Thay Cho Danh Bộ  " + Utilities.FormatSoHoSoDanhBo.sodanhbo(thaydh.DHN_DANHBO, "-") + " ?";
 
@@ -764,7 +773,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             myDataRow["MAVT"] = "BKLUA";
             myDataRow["TENVT"] = "BĂNG KEO LỤA ";
             myDataRow["DVT"] = "Cuồn";
-            myDataRow["SL"] = "0.33";
+            myDataRow["SL"] = "0.34";
             myDataRow["GHICHU"] = "";
             table.Rows.Add(myDataRow);
 

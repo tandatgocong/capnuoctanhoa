@@ -25136,6 +25136,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private string _DIACHI;
 		
+		private string _T_LOTRINH;
+		
 		private EntitySet<TB_VATUTHAY_DHN> _TB_VATUTHAY_DHNs;
 		
     #region Extensibility Method Definitions
@@ -25246,6 +25248,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnTENKHChanged();
     partial void OnDIACHIChanging(string value);
     partial void OnDIACHIChanged();
+    partial void OnT_LOTRINHChanging(string value);
+    partial void OnT_LOTRINHChanged();
     #endregion
 		
 		public TB_THAYDHN()
@@ -26290,6 +26294,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._DIACHI = value;
 					this.SendPropertyChanged("DIACHI");
 					this.OnDIACHIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_LOTRINH", DbType="NVarChar(50)")]
+		public string T_LOTRINH
+		{
+			get
+			{
+				return this._T_LOTRINH;
+			}
+			set
+			{
+				if ((this._T_LOTRINH != value))
+				{
+					this.OnT_LOTRINHChanging(value);
+					this.SendPropertyChanging();
+					this._T_LOTRINH = value;
+					this.SendPropertyChanged("T_LOTRINH");
+					this.OnT_LOTRINHChanged();
 				}
 			}
 		}

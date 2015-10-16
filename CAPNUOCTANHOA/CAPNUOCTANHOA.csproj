@@ -101,6 +101,7 @@
     <Compile Include="DAL\BANKTKS\C_GiamHoaDon.cs" />
     <Compile Include="DAL\BANKTKS\C_TheoDoiDM.cs" />
     <Compile Include="DAL\DoiTCTB\C_DonGiaVatTu.cs" />
+    <Compile Include="DAL\DoiTCTB\Export.cs" />
     <Compile Include="DAL\LinQConnectionKT.cs" />
     <Compile Include="DAL\Lib.cs" />
     <Compile Include="DAL\LinQConnectionDS.cs" />
@@ -370,6 +371,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>THONGKEVATTU.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoiTCTB\frmHoanCongThayThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DoiTCTB\frmHoanCongThayThu.Designer.cs">
+      <DependentUpon>frmHoanCongThayThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DoiTCTB\frmTongHopBCThay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -382,11 +389,11 @@
     <Compile Include="Forms\DoiTCTB\frmVatTuThay.Designer.cs">
       <DependentUpon>frmVatTuThay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DoiTCTB\frmHoanCongThayThu.cs">
+    <Compile Include="Forms\DoiTCTB\frmHoanCongThayThu__.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\DoiTCTB\frmHoanCongThayThu.Designer.cs">
-      <DependentUpon>frmHoanCongThayThu.cs</DependentUpon>
+    <Compile Include="Forms\DoiTCTB\frmHoanCongThayThu__.Designer.cs">
+      <DependentUpon>frmHoanCongThayThu__.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DoiTCTB\frmHoanCongThay.cs">
       <SubType>UserControl</SubType>
@@ -1782,14 +1789,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeVTThay.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThayThu.resx">
+      <DependentUpon>frmHoanCongThayThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\frmTongHopBCThay.resx">
       <DependentUpon>frmTongHopBCThay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\frmVatTuThay.resx">
       <DependentUpon>frmVatTuThay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThayThu.resx">
-      <DependentUpon>frmHoanCongThayThu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThayThu__.resx">
+      <DependentUpon>frmHoanCongThayThu__.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoiTCTB\frmHoanCongThay.resx">
       <DependentUpon>frmHoanCongThay.cs</DependentUpon>

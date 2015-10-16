@@ -39,9 +39,9 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             try
             {
                 mahieuvt = dataVatTuThay.Rows[e.RowIndex].Cells["MAVT"].Value.ToString();
-                string sql = "SELECT STT,MAVT, DGVATLIEU,DGNHANCONG,DGMAYTHICONG,NGAYHIEULUC= CONVERT(VARCHAR(10),NGAYHIEULUC,103),CHON";
+                string sql = "SELECT STT,MAVT, DGVATLIEU,DGNHANCONG,NGAYHIEULUC= CONVERT(VARCHAR(10),NGAYHIEULUC,103),CHON";
                 sql += " FROM TB_VATUTHAY_DONGIA_H ";
-                sql += " WHERE MAHIEUDG ='" + mahieuvt + "'";
+                sql += " WHERE MAVT ='" + mahieuvt + "'";
                 sql += " ORDER BY STT ASC ";
                 this.GridDonGiaVT.DataSource = DAL.LinQConnection.getDataTable(sql);
                 //    Utilities.DataGridV.formatRows(GridDonGiaVT);
@@ -69,8 +69,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             {
                 for (int i = 0; i < GridDonGiaVT.Rows.Count - 1; i++)
                 {
-                    int stt = int.Parse(GridDonGiaVT.Rows[i].Cells[0].Value + "");
-                    string mahieudg = GridDonGiaVT.Rows[i].Cells[1].Value + "";
+                    int stt = 1;
+                    string mahieudg = GridDonGiaVT.Rows[i].Cells["MAHIEUDG"].Value + "";
                     string check = GridDonGiaVT.Rows[i].Cells[6].Value + "";
                     TB_VATUTHAY_DONGIA_H dgvt = DAL.DoiTCTB.C_DonGiaVatTu.finbyDonGiaVT(stt, mahieudg);
                     if (dgvt != null)
@@ -154,8 +154,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         {
             GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[5].Value = Utilities.DateToString.NgayVN(DateTime.Now);
             GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[0].Value = GridDonGiaVT.CurrentRow.Index + 1;
-            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[3].Value = 0;
-            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[1].Value = mahieuvt;
+            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells["dg_nhanCong"].Value = 0;
+            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells["MAHIEUDG"].Value = mahieuvt;
 
         }
 
@@ -194,6 +194,11 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             
             }
             
+        }
+
+        private void GridDonGiaVT_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+
         }
     }
 }

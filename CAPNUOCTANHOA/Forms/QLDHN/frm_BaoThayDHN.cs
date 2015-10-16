@@ -297,6 +297,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             thaydh.DHN_CREATEDATE = DateTime.Now.Date;
             thaydh.TENKH = this.txtTenKH.Text;
             thaydh.DIACHI = this.txtDiaChi.Text;
+            thaydh.T_LOTRINH = this.txtMaLoTrinh.Text;
             
             DAL.QLDHN.C_BaoThay.Insert(thaydh);
             DAL.DULIEUKH.C_DuLieuKhachHang.UpdateBaoThay(this.txtSoDanhBo.Text.Replace("-", ""), "True");

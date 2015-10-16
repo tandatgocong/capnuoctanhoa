@@ -556,6 +556,15 @@ namespace CAPNUOCTANHOA
             PanelContent.Controls.Add(baothay);
         }
 
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frmHoanCongThayThu baothay = new frmHoanCongThayThu();
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
+            PanelContent.Controls.Add(baothay);
+        }
+
       
 
        
