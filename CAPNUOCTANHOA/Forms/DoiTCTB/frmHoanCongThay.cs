@@ -528,7 +528,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 }
                 else
                 {
-                    if (!rbCoNho.Checked || !rpCoLon.Checked)
+                    if (!rbCoNho.Checked && !rpCoLon.Checked)
                     {
                         MessageBox.Show(this, "Chưa Chọn Vật Tư Thay ĐHN !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

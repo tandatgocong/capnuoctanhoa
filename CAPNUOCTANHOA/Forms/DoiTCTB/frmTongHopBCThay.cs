@@ -37,7 +37,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             sqlIN += "'TP02-" + txtTP02.Text.Replace(",", "','TP02-") + "',";
             sqlIN += "'" + txtThayThu.Text.Replace(",", "','") + "'";
 
-            string sql = " SELECT  vt.MAVT,dg.TENVT,vt.DVT,dg.DGVATLIEU,dg.DGNHANCONG,ROUND(SUM(SOLUONG),2) AS SOLUONG, ";
+            string sql = " SELECT  vt.MAVT,dg.TENVT,vt.DVT,dg.DGVATLIEU,dg.DGNHANCONG,ROUND(SUM(SOLUONG),0) AS SOLUONG, ";
             sql += " CASE WHEN vt.MAVT ='CVIEN' THEN ROUND((SUM(SOLUONG)/200)* dg.DGVATLIEU,2)  WHEN vt.MAVT ='DDONG' THEN ROUND((SUM(SOLUONG)/340)*dg.DGVATLIEU,2) ELSE  ROUND(SUM(SOLUONG)*dg.DGVATLIEU,2) END AS VATLIEU, ";
             sql += " SUM(SOLUONG)*dg.DGNHANCONG AS NHANCONG ";
             sql += " FROM TB_VATUTHAY_DHN vt , TB_VATUTHAY_DONGIA dg ";
