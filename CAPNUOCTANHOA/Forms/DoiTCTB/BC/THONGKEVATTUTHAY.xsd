@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="HOANCONGNHANH" targetNamespace="http://tempuri.org/HOANCONGNHANH.xsd" xmlns:mstns="http://tempuri.org/HOANCONGNHANH.xsd" xmlns="http://tempuri.org/HOANCONGNHANH.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="THONGKEVATTUTHAY" targetNamespace="http://tempuri.org/THONGKEVATTUTHAY.xsd" xmlns:mstns="http://tempuri.org/THONGKEVATTUTHAY.xsd" xmlns="http://tempuri.org/THONGKEVATTUTHAY.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -7,26 +7,6 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CAPNUOCTANHOAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CAPNUOCTANHOAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CAPNUOCTANHOA.Properties.Settings.GlobalReference.Default.CAPNUOCTANHOAConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_TCTB_HOANCONGNHANHTableAdapter" GeneratorDataComponentClassName="V_TCTB_HOANCONGNHANHTableAdapter" Name="V_TCTB_HOANCONGNHANH" UserDataComponentName="V_TCTB_HOANCONGNHANHTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString (Settings)" DbObjectName="CAPNUOCTANHOA.dbo.V_TCTB_HOANCONGNHANH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT HCT_NGAYGAN, DHN_LOAIBANGKE, TENBK, HOANTAT, TRONGAI FROM dbo.V_TCTB_HOANCONGNHANH</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="HCT_NGAYGAN" DataSetColumn="HCT_NGAYGAN" />
-              <Mapping SourceColumn="DHN_LOAIBANGKE" DataSetColumn="DHN_LOAIBANGKE" />
-              <Mapping SourceColumn="TENBK" DataSetColumn="TENBK" />
-              <Mapping SourceColumn="HOANTAT" DataSetColumn="HOANTAT" />
-              <Mapping SourceColumn="TRONGAI" DataSetColumn="TRONGAI" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TB_DHN_BAOCAOTableAdapter" GeneratorDataComponentClassName="TB_DHN_BAOCAOTableAdapter" Name="TB_DHN_BAOCAO" UserDataComponentName="TB_DHN_BAOCAOTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="CAPNUOCTANHOAConnectionString (Settings)" DbObjectName="CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -130,33 +110,9 @@ SELECT ID_BC, CVPGKD, TENPGKD, CVDQLDH, TENQLDHN, CVPGDKT, TENPGDKT, CVKIEMTRA, 
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="HOANCONGNHANH" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HOANCONGNHANH" msprop:Generator_UserDSName="HOANCONGNHANH">
+  <xs:element name="THONGKEVATTUTHAY" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="THONGKEVATTUTHAY" msprop:Generator_UserDSName="THONGKEVATTUTHAY">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_TCTB_HOANCONGNHANH" msprop:Generator_TableClassName="V_TCTB_HOANCONGNHANHDataTable" msprop:Generator_TableVarName="tableV_TCTB_HOANCONGNHANH" msprop:Generator_RowChangedName="V_TCTB_HOANCONGNHANHRowChanged" msprop:Generator_TablePropName="V_TCTB_HOANCONGNHANH" msprop:Generator_RowDeletingName="V_TCTB_HOANCONGNHANHRowDeleting" msprop:Generator_RowChangingName="V_TCTB_HOANCONGNHANHRowChanging" msprop:Generator_RowEvHandlerName="V_TCTB_HOANCONGNHANHRowChangeEventHandler" msprop:Generator_RowDeletedName="V_TCTB_HOANCONGNHANHRowDeleted" msprop:Generator_RowClassName="V_TCTB_HOANCONGNHANHRow" msprop:Generator_UserTableName="V_TCTB_HOANCONGNHANH" msprop:Generator_RowEvArgName="V_TCTB_HOANCONGNHANHRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="HCT_NGAYGAN" msprop:Generator_ColumnVarNameInTable="columnHCT_NGAYGAN" msprop:Generator_ColumnPropNameInRow="HCT_NGAYGAN" msprop:Generator_ColumnPropNameInTable="HCT_NGAYGANColumn" msprop:Generator_UserColumnName="HCT_NGAYGAN" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="DHN_LOAIBANGKE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDHN_LOAIBANGKE" msprop:Generator_ColumnPropNameInRow="DHN_LOAIBANGKE" msprop:Generator_ColumnPropNameInTable="DHN_LOAIBANGKEColumn" msprop:Generator_UserColumnName="DHN_LOAIBANGKE" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="7" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TENBK" msprop:Generator_ColumnVarNameInTable="columnTENBK" msprop:Generator_ColumnPropNameInRow="TENBK" msprop:Generator_ColumnPropNameInTable="TENBKColumn" msprop:Generator_UserColumnName="TENBK" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="HOANTAT" msprop:Generator_ColumnVarNameInTable="columnHOANTAT" msprop:Generator_ColumnPropNameInRow="HOANTAT" msprop:Generator_ColumnPropNameInTable="HOANTATColumn" msprop:Generator_UserColumnName="HOANTAT" type="xs:int" minOccurs="0" />
-              <xs:element name="TRONGAI" msprop:Generator_ColumnVarNameInTable="columnTRONGAI" msprop:Generator_ColumnPropNameInRow="TRONGAI" msprop:Generator_ColumnPropNameInTable="TRONGAIColumn" msprop:Generator_UserColumnName="TRONGAI" type="xs:int" minOccurs="0" />
-              <xs:element name="NGUOIDUYET" msprop:Generator_ColumnVarNameInTable="columnNGUOIDUYET" msprop:Generator_ColumnPropNameInRow="NGUOIDUYET" msprop:Generator_ColumnPropNameInTable="NGUOIDUYETColumn" msprop:Generator_UserColumnName="NGUOIDUYET" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="TB_DHN_BAOCAO" msprop:Generator_TableClassName="TB_DHN_BAOCAODataTable" msprop:Generator_TableVarName="tableTB_DHN_BAOCAO" msprop:Generator_TablePropName="TB_DHN_BAOCAO" msprop:Generator_RowDeletingName="TB_DHN_BAOCAORowDeleting" msprop:Generator_RowChangingName="TB_DHN_BAOCAORowChanging" msprop:Generator_RowEvHandlerName="TB_DHN_BAOCAORowChangeEventHandler" msprop:Generator_RowDeletedName="TB_DHN_BAOCAORowDeleted" msprop:Generator_UserTableName="TB_DHN_BAOCAO" msprop:Generator_RowChangedName="TB_DHN_BAOCAORowChanged" msprop:Generator_RowEvArgName="TB_DHN_BAOCAORowChangeEvent" msprop:Generator_RowClassName="TB_DHN_BAOCAORow">
           <xs:complexType>
             <xs:sequence>

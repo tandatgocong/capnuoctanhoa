@@ -67,22 +67,30 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
 
-        
+
         private void btCapNhatThongTin_Click(object sender, EventArgs e)
         {
-           
+            //
+
+
             // Thonng Ke
             string ky = cbKyDS.Items[cbKyDS.SelectedIndex].ToString();
             string nam = this.txtNam.Text;
             string madma = cbMaDMA.SelectedValue.ToString();
-            
+
+            // UPDATE 
+            string sql1 = " UPDATE HOADON SET Quan=DLKH.QUAN ,Phuong=DLKH.PHUONG ,CoDH=DLKH.CODH  ,MaDMA=DLKH.MADMA FROM DLKH WHERE HOADON.DANHBA= DLKH.DANHBO AND HOADON.MaDMA<>DLKH.MADMA and HOADON.KY=" + ky + " and HOADON.NAM=" + nam;
+            DAL.LinQConnectionHD.ExecuteCommand_(sql1);
+            string sql2 = "UPDATE HOADON SET Quan=DLKH_HUY.QUAN  ,Phuong=DLKH_HUY.PHUONG ,CoDH=DLKH_HUY.CODH ,MaDMA=DLKH_HUY.MADMA FROM DLKH_HUY WHERE HOADON.DANHBA= DLKH_HUY.DANHBO AND HOADON.MaDMA<>DLKH_HUY.MADMA  and HOADON.KY=" + ky + " and HOADON.NAM=" + nam;
+            DAL.LinQConnectionHD.ExecuteCommand_(sql2);
+
             Load_(ky, nam, madma);
-            dataGridView3.DataSource = DAL.GNKDT.C_GNKDT.getDHN(madma,ky, nam);
+            dataGridView3.DataSource = DAL.GNKDT.C_GNKDT.getDHN(madma, ky, nam);
             try
             {
                 lbTongDHN.Text = dataBangKe.Rows.Count + "";
                 lbTongGanMoi.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG kh WHERE kh.NAM=" + nam + " AND kh.KY_=" + ky + " AND MADMA='" + madma + "'  ") + "";
-                lbTongHuy.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG_HUYDB kh WHERE HIEULUCHUY='" + ky +"/" + nam + "' AND  MADMA='" + madma + "'  ") + "";
+                lbTongHuy.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG_HUYDB kh WHERE HIEULUCHUY='" + ky + "/" + nam + "' AND  MADMA='" + madma + "'  ") + "";
                 lbTongThay.Text = tableThay == null ? "0" : tableThay.Rows.Count + "";
                 lbSanLuong.Text = (dataBangKe.DataSource as DataTable).Compute("Sum(LNCC)", "") + "";
             }

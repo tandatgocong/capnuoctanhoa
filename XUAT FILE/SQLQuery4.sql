@@ -62,9 +62,14 @@ ORDER BY  kh.LOTRINH ASC
 
 ------- lay so lieu 
 
-SELECT SUBSTRING(LOTRINH,1,2) as 'DOT',kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG,kh.HIEUDH, kh.CODH,SOTHANDH, YEAR(kh.NGAYTHAY) AS 'NAM' , VITRIDHN,CONVERT(VARCHAR(50),NGAYKIEMDINH,103)
+SELECT CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15') 
+                      THEN 'TB01' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30') 
+                      THEN 'TB02' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50') 
+                      THEN 'TP01' ELSE 'TP02' END END END AS TODS,                      
+ SUBSTRING(LOTRINH,1,2) as 'DOT',kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG,kh.HIEUDH,
+  kh.CODH,SOTHANDH, MONTH(kh.NGAYTHAY) AS 'THANG', YEAR(kh.NGAYTHAY) AS 'NAM' , VITRIDHN,CONVERT(VARCHAR(50),NGAYKIEMDINH,103)
 FROM  TB_DULIEUKHACHHANG kh
-WHERE  MADMA=''
+WHERE  YEAR(kh.ngaythay)<=2012
 order by kh.LOTRINH asc
 
 -----------------------------------------------------

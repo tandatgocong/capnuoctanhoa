@@ -707,6 +707,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     update += " HCT_LOAIDHGAN=NULL,HCT_NGAYGAN=NULL,HCT_CHITHAN=NULL,HCT_CHIGOC=NULL,HCT_TRONGAI=NULL,HCT_LYDOTRONGAI=NULL,HCT_CREATEDATE=NULL,";
                     update += " HCT_CREATEBY=NULL,HCT_MODIFYDATE=NULL,HCT_MODIFYBY=NULL WHERE ID_BAOTHAY=" + ID_BAOTHAY;
                     DAL.LinQConnection.ExecuteCommand_(update);
+                    DAL.LinQConnection.ExecuteCommand("DELETE FROM TB_VATUTHAY_DHN WHERE ID_BAOTHAY='" + ID_BAOTHAY + "'  ");
                     MessageBox.Show(this, "Hủy Hoàn Công Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
                 }

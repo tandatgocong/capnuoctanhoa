@@ -13,6 +13,7 @@ using CAPNUOCTANHOA.Forms.DoiTCTB.BC;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace CAPNUOCTANHOA.Forms.DoiTCTB
 {
@@ -26,7 +27,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             comboBox1.SelectedIndex = 0;
 
         }
-
+        string sql_VATTU = "";
         private void btCapNhat_Click(object sender, EventArgs e)
         {
             flag = 1;
@@ -37,13 +38,15 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             sqlIN += "'TP02-" + txtTP02.Text.Replace(",", "','TP02-") + "',";
             sqlIN += "'" + txtThayThu.Text.Replace(",", "','") + "'";
 
-            string sql = " SELECT  vt.MAVT,dg.TENVT,vt.DVT,dg.DGVATLIEU,dg.DGNHANCONG,ROUND(SUM(SOLUONG),0) AS SOLUONG, ";
+            string sql = " SELECT  vt.MAVT,dg.TENVT,dg.DGVATLIEU,dg.DGNHANCONG,";
+            sql += " CASE WHEN vt.MAVT ='CVIEN' THEN 'Kg'  WHEN vt.MAVT ='DDONG' THEN 'Kg' ELSE vt.DVT END AS DVT, ";
+            sql += " CASE WHEN vt.MAVT ='CVIEN' THEN ROUND((SUM(SOLUONG)/200),2)  WHEN vt.MAVT ='DDONG' THEN ROUND((SUM(SOLUONG)/340),2) ELSE ROUND(SUM(SOLUONG),0) END AS SOLUONG, ";
             sql += " CASE WHEN vt.MAVT ='CVIEN' THEN ROUND((SUM(SOLUONG)/200)* dg.DGVATLIEU,2)  WHEN vt.MAVT ='DDONG' THEN ROUND((SUM(SOLUONG)/340)*dg.DGVATLIEU,2) ELSE  ROUND(SUM(SOLUONG)*dg.DGVATLIEU,2) END AS VATLIEU, ";
             sql += " SUM(SOLUONG)*dg.DGNHANCONG AS NHANCONG ";
             sql += " FROM TB_VATUTHAY_DHN vt , TB_VATUTHAY_DONGIA dg ";
-            sql += " WHERE vt.MAVT=dg.MAVT and DOTTHAY IN (" + sqlIN + ")";
+            sql += " WHERE vt.MAVT=dg.MAVT AND vt.MAVT <> 'NHANCONG' and DOTTHAY IN (" + sqlIN + ")";
             sql += " GROUP BY  vt.MAVT,dg.TENVT,vt.DVT,dg.DGVATLIEU,dg.DGNHANCONG ";
-
+            sql_VATTU = sql;
             dataVatTuThay.DataSource = DAL.LinQConnection.getDataTable(sql);
             Utilities.DataGridV.setSTT(dataVatTuThay, "STT");
 
@@ -150,6 +153,33 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             dataVTNgay.DataSource = DAL.LinQConnection.getDataTable(sqlTkVT);
             Utilities.DataGridV.setSTT(dataVTNgay, "vt_STT");
 
+        }
+
+        private void buttonX3_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_ThongKeVTThay();
+          
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter(sql_VATTU, db.Connection.ConnectionString);
+            adapter.Fill(ds, "W_THONGKEVATTUTHAY");
+
+           string query = "select * FROM TB_DHN_BAOCAO";
+            adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DHN_BAOCAO");
+
+            rp.SetDataSource(ds);
+            rp.SetParameterValue("TB01", txtTB01.Text);
+            rp.SetParameterValue("TB02", txtTB02.Text);
+            rp.SetParameterValue("TP01", txtTP01.Text);
+            rp.SetParameterValue("TP02", txtTP02.Text);
+            rp.SetParameterValue("TT", txtThayThu.Text);
+
+
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
         }
     }
 

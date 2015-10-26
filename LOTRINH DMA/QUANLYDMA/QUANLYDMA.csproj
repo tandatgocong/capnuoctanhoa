@@ -108,6 +108,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\LinQConnectionHD.cs" />
     <Compile Include="DAL\DULIEUKH\C_DieuChinhDanhBo.cs" />
     <Compile Include="DAL\DULIEUKH\C_DuLieuKhachHang.cs" />
     <Compile Include="DAL\DULIEUKH\C_GanMoi.cs" />
