@@ -102,6 +102,7 @@
     <Compile Include="DAL\BANKTKS\C_TheoDoiDM.cs" />
     <Compile Include="DAL\DoiTCTB\C_DonGiaVatTu.cs" />
     <Compile Include="DAL\DoiTCTB\Export.cs" />
+    <Compile Include="DAL\KTCN\C_GIS.cs" />
     <Compile Include="DAL\LinQConnectionKT.cs" />
     <Compile Include="DAL\Lib.cs" />
     <Compile Include="DAL\LinQConnectionDS.cs" />
@@ -202,6 +203,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TheoDoiCamKet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frmPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frmPdf.Designer.cs">
+      <DependentUpon>frmPdf.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BanKTKS\frm_Baocao.cs">
       <SubType>UserControl</SubType>
@@ -1297,6 +1304,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocSo.dbml</DependentUpon>
     </Compile>
+    <Compile Include="LinQ\GIS.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GIS.dbml</DependentUpon>
+    </Compile>
     <Compile Include="LinQ\HoaDon.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1704,6 +1716,9 @@
     <EmbeddedResource Include="Forms\BanKTKS\BC\rpt_DSTheoDoiDM.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DSTheoDoiDM.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\frmPdf.resx">
+      <DependentUpon>frmPdf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frmPhieuChepTieuThu.resx">
       <DependentUpon>frmPhieuChepTieuThu.cs</DependentUpon>
@@ -2219,11 +2234,19 @@
     <None Include="LinQ\DocSo.dbml.layout">
       <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
+    <None Include="LinQ\GIS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GIS.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="LinQ\HoaDon.dbml.layout">
       <DependentUpon>HoaDon.dbml</DependentUpon>
     </None>
     <None Include="LinQ\KTKS.dbml.layout">
       <DependentUpon>KTKS.dbml</DependentUpon>
+    </None>
+    <None Include="LinQ\GIS.dbml.layout">
+      <DependentUpon>GIS.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -2384,6 +2407,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -103,6 +103,9 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataBangKe = new System.Windows.Forms.DataGridView();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.G_STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_TENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,9 +117,7 @@
             this.NGAYTHAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DOTBG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.LoaiDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVatTuThay)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -699,7 +700,8 @@
             this.TONGCONG,
             this.NGAYTHAY,
             this.G_GHICHU,
-            this.DOTBG});
+            this.DOTBG,
+            this.LoaiDH});
             this.dataBangKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataBangKe.Location = new System.Drawing.Point(3, 3);
             this.dataBangKe.Margin = new System.Windows.Forms.Padding(4);
@@ -710,6 +712,42 @@
             this.dataBangKe.RowTemplate.Height = 28;
             this.dataBangKe.Size = new System.Drawing.Size(1126, 628);
             this.dataBangKe.TabIndex = 103;
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX2.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX2.Location = new System.Drawing.Point(821, 29);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(205, 26);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX2.TabIndex = 105;
+            this.buttonX2.Text = "FILE DANH SÁCH THAY";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1031, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 19);
+            this.label7.TabIndex = 106;
+            this.label7.Text = "QUÝ";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "I",
+            "II",
+            "III",
+            "IV"});
+            this.comboBox1.Location = new System.Drawing.Point(1081, 26);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(72, 27);
+            this.comboBox1.TabIndex = 107;
             // 
             // G_STT
             // 
@@ -804,41 +842,11 @@
             this.DOTBG.HeaderText = "ĐỢT";
             this.DOTBG.Name = "DOTBG";
             // 
-            // buttonX2
+            // LoaiDH
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX2.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonX2.Location = new System.Drawing.Point(821, 29);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(205, 26);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX2.TabIndex = 105;
-            this.buttonX2.Text = "FILE DANH SÁCH THAY";
-            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1031, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 19);
-            this.label7.TabIndex = 106;
-            this.label7.Text = "QUÝ";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "I",
-            "II",
-            "III",
-            "IV"});
-            this.comboBox1.Location = new System.Drawing.Point(1081, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(72, 27);
-            this.comboBox1.TabIndex = 107;
+            this.LoaiDH.DataPropertyName = "LoaiDH";
+            this.LoaiDH.HeaderText = "LoaiDH";
+            this.LoaiDH.Name = "LoaiDH";
             // 
             // frmTongHopBCThay
             // 
@@ -903,17 +911,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dataBangKe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G_STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G_TENKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G_DIACHI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G_DANHBO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOTRINH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C_VATTU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C_NHANCONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TONGCONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTHAY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G_GHICHU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DOTBG;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private System.Windows.Forms.DateTimePicker dateTuNgay;
         private System.Windows.Forms.DateTimePicker dateDenNgay;
@@ -937,5 +934,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private DevComponents.DotNetBar.ButtonX buttonX3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_TENKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_DANHBO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOTRINH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C_VATTU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C_NHANCONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TONGCONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTHAY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_GHICHU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DOTBG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiDH;
     }
 }

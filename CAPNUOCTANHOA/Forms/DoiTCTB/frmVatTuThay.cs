@@ -200,5 +200,18 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         {
 
         }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+
+
+            if (MessageBox.Show(this, " Xóa Thông Tin Vật Tư !", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+          {
+              DAL.LinQConnection.ExecuteCommand_("DELETE FROM TB_VATUTHAY_DONGIA_H WHERE MAVT='" + mahieuvt + "'");
+              DAL.LinQConnection.ExecuteCommand_("DELETE FROM TB_VATUTHAY_DONGIA WHERE MAVT='" + mahieuvt + "'");
+              PagLoad();
+          }
+
+        }
     }
 }

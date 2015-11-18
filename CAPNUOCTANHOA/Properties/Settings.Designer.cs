@@ -68,28 +68,6 @@ namespace CAPNUOCTANHOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.90.8\\KD;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=T" +
-            "rue;User ID=sa;Password=123@tanhoa")]
-        public string CAPNUOCTANHOAConnectionString {
-            get {
-                return ((string)(this["CAPNUOCTANHOAConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.90.8\\KD;Initial Catalog=DocSo_PHT;Persist Security Info=True;" +
-            "User ID=sa;Password=123@tanhoa")]
-        public string DocSo_PHTConnectionString {
-            get {
-                return ((string)(this["DocSo_PHTConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.90.9;Initial Catalog=KTKS_DonKH;Persist Security Info=True;Us" +
             "er ID=sa;Password=123@tanhoa")]
         public string KTKS_DonKHConnectionString {
@@ -106,6 +84,39 @@ namespace CAPNUOCTANHOA.Properties {
         public string HOADON_TAConnectionString {
             get {
                 return ((string)(this["HOADON_TAConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP_G7\\KD;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;Use" +
+            "r ID=sa;Password=123@tanhoa")]
+        public string CAPNUOCTANHOAConnectionString {
+            get {
+                return ((string)(this["CAPNUOCTANHOAConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP_G7\\KD;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID" +
+            "=sa;Password=123@tanhoa")]
+        public string DocSo_PHTConnectionString {
+            get {
+                return ((string)(this["DocSo_PHTConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVERG8-01\\SERVER2008;Initial Catalog=TANHOAGIS;Persist Security Inf" +
+            "o=True;User ID=sa;Password=123@tanhoa")]
+        public string TANHOAGISConnectionString {
+            get {
+                return ((string)(this["TANHOAGISConnectionString"]));
             }
         }
     }

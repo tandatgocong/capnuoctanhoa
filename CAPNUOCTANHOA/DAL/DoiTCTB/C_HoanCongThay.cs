@@ -57,7 +57,7 @@ namespace CAPNUOCTANHOA.DAL.DoiTCTB
         public static DataTable getVatTuThay(string codh)
         {
             string sql = "SELECT ROW_NUMBER() OVER (ORDER BY STT  DESC) [STT] ,MAVT,TENVT,DVT, SL='0', GHICHU='' ";
-            sql += " FROM TB_VATUTHAY WHERE CREATEBY='"+codh+"' ORDER BY STT_ ASC ";
+            sql += " FROM TB_VATUTHAY WHERE  CREATEBY='"+codh+"' ORDER BY STT_ ASC ";
             return LinQConnection.getDataTable(sql);
 
         }

@@ -369,11 +369,7 @@ namespace CAPNUOCTANHOA.Forms.QLDA
                                 try
                                 {
                                     DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtSoDanhBo.Text.Replace("-", ""), txtHieuDHGan.Text.Substring(0, 3), txtSoThanGan.Text, txtChiThan.Text.ToUpper(), txtChiGoc.Text.ToUpper());
-                                    string loai = "1";
-                                    if (!"DK".Equals(this.lbLoaiBK.Text))
-                                    {
-                                        loai = "2";
-                                    }
+                                    string loai = "1";                                
 
                                     string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
                                     " VALUES     ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " +

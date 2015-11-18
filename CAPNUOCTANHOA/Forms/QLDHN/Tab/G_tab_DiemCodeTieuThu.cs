@@ -37,17 +37,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 int nam = int.Parse(txtNam.Text.Trim());
 
                 // ky hien tai
-                DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY(nam.ToString(), ky);
+                DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY(nam.ToString(), ky, checkHD0.Checked);
                 DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL(nam.ToString(), ky);
                 // ky truoc
                 if (ky == 1)
                 {
-                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC((nam - 1) + "", 12);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC((nam - 1) + "", 12, checkHD0.Checked);
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL((nam - 1) + "", 12);
                 }
                 else
                 {
-                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC(nam.ToString(), ky - 1);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC(nam.ToString(), ky - 1, checkHD0.Checked);
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL(nam.ToString(), ky - 1);
                 }
 
@@ -189,15 +189,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     int nam = int.Parse(txtNam.Text.Trim());
 
                     // ky hien tai
-                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYNAY(nam.ToString(), ky);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYNAY(nam.ToString(), ky,checkHD0.Checked);
                     // ky truoc
                     if (ky == 1)
                     {
-                        DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYTRUOC((nam - 1) + "", 12);
+                        DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYTRUOC((nam - 1) + "", 12, checkHD0.Checked);
                     }
                     else
                     {
-                        DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYTRUOC(nam.ToString(), ky - 1);
+                        DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYTRUOC(nam.ToString(), ky - 1, checkHD0.Checked);
                     }
 
 
@@ -334,17 +334,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 int nam = int.Parse(txtNam_dot.Text.Trim());
                 int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                 // ky hien tai
-                DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DOT(nam.ToString(), ky, dot);
+                DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DOT(nam.ToString(), ky, dot, checkHD0.Checked);
                 DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DETAIL_DOT(nam.ToString(), ky, dot);
                 // ky truoc
                 if (ky == 1)
                 {
-                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DOT((nam - 1) + "", 12, dot);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DOT((nam - 1) + "", 12, dot, checkHD0.Checked);
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL_DOT((nam - 1) + "", 12, dot);
                 }
                 else
                 {
-                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DOT(nam.ToString(), ky - 1, dot);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DOT(nam.ToString(), ky - 1, dot, checkHD0.Checked);
                     DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DETAIL_DOT(nam.ToString(), ky - 1, dot);
                 }
 
@@ -469,7 +469,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             if (dotToDs.CurrentCell.OwningColumn.Name == "gg_TENTO")
             {
-                string tods = dotToDs.Rows[e.RowIndex].Cells["GG_TODS"].Value + "";
+                tods = dotToDs.Rows[e.RowIndex].Cells["GG_TODS"].Value + "";
                 try
                 {
                     int ky = int.Parse(cbKyDS_dot.Items[cbKyDS_dot.SelectedIndex].ToString());
@@ -477,15 +477,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                     int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
 
                                       // ky hien tai
-                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_MAY_DOT(nam.ToString(), ky, dot);
+                    DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_MAY_DOT(nam.ToString(), ky, dot,checkHD0.Checked);
                     // ky truoc
                     if (ky == 1)
                     {
-                        DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_MAY_DOT((nam - 1) + "", 12, dot);
+                        DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_MAY_DOT((nam - 1) + "", 12, dot, checkHD0.Checked);
                     }
                     else
                     {
-                        DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_MAY_DOT(nam.ToString(), ky - 1, dot);
+                        DAL.QLDHN.C_BaoCaoCODE.CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_MAY_DOT(nam.ToString(), ky - 1, dot, checkHD0.Checked);
                     }
 
                     tabControl3.Visible = true;
@@ -661,6 +661,23 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
           
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            //ReportDocument rp = new rpt_tab_CodeKy();
+            //rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE ", "W_BAOCAO_CODE", "SELECT * FROM W_BAOCAO_CODE_DETAIL ", "W_BAOCAO_CODE_DETAIL"));
+            //rp.SetParameterValue("tenbk", "THỐNG KÊ MÃ CODE ĐỢT " + cbDotDS.Items[cbDotDS.SelectedIndex].ToString() + " KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim());
+            //frm_Reports frm = new frm_Reports(rp);
+            //frm.ShowDialog();
+
+            ReportDocument rp = new rpt_tab_CodeKy_may();
+
+            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report("SELECT * FROM W_BAOCAO_CODE_MAY WHERE TODS=" + tods + " ORDER BY MAYDS ASC ", "W_BAOCAO_CODE_MAY"));
+            rp.SetParameterValue("tenbk", "THỐNG KÊ MÃ CODE TỪNG MÀY ĐỌC SỐ KỲ " + cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString() + "/" + txtNam_dot.Text.Trim() + " TỔ " + tento);
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+
         }
     }
 }

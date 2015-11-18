@@ -53,9 +53,13 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             //MessageBox.Show(this, sqlIN);
 
         }
-       
+
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string sql_ht = " UPDATE TB_THAYDHN SET  TENKH =KH.HOTEN, DIACHI=KH.SONHA + ' ' + KH.TENDUONG,T_LOTRINH=KH.LOTRINH FROM TB_DULIEUKHACHHANG KH ";
+            sql_ht += " WHERE KH.DANHBO= TB_THAYDHN.DHN_DANHBO AND TENKH IS NULL ";
+            DAL.LinQConnection.ExecuteCommand_(sql_ht);
+
             if (flag == 1)
             {
                 string sqlIN = "";
@@ -65,7 +69,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 sqlIN += "'TP02-" + txtTP02.Text.Replace(",", "','TP02-") + "',";
                 sqlIN += "'" + txtThayThu.Text.Replace(",", "','") + "'";
 
-                string sql = "  SELECT (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) AS DOTBG , thay.TENKH,thay.DIACHI,thay.DHN_DANHBO,(thay.HCT_HIEUDHNGAN + ' - ' + thay.HCT_CODHNGAN+' Ly') as DHN, ";
+                string sql = "  SELECT (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) AS DOTBG , thay.TENKH,thay.DIACHI,thay.DHN_DANHBO,(thay.HCT_HIEUDHNGAN + ' - ' + thay.HCT_CODHNGAN+' Ly') as DHN, CASE WHEN HCT_LOAIDHGAN=1 THEN N'Mới' else N'Tân trang' end as LoaiDH,";
                 sql += " ROUND(dg.VATLIEU,2) AS VL,ROUND(dg.NHANCONG,2) AS NC,(ROUND(dg.VATLIEU,2) + ROUND(dg.NHANCONG,2)) AS TC,CONVERT(VARCHAR(20),thay.HCT_NGAYGAN,103) AS NGAYGAN,dg.GHICHU ";
                 sql += " FROM TB_THAYDHN thay, ";
                 sql += " ( ";
@@ -92,7 +96,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 string tngay = Utilities.DateToString.NgayVN(dateTuNgay);
                 string dngay = Utilities.DateToString.NgayVN(dateDenNgay);
 
-                string sql = "  SELECT (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) AS DOTBG , thay.TENKH,thay.DIACHI,thay.DHN_DANHBO,(thay.HCT_HIEUDHNGAN + ' - ' + thay.HCT_CODHNGAN+' Ly') as DHN, ";
+                string sql = "  SELECT (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) AS DOTBG , thay.TENKH,thay.DIACHI,thay.DHN_DANHBO,(thay.HCT_HIEUDHNGAN + ' - ' + thay.HCT_CODHNGAN+' Ly') as DHN, CASE WHEN HCT_LOAIDHGAN=1 THEN N'Mới' else N'Tân trang' end as LoaiDH,";
                 sql += " ROUND(dg.VATLIEU,2) AS VL,ROUND(dg.NHANCONG,2) AS NC,(ROUND(dg.VATLIEU,2) + ROUND(dg.NHANCONG,2)) AS TC,CONVERT(VARCHAR(20),thay.HCT_NGAYGAN,103) AS NGAYGAN,dg.GHICHU ";
                 sql += " FROM TB_THAYDHN thay, ";
                 sql += " ( ";
@@ -107,13 +111,13 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 sql += " 		) AS t ";
                 sql += " 	GROUP BY t.ID_BAOTHAY,t.GHICHU  ";
                 sql += " ) as dg ";
-                sql += " WHERE thay.ID_BAOTHAY=dg.ID_BAOTHAY  AND CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tngay + "',103) AND CONVERT(DATETIME,'" + dngay + "',103) ";;
+                sql += " WHERE thay.ID_BAOTHAY=dg.ID_BAOTHAY  AND CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tngay + "',103) AND CONVERT(DATETIME,'" + dngay + "',103) "; ;
                 sql += " ORDER BY (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) ASC,thay.T_LOTRINH ASC ";
 
                 dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
                 Utilities.DataGridV.setSTT(dataBangKe, "G_STT");
 
-            
+
             }
         }
 

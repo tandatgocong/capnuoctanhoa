@@ -17,7 +17,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             return DAL.LinQConnection.getDataTable("SELECT * FROM W_BAOCAO_CODE");
         }
-        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY(string nam, int ky)
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY(string nam, int ky, bool ch)
         {
             string sql = "UPDATE W_BAOCAO_CODE SET ";
             sql += "  W_BAOCAO_CODE.KN_CODE4 = t2.CODE4, W_BAOCAO_CODE.KN_CODE5= t2.CODE5, ";
@@ -37,8 +37,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM="+nam+" AND  KY=" + ky;
+            if (ch == true)
+                sql += " AND TIEUTHU=0";
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE.TODS = t2.TODS";
@@ -54,7 +56,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
         }
 
-        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC(string nam, int ky)
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC(string nam, int ky, bool ch)
         {
             string sql = "UPDATE W_BAOCAO_CODE SET ";
             sql += "  W_BAOCAO_CODE.KT_CODE4 = t2.CODE4, W_BAOCAO_CODE.KT_CODE5= t2.CODE5, ";
@@ -74,8 +76,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky;
+            if (ch == true)
+                sql += " AND TIEUTHU=0";
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE.TODS = t2.TODS";
@@ -100,7 +104,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return DAL.LinQConnection.getDataTable(sql.Replace(@"\t", " "));
         }
 
-        public static void CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYNAY(string nam, int ky)
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYNAY(string nam, int ky,bool ch)
         {
             string sql = " INSERT INTO W_BAOCAO_CODE_MAY ";
             sql += " SELECT TODS,MAY AS MAYDS, ";
@@ -114,8 +118,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS KN_CODEF, ";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS KN_CODEK, ";
             sql += " KT_CODE4=0,KT_CODE5=0,KT_CODE6=0,KT_CODE8=0 ,KT_CODEM=0 ,KT_CODEN=0,KT_CODEQ=0,KT_CODEF=0,KT_CODEK=0";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE KY=" + ky;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky;
+            if (ch == true)
+                sql += " AND TIEUTHU=0";
             sql += " GROUP BY TODS,MAY ";
             try
             {
@@ -129,7 +135,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
         }
 
-        public static void CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYTRUOC(string nam, int ky)
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_MAY_KYTRUOC(string nam, int ky,bool ch)
         {
             string sql = "UPDATE W_BAOCAO_CODE_MAY SET ";
             sql += " W_BAOCAO_CODE_MAY.KT_CODE4 = t2.CODE4, W_BAOCAO_CODE_MAY.KT_CODE5= t2.CODE5, ";
@@ -149,8 +155,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky;
+            if (ch == true)
+                sql += " AND TIEUTHU=0";
+
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE_MAY.TODS = t2.TODS AND W_BAOCAO_CODE_MAY.MAYDS = t2.MAYDS";
@@ -168,7 +177,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
         ///// THEO ĐỢT
 
-        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DOT(string nam, int ky, int dot)
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_DOT(string nam, int ky, int dot,bool ch)
         {
             string sql = "UPDATE W_BAOCAO_CODE SET ";
             sql += "  W_BAOCAO_CODE.KN_CODE4 = t2.CODE4, W_BAOCAO_CODE.KN_CODE5= t2.CODE5, ";
@@ -188,8 +197,11 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
+            if (ch == true)
+                sql += " AND TIEUTHU=0";
+
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE.TODS = t2.TODS";
@@ -205,7 +217,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
         }
 
-        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DOT(string nam, int ky, int dot)
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_DOT(string nam, int ky, int dot,bool ch)
         {
             string sql = "UPDATE W_BAOCAO_CODE SET ";
             sql += "  W_BAOCAO_CODE.KT_CODE4 = t2.CODE4, W_BAOCAO_CODE.KT_CODE5= t2.CODE5, ";
@@ -225,8 +237,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
+            if (ch == true)
+                sql += " AND TIEUTHU=0";
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE.TODS = t2.TODS";
@@ -251,7 +265,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return DAL.LinQConnection.getDataTable(sql.Replace(@"\t", " "));
         }
 
-        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_MAY_DOT(string nam, int ky, int dot)
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYNAY_MAY_DOT(string nam, int ky, int dot,bool ch)
         {
 
             string sql = " INSERT INTO W_BAOCAO_CODE_MAY ";
@@ -266,8 +280,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS KN_CODEF, ";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS KN_CODEK, ";
             sql += " KT_CODE4=0,KT_CODE5=0,KT_CODE6=0,KT_CODE8=0 ,KT_CODEM=0 ,KT_CODEN=0,KT_CODEQ=0,KT_CODEF=0,KT_CODEK=0";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
+            if (ch == true)
+                sql += " AND TIEUTHU=0";
             sql += " GROUP BY TODS,MAY ";
 
 
@@ -283,7 +299,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
         }
 
-        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_MAY_DOT(string nam, int ky, int dot)
+        public static void CAPNHATSOLIEU_BAOCAO_CODE_KYTRUOC_MAY_DOT(string nam, int ky, int dot,bool ch)
         {
             string sql = "UPDATE W_BAOCAO_CODE_MAY SET ";
             sql += "  W_BAOCAO_CODE_MAY.KT_CODE4 = t2.CODE4, W_BAOCAO_CODE_MAY.KT_CODE5= t2.CODE5, ";
@@ -303,8 +319,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when CODE LIKE 'Q%' then 1 else null end) AS CODEQ,";
             sql += " COUNT(case when CODE LIKE 'F%' then 1 else null end) AS CODEF,";
             sql += " COUNT(case when CODE LIKE 'K%' then 1 else null end) AS CODEK";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " FROM HOADON_TH ";
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
+            if (ch == true)
+                sql += " AND TIEUTHU=0";
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_CODE_MAY.TODS = t2.TODS AND W_BAOCAO_CODE_MAY.MAYDS = t2.MAYDS";

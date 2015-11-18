@@ -37,7 +37,7 @@ namespace CAPNUOCTANHOA.DAL.DoiTCTB
                 string G_TENKH = dataGridView1.Rows[i].Cells["G_TENKH"].Value + "";
                 string G_DIACHI = dataGridView1.Rows[i].Cells["G_DIACHI"].Value + "";
                 string G_DANHBO = dataGridView1.Rows[i].Cells["G_DANHBO"].Value + "";
-                string LOAIDHN = dataGridView1.Rows[i].Cells["LOTRINH"].Value + "";
+                string LOAIDHN = dataGridView1.Rows[i].Cells["LOTRINH"].Value +" ("+ dataGridView1.Rows[i].Cells["LoaiDH"].Value +")";
                 string C_VATTU = dataGridView1.Rows[i].Cells["C_VATTU"].Value + "";
                 string C_NHANCONG = dataGridView1.Rows[i].Cells["C_NHANCONG"].Value + "";
                 string TONGCONG = dataGridView1.Rows[i].Cells["TONGCONG"].Value + "";

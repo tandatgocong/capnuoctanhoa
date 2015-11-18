@@ -179,9 +179,18 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 txtChiSoGan.Text = !HCT_CHISOGAN.Equals("") ? HCT_CHISOGAN : "0"; ;
 
                 string HCT_LOAIDHGAN = dataBangKe.Rows[i].Cells["HCT_LOAIDHGAN"].Value + "";
+
+                try
+                {
+                    cbLoaiDHN.SelectedIndex = int.Parse(ConfigurationManager.AppSettings["defautLoai"].ToString());
+                }
+                catch (Exception)
+                {
+                    
+                }
                 if ("False".Equals(HCT_LOAIDHGAN))
                     cbLoaiDHN.SelectedIndex = 1;
-                else
+                else if ("True".Equals(HCT_LOAIDHGAN))
                     cbLoaiDHN.SelectedIndex = 0;
 
                 string HCT_NGAYGAN = dataBangKe.Rows[i].Cells["HCT_NGAYGAN"].Value + "";
@@ -408,42 +417,44 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                     {
                                         loai = "2";
                                     }
-
-                                    string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
-                                    " VALUES     ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " +
-                                    " '" + kh.HOTEN.TrimEnd() + "', " +
-                                    " '" + kh.SONHA.TrimEnd() + "' ," +
-                                    " '" + kh.TENDUONG.TrimEnd() +"' , " +
-                                    " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
-                                    " " + kh.CODH + ", " +
-                                    " '" + txtNgayGan.Value + "', " +
-                                    " " + txtChiSoGo.Text + "," +
-                                    " " + txtChiSoGan.Text + ", " +
-                                    " '" + txtSoThanGan.Text + "'," +
-                                    " N'" + kh.VITRIDHN + "', " +
-                                    " '" + txtChiThan.Text.ToUpper() + "'," +
-                                    " '" + txtChiGoc.Text.ToUpper() + "', " +
-                                    "  " + loai + ")";
-                                    if (DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql) == 0)
+                                    if (DAL.LinQConnectionDS.getDataTable("SELECT * FROM BAOTHAYDHN WHERE DANHBA='" + this.txtSoDanhBo.Text.Replace("-", "") + "' AND SOTHANMOI='" + txtSoThanGan.Text + "' ").Rows.Count < 1)
                                     {
+                                        string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
+                                        " VALUES     ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " +
+                                        " '" + kh.HOTEN.TrimEnd() + "', " +
+                                        " '" + kh.SONHA.TrimEnd() + "' ," +
+                                        " '" + kh.TENDUONG.TrimEnd() + "' , " +
+                                        " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
+                                        " " + kh.CODH + ", " +
+                                        " '" + txtNgayGan.Value + "', " +
+                                        " " + txtChiSoGo.Text + "," +
+                                        " " + txtChiSoGan.Text + ", " +
+                                        " '" + txtSoThanGan.Text + "'," +
+                                        " N'" + kh.VITRIDHN + "', " +
+                                        " '" + txtChiThan.Text.ToUpper() + "'," +
+                                        " '" + txtChiGoc.Text.ToUpper() + "', " +
+                                        "  " + loai + ")";
+                                        if (DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql) == 0)
+                                        {
 
-                                        sql = "UPDATE  BAOTHAYDHN  " +
-                                        " SET  " +
-                                        " TENKH='" + kh.HOTEN.TrimEnd() + "', " +
-                                        " SO='" + kh.SONHA.TrimEnd() + "' ," +
-                                        " DUONG='" + kh.TENDUONG.TrimEnd() + "' , " +
-                                        " HIEUMOI='" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
-                                        " COMOI=" + kh.CODH + ", " +
-                                        " NGAYTHAY='" + txtNgayGan.Value + "', " +
-                                        " CSGO=" + txtChiSoGo.Text + "," +
-                                        " CSGAN=" + txtChiSoGan.Text + ", " +
-                                        " SOTHANMOI='" + txtSoThanGan.Text + "'," +
-                                        " VITRIMOI=N'" + kh.VITRIDHN + "', " +
-                                        " MACHITHAN='" + txtChiThan.Text.ToUpper() + "'," +
-                                        " MACHIGOC='" + txtChiGoc.Text.ToUpper() + "', " +
-                                        " LOAI=" + loai + " " +
-                                        " WHERE DANHBA='" + kh.DANHBO + "' AND CONVERT(DATETIME,NGAYTHAY,103)='" + txtNgayGan.Value.ToShortDateString() + "'";
-                                        DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql);
+                                            sql = "UPDATE  BAOTHAYDHN  " +
+                                            " SET  " +
+                                            " TENKH='" + kh.HOTEN.TrimEnd() + "', " +
+                                            " SO='" + kh.SONHA.TrimEnd() + "' ," +
+                                            " DUONG='" + kh.TENDUONG.TrimEnd() + "' , " +
+                                            " HIEUMOI='" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
+                                            " COMOI=" + kh.CODH + ", " +
+                                            " NGAYTHAY='" + txtNgayGan.Value + "', " +
+                                            " CSGO=" + txtChiSoGo.Text + "," +
+                                            " CSGAN=" + txtChiSoGan.Text + ", " +
+                                            " SOTHANMOI='" + txtSoThanGan.Text + "'," +
+                                            " VITRIMOI=N'" + kh.VITRIDHN + "', " +
+                                            " MACHITHAN='" + txtChiThan.Text.ToUpper() + "'," +
+                                            " MACHIGOC='" + txtChiGoc.Text.ToUpper() + "', " +
+                                            " LOAI=" + loai + " " +
+                                            " WHERE DANHBA='" + kh.DANHBO + "' AND CONVERT(DATETIME,NGAYTHAY,103)='" + txtNgayGan.Value.ToShortDateString() + "'";
+                                            DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql);
+                                        }
                                     }
                                 }
                                 catch (Exception ex)
@@ -743,13 +754,27 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
 
 
             DataRow myDataRow = table.NewRow();
-            myDataRow["STT"] ="1";
-            myDataRow["MAVT"] = "TLK" + txtGoGan.Text.Replace(" ", "") + txtHieuDHGan.Text.Replace(" ", "").Substring(0,3);
-            myDataRow["TENVT"] = "TLK " + txtHieuDHGan.Text.Replace(" ", "") + " " + txtGoGan.Text.Replace(" ", "") + " LY";
-            myDataRow["DVT"] = "Cái";
-            myDataRow["SL"] = "1";
-            myDataRow["GHICHU"] = "";  
-            table.Rows.Add(myDataRow);
+            if (cbLoaiDHN.SelectedIndex == 1)
+            {
+                myDataRow["STT"] = "1";
+                myDataRow["MAVT"] = "TLK" + txtGoGan.Text.Replace(" ", "") + txtHieuDHGan.Text.Replace(" ", "").Substring(0, 3)+"0";
+                myDataRow["TENVT"] = "TLK " + txtHieuDHGan.Text.Replace(" ", "") + " TT " + txtGoGan.Text.Replace(" ", "") + " LY";
+                myDataRow["DVT"] = "Cái";
+                myDataRow["SL"] = "1";
+                myDataRow["GHICHU"] = "";
+                table.Rows.Add(myDataRow);
+            }
+            else {
+                myDataRow["STT"] = "1";
+                myDataRow["MAVT"] = "TLK" + txtGoGan.Text.Replace(" ", "") + txtHieuDHGan.Text.Replace(" ", "").Substring(0, 3);
+                myDataRow["TENVT"] = "TLK " + txtHieuDHGan.Text.Replace(" ", "") + " " + txtGoGan.Text.Replace(" ", "") + " LY";
+                myDataRow["DVT"] = "Cái";
+                myDataRow["SL"] = "1";
+                myDataRow["GHICHU"] = "";
+                table.Rows.Add(myDataRow);
+            }
+
+          
 
             myDataRow = table.NewRow();
             myDataRow["STT"] = "2";
