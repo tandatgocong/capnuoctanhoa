@@ -142,14 +142,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
          
         }
 
-//<<<<<<< .mine
         private void radioButtonTheodoicamKet_CheckedChanged(object sender, EventArgs e)
         {
             this.splitContainer1.Panel2.Controls.Clear();
             this.splitContainer1.Panel2.Controls.Add(new P_tab_TheoDoiCamKet());
         }
 
-//=====
         private void radioButton11_CheckedChanged(object sender, EventArgs e)
         {
             this.splitContainer1.Panel2.Controls.Clear();
@@ -162,7 +160,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             this.splitContainer1.Panel2.Controls.Add(new P_tab_ThongKeGhiChu());
         }
 
-//>>>>>>> .r275
+        private void rHoaDon_CheckedChanged(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new W_tab_ThongKeHoaDon());
+        }
+
       
     }
 }

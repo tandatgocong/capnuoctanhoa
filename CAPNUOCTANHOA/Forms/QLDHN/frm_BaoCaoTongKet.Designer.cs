@@ -49,6 +49,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rtThongKeDHN = new System.Windows.Forms.RadioButton();
             this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
+            this.rHoaDon = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.Color.AliceBlue;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.expandablePanel1.Controls.Add(this.rHoaDon);
             this.expandablePanel1.Controls.Add(this.radioButtonTheodoicamKet);
             this.expandablePanel1.Controls.Add(this.radioButton11);
             this.expandablePanel1.Controls.Add(this.radioTheoDoiHD0);
@@ -347,6 +349,18 @@
             this.radioThayDinhKy.UseVisualStyleBackColor = true;
             this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
             // 
+            // rHoaDon
+            // 
+            this.rHoaDon.AutoSize = true;
+            this.rHoaDon.Location = new System.Drawing.Point(10, 585);
+            this.rHoaDon.Name = "rHoaDon";
+            this.rHoaDon.Size = new System.Drawing.Size(88, 23);
+            this.rHoaDon.TabIndex = 8;
+            this.rHoaDon.TabStop = true;
+            this.rHoaDon.Text = "Hóa Đơn";
+            this.rHoaDon.UseVisualStyleBackColor = true;
+            this.rHoaDon.CheckedChanged += new System.EventHandler(this.rHoaDon_CheckedChanged);
+            // 
             // frm_BaoCaoTongKet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -390,6 +404,7 @@
         private System.Windows.Forms.RadioButton radioButtonTheodoicamKet;
 //=======
         private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.RadioButton rHoaDon;
 //>>>>>>> .r275
 
     }

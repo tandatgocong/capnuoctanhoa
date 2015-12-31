@@ -62,6 +62,22 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             }
         }
 
+        public static bool InsertDA(TB_THAYDHN th_dhn)
+        {
+            try
+            {
+                db.TB_THAYDHNs.InsertOnSubmit(th_dhn);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
+
+
         public static TB_THAYDHN finByID_BAOTHAY(int id) {
             try
             {
@@ -123,7 +139,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static DataSet ReportBaoThay(string sobangke)
         {
             DataSet ds = new DataSet();
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            if (db.Connection.State == ConnectionState.Open)
+            {
+                db.Connection.Close();
+            }
             db.Connection.Open();
             string query = "select *, N'" + DAL.SYS.C_USERS._fullName + "' as 'TENDANGNHAP' FROM V_DHN_BANGKE where DHN_SOBANGKE='" + sobangke + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY TENBANGKE ASC ";
 

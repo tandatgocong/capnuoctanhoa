@@ -102,6 +102,7 @@
             // 
             // menuHeThong
             // 
+            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -111,12 +112,11 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel1.Controls.Add(this.menuStrip3);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 32);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1089, 62);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1089, 30);
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip3
             // 
@@ -579,8 +579,8 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -612,6 +612,7 @@
             this.ribbonPanel7.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel7.Size = new System.Drawing.Size(1089, 30);
             this.ribbonPanel7.TabIndex = 9;
+            this.ribbonPanel7.Visible = false;
             // 
             // menuStrip7
             // 
@@ -650,7 +651,6 @@
             // 
             // ribbonGNKDT
             // 
-            this.ribbonGNKDT.Checked = true;
             this.ribbonGNKDT.Name = "ribbonGNKDT";
             this.ribbonGNKDT.Panel = this.ribbonPanel7;
             this.ribbonGNKDT.Text = "Phòng GNKDT";

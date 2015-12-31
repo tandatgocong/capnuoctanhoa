@@ -62,6 +62,8 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="String_Indentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\String_Indentity.dll</HintPath>
@@ -100,6 +102,7 @@
     <Compile Include="DAL\BANKTKS\C_DinhMucChungCu.cs" />
     <Compile Include="DAL\BANKTKS\C_GiamHoaDon.cs" />
     <Compile Include="DAL\BANKTKS\C_TheoDoiDM.cs" />
+    <Compile Include="DAL\LinQConnectionTT.cs" />
     <Compile Include="DAL\DoiTCTB\C_DonGiaVatTu.cs" />
     <Compile Include="DAL\DoiTCTB\Export.cs" />
     <Compile Include="DAL\KTCN\C_GIS.cs" />
@@ -451,6 +454,12 @@
     </Compile>
     <Compile Include="Forms\DoiThuTien\frm_CatNuoc.Designer.cs">
       <DependentUpon>frm_CatNuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDA\frm_SangOngNganh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDA\frm_SangOngNganh.Designer.cs">
+      <DependentUpon>frm_SangOngNganh.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDA\frmHoanCongThay_DA.cs">
       <SubType>UserControl</SubType>
@@ -912,6 +921,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TONGSL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\HoaDon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\W_tab_ThongKeHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\W_tab_ThongKeHoaDon.Designer.cs">
+      <DependentUpon>W_tab_ThongKeHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\P_tab_ThongKeGhiChu.cs">
       <SubType>UserControl</SubType>
@@ -1594,6 +1614,17 @@
     <None Include="Forms\QLDHN\Tab\BC\TONGSL.xss">
       <DependentUpon>TONGSL.xsd</DependentUpon>
     </None>
+    <None Include="Forms\QLDHN\Tab\HoaDon.xsc">
+      <DependentUpon>HoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\QLDHN\Tab\HoaDon.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDon.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\QLDHN\Tab\HoaDon.xss">
+      <DependentUpon>HoaDon.xsd</DependentUpon>
+    </None>
     <None Include="Forms\QLDHN\Tab\TabBC\DANHSACHCODEK.xsc">
       <DependentUpon>DANHSACHCODEK.xsd</DependentUpon>
     </None>
@@ -1824,6 +1855,9 @@
     <EmbeddedResource Include="Forms\DoiThuTien\frm_CatNuoc.resx">
       <DependentUpon>frm_CatNuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDA\frm_SangOngNganh.resx">
+      <DependentUpon>frm_SangOngNganh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDA\frmHoanCongThay_DA.resx">
       <DependentUpon>frmHoanCongThay_DA.cs</DependentUpon>
     </EmbeddedResource>
@@ -2047,6 +2081,10 @@
     <EmbeddedResource Include="Forms\QLDHN\Tab\BC\rpt_ThongKeHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeHoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\HoaDon.rdlc" />
+    <EmbeddedResource Include="Forms\QLDHN\Tab\W_tab_ThongKeHoaDon.resx">
+      <DependentUpon>W_tab_ThongKeHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\P_tab_ThongKeGhiChu.resx">
       <DependentUpon>P_tab_ThongKeGhiChu.cs</DependentUpon>

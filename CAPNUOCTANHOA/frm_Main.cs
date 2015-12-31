@@ -532,7 +532,8 @@ namespace CAPNUOCTANHOA
         private void DMAHoanCong_Click(object sender, EventArgs e)
         {
             PanelContent.Controls.Clear();
-            frmHoanCongThay_DA baothay = new frmHoanCongThay_DA();
+          //  frmHoanCongThay_DA baothay = new frmHoanCongThay_DA();
+            frm_SangOngNganh baothay = new frm_SangOngNganh();            
             baothay.Height = PanelContent.Size.Height - 5;
             baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);

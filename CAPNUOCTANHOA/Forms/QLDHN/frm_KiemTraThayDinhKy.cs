@@ -19,6 +19,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             cbCoDH.SelectedIndex = 0;
             cbDot.SelectedIndex = 0;
             dateTime.Value = DateTime.Now;
+            dateKd.Value = DateTime.Now;
         }
 
         private void LoadDataToGird()
@@ -41,8 +42,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
 
             DateTime date = dateTime.Value;
-            date = date.AddMonths(1);
+            
             string codh = "=" + cbCoDH.Text;
+
+            date = date.AddMonths(1);
+           
             if (cbCoDH.SelectedIndex == 1 || cbCoDH.SelectedIndex == 2)
             {
                 date = date.AddYears(-4);
@@ -51,6 +55,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 date = date.AddYears(-5);
             }
+
+
             //
             //codh = "=25";
             //
@@ -69,7 +75,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             if (this.ckNgayThay.Checked && this.checHieu.Checked)
             {
-                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
+                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,NGAYKIEMDINH,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND NGAYTHAY <= '" + date.ToShortDateString() + "'  ";
                 sql += " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "')  " + dot;
                 //DataTable table = DAL.LinQConnection.getDataTable(sql);
                 //dataGrid.DataSource = table;
@@ -77,14 +83,35 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             else if (this.ckNgayThay.Checked)
             {
-                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + "  AND NGAYTHAY <= '" + date.ToShortDateString() + "'  " + dot ;
+                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,NGAYKIEMDINH,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + "  AND NGAYTHAY <= '" + date.ToShortDateString() + "'  " + dot;
+                //DataTable table = DAL.LinQConnection.getDataTable(sql);
+                //dataGrid.DataSource = table;
+                //Utilities.DataGridV.formatRows(dataGrid);
+            }
+            else if (this.ngayKD.Checked)
+            {
+                date = dateKd.Value;
+                date = date.AddMonths(1);
+
+                if (cbCoDH.SelectedIndex == 1 || cbCoDH.SelectedIndex == 2)
+                {
+                    date = date.AddYears(-4);
+                }
+                else
+                {
+                    date = date.AddYears(-5);
+                }
+
+
+
+                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,NGAYKIEMDINH,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + "  AND NGAYKIEMDINH <= '" + date.ToShortDateString() + "'  " + dot;
                 //DataTable table = DAL.LinQConnection.getDataTable(sql);
                 //dataGrid.DataSource = table;
                 //Utilities.DataGridV.formatRows(dataGrid);
             }
             else if (this.checHieu.Checked)
             {
-                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "')  " + dot ;
+                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,NGAYKIEMDINH,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL) " + quan + " AND CODH" + codh + " AND (HIEUDH='" + cbHieuDongHo.SelectedValue + "' OR HIEUDH='" + cbHieuDongHo.Text + "')  " + dot;
 
             }
             if (!"".Equals(txtLoaiBo.Text.Replace(" ", ""))) {
@@ -121,7 +148,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             FirstRow = 0;
             LastRow = 0;
 
-            string sqlCount = Search().Replace("CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY", " COUNT(*) ").Replace("ORDER BY  LOTRINH ASC", " ");
+            string sqlCount = Search().Replace("CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,NGAYKIEMDINH,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY", " COUNT(*) ").Replace("ORDER BY  LOTRINH ASC", " ");
             rows = DAL.LinQConnection.ExecuteCommand(sqlCount);
             lbTongDHN.Text = "Tổng Số " + rows + " ĐHN.";
             try

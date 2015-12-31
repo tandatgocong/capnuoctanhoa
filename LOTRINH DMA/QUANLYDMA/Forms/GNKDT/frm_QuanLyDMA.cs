@@ -91,7 +91,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             try
             {
                 lbTongDHN.Text = dataBangKe.Rows.Count + "";
-                lbTongGanMoi.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG kh WHERE kh.NAM=" + nam + " AND kh.KY_=" + ky + " AND MADMA='" + madma + "'  ") + "";
+                lbTongGanMoi.Text = DAL.LinQConnectionHD.ExecuteCommand("select COUNT(*) from HOADON where CODE like '%M%' AND NAM=" + nam + " AND KY=" + ky + " AND MaDMA='" + madma + "'  ") + "";
                 lbTongHuy.Text = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM dbo.TB_DULIEUKHACHHANG_HUYDB kh WHERE HIEULUCHUY='" + ky + "/" + nam + "' AND  MADMA='" + madma + "'  ") + "";
                 lbTongThay.Text = tableThay == null ? "0" : tableThay.Rows.Count + "";
                 lbSanLuong.Text = (dataBangKe.DataSource as DataTable).Compute("Sum(LNCC)", "") + "";

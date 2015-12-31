@@ -838,9 +838,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             else {
                 string chamcong = "UPDATE TB_BANGCHAMCONG SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text+ "' WHERE MAYDS='" + this.textBoxMayds.Text + "'";
                 DAL.LinQConnection.ExecuteCommand(chamcong);
-                string nhanvien = "UPDATE TB_NHANVIENDOCSO SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "'";
+                string nhanvien = "UPDATE TB_NHANVIENDOCSO SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
                 DAL.LinQConnection.ExecuteCommand(nhanvien);
-                string slh = " UPDATE [DocSo_PHT].[dbo].[NHANVIEN]   SET [TENNHANVIEN] = N'" + textBoxTennv.Text + "'  ,[TENDANGNHAP] = N'" + this.textBoxTenvt.Text + "'  ,[QUYEN] =0 WHERE MAY='" + this.textBoxMayds.Text + "'";
+                string slh = " UPDATE [DocSo_PHT].[dbo].[NHANVIEN]   SET [TENNHANVIEN] = N'" + textBoxTennv.Text + "'  ,[TENDANGNHAP] = N'" + this.textBoxTenvt.Text + "'  ,[QUYEN] =0 WHERE MAY='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
                 DAL.LinQConnection.ExecuteCommand(slh);
 
                 themmoi = false;
