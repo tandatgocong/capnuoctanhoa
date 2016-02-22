@@ -102,6 +102,7 @@
     <Compile Include="DAL\BANKTKS\C_DinhMucChungCu.cs" />
     <Compile Include="DAL\BANKTKS\C_GiamHoaDon.cs" />
     <Compile Include="DAL\BANKTKS\C_TheoDoiDM.cs" />
+    <Compile Include="DAL\LinQConnectionDSTH.cs" />
     <Compile Include="DAL\LinQConnectionTT.cs" />
     <Compile Include="DAL\DoiTCTB\C_DonGiaVatTu.cs" />
     <Compile Include="DAL\DoiTCTB\Export.cs" />
@@ -1324,6 +1325,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocSo.dbml</DependentUpon>
     </Compile>
+    <Compile Include="LinQ\DocSoTH.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocSoTH.dbml</DependentUpon>
+    </Compile>
     <Compile Include="LinQ\GIS.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2272,6 +2278,11 @@
     <None Include="LinQ\DocSo.dbml.layout">
       <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
+    <None Include="LinQ\DocSoTH.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DocSoTH.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="LinQ\GIS.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GIS.designer.cs</LastGenOutput>
@@ -2285,6 +2296,9 @@
     </None>
     <None Include="LinQ\GIS.dbml.layout">
       <DependentUpon>GIS.dbml</DependentUpon>
+    </None>
+    <None Include="LinQ\DocSoTH.dbml.layout">
+      <DependentUpon>DocSoTH.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

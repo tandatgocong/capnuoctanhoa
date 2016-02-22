@@ -174,6 +174,33 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             return result;
         }
 
+        public static int InsertBaoThayHandHeldTH(string sql)
+        {
+            int result = 0;
+            DocSoTHDataContext db = new DocSoTHDataContext();
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Insert Thong Tin Thay That Bai" + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
+        }
+
         public static void InsertYeuCauDC(TB_YEUCAUDC yc) {
             try
             {

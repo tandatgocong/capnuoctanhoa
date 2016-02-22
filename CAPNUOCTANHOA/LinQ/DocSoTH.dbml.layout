@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DocSoTH">
+  <DataContextMoniker Name="/DocSoTHDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ddd84300-7c9d-4792-8a8e-20d052a3331f" absoluteBounds="1.875, 1.875, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/DocSoTHDataContext/BaoThay" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f8ba95c-2281-48e9-aaa5-d494cbe6221b" absoluteBounds="1.8900000000000001, 2.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
