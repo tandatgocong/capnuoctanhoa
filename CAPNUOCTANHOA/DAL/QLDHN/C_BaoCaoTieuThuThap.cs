@@ -23,9 +23,9 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.KN_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN, COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN, COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
+            sql += " WHERE  KY=" + ky + " AND NAM="+nam ;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
@@ -47,9 +47,9 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
+            sql += " WHERE  KY=" + ky + " AND NAM="+nam ;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
@@ -71,9 +71,9 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
-            sql += " WHERE  KY=" + ky;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
+            sql += " WHERE  KY=" + ky + " AND NAM="+nam ;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
@@ -118,10 +118,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY(string nam, int ky)
         {
             string sql = "INSERT INTO W_BAOCAO_SANLUONG_MAY ";
-            sql += " SELECT TODS,MAY, COUNT(case when TIEUTHU=0 then 1 else null end) AS 'KN_DHN', ";
-            sql += " COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS KN_SANLUONG, ";
+            sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS 'KN_DHN', ";
+            sql += " COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS KN_SANLUONG, ";
             sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
             sql += " WHERE KY=" + ky;
             sql += " GROUP BY TODS,MAY ";
             try
@@ -142,8 +142,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS,MAY, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
             sql += " WHERE KY=" + ky;
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";
@@ -166,8 +166,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS,MAY, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
             sql += " WHERE KY=" + ky;
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";
@@ -211,8 +211,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.KN_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KN_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += "(";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
             sql += " WHERE  KY=" + ky +" AND DOT ="+dot;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
@@ -236,8 +236,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.KT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
@@ -260,8 +260,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG.NT_SANLUONG= t2.SANLUONG ";
             sql += "FROM W_BAOCAO_SANLUONG INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
@@ -307,10 +307,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static void CAPNHATSOLIEU_BAOCAO_SANLUONG_KYNAY_MAY_DOT(string nam, int ky, int dot)
         {
             string sql = "INSERT INTO W_BAOCAO_SANLUONG_MAY ";
-            sql += " SELECT TODS,MAY, COUNT(case when TIEUTHU=0 then 1 else null end) AS 'KN_DHN' ,  ";
-            sql += " COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS KN_SANLUONG, ";
+            sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS 'KN_DHN' ,  ";
+            sql += " COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS KN_SANLUONG, ";
             sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS,MAY ";
             try
@@ -331,8 +331,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG_MAY.KT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.KT_SANLUONG= t2.SANLUONG ";
             sql += " FROM	W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS,MAY, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";
@@ -355,8 +355,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " SET W_BAOCAO_SANLUONG_MAY.NT_DHN = t2.COUNTDHN, W_BAOCAO_SANLUONG_MAY.NT_SANLUONG= t2.SANLUONG ";
             sql += " FROM W_BAOCAO_SANLUONG_MAY INNER JOIN ";
             sql += " ( ";
-            sql += " SELECT TODS,MAY, COUNT(case when TIEUTHU=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TIEUTHU>=1  AND TIEUTHU<=4 ) then 1 else null end) AS SANLUONG ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam;
+            sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
+            sql += " FROM DocSoTH.dbo.DocSo  t  ";
             sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";

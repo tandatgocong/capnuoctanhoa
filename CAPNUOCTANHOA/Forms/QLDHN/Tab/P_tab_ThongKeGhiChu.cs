@@ -19,7 +19,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 {
     public partial class P_tab_ThongKeGhiChu : UserControl
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(tab_TongKetHandHeld).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(P_tab_ThongKeGhiChu).Name);
         public P_tab_ThongKeGhiChu()
         {
             InitializeComponent();

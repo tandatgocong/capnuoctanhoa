@@ -81,7 +81,7 @@ namespace CAPNUOCTANHOA.LinQ
     #endregion
 		
 		public DocSoDataContext() : 
-				base(global::CAPNUOCTANHOA.Properties.Settings.Default.DocSo_PHTConnectionString, mappingSource)
+				base(global::CAPNUOCTANHOA.Properties.Settings.Default.DocSoTHConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

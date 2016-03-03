@@ -37,7 +37,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             this.splitContainer1.Panel2.Controls.Clear();
-            this.splitContainer1.Panel2.Controls.Add(new tab_TongKetHandHeld());
+            this.splitContainer1.Panel2.Controls.Add(new tab_TheoDoiSanLuong());
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)

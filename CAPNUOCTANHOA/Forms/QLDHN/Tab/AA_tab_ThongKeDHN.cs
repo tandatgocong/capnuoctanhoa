@@ -18,7 +18,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 {
     public partial class AA_tab_ThongKeDHN : UserControl
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(tab_TongKetHandHeld).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(AA_tab_ThongKeDHN).Name);
         public AA_tab_ThongKeDHN()
         {
             InitializeComponent();

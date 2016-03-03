@@ -57,44 +57,11 @@ namespace CAPNUOCTANHOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AGRIBANK-TANHOA\\SQLAGRIBANK;Initial Catalog=HoaDon;Persist Security I" +
-            "nfo=True;User ID=website;Password=T@nHo@2011")]
-        public string HoaDonConnectionString {
-            get {
-                return ((string)(this["HoaDonConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP_G7\\KD;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID" +
-            "=sa;Password=123@tanhoa")]
-        public string DocSo_PHTConnectionString {
-            get {
-                return ((string)(this["DocSo_PHTConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVERG8-01\\SERVER2008;Initial Catalog=TANHOAGIS;Persist Security Inf" +
             "o=True;User ID=sa;Password=123@tanhoa")]
         public string TANHOAGISConnectionString {
             get {
                 return ((string)(this["TANHOAGISConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER9;Initial Catalog=HOADON_TA;Persist Security Info=True;User ID=" +
-            "sa;Password=123@tanhoa")]
-        public string HOADON_TAConnectionString1 {
-            get {
-                return ((string)(this["HOADON_TAConnectionString1"]));
             }
         }
         

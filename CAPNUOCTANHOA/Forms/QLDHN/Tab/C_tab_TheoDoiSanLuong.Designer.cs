@@ -1,6 +1,6 @@
 ﻿namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 {
-    partial class tab_TongKetHandHeld
+    partial class tab_TheoDoiSanLuong
     {
         /// <summary> 
         /// Required designer variable.

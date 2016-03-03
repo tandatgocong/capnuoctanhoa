@@ -151,116 +151,75 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
         }
         public DataSet getListHoaDonReport(string danhba, int nam, int ky)
         {
-        //    if (ky > 12 && DateTime.Now.Day >= 25)
-        //    {
-        //        ky = 1;
-        //        nam = nam + 1;
-
-        //    }
-
-        //    DocSoDataContext db = new DocSoDataContext();
-        //    DataSet ds = new DataSet();
-
-
-        //    string query = "SELECT  TOP(1)  " +
-        //          " ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY  FROM DS" + nam + " AS H LEFT OUTER JOIN" +
-        //        " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
-        //    SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-        //    adapter.Fill(ds, "TIEUTHU");
-
-        //    query = "SELECT  TOP(" + (int.Parse(cbSoLuong.Text) - 1) + ") " +
-        //        "( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-        //      " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-        //    DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
-        //    ds.Tables["TIEUTHU"].Merge(TB_HD);
-
-        //    int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
-        //    if (scl > 0)
-        //    {
-        //        nam = nam - 1;
-        //        query = "SELECT  TOP(" + scl + ")   " +
-        //  " ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-        //" KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-
-        //        DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
-        //        ds.Tables["TIEUTHU"].Merge(b_Old);
-        //    }
-        //    scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
-        //    if (scl > 0)
-        //    {
-        //        nam = nam - 1;
-        //        query = "SELECT  TOP(" + scl + ")   " +
-        //  " ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-        //" KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-
-        //        DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
-        //        ds.Tables["TIEUTHU"].Merge(b_Old);
-        //    }
-        //    return ds;
-
-            if (ky > 12 && DateTime.Now.Day >= 21)
-            {
-                ky = 1;
-                nam = nam + 1;
-
-            }
-
+       
             DocSoDataContext db = new DocSoDataContext();
             DataSet ds = new DataSet();
 
-            string query = "SELECT  TOP(1)   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY  FROM DS" + nam + " AS H LEFT OUTER JOIN" +
-                " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
+            //string query = "SELECT  TOP(1)   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY  FROM DS" + nam + " AS H LEFT OUTER JOIN" +
+            //    " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
+           
+            string query = " SELECT  TOP(1)(H.KY+ '/'+CONVERT(VARCHAR(20),H.Nam)) as NAM, ";
+            query += " H.CodeMoi as CODE, H.CSCU, H.CSMOI, H.TieuThuMoi AS 'LNCC' , ";
+            query += " CONVERT(NCHAR(10), H.DenNgay, 103) AS DENNGAY ";
+            query += " FROM DocSo AS H 	    ";
+            query += " WHERE H.DANHBA ='" + danhba + "' ";
+            query += "  ORDER BY H.Nam desc,CAST(H.KY as int) DESC ";
+
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TIEUTHU");
-
-            query = "SELECT  TOP(" + (int.Parse(cbSoLuong.Text) - 1) + ")   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-            DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
+            int slTiep=(int.Parse(cbSoLuong.Text) - 1);
+            
+            //query = "SELECT  TOP(" + slTiep + ")   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
+            //  " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
+            query = "SELECT   TOP(" + slTiep + ")    ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+'/' + CONVERT(VARCHAR(20),H.NAM)) NAM, H.CODE,cast(H.CSCU as int) as CSCU, cast(H.CSMOI as int) as CSMOI,cast(H.TIEUTHU as int) AS LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON ";
+            query += " FROM HOADON H ";
+            query += " WHERE H.DANHBA ='" + danhba + "'  ";
+            query += " ORDER BY H.DENNGAY DESC ";
+            DataTable TB_HD = DAL.LinQConnectionTT.getDataTable(query);
 
             ds.Tables["TIEUTHU"].Merge(TB_HD);
 
 
-            if (ds.Tables["TIEUTHU"].Rows.Count == 0)
-            {
-                nam = nam - 1;
-                query = "SELECT  TOP(" + int.Parse(cbSoLuong.Text) + ")   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY  FROM DS" + nam + " AS H LEFT OUTER JOIN" +
-              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
-                adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-                adapter.Fill(ds, "TIEUTHU");
-            }
+           // if (ds.Tables["TIEUTHU"].Rows.Count == 0)
+           // {
+           //     nam = nam - 1;
+           //     query = "SELECT  TOP(" + int.Parse(cbSoLuong.Text) + ")   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY  FROM DS" + nam + " AS H LEFT OUTER JOIN" +
+           //   " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
+           //     adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+           //     adapter.Fill(ds, "TIEUTHU");
+           // }
 
-            string _ky = ky + "";
-            try
-            {
-                _ky = ds.Tables["TIEUTHU"].Rows[0]["KY"].ToString();
-            }
-            catch (Exception)
-            {
+           // string _ky = ky + "";
+           // try
+           // {
+           //     _ky = ds.Tables["TIEUTHU"].Rows[0]["KY"].ToString();
+           // }
+           // catch (Exception)
+           // {
 
-            }
+           // }
 
 
-            int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
-            if (scl > 0)
-            {
-                nam = nam - 1;
-                query = "SELECT  TOP(" + scl + ")   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-           " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
+           // int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
+           // if (scl > 0)
+           // {
+           //     nam = nam - 1;
+           //     query = "SELECT  TOP(" + scl + ")   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
+           //" KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
 
-                DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
-                ds.Tables["TIEUTHU"].Merge(b_Old);
-            }
-            scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
-            if (scl > 0)
-            {
-                nam = nam - 1;
-                query = "SELECT  TOP(" + scl + ")   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-           " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
+           //     DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
+           //     ds.Tables["TIEUTHU"].Merge(b_Old);
+           // }
+           // scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
+           // if (scl > 0)
+           // {
+           //     nam = nam - 1;
+           //     query = "SELECT  TOP(" + scl + ")   ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+ '/" + nam + "') as NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON FROM HD" + nam + " AS H LEFT OUTER JOIN" +
+           //" KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
 
-                DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
-                ds.Tables["TIEUTHU"].Merge(b_Old);
-            }
-
+           //     DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
+           //     ds.Tables["TIEUTHU"].Merge(b_Old);
+           // }
 
             return ds;
         }
@@ -279,96 +238,42 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         public DataSet getListHoaDonReport_BC(string danhba, int nam, int ky)
         {
-
-            if (ky > 12 && DateTime.Now.Day >= 21)
-            {
-                ky = 1;
-                nam = nam + 1;
-
-            }
-
             DocSoDataContext db = new DocSoDataContext();
             DataSet ds = new DataSet();
             string query2 = "";
 
-            string query = "SELECT  TOP(1)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-                  " KH.CO,  H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
-                " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
+            string query = " SELECT  TOP(1)   H.TODS, KH.DOT, KH.MLT1 AS MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, CAST(KH.GB as varchar(10)) as GB,CAST(KH.DM as varchar(10)) as DM, KH.HOPDONG, KH.HIEU, ";
+            query += " KH.CO, cast( H.KY as int) as KY, cast( H.Nam as int) AS NAM, H.CodeMoi AS CODE, H.CSCU, H.CSMOI, H.TieuThuMoi AS 'LNCC' , CONVERT(NCHAR(10), H.DenNgay, 103) AS DENNGAY ";
+            query += " FROM DocSo AS H LEFT OUTER JOIN ";
+            query += " KHACHHANG AS KH ";
+            query += " ON H.DANHBA = KH.DANHBA ";
+            query += " WHERE KH.DANHBA ='" + danhba + "' ORDER BY  NAM DESC,H.KY DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TIEUTHU");
 
-            query = "SELECT  TOP(" + (int.Parse(cbSoLuong.Text) - 1) + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-                " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-            DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
-
+            int slTiep = (int.Parse(cbSoLuong.Text) - 1);
+            query = "  SELECT  TOP(" + slTiep + ")  1 AS TODS, cast(KH.DOT as varchar(5)) as DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI,'' AS SOMOI, CAST(KH.GB as varchar(10)) as GB,CAST(KH.DM as varchar(10)) as DM, KH.HOPDONG, KH.HIEUDH AS HIEU, ";
+            query += "  KH.CoDH AS CO, cast( KH.KY as int) as KY, cast( KH.Nam as int) AS NAM , KH.CODE,cast(KH.CSCU as int) as CSCU, cast(KH.CSMOI as int) as CSMOI,cast(KH.TIEUTHU as int) AS LNCC , CONVERT(NCHAR(10), KH.DENNGAY, 103) AS DENNGAY  ";
+            query += "  FROM HoaDon AS KH  ";
+            query += "  WHERE KH.DANHBA ='" + danhba + "' ORDER BY KH.NAM DESC,KH.KY DESC ";
+            DataTable TB_HD = DAL.LinQConnectionTT.getDataTable(query);
             ds.Tables["TIEUTHU"].Merge(TB_HD);
-
-
-            if (ds.Tables["TIEUTHU"].Rows.Count == 0)
-            {
-                nam = nam - 1;
-                query = "SELECT  TOP(" + int.Parse(cbSoLuong.Text) + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-                " KH.CO,  H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
-              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
-                adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-                adapter.Fill(ds, "TIEUTHU");
-            }
 
             string _ky = ky + "";
             try
             {
                 _ky = ds.Tables["TIEUTHU"].Rows[0]["KY"].ToString();
             }
-            catch (Exception)
-            {
+            catch (Exception) { }
 
-            }
-
-
-            query2 = "SELECT  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM";
+            query2 = " SELECT TOP(1)  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM ";
             query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.TENNHANVIEN  ";
-            query2 += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
-            query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + _ky + " AND ds.DANHBA='" + danhba + "' ";
+            query2 += " FROM DocSo AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
+            query2 += " WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.DANHBA='" + danhba + "' ";
+            query2 += " ORDER BY ds.KY DESC, ds.NAM DESC ";
 
             adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
             adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
-
-            if (ds.Tables["VIEW_YEUCAUKIEMTRA"].Rows.Count == 0)
-            {
-
-                query2 = "SELECT  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, ds.SH, ds.HCSN, ds.SX, ds.DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM , ds.DOT as 'DOTDS',nv.TODS,nv.MAY,nv.TENNHANVIEN";
-                query2 += " FROM DocSo_PHT.dbo.HD" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
-                query2 += "WHERE nv.MAY=SUBSTRING(ds.MALOTRINH,3,2) AND ds.DANHBA=kh.DANHBO AND ds.KY=" + _ky + " AND ds.DANHBA='" + danhba + "' ";
-
-                adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
-                adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
-
-            }
-
-
-            int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
-            if (scl > 0)
-            {
-                nam = nam - 1;
-                query = "SELECT  TOP(" + scl + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-             " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-           " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-
-                DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
-                ds.Tables["TIEUTHU"].Merge(b_Old);
-            }
-            scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
-            if (scl > 0)
-            {
-                nam = nam - 1;
-                query = "SELECT  TOP(" + scl + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-             " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-           " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-
-                DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
-                ds.Tables["TIEUTHU"].Merge(b_Old);
-            }
 
             query = "select * FROM CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO";
             adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
@@ -379,12 +284,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             adapter.Fill(ds, "TB_GHICHU");
 
             return ds;
-
         }
-
-
-
-
+    
         private void btInDS_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new rpt_PhieuGhiChepTieuThu();
@@ -399,41 +300,26 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         public DataSet getListHoaDonReport_BC_KT(string danhba, int nam, int ky)
         {
-
-            if (ky > 12 && DateTime.Now.Day >= 21)
-            {
-                ky = 1;
-                nam = nam + 1;
-
-            }
-
             DocSoDataContext db = new DocSoDataContext();
             DataSet ds = new DataSet();
             string query2 = "";
 
-            string query = "SELECT  TOP(1)   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-                  " KH.CO,  H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
-                " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
+            string query = " SELECT  TOP(1)   H.TODS, KH.DOT, KH.MLT1 AS MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, CAST(KH.GB as varchar(10)) as GB,CAST(KH.DM as varchar(10)) as DM, KH.HOPDONG, KH.HIEU, ";
+            query += " KH.CO, cast( H.KY as int) as KY, cast( H.Nam as int) AS NAM, H.CodeMoi AS CODE, H.CSCU, H.CSMOI, H.TieuThuMoi AS 'LNCC' , CONVERT(NCHAR(10), H.DenNgay, 103) AS DENNGAY ";
+            query += " FROM DocSo AS H LEFT OUTER JOIN ";
+            query += " KHACHHANG AS KH ";
+            query += " ON H.DANHBA = KH.DANHBA ";
+            query += " WHERE KH.DANHBA ='" + danhba + "' ORDER BY  NAM DESC,H.KY DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TIEUTHU");
 
-            query = "SELECT  TOP(" + (int.Parse(cbSoLuong.Text) - 1) + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-                " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-            DataTable TB_HD = DAL.LinQConnectionDS.getDataTable(query);
-
+            int slTiep = (int.Parse(cbSoLuong.Text) - 1);
+            query = "  SELECT  TOP(" + slTiep + ")  1 AS TODS, cast(KH.DOT as varchar(5)) as DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI,'' AS SOMOI, CAST(KH.GB as varchar(10)) as GB,CAST(KH.DM as varchar(10)) as DM, KH.HOPDONG, KH.HIEUDH AS HIEU, ";
+            query += "  KH.CoDH AS CO, cast( KH.KY as int) as KY, cast( KH.Nam as int) AS NAM , KH.CODE,cast(KH.CSCU as int) as CSCU, cast(KH.CSMOI as int) as CSMOI,cast(KH.TIEUTHU as int) AS LNCC , CONVERT(NCHAR(10), KH.DENNGAY, 103) AS DENNGAY  ";
+            query += "  FROM HoaDon AS KH  ";
+            query += "  WHERE KH.DANHBA ='" + danhba + "' ORDER BY KH.NAM DESC,KH.KY DESC ";
+            DataTable TB_HD = DAL.LinQConnectionTT.getDataTable(query);
             ds.Tables["TIEUTHU"].Merge(TB_HD);
-
-
-            if (ds.Tables["TIEUTHU"].Rows.Count == 0)
-            {
-                nam = nam - 1;
-                query = "SELECT  TOP(" + int.Parse(cbSoLuong.Text) + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-                " KH.CO,  H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI, H.TIEUTHU AS 'LNCC' , CONVERT(NCHAR(10), H.DENNGAYDOCSO, 103) AS DENNGAY, H.TIEUTHU AS 'LNCC' FROM DS" + nam + " AS H LEFT OUTER JOIN" +
-              " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.KY DESC, NAM DESC ";
-                adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-                adapter.Fill(ds, "TIEUTHU");
-            }
 
             string _ky = ky + "";
             try
@@ -446,49 +332,15 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             }
 
 
-            query2 = "SELECT  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM";
+            query2 = " SELECT TOP(1)  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM ";
             query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.TENNHANVIEN  ";
-            query2 += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
-            query2 += "WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.KY=" + _ky + " AND ds.DANHBA='" + danhba + "' ";
+            query2 += " FROM DocSo AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
+            query2 += " WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.DANHBA='" + danhba + "' ";
+            query2 += " ORDER BY ds.KY DESC, ds.NAM DESC ";
 
             adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
             adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
-
-            if (ds.Tables["VIEW_YEUCAUKIEMTRA"].Rows.Count == 0)
-            {
-
-                query2 = "SELECT  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, ds.SH, ds.HCSN, ds.SX, ds.DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM , ds.DOT as 'DOTDS',nv.TODS,nv.MAY,nv.TENNHANVIEN";
-                query2 += " FROM DocSo_PHT.dbo.HD" + nam + " AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSo_PHT.dbo.NHANVIEN nv ";
-                query2 += "WHERE nv.MAY=SUBSTRING(ds.MALOTRINH,3,2) AND ds.DANHBA=kh.DANHBO AND ds.KY=" + _ky + " AND ds.DANHBA='" + danhba + "' ";
-
-                adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
-                adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
-
-            }
-
-            int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
-            if (scl > 0)
-            {
-                nam = nam - 1;
-                query = "SELECT  TOP(" + scl + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-             " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-           " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-
-                DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
-                ds.Tables["TIEUTHU"].Merge(b_Old);
-            }
-            scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
-            if (scl > 0)
-            {
-                nam = nam - 1;
-                query = "SELECT  TOP(" + scl + ")   KH.TODS, KH.DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI, KH.SOMOI, KH.GB, KH.DM, KH.HOPDONG, KH.HIEU, " +
-             " KH.CO, H.SOHOADON AS 'SOTHAN', H.KY, " + nam + " AS NAM, H.CODE, H.CSCU, H.CSMOI,H.LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.LNCC FROM HD" + nam + " AS H LEFT OUTER JOIN" +
-           " KHACHHANG AS KH ON H.DANHBA = KH.DANHBA WHERE KH.DANHBA ='" + danhba + "' ORDER BY H.DENNGAY DESC ";
-
-                DataTable b_Old = DAL.LinQConnectionDS.getDataTable(query);
-                ds.Tables["TIEUTHU"].Merge(b_Old);
-            }
-
+            
             query = "select * FROM CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO";
             adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DHN_BAOCAO");
