@@ -923,10 +923,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TONGSL.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\Tab\II_tab_BangChamCong_HD0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\II_tab_BangChamCong_HD0.Designer.cs">
+      <DependentUpon>II_tab_BangChamCong_HD0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\Tab\HoaDon.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HoaDon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Tab\TabBC\rpt_tab_BangChamCongHD0.cs">
+      <DependentUpon>rpt_tab_BangChamCongHD0.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\W_tab_ThongKeHoaDon.cs">
       <SubType>UserControl</SubType>
@@ -2088,7 +2100,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ThongKeHoaDon.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Tab\II_tab_BangChamCong_HD0.resx">
+      <DependentUpon>II_tab_BangChamCong_HD0.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\HoaDon.rdlc" />
+    <EmbeddedResource Include="Forms\QLDHN\Tab\TabBC\rpt_tab_BangChamCongHD0.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_tab_BangChamCongHD0.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\Tab\W_tab_ThongKeHoaDon.resx">
       <DependentUpon>W_tab_ThongKeHoaDon.cs</DependentUpon>
     </EmbeddedResource>

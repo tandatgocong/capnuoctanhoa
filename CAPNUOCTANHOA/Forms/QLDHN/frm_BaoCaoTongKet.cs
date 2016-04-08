@@ -84,6 +84,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
              this.splitContainer1.Panel2.Controls.Clear();
              this.splitContainer1.Panel2.Controls.Add(new I_tab_BangChamCong());
         }
+        private void radioButton81_Click(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2.Controls.Clear();
+            this.splitContainer1.Panel2.Controls.Add(new II_tab_BangChamCong_HD0());
+        }
 
         private void rptDSCode_Click(object sender, EventArgs e)
         {

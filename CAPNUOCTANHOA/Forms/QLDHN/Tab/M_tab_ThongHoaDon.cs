@@ -32,24 +32,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            /*
-            string query = "SELECT DOT,COUNT(CASE WHEN LNCC=0 THEN 1 ELSE NULL END) AS HD0 ";
-            query += " ,COUNT(CASE WHEN LNCC=1 THEN 1 ELSE NULL END) AS HD1";
-            query += " ,COUNT(CASE WHEN LNCC=2 THEN 1 ELSE NULL END) AS HD2 ";
-            query += " ,COUNT(CASE WHEN LNCC=3 THEN 1 ELSE NULL END) AS HD3 ";
-            query += " ,COUNT(CASE WHEN LNCC=4 THEN 1 ELSE NULL END) AS HD4 ";
-            query += " FROM [CAPNUOCTANHOA].[dbo].[HOADONTH" + ky + "_" + txtNam.Text.Trim() + "] ";
-            query += " GROUP BY DOT ";
-            query += " ORDER BY DOT ASC "; */
-
-
-            string query = " SELECT DOT,COUNT(CASE WHEN [TIEUTHU]=0 THEN 1 ELSE NULL END) AS HD0   ";
-            query += " ,COUNT(CASE WHEN [TIEUTHU]=1 THEN 1 ELSE NULL END) AS HD1  ";
-            query += " ,COUNT(CASE WHEN [TIEUTHU]=2 THEN 1 ELSE NULL END) AS HD2  ";
-            query += "  ,COUNT(CASE WHEN [TIEUTHU]=3 THEN 1 ELSE NULL END) AS HD3  ";
-            query += "   ,COUNT(CASE WHEN [TIEUTHU]=4 THEN 1 ELSE NULL END) AS HD4  ";
-            query += "  FROM [DocSo_PHT].[dbo].[DS" + txtNam.Text.Trim() + "] ";
-            query += "  WHERE [KY]=" + ky;
+          
+            string query = " SELECT DOT,COUNT(CASE WHEN [TieuThuMoi]=0 THEN 1 ELSE NULL END) AS HD0   ";
+            query += " ,COUNT(CASE WHEN [TieuThuMoi]=1 THEN 1 ELSE NULL END) AS HD1  ";
+            query += " ,COUNT(CASE WHEN [TieuThuMoi]=2 THEN 1 ELSE NULL END) AS HD2  ";
+            query += "  ,COUNT(CASE WHEN [TieuThuMoi]=3 THEN 1 ELSE NULL END) AS HD3  ";
+            query += "   ,COUNT(CASE WHEN [TieuThuMoi]=4 THEN 1 ELSE NULL END) AS HD4  ";
+            query += "  FROM [DocSoTH].[dbo].[DocSo] ";
+            query += "  WHERE [NAM]=" + txtNam.Text + " AND [KY]=" + ky;
             query += "  GROUP BY DOT   ";
             query += "  ORDER BY DOT ASC   ";
 

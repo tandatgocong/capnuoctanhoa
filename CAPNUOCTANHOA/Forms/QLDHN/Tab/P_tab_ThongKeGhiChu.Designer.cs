@@ -547,10 +547,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.crystalReportViewer2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1094, 517);
+            this.tabPage2.Size = new System.Drawing.Size(1057, 499);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "DANH SÁCH KHÁCH HÀNG";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -563,7 +563,7 @@
             this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer2.Location = new System.Drawing.Point(3, 3);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.Size = new System.Drawing.Size(1088, 505);
+            this.crystalReportViewer2.Size = new System.Drawing.Size(1051, 493);
             this.crystalReportViewer2.TabIndex = 1;
             this.crystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 

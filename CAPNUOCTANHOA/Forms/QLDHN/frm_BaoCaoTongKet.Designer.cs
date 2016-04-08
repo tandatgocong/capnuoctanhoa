@@ -30,6 +30,7 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.rHoaDon = new System.Windows.Forms.RadioButton();
             this.radioButtonTheodoicamKet = new System.Windows.Forms.RadioButton();
             this.radioButton11 = new System.Windows.Forms.RadioButton();
             this.radioTheoDoiHD0 = new System.Windows.Forms.RadioButton();
@@ -49,7 +50,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rtThongKeDHN = new System.Windows.Forms.RadioButton();
             this.radioThayDinhKy = new System.Windows.Forms.RadioButton();
-            this.rHoaDon = new System.Windows.Forms.RadioButton();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
@@ -87,6 +88,7 @@
             this.expandablePanel1.Controls.Add(this.rptThayDoi);
             this.expandablePanel1.Controls.Add(this.rptGanMoi);
             this.expandablePanel1.Controls.Add(this.rptDSCode);
+            this.expandablePanel1.Controls.Add(this.radioButton12);
             this.expandablePanel1.Controls.Add(this.radioButton8);
             this.expandablePanel1.Controls.Add(this.radioButton7);
             this.expandablePanel1.Controls.Add(this.radioButton6);
@@ -119,10 +121,22 @@
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "Danh Mục Báo Cáo";
             // 
+            // rHoaDon
+            // 
+            this.rHoaDon.AutoSize = true;
+            this.rHoaDon.Location = new System.Drawing.Point(10, 608);
+            this.rHoaDon.Name = "rHoaDon";
+            this.rHoaDon.Size = new System.Drawing.Size(88, 23);
+            this.rHoaDon.TabIndex = 8;
+            this.rHoaDon.TabStop = true;
+            this.rHoaDon.Text = "Hóa Đơn";
+            this.rHoaDon.UseVisualStyleBackColor = true;
+            this.rHoaDon.CheckedChanged += new System.EventHandler(this.rHoaDon_CheckedChanged);
+            // 
             // radioButtonTheodoicamKet
             // 
             this.radioButtonTheodoicamKet.AutoSize = true;
-            this.radioButtonTheodoicamKet.Location = new System.Drawing.Point(10, 556);
+            this.radioButtonTheodoicamKet.Location = new System.Drawing.Point(10, 579);
             this.radioButtonTheodoicamKet.Name = "radioButtonTheodoicamKet";
             this.radioButtonTheodoicamKet.Size = new System.Drawing.Size(155, 23);
             this.radioButtonTheodoicamKet.TabIndex = 7;
@@ -134,7 +148,7 @@
             // radioButton11
             // 
             this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(10, 527);
+            this.radioButton11.Location = new System.Drawing.Point(10, 550);
             this.radioButton11.Name = "radioButton11";
             this.radioButton11.Size = new System.Drawing.Size(163, 23);
             this.radioButton11.TabIndex = 7;
@@ -146,7 +160,7 @@
             // radioTheoDoiHD0
             // 
             this.radioTheoDoiHD0.AutoSize = true;
-            this.radioTheoDoiHD0.Location = new System.Drawing.Point(10, 498);
+            this.radioTheoDoiHD0.Location = new System.Drawing.Point(10, 521);
             this.radioTheoDoiHD0.Name = "radioTheoDoiHD0";
             this.radioTheoDoiHD0.Size = new System.Drawing.Size(183, 23);
             this.radioTheoDoiHD0.TabIndex = 0;
@@ -159,7 +173,7 @@
             // radioTKHOADON
             // 
             this.radioTKHOADON.AutoSize = true;
-            this.radioTKHOADON.Location = new System.Drawing.Point(10, 469);
+            this.radioTKHOADON.Location = new System.Drawing.Point(10, 492);
             this.radioTKHOADON.Name = "radioTKHOADON";
             this.radioTKHOADON.Size = new System.Drawing.Size(158, 23);
             this.radioTKHOADON.TabIndex = 6;
@@ -171,7 +185,7 @@
             // radioButton10
             // 
             this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(10, 440);
+            this.radioButton10.Location = new System.Drawing.Point(10, 463);
             this.radioButton10.Name = "radioButton10";
             this.radioButton10.Size = new System.Drawing.Size(158, 23);
             this.radioButton10.TabIndex = 5;
@@ -183,7 +197,7 @@
             // radioButton9
             // 
             this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(10, 411);
+            this.radioButton9.Location = new System.Drawing.Point(10, 434);
             this.radioButton9.Name = "radioButton9";
             this.radioButton9.Size = new System.Drawing.Size(151, 23);
             this.radioButton9.TabIndex = 5;
@@ -195,7 +209,7 @@
             // rptThayDoi
             // 
             this.rptThayDoi.AutoSize = true;
-            this.rptThayDoi.Location = new System.Drawing.Point(10, 382);
+            this.rptThayDoi.Location = new System.Drawing.Point(10, 405);
             this.rptThayDoi.Name = "rptThayDoi";
             this.rptThayDoi.Size = new System.Drawing.Size(151, 23);
             this.rptThayDoi.TabIndex = 5;
@@ -207,7 +221,7 @@
             // rptGanMoi
             // 
             this.rptGanMoi.AutoSize = true;
-            this.rptGanMoi.Location = new System.Drawing.Point(10, 353);
+            this.rptGanMoi.Location = new System.Drawing.Point(10, 376);
             this.rptGanMoi.Name = "rptGanMoi";
             this.rptGanMoi.Size = new System.Drawing.Size(157, 23);
             this.rptGanMoi.TabIndex = 5;
@@ -219,7 +233,7 @@
             // rptDSCode
             // 
             this.rptDSCode.AutoSize = true;
-            this.rptDSCode.Location = new System.Drawing.Point(10, 324);
+            this.rptDSCode.Location = new System.Drawing.Point(10, 347);
             this.rptDSCode.Name = "rptDSCode";
             this.rptDSCode.Size = new System.Drawing.Size(176, 23);
             this.rptDSCode.TabIndex = 5;
@@ -349,17 +363,17 @@
             this.radioThayDinhKy.UseVisualStyleBackColor = true;
             this.radioThayDinhKy.Click += new System.EventHandler(this.radioThayDinhKy_Click);
             // 
-            // rHoaDon
+            // radioButton12
             // 
-            this.rHoaDon.AutoSize = true;
-            this.rHoaDon.Location = new System.Drawing.Point(10, 585);
-            this.rHoaDon.Name = "rHoaDon";
-            this.rHoaDon.Size = new System.Drawing.Size(88, 23);
-            this.rHoaDon.TabIndex = 8;
-            this.rHoaDon.TabStop = true;
-            this.rHoaDon.Text = "Hóa Đơn";
-            this.rHoaDon.UseVisualStyleBackColor = true;
-            this.rHoaDon.CheckedChanged += new System.EventHandler(this.rHoaDon_CheckedChanged);
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.Location = new System.Drawing.Point(10, 321);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(191, 23);
+            this.radioButton12.TabIndex = 5;
+            this.radioButton12.TabStop = true;
+            this.radioButton12.Text = "Bảng Chấm Công HĐ=0";
+            this.radioButton12.UseVisualStyleBackColor = true;
+            this.radioButton12.Click += new System.EventHandler(this.radioButton81_Click);
             // 
             // frm_BaoCaoTongKet
             // 
@@ -405,6 +419,7 @@
 //=======
         private System.Windows.Forms.RadioButton radioButton11;
         private System.Windows.Forms.RadioButton rHoaDon;
+        private System.Windows.Forms.RadioButton radioButton12;
 //>>>>>>> .r275
 
     }

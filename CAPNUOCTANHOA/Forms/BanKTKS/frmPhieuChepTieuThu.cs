@@ -179,6 +179,18 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
             ds.Tables["TIEUTHU"].Merge(TB_HD);
 
+            int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;           
+            if (scl > 0)
+            {
+                query = "SELECT   TOP(" + scl + ")    ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+'/' + CONVERT(VARCHAR(20),H.NAM)) NAM, H.CODE,cast(H.CSCU as int) as CSCU, cast(H.CSMOI as int) as CSMOI,cast(H.TIEUTHU as int) AS LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON ";
+                query += " FROM TT_HoaDonCu H ";
+                query += " WHERE H.DANHBA ='" + danhba + "'  ";
+                query += " ORDER BY H.DENNGAY DESC ";
+                DataTable b_Old = DAL.LinQConnectionTT.getDataTable(query);
+
+                ds.Tables["TIEUTHU"].Merge(b_Old);
+            }
+
 
            // if (ds.Tables["TIEUTHU"].Rows.Count == 0)
            // {
@@ -256,8 +268,22 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             query += "  KH.CoDH AS CO, cast( KH.KY as int) as KY, cast( KH.Nam as int) AS NAM , KH.CODE,cast(KH.CSCU as int) as CSCU, cast(KH.CSMOI as int) as CSMOI,cast(KH.TIEUTHU as int) AS LNCC , CONVERT(NCHAR(10), KH.DENNGAY, 103) AS DENNGAY  ";
             query += "  FROM HoaDon AS KH  ";
             query += "  WHERE KH.DANHBA ='" + danhba + "' ORDER BY KH.NAM DESC,KH.KY DESC ";
+
             DataTable TB_HD = DAL.LinQConnectionTT.getDataTable(query);
             ds.Tables["TIEUTHU"].Merge(TB_HD);
+
+            int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
+            if (scl > 0)
+            {
+                query = "  SELECT  TOP(" + scl + ")  1 AS TODS, cast(KH.DOT as varchar(5)) as DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI,'' AS SOMOI, CAST(KH.GB as varchar(10)) as GB,CAST(KH.DM as varchar(10)) as DM, KH.HOPDONG, KH.HIEUDH AS HIEU, ";
+                query += "  KH.CoDH AS CO, cast( KH.KY as int) as KY, cast( KH.Nam as int) AS NAM , KH.CODE,cast(KH.CSCU as int) as CSCU, cast(KH.CSMOI as int) as CSMOI,cast(KH.TIEUTHU as int) AS LNCC , CONVERT(NCHAR(10), KH.DENNGAY, 103) AS DENNGAY  ";
+                query += "  FROM TT_HoaDonCu AS KH  ";
+                query += "  WHERE KH.DANHBA ='" + danhba + "' ORDER BY KH.NAM DESC,KH.KY DESC ";
+
+                DataTable b_Old = DAL.LinQConnectionTT.getDataTable(query);
+
+                ds.Tables["TIEUTHU"].Merge(b_Old);
+            }
 
             string _ky = ky + "";
             try
@@ -320,6 +346,20 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             query += "  WHERE KH.DANHBA ='" + danhba + "' ORDER BY KH.NAM DESC,KH.KY DESC ";
             DataTable TB_HD = DAL.LinQConnectionTT.getDataTable(query);
             ds.Tables["TIEUTHU"].Merge(TB_HD);
+
+            int scl = int.Parse(cbSoLuong.Text) - ds.Tables["TIEUTHU"].Rows.Count;
+            if (scl > 0)
+            {
+                query = "  SELECT  TOP(" + scl + ")  1 AS TODS, cast(KH.DOT as varchar(5)) as DOT, KH.MALOTRINH, KH.DANHBA, KH.TENKH, RTRIM(KH.SO) + ' ' + KH.DUONG AS DIACHI,'' AS SOMOI, CAST(KH.GB as varchar(10)) as GB,CAST(KH.DM as varchar(10)) as DM, KH.HOPDONG, KH.HIEUDH AS HIEU, ";
+                query += "  KH.CoDH AS CO, cast( KH.KY as int) as KY, cast( KH.Nam as int) AS NAM , KH.CODE,cast(KH.CSCU as int) as CSCU, cast(KH.CSMOI as int) as CSMOI,cast(KH.TIEUTHU as int) AS LNCC , CONVERT(NCHAR(10), KH.DENNGAY, 103) AS DENNGAY  ";
+                query += "  FROM TT_HoaDonCu AS KH  ";
+                query += "  WHERE KH.DANHBA ='" + danhba + "' ORDER BY KH.NAM DESC,KH.KY DESC ";
+
+                DataTable b_Old = DAL.LinQConnectionTT.getDataTable(query);
+
+                ds.Tables["TIEUTHU"].Merge(b_Old);
+            }
+
 
             string _ky = ky + "";
             try

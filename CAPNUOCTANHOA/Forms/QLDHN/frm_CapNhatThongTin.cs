@@ -828,6 +828,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 DAL.LinQConnection.ExecuteCommand(chamcong);
                 string nhanvien = "INSERT INTO TB_NHANVIENDOCSO(NAME,FULLNAME,MAYDS,TODS) VALUES (N'" + this.textBoxTenvt.Text + "',N'" + textBoxTennv.Text + "','" + this.textBoxMayds.Text + "','"+tods+"')";
                 DAL.LinQConnection.ExecuteCommand(nhanvien);
+                nhanvien = "INSERT INTO TB_BANGCHAMCONG_HD0(NAME,FULLNAME,MAYDS,TODS) VALUES (N'" + this.textBoxTenvt.Text + "',N'" + textBoxTennv.Text + "','" + this.textBoxMayds.Text + "','" + tods + "')";
+                DAL.LinQConnection.ExecuteCommand(nhanvien);
                 string slh = "INSERT INTO [DocSo_PHT].[dbo].[NHANVIEN] ([TENNHANVIEN],[TENDANGNHAP],[MATKHAU] ,[TODS] ,[MAY],[BANDOI],[QUYEN])  VALUES ";
                 slh += " (N'" + textBoxTennv.Text + "',N'" + this.textBoxTenvt.Text + "',NULL," + tods + "," + this.textBoxMayds.Text + ",NULL,0)";
                 DAL.LinQConnection.ExecuteCommand(slh);
@@ -839,6 +841,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string chamcong = "UPDATE TB_BANGCHAMCONG SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text+ "' WHERE MAYDS='" + this.textBoxMayds.Text + "'";
                 DAL.LinQConnection.ExecuteCommand(chamcong);
                 string nhanvien = "UPDATE TB_NHANVIENDOCSO SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
+                DAL.LinQConnection.ExecuteCommand(nhanvien);
+                nhanvien = "UPDATE TB_BANGCHAMCONG_HD0 SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
                 DAL.LinQConnection.ExecuteCommand(nhanvien);
                 string slh = " UPDATE [DocSo_PHT].[dbo].[NHANVIEN]   SET [TENNHANVIEN] = N'" + textBoxTennv.Text + "'  ,[TENDANGNHAP] = N'" + this.textBoxTenvt.Text + "'  ,[QUYEN] =0 WHERE MAY='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
                 DAL.LinQConnection.ExecuteCommand(slh);
@@ -853,6 +857,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void buttonX4_Click(object sender, EventArgs e)
         {
             string chamcong = "DELETE TB_BANGCHAMCONG  WHERE MAYDS='" + this.textBoxMayds.Text + "'";
+            DAL.LinQConnection.ExecuteCommand(chamcong);
+             chamcong = "DELETE TB_BANGCHAMCONG_HD0  WHERE MAYDS='" + this.textBoxMayds.Text + "'";
             DAL.LinQConnection.ExecuteCommand(chamcong);
             string nhanvien = "DELETE TB_NHANVIENDOCSO  WHERE MAYDS='" + this.textBoxMayds.Text + "'";
             DAL.LinQConnection.ExecuteCommand(nhanvien);

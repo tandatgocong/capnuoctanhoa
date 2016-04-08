@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtChiKyDocSo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.cbMaDMA = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btCapNhatThongTin = new DevComponents.DotNetBar.ButtonX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.KIEMDINH = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -65,12 +71,6 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.cbMaDMA = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.txtChiKyDocSo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KIEMDINH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NGAYGAN)).BeginInit();
@@ -126,6 +126,78 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(580, 444);
             this.panel2.TabIndex = 2;
+            // 
+            // txtChiKyDocSo
+            // 
+            // 
+            // 
+            // 
+            this.txtChiKyDocSo.Border.Class = "TextBoxBorder";
+            this.txtChiKyDocSo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChiKyDocSo.ForeColor = System.Drawing.Color.Red;
+            this.txtChiKyDocSo.Location = new System.Drawing.Point(381, 321);
+            this.txtChiKyDocSo.Name = "txtChiKyDocSo";
+            this.txtChiKyDocSo.Size = new System.Drawing.Size(56, 27);
+            this.txtChiKyDocSo.TabIndex = 132;
+            this.txtChiKyDocSo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelX6
+            // 
+            this.labelX6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Location = new System.Drawing.Point(281, 323);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(108, 22);
+            this.labelX6.TabIndex = 131;
+            this.labelX6.Text = "CHU KỲ ĐS";
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX2.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX2.Location = new System.Drawing.Point(384, 376);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(131, 23);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX2.TabIndex = 130;
+            this.buttonX2.Text = "HOÀN TẤT";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX1.Location = new System.Drawing.Point(224, 376);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(131, 23);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 129;
+            this.buttonX1.Text = "HỦY ĐMA";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            // 
+            // labelX1
+            // 
+            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(43, 326);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(87, 22);
+            this.labelX1.TabIndex = 128;
+            this.labelX1.Text = "MÃ ĐMA";
+            // 
+            // cbMaDMA
+            // 
+            this.cbMaDMA.DisplayMember = "Text";
+            this.cbMaDMA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbMaDMA.FormattingEnabled = true;
+            this.cbMaDMA.ItemHeight = 21;
+            this.cbMaDMA.Location = new System.Drawing.Point(151, 323);
+            this.cbMaDMA.Name = "cbMaDMA";
+            this.cbMaDMA.Size = new System.Drawing.Size(115, 27);
+            this.cbMaDMA.TabIndex = 127;
             // 
             // btCapNhatThongTin
             // 
@@ -627,77 +699,6 @@
             this.labelX13.TabIndex = 125;
             this.labelX13.Text = "QUẬN";
             // 
-            // cbMaDMA
-            // 
-            this.cbMaDMA.DisplayMember = "Text";
-            this.cbMaDMA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbMaDMA.FormattingEnabled = true;
-            this.cbMaDMA.ItemHeight = 21;
-            this.cbMaDMA.Location = new System.Drawing.Point(151, 323);
-            this.cbMaDMA.Name = "cbMaDMA";
-            this.cbMaDMA.Size = new System.Drawing.Size(115, 27);
-            this.cbMaDMA.TabIndex = 127;
-            // 
-            // labelX1
-            // 
-            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(43, 326);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(87, 22);
-            this.labelX1.TabIndex = 128;
-            this.labelX1.Text = "MÃ ĐMA";
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonX1.Location = new System.Drawing.Point(224, 376);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(131, 23);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX1.TabIndex = 129;
-            this.buttonX1.Text = "HỦY ĐMA";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX2.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonX2.Location = new System.Drawing.Point(384, 376);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(131, 23);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX2.TabIndex = 130;
-            this.buttonX2.Text = "HOÀN TẤT";
-            // 
-            // labelX6
-            // 
-            this.labelX6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX6.Location = new System.Drawing.Point(281, 323);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(108, 22);
-            this.labelX6.TabIndex = 131;
-            this.labelX6.Text = "CHU KỲ ĐS";
-            // 
-            // txtChiKyDocSo
-            // 
-            // 
-            // 
-            // 
-            this.txtChiKyDocSo.Border.Class = "TextBoxBorder";
-            this.txtChiKyDocSo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChiKyDocSo.ForeColor = System.Drawing.Color.Red;
-            this.txtChiKyDocSo.Location = new System.Drawing.Point(381, 321);
-            this.txtChiKyDocSo.Name = "txtChiKyDocSo";
-            this.txtChiKyDocSo.Size = new System.Drawing.Size(56, 27);
-            this.txtChiKyDocSo.TabIndex = 132;
-            this.txtChiKyDocSo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // frmDieuChinhDMA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -705,7 +706,7 @@
             this.ClientSize = new System.Drawing.Size(580, 444);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDieuChinhDMA";
             this.Text = "ĐIỀU CHỈNH ĐMA";
             this.panel2.ResumeLayout(false);

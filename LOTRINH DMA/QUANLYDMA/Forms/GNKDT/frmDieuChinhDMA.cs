@@ -183,6 +183,11 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
                     }
                     DAL.DULIEUKH.C_DuLieuKhachHang.Update();
                 }
+                string sodanhbo = this.txtDanhBo.Text.Replace("-", "");
+                string sql = "UPDATE HOADON SET MaDMA='" + this.cbMaDMA.SelectedValue.ToString() + "' WHERE DANHBA='" + sodanhbo + "' AND  NAM=YEAR(GETDATE()) AND KY= (SELECT MAX(KY) FROM HOADON WHERE DANHBA='" + sodanhbo + "' ) ";
+                DAL.LinQConnectionHD.ExecuteCommand(sql);
+
+
                 MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
@@ -217,6 +222,11 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
 
                 MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -39,10 +39,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
                 CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
                 db.Connection.Open();
 
-                string query = "SELECT kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.HIEUDH, kh.CODH, convert(varchar(20),YEAR(kh.NGAYTHAY)) AS 'NAM', nv.NAME, ds.GHICHUVANPHONG ";
-                query += " FROM  DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv ";
+                string query = "SELECT kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.HIEUDH, kh.CODH, convert(varchar(20),YEAR(kh.NGAYTHAY)) AS 'NAM', nv.NAME, ds.GhiChuDS as  GHICHUVANPHONG ";
+                query += " FROM  DocSoTH.dbo.DocSo ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv ";
                 query += " WHERE ds.DANHBA = kh.DANHBO AND CONVERT(int,SUBSTRING(kh.LOTRINH,3,2))= nv.MAYDS ";
-                query += " AND ds.CODE LIKE '" + code + "%' AND ds.KY=" + ky;
+                query += " AND ds.CodeMoi LIKE '" + code + "%' AND ds.KY=" + ky;
                 if (dot != 0)
                 {
                     query += " AND ds.DOT=" + dot;
@@ -66,10 +66,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
 
-            string query = "SELECT kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.HIEUDH, kh.CODH, convert(varchar(20),YEAR(kh.NGAYTHAY)) AS 'NAM', nv.NAME, ds.GHICHUVANPHONG ";
-            query += " FROM  DocSo_PHT.dbo.DS" + nam + " ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv ";
+            string query = "SELECT kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.HIEUDH, kh.CODH, convert(varchar(20),YEAR(kh.NGAYTHAY)) AS 'NAM', nv.NAME, ds.GhiChuDS as  GHICHUVANPHONG ";
+            query += " FROM  DocSoTH.dbo.DocSo ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv ";
             query += " WHERE ds.DANHBA = kh.DANHBO AND CONVERT(int,SUBSTRING(kh.LOTRINH,3,2))= nv.MAYDS ";
-            query += " AND ds.CODE LIKE '" + code + "%' AND ds.TIEUTHU='"+lncc+"' AND ds.KY=" + ky;
+            query += " AND ds.CodeMoi LIKE '" + code + "%' AND ds.TieuThuMoi='" + lncc + "' AND ds.KY=" + ky;
             if (dot != 0)
             {
                 query += " AND ds.DOT=" + dot;
