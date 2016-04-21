@@ -568,7 +568,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
         public static DataSet reportChamCongHD0(string nam, int ky, int tods)
         {
-            CAPNHAT_BANGCHAMCONG_HD0_2(nam, ky, tods);
+            CAPNHAT_BANGCHAMCONG_HD0(nam, ky, tods);
             DataSet ds = new DataSet();
             if (db.Connection.State == ConnectionState.Open)
             {

@@ -14,6 +14,28 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\HP_G7\dhn- share\QUAN LY DONG HO NUOC\QUAN_LY_DHN_2016\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\HP_G7\dhn- share\QUAN LY DONG HO NUOC\QUAN_LY_DHN_2016\</UpdateUrl>
+    <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsUrl>\\HP_G7\dhn- share\QUAN LY DONG HO NUOC\QUAN_LY_DHN_2016</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,6 +61,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>CAPNUOCTANHOA.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E659186D27DC916DB167836B4CC2A4A515C10A37</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CAPNUOCTANHOA_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxInterop.AcroPDFLib">
@@ -1375,13 +1409,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="bin\Debug\app.conf" />
-    <None Include="bin\Debug\CAPNUOCTANHOA.exe.config" />
-    <None Include="bin\Debug\CAPNUOCTANHOA.vshost.exe.config" />
-    <None Include="bin\Debug\CAPNUOCTANHOA.vshost.exe.manifest" />
-    <None Include="bin\Debug\LOTRINH.xls" />
-    <None Include="bin\Debug\News.xls" />
-    <None Include="bin\Debug\user.dat" />
     <None Include="Forms\BanKTKS\BC\BAOCAO.xsc">
       <DependentUpon>BAOCAO.xsd</DependentUpon>
     </None>
@@ -2388,20 +2415,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\CAPNUOCTANHOA.exe" />
-    <Content Include="bin\Debug\CAPNUOCTANHOA.pdb" />
     <Content Include="bin\Debug\CAPNUOCTANHOA.vshost.exe" />
-    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
-    <Content Include="bin\Debug\DevComponents.DotNetBar2.dll" />
-    <Content Include="bin\Debug\icon.ico" />
-    <Content Include="bin\Debug\IrisSkin2.dll" />
-    <Content Include="bin\Debug\log-file.txt" />
-    <Content Include="bin\Debug\log4net.dll" />
-    <Content Include="bin\Debug\logo.ico" />
-    <Content Include="bin\Debug\Microsoft.Office.Interop.Excel.dll" />
-    <Content Include="bin\Debug\String_Indentity.dll" />
-    <Content Include="bin\Debug\String_Indentity_.dll" />
-    <Content Include="bin\Debug\VniToUnicode.dll" />
     <Content Include="lib\CrystalDecisions.CrystalReports.Engine.dll" />
     <Content Include="lib\DevComponents.DotNetBar2.dll" />
     <Content Include="lib\icon.ico" />
@@ -2482,6 +2496,34 @@
   <ItemGroup>
     <Folder Include="bin\Release\" />
   </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="SAP.CrystalReports14.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>SAP Crystal Reports Runtime Engine for .NET Framework 4.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

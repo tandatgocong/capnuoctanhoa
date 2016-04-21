@@ -115,7 +115,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         }
         public void UpDateSoNha(string dot, string ky, string nam)
         {
-            string sql = " UPDATE DocSoTH.dbo.KhachHang SET  So=t2.SONHA ,Duong=t2.TENDUONG ";
+            string sql = " UPDATE DocSoTH.dbo.KhachHang SET  So=t2.SONHA ,Duong=t2.TENDUONG,SDT=t2.DIENTHOAI ";
             sql += "FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as t2 ";
             sql += " WHERE  DanhBa = t2.DANHBO AND LEFT(t2.LOTRINH,2)='" + dot + "' ";
             DAL.LinQConnection.ExecuteCommand_(sql);
