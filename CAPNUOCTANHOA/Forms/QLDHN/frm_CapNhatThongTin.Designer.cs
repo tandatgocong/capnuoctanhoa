@@ -2602,7 +2602,7 @@
             this.txtGhiChuMoi.Size = new System.Drawing.Size(189, 27);
             this.txtGhiChuMoi.TabIndex = 117;
             this.txtGhiChuMoi.Text = "GIẾNG/";
-            this.txtGhiChuMoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGhiChuMoi_KeyPress);
+            this.txtGhiChuMoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGhiChuDS_KeyPress);
             // 
             // labelX23
             // 

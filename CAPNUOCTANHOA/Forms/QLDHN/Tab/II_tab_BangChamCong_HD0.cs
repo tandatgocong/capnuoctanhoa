@@ -78,9 +78,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             }
             rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCongHD0(txtNam.Text.Trim(), ky, tods));
             rp.SetParameterValue("TODS", tento);
-            rp.SetParameterValue("KYDS", ky);
-            rp.SetParameterValue("TONGDHN", 12563);
-            rp.SetParameterValue("TONGDC", txtNam.Text.Trim());
+            rp.SetParameterValue("KYDS"," KỲ " + ky+"");
+            //rp.SetParameterValue("TONGDHN", 12563);
+            //rp.SetParameterValue("TONGDC", txtNam.Text.Trim());
             crystalReportViewer1.ReportSource = rp;
         }
 
