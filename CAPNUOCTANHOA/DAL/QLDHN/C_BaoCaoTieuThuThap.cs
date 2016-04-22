@@ -122,7 +122,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS KN_SANLUONG, ";
             sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
             sql += " FROM DocSoTH.dbo.DocSo  t  ";
-            sql += " WHERE KY=" + ky;
+            sql += " WHERE NAM=" + nam + " AND KY=" + ky;
             sql += " GROUP BY TODS,MAY ";
             try
             {
@@ -144,7 +144,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " ( ";
             sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSoTH.dbo.DocSo  t  ";
-            sql += " WHERE KY=" + ky;
+            sql += " WHERE NAM=" + nam + " AND KY=" + ky;
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.TODS AND W_BAOCAO_SANLUONG_MAY.MAYDS = t2.MAY";
@@ -168,7 +168,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " ( ";
             sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSoTH.dbo.DocSo  t  ";
-            sql += " WHERE KY=" + ky;
+            sql += " WHERE NAM=" + nam + " AND KY=" + ky;
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG_MAY.TODS = t2.TODS AND W_BAOCAO_SANLUONG_MAY.MAYDS = t2.MAY";
@@ -213,7 +213,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "(";
             sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSoTH.dbo.DocSo  t  ";
-            sql += " WHERE  KY=" + ky +" AND DOT ="+dot;
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS=t2.TODS";
@@ -238,7 +238,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " ( ";
             sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSoTH.dbo.DocSo  t  ";
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON W_BAOCAO_SANLUONG.TODS = t2.TODS";
@@ -262,7 +262,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " ( ";
             sql += " SELECT TODS, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSoTH.dbo.DocSo  t  ";
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS ";
             sql += " ) as t2 ";
             sql += " ON	W_BAOCAO_SANLUONG.TODS = t2.TODS";
@@ -311,7 +311,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS KN_SANLUONG, ";
             sql += " KT_DHN=0,KT_SANLUONG=0,TANGIAM_DHN=0,TANGIAM_SANLUONG=0,NT_DHN=0,NT_SANLUONG=0,NT_TANGIAM_DHN=0,NT_TANGIAM_SANLUONG=0 ";
             sql += " FROM DocSoTH.dbo.DocSo  t  ";
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS,MAY ";
             try
             {
@@ -333,7 +333,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " ( ";
             sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSoTH.dbo.DocSo  t  ";
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";
             sql += " ON W_BAOCAO_SANLUONG_MAY.TODS = t2.TODS AND W_BAOCAO_SANLUONG_MAY.MAYDS = t2.MAY";
@@ -357,7 +357,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " ( ";
             sql += " SELECT TODS,MAY, COUNT(case when TieuThuMoi=0 then 1 else null end) AS COUNTDHN,COUNT(case when (TieuThuMoi>=1  AND TieuThuMoi<=4 ) then 1 else null end) AS SANLUONG ";
             sql += " FROM DocSoTH.dbo.DocSo  t  ";
-            sql += " WHERE  KY=" + ky + " AND DOT =" + dot;
+            sql += " WHERE NAM=" + nam + " AND  KY=" + ky + " AND DOT =" + dot;
             sql += " GROUP BY TODS,MAY ";
             sql += " ) as t2 ";
             sql += " ON W_BAOCAO_SANLUONG_MAY.TODS = t2.TODS AND W_BAOCAO_SANLUONG_MAY.MAYDS = t2.MAY";

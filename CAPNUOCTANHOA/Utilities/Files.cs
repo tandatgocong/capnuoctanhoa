@@ -19,8 +19,8 @@ namespace CAPNUOCTANHOA.Utilities
         public static string localSave = "";
         public static string createFile = "";
         public static string FileName = "";
-        public static string numberRecord = "0";
-        public static string pageSize = "A3";
+        public static string numberRecord = "20";
+        public static string pageSize = "A4";
         
         public static string[] getFileOnServer()
         {

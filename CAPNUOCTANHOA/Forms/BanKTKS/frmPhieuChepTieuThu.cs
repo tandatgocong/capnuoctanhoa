@@ -32,7 +32,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             int nam = DateTime.Now.Year;
             txtKy.Text = ky + "";
             txtNam.Text = nam + "";
-            cbSoLuong.Text = "12";
+            cbSoLuong.Text = "10";
             this.btHSGoc.Visible = false;
         }
 
@@ -246,8 +246,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             catch (Exception) { }
 
             query2 = " SELECT TOP(1)  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM ";
-            query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.Username  ";
-            query2 += " FROM DocSo AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSoTH.dbo.Users nv ";
+            query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.May,nv.NhanVienID as TENNHANVIEN  ";
+            query2 += " FROM DocSo AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSoTH.dbo.MayDS nv ";
             query2 += " WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.DANHBA='" + danhba + "' ";
             query2 += " ORDER BY ds.KY DESC, ds.NAM DESC ";
 
@@ -324,8 +324,8 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             }
 
             query2 = " SELECT TOP(1)  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM ";
-            query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.Username  ";
-            query2 += " FROM DocSo AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSoTH.dbo.Users nv ";
+            query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.NhanVienID as TENNHANVIEN ";
+            query2 += " FROM DocSo AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSoTH.dbo.MayDS nv ";
             query2 += " WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.DANHBA='" + danhba + "' ";
             query2 += " ORDER BY ds.KY DESC, ds.NAM DESC ";
 

@@ -69,7 +69,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             DocSoDataContext db = new DocSoDataContext();
             try
             {
-                string sql = "UPDATE KHACHHANG SET HIEU='" + hieudh + "', SOTHAN='" + sothan + "', MACHITHAN='" + chithan + "', MACHIGOC='" + chigoc + "' WHERE DANHBA='" + danhbo + "' ";
+                string sql = "UPDATE KhachHang SET Hieu='" + hieudh + "', SoThan='" + sothan + "', ChiThan='" + chithan + "', ChiCo='" + chigoc + "' WHERE DanhBa='" + danhbo + "' ";
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
