@@ -12,6 +12,7 @@ using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.DAL;
+using System.Configuration;
 
 namespace CAPNUOCTANHOA.Forms.QLDA
 {
@@ -185,8 +186,40 @@ namespace CAPNUOCTANHOA.Forms.QLDA
                 string DHN_LYDOTHAY = dataBangKe.Rows[e.RowIndex].Cells["G_LYDO"].Value + "";
                 string DHN_GHICHU = dataBangKe.Rows[e.RowIndex].Cells["DHN_GHICHU"].Value + "";
 
-           //     cbLoaiBangKe.SelectedValue = DHN_LOAIBANGKE;
-              //  txtSoBangKe.Text = DHN_SOBANGKE;
+
+                string HCT_CHISOGO = dataBangKe.Rows[e.RowIndex].Cells["HCT_CHISOGO"].Value + "";
+                txtChiSoGo.Text = HCT_CHISOGO;
+
+                string HCT_HIEUDHNGAN = dataBangKe.Rows[e.RowIndex].Cells["HCT_HIEUDHNGAN"].Value + "";
+                txtHieuDHGan.Text = !HCT_HIEUDHNGAN.Equals("") ? HCT_HIEUDHNGAN : ConfigurationManager.AppSettings["defautHieu"].ToString();
+
+                string HCT_CODHNGAN = dataBangKe.Rows[e.RowIndex].Cells["HCT_CODHNGAN"].Value + "";
+                txtGoGan.Text = !HCT_CODHNGAN.Equals("") ? HCT_CODHNGAN : "15";
+
+                string HCT_SOTHANGAN = dataBangKe.Rows[e.RowIndex].Cells["HCT_SOTHANGAN"].Value + "";
+                txtSoThanGan.Text = HCT_SOTHANGAN;
+
+                string HCT_CAP = dataBangKe.Rows[e.RowIndex].Cells["HCT_CAP"].Value + "";
+                txtCapGan.Text = !HCT_CAP.Equals("") ? HCT_CAP : ConfigurationManager.AppSettings["defautCap"].ToString();
+
+                string HCT_CHISOGAN = dataBangKe.Rows[e.RowIndex].Cells["HCT_CHISOGAN"].Value + "";
+                txtChiSoGan.Text = !HCT_CHISOGAN.Equals("") ? HCT_CHISOGAN : "0"; ;
+
+
+                string HCT_NGAYGAN = dataBangKe.Rows[e.RowIndex].Cells["HCT_NGAYGAN"].Value + "";
+                txtngayGanDh.Value = !"".Equals(HCT_NGAYGAN) ? DateTime.Parse(HCT_NGAYGAN) : DateTime.Now.AddDays(-1);
+
+                string HCT_NGAYKIEMDINH = dataBangKe.Rows[e.RowIndex].Cells["HCT_NGAYKIEMDINH"].Value + "";
+                txtngayKiemDinh.Value = !"".Equals(HCT_NGAYKIEMDINH) ? DateTime.Parse(HCT_NGAYKIEMDINH) : DateTime.Now;
+
+
+                string HCT_CHITHAN = dataBangKe.Rows[e.RowIndex].Cells["HCT_CHITHAN"].Value + "";
+                txtChiThan.Text = !HCT_CHITHAN.Equals("") ? HCT_CHITHAN : "CON";
+
+                string HCT_CHIGOC = dataBangKe.Rows[e.RowIndex].Cells["HCT_CHIGOC"].Value + "";
+                txtChiGoc.Text = !HCT_CHITHAN.Equals("") ? HCT_CHITHAN : "CON";
+
+
                 txtSoDanhBo.Text = DHN_DANHBO.Replace(" ", "");
                 txtTenKH.Text = HOTEN;
                 txtDiaChi.Text = DIACHI;
@@ -206,6 +239,7 @@ namespace CAPNUOCTANHOA.Forms.QLDA
                 catch (Exception)
                 {
                 }
+
                 btcapNhat.Enabled = true;
                 btXoa.Enabled = true;
             }
