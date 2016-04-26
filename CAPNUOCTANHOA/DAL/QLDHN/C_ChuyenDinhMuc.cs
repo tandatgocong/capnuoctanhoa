@@ -55,27 +55,27 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
         public static DataTable getThonTinDieuChinh(string danhbo)
         {
-            string  na= (DateTime.Now.Year )+"";
+            //string  na= (DateTime.Now.Year )+"";
                 
-            if (DateTime.Now.Month > 11 && DateTime.Now.Day >= 21)
-            {
-                na = (DateTime.Now.Year + 1) + "";
+            //if (DateTime.Now.Month > 11 && DateTime.Now.Day >= 21)
+            //{
+            //    na = (DateTime.Now.Year + 1) + "";
 
-            }
-            string sql = "SELECT TOP(1) ds.KY,ds.DOT,YEAR(ds.NGAYGHI) AS 'NAM', ds.TODS, DANHBO, ds.MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.TBTHU";
-            sql += " FROM DocSo_PHT.dbo.DS" + na + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND  ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
+            //}
+            string sql = "SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.TBTT";
+            sql += " FROM DocSoTH.dbo.DocSo AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND  ds.DANHBA ='" + danhbo + "' ORDER BY ds.Nam  DESC,ds.KY DESC ";
 
             DataTable tb = LinQConnection.getDataTable(sql);
-            if (tb.Rows.Count <= 0)
-            {
-                na = DateTime.Now.Year.ToString();
-                sql = "SELECT TOP(1) ds.KY,ds.DOT,YEAR(ds.NGAYGHI) AS 'NAM', ds.TODS, DANHBO, ds.MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.TBTHU";
-                sql += " FROM DocSo_PHT.dbo.DS" + na + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-                sql += "  WHERE  ds.DANHBA=kh.DANHBO AND  ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
+            //if (tb.Rows.Count <= 0)
+            //{
+            //    na = DateTime.Now.Year.ToString();
+            //    sql = "SELECT TOP(1) ds.KY,ds.DOT,YEAR(ds.NGAYGHI) AS 'NAM', ds.TODS, DANHBO, ds.MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.TBTHU";
+            //    sql += " FROM DocSo_PHT.dbo.DS" + na + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
+            //    sql += "  WHERE  ds.DANHBA=kh.DANHBO AND  ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
 
-                tb = LinQConnection.getDataTable(sql);
-            }
+            //    tb = LinQConnection.getDataTable(sql);
+            //}
              return tb;
         }
         public static DataTable getListDCByDate(string ngay) {
