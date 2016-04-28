@@ -71,8 +71,11 @@ namespace CAPNUOCTANHOA.Forms.QLDA
             }
         }
         public void setSTT() {
+            int tt = dataBangKe.Rows.Count;
             for (int i = 0; i < dataBangKe.Rows.Count; i++) {
-                dataBangKe.Rows[i].Cells["DHN_STT"].Value = i + 1;
+
+                dataBangKe.Rows[i].Cells["DHN_STT"].Value = tt;
+                tt--;
             }
         }
         private void btIn_Click(object sender, EventArgs e)
@@ -152,13 +155,9 @@ namespace CAPNUOCTANHOA.Forms.QLDA
         private void txtSoBangKe_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
-                if ("DT,DP,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
-                {
-                    LoadData_DT();
-                }
-                else {
+               
                     LoadData();
-                }
+                
                 
                 //btIn.Enabled = true;
             }

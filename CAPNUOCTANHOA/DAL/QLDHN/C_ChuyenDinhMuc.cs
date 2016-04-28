@@ -62,7 +62,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             //    na = (DateTime.Now.Year + 1) + "";
 
             //}
-            string sql = "SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.TBTT";
+            string sql = "SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1 AS MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.TBTT as TBTHU";
             sql += " FROM DocSoTH.dbo.DocSo AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
             sql += "  WHERE  ds.DANHBA=kh.DANHBO AND  ds.DANHBA ='" + danhbo + "' ORDER BY ds.Nam  DESC,ds.KY DESC ";
 

@@ -55,8 +55,8 @@ namespace CAPNUOCTANHOA.DAL.KTCN
         {
             try
             {
-                var query = from q in db.HOSO_DONGHOKHACHHANGs where q.DBDongHoNuoc == danhbo  select q;
-                return query.SingleOrDefault();
+                var query = from q in db.HOSO_DONGHOKHACHHANGs where q.DBDongHoNuoc == danhbo orderby q.NgayCapNhat descending select q;
+                return query.ToList()[0];
             }
             catch (Exception ex)
             {
