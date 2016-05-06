@@ -701,7 +701,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string dot = ksdlDot.Items[ksdlDot.SelectedIndex].ToString();
             string ky = ksdlKy.Items[ksdlKy.SelectedIndex].ToString();
             string nam = ksdlNam.Text.Trim();
-            string SQL = "SELECT TODS,DANHBA,MLT1 FROM DocSoTH.dbo.DocSo WHERE CSMOI IS NULL AND ds.NAM=" + nam + " AND KY=" + ky + " AND DOT=" + dot + " ORDER BY TODS ASC";
+            string SQL = "SELECT TODS,DANHBA,MLT1 FROM DocSoTH.dbo.DocSo WHERE (CSMOI IS NULL OR CSCu IS NULL OR TieuThuMoi IS NULL)  AND  NAM=" + nam + " AND KY=" + ky + " AND DOT=" + dot + " ORDER BY TODS ASC";
             dataGridView2.DataSource = DAL.LinQConnection.getDataTable(SQL);
         }
 

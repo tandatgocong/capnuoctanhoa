@@ -249,7 +249,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.May,nv.NhanVienID as TENNHANVIEN  ";
             query2 += " FROM DocSo AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSoTH.dbo.MayDS nv ";
             query2 += " WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.DANHBA='" + danhba + "' ";
-            query2 += " ORDER BY ds.KY DESC, ds.NAM DESC ";
+            query2 += " ORDER BY ds.NAM DESC,ds.KY DESC ";
 
             adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
             adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
@@ -327,7 +327,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.MAY,nv.NhanVienID as TENNHANVIEN ";
             query2 += " FROM DocSo AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSoTH.dbo.MayDS nv ";
             query2 += " WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.DANHBA='" + danhba + "' ";
-            query2 += " ORDER BY ds.KY DESC, ds.NAM DESC ";
+            query2 += " ORDER BY ds.NAM DESC,ds.KY DESC  ";
 
             adapter = new SqlDataAdapter(query2, db.Connection.ConnectionString);
             adapter.Fill(ds, "VIEW_YEUCAUKIEMTRA");
