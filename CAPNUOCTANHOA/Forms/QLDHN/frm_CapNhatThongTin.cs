@@ -158,7 +158,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             if ("00".Equals(dot))
             {
-                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DocSo.CODE,SODHN=TIEUTHU ";
+                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DocSo.CodeMoi,SODHN=TieuThuMoi ";
                 sql += " FROM DocSoTH.dbo.DocSo ";
                 sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSoTH.dbo.DocSo.DANHBA ";
                 sql += "		AND  DocSoTH.dbo.DocSo.NAM=" + nam + " AND  DocSoTH.dbo.DocSo.KY =" + int.Parse(ky);
@@ -171,7 +171,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 //sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSoTH.dbo.DS" + nam + ".DANHBA ";
                 //sql += "		AND DocSoTH.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  AND DocSoTH.dbo.DS" + nam + ".DOT = " + int.Parse(dot) + "";
                 //DAL.LinQConnection.ExecuteCommand_(sql);
-                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DocSo.CODE,SODHN=TIEUTHU ";
+                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DocSo.CodeMoi,SODHN=TieuThuMoi ";
                 sql += " FROM DocSoTH.dbo.DocSo ";
                 sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSoTH.dbo.DocSo.DANHBA ";
                 sql += "AND  DocSoTH.dbo.DocSo.DOT=" + int.Parse(dot) + " AND  DocSoTH.dbo.DocSo.NAM=" + nam + " AND  DocSoTH.dbo.DocSo.KY =" + int.Parse(ky);

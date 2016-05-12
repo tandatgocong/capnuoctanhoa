@@ -321,7 +321,7 @@ namespace CAPNUOCTANHOA.Forms.QLDA
             List<TB_DULIEUKHACHHANG> cothantrung = DAL.DULIEUKH.C_DuLieuKhachHang.getSoThanDHN(this.txtSoThanGan.Text.Replace(" ", ""), this.txtHieuDHGan.Text.Substring(0, 3));
             if (cothantrung.Count > 0)
             {
-                if (this.txtSoDanhBo.Text.Replace("-", "").Equals(cothantrung[0].DANHBO))
+                if (!this.txtSoDanhBo.Text.Replace("-", "").Equals(cothantrung[0].DANHBO))
                 {
                     string danhbo = "";
                     foreach (var item in cothantrung)
@@ -405,50 +405,51 @@ namespace CAPNUOCTANHOA.Forms.QLDA
                                 //Cap Nhat Du Lieu Cho HandHeld
                                 try
                                 {
-                                    DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtSoDanhBo.Text.Replace("-", ""), txtHieuDHGan.Text.Substring(0, 3), txtSoThanGan.Text, txtChiThan.Text.ToUpper(), txtChiGoc.Text.ToUpper());
-                                    string loai = "1";
+                                //    DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtSoDanhBo.Text.Replace("-", ""), txtHieuDHGan.Text.Substring(0, 3), txtSoThanGan.Text, txtChiThan.Text.ToUpper(), txtChiGoc.Text.ToUpper());
+                                //    string loai = "1";
 
-                                    string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
-                                    " VALUES     ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " +
-                                    " '" + kh.HOTEN.TrimEnd() + "', " +
-                                    " '" + kh.SONHA.TrimEnd() + "' ," +
-                                    " '" + kh.TENDUONG.TrimEnd() + "' , " +
-                                    " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
-                                    " " + kh.CODH + ", " +
-                                    " '" + txtngayGanDh.Value + "', " +
-                                    " " + txtChiSoGo.Text + "," +
-                                    " " + txtChiSoGan.Text + ", " +
-                                    " '" + txtSoThanGan.Text + "'," +
-                                    " N'" + kh.VITRIDHN + "', " +
-                                    " '" + txtChiThan.Text.ToUpper() + "'," +
-                                    " '" + txtChiGoc.Text.ToUpper() + "', " +
-                                    "  " + loai + ")";
-                                    if (DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql) == 0)
-                                    {
+                                //    string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
+                                //    " VALUES     ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " +
+                                //    " '" + kh.HOTEN.TrimEnd() + "', " +
+                                //    " '" + kh.SONHA.TrimEnd() + "' ," +
+                                //    " '" + kh.TENDUONG.TrimEnd() + "' , " +
+                                //    " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
+                                //    " " + kh.CODH + ", " +
+                                //    " '" + txtngayGanDh.Value + "', " +
+                                //    " " + txtChiSoGo.Text + "," +
+                                //    " " + txtChiSoGan.Text + ", " +
+                                //    " '" + txtSoThanGan.Text + "'," +
+                                //    " N'" + kh.VITRIDHN + "', " +
+                                //    " '" + txtChiThan.Text.ToUpper() + "'," +
+                                //    " '" + txtChiGoc.Text.ToUpper() + "', " +
+                                //    "  " + loai + ")";
+                                //    if (DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql) == 0)
+                                //    {
 
-                                        sql = "UPDATE  BAOTHAYDHN  " +
-                                        " SET  " +
-                                        " TENKH='" + kh.HOTEN.TrimEnd() + "', " +
-                                        " SO='" + kh.SONHA.TrimEnd() + "' ," +
-                                        " DUONG='" + kh.TENDUONG.TrimEnd() + "' , " +
-                                        " HIEUMOI='" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
-                                        " COMOI=" + kh.CODH + ", " +
-                                        " NGAYTHAY='" + txtngayGanDh.Value + "', " +
-                                        " CSGO=" + txtChiSoGo.Text + "," +
-                                        " CSGAN=" + txtChiSoGan.Text + ", " +
-                                        " SOTHANMOI='" + txtSoThanGan.Text + "'," +
-                                        " VITRIMOI=N'" + kh.VITRIDHN + "', " +
-                                        " MACHITHAN='" + txtChiThan.Text.ToUpper() + "'," +
-                                        " MACHIGOC='" + txtChiGoc.Text.ToUpper() + "', " +
-                                        " LOAI=" + loai + " " +
-                                        " WHERE DANHBA='" + kh.DANHBO + "' AND CONVERT(DATETIME,NGAYTHAY,103)='" + txtNgayGan.Value.ToShortDateString() + "'";
-                                        DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql);
-                                    }
+                                //        sql = "UPDATE  BAOTHAYDHN  " +
+                                //        " SET  " +
+                                //        " TENKH='" + kh.HOTEN.TrimEnd() + "', " +
+                                //        " SO='" + kh.SONHA.TrimEnd() + "' ," +
+                                //        " DUONG='" + kh.TENDUONG.TrimEnd() + "' , " +
+                                //        " HIEUMOI='" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
+                                //        " COMOI=" + kh.CODH + ", " +
+                                //        " NGAYTHAY='" + txtngayGanDh.Value + "', " +
+                                //        " CSGO=" + txtChiSoGo.Text + "," +
+                                //        " CSGAN=" + txtChiSoGan.Text + ", " +
+                                //        " SOTHANMOI='" + txtSoThanGan.Text + "'," +
+                                //        " VITRIMOI=N'" + kh.VITRIDHN + "', " +
+                                //        " MACHITHAN='" + txtChiThan.Text.ToUpper() + "'," +
+                                //        " MACHIGOC='" + txtChiGoc.Text.ToUpper() + "', " +
+                                //        " LOAI=" + loai + " " +
+                                //        " WHERE DANHBA='" + kh.DANHBO + "' AND CONVERT(DATETIME,NGAYTHAY,103)='" + txtNgayGan.Value.ToShortDateString() + "'";
+                                //        DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql);
+                                //    }
                                     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-                                    if (DAL.LinQConnectionDSTH.getDataTable("SELECT * FROM BaoThay WHERE DanhBa='" + this.txtSoDanhBo.Text.Replace("-", "") + "' AND SoThanMoi='" + txtSoThanGan.Text + "' ").Rows.Count < 1)
-                                    {
-                                        sql = " INSERT INTO BaoThay(DanhBa,LoaiBT,NgayThay,HieuMoi,CoMoi,SoThanMoi,ViTriMoi,ChiThanMoi,ChiCoMoi,CSGo,CSGan,NgayCapNhat,NVCapNhat) ";
+                                    //if (DAL.LinQConnectionDSTH.getDataTable("SELECT * FROM BaoThay WHERE DanhBa='" + this.txtSoDanhBo.Text.Replace("-", "") + "' AND SoThanMoi='" + txtSoThanGan.Text + "' ").Rows.Count < 1)
+                                    //{
+                                        string loai = "1";
+                                        string sql = " INSERT INTO BaoThay(DanhBa,LoaiBT,NgayThay,HieuMoi,CoMoi,SoThanMoi,ViTriMoi,ChiThanMoi,ChiCoMoi,CSGo,CSGan,NgayCapNhat,NVCapNhat) ";
                                         //string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
                                         sql += " VALUES ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " + loai + ",'" + txtNgayGan.Value.Date + "', " + " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " + kh.CODH + ", " + " '" + txtSoThanGan.Text + "'," + " N'" + kh.VITRIDHN + "', ";
                                         sql += " '" + txtChiThan.Text.ToUpper() + "'," + " '" + txtChiGoc.Text.ToUpper() + "'," + txtChiSoGo.Text + "," + txtChiSoGan.Text + ", '" + DateTime.Now + "','" + DAL.SYS.C_USERS._userName + "' )";
@@ -473,7 +474,12 @@ namespace CAPNUOCTANHOA.Forms.QLDA
                                             " WHERE DanhBa='" + kh.DANHBO + "' AND CONVERT(DATETIME,NgayThay,103)='" + txtNgayGan.Value.ToShortDateString() + "'";
                                             DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeldTH(sql);
                                         }
-                                    }
+                                    //}
+                                    //else
+                                    //{
+ 
+                                    
+                                    //}
 
 
 
@@ -652,44 +658,33 @@ namespace CAPNUOCTANHOA.Forms.QLDA
                                 try
                                 {
                                     DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtSoDanhBo.Text.Replace("-", ""), txtHieuDHGan.Text.Substring(0, 3), txtSoThanGan.Text, txtChiThan.Text.ToUpper(), txtChiGoc.Text.ToUpper());
+                                   
                                     string loai = "1";
+                                    //string sql = " INSERT INTO BaoThay(DanhBa,LoaiBT,NgayThay,HieuMoi,CoMoi,SoThanMoi,ViTriMoi,ChiThanMoi,ChiCoMoi,CSGo,CSGan,NgayCapNhat,NVCapNhat) ";
+                                    ////string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
+                                    //sql += " VALUES ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " + loai + ",'" + txtNgayGan.Value.Date + "', " + " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " + kh.CODH + ", " + " '" + txtSoThanGan.Text + "'," + " N'" + kh.VITRIDHN + "', ";
+                                    //sql += " '" + txtChiThan.Text.ToUpper() + "'," + " '" + txtChiGoc.Text.ToUpper() + "'," + txtChiSoGo.Text + "," + txtChiSoGan.Text + ", '" + DateTime.Now + "','" + DAL.SYS.C_USERS._userName + "' )";
 
-                                    string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
-                                    " VALUES     ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " +
-                                    " '" + kh.HOTEN.TrimEnd() + "', " +
-                                    " '" + kh.SONHA.TrimEnd() + "' ," +
-                                    " '" + kh.TENDUONG.TrimEnd() + "' , " +
-                                    " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
-                                    " " + kh.CODH + ", " +
-                                    " '" + txtngayGanDh.Value + "', " +
-                                    " " + txtChiSoGo.Text + "," +
-                                    " " + txtChiSoGan.Text + ", " +
-                                    " '" + txtSoThanGan.Text + "'," +
-                                    " N'" + kh.VITRIDHN + "', " +
-                                    " '" + txtChiThan.Text.ToUpper() + "'," +
-                                    " '" + txtChiGoc.Text.ToUpper() + "', " +
-                                    "  " + loai + ")";
-                                    if (DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql) == 0)
-                                    {
+                                    //if (DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeldTH(sql) == 0)
+                                    //{
 
-                                        sql = "UPDATE  BAOTHAYDHN  " +
+                                    string sql = "UPDATE BaoThay " +
                                         " SET  " +
-                                        " TENKH='" + kh.HOTEN.TrimEnd() + "', " +
-                                        " SO='" + kh.SONHA.TrimEnd() + "' ," +
-                                        " DUONG='" + kh.TENDUONG.TrimEnd() + "' , " +
-                                        " HIEUMOI='" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
-                                        " COMOI=" + kh.CODH + ", " +
-                                        " NGAYTHAY='" + txtngayGanDh.Value + "', " +
-                                        " CSGO=" + txtChiSoGo.Text + "," +
-                                        " CSGAN=" + txtChiSoGan.Text + ", " +
-                                        " SOTHANMOI='" + txtSoThanGan.Text + "'," +
-                                        " VITRIMOI=N'" + kh.VITRIDHN + "', " +
-                                        " MACHITHAN='" + txtChiThan.Text.ToUpper() + "'," +
-                                        " MACHIGOC='" + txtChiGoc.Text.ToUpper() + "', " +
-                                        " LOAI=" + loai + " " +
-                                        " WHERE DANHBA='" + kh.DANHBO + "' AND CONVERT(DATETIME,NGAYTHAY,103)='" + txtNgayGan.Value.ToShortDateString() + "'";
-                                        DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeld(sql);
-                                    }
+                                        " HieuMoi='" + txtHieuDHGan.Text.Substring(0, 3) + "', " +
+                                        " CoMoi=" + kh.CODH + ", " +
+                                        " NgayThay='" + txtNgayGan.Value + "', " +
+                                        " CSGo=" + txtChiSoGo.Text + "," +
+                                        " CSGan=" + txtChiSoGan.Text + ", " +
+                                        " SoThanMoi='" + txtSoThanGan.Text + "'," +
+                                        " ViTriMoi=N'" + kh.VITRIDHN + "', " +
+                                        " ChiThanMoi='" + txtChiThan.Text.ToUpper() + "'," +
+                                        " ChiCoMoi='" + txtChiGoc.Text.ToUpper() + "', " +
+                                        " LoaiBT=" + loai + ", " +
+                                        " NgayCapNhat='" + DateTime.Now + " ', " +
+                                        " NVCapNhat='" + DAL.SYS.C_USERS._userName + " ' " +
+                                        " WHERE DanhBa='" + kh.DANHBO + "' AND CONVERT(DATETIME,NgayThay,103)='" + txtNgayGan.Value.ToShortDateString() + "'";
+                                        DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeldTH(sql);
+                                    //}
                                 }
                                 catch (Exception ex)
                                 {
