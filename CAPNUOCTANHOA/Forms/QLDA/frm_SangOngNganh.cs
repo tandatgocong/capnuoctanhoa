@@ -330,6 +330,9 @@ namespace CAPNUOCTANHOA.Forms.QLDA
                     }
                     MessageBox.Show(this, "Số Thân Hiện Gắn Mới Trùng Danh Bộ " + danhbo + " Không Cho Cập Nhật.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else {
+                    MessageBox.Show(this, "Hoàn Công 2 Lần Không Cho Cập Nhật.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {

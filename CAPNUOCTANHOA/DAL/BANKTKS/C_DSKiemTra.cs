@@ -55,15 +55,15 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
 
         public static DataTable getThonTinDieuChinh(string danhbo)
         {
-            string sql = "SELECT TOP(1) ds.KY,ds.DOT,YEAR(ds.NGAYGHI) AS 'NAM', ds.TODS, DANHBO, ds.MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.CSMOI,(kh.HIEUDH +'-'+ RIGHT(YEAR(kh.NGAYTHAY),2)) as HIEUDH,kh.CODH,kh.SOTHANDH";
+            string sql = " SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1 as MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.CSMOI,(kh.HIEUDH +'-'+ RIGHT(YEAR(kh.NGAYTHAY),2)) as HIEUDH,kh.CODH,kh.SOTHANDH";
             sql += " FROM DocSoTH.dbo.DocSo AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.NAM="+ DateTime.Now.Year.ToString() + "  ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.NAM="+ DateTime.Now.Year.ToString() + "  AND ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
             DataTable t1 =LinQConnection.getDataTable(sql);
             if (t1.Rows.Count == 0)
             {
-                sql = "SELECT TOP(1) ds.KY,ds.DOT,YEAR(ds.NGAYGHI) AS 'NAM', ds.TODS, DANHBO, ds.MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.CSMOI,(kh.HIEUDH +'-'+ RIGHT(YEAR(kh.NGAYTHAY),2)) as HIEUDH,kh.CODH,kh.SOTHANDH";
+                sql = "SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1 as MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.CSMOI,(kh.HIEUDH +'-'+ RIGHT(YEAR(kh.NGAYTHAY),2)) as HIEUDH,kh.CODH,kh.SOTHANDH";
                 sql += " FROM DocSoTH.dbo.DocSo AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-                sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.NAM=" + (DateTime.Now.Year -1).ToString() + "  ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
+                sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.NAM=" + (DateTime.Now.Year - 1).ToString() + " AND  ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
                 t1 = LinQConnection.getDataTable(sql);
             }
             
