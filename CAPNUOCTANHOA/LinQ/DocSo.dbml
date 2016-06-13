@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DocSo_PHT" Class="DocSoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HP_G7;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="DocSo_PHTConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DocSoTH" Class="DocSoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP_G7\KD;Initial Catalog=DocSoTH;Persist Security Info=True;User ID=sa" SettingsObjectName="CAPNUOCTANHOA.Properties.Settings" SettingsPropertyName="DocSoTHConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BAOTHAYDHN" Member="BAOTHAYDHNs">
     <Type Name="BAOTHAYDHN">
       <Column Name="ID_BAOTHAY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -639,14 +639,6 @@
       <Column Name="malotrinh" Member="malotrinh1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.MAYDOCSO" Member="MAYDOCSOs">
-    <Type Name="MAYDOCSO">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MAY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MASO" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="TODS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.N" Member="Ns">
     <Type Name="N">
       <Column Name="DANHBA" Type="System.String" DbType="NChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -663,6 +655,14 @@
       <Column Name="MAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="BANDOI" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="QUYEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MayDS" Member="MayDs">
+    <Type Name="MayD">
+      <Column Name="May" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenMay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ToID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NhanVienID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

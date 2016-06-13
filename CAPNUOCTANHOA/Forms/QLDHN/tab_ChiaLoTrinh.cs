@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 tods = 2;
                 this.lbToDocSo.Text = "     TỔ TÂN BÌNH 02";
-                List<MAYDOCSO> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(2);
+                List<MayD> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(2);
                 this.cbTuMayDocSo.DataSource = list;
                 this.cbTuMayDocSo.DisplayMember = "MAY";
                 this.cbTuMayDocSo.DisplayMember = "MAY";
@@ -55,7 +55,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             else if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
             {
                 tods = 3;
-                List<MAYDOCSO> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(3);
+                List<MayD> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(3);
                 this.lbToDocSo.Text = "     TỔ TÂN PHÚ 01";
                 this.txtTangBat.Text = "100";
                 this.cbTuMayDocSo.DataSource = list;
@@ -69,7 +69,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             else if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
             {
                 tods = 3;
-                List<MAYDOCSO> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(4);
+                List<MayD> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(4);
                 this.lbToDocSo.Text = "     TỔ TÂN PHÚ 02";
                 this.txtTangBat.Text = "100";
                 this.cbTuMayDocSo.DataSource = list;
@@ -83,7 +83,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             else if ("TB01".Equals(DAL.SYS.C_USERS._toDocSo.Trim()))
             {
                 tods = 1;
-                List<MAYDOCSO> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(1);
+                List<MayD> list = DAL.DULIEUKH.C_PhienLoTrinh.getListMayDS(1);
                 this.lbToDocSo.Text = "     TỔ TÂN BÌNH 01";
                 this.cbTuMayDocSo.DataSource = list;
                 this.cbTuMayDocSo.DisplayMember = "MAY";

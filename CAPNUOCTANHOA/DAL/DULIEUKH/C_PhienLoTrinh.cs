@@ -14,11 +14,11 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
         static DocSoDataContext ds = new DocSoDataContext();
         static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
         private static readonly ILog log = LogManager.GetLogger(typeof(C_PhienLoTrinh).Name);
-        public static List<MAYDOCSO> getListMayDS(int tods)
+        public static List<MayD> getListMayDS(int tods)
         {
             try
             {
-                var query = from q in ds.MAYDOCSOs where q.TODS == tods orderby q.MAY ascending select q;
+                var query = from q in ds.MayDs where q.ToID == tods.ToString() orderby q.May ascending select q;
                 return query.ToList();
 
             }

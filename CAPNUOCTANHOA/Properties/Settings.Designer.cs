@@ -108,5 +108,16 @@ namespace CAPNUOCTANHOA.Properties {
                 return ((string)(this["DocSoTHConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP_G7;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID=sa" +
+            "")]
+        public string DocSo_PHTConnectionString {
+            get {
+                return ((string)(this["DocSo_PHTConnectionString"]));
+            }
+        }
     }
 }

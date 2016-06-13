@@ -115,10 +115,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         }
         public void UpDateSoNha(string dot, string ky, string nam)
         {
-            string sql = " UPDATE DocSoTH.dbo.KhachHang SET  So=t2.SONHA ,Duong=t2.TENDUONG,SDT=t2.DIENTHOAI ";
-            sql += "FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as t2 ";
-            sql += " WHERE  DanhBa = t2.DANHBO AND DOT=" + int.Parse(dot) + " ";
-            DAL.LinQConnection.ExecuteCommand_(sql);
+            //string sql = " UPDATE DocSoTH.dbo.KhachHang SET  So=t2.SONHA ,Duong=t2.TENDUONG,SDT=t2.DIENTHOAI,ViTri=LEFT(t2.VITRIDHN,1) ,Hieu=t2.HIEUDH, SoThan= t2.SOTHANDH ";
+            //sql += "FROM CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as t2 ";
+            //sql += " WHERE  DanhBa = t2.DANHBO ";
+            //DAL.LinQConnection.ExecuteCommand_(sql);
+            DAL.LinQConnection.ExecuteStoredProcedure("UpdateDHN");
         }
         public void UpDateHieuHH(string dot, string ky, string nam)
         {
@@ -156,29 +157,32 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         public void UpDateCSNuoc(string dot, string ky, string nam)
         {
-            if ("00".Equals(dot))
-            {
-                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMoi, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DocSo.CodeMoi,SODHN=TieuThuMoi ";
-                sql += " FROM DocSoTH.dbo.DocSo ";
-                sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSoTH.dbo.DocSo.DANHBA ";
-                sql += "		AND  DocSoTH.dbo.DocSo.NAM=" + nam + " AND  DocSoTH.dbo.DocSo.KY =" + int.Parse(ky);
-                DAL.LinQConnection.ExecuteCommand_(sql);
-            }
-            else
-            {
-                //string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DS" + nam + ".CODE,SODHN=TIEUTHU ";
-                //sql += " FROM DocSoTH.dbo.DS" + nam + " ";
-                //sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSoTH.dbo.DS" + nam + ".DANHBA ";
-                //sql += "		AND DocSoTH.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  AND DocSoTH.dbo.DS" + nam + ".DOT = " + int.Parse(dot) + "";
-                //DAL.LinQConnection.ExecuteCommand_(sql);
-                string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMoi, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DocSo.CodeMoi,SODHN=TieuThuMoi ";
-                sql += " FROM DocSoTH.dbo.DocSo ";
-                sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSoTH.dbo.DocSo.DANHBA ";
-                sql += "AND  DocSoTH.dbo.DocSo.DOT=" + int.Parse(dot) + " AND  DocSoTH.dbo.DocSo.NAM=" + nam + " AND  DocSoTH.dbo.DocSo.KY =" + int.Parse(ky);
-                DAL.LinQConnection.ExecuteCommand_(sql);
+
+            DAL.LinQConnection.ExecuteStoredProcedure("UpdateChiSo", int.Parse(ky), int.Parse(nam));
+            //if ("00".Equals(dot))
+            //{
+            //    string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMoi, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DocSo.CodeMoi,SODHN=TieuThuMoi ";
+            //    sql += " FROM DocSoTH.dbo.DocSo ";
+            //    sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSoTH.dbo.DocSo.DANHBA ";
+            //    sql += "		AND  DocSoTH.dbo.DocSo.NAM=" + nam + " AND  DocSoTH.dbo.DocSo.KY =" + int.Parse(ky);
+            //    DAL.LinQConnection.ExecuteCommand_(sql);
+
+            //}
+            //else
+            //{
+            //    //string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMOI, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DS" + nam + ".CODE,SODHN=TIEUTHU ";
+            //    //sql += " FROM DocSoTH.dbo.DS" + nam + " ";
+            //    //sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSoTH.dbo.DS" + nam + ".DANHBA ";
+            //    //sql += "		AND DocSoTH.dbo.DS" + nam + ".KY ='" + int.Parse(ky) + "'  AND DocSoTH.dbo.DS" + nam + ".DOT = " + int.Parse(dot) + "";
+            //    //DAL.LinQConnection.ExecuteCommand_(sql);
+            //    string sql = "  UPDATE TB_DULIEUKHACHHANG SET  CHISOKYTRUOC= CSMoi, TB_DULIEUKHACHHANG.CODE=DocSoTH.dbo.DocSo.CodeMoi,SODHN=TieuThuMoi ";
+            //    sql += " FROM DocSoTH.dbo.DocSo ";
+            //    sql += " WHERE TB_DULIEUKHACHHANG.DANHBO = DocSoTH.dbo.DocSo.DANHBA ";
+            //    sql += "AND  DocSoTH.dbo.DocSo.DOT=" + int.Parse(dot) + " AND  DocSoTH.dbo.DocSo.NAM=" + nam + " AND  DocSoTH.dbo.DocSo.KY =" + int.Parse(ky);
+            //    DAL.LinQConnection.ExecuteCommand_(sql);
 
             
-            }
+            //}
 
         }
         public void UpDateCSLoTrinh(string dot, string ky, string nam)
@@ -871,6 +875,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
 
             dataLoadDocso();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
         /////   
 

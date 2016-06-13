@@ -164,6 +164,34 @@ namespace CAPNUOCTANHOA.DAL
             }
         }
 
+        public static void ExecuteStoredProcedure(string storedNam )
+        {
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            try
+            {
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(storedNam, conn);
+                cmd.CommandType = CommandType.StoredProcedure; 
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
         public static void ExecuteStoredProcedure_TK(string storedNam, string hieuluc, string tungay, string denngay)
         {
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
