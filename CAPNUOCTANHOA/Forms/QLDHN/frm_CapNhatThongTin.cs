@@ -848,11 +848,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             else {
                 string chamcong = "UPDATE TB_BANGCHAMCONG SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text+ "' WHERE MAYDS='" + this.textBoxMayds.Text + "'";
                 DAL.LinQConnection.ExecuteCommand(chamcong);
-                string nhanvien = "UPDATE TB_NHANVIENDOCSO SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
+                string nhanvien = "UPDATE TB_NHANVIENDOCSO SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "' AND MAYDS <> 0 ";
                 DAL.LinQConnection.ExecuteCommand(nhanvien);
-                nhanvien = "UPDATE TB_BANGCHAMCONG_HD0 SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
+                nhanvien = "UPDATE TB_BANGCHAMCONG_HD0 SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "' AND MAYDS <> 0 ";
                 DAL.LinQConnection.ExecuteCommand(nhanvien);
-                string slh = " UPDATE [DocSoTH].[dbo].[Users]   SET [Username] = N'" + textBoxTennv.Text + "'  ,[UserID] = N'" + this.textBoxTenvt.Text + "'  ,[UserGroup] ='DS' WHERE MAY='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
+                string slh = " UPDATE [DocSoTH].[dbo].[MayDS]   SET [NhanVienID] =N'" + textBoxTennv.Text + "'  WHERE MAY='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
                 DAL.LinQConnection.ExecuteCommand(slh);
 
                 themmoi = false;

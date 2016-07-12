@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GIS">
   <DataContextMoniker Name="/GISDataContext" />
   <nestedChildShapes>
-    <classShape Id="c68dbc5d-80cb-43a8-abab-b939206e7e97" absoluteBounds="6.125, 3.875, 2, 2.5401025390625">
+    <classShape Id="c68dbc5d-80cb-43a8-abab-b939206e7e97" absoluteBounds="3.75, 2.875, 2, 2.5401025390625">
       <DataClassMoniker Name="/GISDataContext/HOSO_DONGHOKHACHHANG" />
       <nestedChildShapes>
-        <elementListCompartment Id="4fecf214-b980-4871-baf3-a1df212ef2b2" absoluteBounds="6.14, 4.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4fecf214-b980-4871-baf3-a1df212ef2b2" absoluteBounds="3.7649999999999997, 3.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

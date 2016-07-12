@@ -1,4 +1,10 @@
+-- truy xuat all
 
+SELECT SUBSTRING(LOTRINH,1,2) as 'DOT',kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG,P.TENPHUONG, q.TENQUAN,kh.HIEUDH, kh.CODH,SOTHANDH , VITRIDHN, convert(varchar(20),kh.NGAYTHAY,103) AS NGAYGAN,DIENTHOAI,MADMA
+FROM  TB_DULIEUKHACHHANG kh,  PHUONG p, QUAN q
+WHERE kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG
+ORDER BY  LOTRINH ASC
+--
 
 
 SELECT SUBSTRING(LOTRINH,1,2) as 'DOT',kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG,P.TENPHUONG, q.TENQUAN,kh.HIEUDH, kh.CODH,SOTHANDH , VITRIDHN, convert(varchar(20),kh.NGAYTHAY,103) AS NAM,DIENTHOAI
@@ -72,16 +78,16 @@ ORDER BY  kh.LOTRINH ASC
 
 
 
-------- lay so lieu 
+------- lay so lieu  THAY
 
 SELECT CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15') 
                       THEN 'TB01' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30') 
                       THEN 'TB02' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50') 
                       THEN 'TP01' ELSE 'TP02' END END END AS TODS,                      
  SUBSTRING(LOTRINH,1,2) as 'DOT',kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG,kh.HIEUDH,
-  kh.CODH,SOTHANDH, MONTH(kh.NGAYTHAY) AS 'THANG', YEAR(kh.NGAYTHAY) AS 'NAM' , VITRIDHN,CONVERT(VARCHAR(50),NGAYKIEMDINH,103)
+  kh.CODH,SOTHANDH,  CONVERT(VARCHAR(50),ngaythay,103) AS 'NGAYTHAY' , CONVERT(VARCHAR(50),NGAYKIEMDINH,103) as 'NGAY KD'
 FROM  TB_DULIEUKHACHHANG kh
-WHERE  YEAR(kh.ngaythay)<=2012
+WHERE  YEAR(kh.ngaythay) =2013
 order by kh.LOTRINH asc
 
 -----------------------------------------------------

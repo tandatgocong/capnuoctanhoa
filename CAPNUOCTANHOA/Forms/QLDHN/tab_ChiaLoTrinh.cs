@@ -114,12 +114,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string mayds = cbDenMayDocSo.Text;
             if (int.Parse(dotds) < 10)
             {
-                dotds = "0" + dotds;
+                dotds = "0" + int.Parse(dotds);
             }
-            if (int.Parse(mayds) < 10)
-            {
-                mayds = "0" + mayds;
-            }
+            //if (int.Parse(mayds) < 10)
+            //{
+            //    mayds = "0" + int.Parse(mayds);
+            //}
             table = DAL.DULIEUKH.C_GanMoi.getPhienLoTrinh(dotds + mayds);
             dataLoTrinh.DataSource = table;
             //Utilities.DataGridV.formatRows(dataLoTrinh, "DEN_DANHBO");
