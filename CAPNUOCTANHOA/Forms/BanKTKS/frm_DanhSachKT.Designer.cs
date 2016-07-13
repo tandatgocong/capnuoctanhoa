@@ -1000,7 +1000,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_DanhSachKT";
-            this.Size = new System.Drawing.Size(1256, 591);
+            this.Size = new System.Drawing.Size(1294, 640);
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lichsuGhiCHu)).EndInit();

@@ -110,7 +110,9 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         public static DataSet getReport(string ngay)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT *  FROM KTKS_DANHSACHKT WHERE NGAYLAP='" + ngay + "' AND CREATEBY='" + DAL.SYS.C_USERS._userName + "' ORDER BY DANHBO ASC ";
+            string query = " SELECT kt.ID, kt.DANHBO, kt.LOTRINH, kt.HOTEN, kt.DIACHI, kt.HOPDONG, kt.HIEUDHN, kt.CODHN, kt.SOTHAN, kt.GB, kt.DM, kt.CHISO, CONGDUNG, NGAYLAP, kt.CREATEDATE, kt.CREATEBY, kt.MODIFYDATE,kh.VITRIDHN  AS 'MODIFYBY' ";
+            query += " FROM KTKS_DANHSACHKT kt,TB_DULIEUKHACHHANG kh where kh.DANHBO=kt.DANHBO AND kt.NGAYLAP='" + ngay + "' AND kt.CREATEBY='" + DAL.SYS.C_USERS._userName + "' ORDER BY kt.DANHBO ASC ";
+
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "KTKS_DANHSACHKT");
             
