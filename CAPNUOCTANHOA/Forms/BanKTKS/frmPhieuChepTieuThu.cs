@@ -33,7 +33,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             txtKy.Text = ky + "";
             txtNam.Text = nam + "";
             cbSoLuong.Text = "10";
-            this.btHSGoc.Visible = false;
+           // this.btHSGoc.Visible = false;
         }
 
         private void KeyPressHandle(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -138,8 +138,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             if (e.KeyChar == 13)
             {
                 LoadThongTinDB();
-                if (DAL.KTCN.C_GIS.findByDanhBo(txtDanhBo.Text.Replace("-", "")) != null)
-                    this.btHSGoc.Visible = true;
+               
 
             }
         }
@@ -358,10 +357,14 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         private void btHSGoc_Click(object sender, EventArgs e)
         {
-
-
-            frmPdf F = new frmPdf(txtDanhBo.Text.Replace("-", ""));
-            F.ShowDialog();
+            if (DAL.KTCN.C_GIS.findByDanhBo(txtDanhBo.Text.Replace("-", "")) != null)
+            {
+                frmPdf F = new frmPdf(txtDanhBo.Text.Replace("-", ""));
+                F.ShowDialog();
+            }
+            else {
+                MessageBox.Show(this, "Hồ sơ gốc chưa được cập nhật !","..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
     }

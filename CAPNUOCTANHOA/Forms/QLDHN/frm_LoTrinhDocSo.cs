@@ -28,6 +28,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         public frm_LoTrinhDocSo()
         {
             InitializeComponent();
+            cbLoaiCL.SelectedIndex = 0;
             //this.txtNam.Text = DateTime.Now.Year.ToString();
             //cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
             tabItemPhienLoTrinh.Visible = false;
@@ -884,6 +885,41 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             frm_HuyLoTrinh frm = new frm_HuyLoTrinh();
             frm.ShowDialog();
         }
+
+        
+        private void btthemcolon_Click(object sender, EventArgs e)
+        {
+            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SH='"+this.cbLoaiCL.SelectedIndex+"' WHERE DANHBO='" + this.cl_danhbo.Text.Replace("-","") + "'");
+            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,CODH FROM TB_DULIEUKHACHHANG WHERE SH='" + this.cbLoaiCL.SelectedIndex + "'");
+            cl_TongCong.Text = dataGridView2.RowCount.ToString();
+
+            ReportDocument rp = new rpt_SoDocSo();
+            rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_cl(this.cbLoaiCL.SelectedIndex.ToString()));
+            crystalReportViewer3.ReportSource = rp;
+            this.crystalReportViewer3.Visible = true;
+
+        }
+
+        private void menuCapNhatKetQua_Click(object sender, EventArgs e)
+        {
+            string ID_ = this.dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells["CL_DANHBOO"].Value + "";
+            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SH=NULL WHERE DANHBO='" + ID_ + "'");
+            btthemcolon_Click(sender,e);
+        }
+
+        private void dataGridView2_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(dataGridView2, new Point(e.X, e.Y));
+            }
+        }
+
+        //private void cbLoaiCL_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    btthemcolon_Click(sender, e);
+        //}
         
 
     }

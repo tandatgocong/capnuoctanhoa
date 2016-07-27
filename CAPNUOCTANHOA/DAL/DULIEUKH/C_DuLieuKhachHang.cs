@@ -109,6 +109,18 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             adapter.Fill(ds, "TB_DULIEUKHACHHANG");
             return ds;
         }
+        public static DataSet SoDocSo_cl(string sobangke)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT * FROM TB_DULIEUKHACHHANG WHERE SH='" + sobangke + "' ORDER BY LOTRINH ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DULIEUKHACHHANG");
+            return ds;
+        }
+
+
         public static DataSet SoDocSo_GM(string sobangke, string ky, string nam)
         {
             DataSet ds = new DataSet();

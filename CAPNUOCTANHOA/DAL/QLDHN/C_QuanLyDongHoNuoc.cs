@@ -347,7 +347,9 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " GROUP BY  t.MAY  ";
             sql += " ) as t2  ";
             sql += " ON TB_BANGCHAMCONG_HD0.MAYDS = t2.MAY ";
-            sql += " WHERE TB_BANGCHAMCONG_HD0.TODS=" + tods;
+            
+            if (tods != 0)
+                sql += " WHERE TB_BANGCHAMCONG_HD0.TODS=" + tods;
 
             try
             {
@@ -366,7 +368,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 cmd += " DOT09_TC=0, DOT10_TC=0, DOT11_TC=0, DOT12_TC=0, ";
                 cmd += " DOT13_TC=0, DOT14_TC=0, DOT15_TC=0, DOT16_TC=0, ";
                 cmd += " DOT17_TC=0, DOT18_TC=0, DOT19_TC=0, DOT20_TC=0 ";
-                cmd += " WHERE TODS=" + tods;
+                
+                if (tods != 0)
+                     cmd += " WHERE TODS=" + tods;
+                
                 DAL.LinQConnection.ExecuteCommand(cmd);
                
                 sql = sql.Replace(@"\t", " ");
@@ -412,7 +417,9 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 sql += " GROUP BY  t.MAY  ";
                 sql += " ) as t2  ";
                 sql += " ON TB_BANGCHAMCONG_HD0.MAYDS = t2.MAY ";
-                sql += " WHERE TB_BANGCHAMCONG_HD0.TODS=" + tods;
+               
+                if (tods != 0)
+                    sql += " WHERE TB_BANGCHAMCONG_HD0.TODS=" + tods;
 
                 sql = sql.Replace(@"\t", " ");
                 
@@ -424,7 +431,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 cmd += " DOT09_TC=DOT09-DOT09_DC, DOT10_TC=DOT10-DOT10_DC, DOT11_TC=DOT11-DOT11_DC, DOT12_TC=DOT12-DOT12_DC, ";
                 cmd += " DOT13_TC=DOT13-DOT13_DC, DOT14_TC=DOT14-DOT14_DC, DOT15_TC=DOT15-DOT15_DC, DOT16_TC=DOT16-DOT16_DC, ";
                 cmd += " DOT17_TC=DOT17-DOT17_DC, DOT18_TC=DOT18-DOT18_DC, DOT19_TC=DOT19-DOT19_DC, DOT20_TC=DOT20-DOT20_DC ";
-                cmd += " WHERE TODS=" + tods;
+               
+                if (tods != 0)
+                    cmd += " WHERE TODS=" + tods;
+
                 DAL.LinQConnection.ExecuteCommand(cmd);
 
                 log.Info("CAPNHAT_BANGCHAMCONG  " + resqult + " record");
@@ -575,9 +585,13 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 db.Connection.Close();
             }
             db.Connection.Open();
-
+            string query = "SELECT * FROM TB_BANGCHAMCONG_HD0   WHERE TODS='" + tods + "'   ORDER BY MAYDS ASC ";
             //string query = "SELECT * FROM TB_BANGCHAMCONG_HD0 WHERE TODS='" + tods + "' ORDER BY MAYDS ASC ";
-            string query = "SELECT * FROM TB_BANGCHAMCONG_HD0  ORDER BY MAYDS ASC ";
+            if (tods == 0)
+            {
+
+                query = "SELECT * FROM TB_BANGCHAMCONG_HD0   ORDER BY MAYDS ASC ";
+            }
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_BANGCHAMCONG");
 
