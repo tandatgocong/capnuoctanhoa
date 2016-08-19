@@ -254,7 +254,9 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " GROUP BY  t.MAY  ";
             sql += " ) as t2  ";
             sql += " ON TB_BANGCHAMCONG.MAYDS = t2.MAY ";
-            sql += " WHERE TB_BANGCHAMCONG.TODS=" + tods;
+            
+            if(tods!=0)
+                sql += " WHERE TB_BANGCHAMCONG.TODS=" + tods;
 
             try
             {
@@ -273,7 +275,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 cmd += " DOT09_TC=0, DOT10_TC=0, DOT11_TC=0, DOT12_TC=0, ";
                 cmd += " DOT13_TC=0, DOT14_TC=0, DOT15_TC=0, DOT16_TC=0, ";
                 cmd += " DOT17_TC=0, DOT18_TC=0, DOT19_TC=0, DOT20_TC=0 ";
-                cmd += " WHERE TODS=" + tods;
+                
+                if (tods != 0)
+                    cmd += " WHERE TODS=" + tods;
+
                 DAL.LinQConnection.ExecuteCommand(cmd);
                 sql = sql.Replace(@"\t", " ");
                 int resqult = DAL.LinQConnection.ExecuteCommand(sql);
@@ -295,8 +300,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 db.Connection.Close();
             }
             db.Connection.Open();
-            
             string query = "SELECT * FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY MAYDS ASC ";
+            if (tods == 0)
+            { query = "SELECT * FROM TB_BANGCHAMCONG   ORDER BY MAYDS ASC "; }
+            
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_BANGCHAMCONG");
@@ -607,8 +614,13 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 db.Connection.Close();
             }
             db.Connection.Open();
-           
             string query = "SELECT * FROM TB_BANGCHAMCONG WHERE TODS='" + tods + "' ORDER BY STT ASC ";
+          
+            if (tods == 0)
+            {
+                query = "SELECT * FROM TB_BANGCHAMCONG  ORDER BY STT ASC ";
+            }
+            
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_BANGCHAMCONG");

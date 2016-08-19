@@ -23,7 +23,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         string sql_trongai = "";
         string sql_chuyentt = "";
         string sql_chuyenkt = "";
-        
+
         public frm_BaoThayVaXuLy()
         {
             InitializeComponent();
@@ -134,22 +134,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             TB_TLKDUTCHI dc = new TB_TLKDUTCHI();
             TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
-           
-                dc.TODS = DAL.SYS.C_USERS._toDocSo;
-                dc.DANHBO = sodanhbo;
-                dc.LOTRINH = kh.LOTRINH;
-                dc.HOTEN = kh.HOTEN;
-                dc.DIACHI = kh.SONHA + " " + kh.TENDUONG;
-                dc.HOPDONG =kh.HOPDONG;
-                dc.GB = kh.GIABIEU;
-                dc.DM = kh.DINHMUC;
-                dc.HIEU = kh.HIEUDH;
-                dc.CO = kh.CODH;
-                dc.SOTHAN = kh.SOTHANDH;
-                dc.NGAYBAO = DateTime.Now.Date;
-                dc.MODIFYDATE = DateTime.Now;
-                dc.MODIFYBY = DAL.SYS.C_USERS._userName;
-                DAL.QLDHN.C_DhnAmSau.Insert(dc);
+
+            dc.TODS = DAL.SYS.C_USERS._toDocSo;
+            dc.DANHBO = sodanhbo;
+            dc.LOTRINH = kh.LOTRINH;
+            dc.HOTEN = kh.HOTEN;
+            dc.DIACHI = kh.SONHA + " " + kh.TENDUONG;
+            dc.HOPDONG = kh.HOPDONG;
+            dc.GB = kh.GIABIEU;
+            dc.DM = kh.DINHMUC;
+            dc.HIEU = kh.HIEUDH;
+            dc.CO = kh.CODH;
+            dc.SOTHAN = kh.SOTHANDH;
+            dc.NGAYBAO = DateTime.Now.Date;
+            dc.MODIFYDATE = DateTime.Now;
+            dc.MODIFYBY = DAL.SYS.C_USERS._userName;
+            DAL.QLDHN.C_DhnAmSau.Insert(dc);
         }
 
         private void menuChuyenKT_Click(object sender, EventArgs e)
@@ -275,7 +275,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             //    lan = 2;
             //}
             rpt_TLKDutChiNew rp = new rpt_TLKDutChiNew();
-            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(dateInDSDutChi.Value.ToString("dd/MM/yyyy"),1));
+            rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(dateInDSDutChi.Value.ToString("dd/MM/yyyy"), 1));
             //rp.SetParameterValue("type", "");
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
@@ -285,6 +285,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void buttonX2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtDanhB0_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+
+
+
+                sql_trongai = " SELECT ID_BAOTHAY,XLT_XULY,XLT_TRAKQ,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI',thay.XLT_KETQUA as 'TENBANGKE' ";
+                sql_trongai += " , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , HCT_LYDOTRONGAI as 'TRONGAI' ";
+                sql_trongai += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh ";
+                sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' "; 
+                sql_chuyenkt = sql_trongai + " AND XLT_CHUYENXL='BANKTKS' ";
+                sql_chuyentt = sql_trongai + " AND XLT_CHUYENXL='TOTRUONG' ";
+
+                sql_trongai += " AND DHN_DANHBO='"+this.txtDanhB0.Text +"'";
+                sql_chuyenkt += " AND DHN_DANHBO='"+this.txtDanhB0.Text +"'";
+                sql_chuyentt += " AND DHN_DANHBO='"+this.txtDanhB0.Text +"'";
+
+                sql_trongai += " ORDER BY DHN_NGAYBAOTHAY DESC, DHN_DANHBO DESC ";
+                dataGridLoi.DataSource = DAL.LinQConnection.getDataTable(sql_trongai);
+
+
+                Utilities.DataGridV.formatRows(dataGridLoi, "GG_DANHBO");
+                Utilities.DataGridV.setSTT(dataGridLoi, "G_STT");
+            }
         }
     }
 }

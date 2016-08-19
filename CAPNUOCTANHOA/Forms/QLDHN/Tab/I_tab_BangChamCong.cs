@@ -24,29 +24,69 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             InitializeComponent();
             this.txtNam.Text = DateTime.Now.Year.ToString();
             cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
+            //if ("TB02,TB01,TP01,TP02".Contains(DAL.SYS.C_USERS._toDocSo.Trim()))
+            //{
+            //    this.btTinhSoLuong.Enabled = true;
+            //    this.btNhapTangCuong.Enabled = true;
 
+            //}
+            //{
+            //    this.btTinhSoLuong.Enabled = true;
+            //    this.btNhapTangCuong.Enabled = true;
+            //}
+
+            if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
+            {
+                checkTanBinh2.Checked = true;
+            }
+            else
+                if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
+                {
+                    checkTanPhu.Checked = true;
+                }
+                else
+                    if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
+                    {
+                        checkTanPhu02.Checked = true;
+                    }
+                    else
+                        if ("TB01".Equals(DAL.SYS.C_USERS._toDocSo))
+                        {
+                            checkTanBinh1.Checked = true;
+                        }
         }
 
         private void btThem_Click(object sender, EventArgs e)
         {
             int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
             ReportDocument rp = new rpt_tab_BangChamCong();
-            int tods = 1;
-            string tento = "TỔ TÂN BÌNH 01";
-            if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo)) {
-                 tods = 2;
-                 tento = "TỔ TÂN BÌNH 02";
+           
+            int tods = 0;
+            string tento = "ĐỘI";
+             
+            if (checkTanBinh1.Checked)
+            {
+                tods = 1;
+                tento = "TỔ TÂN BÌNH 01";
             }
-            if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
+            else if (checkTanBinh2.Checked)
+            {
+                tods = 2;
+                tento = "TỔ TÂN BÌNH 02";
+            }
+            else if (checkTanPhu.Checked)
             {
                 tods = 3;
                 tento = "TỔ TÂN PHÚ 01 ";
             }
-            if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
+            else if (checkTanPhu02.Checked)
             {
-                tods = 4;
-                tento = "TỔ TÂN PHÚ 02";
+                tods = 1;
+                tento = "TỔ TÂN BÌNH 01";
             }
+
+            
+
             rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong_1(txtNam.Text.Trim(), ky, tods));
             rp.SetParameterValue("TODS", tento);
             rp.SetParameterValue("KYDS", ky);
@@ -59,23 +99,50 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
             ReportDocument rp = new rpt_tab_BangChamCong();
-            int tods = 1;
-            string tento = "TỔ TÂN BÌNH 01";
-            if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
+
+            int tods = 0;
+            string tento = "ĐỘI";
+
+            if (checkTanBinh1.Checked)
+            {
+                tods = 1;
+                tento = "TỔ TÂN BÌNH 01";
+            }
+            else if (checkTanBinh2.Checked)
             {
                 tods = 2;
                 tento = "TỔ TÂN BÌNH 02";
             }
-            if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
+            else if (checkTanPhu.Checked)
             {
                 tods = 3;
                 tento = "TỔ TÂN PHÚ 01 ";
             }
-            if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
+            else if (checkTanPhu02.Checked)
             {
-                tods = 4;
-                tento = "TỔ TÂN PHÚ 02";
+                tods = 1;
+                tento = "TỔ TÂN BÌNH 01";
             }
+
+            //int tods = 1;
+            //string tento = "TỔ TÂN BÌNH 01";
+
+            //if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
+            //{
+            //    tods = 2;
+            //    tento = "TỔ TÂN BÌNH 02";
+            //}
+            //if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
+            //{
+            //    tods = 3;
+            //    tento = "TỔ TÂN PHÚ 01 ";
+            //}
+            //if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
+            //{
+            //    tods = 4;
+            //    tento = "TỔ TÂN PHÚ 02";
+            //}
+
             rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong(txtNam.Text.Trim(), ky, tods));
             rp.SetParameterValue("TODS", tento);
             rp.SetParameterValue("KYDS", ky);

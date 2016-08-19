@@ -322,6 +322,7 @@
             this.tabItem5 = new DevComponents.DotNetBar.TabItem(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuCapNhatKetQua = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGanMoiBK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
             this.tabControl2.SuspendLayout();
@@ -686,6 +687,7 @@
             // 
             // splitContainer6.Panel1
             // 
+            this.splitContainer6.Panel1.Controls.Add(this.buttonX4);
             this.splitContainer6.Panel1.Controls.Add(this.cl_TongCong);
             this.splitContainer6.Panel1.Controls.Add(this.btthemcolon);
             this.splitContainer6.Panel1.Controls.Add(this.dataGridView2);
@@ -714,7 +716,7 @@
             this.btthemcolon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btthemcolon.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btthemcolon.ForeColor = System.Drawing.Color.Crimson;
-            this.btthemcolon.Location = new System.Drawing.Point(220, 59);
+            this.btthemcolon.Location = new System.Drawing.Point(82, 92);
             this.btthemcolon.Name = "btthemcolon";
             this.btthemcolon.Size = new System.Drawing.Size(97, 27);
             this.btthemcolon.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -741,13 +743,13 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CL_DANHBOO,
             this.dataGridViewTextBoxColumn18});
-            this.dataGridView2.Location = new System.Drawing.Point(7, 92);
+            this.dataGridView2.Location = new System.Drawing.Point(7, 121);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 30;
             this.dataGridView2.RowTemplate.Height = 30;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(310, 461);
+            this.dataGridView2.Size = new System.Drawing.Size(310, 432);
             this.dataGridView2.TabIndex = 676;
             this.dataGridView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView2_MouseClick);
             // 
@@ -795,7 +797,7 @@
             this.comboItem123,
             this.comboItem124,
             this.comboItem125});
-            this.cbLoaiCL.Location = new System.Drawing.Point(82, 13);
+            this.cbLoaiCL.Location = new System.Drawing.Point(82, 16);
             this.cbLoaiCL.Name = "cbLoaiCL";
             this.cbLoaiCL.Size = new System.Drawing.Size(207, 27);
             this.cbLoaiCL.TabIndex = 675;
@@ -3160,6 +3162,20 @@
             this.menuCapNhatKetQua.Text = "Xóa";
             this.menuCapNhatKetQua.Click += new System.EventHandler(this.menuCapNhatKetQua_Click);
             // 
+            // buttonX4
+            // 
+            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX4.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX4.Location = new System.Drawing.Point(192, 90);
+            this.buttonX4.Name = "buttonX4";
+            this.buttonX4.Size = new System.Drawing.Size(97, 29);
+            this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX4.TabIndex = 678;
+            this.buttonX4.Text = "XEM";
+            this.buttonX4.Click += new System.EventHandler(this.buttonX4_Click);
+            // 
             // frm_LoTrinhDocSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -3492,5 +3508,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuCapNhatKetQua;
         private System.Windows.Forms.DataGridViewTextBoxColumn CL_DANHBOO;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private DevComponents.DotNetBar.ButtonX buttonX4;
     }
 }

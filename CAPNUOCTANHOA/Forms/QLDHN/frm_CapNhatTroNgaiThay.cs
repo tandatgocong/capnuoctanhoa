@@ -143,36 +143,39 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 {
                     if (txtBoPhanChuyen.Text.Equals("ĐỘI TCTB"))
                         thaydhn.XLT_CHUYENXL = "TCTB";
-                    else
-                        if (txtBoPhanChuyen.Text.Equals("BAN KTKS"))
-                        {
-                            thaydhn.XLT_CHUYENXL = "KTKS";
-                            dutchi = new TB_TLKDUTCHI();
-                            ///lấy tên tổ đọc số từ lộ trình
-                            if (int.Parse(kh.LOTRINH.Substring(2, 2)) >= 1 && int.Parse(kh.LOTRINH.Substring(2, 2)) <= 15)
-                                dutchi.TODS = "TB01";
+                    else if (txtBoPhanChuyen.Text.Equals("BAN KTKS"))
+                    {
+                        thaydhn.XLT_CHUYENXL = "KTKS";
+                        dutchi = new TB_TLKDUTCHI();
+                        ///lấy tên tổ đọc số từ lộ trình
+                        if (int.Parse(kh.LOTRINH.Substring(2, 2)) >= 1 && int.Parse(kh.LOTRINH.Substring(2, 2)) <= 15)
+                            dutchi.TODS = "TB01";
+                        else
+                            if (int.Parse(kh.LOTRINH.Substring(2, 2)) >= 16 && int.Parse(kh.LOTRINH.Substring(2, 2)) <= 30)
+                                dutchi.TODS = "TB02";
                             else
-                                if (int.Parse(kh.LOTRINH.Substring(2, 2)) >= 16 && int.Parse(kh.LOTRINH.Substring(2, 2)) <= 30)
-                                    dutchi.TODS = "TB02";
-                                else
-                                    if (int.Parse(kh.LOTRINH.Substring(2, 2)) >= 31 && int.Parse(kh.LOTRINH.Substring(2, 2)) <= 46)
-                                        dutchi.TODS = "TP";
-                            dutchi.DANHBO = kh.DANHBO;
-                            dutchi.LOTRINH = kh.LOTRINH;
-                            dutchi.HOTEN = kh.HOTEN;
-                            dutchi.DIACHI = kh.SONHA + " " + kh.TENDUONG;
-                            dutchi.HOPDONG = kh.HOPDONG;
-                            dutchi.GB = kh.GIABIEU;
-                            dutchi.DM = kh.DINHMUC;
-                            dutchi.HIEU = kh.HIEUDH;
-                            dutchi.SOTHAN = kh.SOTHANDH;
-                            dutchi.NGAYBAO = thaydhn.DHN_NGAYBAOTHAY;
-                            dutchi.CREATEDATE = DateTime.Now.Date;
-                            dutchi.CREATEBY = DAL.SYS.C_USERS._userName;
-                            dutchi.TYPE = 0;
-                            dutchi.SONAM = kh.NAM;
-                            db.TB_TLKDUTCHIs.InsertOnSubmit(dutchi);
-                        }
+                                if (int.Parse(kh.LOTRINH.Substring(2, 2)) >= 31 && int.Parse(kh.LOTRINH.Substring(2, 2)) <= 46)
+                                    dutchi.TODS = "TP";
+                        dutchi.DANHBO = kh.DANHBO;
+                        dutchi.LOTRINH = kh.LOTRINH;
+                        dutchi.HOTEN = kh.HOTEN;
+                        dutchi.DIACHI = kh.SONHA + " " + kh.TENDUONG;
+                        dutchi.HOPDONG = kh.HOPDONG;
+                        dutchi.GB = kh.GIABIEU;
+                        dutchi.DM = kh.DINHMUC;
+                        dutchi.HIEU = kh.HIEUDH;
+                        dutchi.SOTHAN = kh.SOTHANDH;
+                        dutchi.NGAYBAO = thaydhn.DHN_NGAYBAOTHAY;
+                        dutchi.CREATEDATE = DateTime.Now.Date;
+                        dutchi.CREATEBY = DAL.SYS.C_USERS._userName;
+                        dutchi.TYPE = 0;
+                        dutchi.SONAM = kh.NAM;
+                        db.TB_TLKDUTCHIs.InsertOnSubmit(dutchi);
+                    }
+                    else
+                    {
+                        thaydhn.XLT_CHUYENXL = "KTCN";
+                    }
 
                     if (!"".Equals(this.txtKetQuaThucHien.Text.Trim()) && thaydhn.XLT_KETQUA != this.txtKetQuaThucHien.Text.Trim())
                         {

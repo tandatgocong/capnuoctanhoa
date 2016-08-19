@@ -33,6 +33,27 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 
             txtNgayGan.Value = DateTime.Now.Date;
             LoadData();
+
+
+            try
+            {
+                string balap = DateTime.Now.Year.ToString().Substring(2) + "001";
+                int max=DAL.QLDHN.C_BaoThay.getMaxBangKe_DC();
+                if (max >= int.Parse(balap))
+                {
+                    txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe_DC() + 1) + "";
+                }
+                else
+                {
+                    txtSoBangKe.Text = balap;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+
         }
         public void setSTT()
         {
@@ -52,7 +73,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             if (comboBoxDutChi.SelectedIndex == 0) {
                 ReportDocument rp = new rpt_TLKDutChi();
                 rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),0, comboBoxTitle.SelectedIndex, lan));
-                rp.SetParameterValue("type", this.comboBoxTitle.Text);
+                rp.SetParameterValue("type", DAL.SYS.C_USERS._toDocSo + '-'+this.txtSoBangKe.Text );
                 rp.SetParameterValue("lan", lan);
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
@@ -74,10 +95,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-               
 
-                dataBangKe.DataSource = DAL.QLDHN.C_DhnAmSau.getListDutChiByDate(this.txtNgayGan.Value.ToShortDateString(), comboBoxDutChi.SelectedIndex, 1);
-                dataGridViewL2.DataSource = DAL.QLDHN.C_DhnAmSau.getListDutChiByDate(this.txtNgayGan.Value.ToShortDateString(), comboBoxDutChi.SelectedIndex, 2);
+
+                dataBangKe.DataSource = DAL.QLDHN.C_DhnAmSau.getListDutChiByDate_SoBK(this.txtNgayGan.Value.ToShortDateString(), comboBoxDutChi.SelectedIndex, 1, int.Parse(this.txtSoBangKe.Text));
+                dataGridViewL2.DataSource = DAL.QLDHN.C_DhnAmSau.getListDutChiByDate_SoBK(this.txtNgayGan.Value.ToShortDateString(), comboBoxDutChi.SelectedIndex, 2, int.Parse(this.txtSoBangKe.Text));
                 Utilities.DataGridV.formatRows(dataBangKe);
                 setSTT();
             }
@@ -87,14 +108,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             }
 
         }
-        private void txtSoBangKe_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                LoadData();
-                //btIn.Enabled = true;
-            }
-        }
+        
 
         private void dataBangKe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -204,6 +218,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             if (dc != null)
             {
                 dc.TODS = DAL.SYS.C_USERS._toDocSo;
+                dc.SOBANGKE = int.Parse(this.txtSoBangKe.Text);
                 dc.DANHBO = sodanhbo;
                 dc.LOTRINH = txtLoTrinh.Text.Replace(".","");
                 dc.HOTEN = txtTenKH.Text;
@@ -227,6 +242,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             {
                 dc = new TB_TLKDUTCHI();
                 dc.TODS = DAL.SYS.C_USERS._toDocSo;
+                dc.SOBANGKE = int.Parse(this.txtSoBangKe.Text);
                 dc.DANHBO = sodanhbo;
                 dc.LOTRINH = txtLoTrinh.Text.Replace(".", "");
                 dc.HOTEN = txtTenKH.Text;
@@ -482,6 +498,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             }
             Utilities.DataGridV.formatRows(dataBangKe);
             setSTT();
+        }
+
+        private void txtSoBangKe_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            LoadData();
         }
     }
 }

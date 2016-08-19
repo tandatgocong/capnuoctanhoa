@@ -61,29 +61,28 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             ReportDocument rp = new rpt_tab_BangChamCongHD0();
             int tods = 0;
             string tento = "";
-            if ("TB02".Equals(DAL.SYS.C_USERS._toDocSo))
+
+            if (checkTanBinh1.Checked)
+            {
+                tods = 1;
+                tento = "TỔ TÂN BÌNH 01";
+            }
+            else if (checkTanBinh2.Checked)
             {
                 tods = 2;
                 tento = "TỔ TÂN BÌNH 02";
             }
-            else
-                if ("TP01".Equals(DAL.SYS.C_USERS._toDocSo))
-                {
-                    tods = 3;
-                    tento = "TỔ TÂN PHÚ 01 ";
-                }
-                else
-                    if ("TP02".Equals(DAL.SYS.C_USERS._toDocSo))
-                    {
-                        tods = 4;
-                        tento = "TỔ TÂN PHÚ 02";
-                    }
-                    else
-                        if ("TB01".Equals(DAL.SYS.C_USERS._toDocSo))
-                        {
-                            tods = 1;
-                            tento = "TỔ TÂN BÌNH 01";
-                        }
+            else if (checkTanPhu.Checked)
+            {
+                tods = 3;
+                tento = "TỔ TÂN PHÚ 01 ";
+            }
+            else if (checkTanPhu02.Checked)
+            {
+                tods = 1;
+                tento = "TỔ TÂN BÌNH 01";
+            }
+           
             rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCongHD0(txtNam.Text.Trim(), ky, tods));
             rp.SetParameterValue("TODS", tento);
             rp.SetParameterValue("KYDS", " KỲ " + ky + "");

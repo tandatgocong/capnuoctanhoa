@@ -352,7 +352,8 @@
             this.txtBoPhanChuyen.FormattingEnabled = true;
             this.txtBoPhanChuyen.Items.AddRange(new object[] {
             "ĐỘI TCTB",
-            "BAN KTKS"});
+            "BAN KTKS",
+            "PHÒNG KTCN"});
             this.txtBoPhanChuyen.Location = new System.Drawing.Point(168, 316);
             this.txtBoPhanChuyen.Name = "txtBoPhanChuyen";
             this.txtBoPhanChuyen.Size = new System.Drawing.Size(121, 27);

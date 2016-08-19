@@ -141,8 +141,8 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             string dngay = Utilities.DateToString.NgayVN(dateDenNgay);
             string sql = "SELECT COUNT(DISTINCT (convert(varchar(20),DHN_SOBANGKE)+'-'+DHN_TODS)) AS 'TONG',COUNT(*) AS 'SOLUONGTHAY' ";
             sql += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='True' then 1 else null end)) AS 'CHUAGAN'";
-            sql += " ,count(case when HCT_TRONGAI ='False' then 1 else null end) AS 'HOANTAT' ";
-            sql += " ,count(case when HCT_TRONGAI ='True' then 1 else null end) AS 'TRONGAI' ";
+            sql += " ,count(case when HCT_TRONGAI <> 1	OR HCT_TRONGAI IS NULL   then 1 else null end) AS 'HOANTAT' ";
+            sql += " ,count(case when HCT_TRONGAI = 1  then 1 else null end) AS 'TRONGAI' ";
             sql += " FROM TB_THAYDHN WHERE DHN_DANHBO IS NOT NULL ";
             sql += " AND CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tngay + "',103) AND CONVERT(DATETIME,'" + dngay + "',103) ";
 
@@ -150,7 +150,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
 
             string sqlTkVT = " SELECT vt.MAVT,vt.TENVT,vt.DVT,ROUND(SUM(SOLUONG),0) AS SOLUONG ";
             sqlTkVT += " FROM TB_THAYDHN th, TB_VATUTHAY_DHN vt ";
-            sqlTkVT += " WHERE th.ID_BAOTHAY=vt.ID_BAOTHAY ";
+            sqlTkVT += " WHERE th.ID_BAOTHAY=vt.ID_BAOTHAY AND (HCT_TRONGAI <> 1	OR HCT_TRONGAI IS NULL)";
             sqlTkVT += " AND CONVERT(DATETIME,HCT_NGAYGAN,103) BETWEEN CONVERT(DATETIME,'" + tngay + "',103) AND CONVERT(DATETIME,'" + dngay + "',103) ";
             sqlTkVT += " GROUP BY vt.MAVT,vt.TENVT,vt.DVT";
 

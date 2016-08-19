@@ -892,11 +892,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SH='"+this.cbLoaiCL.SelectedIndex+"' WHERE DANHBO='" + this.cl_danhbo.Text.Replace("-","") + "'");
             dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,CODH FROM TB_DULIEUKHACHHANG WHERE SH='" + this.cbLoaiCL.SelectedIndex + "'");
             cl_TongCong.Text = dataGridView2.RowCount.ToString();
-
-            ReportDocument rp = new rpt_SoDocSo();
-            rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_cl(this.cbLoaiCL.SelectedIndex.ToString()));
-            crystalReportViewer3.ReportSource = rp;
-            this.crystalReportViewer3.Visible = true;
+            cl_danhbo.Text = "";
+          
 
         }
 
@@ -904,7 +901,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             string ID_ = this.dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells["CL_DANHBOO"].Value + "";
             DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SH=NULL WHERE DANHBO='" + ID_ + "'");
-            btthemcolon_Click(sender,e);
+            buttonX4_Click(sender, e);
         }
 
         private void dataGridView2_MouseClick(object sender, MouseEventArgs e)
@@ -914,6 +911,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 contextMenuStrip1.Show(dataGridView2, new Point(e.X, e.Y));
             }
+        }
+
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,CODH FROM TB_DULIEUKHACHHANG WHERE SH='" + this.cbLoaiCL.SelectedIndex + "'");
+            cl_TongCong.Text = dataGridView2.RowCount.ToString();
+            cl_danhbo.Text = "";
+
+            ReportDocument rp = new rpt_SoDocSo();
+            rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo_cl(this.cbLoaiCL.SelectedIndex.ToString()));
+            crystalReportViewer3.ReportSource = rp;
+            this.crystalReportViewer3.Visible = true;
+
+           
         }
 
         //private void cbLoaiCL_SelectedIndexChanged(object sender, EventArgs e)

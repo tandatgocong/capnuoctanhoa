@@ -293,6 +293,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             thaydh.DHN_LYDOTHAY = this.txtLyDo.Text;
             thaydh.DHN_GHICHU = this.txtGhiChu.Text;
             thaydh.DHN_TODS = DAL.SYS.C_USERS._toDocSo;
+
+            try
+            {
+                if(this.KIEMDINH.Value.Year>=2000)
+                    thaydh.DHN_NGAYCHUYEN = this.KIEMDINH.Value;
+            }
+            catch (Exception)
+            {
+            }
+            
+            
             thaydh.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
             thaydh.DHN_CREATEDATE = DateTime.Now.Date;
             thaydh.TENKH = this.txtTenKH.Text;

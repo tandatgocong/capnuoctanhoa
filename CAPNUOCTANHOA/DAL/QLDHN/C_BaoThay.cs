@@ -42,6 +42,12 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             string sql = "SELECT MAX(DHN_SOBANGKE)  FROM TB_THAYDHN where DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "'";
             return LinQConnection.ExecuteCommand(sql);
         }
+
+        public static int getMaxBangKe_DC()
+        {
+            string sql = "SELECT MAX(SOBANGKE)  FROM TB_TLKDUTCHI where TODS ='" + DAL.SYS.C_USERS._toDocSo + "'";
+            return LinQConnection.ExecuteCommand(sql);
+        }
         public static int getMaxLanThay(string danhbo) {
             string sql = "SELECT MAX(DHN_LANTHAY) FROM TB_THAYDHN WHERE DHN_DANHBO='" + danhbo + "' AND DHN_TODS='" + DAL.SYS.C_USERS._toDocSo + "'";
             return LinQConnection.ExecuteCommand(sql);

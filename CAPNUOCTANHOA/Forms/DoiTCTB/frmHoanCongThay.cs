@@ -339,7 +339,6 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         MessageBox.Show(this, "Chỉ Số Gở >= Chỉ Số Thay", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-
                 }
                 if (DAL.QLDHN.C_BaoThay.Update())
                 {
@@ -507,6 +506,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                             " WHERE DanhBa='" + kh.DANHBO + "' AND CONVERT(DATETIME,NgayThay,103)='" + txtNgayGan.Value.ToShortDateString() + "'";
                                         DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeldTH(sql);
                                     }
+                                    //
 
                                 }
                                 catch (Exception ex)
@@ -516,6 +516,12 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                                 }
                                 //// END
 
+                                // xóa trở ngại thay
+
+                                string update = "UPDATE TB_THAYDHN SET  HCT_TRONGAI=NULL,HCT_LYDOTRONGAI=NULL ,HCT_MODIFYBY=GETDATE() WHERE DHN_DANHBO='" + this.txtSoDanhBo.Text.Replace("-", "") +"' ";
+                                DAL.LinQConnection.ExecuteCommand_(update);
+
+                                ///
                             }
                         }
                         catch (Exception ex)
@@ -764,12 +770,20 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
         {
             try
             {
-                if (MessageBox.Show(this, "Có Thật Sự Muốn Hủy Hoàn Công ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                if (MessageBox.Show(this, "Có Thật Sự Muốn Hủy Hoàn Công ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
                     string ID_BAOTHAY = lbResult.Text.Replace("ID:", "");
                     string update = "UPDATE TB_THAYDHN SET HCT_CHISOGO=NULL,HCT_SOTHANGO=NULL,HCT_HIEUDHNGAN=NULL,HCT_CODHNGAN=NULL,HCT_SOTHANGAN=NULL,HCT_CAP=NULL,HCT_CHISOGAN=NULL,";
-                    update += " HCT_LOAIDHGAN=NULL,HCT_NGAYGAN=NULL,HCT_CHITHAN=NULL,HCT_CHIGOC=NULL,HCT_TRONGAI=NULL,HCT_LYDOTRONGAI=NULL,HCT_CREATEDATE=NULL,";
+                    update += " HCT_LOAIDHGAN=NULL,HCT_NGAYGAN=NULL,HCT_CHITHAN=NULL,HCT_CHIGOC=NULL,HCT_TRONGAI=NULL,HCT_LYDOTRONGAI=NULL,HCT_CREATEDATE=NULL,HCT_NGAYKIEMDINH=NULL, ";
                     update += " HCT_CREATEBY=NULL,HCT_MODIFYDATE=NULL,HCT_MODIFYBY=NULL WHERE ID_BAOTHAY=" + ID_BAOTHAY;
                     DAL.LinQConnection.ExecuteCommand_(update);
+
+                    update = " UPDATE TB_DULIEUKHACHHANG SET HIEUDH=th.DHN_HIEUDHN,SOTHANDH=th.DHN_SOTHAN,NGAYTHAY=th.DHN_NGAYGAN,NGAYKIEMDINH=th.DHN_NGAYCHUYEN  ";
+                    update += "  FROM TB_THAYDHN th ";
+                    update += " WHERE TB_DULIEUKHACHHANG.DANHBO = th.DHN_DANHBO AND th.ID_BAOTHAY=" + ID_BAOTHAY;
+                    
+                    DAL.LinQConnection.ExecuteCommand_(update);
+
                     DAL.LinQConnection.ExecuteCommand("DELETE FROM TB_VATUTHAY_DHN WHERE ID_BAOTHAY='" + ID_BAOTHAY + "'  ");
                     MessageBox.Show(this, "Hủy Hoàn Công Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
