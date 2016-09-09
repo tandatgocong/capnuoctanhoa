@@ -120,6 +120,17 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             return ds;
         }
 
+        public static DataSet Thumoi()
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = "SELECT * FROM TB_DULIEUKHACHHANG WHERE  SX='1' ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DULIEUKHACHHANG");
+            return ds;
+        }
+
 
         public static DataSet SoDocSo_GM(string sobangke, string ky, string nam)
         {

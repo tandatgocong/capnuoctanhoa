@@ -852,7 +852,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 DAL.LinQConnection.ExecuteCommand(nhanvien);
                 nhanvien = "UPDATE TB_BANGCHAMCONG_HD0 SET NAME=N'" + this.textBoxTenvt.Text + "',FULLNAME=N'" + textBoxTennv.Text + "' WHERE MAYDS='" + this.textBoxMayds.Text + "' AND MAYDS <> 0 ";
                 DAL.LinQConnection.ExecuteCommand(nhanvien);
-                string slh = " UPDATE [DocSoTH].[dbo].[MayDS]   SET [NhanVienID] =N'" + textBoxTennv.Text + "'  WHERE MAY='" + this.textBoxMayds.Text + "' AND MAY <> 0 ";
+                string slh = " UPDATE [DocSoTH].[dbo].[MayDS]   SET [NhanVienID] =N'" + textBoxTennv.Text + "'  WHERE MAY=" + this.textBoxMayds.Text + " AND MAY <> 0 ";
                 DAL.LinQConnection.ExecuteCommand(slh);
 
                 themmoi = false;

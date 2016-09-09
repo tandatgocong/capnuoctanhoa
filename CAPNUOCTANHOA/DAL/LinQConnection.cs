@@ -101,6 +101,33 @@ namespace CAPNUOCTANHOA.DAL
             }
             return table;
         }
+        public static DataSet getDataSet(string sql,string table )
+        {
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            try
+            {
+                if (db.Connection.State == ConnectionState.Open)
+                {
+                    db.Connection.Close();
+                }
+                db.Connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                DataSet dataset = new DataSet();
+                adapter.Fill(dataset, table);
+                db.Connection.Close();
+                return dataset;
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            return null;
+        }
+
 
         public static DataTable getDataTable(string sql, int FirstRow, int pageSize)
         {

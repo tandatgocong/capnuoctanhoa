@@ -42,6 +42,19 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
                 log.Error(ex.Message);
             }
         }
+
+        public static void InsertCV(TB_CONGVAN cv)
+        {
+            try
+            {
+                db.TB_CONGVANs.InsertOnSubmit(cv);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
         
         public static bool Update()
         {

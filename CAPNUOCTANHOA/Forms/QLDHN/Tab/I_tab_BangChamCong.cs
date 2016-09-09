@@ -81,7 +81,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             }
             else if (checkTanPhu02.Checked)
             {
-                tods = 1;
+                tods = 4;
                 tento = "TỔ TÂN BÌNH 01";
             }
 
@@ -120,7 +120,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             }
             else if (checkTanPhu02.Checked)
             {
-                tods = 1;
+                tods = 4;
                 tento = "TỔ TÂN BÌNH 01";
             }
 

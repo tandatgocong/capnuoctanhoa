@@ -12,6 +12,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh;
+using System.Data.SqlClient;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
@@ -32,7 +33,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             HIEUDH.AutoCompleteMode = AutoCompleteMode.Suggest;
             HIEUDH.AutoCompleteSource = AutoCompleteSource.CustomSource;
             HIEUDH.AutoCompleteCustomSource = namesCollection;
-
+          
         }
 
         private void txtDanhBo_KeyPress(object sender, KeyPressEventArgs e)
@@ -83,10 +84,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     VITRI.Text = khachhang.VITRIDHN;
                     CHITHAN.Text = khachhang.CHITHAN;
                     CHIGOC.Text = khachhang.CHIGOC;
-                    
+
                     btCapNhatThongTin.Enabled = true;
-                    
-                    
+
+
                     loadghichu(khachhang.DANHBO);
                     txtGhiChu.Text = "";
                 }
@@ -140,7 +141,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
 
-        public void loadghichu(string danhbo) {
+        public void loadghichu(string danhbo)
+        {
             lichsuGhiCHu.DataSource = DAL.DULIEUKH.C_DuLieuKhachHang.lisGhiChu(danhbo);
             for (int i = 0; i < lichsuGhiCHu.Rows.Count; i++)
             {
@@ -154,36 +156,37 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
             }
         }
-        public void Refesh() {
-            LOTRINH.Text ="";
+        public void Refesh()
+        {
+            LOTRINH.Text = "";
             DOT.Text = "";
             HOPDONG.Text = "";
             HOTEN.Text = "";
             SONHA.Text = "";
             TENDUONG.Text = "";
-            QUAN.Text = "";           
+            QUAN.Text = "";
             PHUONGT.Text = "";
             GIABIEU.Text = "";
             DINHMUC.Text = "";
             NGAYGAN.ValueObject = DateTime.Now.Date;
             KIEMDINH.ValueObject = DateTime.Now.Date;
-            HIEUDH.Text =  "";
-            CO.Text =  "";
-            CAP.Text =  "";
-            SOTHAN.Text  = "";
+            HIEUDH.Text = "";
+            CO.Text = "";
+            CAP.Text = "";
+            SOTHAN.Text = "";
             VITRI.Text = "";
             CHITHAN.Text = "";
             CHIGOC.Text = "";
-          
+
             txtDanhBo.Focus();
-        
+
         }
         private void btCapNhatThongTin_Click(object sender, EventArgs e)
         {
             if (khachhang != null)
             {
                 khachhang.HOPDONG = HOPDONG.Text.ToUpper();
-                khachhang.HOTEN = HOTEN.Text.ToUpper();               
+                khachhang.HOTEN = HOTEN.Text.ToUpper();
                 khachhang.SONHA = SONHA.Text.ToUpper();
                 khachhang.TENDUONG = TENDUONG.Text.ToUpper();
                 khachhang.DIENTHOAI = txtDienThoai.Text;
@@ -211,7 +214,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     //cap nhat handheld
                     DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), HIEUDH.Text.Substring(0, 3), SOTHAN.Text, CHITHAN.Text.ToUpper(), CHIGOC.Text.ToUpper(), VITRI.Text);
                     //cap nhat ghi chu
-                    if ("".Equals(txtGhiChu.Text.Replace(" ",""))==false) {
+                    if ("".Equals(txtGhiChu.Text.Replace(" ", "")) == false)
+                    {
                         TB_GHICHU ghichu = new TB_GHICHU();
                         ghichu.DANHBO = khachhang.DANHBO;
                         ghichu.NOIDUNG = txtGhiChu.Text;
@@ -422,7 +426,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             table.Columns.Add("STT", typeof(string));
             table.Columns.Add("TODS", typeof(string));
             table.Columns.Add("TENTO", typeof(string));
-            table.Columns.Add("SOLUONG",typeof(string));
+            table.Columns.Add("SOLUONG", typeof(string));
 
             DataRow myDataRow = table.NewRow();
             myDataRow["STT"] = 1;
@@ -473,7 +477,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
 
 
-            
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -493,7 +497,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
 
-       
+
 
         /// <summary>
         /// Đì
@@ -516,7 +520,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             panelDieuChinh.Controls.Clear();
             panelDieuChinh.Controls.Add(new frm_DieuChinh());
-            
+
         }
 
         private void ganhopBV_Click(object sender, EventArgs e)
@@ -646,5 +650,287 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             panel3.Controls.Add(new frm_DanhSachKT());
         }
 
+
+        public DataTable getCV(string DanhBo)
+        {
+            string sqlKTXM = "select db='Kinh Doanh',Loai=N'BBKT',NoiDungKiemTra as NoiDung, CreateDate,'Table'='CTKTXM','Column'='MaCTKTXM',MaCTKTXM as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaKTXM as 'MAKT' from CTKTXM where DanhBo='" + DanhBo + "'";
+            string sqlDCBD = "select db='Kinh Doanh',Loai=N'Điều Chỉnh Biến Động',ThongTin as NoiDung,CreateDate,'Table'='CTDCBD','Column'='MaCTDCBD',MaCTDCBD as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaDCBD as 'MAKT' from CTDCBD where DanhBo='" + DanhBo + "'";
+            string sqlDCHD = "select db='Kinh Doanh',Loai=N'Điều Chỉnh Hóa Đơn',TangGiam as NoiDung,CreateDate,'Table'='CTDCHD','Column'='MaCTDCHD',MaCTDCHD as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaDCBD as 'MAKT' from CTDCHD where DanhBo='" + DanhBo + "'";
+            string sqlCTDB = "select db='Kinh Doanh',Loai=N'TB Cắt Tạm Danh Bộ',LyDo+'. '+GhiChuLyDo as NoiDung,CreateDate,'Table'='CTCTDB','Column'='MaCTCTDB',MaCTCTDB as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaCHDB as 'MAKT' from CTCTDB where DanhBo='" + DanhBo + "'";
+            string sqlCHDB = "select db='Kinh Doanh',Loai=N'Phiếu cắt ống - hủy DB',LyDo+'. '+GhiChuLyDo as NoiDung,CreateDate,'Table'='CTCHDB','Column'='MaCTCHDB',MaCTCHDB as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaCHDB as 'MAKT' from CTCHDB where DanhBo='" + DanhBo + "'";
+            string sqlYCCHDB = "select db='Kinh Doanh',Loai=N'Phiếu Yêu Cầu Cắt Hủy Danh Bộ',LyDo+'. '+GhiChuLyDo as NoiDung,CreateDate,'Table'='YeuCauCHDB','Column'='MaYCCHDB',MaYCCHDB as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaYCCHDB as 'MAKT' from YeuCauCHDB where DanhBo='" + DanhBo + "'";
+            string sqlTTTL = "select db='Kinh Doanh',Loai=N'Thư Trả Lời',NoiDung,CreateDate,'Table'='CTTTTL','Column'='MaCTTTTL',MaCTTTTL as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaTTTL as 'MAKT' from CTTTTL where DanhBo='" + DanhBo + "'";
+
+            DataTable dt = DAL.LinQConnectionKT.getDataTable(sqlKTXM);
+            dt.Merge(DAL.LinQConnectionKT.getDataTable(sqlDCBD));
+            dt.Merge(DAL.LinQConnectionKT.getDataTable(sqlDCHD));
+            dt.Merge(DAL.LinQConnectionKT.getDataTable(sqlCTDB));
+            dt.Merge(DAL.LinQConnectionKT.getDataTable(sqlCHDB));
+            dt.Merge(DAL.LinQConnectionKT.getDataTable(sqlYCCHDB));
+            dt.Merge(DAL.LinQConnectionKT.getDataTable(sqlTTTL));
+            dt.DefaultView.Sort = "CreateDate desc";
+            return dt.DefaultView.ToTable();
+
+
+        }
+
+        private void txtdbCongVan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                string sodanhbo = this.txtdbCongVan.Text.Replace("-", "");
+                dgvKinhDoanh.DataSource = getCV(sodanhbo);
+
+
+                if (sodanhbo.Length == 11)
+                {
+                    khachhang = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
+                    if (khachhang != null)
+                    {
+                        lbCV_kh.Text = "KHÁCH HÀNG : " + khachhang.HOTEN + " - Đ/C: " + khachhang.SONHA + ' ' + khachhang.TENDUONG;
+                        mayds.Text = getToDS(int.Parse(khachhang.LOTRINH.Substring(2, 2)));
+                    }
+                    else
+                    {
+                        TB_DULIEUKHACHHANG_HUYDB khachhanghuy = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
+                        if (khachhanghuy != null)
+                        {
+                            lbCV_kh.Text = "KHÁCH HÀNG : " + khachhanghuy.HOTEN + " - Đ/C: " + khachhanghuy.SONHA + ' ' + khachhanghuy.TENDUONG;
+                            mayds.Text = getToDS(int.Parse(khachhanghuy.LOTRINH.Substring(2, 2)));
+                        }
+                        else
+                        {
+                            MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            mayds.Text = "-";
+                            Refesh();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void dgvKinhDoanh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string cv = (dgvKinhDoanh.Rows[e.RowIndex].Cells["MAKT"].Value + "");
+                this.txtSoCongVAn.Text = cv.Insert(cv.Length - 2, "-");
+
+                string loai = (dgvKinhDoanh.Rows[e.RowIndex].Cells["Loai"].Value + "");
+                this.txtCVNoiDung.Text = loai + " : " + dgvKinhDoanh.Rows[e.RowIndex].Cells["gNoiDungggg"].Value + "";
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        string getToDS(int mayds)
+        {
+            if (mayds < 15)
+            {
+                return "TB01";
+            }
+            else if (mayds >= 15 && mayds < 30)
+            {
+                return "TB02";
+            }
+            else if (mayds >= 30 && mayds < 50)
+            {
+                return "TP01";
+
+            }
+            return "TP02";
+        }
+
+        public void LoadCV()
+        {
+
+            string sql = "SELECT ID, ROW_NUMBER() OVER (ORDER BY CREATEDATE  DESC) [STT], TODS,SOCV,NOIDUNG,DANHBO FROM TB_CONGVAN WHERE ";
+            sql += " CONVERT(DATETIME,NGAYNHAP,103) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay.Value.Date) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay.Value.Date) + "',103) ";
+
+            cvDoi.DataSource = DAL.LinQConnection.getDataTable(sql);
+
+            cvTanbinh01.DataSource = DAL.LinQConnection.getDataTable(sql + " AND TODS='TB01' ");
+            cvTanbinh02.DataSource = DAL.LinQConnection.getDataTable(sql + " AND TODS='TB02' ");
+            cvTanphu01.DataSource = DAL.LinQConnection.getDataTable(sql + " AND TODS='TP01' ");
+            cvTanphu02.DataSource = DAL.LinQConnection.getDataTable(sql + " AND TODS='TP02' ");
+        }
+
+        public void rs()
+        {
+            this.txtdbCongVan.Text = "";
+            this.txtSoCongVAn.Text = "";
+            this.lbCV_kh.Text = "??";
+            this.mayds.Text = "";
+            this.txtCVNoiDung.Text = "";
+            this.txtdbCongVan.Focus();
+
+        }
+        private void btThemCV_Click(object sender, EventArgs e)
+        {
+            string sodanhbo = this.txtdbCongVan.Text.Replace("-", "");
+            TB_CONGVAN cv = new TB_CONGVAN();
+            cv.DANHBO = sodanhbo;
+            cv.SOCV = this.txtSoCongVAn.Text;
+            cv.TODS = this.mayds.Text;
+            cv.NOIDUNG = this.txtCVNoiDung.Text;
+            cv.NGAYNHAP = DateTime.Now.Date;
+            cv.CREATEDATE = DateTime.Now;
+            cv.CREATEBY = DAL.SYS.C_USERS._userName;
+            DAL.DULIEUKH.C_DieuChinhDanhBo.InsertCV(cv);
+            LoadCV();
+
+            rs();
+        }
+
+        private void tbCongVan_Click(object sender, EventArgs e)
+        {
+            dateTuNgay.ValueObject = DateTime.Now.Date;
+            dateDenNgay.ValueObject = DateTime.Now.Date;
+        }
+
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_CongVan();
+            string tungay = Utilities.DateToString.NgayVN(dateTuNgay.Value.Date);
+            string denngay = Utilities.DateToString.NgayVN(dateDenNgay.Value.Date);
+
+            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY CREATEDATE  DESC) [STT], TODS,SOCV,NOIDUNG,DANHBO FROM TB_CONGVAN WHERE ";
+            sql += " CONVERT(DATETIME,NGAYNHAP,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+            string tods = " ĐỘI ";
+            if (ct.SelectedIndex == 1)
+            {
+                sql += " AND TODS='TB01' ";
+                tods = "TB01";
+            }
+            if (ct.SelectedIndex == 1)
+            {
+                sql += " AND TODS='TB02' ";
+                tods = "TB02";
+            }
+            if (ct.SelectedIndex == 1)
+            {
+                sql += " AND TODS='TP01' ";
+                tods = "TP01";
+            }
+            if (ct.SelectedIndex == 1)
+            {
+                sql += " AND TODS='TP02' ";
+                tods = "TP02";
+            }
+            rp.SetDataSource(DAL.LinQConnection.getDataSet(sql, "TB_CONGVAN"));
+            rp.SetParameterValue("TODS", tods);
+            rp.SetParameterValue("tungay", tungay);
+            rp.SetParameterValue("denngay", denngay);
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+        }
+
+        private void dateDenNgay_ValueChanged(object sender, EventArgs e)
+        {
+            LoadCV();
+        }
+
+        private void dateTuNgay_ValueChanged(object sender, EventArgs e)
+        {
+            LoadCV();
+        }
+
+        private void tbCongVan_Click_1(object sender, EventArgs e)
+        {
+            dateTuNgay.ValueObject = DateTime.Now.Date;
+            dateDenNgay.ValueObject = DateTime.Now.Date;
+        }
+
+        private void cvSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                string sodanhbo = this.cvSearch.Text.Replace("-", "");
+                string sql = "SELECT ID, ROW_NUMBER() OVER (ORDER BY CREATEDATE  DESC) [STT], TODS,SOCV,NOIDUNG,DANHBO FROM TB_CONGVAN WHERE DANHBO='" + sodanhbo + "'";
+
+                cvDoi.DataSource = DAL.LinQConnection.getDataTable(sql);
+            }
+        }
+
+        private void xoaCV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cvDoi_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip2.Show(cvDoi, new Point(e.X, e.Y));
+            }
+        }
+
+        private void contextMenuStrip2_Click(object sender, EventArgs e)
+        {
+            string ID_ = this.cvDoi.Rows[cvDoi.CurrentRow.Index].Cells["IDCV"].Value + "";
+            DAL.LinQConnection.ExecuteCommand_("DELETE FROM TB_CONGVAN WHERE ID='" + ID_ + "' ");
+            LoadCV();
+        }
+
+        private void btthemcolon_Click(object sender, EventArgs e)
+        {
+            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX='1',DV=N'" + this.comboBox1.Text + "'  WHERE DANHBO='" + this.cl_danhbo.Text.Replace("-", "") + "'");
+            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE  SX='1' ");
+            cl_TongCong.Text = dataGridView2.RowCount.ToString();
+            cl_danhbo.Text = "";
+        }
+
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
+            cl_TongCong.Text = dataGridView2.RowCount.ToString();
+            cl_danhbo.Text = "";
+
+            ReportDocument rp = new rpt_ThuMoi();
+            rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.Thumoi());
+            crystalReportViewer3.ReportSource = rp;
+            this.crystalReportViewer3.Visible = true;
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 1)
+            {
+                dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
+                cl_TongCong.Text = dataGridView2.RowCount.ToString();
+                cl_danhbo.Text = "";
+            }
+
+        }
+
+        private void dataGridView2_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip3.Show(dataGridView2, new Point(e.X, e.Y));
+            }
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            string ID_ = this.dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells["CL_DANHBOO"].Value + "";
+            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX=NULL,DV=NULL WHERE DANHBO='" + ID_ + "'");
+            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
+            cl_TongCong.Text = dataGridView2.RowCount.ToString();
+            cl_danhbo.Text = "";
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX=NULL,DV=NULL WHERE SX IS NOT NULL ");
+            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
+        }
     }
 }
+
+

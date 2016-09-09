@@ -29,7 +29,7 @@
     <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>70</ApplicationRevision>
+    <ApplicationRevision>75</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -533,6 +533,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BC_DONGHONUOC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QLDHN\BC\rpt_CongVan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_CongVan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\QLDHN\BC\rpt_DongHoHieuCu_TODS.cs">
       <DependentUpon>rpt_DongHoHieuCu_TODS.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -696,11 +702,11 @@
     <Compile Include="Forms\QLDHN\frm_CapNhatGhiChu.Designer.cs">
       <DependentUpon>frm_CapNhatGhiChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QLDHN\frm_CapNhatThongTin.cs">
+    <Compile Include="Forms\QLDHN\frm_CapNhatThongTin_HH.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\QLDHN\frm_CapNhatThongTin.Designer.cs">
-      <DependentUpon>frm_CapNhatThongTin.cs</DependentUpon>
+    <Compile Include="Forms\QLDHN\frm_CapNhatThongTin_HH.Designer.cs">
+      <DependentUpon>frm_CapNhatThongTin_HH.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\frm_BaoThayVaXuLy.cs">
       <SubType>UserControl</SubType>
@@ -769,6 +775,12 @@
     </Compile>
     <Compile Include="Forms\QLDHN\BC\rpt_DongHoHieuCu.cs">
       <DependentUpon>rpt_DongHoHieuCu.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\QLDHN\BC\rpt_ThuMoi.cs">
+      <DependentUpon>rpt_ThuMoi.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -1920,6 +1932,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BCHoanCong_A4_DA.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\BC\rpt_CongVan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_CongVan.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_DongHoHieuCu_TODS.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DongHoHieuCu_TODS.cs</LastGenOutput>
@@ -1997,8 +2013,8 @@
     <EmbeddedResource Include="Forms\QLDHN\frm_CapNhatGhiChu.resx">
       <DependentUpon>frm_CapNhatGhiChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QLDHN\frm_CapNhatThongTin.resx">
-      <DependentUpon>frm_CapNhatThongTin.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\QLDHN\frm_CapNhatThongTin_HH.resx">
+      <DependentUpon>frm_CapNhatThongTin_HH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_BaoThayVaXuLy.resx">
       <DependentUpon>frm_BaoThayVaXuLy.cs</DependentUpon>
@@ -2034,6 +2050,10 @@
     <EmbeddedResource Include="Forms\QLDHN\HoaDon0M3\rpt_TheoDoiHD_0.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_TheoDoiHD_0.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\BC\rpt_ThuMoi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ThuMoi.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_A3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -2526,72 +2546,72 @@
   <ItemGroup>
     <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportSource">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.Shared">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.Windows.Forms">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

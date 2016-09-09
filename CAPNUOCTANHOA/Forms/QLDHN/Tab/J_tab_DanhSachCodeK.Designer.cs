@@ -87,9 +87,12 @@
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.nMay = new System.Windows.Forms.NumericUpDown();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nMay)).BeginInit();
             this.SuspendLayout();
             // 
             // comboItem12
@@ -173,6 +176,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.nMay);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX6);
             this.splitContainer1.Panel1.Controls.Add(this.txtTieuThu);
             this.splitContainer1.Panel1.Controls.Add(this.labelX5);
             this.splitContainer1.Panel1.Controls.Add(this.cbCode);
@@ -250,7 +255,7 @@
             this.comboItem22,
             this.comboItem23,
             this.comboItem24});
-            this.cbKyDS.Location = new System.Drawing.Point(581, 44);
+            this.cbKyDS.Location = new System.Drawing.Point(610, 44);
             this.cbKyDS.Name = "cbKyDS";
             this.cbKyDS.Size = new System.Drawing.Size(86, 27);
             this.cbKyDS.TabIndex = 30;
@@ -329,11 +334,11 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(540, 48);
+            this.labelX3.Location = new System.Drawing.Point(569, 48);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(55, 23);
             this.labelX3.TabIndex = 38;
-            this.labelX3.Text = "KỲ :";
+            this.labelX3.Text = "KỲ ";
             // 
             // cbDotDS
             // 
@@ -364,7 +369,7 @@
             this.comboItem42,
             this.comboItem43,
             this.comboItem44});
-            this.cbDotDS.Location = new System.Drawing.Point(437, 47);
+            this.cbDotDS.Location = new System.Drawing.Point(466, 47);
             this.cbDotDS.Name = "cbDotDS";
             this.cbDotDS.Size = new System.Drawing.Size(86, 27);
             this.cbDotDS.TabIndex = 37;
@@ -497,7 +502,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(677, 48);
+            this.labelX2.Location = new System.Drawing.Point(701, 48);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(46, 23);
             this.labelX2.TabIndex = 26;
@@ -509,7 +514,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(834, 46);
+            this.btThem.Location = new System.Drawing.Point(863, 46);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(163, 27);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -519,11 +524,11 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(325, 48);
+            this.labelX1.Location = new System.Drawing.Point(424, 48);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(128, 23);
+            this.labelX1.Size = new System.Drawing.Size(44, 23);
             this.labelX1.TabIndex = 25;
-            this.labelX1.Text = "ĐỢT ĐỌC SỐ :";
+            this.labelX1.Text = "ĐỢT";
             // 
             // txtNam
             // 
@@ -531,7 +536,7 @@
             // 
             // 
             this.txtNam.Border.Class = "TextBoxBorder";
-            this.txtNam.Location = new System.Drawing.Point(723, 45);
+            this.txtNam.Location = new System.Drawing.Point(752, 45);
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(100, 27);
             this.txtNam.TabIndex = 27;
@@ -541,11 +546,11 @@
             // 
             this.title.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.Crimson;
-            this.title.Location = new System.Drawing.Point(12, 5);
+            this.title.Location = new System.Drawing.Point(12, 0);
             this.title.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.title.Name = "title";
             this.title.ReflectionEnabled = false;
-            this.title.Size = new System.Drawing.Size(704, 49);
+            this.title.Size = new System.Drawing.Size(704, 71);
             this.title.TabIndex = 28;
             this.title.Text = "THEO DÕI KẾT QUẢ BIÊN ĐỌC CHỈ SỐ NƯỚC";
             // 
@@ -561,6 +566,22 @@
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
+            // labelX6
+            // 
+            this.labelX6.Location = new System.Drawing.Point(316, 49);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(46, 23);
+            this.labelX6.TabIndex = 43;
+            this.labelX6.Text = "MÁY";
+            // 
+            // nMay
+            // 
+            this.nMay.Location = new System.Drawing.Point(364, 48);
+            this.nMay.Name = "nMay";
+            this.nMay.Size = new System.Drawing.Size(46, 27);
+            this.nMay.TabIndex = 44;
+            this.nMay.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
             // J_tab_DanhSachCodeK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -575,6 +596,7 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nMay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -640,5 +662,7 @@
         private System.Windows.Forms.ComboBox cbCode;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTieuThu;
         private DevComponents.DotNetBar.LabelX labelX5;
+        private DevComponents.DotNetBar.LabelX labelX6;
+        private System.Windows.Forms.NumericUpDown nMay;
     }
 }
