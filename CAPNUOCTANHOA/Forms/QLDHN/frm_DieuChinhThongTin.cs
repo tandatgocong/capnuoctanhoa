@@ -33,6 +33,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             HIEUDH.AutoCompleteMode = AutoCompleteMode.Suggest;
             HIEUDH.AutoCompleteSource = AutoCompleteSource.CustomSource;
             HIEUDH.AutoCompleteCustomSource = namesCollection;
+            dateNgayCV.Value = DateTime.Now.Date;
           
         }
 
@@ -653,13 +654,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         public DataTable getCV(string DanhBo)
         {
-            string sqlKTXM = "select db='Kinh Doanh',Loai=N'BBKT',NoiDungKiemTra as NoiDung, CreateDate,'Table'='CTKTXM','Column'='MaCTKTXM',MaCTKTXM as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaKTXM as 'MAKT' from CTKTXM where DanhBo='" + DanhBo + "'";
-            string sqlDCBD = "select db='Kinh Doanh',Loai=N'Điều Chỉnh Biến Động',ThongTin as NoiDung,CreateDate,'Table'='CTDCBD','Column'='MaCTDCBD',MaCTDCBD as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaDCBD as 'MAKT' from CTDCBD where DanhBo='" + DanhBo + "'";
+            string sqlKTXM = "select db='Kinh Doanh',Loai=N'BBKT',NoiDungKiemTra as NoiDung, ct.CreateDate,'Table'='CTKTXM','Column'='MaCTKTXM',MaCTKTXM as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,don.MaDon as 'MAKT' from CTKTXM ct,KTXM kt,DonKH don where don.MaDon=kt.MaDon and kt.MaKTXM=ct.MaKTXM and ct.DanhBo='" + DanhBo + "'";
+            string sqlDCBD = "select db='Kinh Doanh',Loai=N'Điều Chỉnh Biến Động',ThongTin as NoiDung,ct.CreateDate,'Table'='CTDCBD','Column'='MaCTDCBD',MaCTDCBD as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,don.MaDon  as 'MAKT'  from CTDCBD ct,DCBD cd,DonKH don where don.MaDon=cd.MaDon and cd.MaDCBD=ct.MaDCBD AND DanhBo='" + DanhBo + "'";
             string sqlDCHD = "select db='Kinh Doanh',Loai=N'Điều Chỉnh Hóa Đơn',TangGiam as NoiDung,CreateDate,'Table'='CTDCHD','Column'='MaCTDCHD',MaCTDCHD as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaDCBD as 'MAKT' from CTDCHD where DanhBo='" + DanhBo + "'";
             string sqlCTDB = "select db='Kinh Doanh',Loai=N'TB Cắt Tạm Danh Bộ',LyDo+'. '+GhiChuLyDo as NoiDung,CreateDate,'Table'='CTCTDB','Column'='MaCTCTDB',MaCTCTDB as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaCHDB as 'MAKT' from CTCTDB where DanhBo='" + DanhBo + "'";
             string sqlCHDB = "select db='Kinh Doanh',Loai=N'Phiếu cắt ống - hủy DB',LyDo+'. '+GhiChuLyDo as NoiDung,CreateDate,'Table'='CTCHDB','Column'='MaCTCHDB',MaCTCHDB as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaCHDB as 'MAKT' from CTCHDB where DanhBo='" + DanhBo + "'";
             string sqlYCCHDB = "select db='Kinh Doanh',Loai=N'Phiếu Yêu Cầu Cắt Hủy Danh Bộ',LyDo+'. '+GhiChuLyDo as NoiDung,CreateDate,'Table'='YeuCauCHDB','Column'='MaYCCHDB',MaYCCHDB as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaYCCHDB as 'MAKT' from YeuCauCHDB where DanhBo='" + DanhBo + "'";
-            string sqlTTTL = "select db='Kinh Doanh',Loai=N'Thư Trả Lời',NoiDung,CreateDate,'Table'='CTTTTL','Column'='MaCTTTTL',MaCTTTTL as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaTTTL as 'MAKT' from CTTTTL where DanhBo='" + DanhBo + "'";
+            string sqlTTTL = "select db='Kinh Doanh',Loai=N'Thư Trả Lời',NoiDung,CreateDate,'Table'='CTTTTL','Column'='MaCTTTTL',MaCTTTTL as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaCTTTTL as 'MAKT' from CTTTTL where DanhBo='" + DanhBo + "'";
 
             DataTable dt = DAL.LinQConnectionKT.getDataTable(sqlKTXM);
             dt.Merge(DAL.LinQConnectionKT.getDataTable(sqlDCBD));
@@ -747,7 +748,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         public void LoadCV()
         {
 
-            string sql = "SELECT ID, ROW_NUMBER() OVER (ORDER BY CREATEDATE  DESC) [STT], TODS,SOCV,NOIDUNG,DANHBO FROM TB_CONGVAN WHERE ";
+            string sql = "SELECT ID, ROW_NUMBER() OVER (ORDER BY CREATEDATE  DESC) [STT], TODS,SOCV,NOIDUNG,DANHBO,CONVERT(VARCHAR(10),NGAYNHAP,103) AS NGAYNHAP FROM TB_CONGVAN WHERE ";
             sql += " CONVERT(DATETIME,NGAYNHAP,103) BETWEEN CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateTuNgay.Value.Date) + "',103) AND CONVERT(DATETIME,'" + Utilities.DateToString.NgayVN(dateDenNgay.Value.Date) + "',103) ";
 
             cvDoi.DataSource = DAL.LinQConnection.getDataTable(sql);
@@ -776,7 +777,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             cv.SOCV = this.txtSoCongVAn.Text;
             cv.TODS = this.mayds.Text;
             cv.NOIDUNG = this.txtCVNoiDung.Text;
-            cv.NGAYNHAP = DateTime.Now.Date;
+            cv.NGAYNHAP = this.dateNgayCV.Value;
             cv.CREATEDATE = DateTime.Now;
             cv.CREATEBY = DAL.SYS.C_USERS._userName;
             DAL.DULIEUKH.C_DieuChinhDanhBo.InsertCV(cv);
@@ -799,7 +800,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string tungay = Utilities.DateToString.NgayVN(dateTuNgay.Value.Date);
             string denngay = Utilities.DateToString.NgayVN(dateDenNgay.Value.Date);
 
-            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY CREATEDATE  DESC) [STT], TODS,SOCV,NOIDUNG,DANHBO FROM TB_CONGVAN WHERE ";
+            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY CREATEDATE  DESC) [STT], TODS,SOCV,NOIDUNG,DANHBO,CONVERT(VARCHAR(10),NGAYNHAP,103) AS NGAYNHAP FROM TB_CONGVAN WHERE ";
             sql += " CONVERT(DATETIME,NGAYNHAP,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
             string tods = " ĐỘI ";
             if (ct.SelectedIndex == 1)
@@ -807,17 +808,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 sql += " AND TODS='TB01' ";
                 tods = "TB01";
             }
-            if (ct.SelectedIndex == 1)
+            if (ct.SelectedIndex == 2)
             {
                 sql += " AND TODS='TB02' ";
                 tods = "TB02";
             }
-            if (ct.SelectedIndex == 1)
+            if (ct.SelectedIndex == 3)
             {
                 sql += " AND TODS='TP01' ";
                 tods = "TP01";
             }
-            if (ct.SelectedIndex == 1)
+            if (ct.SelectedIndex == 4)
             {
                 sql += " AND TODS='TP02' ";
                 tods = "TP02";
@@ -851,7 +852,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             if (e.KeyChar == 13)
             {
                 string sodanhbo = this.cvSearch.Text.Replace("-", "");
-                string sql = "SELECT ID, ROW_NUMBER() OVER (ORDER BY CREATEDATE  DESC) [STT], TODS,SOCV,NOIDUNG,DANHBO FROM TB_CONGVAN WHERE DANHBO='" + sodanhbo + "'";
+                string sql = "SELECT ID, ROW_NUMBER() OVER (ORDER BY CREATEDATE  DESC) [STT], TODS,SOCV,NOIDUNG,DANHBO,CONVERT(VARCHAR(10),NGAYNHAP,103) AS NGAYNHAP FROM TB_CONGVAN WHERE DANHBO='" + sodanhbo + "'";
 
                 cvDoi.DataSource = DAL.LinQConnection.getDataTable(sql);
             }
@@ -929,6 +930,39 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX=NULL,DV=NULL WHERE SX IS NOT NULL ");
             dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
+        }
+
+        private void cl_danhbo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                string sodanhbo = this.cl_danhbo.Text.Replace("-", "");              
+
+                if (sodanhbo.Length == 11)
+                {
+                    khachhang = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
+                    if (khachhang != null)
+                    {
+                        labelX49.Text = "KH: " + khachhang.HOTEN + " - Đ/C: " + khachhang.SONHA + ' ' + khachhang.TENDUONG;
+                      
+                    }
+                    else
+                    {
+                        TB_DULIEUKHACHHANG_HUYDB khachhanghuy = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
+                        if (khachhanghuy != null)
+                        {
+                            labelX49.Text = "KH: " + khachhanghuy.HOTEN + " - Đ/C: " + khachhanghuy.SONHA + ' ' + khachhanghuy.TENDUONG;
+                          
+                        }
+                        else
+                        {
+                            MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           
+                            Refesh();
+                        }
+                    }
+                }
+            }
         }
     }
 }

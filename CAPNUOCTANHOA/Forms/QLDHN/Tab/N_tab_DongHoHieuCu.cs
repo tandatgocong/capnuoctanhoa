@@ -53,7 +53,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
             if (!"".Equals(this.txtCode.Text.Replace(" ", "")))
             {
-                query += " AND CODE = '" + this.txtCode.Text.Replace(" ", "") +"'";
+                query += " AND CODE LIKE '" + this.txtCode.Text.Replace(" ", "") +"%'";
             }
 
             if (!"".Equals(this.txtGB.Text.Replace(" ", "")))
