@@ -21,14 +21,14 @@ using CAPNUOCTANHOA.Utilities;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN
 {
-    public partial class frm_TheoDoiHD_0 : UserControl
+    public partial class frm_TheoDoiHD_0_TroNgai : UserControl
     {
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_BaoThayDHN).Name);
         bool flagDanhBo = false;//Flag xoa tu danh bo hay bang ke
 
 
-        public frm_TheoDoiHD_0()
+        public frm_TheoDoiHD_0_TroNgai()
         {
             InitializeComponent();
         }
@@ -37,14 +37,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void frm_TheoDoiHD_0_Load(object sender, EventArgs e)
         {
-            //cbLoaiBangKe.DataSource = DAL.QLDHN.C_BaoThay.getLoaiBangKe();
-            //cbLoaiBangKe.DisplayMember = "TENBANGKE";
-            //cbLoaiBangKe.ValueMember = "LOAIBK";
-            //cbLoaiBangKe.SelectedValue = "DK";
-            //lbl_count.Text = "";
-            // lbl_CountBamChi.Text = "";
-            //lbl_CountCamKet.Text = "";
-            //lblTroNgai.Text = "";
+          
             txtNamHuy.Text = DateTime.Now.Year.ToString();
             panelLichSuHoaDon0.Visible = false;
             dataGridView2.Visible = false;
@@ -63,12 +56,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             try
             {
                 txtNgayGhiNhan.Value = DateTime.Now;
-                chk_CamKet.Checked = false;
-                cbKy.Visible = false;
                 string balap = DateTime.Now.Year.ToString().Substring(2) + "001";
-                if (DAL.QLDHN.C_HoaDon_0.getMaxBangKe() >= int.Parse(balap))
+                int id=DAL.QLDHN.C_HoaDon_0.getMaxBangKe_2();
+                if (id >= int.Parse(balap))
                 {
-                    txtSoBangKe_Thongtin.Text = (DAL.QLDHN.C_HoaDon_0.getMaxBangKe() + 1) + "";
+                    txtSoBangKe_Thongtin.Text = (id + 1) + "";
 
                 }
                 else
@@ -111,7 +103,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             txtMaLoTrinh.Text = "";
             //txtID.Text = "";
 
-            txtGhiChu.Text = "";
+            txtLyDo.Text = "";
             this.dgvThongTinHD_0.DataSource = DAL.QLDHN.C_HoaDon_0.getBangKeBaoThay(999999);
 
             try
@@ -148,7 +140,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             txtMaLoTrinh.Text = "";
             //txtGhiChu = " ";
             //btcapNhat.Enabled = false;
-            checkChuaDanhDau.Checked = false;
+            //checkChuaDanhDau.Checked = false;
             //btXoa.Enabled = false;
             //txtID.Text = "";
 
@@ -179,7 +171,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     txtToDS.Text = GetTOds(txtMaLoTrinh.Text);
                     txtNam.Text = DateTime.Now.Year.ToString();
                     btnXoa.Enabled = true;
-                    btcapNhat.Enabled = true;
+                  //  btcapNhat.Enabled = true;
 
 
                 }
@@ -242,11 +234,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
 
                 DataTable dt = new DataTable();
-                dt = DAL.QLDHN.C_HoaDon_0.getBangKeBaoThay(int.Parse(txtSoBangKe_Thongtin.Text.Trim()));
+                dt = DAL.QLDHN.C_HoaDon_0.getBangKeBaoThay_TN( txtSoBangKe_Thongtin.Text.Trim());
                 dgvThongTinHD_0.DataSource = dt;
                 Utilities.DataGridV.formatRowsSTT(dgvThongTinHD_0, "DHN_DANHBO", "DHN_STT");
                 btnXoa.Visible = true;
-                btcapNhat.Visible = true;
+               //// btcapNhat.Visible = true;
             }
             catch (Exception ex)
             {
@@ -289,99 +281,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
 
 
-        private void chk_CamKet_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_CamKet.Checked == true)
-            {
-                cbKy.SelectedIndex = 0;
-                cbKy.Visible = true;
-                checkBoxBamChi.Checked = false;
-                checkGanMoi.Checked = false;
-            }
-            else
-            {
-                cbKy.Visible = false;
-            }
-        }
+        //private void chk_CamKet_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (chk_CamKet.Checked == true)
+        //    {
+        //        cbKy.SelectedIndex = 0;
+        //        cbKy.Visible = true;
+        //        checkBoxBamChi.Checked = false;
+        //        checkGanMoi.Checked = false;
+        //    }
+        //    else
+        //    {
+        //        cbKy.Visible = false;
+        //    }
+        //}
 
-        private void btcapNhat_Click(object sender, EventArgs e)
-        {
-            string danhbo = txtSoDanhBo.Text.Replace("-", "");
-            // string mess = "Cập Nhật Cho Danh Bộ  " + danhbo;
-            // if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //{
-            string ngayghinhan = txtNgayGhiNhan.Value.ToString();
-            string nam = txtNam.Text;
-            string sobangke = txtSoBangKe_Thongtin.Text;
-            string tods = txtToDS.Text;
-            string ghichu = txtGhiChu.Text;
-            string bamchi = "";
-            string huycamket = "";
-            if (checkBoxBamChi.Checked == true)
-            {
-
-                bamchi = "X";
-            }
-            int ky = 0;
-            if (chk_CamKet.Checked == true)
-            {
-                string text_ky = cbKy.Text;
-                ky = int.Parse(text_ky);
-            }
-            if (checkBoxHUYCAMKET.Checked == true)
-            {
-                huycamket = "X";
-            }
-            string ganmoi = "";
-            if (checkGanMoi.Checked == true)
-            {
-                ganmoi = "X";
-            }
-            string chuadanhdau = "";
-            if (checkChuaDanhDau.Checked == true)
-            {
-                chuadanhdau = "X";
-            }
-            if (checkChuaDanhDau.Checked == false && chk_CamKet.Checked == false && checkBoxBamChi.Checked == false && checkBoxHUYCAMKET.Checked == false && checkGanMoi.Checked == false)
-            {
-                chuadanhdau = "X";
-            }
-            //if (checkBoxBamChi.Checked == false && chk_CamKet.Checked == false)
-            //{
-            //    if (txtGhiChu.Text == "")
-            //    {
-            //        MessageBox.Show("Ghi Chú chưa được nhập");
-            //        return;
-            //    }
-            //}
-            if (checkBoxBamChi.Checked == true && chk_CamKet.Checked == true && checkBoxHUYCAMKET.Checked == true)
-            {
-
-                MessageBox.Show("Không thể cập nhật sử dụng cam kết và bấm chì và hủy cam kết cùng 1 lúc", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-
-            }
-            if (checkBoxBamChi.Checked == true && chk_CamKet.Checked == true)
-            {
-                MessageBox.Show("Không thể cập nhật sử dụng cam kết và bấm chì cùng lúc", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            string chisoky = cbChiSoKy.Text;
-            string dot = cbDot.Text;
-            int kq = 0;
-            kq = DAL.QLDHN.C_HoaDon_0.UpdateSoBangKe(danhbo, sobangke, ngayghinhan, nam, tods, ghichu, bamchi, ky, dot, chisoky, huycamket,ganmoi,chuadanhdau);
-            if (kq > 0)
-            {
-                MessageBox.Show("Đã cập nhật thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadData_ThongTin();
-            }
-
-            //}
-
-
-        }
-
+       
         private void dgvThongTinHD_0_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -390,108 +305,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string DHN_DANHBO = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_DANHBO"].Value + "";
                 string HOTEN = dgvThongTinHD_0.Rows[e.RowIndex].Cells["HOTEN"].Value + "";
                 string DIACHI = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DIACHI"].Value + "";
-                string DHN_SOBANGKE = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_SOBANGKE"].Value + "";
-
-                //int ID = int.Parse(dgvThongTinHD_0.Rows[e.RowIndex].Cells["ID"].Value + "");
-                string DHN_CODH = dgvThongTinHD_0.Rows[e.RowIndex].Cells["CODH"].Value + "";
-                string DHN_SOTHAN = dgvThongTinHD_0.Rows[e.RowIndex].Cells["SOTHANDH"].Value + "";
-                string DHN_TODS = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_TODS"].Value + "";
-                string DHN_NGAYGHINHANs = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_NGAYGHINHAN"].Value + "";
-                string DHN_chisoky = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_KY"].Value + "";
-                string DHN_chisodot = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_DOT"].Value + "";
-                string dhn_bamchi = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_BAMHI"].Value + "";
-                string dhn_camketsudung = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_CAMKET"].Value + "";
-                string dhn_huycamket = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_HUYCAMKET"].Value + "";
-                string dhn_ganmoi = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_GANMOI"].Value + "";
-               // string dhn_chuadanhdau = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_CHUADANHDAU"].Value + "";
                 string DHN_GHICHU = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_GHICHU"].Value + "";
-                DateTime Ngayghinhan;
-                Ngayghinhan = DateTime.Parse(DHN_NGAYGHINHANs);
+                string DHN_lydo = dgvThongTinHD_0.Rows[e.RowIndex].Cells["DHN_LYDO"].Value + "";
                 txtSoDanhBo.Text = DHN_DANHBO.Replace(" ", "");
-                txtNgayGhiNhan.Value = Ngayghinhan;
                 txtTenKH.Text = HOTEN;
                 txtDiaChi.Text = DIACHI;
-                txtCo.Text = DHN_CODH;
-                txtSoThan.Text = DHN_SOTHAN;
                 txtNam.Text = DateTime.Now.Year + "";
-                txtGhiChu.Text = DHN_GHICHU;
-                if (DHN_chisoky == "")
-                {
-                    DHN_chisoky = DateTime.Now.Month.ToString();
-                }
-                if (DHN_chisodot == "")
-                {
-                    int _dot = 1;
-                    DHN_chisodot = _dot.ToString();
-                }
-                cbChiSoKy.SelectedIndex = int.Parse(DHN_chisoky) - 1;
-                cbDot.SelectedIndex = int.Parse(DHN_chisodot) - 1;
-                if (dhn_bamchi == "X")
-                {
-                    checkBoxBamChi.Checked = true;
-                }
-                else if (dhn_bamchi != "X")
-                {
-                    checkBoxBamChi.Checked = false;
-                }
-                if (dhn_camketsudung != "")
-                {
-                    cbKy.Visible = true;
-                    chk_CamKet.Checked = true;
-                    cbKy.SelectedIndex = int.Parse(dhn_camketsudung) - 1;
-                }
-                else if (dhn_camketsudung == "")
-                {
-                    cbKy.Visible = false;
-                    chk_CamKet.Checked = false;
-                }
-                if (dhn_huycamket == "X")
-                {
-                    checkBoxHUYCAMKET.Checked = true;
-                }
-                else if (dhn_huycamket != "X")
-                {
-                    checkBoxHUYCAMKET.Checked = false;
-                }
-                if (dhn_ganmoi == "X")
-                {
-                    checkGanMoi.Checked = true;
-
-                }
-                else if (dhn_ganmoi != "X")
-                {
-                    checkGanMoi.Checked = false;
-                }
-                //if (dhn_chuadanhdau == "X")
-                //{
-                //    checkChuaDanhDau.Checked = true;
-                //}
-                //else if (dhn_chuadanhdau != "X")
-                //{
-                //    checkChuaDanhDau.Checked = false;
-                //}
-
-                try
-                {
-                    txtMaLoTrinh.Text = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(DHN_DANHBO.Replace(" ", "").Replace("-", "")).LOTRINH;
-                    if (DHN_TODS == "")
-                    {
-
-                        txtToDS.Text = GetTOds(txtMaLoTrinh.Text);
-                    }
-                    else
-                    {
-                        txtToDS.Text = DHN_TODS;
-                    }
-                }
-
-                catch (Exception)
-                {
-                }
-                btcapNhat.Enabled = true;
+                txtLyDo.Text = DHN_lydo;
+                txtGhiCHu.Text = DHN_GHICHU;
                 btnXoa.Enabled = true;
                 LoadPhieuTieuTHU(txtSoDanhBo.Text.Replace("-", ""), int.Parse(txtNam.Text), DateTime.Now.Month);
-
                 LoadLichSuHoaDon0(txtSoDanhBo.Text.Replace("-", ""));
             }
             catch (Exception)
@@ -502,50 +325,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         public void Add()
         {
 
-            DK_GIAMHOADON DHN_Giam = new DK_GIAMHOADON();
+            DK_GIAMHOADON_TRONGAI DHN_Giam = new DK_GIAMHOADON_TRONGAI();
             DHN_Giam.DHN_SOBANGKE = txtSoBangKe_Thongtin.Text;
             DHN_Giam.DHN_DANHBO = txtSoDanhBo.Text.Replace("-", "");
             DHN_Giam.DHN_NGAYGHINHAN = txtNgayGhiNhan.Value.Date;
-            DHN_Giam.DHN_GHICHU = txtGhiChu.Text;
+            DHN_Giam.DHN_GHICHU = txtLyDo.Text;
             DHN_Giam.DHN_NAM = int.Parse(DateTime.Now.Year.ToString());
             DHN_Giam.DHN_TODS = txtToDS.Text;
-            DHN_Giam.DHN_BAMHI = null;
             DHN_Giam.DHN_KY = cbChiSoKy.Text;
             DHN_Giam.DHN_DOT = cbDot.Text;
-           
-            if (checkBoxBamChi.Checked == true)
-            {
-                DHN_Giam.DHN_BAMHI = "X";
-            }
-            DHN_Giam.DHN_CAMKET = null;
-            if (chk_CamKet.Checked == true)
-            {
-                DHN_Giam.DHN_CAMKET = cbKy.Text;
-            }
-            DHN_Giam.DHN_HUYCAMKET = null;
-            if (checkBoxHUYCAMKET.Checked == true)
-            {
-                DHN_Giam.DHN_HUYCAMKET = "X";
-            }
-            DHN_Giam.DHN_GANMOI = null;
-            if (checkGanMoi.Checked == true)
-            {
-                DHN_Giam.DHN_GANMOI = "X";
-            }
-            DHN_Giam.DHN_CHUADANHDAU = null;
-            if (checkChuaDanhDau.Checked == true)
-            {
-                DHN_Giam.DHN_CHUADANHDAU = "X";
-            }
-            if (checkChuaDanhDau.Checked == false && checkBoxBamChi.Checked == false && chk_CamKet.Checked == false && checkBoxHUYCAMKET.Checked == false && checkGanMoi.Checked == false)
-            {
-                DHN_Giam.DHN_CHUADANHDAU = "X";
-            }
-
+            DHN_Giam.DHN_TRONGAI = "X";
+            DHN_Giam.DHN_LYDO = this.txtLyDo.Text;
+            DHN_Giam.DHN_GHICHU = this.txtGhiCHu.Text;
             DHN_Giam.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
             DHN_Giam.DHN_CREATEDATE = DateTime.Now;
 
-            DAL.QLDHN.C_HoaDon_0.Insert(DHN_Giam);
+            DAL.QLDHN.C_HoaDon_0.Insert_TR(DHN_Giam);
 
         }
 
@@ -557,11 +352,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string danhbo = txtSoDanhBo.Text.Replace("-", "");
                 //string mess = "Thêm Cho Danh Bộ  " + danhbo;
 
-                if (checkBoxBamChi.Checked == true && chk_CamKet.Checked == true && checkGanMoi.Checked ==true)
-                {
-                    MessageBox.Show("Không thể thêm sử dụng cam kết và bấm chì và gắn mới cùng lúc", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+               
 
 
                 //if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -644,14 +435,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             DataTable dtfilter = new DataTable();
             string where = "DHN_SOBANGKE='" + txtSoBangKe_Thongtin.Text + "'";
-            if (checkBoxBamChi.Checked == true)
-            {
-                where = where + " AND DHN_BAMHI='X'";
-            }
-            if (chk_CamKet.Checked == true)
-            {
-                where = where + " AND DHN_CAMKET<>''";
-            }
+            //if (checkBoxBamChi.Checked == true)
+            //{
+            //    where = where + " AND DHN_BAMHI='X'";
+            //}
+            //if (chk_CamKet.Checked == true)
+            //{
+            //    where = where + " AND DHN_CAMKET<>''";
+            //}
             dtfilter = tbFilter(dt, where);
             dtfilter.TableName = "TABLEHD";
             //format danh bo
@@ -661,22 +452,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             ds.Tables["TABLEHD"].Merge(dtfilter);
             //set dataset to the report viewer.
-            if (chk_CamKet.Checked == true)
-            {
+            //if (chk_CamKet.Checked == true)
+            //{
 
-                rptck.SetDataSource(ds);
-                rptck.SetParameterValue("bangke", txtSoBangKe_Thongtin.Text);
-                frm_Reports frm = new frm_Reports(rptck);
-                frm.Show();
-            }
-            else
-            {
+            //    rptck.SetDataSource(ds);
+            //    rptck.SetParameterValue("bangke", txtSoBangKe_Thongtin.Text);
+            //    frm_Reports frm = new frm_Reports(rptck);
+            //    frm.Show();
+            //}
+            //else
+            //{
                
                 rptDoc.SetDataSource(ds);
                 rptDoc.SetParameterValue("bangke", txtSoBangKe_Thongtin.Text);
                 frm_Reports frm = new frm_Reports(rptDoc);
                 frm.Show();
-            }
+            //}
             //rptDoc.SetParameterValue("Ky", cbChiSoKy.Text);
            
 
@@ -738,60 +529,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         public void LoadLichSuHoaDon0(string sodanhbo)
         {
-            DataTable dt = DAL.BANKTKS.C_GiamHoaDon.getLichSuHoaDon0(sodanhbo);
-            DataSetktks ds = new DataSetktks();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                DataRow dr = ds.Tables["LichSuHoaDon0"].NewRow();
-                dr["STT"] = i + 1;
-                dr["SOBANGKE"] = dt.Rows[i]["DHN_SOBANGKE"].ToString();
-                dr["DHN_NGAYGHINHAN"] = dt.Rows[i]["DHN_NGAYGHINHAN"].ToString();
-                dr["BC"] = dt.Rows[i]["DHN_BAMHI"].ToString() + "";
+            DataTable dt = DAL.BANKTKS.C_GiamHoaDon.getLichSuHoaDon0_TronGai(sodanhbo);
 
-                if (dt.Rows[i]["DHN_CAMKET"].ToString() != "")
-                    dr["DHN_CK"] = "X";
-                dr["HCK"] = dt.Rows[i]["DHN_HUYCAMKET"].ToString() + "";
-                if (dr["HCK"].ToString() != "")
-                {
-                    dr["BC"] = "";
-                    dr["DHN_CK"] = "";
-                }
+            dataLichSuHoaDon0.DataSource = dt;
+            panelLichSuHoaDon0.Visible = true;
 
-                //if (dt.Rows[i]["DHN_BAMHI"].ToString() != "")
-                //    dr["BC"] = "X";
-                //else
-                //    if (dt.Rows[i]["DHN_CAMKET"].ToString() != "")
-                //        dr["DHN_CK"] = "X";
-                //    else
-                //        if (dt.Rows[i]["DHN_HUYCAMKET"].ToString() != "")
-                //            dr["HCK"] = "X";
-                //else
-                //    if (dt.Rows[i]["DHN_HUYCAMKET"].ToString() != "" && dt.Rows[i]["DHN_BAMHI"].ToString() != "")
-                //        dr["HCK"] = "X";
-                //    else
-                //        if (dt.Rows[i]["DHN_HUYCAMKET"].ToString() != "" && dt.Rows[i]["DHN_CAMKET"].ToString() != "")
-                //            dr["HCK"] = "X";
-                dr["KTKS_NGAYTIEPXUC"] = dt.Rows[i]["KTKS_NGAYTIEPXUC"].ToString();
-                if (dt.Rows[i]["KTKS_CAMKET"].ToString() != "")
-                    dr["KTKS_CK"] = "X";
-                else
-                    if (dt.Rows[i]["KTKS_BAMHI"].ToString() == "khoanuoc")
-                        dr["BCKN"] = "X";
-                    else
-                        if (dt.Rows[i]["KTKS_BAMHI"].ToString() == "thuhoi")
-                            dr["BCTH"] = "X";
-                ds.Tables["LichSuHoaDon0"].Rows.Add(dr);
-            }
-            if (ds.Tables["LichSuHoaDon0"].Rows.Count > 0)
-            {
-                dataLichSuHoaDon0.DataSource = ds.Tables["LichSuHoaDon0"];
-                panelLichSuHoaDon0.Visible = true;
-            }
-            else
-            {
-                //dataLichSuHoaDon0.DataSource = new DataTable();
-                panelLichSuHoaDon0.Visible = false;
-            }
             Utilities.DataGridV.formatRows(dataLichSuHoaDon0);
 
         }
@@ -833,14 +575,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         }
 
-        private void checkBoxBamChi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxBamChi.Checked == true)
-            {
-                chk_CamKet.Checked = false;
-            }
-        }
-
+      
         private void txtSoDanhBo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -884,98 +619,69 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             //ghd.DHN_DANHBO = danhbo;
             //ghd.DHN_SOBANGKE = sobangke;
             string id = dgvThongTinHD_0.CurrentRow.Cells["ID"].Value.ToString();
-           
+
             //string mess = "Xóa Danh Bộ  " + danhbo;
             //if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             //{
-            int kq = DAL.QLDHN.C_HoaDon_0.DeleteThongTin(id);
+            int kq = DAL.QLDHN.C_HoaDon_0.DeleteThongTinTN(id);
             if (kq > 0)
             {
                 MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                refresh();
-                if (flagDanhBo)
-                    LoadData_DanhBo();
-                else
-                    LoadData_ThongTin();
+                refresh(); LoadData_ThongTin();
             }
 
             //}
 
 
-
         }
+    
 
-        private void dgvThongTinHD_0_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+       
 
-        }
 
-        private void txtID_TextChanged(object sender, EventArgs e)
+        DataSet ReportBaoThay(string sobangke)
         {
-        }
-        public void LoadData_DanhBo()
-        {
-            try
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Open)
             {
-                string sodanhbo = this.maskedTextdanhbo.Text.Replace("-","");
-
-                DataTable dt = new DataTable();
-                TB_DULIEUKHACHHANG kh = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
-                dt = DAL.QLDHN.C_HoaDon_0.getDanhBo(sodanhbo);
-                dgvThongTinHD_0.DataSource = dt;
-                Utilities.DataGridV.formatRowsSTT(dgvThongTinHD_0, "DHN_DANHBO", "DHN_STT");
-                btnXoa.Visible = true;
-                btcapNhat.Visible = true;
+                db.Connection.Close();
             }
-            catch (Exception ex)
-            {
-                log.Error("Loi Load Du Lieu Thay " + ex.Message);
-            }
-             
+            db.Connection.Open();
 
+            string query = "  SELECT [DHN_NGAYGHINHAN],[DHN_TODS], DHN_DANHBO,LOTRINH,SOTHANDH,HOTEN, SONHA + ' '+ TENDUONG AS DIACHI ";
+            query += "  ,[DHN_LYDO] AS DHN_CAMKET,' ' AS DHN_BAMCHI,[DHN_GHICHU],DHN_DOT, DHN_KY,DHN_SOBANGKE,QUAN,CODH,NAM,'' AS DHN_HUYCAMKET ";
+            query += "  FROM  DK_GIAMHOADON_TRONGAI TN, TB_DULIEUKHACHHANG KH ";
+            query += "  WHERE TN.DHN_DANHBO=KH.DANHBO   AND DHN_SOBANGKE='" + txtSoBangKe_Thongtin.Text + "' ";
 
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TABLEHD");
+
+            return ds;
         }
 
-        private void maskedTextdanhbo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                flagDanhBo = true;
-                LoadData_DanhBo();
-                
 
-
-            }
-
-        }
 
         private void btHuyCK_Click(object sender, EventArgs e)
         {
-            string nam = this.txtNamHuy.Text;
-            string ky = cbChiSoKy.Text;
-            string sql = "select g.* ,ds.CODE,ds.CSCU,ds.CSMOI,ds.TIEUTHU ";
-            sql+=" FROM ( ";
-            sql+=" SELECT SUBSTRING(LOTRINH,1,2) as 'DOT',kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG,kh.PHUONG,kh.QUAN,kh.HIEUDH, kh.CODH,SOTHANDH, hd.DHN_CAMKET,hd.DHN_NGAYGHINHAN ";
-            sql+=" FROM  TB_DULIEUKHACHHANG kh, DK_GIAMHOADON hd ";
-            sql+=" where kh.DANHBO=hd.DHN_DANHBO ) g ";
-            sql+=" left join DocSo_PHT.dbo.DS"+nam+" ds ";
-            sql+=" on g.DANHBO = ds.DANHBA ";
-            sql += " where g.DHN_CAMKET ='" + ky + "' and YEAR(g.DHN_NGAYGHINHAN)=" + nam;
-            sql += " and ds.KY=" + ky + " and ds.TIEUTHU=0 ";
 
-            ReportDocument rp = new rpt_InDSHuyCamKet();
-            rp.SetDataSource(DAL.LinQConnection.getDataTable(sql));
-            rp.SetParameterValue("KY", ky);
-            rp.SetParameterValue("NAM", nam);
+
+            ReportDocument rp = new rpt_TroNgai_HD_0();
+            rp.SetDataSource(ReportBaoThay(this.txtSoBangKe_Thongtin.Text));
+            rp.SetParameterValue("bangke", this.txtSoBangKe_Thongtin.Text);
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
 
-        private void btTroNgai_Click(object sender, EventArgs e)
+        private void labelX4_Click(object sender, EventArgs e)
         {
-            frm_TheoDoiHD_0_TroNgai_Fr f = new frm_TheoDoiHD_0_TroNgai_Fr();
-           // f.MaximizeBox = true;
-            f.ShowDialog();
+
+        }
+
+        private void maskedTextdanhbo_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

@@ -176,6 +176,13 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
             return LinQConnection.getDataTable(sql);
         }
 
+        public static DataTable getLichSuHoaDon0_TronGai(string sodanhbo)
+        {
+            string sql = "SELECT  DHN_SOBANGKE,CONVERT(VARCHAR(10), DHN_NGAYGHINHAN, 103) DHN_NGAYGHINHAN,DHN_LYDO,DHN_GHICHU ";
+            sql += " FROM DK_GIAMHOADON_TRONGAI WHERE DHN_DANHBO='" + sodanhbo + "' ORDER BY DHN_SOBANGKE ASC";
+            return LinQConnection.getDataTable(sql);
+        }
+
         /// <summary>
         /// Load Tiêu Thụ
         /// </summary>

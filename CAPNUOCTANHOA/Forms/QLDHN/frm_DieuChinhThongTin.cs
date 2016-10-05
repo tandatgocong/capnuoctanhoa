@@ -656,7 +656,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             string sqlKTXM = "select db='Kinh Doanh',Loai=N'BBKT',NoiDungKiemTra as NoiDung, ct.CreateDate,'Table'='CTKTXM','Column'='MaCTKTXM',MaCTKTXM as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,don.MaDon as 'MAKT' from CTKTXM ct,KTXM kt,DonKH don where don.MaDon=kt.MaDon and kt.MaKTXM=ct.MaKTXM and ct.DanhBo='" + DanhBo + "'";
             string sqlDCBD = "select db='Kinh Doanh',Loai=N'Điều Chỉnh Biến Động',ThongTin as NoiDung,ct.CreateDate,'Table'='CTDCBD','Column'='MaCTDCBD',MaCTDCBD as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,don.MaDon  as 'MAKT'  from CTDCBD ct,DCBD cd,DonKH don where don.MaDon=cd.MaDon and cd.MaDCBD=ct.MaDCBD AND DanhBo='" + DanhBo + "'";
-            string sqlDCHD = "select db='Kinh Doanh',Loai=N'Điều Chỉnh Hóa Đơn',TangGiam as NoiDung,CreateDate,'Table'='CTDCHD','Column'='MaCTDCHD',MaCTDCHD as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaDCBD as 'MAKT' from CTDCHD where DanhBo='" + DanhBo + "'";
+
+            string sqlDCHD = "select db='Kinh Doanh',Loai=N'BBKT',NoiDungKiemTra as NoiDung, ct.CreateDate,'Table'='CTKTXM','Column'='MaCTKTXM',MaCTKTXM as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,don.MaDon as 'MAKT' from CTKTXM ct,KTXM kt,DonTXL don where don.MaDon=kt.MaDon and kt.MaKTXM=ct.MaKTXM and don.DanhBo='" + DanhBo + "'";
+            
             string sqlCTDB = "select db='Kinh Doanh',Loai=N'TB Cắt Tạm Danh Bộ',LyDo+'. '+GhiChuLyDo as NoiDung,CreateDate,'Table'='CTCTDB','Column'='MaCTCTDB',MaCTCTDB as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaCHDB as 'MAKT' from CTCTDB where DanhBo='" + DanhBo + "'";
             string sqlCHDB = "select db='Kinh Doanh',Loai=N'Phiếu cắt ống - hủy DB',LyDo+'. '+GhiChuLyDo as NoiDung,CreateDate,'Table'='CTCHDB','Column'='MaCTCHDB',MaCTCHDB as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaCHDB as 'MAKT' from CTCHDB where DanhBo='" + DanhBo + "'";
             string sqlYCCHDB = "select db='Kinh Doanh',Loai=N'Phiếu Yêu Cầu Cắt Hủy Danh Bộ',LyDo+'. '+GhiChuLyDo as NoiDung,CreateDate,'Table'='YeuCauCHDB','Column'='MaYCCHDB',MaYCCHDB as Ma,ThuTien_Nhan,ThuTien_NgayNhan,ThuTien_GhiChu,MaYCCHDB as 'MAKT' from YeuCauCHDB where DanhBo='" + DanhBo + "'";
@@ -733,11 +735,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 return "TB01";
             }
-            else if (mayds >= 15 && mayds < 30)
+            else if (mayds >= 15 && mayds <= 30)
             {
                 return "TB02";
             }
-            else if (mayds >= 30 && mayds < 50)
+            else if (mayds > 30 && mayds < 50)
             {
                 return "TP01";
 
@@ -878,91 +880,97 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             LoadCV();
         }
 
-        private void btthemcolon_Click(object sender, EventArgs e)
-        {
-            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX='1',DV=N'" + this.comboBox1.Text + "'  WHERE DANHBO='" + this.cl_danhbo.Text.Replace("-", "") + "'");
-            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE  SX='1' ");
-            cl_TongCong.Text = dataGridView2.RowCount.ToString();
-            cl_danhbo.Text = "";
-        }
+        //private void btthemcolon_Click(object sender, EventArgs e)
+        //{
+        //    DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX='1',DV=N'" + this.comboBox1.Text + "'  WHERE DANHBO='" + this.cl_danhbo.Text.Replace("-", "") + "'");
+        //    dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE  SX='1' ");
+        //    cl_TongCong.Text = dataGridView2.RowCount.ToString();
+        //    cl_danhbo.Text = "";
+        //}
 
-        private void buttonX4_Click(object sender, EventArgs e)
-        {
-            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
-            cl_TongCong.Text = dataGridView2.RowCount.ToString();
-            cl_danhbo.Text = "";
+        //private void buttonX4_Click(object sender, EventArgs e)
+        //{
+        //    dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
+        //    cl_TongCong.Text = dataGridView2.RowCount.ToString();
+        //    cl_danhbo.Text = "";
 
-            ReportDocument rp = new rpt_ThuMoi();
-            rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.Thumoi());
-            crystalReportViewer3.ReportSource = rp;
-            this.crystalReportViewer3.Visible = true;
-        }
+        //    ReportDocument rp = new rpt_ThuMoi();
+        //    rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.Thumoi());
+        //    crystalReportViewer3.ReportSource = rp;
+        //    this.crystalReportViewer3.Visible = true;
+        //}
 
-        private void tabControl1_Selected(object sender, TabControlEventArgs e)
-        {
-            if (tabControl1.SelectedIndex == 1)
-            {
-                dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
-                cl_TongCong.Text = dataGridView2.RowCount.ToString();
-                cl_danhbo.Text = "";
-            }
+        //private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        //{
+        //    if (tabControl1.SelectedIndex == 1)
+        //    {
+        //        dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
+        //        cl_TongCong.Text = dataGridView2.RowCount.ToString();
+        //        cl_danhbo.Text = "";
+        //    }
 
-        }
+        //}
 
-        private void dataGridView2_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                contextMenuStrip3.Show(dataGridView2, new Point(e.X, e.Y));
-            }
-        }
+        //private void dataGridView2_MouseClick(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Right)
+        //    {
+        //        contextMenuStrip3.Show(dataGridView2, new Point(e.X, e.Y));
+        //    }
+        //}
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            string ID_ = this.dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells["CL_DANHBOO"].Value + "";
-            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX=NULL,DV=NULL WHERE DANHBO='" + ID_ + "'");
-            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
-            cl_TongCong.Text = dataGridView2.RowCount.ToString();
-            cl_danhbo.Text = "";
-        }
+        //private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        //{
+        //    string ID_ = this.dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells["CL_DANHBOO"].Value + "";
+        //    DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX=NULL,DV=NULL WHERE DANHBO='" + ID_ + "'");
+        //    dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
+        //    cl_TongCong.Text = dataGridView2.RowCount.ToString();
+        //    cl_danhbo.Text = "";
+        //}
 
-        private void buttonX1_Click(object sender, EventArgs e)
-        {
-            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX=NULL,DV=NULL WHERE SX IS NOT NULL ");
-            dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
-        }
+        //private void buttonX1_Click(object sender, EventArgs e)
+        //{
+        //    DAL.LinQConnection.ExecuteCommand_("UPDATE TB_DULIEUKHACHHANG SET SX=NULL,DV=NULL WHERE SX IS NOT NULL ");
+        //    dataGridView2.DataSource = DAL.LinQConnection.getDataTable("SELECT DANHBO,DV FROM TB_DULIEUKHACHHANG WHERE SX='1' ");
+        //}
 
-        private void cl_danhbo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                string sodanhbo = this.cl_danhbo.Text.Replace("-", "");              
+        //private void cl_danhbo_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == 13)
+        //    {
+        //        string sodanhbo = this.cl_danhbo.Text.Replace("-", "");              
 
-                if (sodanhbo.Length == 11)
-                {
-                    khachhang = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
-                    if (khachhang != null)
-                    {
-                        labelX49.Text = "KH: " + khachhang.HOTEN + " - Đ/C: " + khachhang.SONHA + ' ' + khachhang.TENDUONG;
+        //        if (sodanhbo.Length == 11)
+        //        {
+        //            khachhang = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
+        //            if (khachhang != null)
+        //            {
+        //                labelX49.Text = "KH: " + khachhang.HOTEN + " - Đ/C: " + khachhang.SONHA + ' ' + khachhang.TENDUONG;
                       
-                    }
-                    else
-                    {
-                        TB_DULIEUKHACHHANG_HUYDB khachhanghuy = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
-                        if (khachhanghuy != null)
-                        {
-                            labelX49.Text = "KH: " + khachhanghuy.HOTEN + " - Đ/C: " + khachhanghuy.SONHA + ' ' + khachhanghuy.TENDUONG;
+        //            }
+        //            else
+        //            {
+        //                TB_DULIEUKHACHHANG_HUYDB khachhanghuy = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBoHuy(sodanhbo);
+        //                if (khachhanghuy != null)
+        //                {
+        //                    labelX49.Text = "KH: " + khachhanghuy.HOTEN + " - Đ/C: " + khachhanghuy.SONHA + ' ' + khachhanghuy.TENDUONG;
                           
-                        }
-                        else
-                        {
-                            MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show(this, "Không Tìm Thấy Thông Tin !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                            
-                            Refesh();
-                        }
-                    }
-                }
-            }
+        //                    Refesh();
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        private void tabItem5_Click(object sender, EventArgs e)
+        {
+              panel8.Controls.Clear();
+              panel8.Controls.Add(new frm_PhieuChuyennnnn());
         }
     }
 }

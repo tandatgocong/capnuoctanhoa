@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using CAPNUOCTANHOA.LayDuLieu;
 using System.Threading;
 using System.Globalization;
+using CAPNUOCTANHOA.Forms.QLDHN;
 
 namespace CAPNUOCTANHOA
 {
@@ -21,8 +22,8 @@ namespace CAPNUOCTANHOA
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frm_Main());
-            Application.Run(new frm_Main());
+            // Application.Run(new frm_TheoDoiHD_0_TroNgai_Fr());
+           Application.Run(new frm_Main());
              
         }
     }

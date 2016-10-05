@@ -1273,6 +1273,95 @@
       <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DK_GIAMHOADON_TRONGAI" Member="DK_GIAMHOADON_TRONGAIs">
+    <Type Name="DK_GIAMHOADON_TRONGAI">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DHN_SOBANGKE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DHN_STT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_DANHBO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DHN_NGAYGHINHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_KY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_DOT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_TODS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DHN_TRONGAI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DHN_LYDO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DHN_GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DHN_CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DHN_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DHN_MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_NGAYTIEPXUC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KTKS_CAMKET" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_BAMHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_NGAYBAMCHI" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KTKS_MAKIEMBC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_HIEU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_CO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_SOTHAN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_CHISO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_MAKIEM" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_TH_NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KTKS_NHANVIEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KTKS_GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KTKS_DONGTIEN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KTKS_SODON" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KTKS_MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KTKS_MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DHN_GANMOI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_PHIEUCHUYEN" Member="TB_PHIEUCHUYENs">
+    <Type Name="TB_PHIEUCHUYEN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KINHGUI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="VEVIEC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BANGKE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LOTRINH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HOPDONG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HIEUDHN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CODHN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SOTHAN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GB" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CHISO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VANBANG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CONGDUNG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAYLAP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_THUMOII" Member="TB_THUMOIIs">
+    <Type Name="TB_THUMOII">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LOTRINH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HOPDONG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HIEUDHN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CODHN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SOTHAN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GB" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CHISO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAYDEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VEVIEC" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAYLAP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">
     <Parameter Name="KY" Parameter="kY" Type="System.Int32" DbType="Int" />
     <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />

@@ -185,10 +185,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             adapter.Fill(ds, "TB_DHN_BAOCAO");
             return ds;
         }
-        public static DataSet getReportDutChi(string ngay, int type, int lan)
+        public static DataSet getReportDutChi(string ngay, int type, int lan, int bk)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT *  FROM TB_TLKDUTCHI WHERE LAN=" + lan + " AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND  NGAYBAO='" + ngay + "' AND [TYPE]='" + type + "' ORDER BY LOTRINH ASC ";
+            string query = " SELECT *  FROM TB_TLKDUTCHI WHERE SOBANGKE='" + bk + "' AND  LAN=" + lan + " AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND  NGAYBAO='" + ngay + "' AND [TYPE]='" + type + "' ORDER BY LOTRINH ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_TLKDUTCHI");
 
@@ -197,10 +197,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             adapter.Fill(ds, "TB_DHN_BAOCAO");
             return ds;
         }
-        public static DataSet getReportDutChi(string ngay, int type, int loainam, int lan)
+        public static DataSet getReportDutChi(string ngay, int type, int loainam, int lan, int bk)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT *  FROM TB_TLKDUTCHI WHERE LAN=" + lan +" AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND  NGAYBAO='" + ngay + "' AND [TYPE]='" + type + "' AND SONAM='" + loainam + "' ORDER BY LOTRINH ASC ";
+            string query = " SELECT *  FROM TB_TLKDUTCHI WHERE SOBANGKE='"+bk+"' AND  LAN=" + lan + " AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND  NGAYBAO='" + ngay + "' AND [TYPE]='" + type + "' AND SONAM='" + loainam + "' ORDER BY LOTRINH ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_TLKDUTCHI");
 

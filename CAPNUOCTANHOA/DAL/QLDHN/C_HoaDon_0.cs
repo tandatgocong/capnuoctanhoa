@@ -19,6 +19,18 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " FROM DK_GIAMHOADON GHD,TB_DULIEUKHACHHANG kh WHERE  kh.DANHBO=GHD.DHN_DANHBO AND DHN_SOBANGKE='" + sobangke + "' ORDER BY ID ASC";
             return LinQConnection.getDataTable(sql);
         }
+
+        public static DataTable getBangKeBaoThay_TN(string sobangke)
+        {
+            string query = "  SELECT TN.ID, [DHN_NGAYGHINHAN], DHN_DANHBO,LOTRINH,HOTEN, SONHA + ' '+ TENDUONG AS DIACHI ";
+            query += "  ,[DHN_LYDO] ,[DHN_GHICHU] ";
+            query += "  FROM  DK_GIAMHOADON_TRONGAI TN, TB_DULIEUKHACHHANG KH ";
+            query += "  WHERE TN.DHN_DANHBO=KH.DANHBO   AND DHN_SOBANGKE='" + sobangke + "' ";
+            return LinQConnection.getDataTable(query);
+        }
+
+
+
         public static DataTable getDanhBo (string danhbo)
         {
             string sql = "SELECT GHD.ID,DHN_SOBANGKE, DHN_DANHBO,DHN_HUYCAMKET,DHN_CAMKET,DHN_BAMHI,DHN_GHICHU,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',CODH,SOTHANDH,DHN_DOT,DHN_KY,DHN_NAM,DHN_NGAYGHINHAN,DHN_TODS,LOTRINH";
@@ -37,6 +49,12 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             string sql = "SELECT MAX(DHN_SOBANGKE)  FROM DK_GIAMHOADON";
             return LinQConnection.ExecuteCommand(sql);
         }
+        public static int getMaxBangKe_2()
+        {
+            string sql = "SELECT MAX(DHN_SOBANGKE)  FROM DK_GIAMHOADON_TRONGAI";
+            return LinQConnection.ExecuteCommand(sql);
+        }
+
         public static DataTable getBangKeBaoThayCamKet(int sobangke)
         {
             string sql = "SELECT DHN_SOBANGKE, DHN_DANHBO,HOTEN, SONHA + ' ' +TENDUONG AS 'DIACHI',CODH,SOTHANDH,DHN_DOT,DHN_KY,DHN_NAM,DHN_NGAYGHINHAN,DHN_CAMKET,DHN_TODS,DHN_GHICHU,LOTRINH,DHN_HUYCAMKET";
@@ -121,12 +139,33 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
                 log.Error(ex.Message);
             }
         }
+
+        public static void Insert_TR(DK_GIAMHOADON_TRONGAI th_dhn)
+        {
+            try
+            {
+                db.DK_GIAMHOADON_TRONGAIs.InsertOnSubmit(th_dhn);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
        
 
         public static int DeleteThongTin(string id)
         {
             int kq = 0;
             string sql = "delete from DK_GIAMHOADON where ID='" + id + "'";
+            kq = LinQConnection.ExecuteCommand_(sql);
+            return kq;
+        }
+
+        public static int DeleteThongTinTN(string id)
+        {
+            int kq = 0;
+            string sql = "delete from DK_GIAMHOADON_TRONGAI where ID='" + id + "'";
             kq = LinQConnection.ExecuteCommand_(sql);
             return kq;
         }

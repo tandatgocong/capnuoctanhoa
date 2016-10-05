@@ -72,7 +72,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 
             if (comboBoxDutChi.SelectedIndex == 0) {
                 ReportDocument rp = new rpt_TLKDutChi();
-                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),0, comboBoxTitle.SelectedIndex, lan));
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(),0, comboBoxTitle.SelectedIndex, lan, int.Parse(this.txtSoBangKe.Text)));
                 rp.SetParameterValue("type", DAL.SYS.C_USERS._toDocSo + '-'+this.txtSoBangKe.Text );
                 rp.SetParameterValue("lan", lan);
                 frm_Reports frm = new frm_Reports(rp);
@@ -80,7 +80,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             }
             else if (comboBoxDutChi.SelectedIndex == 1) {
                 ReportDocument rp = new rpt_TLKDutChi_Goc_();
-                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(), 1, lan));
+                rp.SetDataSource(DAL.QLDHN.C_DhnAmSau.getReportDutChi(this.txtNgayGan.Value.Date.ToShortDateString(), 1, lan, int.Parse(this.txtSoBangKe.Text)));
                 rp.SetParameterValue("NGUOILAP",DAL.SYS.C_USERS._fullName.ToUpper());
                 rp.SetParameterValue("lan", "");
                 frm_Reports frm = new frm_Reports(rp);
@@ -502,7 +502,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 
         private void txtSoBangKe_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            LoadData();
+            if(e.KeyChar==13)
+                LoadData();
         }
     }
 }
