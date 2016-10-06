@@ -972,6 +972,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
               panel8.Controls.Clear();
               panel8.Controls.Add(new frm_PhieuChuyennnnn());
         }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            panel9.Controls.Clear();
+            panel9.Controls.Add(new frm_ThuMoiiiiiiiiiiii());
+        }
     }
 }
 

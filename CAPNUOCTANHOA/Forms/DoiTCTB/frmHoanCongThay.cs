@@ -282,6 +282,9 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             {
                 if (ckTroNgai.Checked)
                 {
+                    string update = "UPDATE TB_DULIEUKHACHHANG SET  BAOTHAY = 'false' WHERE DANHBO='" + this.txtSoDanhBo.Text.Replace("-", "") + "' ";
+                    DAL.LinQConnection.ExecuteCommand_(update);
+
                     thaydh.HCT_TRONGAI = true;
                     thaydh.HCT_NGAYGAN = txtNgayGan.Value.Date;
                     thaydh.HCT_LYDOTRONGAI = this.txtLyDoTroNgai.Text;

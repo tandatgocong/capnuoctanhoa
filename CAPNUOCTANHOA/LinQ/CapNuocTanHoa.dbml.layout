@@ -302,7 +302,7 @@
         <classShapeMoniker Id="4a9e22d3-6053-4f65-90ea-999a93e8c186" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 30.6979077148438); (3.26041666666667 : 30.6979077148438 : JumpStart); (3.42708333333333 : 30.6979077148438 : JumpEnd); (3.82291666666667 : 30.6979077148438 : JumpStart); (3.98958333333333 : 30.6979077148438 : JumpEnd); (4.125 : 30.6979077148438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 30.6979077148438); (3.82291666666667 : 30.6979077148438 : JumpStart); (3.98958333333333 : 30.6979077148438 : JumpEnd); (4.125 : 30.6979077148438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapNuocTanHoaDataContext/KTKS_YEUCAUDIEUCHINH/KTKS_YEUCAUDIEUCHINH_KTKS_THONGTINDINHMUC" />
       <nodes>
         <classShapeMoniker Id="47486ed6-b405-41ff-9480-b261be78b7a3" />
@@ -439,10 +439,10 @@
         <elementListCompartment Id="07cb376a-c48f-4e78-bd05-616ad0ce80d7" absoluteBounds="4.89, 50.335, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c1360af6-282c-456c-9805-6ce1fb4e120a" absoluteBounds="7.375, 50, 2, 4.6554182942708326">
+    <classShape Id="3e99ca81-ee07-4685-9a2b-c361be60df1a" absoluteBounds="7.5, 50, 2, 4.8477197265625">
       <DataClassMoniker Name="/CapNuocTanHoaDataContext/TB_THUMOII" />
       <nestedChildShapes>
-        <elementListCompartment Id="40ec6de8-4c79-4874-9f9e-12a3b1b782a0" absoluteBounds="7.39, 50.46, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a1a49d60-a73b-46da-aec5-9a4b8228a641" absoluteBounds="7.515, 50.46, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

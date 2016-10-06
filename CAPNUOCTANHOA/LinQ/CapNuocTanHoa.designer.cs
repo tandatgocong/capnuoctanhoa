@@ -28114,6 +28114,8 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private int _ID;
 		
+		private string _LOAI;
+		
 		private System.Nullable<int> _LAN;
 		
 		private string _DANHBO;
@@ -28158,6 +28160,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
+    partial void OnLOAIChanging(string value);
+    partial void OnLOAIChanged();
     partial void OnLANChanging(System.Nullable<int> value);
     partial void OnLANChanged();
     partial void OnDANHBOChanging(string value);
@@ -28219,6 +28223,26 @@ namespace CAPNUOCTANHOA.LinQ
 					this._ID = value;
 					this.SendPropertyChanged("ID");
 					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAI", DbType="NVarChar(50)")]
+		public string LOAI
+		{
+			get
+			{
+				return this._LOAI;
+			}
+			set
+			{
+				if ((this._LOAI != value))
+				{
+					this.OnLOAIChanging(value);
+					this.SendPropertyChanging();
+					this._LOAI = value;
+					this.SendPropertyChanged("LOAI");
+					this.OnLOAIChanged();
 				}
 			}
 		}

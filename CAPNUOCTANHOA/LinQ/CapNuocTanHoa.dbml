@@ -1341,6 +1341,7 @@
   <Table Name="dbo.TB_THUMOII" Member="TB_THUMOIIs">
     <Type Name="TB_THUMOII">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LOAI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="LAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DANHBO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="LOTRINH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />

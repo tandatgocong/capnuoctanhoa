@@ -26,6 +26,21 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
                 log.Error(ex.Message);
             }
         }
+
+        public static void Insert_TM(TB_THUMOII chuyendm)
+        {
+            try
+            {
+                db.TB_THUMOIIs.InsertOnSubmit(chuyendm);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+
+
         public static void Insert_pc(TB_PHIEUCHUYEN chuyendm)
             {
                 try
