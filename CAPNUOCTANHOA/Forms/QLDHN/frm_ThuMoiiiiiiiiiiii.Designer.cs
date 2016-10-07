@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
@@ -90,6 +90,7 @@
             this.txtCongDung = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.cbNguoiKy = new System.Windows.Forms.ComboBox();
+            this.btMauThongBao = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lichsuGhiCHu)).BeginInit();
@@ -169,14 +170,14 @@
             this.dataBangKe.AllowUserToAddRows = false;
             this.dataBangKe.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataBangKe.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataBangKe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataBangKe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataBangKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataBangKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -208,8 +209,8 @@
             // G_DANHBO
             // 
             this.G_DANHBO.DataPropertyName = "DANHBO";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_DANHBO.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_DANHBO.DefaultCellStyle = dataGridViewCellStyle2;
             this.G_DANHBO.HeaderText = "DANH BỘ";
             this.G_DANHBO.Name = "G_DANHBO";
             this.G_DANHBO.ReadOnly = true;
@@ -234,10 +235,10 @@
             // NGAYDEN
             // 
             this.NGAYDEN.DataPropertyName = "NGAYDEN";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = "DD/MM/YYYY";
-            this.NGAYDEN.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = "DD/MM/YYYY";
+            this.NGAYDEN.DefaultCellStyle = dataGridViewCellStyle3;
             this.NGAYDEN.HeaderText = "NGÀY ĐẾN";
             this.NGAYDEN.Name = "NGAYDEN";
             this.NGAYDEN.ReadOnly = true;
@@ -633,10 +634,10 @@
             // NGAYLAP
             // 
             this.NGAYLAP.DataPropertyName = "NGAYLAP";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle8.NullValue = null;
-            this.NGAYLAP.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle4.NullValue = null;
+            this.NGAYLAP.DefaultCellStyle = dataGridViewCellStyle4;
             this.NGAYLAP.HeaderText = "NGÀY";
             this.NGAYLAP.Name = "NGAYLAP";
             // 
@@ -772,7 +773,7 @@
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.buttonX1.TabIndex = 16;
             this.buttonX1.Text = "IN THÔNG BÁO";
-            this.buttonX1.Click += new System.EventHandler(this.btIn_Click);
+            this.buttonX1.Click += new System.EventHandler(this.btInThuMoi_Click);
             // 
             // buttonX2
             // 
@@ -782,7 +783,7 @@
             this.buttonX2.ForeColor = System.Drawing.Color.Crimson;
             this.buttonX2.Location = new System.Drawing.Point(570, 277);
             this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(188, 23);
+            this.buttonX2.Size = new System.Drawing.Size(142, 23);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.buttonX2.TabIndex = 16;
             this.buttonX2.Text = "MẪU THƯ MỜI";
@@ -854,12 +855,27 @@
             this.cbNguoiKy.Size = new System.Drawing.Size(219, 27);
             this.cbNguoiKy.TabIndex = 627;
             // 
+            // btMauThongBao
+            // 
+            this.btMauThongBao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btMauThongBao.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btMauThongBao.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMauThongBao.ForeColor = System.Drawing.Color.Crimson;
+            this.btMauThongBao.Location = new System.Drawing.Point(718, 277);
+            this.btMauThongBao.Name = "btMauThongBao";
+            this.btMauThongBao.Size = new System.Drawing.Size(152, 23);
+            this.btMauThongBao.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btMauThongBao.TabIndex = 628;
+            this.btMauThongBao.Text = "MẪU THÔNG BÁO";
+            this.btMauThongBao.Click += new System.EventHandler(this.btMauThongBao_Click);
+            // 
             // frm_ThuMoiiiiiiiiiiii
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.btMauThongBao);
             this.Controls.Add(this.cbNguoiKy);
             this.Controls.Add(this.labelX18);
             this.Controls.Add(this.cbLoai);
@@ -989,5 +1005,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NOIDUNG;
         private DevComponents.DotNetBar.LabelX labelX18;
         private System.Windows.Forms.ComboBox cbNguoiKy;
+        private DevComponents.DotNetBar.ButtonX btMauThongBao;
     }
 }

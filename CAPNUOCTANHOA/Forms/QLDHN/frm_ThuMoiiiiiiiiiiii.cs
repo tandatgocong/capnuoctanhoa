@@ -83,21 +83,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();  
         }
-
+       
         private void btIn_Click(object sender, EventArgs e)
         {
-
-            //ReportDocument rp = new rpt_DSKiemTra();                         
-            //    rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport(this.txtNgayGan.Value.ToShortDateString()));
-            //    rp.SetParameterValue("Title", this.txtTile.Text);
-            //    rp.SetParameterValue("phong", DAL.SYS.C_USERS._maphong);
-            //    frm_Reports frm = new frm_Reports(rp);
-            //    frm.ShowDialog();
-
+             
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT *  FROM TB_THUMOII WHERE NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'   ORDER BY DANHBO ASC ";
+            string sql = " SELECT *  FROM TB_THUMOII WHERE LOAI=N'"+ this.cbLoai.Text +"' AND NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'   ORDER BY DANHBO ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_THUMOII");
 
@@ -114,7 +107,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-                string sql = " SELECT ID, DANHBO,HOTEN,DIACHI,NGAYDEN,VEVIEC  FROM TB_THUMOII WHERE NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'   ORDER BY DANHBO ASC ";
+                string sql = " SELECT ID, DANHBO,HOTEN,DIACHI,NGAYDEN,VEVIEC  FROM TB_THUMOII WHERE  LOAI=N'" + this.cbLoai.Text + "' AND  NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'   ORDER BY DANHBO ASC ";
                 dataBangKe.DataSource = LinQConnection.getDataTable(sql);
 
                 Utilities.DataGridV.formatRows(dataBangKe);
@@ -188,7 +181,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
 
-            string sql = "SELECT ISNULL(MAX(DANHBO),0)  FROM TB_THUMOII WHERE DANHBO='" + sodanhbo + "'";
+            string sql = "SELECT ISNULL(MAX(DANHBO),0)  FROM TB_THUMOII WHERE LOAI=N'" + this.cbLoai.Text + "' AND DANHBO='" + sodanhbo + "'";
             return LinQConnection.ExecuteCommand(sql);
         }
         private void txtSoDanhBo_KeyPress(object sender, KeyPressEventArgs e)
@@ -316,6 +309,37 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         private void txtNgayGan_ValueChanged(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btInThuMoi_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT *  FROM TB_THUMOII WHERE LOAI=N'" + this.cbLoai.Text + "' AND NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'   ORDER BY DANHBO ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_THUMOII");
+
+
+            ReportDocument rp = new rpt_ThongBaooooo();
+            rp.SetDataSource(ds);
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+        }
+
+       
+        private void btMauThongBao_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT TOP(1) *  FROM TB_THUMOII ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_THUMOII");
+            ReportDocument rp = new rpt_ThongBaooooo_Mau();
+            rp.SetDataSource(ds);
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
         }
 
        
