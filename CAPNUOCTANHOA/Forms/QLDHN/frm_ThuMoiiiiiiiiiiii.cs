@@ -90,10 +90,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT *  FROM TB_THUMOII WHERE LOAI=N'"+ this.cbLoai.Text +"' AND NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'   ORDER BY DANHBO ASC ";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            adapter.Fill(ds, "TB_THUMOII");
-
+            string sql = " SELECT *  FROM TB_THUMOII WHERE LOAI=N'" + this.cbLoai.Text + "' AND NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "' AND CREATEBY='" + DAL.SYS.C_USERS._userName + "'   ORDER BY DANHBO ASC ";
+            DataTable t1= DAL.LinQConnection.getDataTable(sql);            
+            t1.Merge(DAL.LinQConnection.getDataTable(sql));
+            t1.DefaultView.Sort = "DANHBO ASC";
+            t1=t1.DefaultView.ToTable();
+            t1.TableName = "TB_THUMOII";
+            ds.Tables.Add(t1);
 
             ReportDocument rp = new rpt_ThuMoi();
             if (cbNguoiKy.SelectedIndex == 0)
@@ -107,7 +110,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-                string sql = " SELECT ID, DANHBO,HOTEN,DIACHI,NGAYDEN,VEVIEC  FROM TB_THUMOII WHERE  LOAI=N'" + this.cbLoai.Text + "' AND  NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'   ORDER BY DANHBO ASC ";
+                string sql = " SELECT ID, DANHBO,HOTEN,DIACHI,NGAYDEN,VEVIEC  FROM TB_THUMOII WHERE  LOAI=N'" + this.cbLoai.Text + "' AND  NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "' AND CREATEBY='" + DAL.SYS.C_USERS._userName + "'    ORDER BY DANHBO ASC ";
                 dataBangKe.DataSource = LinQConnection.getDataTable(sql);
 
                 Utilities.DataGridV.formatRows(dataBangKe);
@@ -181,7 +184,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
 
-            string sql = "SELECT ISNULL(MAX(DANHBO),0)  FROM TB_THUMOII WHERE LOAI=N'" + this.cbLoai.Text + "' AND DANHBO='" + sodanhbo + "'";
+            string sql = "SELECT ISNULL(MAX(DANHBO),0)  FROM TB_THUMOII WHERE LOAI=N'" + this.cbLoai.Text + "' AND DANHBO='" + sodanhbo + "' AND CREATEBY='" + DAL.SYS.C_USERS._userName + "' ";
             return LinQConnection.ExecuteCommand(sql);
         }
         private void txtSoDanhBo_KeyPress(object sender, KeyPressEventArgs e)
@@ -316,7 +319,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT *  FROM TB_THUMOII WHERE LOAI=N'" + this.cbLoai.Text + "' AND NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'   ORDER BY DANHBO ASC ";
+            string sql = " SELECT *  FROM TB_THUMOII WHERE LOAI=N'" + this.cbLoai.Text + "' AND NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "' AND CREATEBY='" + DAL.SYS.C_USERS._userName + "'   ORDER BY DANHBO ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_THUMOII");
 
