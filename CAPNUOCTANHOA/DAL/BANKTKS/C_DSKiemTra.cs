@@ -154,7 +154,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         public static DataSet getReport_PC(string ngay)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT * FROM TB_PHIEUCHUYEN   WHERE BANGKE='" + ngay + "'  ORDER BY CREATEDATE ASC ";
+            string query = " SELECT * FROM TB_PHIEUCHUYEN   WHERE BANGKE='" + ngay + "' AND CREATEBY='" + DAL.SYS.C_USERS._userName + "'   ORDER BY CREATEDATE ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_PHIEUCHUYEN");

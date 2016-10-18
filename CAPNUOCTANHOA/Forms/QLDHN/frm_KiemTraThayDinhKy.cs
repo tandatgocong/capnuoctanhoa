@@ -128,16 +128,16 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
             for (int i = 0; i < dataGrid.Rows.Count; i++)
             {
-                string sql = "SELECT TOP(1) CASE WHEN HCT_TRONGAI='True' THEN N'TRỞ NGẠI :' + HCT_LYDOTRONGAI  + ' - '  + ISNULL(XLT_KETQUA,'') + ']'  + N' - BK ' + CONVERT(VARCHAR(10),DHN_SOBANGKE) + N' NGÀY '+ CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) ELSE   N'LẦN ' + CONVERT(VARCHAR(10),DHN_LANTHAY) + N' BẢNG KÊ ' + CONVERT(VARCHAR(10),DHN_SOBANGKE) + N' NGÀY '+ CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103)  END ";
-                sql += " FROM TB_THAYDHN  WHERE DHN_DANHBO='" + (dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "' ORDER BY DHN_NGAYBAOTHAY DESC ";
+                string sql = " SELECT TOP(1)  N'TRỞ NGẠI (' + CONVERT(varchar(10),HCT_NGAYGAN,103) + '): '  + HCT_LYDOTRONGAI  + ' - ['  + ISNULL(XLT_KETQUA,'') + ']'  ";
+                sql += " FROM TB_THAYDHN  WHERE HCT_TRONGAI='True' AND DHN_DANHBO='" + (dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "' ORDER BY DHN_NGAYBAOTHAY DESC ";
                 DataTable table = DAL.LinQConnection.getDataTable(sql);
+
                 if (table.Rows.Count > 0)
                 {
                     dataGrid.Rows[i].Cells["BAOTHAY"].Value = "" + table.Rows[0][0];
+                    dataGrid.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Yellow;
                 }
-
             }
-
 
         }
         private void btXemThongTin_Click(object sender, EventArgs e)
@@ -156,7 +156,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 PageTotal();
                 DataTable table = DAL.LinQConnection.getDataTable(Search(), FirstRow, pageSize);
                 dataGrid.DataSource = table;
-                Utilities.DataGridV.formatRows(dataGrid);
+                //Utilities.DataGridV.formatRows(dataGrid);
                 setBaoThay();
             }
             catch (Exception ex)

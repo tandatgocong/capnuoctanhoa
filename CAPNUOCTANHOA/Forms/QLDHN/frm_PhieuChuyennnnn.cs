@@ -35,13 +35,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         }
         public static int getMaxBangKe ()
         {
-            string sql = "SELECT MAX(BANGKE)  FROM TB_PHIEUCHUYEN";
+            string sql = "SELECT MAX(BANGKE)  FROM TB_PHIEUCHUYEN WHERE CREATEBY='" + DAL.SYS.C_USERS._userName + "' ";
             return LinQConnection.ExecuteCommand(sql);
         }
 
         void formLoad()
         {
             LoadData();
+            this.txtTods.Text = DAL.SYS.C_USERS._toDocSo;
             try
             {
                 string balap = DateTime.Now.Year.ToString().Substring(2) + "001";
@@ -78,6 +79,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport_PC(this.txtSoBangKe.Text));
             rp.SetParameterValue("kg", this.kg.Text);
             rp.SetParameterValue("vv", this.vv.Text);
+            rp.SetParameterValue("tods", this.txtTods.Text);
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
             
@@ -89,7 +91,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             try
             {
 
-                string sql = " SELECT ID, DANHBO, HOTEN, DIACHI,  VANBANG, CONGDUNG  FROM TB_PHIEUCHUYEN WHERE BANGKE='" + this.txtSoBangKe.Text + "'  ORDER BY CREATEDATE ASC ";
+                string sql = " SELECT ID, DANHBO, HOTEN, DIACHI,  VANBANG, CONGDUNG  FROM TB_PHIEUCHUYEN WHERE BANGKE='" + this.txtSoBangKe.Text + "'  AND CREATEBY='" + DAL.SYS.C_USERS._userName + "'   ORDER BY CREATEDATE ASC ";
                 dataBangKe.DataSource = LinQConnection.getDataTable(sql);
                 Utilities.DataGridV.formatRows(dataBangKe);
                 lbTC.Text = "TỔNG CỘNG : " + dataBangKe.RowCount + " DANH BỘ";
