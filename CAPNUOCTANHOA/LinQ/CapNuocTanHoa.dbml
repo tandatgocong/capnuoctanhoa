@@ -1363,6 +1363,35 @@
       <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TB_DC_CODHN" Member="TB_DC_CODHNs">
+    <Type Name="TB_DC_CODHN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DOT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="KINHGUI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="VEVIEC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BANGKE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LOTRINH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HOPDONG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HIEUDHN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CODHN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="COMOI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SOTHAN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GB" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CHISO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VANBANG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CONGDUNG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAYLAP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">
     <Parameter Name="KY" Parameter="kY" Type="System.Int32" DbType="Int" />
     <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />

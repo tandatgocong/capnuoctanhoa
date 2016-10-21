@@ -742,6 +742,7 @@
             this.yeucaukiemtra.Name = "yeucaukiemtra";
             this.yeucaukiemtra.Size = new System.Drawing.Size(144, 23);
             this.yeucaukiemtra.Text = "Y.Cầu Kiểm Tra";
+            this.yeucaukiemtra.Visible = false;
             this.yeucaukiemtra.Click += new System.EventHandler(this.yeucaukiemtra_Click);
             // 
             // handHeld

@@ -346,5 +346,15 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             LoadData();
         }
+
+        private void dataBangKe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frm_DieuChinh_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

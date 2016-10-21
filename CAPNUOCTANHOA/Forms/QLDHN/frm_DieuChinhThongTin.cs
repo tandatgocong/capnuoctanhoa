@@ -519,8 +519,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void tabDieuChinh_Click(object sender, EventArgs e)
         {
-            panelDieuChinh.Controls.Clear();
-            panelDieuChinh.Controls.Add(new frm_DieuChinh());
+            tabGbDm.Controls.Clear();
+            tabGbDm.Controls.Add(new frm_DieuChinh());
+
+            tabHaCo.Controls.Clear();
+            tabHaCo.Controls.Add(new frm_DieuChinhCoDHN());
+
 
         }
 
@@ -970,7 +974,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void tabItem5_Click(object sender, EventArgs e)
         {
               panel8.Controls.Clear();
-              panel8.Controls.Add(new frm_PhieuChuyennnnn());
+              panel8.Controls.Add(new frm_DieuChinhCoDHN());
         }
 
         private void tabControl1_Click(object sender, EventArgs e)

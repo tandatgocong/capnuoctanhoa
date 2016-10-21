@@ -53,6 +53,21 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
                     log.Error(ex.Message);
                 }
             }
+
+
+
+        public static void Insert_DC(TB_DC_CODHN chuyendm)
+        {
+            try
+            {
+                db.TB_DC_CODHNs.InsertOnSubmit(chuyendm);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
         
 
         public static void Update()
@@ -151,13 +166,13 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
             return ds;
         }
 
-        public static DataSet getReport_PC(string ngay)
+        public static DataSet getReport_DC(string ngay)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT * FROM TB_PHIEUCHUYEN   WHERE BANGKE='" + ngay + "' AND CREATEBY='" + DAL.SYS.C_USERS._userName + "'   ORDER BY CREATEDATE ASC ";
+            string query = " SELECT * FROM TB_DC_CODHN   WHERE NGAYLAP='" + ngay + "'   ORDER BY CREATEDATE ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            adapter.Fill(ds, "TB_PHIEUCHUYEN");
+            adapter.Fill(ds, "TB_DC_CODHN");
 
             //query = "select * FROM CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO";
             //adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);

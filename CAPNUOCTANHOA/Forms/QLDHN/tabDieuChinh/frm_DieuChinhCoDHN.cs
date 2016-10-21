@@ -17,11 +17,11 @@ using CAPNUOCTANHOA.DAL;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 {
-    public partial class frm_PhieuChuyennnnn : UserControl
+    public partial class frm_DieuChinhCoDHN : UserControl
     {
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
-        private static readonly ILog log = LogManager.GetLogger(typeof(frm_DanhSachKT).Name);
-        public frm_PhieuChuyennnnn()
+        private static readonly ILog log = LogManager.GetLogger(typeof(frm_DieuChinhCoDHN).Name);
+        public frm_DieuChinhCoDHN()
         {
             InitializeComponent();
            
@@ -31,38 +31,45 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         }
         public void loadghichu(string danhbo)
         {
-            lichsuGhiCHu.DataSource = DAL.LinQConnection.getDataTable("SELECT BANGKE,KINHGUI,VEVIEC, NGAYLAP,  VANBANG, CONGDUNG   FROM TB_PHIEUCHUYEN WHERE DANHBO='" + danhbo + "' ORDER BY CREATEDATE DESC ");
+          //  lichsuGhiCHu.DataSource = DAL.LinQConnection.getDataTable("SELECT BANGKE,KINHGUI,VEVIEC, NGAYLAP,  VANBANG, CONGDUNG   FROM TB_PHIEUCHUYEN WHERE DANHBO='" + danhbo + "' ORDER BY CREATEDATE DESC ");
         }
         public static int getMaxBangKe ()
         {
-            string sql = "SELECT MAX(BANGKE)  FROM TB_PHIEUCHUYEN WHERE CREATEBY='" + DAL.SYS.C_USERS._userName + "' ";
+            string sql = "SELECT MAX(BANGKE)  FROM TB_DC_CODHN WHERE CREATEBY='" + DAL.SYS.C_USERS._userName + "' ";
             return LinQConnection.ExecuteCommand(sql);
         }
 
         void formLoad()
         {
+            txtNgayGan.Value = DateTime.Now.Date;
+            this.cbKy.SelectedIndex = DateTime.Now.Month;
+            this.cbnam.Items.Add(DateTime.Now.Year-1);
+            this.cbnam.Items.Add(DateTime.Now.Year);
+            this.cbnam.Items.Add(DateTime.Now.Year+1);
+            this.cbnam.SelectedIndex = 1;
+
             LoadData();
-            this.txtTods.Text = DAL.SYS.C_USERS._toDocSo;
-            try
-            {
-                string balap = DateTime.Now.Year.ToString().Substring(2) + "001";
-                int id = getMaxBangKe();
-                if (id >= int.Parse(balap))
-                {
-                    txtSoBangKe.Text = (id + 1) + "";
+            //this.txtTods.Text = DAL.SYS.C_USERS._toDocSo;
+            //try
+            //{
+            //    string balap = DateTime.Now.Year.ToString().Substring(2) + "001";
+            //    int id = getMaxBangKe();
+            //    if (id >= int.Parse(balap))
+            //    {
+            //        txtSoBangKe.Text = (id + 1) + "";
 
-                }
-                else
-                {
-                    txtSoBangKe.Text = balap;
+            //    }
+            //    else
+            //    {
+            //        txtSoBangKe.Text = balap;
 
-                }
+            //    }
 
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error(ex.Message);
+            //}
 
         }
         public void setSTT()
@@ -75,11 +82,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         private void btIn_Click(object sender, EventArgs e)
         {
 
-            ReportDocument rp = new rpt_PhieuChuyennnnnnnn();
-            rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport_DC(this.txtSoBangKe.Text));
+            ReportDocument rp = new rpt_DC_HaCo();
+            rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport_DC(this.txtNgayGan.Value.ToShortDateString()));
             rp.SetParameterValue("kg", this.kg.Text);
-            rp.SetParameterValue("vv", this.vv.Text);
-            rp.SetParameterValue("tods", this.txtTods.Text);
+            rp.SetParameterValue("vv", txtTile.Text +  " "+  this.cbKy.Text + " NĂM "+ this.cbnam.Text );
+            rp.SetParameterValue("bk", this.txtSoBangKe.Text);
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
             
@@ -91,7 +98,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             try
             {
 
-                string sql = " SELECT ID, DANHBO, HOTEN, DIACHI,  VANBANG, CONGDUNG  FROM TB_PHIEUCHUYEN WHERE BANGKE='" + this.txtSoBangKe.Text + "'  AND CREATEBY='" + DAL.SYS.C_USERS._userName + "'   ORDER BY CREATEDATE ASC ";
+                string sql = " SELECT ID, DANHBO, HOTEN, DIACHI, DOT,  CODHN,COMOI, CONGDUNG  FROM TB_DC_CODHN WHERE NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'    ORDER BY CREATEDATE ASC ";
                 dataBangKe.DataSource = LinQConnection.getDataTable(sql);
                 Utilities.DataGridV.formatRows(dataBangKe);
                 lbTC.Text = "TỔNG CỘNG : " + dataBangKe.RowCount + " DANH BỘ";
@@ -155,11 +162,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                     txtGB.Text = table.Rows[0]["GB"] + "";
                     txtDM.Text = table.Rows[0]["DM"] + "";
                    // txtHopDong.Text = table.Rows[0]["HOPDONG"] + "";
+                    txtDot.Text = table.Rows[0]["DOT"] + "";
                     txtHieuDhn.Text = table.Rows[0]["HIEUDH"] + "";
                     txtCo.Text = table.Rows[0]["CODH"] + "";
                     txtSoThan.Text = table.Rows[0]["SOTHANDH"] + "";
                     txtCS.Text = table.Rows[0]["CSMOI"] + "";
                   //  dataGridView2.DataSource = C_ThuTien.getHoaDon(sodanhbo);
+                    this.txtCoMoi.Focus();
                 }
                 loadghichu(sodanhbo);
                 
@@ -181,10 +190,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         public void Add()
         {
 
-            TB_PHIEUCHUYEN chuyendm = new TB_PHIEUCHUYEN();
+            TB_DC_CODHN chuyendm = new TB_DC_CODHN();
             chuyendm.BANGKE = this.txtSoBangKe.Text;
+            chuyendm.DOT = this.txtDot.Text;
             chuyendm.KINHGUI = this.kg.Text;
-            chuyendm.VEVIEC = this.vv.Text;
+           // chuyendm.VEVIEC = this.vv.Text;
             chuyendm.DANHBO = this.txtSoDanhBo.Text.Replace("-", "");
             chuyendm.LOTRINH = this.txtLoTrinh.Text;
             chuyendm.HOTEN = this.txtTenKH.Text;
@@ -195,13 +205,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             chuyendm.CHISO = this.txtCS.Text;
             chuyendm.HIEUDHN = this.txtHieuDhn.Text;
             chuyendm.CODHN = this.txtCo.Text;
+            chuyendm.COMOI = this.txtCoMoi.Text;
             chuyendm.SOTHAN = this.txtSoThan.Text;
             chuyendm.VANBANG = this.txtVanBang.Text;
             chuyendm.CONGDUNG = this.txtCongDung.Text;
             chuyendm.NGAYLAP = DateTime.Now.Date;
             chuyendm.CREATEDATE = DateTime.Now;
             chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
-            DAL.BANKTKS.C_DSKiemTra.Insert_pc(chuyendm);
+            DAL.BANKTKS.C_DSKiemTra.Insert_DC(chuyendm);
 
             LoadData();
             CLEAR();
@@ -263,7 +274,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 
                 string ID = dataBangKe.Rows[dataBangKe.CurrentRow.Index].Cells["ID"].Value + "";
 
-                LinQConnection.ExecuteCommand("DELETE FROM TB_PHIEUCHUYEN WHERE ID='" + ID + "'");
+                LinQConnection.ExecuteCommand("DELETE FROM TB_DC_CODHN WHERE ID='" + ID + "'");
                 LoadData();
 
             }
@@ -370,6 +381,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         private void txtNgayGan_ValueChanged(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void frm_DieuChinhCoDHN_Load(object sender, EventArgs e)
+        {
+
         }
 
         
