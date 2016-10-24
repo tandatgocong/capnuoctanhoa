@@ -974,7 +974,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void tabItem5_Click(object sender, EventArgs e)
         {
               panel8.Controls.Clear();
-              panel8.Controls.Add(new frm_DieuChinhCoDHN());
+              panel8.Controls.Add(new frm_PhieuChuyennnnn());
         }
 
         private void tabControl1_Click(object sender, EventArgs e)

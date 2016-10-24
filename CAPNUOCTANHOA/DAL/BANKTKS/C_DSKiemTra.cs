@@ -180,6 +180,20 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
             return ds;
         }
 
+        public static DataSet getReport_pc(string ngay)
+        {
+            DataSet ds = new DataSet();
+            string query = " SELECT * FROM TB_PHIEUCHUYEN   WHERE BANGKE='" + ngay + "'  AND CREATEBY='" + DAL.SYS.C_USERS._userName + "'   ORDER BY CREATEDATE ASC ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_PHIEUCHUYEN");
+
+            //query = "select * FROM CAPNUOCTANHOA.dbo.TB_DHN_BAOCAO";
+            //adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            //adapter.Fill(ds, "TB_DHN_BAOCAO");
+            return ds;
+        }
+
 
     }
 }
