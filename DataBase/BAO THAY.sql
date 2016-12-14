@@ -1,6 +1,6 @@
 SELECT NVCapNhat FROM BaoThay  GROUP BY NVCapNhat
 
-DELETE FROM BaoThay WHERE NVCapNhat IN ('ngochc ','phuonghc ','nhunghc ','khahc ') AND ViTriMoi <> '888'
+DELETE FROM BaoThay WHERE NVCapNhat IN ('ngochc ','phuonghc ','nhunghc ','khahc ','vanhc')  
 
 
 INSERT INTO dbo.BaoThay( DanhBa, LoaiBT, NgayThay, HieuMoi, CoMoi, SoThanMoi, ViTriMoi, ChiThanMoi, ChiCoMoi, CSGo, CSGan, NgayCapNhat, NVCapNhat)

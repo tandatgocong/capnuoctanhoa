@@ -42,12 +42,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         void formLoad()
         {
             txtNgayGan.Value = DateTime.Now.Date;
-            this.cbKy.SelectedIndex = DateTime.Now.Month;
+            this.cbKy.SelectedIndex = DateTime.Now.Month-1;
             this.cbnam.Items.Add(DateTime.Now.Year-1);
             this.cbnam.Items.Add(DateTime.Now.Year);
             this.cbnam.Items.Add(DateTime.Now.Year+1);
             this.cbnam.SelectedIndex = 1;
-
+            cbDieuChinh.SelectedIndex = 1;
             LoadData();
             //this.txtTods.Text = DAL.SYS.C_USERS._toDocSo;
             //try
@@ -83,9 +83,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
 
             ReportDocument rp = new rpt_DC_HaCo();
-            rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport_DC(this.txtNgayGan.Value.ToShortDateString()));
+            rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport_DC(cbDieuChinh.SelectedIndex.ToString() ,this.txtNgayGan.Value.ToShortDateString()));
             rp.SetParameterValue("kg", this.kg.Text);
-            rp.SetParameterValue("vv", txtTile.Text +  " "+  this.cbKy.Text + " NĂM "+ this.cbnam.Text );
+            rp.SetParameterValue("vv", txtTile.Text + " " +cbDieuChinh.Text+ " KỲ "+  this.cbKy.Text + " NĂM "+ this.cbnam.Text );
             rp.SetParameterValue("bk", this.txtSoBangKe.Text);
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
@@ -98,7 +98,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             try
             {
 
-                string sql = " SELECT ID, DANHBO, HOTEN, DIACHI, DOT,  CODHN,COMOI, CONGDUNG  FROM TB_DC_CODHN WHERE NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'    ORDER BY CREATEDATE ASC ";
+                string sql = " SELECT ID, DANHBO, HOTEN, DIACHI, DOT,  CODHN,COMOI, CONGDUNG  FROM TB_DC_CODHN WHERE MODIFYBY='" + cbDieuChinh.SelectedIndex.ToString() + "'  AND NGAYLAP='" + this.txtNgayGan.Value.ToShortDateString() + "'    ORDER BY CREATEDATE ASC ";
                 dataBangKe.DataSource = LinQConnection.getDataTable(sql);
                 Utilities.DataGridV.formatRows(dataBangKe);
                 lbTC.Text = "TỔNG CỘNG : " + dataBangKe.RowCount + " DANH BỘ";
@@ -212,6 +212,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             chuyendm.NGAYLAP = DateTime.Now.Date;
             chuyendm.CREATEDATE = DateTime.Now;
             chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
+            chuyendm.MODIFYBY = cbDieuChinh.SelectedIndex.ToString();
             DAL.BANKTKS.C_DSKiemTra.Insert_DC(chuyendm);
 
             LoadData();
@@ -386,6 +387,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         private void frm_DieuChinhCoDHN_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbDieuChinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         

@@ -29,7 +29,7 @@
     <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>93</ApplicationRevision>
+    <ApplicationRevision>110</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -101,6 +101,10 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="OnBarcode.Barcode.WinForms, Version=6.0.0.41022, Culture=neutral, PublicKeyToken=4da8d7f865f70e30, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\OnBarcode.Barcode.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="String_Indentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\String_Indentity.dll</HintPath>
@@ -845,6 +849,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_mavach.cs">
+      <DependentUpon>rpt_SoDocSo_mavach.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_A3.cs">
       <DependentUpon>rpt_SoDocSo_A3.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -856,6 +866,15 @@
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\QLDHN\SODOCSO\SODOCSO.cs">
+      <DependentUpon>SODOCSO.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\SODOCSO\SODOCSO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SODOCSO.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\tabDieuChinh\CONGVANDIEUCHINH.cs">
       <DependentUpon>CONGVANDIEUCHINH.rpt</DependentUpon>
@@ -1286,11 +1305,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_SoDocSo.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Forms\QLDHN\SODOCSO\SODOCSO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SODOCSO.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\Tab\G_tab_DiemCodeTieuThu.cs">
       <SubType>UserControl</SubType>
@@ -2163,6 +2177,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_TroNgai_HD_01.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_mavach.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SoDocSo_mavach.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_A3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_SoDocSo_A3.cs</LastGenOutput>
@@ -2557,6 +2575,7 @@
     <Content Include="lib\IrisSkin2.dll" />
     <Content Include="lib\log4net.dll" />
     <Content Include="lib\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="lib\OnBarcode.Barcode.WinForms.dll" />
     <Content Include="lib\String_Indentity.dll" />
     <Content Include="lib\String_Indentity_.dll" />
     <Content Include="lib\VniToUnicode.dll" />

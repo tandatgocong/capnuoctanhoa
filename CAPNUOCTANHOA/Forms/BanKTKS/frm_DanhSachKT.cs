@@ -25,6 +25,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             InitializeComponent();
             // this.cbLoaiBangKe.Focus(); 
             formLoad();
+            this.comboBox1.SelectedIndex = 1;
             //  MessageBox.Show(this, DAL.SYS.C_USERS._tenDocSo);
             //     MessageBox.Show(this, DAL.QLDHN.C_BaoThay.getMaxBangKe() + "");
 
@@ -51,13 +52,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         private void btIn_Click(object sender, EventArgs e)
         {
 
-            ReportDocument rp = new rpt_DSKiemTra();                         
-                rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport(this.txtNgayGan.Value.ToShortDateString()));
-                rp.SetParameterValue("Title", this.txtTile.Text);
-                rp.SetParameterValue("phong", DAL.SYS.C_USERS._maphong);
-                frm_Reports frm = new frm_Reports(rp);
-                frm.ShowDialog();
-            
+            ReportDocument rp = new rpt_DSKiemTra();
+            rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport(this.txtNgayGan.Value.ToShortDateString(),this.comboBox1.Text));
+            rp.SetParameterValue("Title", this.txtTile.Text);
+            rp.SetParameterValue("phong", DAL.SYS.C_USERS._maphong);
+            frm_Reports frm = new frm_Reports(rp);
+            frm.ShowDialog();
+
         }
 
        
@@ -150,6 +151,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                     txtCo.Text = table.Rows[0]["CODH"] + "";
                     txtSoThan.Text = table.Rows[0]["SOTHANDH"] + "";
                     txtCS.Text = table.Rows[0]["CSMOI"] + "";
+                    txtTieuThu.Text = table.Rows[0]["TieuThuMoi"] + "";
                     dataGridView2.DataSource = C_ThuTien.getHoaDon(sodanhbo);
                 }
                 loadghichu(sodanhbo);
@@ -180,7 +182,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             chuyendm.HOPDONG = this.txtHopDong.Text;
             chuyendm.GB = this.txtGB.Text;
             chuyendm.DM = this.txtDM.Text;
-            chuyendm.CHISO = this.txtCS.Text;
+            chuyendm.CHISO = this.txtCS.Text + " - " + this.txtTieuThu.Text;
             chuyendm.HIEUDHN = this.txtHieuDhn.Text;
             chuyendm.CODHN = this.txtCo.Text;
             chuyendm.SOTHAN = this.txtSoThan.Text;
@@ -287,7 +289,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                     thaydh.NGAYLAP = this.txtNgayGan.Value.Date;
                     thaydh.CONGDUNG = this.txtCongDung.Text;
                     thaydh.MODIFYDATE = DateTime.Now;
-                    thaydh.MODIFYBY = DAL.SYS.C_USERS._userName;
 
                     DAL.BANKTKS.C_DSKiemTra.Update();
                     LoadData();
@@ -362,19 +363,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             LoadData();
         }
 
-        private void labelX13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCongDung_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataBangKe_CellBorderStyleChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

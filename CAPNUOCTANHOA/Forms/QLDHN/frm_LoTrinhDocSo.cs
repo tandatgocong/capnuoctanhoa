@@ -43,7 +43,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 tabItem2.Visible = true;
             }
 
-            if ("TT,AD".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            if ("TT,AD,DT,DP".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 tabItemPhienLoTrinh.Visible = true;
                 tabSoDocSo.Visible = true;
@@ -77,7 +77,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
                 
             }
-            if ("TK".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            if ("TK,DT,DP".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
                 tabSoDocSo.Visible = true;
                 soGanMoi.Visible=true;

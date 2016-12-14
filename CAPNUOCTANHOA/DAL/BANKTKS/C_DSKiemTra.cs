@@ -99,13 +99,13 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
 
         public static DataTable getThonTinDieuChinh(string danhbo)
         {
-            string sql = " SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1 as MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.CSMOI,(kh.HIEUDH +'-'+ RIGHT(YEAR(kh.NGAYTHAY),2)) as HIEUDH,kh.CODH,kh.SOTHANDH";
+            string sql = " SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1 as MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.CSMOI,(kh.HIEUDH +'-'+ RIGHT(YEAR(kh.NGAYTHAY),2)) as HIEUDH,kh.CODH,kh.SOTHANDH,TieuThuMoi";
             sql += " FROM DocSoTH.dbo.DocSo AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
             sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.NAM="+ DateTime.Now.Year.ToString() + "  AND ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
             DataTable t1 =LinQConnection.getDataTable(sql);
             if (t1.Rows.Count == 0)
             {
-                sql = "SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1 as MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.CSMOI,(kh.HIEUDH +'-'+ RIGHT(YEAR(kh.NGAYTHAY),2)) as HIEUDH,kh.CODH,kh.SOTHANDH";
+                sql = "SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1 as MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.CSMOI,(kh.HIEUDH +'-'+ RIGHT(YEAR(kh.NGAYTHAY),2)) as HIEUDH,kh.CODH,kh.SOTHANDH,TieuThuMoi";
                 sql += " FROM DocSoTH.dbo.DocSo AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
                 sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.NAM=" + (DateTime.Now.Year - 1).ToString() + " AND  ds.DANHBA ='" + danhbo + "' ORDER BY ds.KY DESC ";
                 t1 = LinQConnection.getDataTable(sql);
@@ -151,11 +151,11 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         }
 
 
-        public static DataSet getReport(string ngay)
+        public static DataSet getReport(string ngay,string sort)
         {
             DataSet ds = new DataSet();
             string query = " SELECT kt.ID, kt.DANHBO, kt.LOTRINH, kt.HOTEN, kt.DIACHI, kt.HOPDONG, kt.HIEUDHN, kt.CODHN, kt.SOTHAN, kt.GB, kt.DM, kt.CHISO, CONGDUNG, NGAYLAP, kt.CREATEDATE, kt.CREATEBY, kt.MODIFYDATE,kh.VITRIDHN  AS 'MODIFYBY' ";
-            query += " FROM KTKS_DANHSACHKT kt,TB_DULIEUKHACHHANG kh where kh.DANHBO=kt.DANHBO AND kt.NGAYLAP='" + ngay + "' AND kt.CREATEBY='" + DAL.SYS.C_USERS._userName + "' ORDER BY kt.DANHBO ASC ";
+            query += " FROM KTKS_DANHSACHKT kt,TB_DULIEUKHACHHANG kh where kh.DANHBO=kt.DANHBO AND kt.NGAYLAP='" + ngay + "' AND kt.CREATEBY='" + DAL.SYS.C_USERS._userName + "' ORDER BY kt." + sort + " ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "KTKS_DANHSACHKT");
@@ -166,10 +166,10 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
             return ds;
         }
 
-        public static DataSet getReport_DC(string ngay)
+        public static DataSet getReport_DC(string loai, string ngay)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT * FROM TB_DC_CODHN   WHERE NGAYLAP='" + ngay + "'   ORDER BY CREATEDATE ASC ";
+            string query = " SELECT * FROM TB_DC_CODHN   WHERE MODIFYBY='"+loai+"' and NGAYLAP='" + ngay + "'   ORDER BY CREATEDATE ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_DC_CODHN");

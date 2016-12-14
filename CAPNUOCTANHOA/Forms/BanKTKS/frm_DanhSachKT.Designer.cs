@@ -112,6 +112,9 @@
             this.G_CHISO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_TIEUTHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CSCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.txtTieuThu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lichsuGhiCHu)).BeginInit();
@@ -227,7 +230,6 @@
             this.dataBangKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataBangKe.Size = new System.Drawing.Size(1231, 320);
             this.dataBangKe.TabIndex = 100;
-            this.dataBangKe.CellBorderStyleChanged += new System.EventHandler(this.dataBangKe_CellBorderStyleChanged);
             this.dataBangKe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBangKe_CellClick);
             // 
             // ID
@@ -349,7 +351,6 @@
             this.labelX13.Size = new System.Drawing.Size(125, 22);
             this.labelX13.TabIndex = 6;
             this.labelX13.Text = "GHI CHÚ";
-            this.labelX13.Click += new System.EventHandler(this.labelX13_Click);
             // 
             // txtCongDung
             // 
@@ -361,7 +362,6 @@
             this.txtCongDung.Name = "txtCongDung";
             this.txtCongDung.Size = new System.Drawing.Size(444, 27);
             this.txtCongDung.TabIndex = 10;
-            this.txtCongDung.TextChanged += new System.EventHandler(this.txtCongDung_TextChanged);
             // 
             // btThem
             // 
@@ -466,11 +466,11 @@
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(165, 167);
+            this.labelX1.Location = new System.Drawing.Point(399, 601);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(99, 22);
             this.labelX1.TabIndex = 602;
-            this.labelX1.Text = "ĐỊNH MỨC";
+            this.labelX1.Text = "SẮP XẾP";
             // 
             // txtDM
             // 
@@ -683,11 +683,11 @@
             // labelX15
             // 
             this.labelX15.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX15.Location = new System.Drawing.Point(313, 165);
+            this.labelX15.Location = new System.Drawing.Point(311, 164);
             this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(99, 22);
+            this.labelX15.Size = new System.Drawing.Size(59, 22);
             this.labelX15.TabIndex = 617;
-            this.labelX15.Text = "CHỈ SỐ";
+            this.labelX15.Text = "CS";
             // 
             // txtCS
             // 
@@ -697,9 +697,9 @@
             this.txtCS.Border.Class = "TextBoxBorder";
             this.txtCS.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCS.ForeColor = System.Drawing.Color.Red;
-            this.txtCS.Location = new System.Drawing.Point(396, 160);
+            this.txtCS.Location = new System.Drawing.Point(352, 162);
             this.txtCS.Name = "txtCS";
-            this.txtCS.Size = new System.Drawing.Size(152, 27);
+            this.txtCS.Size = new System.Drawing.Size(90, 27);
             this.txtCS.TabIndex = 618;
             this.txtCS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -955,16 +955,53 @@
             this.CSCU.Name = "CSCU";
             this.CSCU.Visible = false;
             // 
+            // labelX2
+            // 
+            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.Location = new System.Drawing.Point(448, 162);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(59, 22);
+            this.labelX2.TabIndex = 617;
+            this.labelX2.Text = "TT";
+            // 
+            // txtTieuThu
+            // 
+            // 
+            // 
+            // 
+            this.txtTieuThu.Border.Class = "TextBoxBorder";
+            this.txtTieuThu.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTieuThu.ForeColor = System.Drawing.Color.Red;
+            this.txtTieuThu.Location = new System.Drawing.Point(484, 160);
+            this.txtTieuThu.Name = "txtTieuThu";
+            this.txtTieuThu.Size = new System.Drawing.Size(64, 27);
+            this.txtTieuThu.TabIndex = 618;
+            this.txtTieuThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "DANHBO",
+            "LOTRINH"});
+            this.comboBox1.Location = new System.Drawing.Point(494, 597);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 27);
+            this.comboBox1.TabIndex = 624;
+            // 
             // frm_DanhSachKT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtNgayGan);
             this.Controls.Add(this.labelX7);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lbTC);
+            this.Controls.Add(this.txtTieuThu);
+            this.Controls.Add(this.labelX2);
             this.Controls.Add(this.txtCS);
             this.Controls.Add(this.labelX15);
             this.Controls.Add(this.txtSoThan);
@@ -1085,5 +1122,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn G_CHISO;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_TIEUTHU;
         private System.Windows.Forms.DataGridViewTextBoxColumn CSCU;
+        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTieuThu;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

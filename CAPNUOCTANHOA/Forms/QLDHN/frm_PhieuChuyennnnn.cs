@@ -76,7 +76,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
 
             ReportDocument rp = new rpt_PhieuChuyennnnnnnn();
-            rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport_DC(this.txtSoBangKe.Text));
+            rp.SetDataSource(DAL.BANKTKS.C_DSKiemTra.getReport_pc(this.txtSoBangKe.Text));
+
+
             rp.SetParameterValue("kg", this.kg.Text);
             rp.SetParameterValue("vv", this.vv.Text);
             rp.SetParameterValue("tods", this.txtTods.Text);

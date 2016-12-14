@@ -58,6 +58,11 @@ namespace CAPNUOCTANHOA
                     ribbonDoiThuTien.Visible = false;
                     this.menuDoiQLDHN.Visible = true;
                     this.menuDTCTB.Visible = false;
+                    if ("DT".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    {
+                        this.btDA.Visible = true;
+                    }
+
                     if ("GM,TH".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         cmdBaoThay.Visible=false;
@@ -72,10 +77,10 @@ namespace CAPNUOCTANHOA
                         btLoTrinh.Visible = true; 
                         yeucaukiemtra.Visible = true;
                         handHeld.Visible = true;
-                    }if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    } if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         menuDieuChinhKH.Visible = false;
-                    }if ("TK".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    } if ("TK".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         handHeld.Visible = false;
                     }
@@ -98,9 +103,21 @@ namespace CAPNUOCTANHOA
                     {
                         menuTheoDoiDM.Visible = true;
                     }
-                    
+
+
+                    ribbonDoiThuTien.Visible = false;
+                    this.menuDoiQLDHN.Visible = true;
+
+                    cmdBaoThay.Visible = false;
+                    menuKiemTra.Visible = false;
+                    yeucaukiemtra.Visible = false;
+                    menuDieuChinhKH.Visible = false;
+                    btLoTrinh.Visible = false;
+                    handHeld.Visible = false;
+                    menuDieuChinhKH.Visible = false;
                 }
-                else if ("THUTIEN".Equals(DAL.SYS.C_USERS._maphong.Trim())){
+                else if ("THUTIEN".Equals(DAL.SYS.C_USERS._maphong.Trim()))
+                {
                     ribbonDoiThuTien.Visible = true;
                     this.menuDoiQLDHN.Visible = false;
                     this.menuDTCTB.Visible = false;

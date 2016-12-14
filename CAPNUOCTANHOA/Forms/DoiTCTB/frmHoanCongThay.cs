@@ -872,10 +872,20 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
             myDataRow["GHICHU"] = "";
             table.Rows.Add(myDataRow);
 
+
+            myDataRow = table.NewRow();
+            myDataRow["STT"] = "5";
+            myDataRow["MAVT"] = "JTLK15";
+            myDataRow["TENVT"] = "JOINT RAC 15 MM";
+            myDataRow["DVT"] = "Cái";
+            myDataRow["SL"] = "2";
+            myDataRow["GHICHU"] = "";
+            table.Rows.Add(myDataRow);
+
             for (int i = 0; i < t1.Rows.Count; i++)
             {
                 myDataRow = table.NewRow();
-                myDataRow["STT"] = i+5;
+                myDataRow["STT"] = i+6;
                 myDataRow["MAVT"] = t1.Rows[i]["MAVT"].ToString();
                 myDataRow["TENVT"] = t1.Rows[i]["TENVT"].ToString();
                 myDataRow["DVT"] = t1.Rows[i]["DVT"].ToString();

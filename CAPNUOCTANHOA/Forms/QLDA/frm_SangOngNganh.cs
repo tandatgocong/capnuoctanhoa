@@ -686,7 +686,16 @@ namespace CAPNUOCTANHOA.Forms.QLDA
                                         " NgayCapNhat='" + DateTime.Now + " ', " +
                                         " NVCapNhat='" + DAL.SYS.C_USERS._userName + " ' " +
                                         " WHERE DanhBa='" + kh.DANHBO + "' AND CONVERT(DATETIME,NgayThay,103)='" + txtngayGanDh.Value.ToShortDateString() + "'";
+                                    if (DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeldTH(sql) == 0)
+                                    {
+                                        loai = "1";
+                                        sql = " INSERT INTO BaoThay(DanhBa,LoaiBT,NgayThay,HieuMoi,CoMoi,SoThanMoi,ViTriMoi,ChiThanMoi,ChiCoMoi,CSGo,CSGan,NgayCapNhat,NVCapNhat) ";
+                                        //string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
+                                        sql += " VALUES ('" + this.txtSoDanhBo.Text.Replace("-", "") + "', " + loai + ",'" + txtngayGanDh.Value.Date + "', " + " '" + txtHieuDHGan.Text.Substring(0, 3) + "', " + kh.CODH + ", " + " '" + txtSoThanGan.Text + "'," + " N'" + kh.VITRIDHN + "', ";
+                                        sql += " '" + txtChiThan.Text.ToUpper() + "'," + " '" + txtChiGoc.Text.ToUpper() + "'," + txtChiSoGo.Text + "," + txtChiSoGan.Text + ", '" + DateTime.Now + "','" + DAL.SYS.C_USERS._userName + "' )";
+
                                         DAL.DULIEUKH.C_PhienLoTrinh.InsertBaoThayHandHeldTH(sql);
+                                    }
                                     //}
                                 }
                                 catch (Exception ex)

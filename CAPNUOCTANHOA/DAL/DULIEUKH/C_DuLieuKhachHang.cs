@@ -7,6 +7,7 @@ using CAPNUOCTANHOA.LinQ;
 using System.Data.SqlClient;
 using log4net;
 using System.Data.Linq.SqlClient;
+using OnBarcode.Barcode;
 
 namespace CAPNUOCTANHOA.DAL.DULIEUKH
 {
@@ -105,8 +106,20 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
             db.Connection.Open();
             string query = "SELECT * FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + sobangke + "' ORDER BY LOTRINH ASC ";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);            
             adapter.Fill(ds, "TB_DULIEUKHACHHANG");
+            
+            ds.Tables[0].Columns.Add(new DataColumn("Barcode", typeof(byte[])));
+
+            Linear barcode = new Linear();
+            barcode.Type = BarcodeType.CODE128;
+            foreach (DataRow dr in ds.Tables["TB_DULIEUKHACHHANG"].Rows)
+            {
+                barcode.Data = dr["DANHBO"].ToString().Trim();
+                byte[] imageData = barcode.drawBarcodeAsBytes();
+                dr["Barcode"] = imageData;
+            }
+
             return ds;
         }
         public static DataSet SoDocSo_cl(string sobangke)
