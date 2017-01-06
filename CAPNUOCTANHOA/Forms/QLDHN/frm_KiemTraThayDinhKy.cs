@@ -123,9 +123,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             return sql;
 
         }
+        DataTable lisDB = null;
         public void setBaoThay()
         {
-
             for (int i = 0; i < dataGrid.Rows.Count; i++)
             {
                 string sql = " SELECT TOP(1)  N'TRỞ NGẠI (' + CONVERT(varchar(10),HCT_NGAYGAN,103) + '): '  + HCT_LYDOTRONGAI  + ' - ['  + ISNULL(XLT_KETQUA,'') + ']'  ";
@@ -135,11 +135,22 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 if (table.Rows.Count > 0)
                 {
                     dataGrid.Rows[i].Cells["BAOTHAY"].Value = "" + table.Rows[0][0];
+
                     dataGrid.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Yellow;
                 }
+                //else {
+                //    tb.Rows.RemoveAt(i);
+                //}
             }
 
+            DataTable t1 = (DataTable)dataGrid.DataSource;
+            lisDB = t1.AsEnumerable()
+          .Where(row => row.Field<String>("GBAOTHAY") != " ")
+          .OrderByDescending(row => row.Field<String>("LOTRINH"))
+          .CopyToDataTable();
+
         }
+        
         private void btXemThongTin_Click(object sender, EventArgs e)
         {
             currentPageIndex = 1;
@@ -156,6 +167,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 PageTotal();
                 DataTable table = DAL.LinQConnection.getDataTable(Search(), FirstRow, pageSize);
                 dataGrid.DataSource = table;
+              
                 //Utilities.DataGridV.formatRows(dataGrid);
                 setBaoThay();
             }
@@ -325,5 +337,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
             }
         }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            frm_Option_BT_TN f = new frm_Option_BT_TN(lisDB);
+            f.ShowDialog();
+        }
+
+       
     }
 }

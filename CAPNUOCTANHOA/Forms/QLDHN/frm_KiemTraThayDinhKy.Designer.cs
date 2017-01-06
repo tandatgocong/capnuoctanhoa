@@ -41,13 +41,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dateKd = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.ngayKD = new System.Windows.Forms.CheckBox();
             this.txtLoaiBo = new System.Windows.Forms.TextBox();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cbDot = new System.Windows.Forms.ComboBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.lbTongDHN = new DevComponents.DotNetBar.LabelX();
-            this.next = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btXemThongTin = new DevComponents.DotNetBar.ButtonX();
             this.cbHieuDongHo = new System.Windows.Forms.ComboBox();
@@ -58,10 +58,6 @@
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.lbPaing = new System.Windows.Forms.Label();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dateKd = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.ngayKD = new System.Windows.Forms.CheckBox();
             this.checkChon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DOT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,15 +72,20 @@
             this.SOTHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODHN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BAOTHAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.next = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateKd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateKd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -96,6 +97,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.buttonX1);
             this.splitContainer1.Panel1.Controls.Add(this.dateKd);
             this.splitContainer1.Panel1.Controls.Add(this.ngayKD);
             this.splitContainer1.Panel1.Controls.Add(this.txtLoaiBo);
@@ -122,6 +124,61 @@
             this.splitContainer1.Size = new System.Drawing.Size(1238, 657);
             this.splitContainer1.SplitterDistance = 123;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // dateKd
+            // 
+            // 
+            // 
+            // 
+            this.dateKd.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateKd.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateKd.ButtonDropDown.Visible = true;
+            this.dateKd.CustomFormat = "dd/MM/yyyy";
+            this.dateKd.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dateKd.Location = new System.Drawing.Point(267, 87);
+            // 
+            // 
+            // 
+            this.dateKd.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateKd.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateKd.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateKd.MonthCalendar.DisplayMonth = new System.DateTime(2012, 3, 1, 0, 0, 0, 0);
+            this.dateKd.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateKd.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateKd.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateKd.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateKd.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateKd.MonthCalendar.TodayButtonVisible = true;
+            this.dateKd.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateKd.Name = "dateKd";
+            this.dateKd.Size = new System.Drawing.Size(126, 27);
+            this.dateKd.TabIndex = 714;
+            this.dateKd.Value = new System.DateTime(2012, 3, 1, 22, 34, 31, 0);
+            // 
+            // ngayKD
+            // 
+            this.ngayKD.AutoSize = true;
+            this.ngayKD.Location = new System.Drawing.Point(251, 61);
+            this.ngayKD.Name = "ngayKD";
+            this.ngayKD.Size = new System.Drawing.Size(146, 23);
+            this.ngayKD.TabIndex = 713;
+            this.ngayKD.Text = "Ngày  Kiểm Định";
+            this.ngayKD.UseVisualStyleBackColor = true;
             // 
             // txtLoaiBo
             // 
@@ -193,30 +250,6 @@
             this.lbTongDHN.Name = "lbTongDHN";
             this.lbTongDHN.Size = new System.Drawing.Size(223, 19);
             this.lbTongDHN.TabIndex = 1;
-            // 
-            // next
-            // 
-            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Last;
-            this.next.Location = new System.Drawing.Point(951, 98);
-            this.next.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(20, 18);
-            this.next.TabIndex = 706;
-            this.next.TabStop = false;
-            this.next.Click += new System.EventHandler(this.next_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::CAPNUOCTANHOA.Properties.Resources.First;
-            this.pictureBox2.Location = new System.Drawing.Point(891, 97);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 19);
-            this.pictureBox2.TabIndex = 707;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // labelX1
             // 
@@ -403,78 +436,6 @@
             this.dataGrid.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_ColumnHeaderMouseClick);
             this.dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGrid_MouseClick);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dafaToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(169, 26);
-            // 
-            // dafaToolStripMenuItem
-            // 
-            this.dafaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dafaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.dafaToolStripMenuItem.Image = global::CAPNUOCTANHOA.Properties.Resources.Plus;
-            this.dafaToolStripMenuItem.Name = "dafaToolStripMenuItem";
-            this.dafaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.dafaToolStripMenuItem.Text = "Tạo Mới Bảng Kê";
-            this.dafaToolStripMenuItem.Click += new System.EventHandler(this.dafaToolStripMenuItem_Click);
-            // 
-            // dateKd
-            // 
-            // 
-            // 
-            // 
-            this.dateKd.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateKd.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateKd.ButtonDropDown.Visible = true;
-            this.dateKd.CustomFormat = "dd/MM/yyyy";
-            this.dateKd.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateKd.Location = new System.Drawing.Point(267, 87);
-            // 
-            // 
-            // 
-            this.dateKd.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateKd.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateKd.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateKd.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateKd.MonthCalendar.DisplayMonth = new System.DateTime(2012, 3, 1, 0, 0, 0, 0);
-            this.dateKd.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateKd.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateKd.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateKd.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateKd.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateKd.MonthCalendar.TodayButtonVisible = true;
-            this.dateKd.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateKd.Name = "dateKd";
-            this.dateKd.Size = new System.Drawing.Size(126, 27);
-            this.dateKd.TabIndex = 714;
-            this.dateKd.Value = new System.DateTime(2012, 3, 1, 22, 34, 31, 0);
-            // 
-            // ngayKD
-            // 
-            this.ngayKD.AutoSize = true;
-            this.ngayKD.Location = new System.Drawing.Point(251, 61);
-            this.ngayKD.Name = "ngayKD";
-            this.ngayKD.Size = new System.Drawing.Size(146, 23);
-            this.ngayKD.TabIndex = 713;
-            this.ngayKD.Text = "Ngày  Kiểm Định";
-            this.ngayKD.UseVisualStyleBackColor = true;
-            // 
             // checkChon
             // 
             this.checkChon.Frozen = true;
@@ -594,6 +555,61 @@
             this.BAOTHAY.Name = "BAOTHAY";
             this.BAOTHAY.Width = 300;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dafaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(169, 26);
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX1.Location = new System.Drawing.Point(1067, 57);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(157, 27);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 715;
+            this.buttonX1.Text = "TRỞ NGẠI";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            // 
+            // next
+            // 
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Last;
+            this.next.Location = new System.Drawing.Point(951, 98);
+            this.next.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(20, 18);
+            this.next.TabIndex = 706;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::CAPNUOCTANHOA.Properties.Resources.First;
+            this.pictureBox2.Location = new System.Drawing.Point(891, 97);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 19);
+            this.pictureBox2.TabIndex = 707;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // dafaToolStripMenuItem
+            // 
+            this.dafaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dafaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.dafaToolStripMenuItem.Image = global::CAPNUOCTANHOA.Properties.Resources.Plus;
+            this.dafaToolStripMenuItem.Name = "dafaToolStripMenuItem";
+            this.dafaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.dafaToolStripMenuItem.Text = "Tạo Mới Bảng Kê";
+            this.dafaToolStripMenuItem.Click += new System.EventHandler(this.dafaToolStripMenuItem_Click);
+            // 
             // frm_KiemTraThayDinhKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -608,12 +624,12 @@
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateKd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateKd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -656,5 +672,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SOTHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODHN;
         private System.Windows.Forms.DataGridViewTextBoxColumn BAOTHAY;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }
