@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
@@ -90,8 +91,15 @@
             this.txtDot = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cbDieuChinh = new System.Windows.Forms.ComboBox();
             this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODHN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COMOI_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GHICUH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelX3
@@ -154,7 +162,7 @@
             // labelX12
             // 
             this.labelX12.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX12.Location = new System.Drawing.Point(645, 142);
+            this.labelX12.Location = new System.Drawing.Point(1042, 60);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(94, 42);
             this.labelX12.TabIndex = 6;
@@ -365,7 +373,7 @@
             this.txtGB.Border.Class = "TextBoxBorder";
             this.txtGB.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGB.ForeColor = System.Drawing.Color.Red;
-            this.txtGB.Location = new System.Drawing.Point(641, 117);
+            this.txtGB.Location = new System.Drawing.Point(1038, 35);
             this.txtGB.Name = "txtGB";
             this.txtGB.Size = new System.Drawing.Size(54, 27);
             this.txtGB.TabIndex = 7;
@@ -375,7 +383,7 @@
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(796, 150);
+            this.labelX1.Location = new System.Drawing.Point(1083, 154);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(99, 22);
             this.labelX1.TabIndex = 602;
@@ -390,7 +398,7 @@
             this.txtDM.Border.Class = "TextBoxBorder";
             this.txtDM.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDM.ForeColor = System.Drawing.Color.Red;
-            this.txtDM.Location = new System.Drawing.Point(979, 132);
+            this.txtDM.Location = new System.Drawing.Point(1032, 63);
             this.txtDM.Name = "txtDM";
             this.txtDM.Size = new System.Drawing.Size(49, 27);
             this.txtDM.TabIndex = 8;
@@ -420,7 +428,7 @@
             this.txtHieuDhn.Border.Class = "TextBoxBorder";
             this.txtHieuDhn.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHieuDhn.ForeColor = System.Drawing.Color.Red;
-            this.txtHieuDhn.Location = new System.Drawing.Point(744, 112);
+            this.txtHieuDhn.Location = new System.Drawing.Point(948, 84);
             this.txtHieuDhn.Name = "txtHieuDhn";
             this.txtHieuDhn.Size = new System.Drawing.Size(144, 27);
             this.txtHieuDhn.TabIndex = 612;
@@ -430,7 +438,7 @@
             // labelX8
             // 
             this.labelX8.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX8.Location = new System.Drawing.Point(632, 92);
+            this.labelX8.Location = new System.Drawing.Point(1083, 239);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(94, 22);
             this.labelX8.TabIndex = 611;
@@ -468,7 +476,7 @@
             this.txtSoThan.Border.Class = "TextBoxBorder";
             this.txtSoThan.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoThan.ForeColor = System.Drawing.Color.Red;
-            this.txtSoThan.Location = new System.Drawing.Point(995, 175);
+            this.txtSoThan.Location = new System.Drawing.Point(1032, 108);
             this.txtSoThan.Name = "txtSoThan";
             this.txtSoThan.Size = new System.Drawing.Size(111, 27);
             this.txtSoThan.TabIndex = 616;
@@ -478,7 +486,7 @@
             // labelX14
             // 
             this.labelX14.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX14.Location = new System.Drawing.Point(910, 178);
+            this.labelX14.Location = new System.Drawing.Point(1083, 187);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(93, 22);
             this.labelX14.TabIndex = 615;
@@ -488,7 +496,7 @@
             // labelX15
             // 
             this.labelX15.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX15.Location = new System.Drawing.Point(871, 211);
+            this.labelX15.Location = new System.Drawing.Point(1077, 239);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(99, 22);
             this.labelX15.TabIndex = 617;
@@ -503,7 +511,7 @@
             this.txtCS.Border.Class = "TextBoxBorder";
             this.txtCS.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCS.ForeColor = System.Drawing.Color.Red;
-            this.txtCS.Location = new System.Drawing.Point(954, 206);
+            this.txtCS.Location = new System.Drawing.Point(1043, 206);
             this.txtCS.Name = "txtCS";
             this.txtCS.Size = new System.Drawing.Size(152, 27);
             this.txtCS.TabIndex = 618;
@@ -549,7 +557,7 @@
             this.txtHopDong.Border.Class = "TextBoxBorder";
             this.txtHopDong.FocusHighlightColor = System.Drawing.Color.Transparent;
             this.txtHopDong.ForeColor = System.Drawing.Color.Red;
-            this.txtHopDong.Location = new System.Drawing.Point(910, 110);
+            this.txtHopDong.Location = new System.Drawing.Point(1032, 30);
             this.txtHopDong.Name = "txtHopDong";
             this.txtHopDong.Size = new System.Drawing.Size(104, 27);
             this.txtHopDong.TabIndex = 6;
@@ -559,7 +567,7 @@
             // labelX9
             // 
             this.labelX9.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX9.Location = new System.Drawing.Point(855, 113);
+            this.labelX9.Location = new System.Drawing.Point(1059, 85);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(125, 22);
             this.labelX9.TabIndex = 608;
@@ -584,7 +592,7 @@
             this.txtLoTrinh.Border.Class = "TextBoxBorder";
             this.txtLoTrinh.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoTrinh.ForeColor = System.Drawing.Color.Red;
-            this.txtLoTrinh.Location = new System.Drawing.Point(755, 226);
+            this.txtLoTrinh.Location = new System.Drawing.Point(1053, 262);
             this.txtLoTrinh.Name = "txtLoTrinh";
             this.txtLoTrinh.Size = new System.Drawing.Size(124, 27);
             this.txtLoTrinh.TabIndex = 100;
@@ -594,7 +602,7 @@
             // labelX2
             // 
             this.labelX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.Location = new System.Drawing.Point(672, 190);
+            this.labelX2.Location = new System.Drawing.Point(1069, 108);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(78, 22);
             this.labelX2.TabIndex = 611;
@@ -616,9 +624,9 @@
             // 
             // 
             this.txtVanBang.Border.Class = "TextBoxBorder";
-            this.txtVanBang.Location = new System.Drawing.Point(755, 190);
+            this.txtVanBang.Location = new System.Drawing.Point(1083, 154);
             this.txtVanBang.Name = "txtVanBang";
-            this.txtVanBang.Size = new System.Drawing.Size(381, 27);
+            this.txtVanBang.Size = new System.Drawing.Size(112, 27);
             this.txtVanBang.TabIndex = 10;
             this.txtVanBang.Visible = false;
             // 
@@ -852,12 +860,69 @@
             this.textBoxX2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxX2.WatermarkColor = System.Drawing.Color.Transparent;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.LOAI,
+            this.CODHN,
+            this.COMOI_,
+            this.GHICUH});
+            this.dataGridView1.Location = new System.Drawing.Point(582, 98);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 20;
+            this.dataGridView1.Size = new System.Drawing.Size(622, 163);
+            this.dataGridView1.TabIndex = 636;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NGAY";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle11.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn3.HeaderText = "NGÀY";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // LOAI
+            // 
+            this.LOAI.DataPropertyName = "LOAI";
+            this.LOAI.HeaderText = "LOẠI";
+            this.LOAI.Name = "LOAI";
+            this.LOAI.Width = 60;
+            // 
+            // CODHN
+            // 
+            this.CODHN.DataPropertyName = "CODHN";
+            this.CODHN.HeaderText = "CỞ CŨ";
+            this.CODHN.Name = "CODHN";
+            this.CODHN.Width = 90;
+            // 
+            // COMOI_
+            // 
+            this.COMOI_.DataPropertyName = "COMOI";
+            this.COMOI_.HeaderText = "CỞ MỚI";
+            this.COMOI_.Name = "COMOI_";
+            this.COMOI_.Width = 95;
+            // 
+            // GHICUH
+            // 
+            this.GHICUH.DataPropertyName = "CONGDUNG";
+            this.GHICUH.HeaderText = "GHI CHÚ";
+            this.GHICUH.Name = "GHICUH";
+            this.GHICUH.Width = 220;
+            // 
             // frm_DieuChinhCoDHN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cbDieuChinh);
             this.Controls.Add(this.textBoxX1);
             this.Controls.Add(this.cbnam);
@@ -914,6 +979,7 @@
             this.Load += new System.EventHandler(this.frm_DieuChinhCoDHN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -978,5 +1044,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
         private System.Windows.Forms.ComboBox cbDieuChinh;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODHN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COMOI_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GHICUH;
     }
 }

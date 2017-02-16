@@ -108,7 +108,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             string sql = " UPDATE DocSoTH.dbo.DocSo SET GhiChuKH=LEFT(t2.NOIDUNG,500) ";
             sql += " FROM ( SELECT  t2.NOIDUNG,t2.DANHBO,t2.CREATEDATE 	FROM CAPNUOCTANHOA.dbo.TB_GHICHU as t2 ,CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG kh ";
-            sql += " WHERE kh.DANHBO= t2.DANHBO AND LEFT(kh.LOTRINH,2)='" + dot + "' AND  DONVI='QLDHN' and t2.CREATEDATE = (SELECT MAX(CREATEDATE) FROM  TB_GHICHU WHERE DANHBO=t2.DANHBO)  ) as t2  ";
+            sql += " WHERE kh.DANHBO= t2.DANHBO AND LEFT(kh.LOTRINH,2)='" + dot + "' AND  DONVI='QLDHN' and t2.CREATEBY not in (N'Trương Nguyễn Bảo Trân',N'IT',N'Bảo Bảo',N'Võ Thành Trung') and t2.CREATEDATE = (SELECT MAX(CREATEDATE) FROM  TB_GHICHU WHERE DANHBO=t2.DANHBO and CREATEBY not in (N'Trương Nguyễn Bảo Trân',N'IT',N'Bảo Bảo',N'Võ Thành Trung'))  ) as t2  ";
             sql += "  WHERE NAM=" + nam + " AND  DANHBA= t2.DANHBO AND DOT=" + int.Parse(dot) + " AND KY=" + int.Parse(ky) + "";
             DAL.LinQConnection.ExecuteCommand_(sql);
 

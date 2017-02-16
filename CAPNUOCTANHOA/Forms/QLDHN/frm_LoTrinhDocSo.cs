@@ -21,8 +21,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 {
     public partial class frm_LoTrinhDocSo : UserControl
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString;
-        string connectionString2 = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile2"].ConnectionString;
+        //string connectionString = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile"].ConnectionString;
+        //string connectionString2 = ConfigurationManager.ConnectionStrings["CAPNUOCTANHOA.Properties.Settings.AccessFile2"].ConnectionString;
+        string connectionString = "";
+        string connectionString2 = "";
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_LayDuLieuGanMoi_Ky).Name);
 
         public frm_LoTrinhDocSo()

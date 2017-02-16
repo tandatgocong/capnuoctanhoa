@@ -127,7 +127,7 @@ namespace CAPNUOCTANHOA.Forms.QLDA
             try
             {
                 dataBangKe.DataSource = DAL.QLDHN.C_BaoThay.getBangKeBaoThay_ON(int.Parse(txtSoBangKe.Text.Trim()));
-                Utilities.DataGridV.formatRows(dataBangKe);
+               // Utilities.DataGridV.formatRows(dataBangKe);
                 setSTT();
             }
             catch (Exception ex)

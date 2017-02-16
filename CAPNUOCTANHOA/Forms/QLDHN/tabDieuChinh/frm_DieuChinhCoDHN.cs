@@ -184,6 +184,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             if (e.KeyChar == 13)
             {
                 LoadThongTinDB();
+                string sql = "SELECT  CONVERT(VARCHAR(20),NGAYLAP,103) AS NGAY, CASE WHEN MODIFYBY=0 THEN N'Nâng' else N'Hạ' end as LOAI,CODHN, COMOI, CONGDUNG     ";
+                sql += " FROM TB_DC_CODHN  ";
+                sql += "  WHERE DANHBO='" + this.txtSoDanhBo.Text.Replace("-", "") + "'  ";
+                sql += "  order by NGAYLAP desc ";
+                dataGridView1.DataSource = DAL.LinQConnection.getDataTable(sql);
             }
         }
 
