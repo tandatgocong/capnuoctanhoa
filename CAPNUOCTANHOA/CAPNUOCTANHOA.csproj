@@ -29,7 +29,7 @@
     <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>120</ApplicationRevision>
+    <ApplicationRevision>121</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -717,6 +717,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TLKDUTCHITAHN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_NhapDanhGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frm_NhapDanhGia.Designer.cs">
+      <DependentUpon>frm_NhapDanhGia.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\frm_Option_BT_TN.cs">
       <SubType>Form</SubType>
@@ -2115,6 +2121,9 @@
     <EmbeddedResource Include="Forms\QLDHN\BC\rpt_TONGKETSOLIEU.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_TONGKETSOLIEU.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frm_NhapDanhGia.resx">
+      <DependentUpon>frm_NhapDanhGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_Option_BT_TN.resx">
       <DependentUpon>frm_Option_BT_TN.cs</DependentUpon>

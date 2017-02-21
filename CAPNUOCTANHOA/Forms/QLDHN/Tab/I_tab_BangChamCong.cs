@@ -192,5 +192,11 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             }
         }
 
+        private void buttonX1_Click_1(object sender, EventArgs e)
+        {
+            frm_NhapDanhGia frm = new frm_NhapDanhGia();
+            frm.ShowDialog();
+        }
+
     }
 }

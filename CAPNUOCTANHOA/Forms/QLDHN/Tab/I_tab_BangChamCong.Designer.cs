@@ -41,6 +41,11 @@
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.checkTanPhu02 = new System.Windows.Forms.RadioButton();
+            this.checkTanPhu = new System.Windows.Forms.RadioButton();
+            this.checkTanBinh2 = new System.Windows.Forms.RadioButton();
+            this.checkTanBinh1 = new System.Windows.Forms.RadioButton();
+            this.checkAll = new System.Windows.Forms.RadioButton();
             this.btNhapTangCuong = new DevComponents.DotNetBar.ButtonX();
             this.btTinhSoLuong = new DevComponents.DotNetBar.ButtonX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -62,11 +67,7 @@
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.checkTanPhu02 = new System.Windows.Forms.RadioButton();
-            this.checkTanPhu = new System.Windows.Forms.RadioButton();
-            this.checkTanBinh2 = new System.Windows.Forms.RadioButton();
-            this.checkTanBinh1 = new System.Windows.Forms.RadioButton();
-            this.checkAll = new System.Windows.Forms.RadioButton();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -153,6 +154,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.buttonX1);
             this.splitContainer1.Panel1.Controls.Add(this.checkTanPhu02);
             this.splitContainer1.Panel1.Controls.Add(this.checkTanPhu);
             this.splitContainer1.Panel1.Controls.Add(this.checkTanBinh2);
@@ -173,6 +175,67 @@
             this.splitContainer1.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.SplitterDistance = 108;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // checkTanPhu02
+            // 
+            this.checkTanPhu02.AutoSize = true;
+            this.checkTanPhu02.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.checkTanPhu02.Location = new System.Drawing.Point(744, 82);
+            this.checkTanPhu02.Name = "checkTanPhu02";
+            this.checkTanPhu02.Size = new System.Drawing.Size(139, 24);
+            this.checkTanPhu02.TabIndex = 41;
+            this.checkTanPhu02.TabStop = true;
+            this.checkTanPhu02.Text = "Tổ Tân Phú 02";
+            this.checkTanPhu02.UseVisualStyleBackColor = true;
+            // 
+            // checkTanPhu
+            // 
+            this.checkTanPhu.AutoSize = true;
+            this.checkTanPhu.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.checkTanPhu.Location = new System.Drawing.Point(582, 81);
+            this.checkTanPhu.Name = "checkTanPhu";
+            this.checkTanPhu.Size = new System.Drawing.Size(139, 24);
+            this.checkTanPhu.TabIndex = 40;
+            this.checkTanPhu.TabStop = true;
+            this.checkTanPhu.Text = "Tổ Tân Phú 01";
+            this.checkTanPhu.UseVisualStyleBackColor = true;
+            // 
+            // checkTanBinh2
+            // 
+            this.checkTanBinh2.AutoSize = true;
+            this.checkTanBinh2.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.checkTanBinh2.Location = new System.Drawing.Point(417, 82);
+            this.checkTanBinh2.Name = "checkTanBinh2";
+            this.checkTanBinh2.Size = new System.Drawing.Size(145, 24);
+            this.checkTanBinh2.TabIndex = 39;
+            this.checkTanBinh2.TabStop = true;
+            this.checkTanBinh2.Text = "Tổ Tân Bình 02";
+            this.checkTanBinh2.UseVisualStyleBackColor = true;
+            // 
+            // checkTanBinh1
+            // 
+            this.checkTanBinh1.AutoSize = true;
+            this.checkTanBinh1.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.checkTanBinh1.Location = new System.Drawing.Point(266, 82);
+            this.checkTanBinh1.Name = "checkTanBinh1";
+            this.checkTanBinh1.Size = new System.Drawing.Size(145, 24);
+            this.checkTanBinh1.TabIndex = 38;
+            this.checkTanBinh1.TabStop = true;
+            this.checkTanBinh1.Text = "Tổ Tân Bình 01";
+            this.checkTanBinh1.UseVisualStyleBackColor = true;
+            // 
+            // checkAll
+            // 
+            this.checkAll.AutoSize = true;
+            this.checkAll.Checked = true;
+            this.checkAll.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.checkAll.Location = new System.Drawing.Point(174, 82);
+            this.checkAll.Name = "checkAll";
+            this.checkAll.Size = new System.Drawing.Size(77, 24);
+            this.checkAll.TabIndex = 37;
+            this.checkAll.TabStop = true;
+            this.checkAll.Text = "Tất Cả";
+            this.checkAll.UseVisualStyleBackColor = true;
             // 
             // btNhapTangCuong
             // 
@@ -364,66 +427,19 @@
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // checkTanPhu02
+            // buttonX1
             // 
-            this.checkTanPhu02.AutoSize = true;
-            this.checkTanPhu02.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.checkTanPhu02.Location = new System.Drawing.Point(744, 82);
-            this.checkTanPhu02.Name = "checkTanPhu02";
-            this.checkTanPhu02.Size = new System.Drawing.Size(139, 24);
-            this.checkTanPhu02.TabIndex = 41;
-            this.checkTanPhu02.TabStop = true;
-            this.checkTanPhu02.Text = "Tổ Tân Phú 02";
-            this.checkTanPhu02.UseVisualStyleBackColor = true;
-            // 
-            // checkTanPhu
-            // 
-            this.checkTanPhu.AutoSize = true;
-            this.checkTanPhu.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.checkTanPhu.Location = new System.Drawing.Point(582, 81);
-            this.checkTanPhu.Name = "checkTanPhu";
-            this.checkTanPhu.Size = new System.Drawing.Size(139, 24);
-            this.checkTanPhu.TabIndex = 40;
-            this.checkTanPhu.TabStop = true;
-            this.checkTanPhu.Text = "Tổ Tân Phú 01";
-            this.checkTanPhu.UseVisualStyleBackColor = true;
-            // 
-            // checkTanBinh2
-            // 
-            this.checkTanBinh2.AutoSize = true;
-            this.checkTanBinh2.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.checkTanBinh2.Location = new System.Drawing.Point(417, 82);
-            this.checkTanBinh2.Name = "checkTanBinh2";
-            this.checkTanBinh2.Size = new System.Drawing.Size(145, 24);
-            this.checkTanBinh2.TabIndex = 39;
-            this.checkTanBinh2.TabStop = true;
-            this.checkTanBinh2.Text = "Tổ Tân Bình 02";
-            this.checkTanBinh2.UseVisualStyleBackColor = true;
-            // 
-            // checkTanBinh1
-            // 
-            this.checkTanBinh1.AutoSize = true;
-            this.checkTanBinh1.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.checkTanBinh1.Location = new System.Drawing.Point(266, 82);
-            this.checkTanBinh1.Name = "checkTanBinh1";
-            this.checkTanBinh1.Size = new System.Drawing.Size(145, 24);
-            this.checkTanBinh1.TabIndex = 38;
-            this.checkTanBinh1.TabStop = true;
-            this.checkTanBinh1.Text = "Tổ Tân Bình 01";
-            this.checkTanBinh1.UseVisualStyleBackColor = true;
-            // 
-            // checkAll
-            // 
-            this.checkAll.AutoSize = true;
-            this.checkAll.Checked = true;
-            this.checkAll.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.checkAll.Location = new System.Drawing.Point(174, 82);
-            this.checkAll.Name = "checkAll";
-            this.checkAll.Size = new System.Drawing.Size(77, 24);
-            this.checkAll.TabIndex = 37;
-            this.checkAll.TabStop = true;
-            this.checkAll.Text = "Tất Cả";
-            this.checkAll.UseVisualStyleBackColor = true;
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX1.Location = new System.Drawing.Point(949, 45);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(148, 27);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 42;
+            this.buttonX1.Text = "ĐÁNH GIÁ";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click_1);
             // 
             // I_tab_BangChamCong
             // 
@@ -485,5 +501,6 @@
         private System.Windows.Forms.RadioButton checkTanBinh2;
         private System.Windows.Forms.RadioButton checkTanBinh1;
         private System.Windows.Forms.RadioButton checkAll;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }
