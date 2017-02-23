@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 24, 62.875" name="CapNuocTanHoa">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 24, 70.125" name="CapNuocTanHoa">
   <DataContextMoniker Name="/CapNuocTanHoaDataContext" />
   <nestedChildShapes>
     <classShape Id="b7f85d72-011f-4bb3-89e0-254372619ea2" absoluteBounds="9.75, 3.75, 2, 13.693585611979167">
@@ -302,7 +302,7 @@
         <classShapeMoniker Id="4a9e22d3-6053-4f65-90ea-999a93e8c186" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 30.6979077148438); (4.125 : 30.6979077148438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 30.6979077148438); (3.26041666666667 : 30.6979077148438 : JumpStart); (3.42708333333333 : 30.6979077148438 : JumpEnd); (3.82291666666667 : 30.6979077148438 : JumpStart); (3.98958333333333 : 30.6979077148438 : JumpEnd); (4.125 : 30.6979077148438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapNuocTanHoaDataContext/KTKS_YEUCAUDIEUCHINH/KTKS_YEUCAUDIEUCHINH_KTKS_THONGTINDINHMUC" />
       <nodes>
         <classShapeMoniker Id="47486ed6-b405-41ff-9480-b261be78b7a3" />
@@ -449,6 +449,12 @@
       <DataClassMoniker Name="/CapNuocTanHoaDataContext/TB_DC_CODHN" />
       <nestedChildShapes>
         <elementListCompartment Id="e4ce41fc-3492-4e25-b58e-fffe8fb79801" absoluteBounds="1.3900000000000001, 57.46, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="faf35a4f-3d8b-4634-99ed-765e75761074" absoluteBounds="3.75, 57.125, 2, 12.732078450520833">
+      <DataClassMoniker Name="/CapNuocTanHoaDataContext/TB_BANGCHAMCONG_DANHGIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="543d6411-7091-4d5c-9633-1ef0d19857c9" absoluteBounds="3.7649999999999997, 57.585, 1.9700000000000002, 12.172078450520832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

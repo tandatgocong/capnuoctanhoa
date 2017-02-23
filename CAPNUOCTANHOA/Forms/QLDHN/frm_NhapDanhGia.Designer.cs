@@ -160,6 +160,7 @@
             this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.txtDiemCuoiKy = new System.Windows.Forms.TextBox();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n1_F3S)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n1_F2S)).BeginInit();
@@ -221,7 +222,7 @@
             this.buttonX1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonX1.Location = new System.Drawing.Point(675, 617);
+            this.buttonX1.Location = new System.Drawing.Point(731, 617);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(107, 27);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -417,6 +418,7 @@
             // 
             this.t1_F3D.Location = new System.Drawing.Point(234, 109);
             this.t1_F3D.Name = "t1_F3D";
+            this.t1_F3D.ReadOnly = true;
             this.t1_F3D.Size = new System.Drawing.Size(71, 27);
             this.t1_F3D.TabIndex = 138;
             this.t1_F3D.Text = "0";
@@ -426,6 +428,7 @@
             // 
             this.t1_F2D.Location = new System.Drawing.Point(234, 79);
             this.t1_F2D.Name = "t1_F2D";
+            this.t1_F2D.ReadOnly = true;
             this.t1_F2D.Size = new System.Drawing.Size(71, 27);
             this.t1_F2D.TabIndex = 138;
             this.t1_F2D.Text = "0";
@@ -434,6 +437,7 @@
             // 
             this.t1_F1D.Location = new System.Drawing.Point(234, 48);
             this.t1_F1D.Name = "t1_F1D";
+            this.t1_F1D.ReadOnly = true;
             this.t1_F1D.Size = new System.Drawing.Size(71, 27);
             this.t1_F1D.TabIndex = 138;
             this.t1_F1D.Text = "0";
@@ -591,6 +595,7 @@
             // 
             this.dks3.Location = new System.Drawing.Point(234, 118);
             this.dks3.Name = "dks3";
+            this.dks3.ReadOnly = true;
             this.dks3.Size = new System.Drawing.Size(71, 27);
             this.dks3.TabIndex = 138;
             this.dks3.Text = "0";
@@ -600,6 +605,7 @@
             // 
             this.dks2.Location = new System.Drawing.Point(234, 88);
             this.dks2.Name = "dks2";
+            this.dks2.ReadOnly = true;
             this.dks2.Size = new System.Drawing.Size(71, 27);
             this.dks2.TabIndex = 138;
             this.dks2.Text = "0";
@@ -608,6 +614,7 @@
             // 
             this.dks1.Location = new System.Drawing.Point(234, 57);
             this.dks1.Name = "dks1";
+            this.dks1.ReadOnly = true;
             this.dks1.Size = new System.Drawing.Size(71, 27);
             this.dks1.TabIndex = 138;
             this.dks1.Text = "0";
@@ -776,6 +783,7 @@
             // 
             this.sNgung3.Location = new System.Drawing.Point(234, 118);
             this.sNgung3.Name = "sNgung3";
+            this.sNgung3.ReadOnly = true;
             this.sNgung3.Size = new System.Drawing.Size(71, 27);
             this.sNgung3.TabIndex = 138;
             this.sNgung3.Text = "0";
@@ -785,6 +793,7 @@
             // 
             this.sNgung2.Location = new System.Drawing.Point(234, 88);
             this.sNgung2.Name = "sNgung2";
+            this.sNgung2.ReadOnly = true;
             this.sNgung2.Size = new System.Drawing.Size(71, 27);
             this.sNgung2.TabIndex = 138;
             this.sNgung2.Text = "0";
@@ -794,6 +803,7 @@
             // 
             this.sNgung1.Location = new System.Drawing.Point(234, 57);
             this.sNgung1.Name = "sNgung1";
+            this.sNgung1.ReadOnly = true;
             this.sNgung1.Size = new System.Drawing.Size(71, 27);
             this.sNgung1.TabIndex = 138;
             this.sNgung1.Text = "0";
@@ -915,6 +925,7 @@
             // 
             this.dcdiem.Location = new System.Drawing.Point(234, 40);
             this.dcdiem.Name = "dcdiem";
+            this.dcdiem.ReadOnly = true;
             this.dcdiem.Size = new System.Drawing.Size(71, 27);
             this.dcdiem.TabIndex = 138;
             this.dcdiem.Text = "0";
@@ -963,7 +974,7 @@
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(140, 25);
             this.labelX6.TabIndex = 130;
-            this.labelX6.Text = "4. DỨT CHÌ";
+            this.labelX6.Text = "4. ĐỨT CHÌ";
             // 
             // groupBox5
             // 
@@ -1015,6 +1026,7 @@
             // 
             this.khdiem2.Location = new System.Drawing.Point(234, 94);
             this.khdiem2.Name = "khdiem2";
+            this.khdiem2.ReadOnly = true;
             this.khdiem2.Size = new System.Drawing.Size(71, 27);
             this.khdiem2.TabIndex = 138;
             this.khdiem2.Text = "0";
@@ -1023,6 +1035,7 @@
             // 
             this.khdiem1.Location = new System.Drawing.Point(234, 61);
             this.khdiem1.Name = "khdiem1";
+            this.khdiem1.ReadOnly = true;
             this.khdiem1.Size = new System.Drawing.Size(71, 27);
             this.khdiem1.TabIndex = 138;
             this.khdiem1.Text = "0";
@@ -1110,6 +1123,7 @@
             // 
             this.gianlandiem.Location = new System.Drawing.Point(234, 59);
             this.gianlandiem.Name = "gianlandiem";
+            this.gianlandiem.ReadOnly = true;
             this.gianlandiem.Size = new System.Drawing.Size(71, 27);
             this.gianlandiem.TabIndex = 138;
             this.gianlandiem.Text = "0";
@@ -1242,6 +1256,7 @@
             // 
             this.doidiem.Location = new System.Drawing.Point(234, 92);
             this.doidiem.Name = "doidiem";
+            this.doidiem.ReadOnly = true;
             this.doidiem.Size = new System.Drawing.Size(71, 27);
             this.doidiem.TabIndex = 138;
             this.doidiem.Text = "0";
@@ -1250,6 +1265,7 @@
             // 
             this.todiem.Location = new System.Drawing.Point(234, 59);
             this.todiem.Name = "todiem";
+            this.todiem.ReadOnly = true;
             this.todiem.Size = new System.Drawing.Size(71, 27);
             this.todiem.TabIndex = 138;
             this.todiem.Text = "0";
@@ -1354,6 +1370,7 @@
             // 
             this.diemdocsai.Location = new System.Drawing.Point(234, 59);
             this.diemdocsai.Name = "diemdocsai";
+            this.diemdocsai.ReadOnly = true;
             this.diemdocsai.Size = new System.Drawing.Size(71, 27);
             this.diemdocsai.TabIndex = 138;
             this.diemdocsai.Text = "0";
@@ -1451,10 +1468,9 @@
             // 
             this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonX2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonX2.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonX2.Location = new System.Drawing.Point(488, 617);
+            this.buttonX2.Location = new System.Drawing.Point(464, 617);
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(121, 27);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -1471,6 +1487,20 @@
             this.txtDiemCuoiKy.Size = new System.Drawing.Size(96, 27);
             this.txtDiemCuoiKy.TabIndex = 138;
             this.txtDiemCuoiKy.Text = "0";
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX3.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX3.Location = new System.Drawing.Point(591, 617);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(121, 27);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX3.TabIndex = 123;
+            this.buttonX3.Text = "IN";
+            this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
             // 
             // frm_NhapDanhGia
             // 
@@ -1496,6 +1526,7 @@
             this.Controls.Add(this.cbNhanVien);
             this.Controls.Add(this.labelX5);
             this.Controls.Add(this.buttonX1);
+            this.Controls.Add(this.buttonX3);
             this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.btTinhDiem);
             this.Controls.Add(this.title);
@@ -1679,6 +1710,7 @@
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel2;
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private System.Windows.Forms.TextBox txtDiemCuoiKy;
+        private DevComponents.DotNetBar.ButtonX buttonX3;
 
     }
 }

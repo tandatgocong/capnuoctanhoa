@@ -1392,6 +1392,72 @@
       <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TB_BANGCHAMCONG_DANHGIA" Member="TB_BANGCHAMCONG_DANHGIAs">
+    <Type Name="TB_BANGCHAMCONG_DANHGIA">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MAYDS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KY" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TODS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[1_F1S]" Member="_1_F1S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[1_F1D]" Member="_1_F1D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[1_F2S]" Member="_1_F2S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[1_F2D]" Member="_1_F2D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[1_F3S]" Member="_1_F3S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[1_F3D]" Member="_1_F3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[1_FTONG]" Member="_1_FTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[2_NF1S]" Member="_2_NF1S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2_N1P]" Member="_2_N1P" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[2_N1D]" Member="_2_N1D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2_N2S]" Member="_2_N2S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2_N2P]" Member="_2_N2P" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[2_N2D]" Member="_2_N2D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2_N3S]" Member="_2_N3S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2_N3P]" Member="_2_N3P" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[2_N3D]" Member="_2_N3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2_NTONG]" Member="_2_NTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[3_K1S]" Member="_3_K1S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3_K1P]" Member="_3_K1P" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[3_K1D]" Member="_3_K1D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3_K2S]" Member="_3_K2S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3_K2P]" Member="_3_K2P" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[3_K2D]" Member="_3_K2D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3_K3S]" Member="_3_K3S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3_K3P]" Member="_3_K3P" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[3_K3D]" Member="_3_K3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3_KTONG]" Member="_3_KTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[4_DS]" Member="_4_DS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[4_DD]" Member="_4_DD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[4_DTONG]" Member="_4_DTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[5_TCKGT]" Member="_5_TCKGT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[5_SLKGT]" Member="_5_SLKGT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[5_SLGT]" Member="_5_SLGT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[5_DGT]" Member="_5_DGT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[5_KNTONG]" Member="_5_KNTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[6_KTC]" Member="_6_KTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[6_DKTC]" Member="_6_DKTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[6_TCTONG]" Member="_6_TCTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[7_GLC]" Member="_7_GLC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[7_GLTC]" Member="_7_GLTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[7_GLTONG]" Member="_7_GLTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[8_TNN]" Member="_8_TNN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[8_TNNS]" Member="_8_TNNS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[8_DNN]" Member="_8_DNN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[8_DNNS]" Member="_8_DNNS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[8_NNTONG]" Member="_8_NNTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[9_DSCS]" Member="_9_DSCS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[9_DSCSS]" Member="_9_DSCSS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[9_DSTONG]" Member="_9_DSTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[10_TONG]" Member="_10_TONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TONGDIEM" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.THONGKEDHN" Method="THONGKEDHN">
     <Parameter Name="KY" Parameter="kY" Type="System.Int32" DbType="Int" />
     <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />

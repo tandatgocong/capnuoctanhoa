@@ -767,6 +767,57 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             db.SubmitChanges();
             return result;
         }
+      
+        public static void InsertDanhGia(TB_BANGCHAMCONG_DANHGIA tb)
+        {
+            try
+            {
+                db = new CapNuocTanHoaDataContext();
+                db.TB_BANGCHAMCONG_DANHGIAs.InsertOnSubmit(tb);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+        public static TB_BANGCHAMCONG_DANHGIA finByChamCongDanhGia(int ky, int nam, int nv)
+        {
+            try
+            {
+                db = new CapNuocTanHoaDataContext();
+                var query = from q in db.TB_BANGCHAMCONG_DANHGIAs where q.KY == ky && q.NAM==nam && q.MAYDS==nv select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
+        public static DataSet reportDanhGia(string nam, int ky, int tods)
+        {
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Open)
+            {
+                db.Connection.Close();
+            }
+            db.Connection.Open();
+            string query = "SELECT * FROM TB_BANGCHAMCONG_DANHGIA WHERE TODS='" + tods + "' and KY='" + ky + "' and NAM='" + nam + "' ORDER BY ID ASC ";
+
+            if (tods == 0)
+            {
+                query = "SELECT * FROM TB_BANGCHAMCONG_DANHGIA  ORDER BY ID ASC ";
+            }
+
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_BANGCHAMCONG_DANHGIA");
+
+            return ds;
+        }
+
 
     }
 }
