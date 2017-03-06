@@ -138,6 +138,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                     dataGrid.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Yellow;
                 }
+                
+                string sql2 = "  SELECT N'BK SỐ ' +  CAST(SOBANGKE AS VARCHAR) + ' NGÀY '  +CONVERT(VARCHAR(20),NGAYBAO,103) FROM  TB_TLKDUTCHI  WHERE  DANHBO='" + (dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "' AND [TYPE]='0' AND YEAR(NGAYBAO) BETWEEN ( YEAR(GETDATE())-1) AND YEAR(GETDATE())  ORDER BY NGAYBAO DESC";
+                table = DAL.LinQConnection.getDataTable(sql2);
+
+                if (table.Rows.Count > 0)
+                {
+                    dataGrid.Rows[i].Cells["BAOTHAY"].Value += "" + table.Rows[0][0];
+
+                    dataGrid.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Yellow;
+                }
+
                 //else {
                 //    tb.Rows.RemoveAt(i);
                 //}
@@ -199,6 +210,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
         }
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_KiemTraThayDinhKy).Name);
+       
         private void dafaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try

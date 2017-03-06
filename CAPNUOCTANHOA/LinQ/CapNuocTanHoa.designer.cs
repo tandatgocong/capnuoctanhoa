@@ -29428,7 +29428,7 @@ namespace CAPNUOCTANHOA.LinQ
 		
 		private string @__10_TONG;
 		
-		private string _TONGDIEM;
+		private string _DIEMCUOIKY;
 		
 		private System.Nullable<System.DateTime> _CREATEDATE;
 		
@@ -29556,8 +29556,8 @@ namespace CAPNUOCTANHOA.LinQ
     partial void On_9_DSTONGChanged();
     partial void On_10_TONGChanging(string value);
     partial void On_10_TONGChanged();
-    partial void OnTONGDIEMChanging(string value);
-    partial void OnTONGDIEMChanged();
+    partial void OnDIEMCUOIKYChanging(string value);
+    partial void OnDIEMCUOIKYChanged();
     partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
     partial void OnCREATEDATEChanged();
     partial void OnCREATEBYChanging(string value);
@@ -30713,22 +30713,22 @@ namespace CAPNUOCTANHOA.LinQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGDIEM", DbType="VarChar(20)")]
-		public string TONGDIEM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIEMCUOIKY", DbType="VarChar(20)")]
+		public string DIEMCUOIKY
 		{
 			get
 			{
-				return this._TONGDIEM;
+				return this._DIEMCUOIKY;
 			}
 			set
 			{
-				if ((this._TONGDIEM != value))
+				if ((this._DIEMCUOIKY != value))
 				{
-					this.OnTONGDIEMChanging(value);
+					this.OnDIEMCUOIKYChanging(value);
 					this.SendPropertyChanging();
-					this._TONGDIEM = value;
-					this.SendPropertyChanged("TONGDIEM");
-					this.OnTONGDIEMChanged();
+					this._DIEMCUOIKY = value;
+					this.SendPropertyChanged("DIEMCUOIKY");
+					this.OnDIEMCUOIKYChanged();
 				}
 			}
 		}

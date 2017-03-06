@@ -41,6 +41,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.dateKd = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.ngayKD = new System.Windows.Forms.CheckBox();
             this.txtLoaiBo = new System.Windows.Forms.TextBox();
@@ -48,6 +49,8 @@
             this.cbDot = new System.Windows.Forms.ComboBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.lbTongDHN = new DevComponents.DotNetBar.LabelX();
+            this.next = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btXemThongTin = new DevComponents.DotNetBar.ButtonX();
             this.cbHieuDongHo = new System.Windows.Forms.ComboBox();
@@ -73,19 +76,16 @@
             this.CODHN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BAOTHAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.next = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dafaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateKd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -124,6 +124,20 @@
             this.splitContainer1.Size = new System.Drawing.Size(1238, 657);
             this.splitContainer1.SplitterDistance = 123;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonX1.Location = new System.Drawing.Point(1067, 57);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(157, 27);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 715;
+            this.buttonX1.Text = "TRỞ NGẠI";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // dateKd
             // 
@@ -250,6 +264,30 @@
             this.lbTongDHN.Name = "lbTongDHN";
             this.lbTongDHN.Size = new System.Drawing.Size(223, 19);
             this.lbTongDHN.TabIndex = 1;
+            // 
+            // next
+            // 
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Last;
+            this.next.Location = new System.Drawing.Point(951, 98);
+            this.next.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(20, 18);
+            this.next.TabIndex = 706;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::CAPNUOCTANHOA.Properties.Resources.First;
+            this.pictureBox2.Location = new System.Drawing.Point(891, 97);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 19);
+            this.pictureBox2.TabIndex = 707;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // labelX1
             // 
@@ -560,45 +598,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dafaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(169, 26);
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX1.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonX1.Location = new System.Drawing.Point(1067, 57);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(157, 27);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX1.TabIndex = 715;
-            this.buttonX1.Text = "TRỞ NGẠI";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // next
-            // 
-            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.next.Image = global::CAPNUOCTANHOA.Properties.Resources.Last;
-            this.next.Location = new System.Drawing.Point(951, 98);
-            this.next.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(20, 18);
-            this.next.TabIndex = 706;
-            this.next.TabStop = false;
-            this.next.Click += new System.EventHandler(this.next_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::CAPNUOCTANHOA.Properties.Resources.First;
-            this.pictureBox2.Location = new System.Drawing.Point(891, 97);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 19);
-            this.pictureBox2.TabIndex = 707;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(169, 48);
             // 
             // dafaToolStripMenuItem
             // 
@@ -625,11 +625,11 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateKd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -647,7 +647,6 @@
         private DevComponents.DotNetBar.ButtonX btXemThongTin;
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem dafaToolStripMenuItem;
         private System.Windows.Forms.Label lbPaing;
         private System.Windows.Forms.PictureBox next;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -673,5 +672,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CODHN;
         private System.Windows.Forms.DataGridViewTextBoxColumn BAOTHAY;
         private DevComponents.DotNetBar.ButtonX buttonX1;
+        private System.Windows.Forms.ToolStripMenuItem dafaToolStripMenuItem;
     }
 }

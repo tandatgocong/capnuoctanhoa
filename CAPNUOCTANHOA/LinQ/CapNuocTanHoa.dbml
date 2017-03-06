@@ -1451,7 +1451,7 @@
       <Column Name="[9_DSCSS]" Member="_9_DSCSS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="[9_DSTONG]" Member="_9_DSTONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="[10_TONG]" Member="_10_TONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="TONGDIEM" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DIEMCUOIKY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />

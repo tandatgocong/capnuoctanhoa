@@ -204,7 +204,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     this.tongdocsai.Text = dgg._9_DSTONG;
                     ////////
                     this.diemnangxuat10.Text = dgg._10_TONG;
-                    this.txtDiemCuoiKy.Text = dgg.TONGDIEM;
+                    this.txtDiemCuoiKy.Text = dgg.DIEMCUOIKY;
                 }
                 else
                 {
@@ -312,7 +312,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 ////////
                 dg._10_TONG = this.diemnangxuat10.Text;
 
-                dg.TONGDIEM = this.txtDiemCuoiKy.Text;
+                dg.DIEMCUOIKY = this.txtDiemCuoiKy.Text;
 
                 dg.CREATEBY = DAL.SYS.C_USERS._userName;
                 dg.CREATEDATE = DateTime.Now.Date;

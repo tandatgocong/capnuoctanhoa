@@ -56,14 +56,14 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB.Tab
                 gioihan = gioihan.Replace("DANHBO", "DHN_DANHBO");
 
                 sql = "SELECT COUNT(DISTINCT (convert(varchar(20),DHN_SOBANGKE)+'-'+DHN_TODS)) AS 'TONG',COUNT(*) AS 'SOLUONGTHAY' ";
-                sql += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='True' then 1 else null end)) AS 'CHUAGAN'";
-                sql += " ,count(case when HCT_TRONGAI ='False' then 1 else null end) AS 'HOANTAT' ";
+                sql += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) ) AS 'CHUAGAN' ";
+                sql += " ,(COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) - COUNT(case when HCT_TRONGAI ='True' then 1 else null end))  AS 'HOANTAT' ";
                 sql += " ,count(case when HCT_TRONGAI ='True' then 1 else null end) AS 'TRONGAI' ";
                 sql += " FROM TB_THAYDHN WHERE DHN_DANHBO IS NOT NULL " + gioihan;
 
                 string sql_detail = "SELECT (DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) AS 'TENBK',DHN_LOAIBANGKE,COUNT(*) AS 'SOLUONGTHAY' ";
-                sql_detail += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end)+COUNT(case when HCT_TRONGAI ='True' then 1 else null end)) AS 'CHUAGAN'";
-                sql_detail += " ,count(case when HCT_TRONGAI ='False' then 1 else null end) AS 'HOANTAT' ";
+                sql_detail += " ,COUNT(*) - (COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) ) AS 'CHUAGAN' ";
+                sql_detail += " ,(COUNT(case when HCT_NGAYGAN IS NOT NULL then 1 else null end) - COUNT(case when HCT_TRONGAI ='True' then 1 else null end))  AS 'HOANTAT' ";
                 sql_detail += " ,count(case when HCT_TRONGAI ='True' then 1 else null end) AS 'TRONGAI' ";
                 sql_detail += " FROM TB_THAYDHN WHERE DHN_DANHBO IS NOT NULL " + gioihan;
 

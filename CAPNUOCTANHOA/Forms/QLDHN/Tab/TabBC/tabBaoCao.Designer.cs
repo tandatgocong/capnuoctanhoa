@@ -4406,7 +4406,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             private global::System.Data.DataColumn column10_TONG;
             
-            private global::System.Data.DataColumn columnTONGDIEM;
+            private global::System.Data.DataColumn columnDIEMCUOIKY;
             
             private global::System.Data.DataColumn columnCREATEDATE;
             
@@ -4907,9 +4907,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TONGDIEMColumn {
+            public global::System.Data.DataColumn DIEMCUOIKYColumn {
                 get {
-                    return this.columnTONGDIEM;
+                    return this.columnDIEMCUOIKY;
                 }
             }
             
@@ -5039,7 +5039,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                         int _9_DSCSS, 
                         string _9_DSTONG, 
                         string _10_TONG, 
-                        string TONGDIEM, 
+                        string DIEMCUOIKY, 
                         System.DateTime CREATEDATE, 
                         string CREATEBY, 
                         System.DateTime MODIFYDATE, 
@@ -5103,7 +5103,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                         _9_DSCSS,
                         _9_DSTONG,
                         _10_TONG,
-                        TONGDIEM,
+                        DIEMCUOIKY,
                         CREATEDATE,
                         CREATEBY,
                         MODIFYDATE,
@@ -5196,7 +5196,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                 this.column9_DSCSS = base.Columns["9_DSCSS"];
                 this.column9_DSTONG = base.Columns["9_DSTONG"];
                 this.column10_TONG = base.Columns["10_TONG"];
-                this.columnTONGDIEM = base.Columns["TONGDIEM"];
+                this.columnDIEMCUOIKY = base.Columns["DIEMCUOIKY"];
                 this.columnCREATEDATE = base.Columns["CREATEDATE"];
                 this.columnCREATEBY = base.Columns["CREATEBY"];
                 this.columnMODIFYDATE = base.Columns["MODIFYDATE"];
@@ -5420,8 +5420,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                 this.column10_TONG.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column10_TONG");
                 this.column10_TONG.ExtendedProperties.Add("Generator_UserColumnName", "10_TONG");
                 base.Columns.Add(this.column10_TONG);
-                this.columnTONGDIEM = new global::System.Data.DataColumn("TONGDIEM", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTONGDIEM);
+                this.columnDIEMCUOIKY = new global::System.Data.DataColumn("DIEMCUOIKY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIEMCUOIKY);
                 this.columnCREATEDATE = new global::System.Data.DataColumn("CREATEDATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCREATEDATE);
                 this.columnCREATEBY = new global::System.Data.DataColumn("CREATEBY", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5454,7 +5454,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                 this.column8_NNTONG.MaxLength = 20;
                 this.column9_DSTONG.MaxLength = 20;
                 this.column10_TONG.MaxLength = 20;
-                this.columnTONGDIEM.MaxLength = 20;
+                this.columnDIEMCUOIKY.MaxLength = 20;
                 this.columnCREATEBY.MaxLength = 100;
                 this.columnMODIFYBY.MaxLength = 100;
             }
@@ -10435,17 +10435,17 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TONGDIEM {
+            public string DIEMCUOIKY {
                 get {
                     try {
-                        return ((string)(this[this.tableTB_BANGCHAMCONG_DANHGIA.TONGDIEMColumn]));
+                        return ((string)(this[this.tableTB_BANGCHAMCONG_DANHGIA.DIEMCUOIKYColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TONGDIEM\' in table \'TB_BANGCHAMCONG_DANHGIA\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DIEMCUOIKY\' in table \'TB_BANGCHAMCONG_DANHGIA\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTB_BANGCHAMCONG_DANHGIA.TONGDIEMColumn] = value;
+                    this[this.tableTB_BANGCHAMCONG_DANHGIA.DIEMCUOIKYColumn] = value;
                 }
             }
             
@@ -11151,14 +11151,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTONGDIEMNull() {
-                return this.IsNull(this.tableTB_BANGCHAMCONG_DANHGIA.TONGDIEMColumn);
+            public bool IsDIEMCUOIKYNull() {
+                return this.IsNull(this.tableTB_BANGCHAMCONG_DANHGIA.DIEMCUOIKYColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTONGDIEMNull() {
-                this[this.tableTB_BANGCHAMCONG_DANHGIA.TONGDIEMColumn] = global::System.Convert.DBNull;
+            public void SetDIEMCUOIKYNull() {
+                this[this.tableTB_BANGCHAMCONG_DANHGIA.DIEMCUOIKYColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18017,7 +18017,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
             tableMapping.ColumnMappings.Add("9_DSCSS", "9_DSCSS");
             tableMapping.ColumnMappings.Add("9_DSTONG", "9_DSTONG");
             tableMapping.ColumnMappings.Add("10_TONG", "10_TONG");
-            tableMapping.ColumnMappings.Add("TONGDIEM", "TONGDIEM");
+            tableMapping.ColumnMappings.Add("DIEMCUOIKY", "DIEMCUOIKY");
             tableMapping.ColumnMappings.Add("CREATEDATE", "CREATEDATE");
             tableMapping.ColumnMappings.Add("CREATEBY", "CREATEBY");
             tableMapping.ColumnMappings.Add("MODIFYDATE", "MODIFYDATE");
@@ -18064,13 +18064,13 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                 "AND [8_NNTONG] IS NULL) OR ([8_NNTONG] = @p137)) AND ((@p141 = 1 AND [9_DSCS] IS" +
                 " NULL) OR ([9_DSCS] = @p140)) AND ((@p144 = 1 AND [9_DSCSS] IS NULL) OR ([9_DSCS" +
                 "S] = @p143)) AND ((@p147 = 1 AND [9_DSTONG] IS NULL) OR ([9_DSTONG] = @p146)) AN" +
-                "D ((@p150 = 1 AND [10_TONG] IS NULL) OR ([10_TONG] = @p149)) AND ((@IsNull_TONGD" +
-                "IEM = 1 AND [TONGDIEM] IS NULL) OR ([TONGDIEM] = @Original_TONGDIEM)) AND ((@IsN" +
-                "ull_CREATEDATE = 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Original_CREATE" +
-                "DATE)) AND ((@IsNull_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Orig" +
-                "inal_CREATEBY)) AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODI" +
-                "FYDATE] = @Original_MODIFYDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NU" +
-                "LL) OR ([MODIFYBY] = @Original_MODIFYBY)))";
+                "D ((@p150 = 1 AND [10_TONG] IS NULL) OR ([10_TONG] = @p149)) AND ((@IsNull_DIEMC" +
+                "UOIKY = 1 AND [DIEMCUOIKY] IS NULL) OR ([DIEMCUOIKY] = @Original_DIEMCUOIKY)) AN" +
+                "D ((@IsNull_CREATEDATE = 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Origina" +
+                "l_CREATEDATE)) AND ((@IsNull_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY]" +
+                " = @Original_CREATEBY)) AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) O" +
+                "R ([MODIFYDATE] = @Original_MODIFYDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYB" +
+                "Y] IS NULL) OR ([MODIFYBY] = @Original_MODIFYBY)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MAYDS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAYDS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -18178,8 +18178,8 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p146", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "9_DSTONG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p150", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "10_TONG", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p149", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "10_TONG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TONGDIEM", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TONGDIEM", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TONGDIEM", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TONGDIEM", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DIEMCUOIKY", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEMCUOIKY", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIEMCUOIKY", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEMCUOIKY", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CREATEDATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CREATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CREATEBY", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEBY", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -18197,21 +18197,21 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                 "P], [3_K3D], [3_KTONG], [4_DS], [4_DD], [4_DTONG], [5_TCKGT], [5_SLKGT], [5_SLGT" +
                 "], [5_DGT], [5_KNTONG], [6_KTC], [6_DKTC], [6_TCTONG], [7_GLC], [7_GLTC], [7_GLT" +
                 "ONG], [8_TNN], [8_TNNS], [8_DNN], [8_DNNS], [8_NNTONG], [9_DSCS], [9_DSCSS], [9_" +
-                "DSTONG], [10_TONG], [TONGDIEM], [CREATEDATE], [CREATEBY], [MODIFYDATE], [MODIFYB" +
-                "Y]) VALUES (@MAYDS, @KY, @NAM, @TODS, @NAME, @FULLNAME, @p1, @p4, @p7, @p10, @p1" +
-                "3, @p16, @p19, @p22, @p25, @p28, @p31, @p34, @p37, @p40, @p43, @p46, @p49, @p52," +
-                " @p55, @p58, @p61, @p64, @p67, @p70, @p73, @p76, @p79, @p82, @p85, @p88, @p91, @" +
-                "p94, @p97, @p100, @p103, @p106, @p109, @p112, @p115, @p118, @p121, @p124, @p127," +
-                " @p130, @p133, @p136, @p139, @p142, @p145, @p148, @TONGDIEM, @CREATEDATE, @CREAT" +
-                "EBY, @MODIFYDATE, @MODIFYBY);\r\nSELECT ID, MAYDS, KY, NAM, TODS, NAME, FULLNAME, " +
-                "[1_F1S], [1_F1D], [1_F2S], [1_F2D], [1_F3S], [1_F3D], [1_FTONG], [2_NF1S], [2_N1" +
-                "P], [2_N1D], [2_N2S], [2_N2P], [2_N2D], [2_N3S], [2_N3P], [2_N3D], [2_NTONG], [3" +
-                "_K1S], [3_K1P], [3_K1D], [3_K2S], [3_K2P], [3_K2D], [3_K3S], [3_K3P], [3_K3D], [" +
-                "3_KTONG], [4_DS], [4_DD], [4_DTONG], [5_TCKGT], [5_SLKGT], [5_SLGT], [5_DGT], [5" +
-                "_KNTONG], [6_KTC], [6_DKTC], [6_TCTONG], [7_GLC], [7_GLTC], [7_GLTONG], [8_TNN]," +
-                " [8_TNNS], [8_DNN], [8_DNNS], [8_NNTONG], [9_DSCS], [9_DSCSS], [9_DSTONG], [10_T" +
-                "ONG], TONGDIEM, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM TB_BANGCHAMCONG_" +
-                "DANHGIA WHERE (KY = @KY) AND (MAYDS = @MAYDS) AND (NAM = @NAM)";
+                "DSTONG], [10_TONG], [DIEMCUOIKY], [CREATEDATE], [CREATEBY], [MODIFYDATE], [MODIF" +
+                "YBY]) VALUES (@MAYDS, @KY, @NAM, @TODS, @NAME, @FULLNAME, @p1, @p4, @p7, @p10, @" +
+                "p13, @p16, @p19, @p22, @p25, @p28, @p31, @p34, @p37, @p40, @p43, @p46, @p49, @p5" +
+                "2, @p55, @p58, @p61, @p64, @p67, @p70, @p73, @p76, @p79, @p82, @p85, @p88, @p91," +
+                " @p94, @p97, @p100, @p103, @p106, @p109, @p112, @p115, @p118, @p121, @p124, @p12" +
+                "7, @p130, @p133, @p136, @p139, @p142, @p145, @p148, @DIEMCUOIKY, @CREATEDATE, @C" +
+                "REATEBY, @MODIFYDATE, @MODIFYBY);\r\nSELECT ID, MAYDS, KY, NAM, TODS, NAME, FULLNA" +
+                "ME, [1_F1S], [1_F1D], [1_F2S], [1_F2D], [1_F3S], [1_F3D], [1_FTONG], [2_NF1S], [" +
+                "2_N1P], [2_N1D], [2_N2S], [2_N2P], [2_N2D], [2_N3S], [2_N3P], [2_N3D], [2_NTONG]" +
+                ", [3_K1S], [3_K1P], [3_K1D], [3_K2S], [3_K2P], [3_K2D], [3_K3S], [3_K3P], [3_K3D" +
+                "], [3_KTONG], [4_DS], [4_DD], [4_DTONG], [5_TCKGT], [5_SLKGT], [5_SLGT], [5_DGT]" +
+                ", [5_KNTONG], [6_KTC], [6_DKTC], [6_TCTONG], [7_GLC], [7_GLTC], [7_GLTONG], [8_T" +
+                "NN], [8_TNNS], [8_DNN], [8_DNNS], [8_NNTONG], [9_DSCS], [9_DSCSS], [9_DSTONG], [" +
+                "10_TONG], DIEMCUOIKY, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM TB_BANGCHA" +
+                "MCONG_DANHGIA WHERE (KY = @KY) AND (MAYDS = @MAYDS) AND (NAM = @NAM)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAYDS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAYDS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KY", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18269,7 +18269,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p142", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "9_DSCSS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p145", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "9_DSTONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p148", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "10_TONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TONGDIEM", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TONGDIEM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIEMCUOIKY", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEMCUOIKY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREATEBY", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEBY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MODIFYDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MODIFYDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18288,62 +18288,62 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                 "TC] = @p106, [6_DKTC] = @p109, [6_TCTONG] = @p112, [7_GLC] = @p115, [7_GLTC] = @" +
                 "p118, [7_GLTONG] = @p121, [8_TNN] = @p124, [8_TNNS] = @p127, [8_DNN] = @p130, [8" +
                 "_DNNS] = @p133, [8_NNTONG] = @p136, [9_DSCS] = @p139, [9_DSCSS] = @p142, [9_DSTO" +
-                "NG] = @p145, [10_TONG] = @p148, [TONGDIEM] = @TONGDIEM, [CREATEDATE] = @CREATEDA" +
-                "TE, [CREATEBY] = @CREATEBY, [MODIFYDATE] = @MODIFYDATE, [MODIFYBY] = @MODIFYBY W" +
-                "HERE (([ID] = @Original_ID) AND ([MAYDS] = @Original_MAYDS) AND ([KY] = @Origina" +
-                "l_KY) AND ([NAM] = @Original_NAM) AND ((@IsNull_TODS = 1 AND [TODS] IS NULL) OR " +
-                "([TODS] = @Original_TODS)) AND ((@p3 = 1 AND [1_F1S] IS NULL) OR ([1_F1S] = @p2)" +
-                ") AND ((@p6 = 1 AND [1_F1D] IS NULL) OR ([1_F1D] = @p5)) AND ((@p9 = 1 AND [1_F2" +
-                "S] IS NULL) OR ([1_F2S] = @p8)) AND ((@p12 = 1 AND [1_F2D] IS NULL) OR ([1_F2D] " +
-                "= @p11)) AND ((@p15 = 1 AND [1_F3S] IS NULL) OR ([1_F3S] = @p14)) AND ((@p18 = 1" +
-                " AND [1_F3D] IS NULL) OR ([1_F3D] = @p17)) AND ((@p21 = 1 AND [1_FTONG] IS NULL)" +
-                " OR ([1_FTONG] = @p20)) AND ((@p24 = 1 AND [2_NF1S] IS NULL) OR ([2_NF1S] = @p23" +
-                ")) AND ((@p27 = 1 AND [2_N1P] IS NULL) OR ([2_N1P] = @p26)) AND ((@p30 = 1 AND [" +
-                "2_N1D] IS NULL) OR ([2_N1D] = @p29)) AND ((@p33 = 1 AND [2_N2S] IS NULL) OR ([2_" +
-                "N2S] = @p32)) AND ((@p36 = 1 AND [2_N2P] IS NULL) OR ([2_N2P] = @p35)) AND ((@p3" +
-                "9 = 1 AND [2_N2D] IS NULL) OR ([2_N2D] = @p38)) AND ((@p42 = 1 AND [2_N3S] IS NU" +
-                "LL) OR ([2_N3S] = @p41)) AND ((@p45 = 1 AND [2_N3P] IS NULL) OR ([2_N3P] = @p44)" +
-                ") AND ((@p48 = 1 AND [2_N3D] IS NULL) OR ([2_N3D] = @p47)) AND ((@p51 = 1 AND [2" +
-                "_NTONG] IS NULL) OR ([2_NTONG] = @p50)) AND ((@p54 = 1 AND [3_K1S] IS NULL) OR (" +
-                "[3_K1S] = @p53)) AND ((@p57 = 1 AND [3_K1P] IS NULL) OR ([3_K1P] = @p56)) AND ((" +
-                "@p60 = 1 AND [3_K1D] IS NULL) OR ([3_K1D] = @p59)) AND ((@p63 = 1 AND [3_K2S] IS" +
-                " NULL) OR ([3_K2S] = @p62)) AND ((@p66 = 1 AND [3_K2P] IS NULL) OR ([3_K2P] = @p" +
-                "65)) AND ((@p69 = 1 AND [3_K2D] IS NULL) OR ([3_K2D] = @p68)) AND ((@p72 = 1 AND" +
-                " [3_K3S] IS NULL) OR ([3_K3S] = @p71)) AND ((@p75 = 1 AND [3_K3P] IS NULL) OR ([" +
-                "3_K3P] = @p74)) AND ((@p78 = 1 AND [3_K3D] IS NULL) OR ([3_K3D] = @p77)) AND ((@" +
-                "p81 = 1 AND [3_KTONG] IS NULL) OR ([3_KTONG] = @p80)) AND ((@p84 = 1 AND [4_DS] " +
-                "IS NULL) OR ([4_DS] = @p83)) AND ((@p87 = 1 AND [4_DD] IS NULL) OR ([4_DD] = @p8" +
-                "6)) AND ((@p90 = 1 AND [4_DTONG] IS NULL) OR ([4_DTONG] = @p89)) AND ((@p93 = 1 " +
-                "AND [5_TCKGT] IS NULL) OR ([5_TCKGT] = @p92)) AND ((@p96 = 1 AND [5_SLKGT] IS NU" +
-                "LL) OR ([5_SLKGT] = @p95)) AND ((@p99 = 1 AND [5_SLGT] IS NULL) OR ([5_SLGT] = @" +
-                "p98)) AND ((@p102 = 1 AND [5_DGT] IS NULL) OR ([5_DGT] = @p101)) AND ((@p105 = 1" +
-                " AND [5_KNTONG] IS NULL) OR ([5_KNTONG] = @p104)) AND ((@p108 = 1 AND [6_KTC] IS" +
-                " NULL) OR ([6_KTC] = @p107)) AND ((@p111 = 1 AND [6_DKTC] IS NULL) OR ([6_DKTC] " +
-                "= @p110)) AND ((@p114 = 1 AND [6_TCTONG] IS NULL) OR ([6_TCTONG] = @p113)) AND (" +
-                "(@p117 = 1 AND [7_GLC] IS NULL) OR ([7_GLC] = @p116)) AND ((@p120 = 1 AND [7_GLT" +
-                "C] IS NULL) OR ([7_GLTC] = @p119)) AND ((@p123 = 1 AND [7_GLTONG] IS NULL) OR ([" +
-                "7_GLTONG] = @p122)) AND ((@p126 = 1 AND [8_TNN] IS NULL) OR ([8_TNN] = @p125)) A" +
-                "ND ((@p129 = 1 AND [8_TNNS] IS NULL) OR ([8_TNNS] = @p128)) AND ((@p132 = 1 AND " +
-                "[8_DNN] IS NULL) OR ([8_DNN] = @p131)) AND ((@p135 = 1 AND [8_DNNS] IS NULL) OR " +
-                "([8_DNNS] = @p134)) AND ((@p138 = 1 AND [8_NNTONG] IS NULL) OR ([8_NNTONG] = @p1" +
-                "37)) AND ((@p141 = 1 AND [9_DSCS] IS NULL) OR ([9_DSCS] = @p140)) AND ((@p144 = " +
-                "1 AND [9_DSCSS] IS NULL) OR ([9_DSCSS] = @p143)) AND ((@p147 = 1 AND [9_DSTONG] " +
-                "IS NULL) OR ([9_DSTONG] = @p146)) AND ((@p150 = 1 AND [10_TONG] IS NULL) OR ([10" +
-                "_TONG] = @p149)) AND ((@IsNull_TONGDIEM = 1 AND [TONGDIEM] IS NULL) OR ([TONGDIE" +
-                "M] = @Original_TONGDIEM)) AND ((@IsNull_CREATEDATE = 1 AND [CREATEDATE] IS NULL)" +
-                " OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@IsNull_CREATEBY = 1 AND [CREAT" +
-                "EBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) AND ((@IsNull_MODIFYDATE = 1" +
-                " AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Original_MODIFYDATE)) AND ((@IsNu" +
-                "ll_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYBY] = @Original_MODIFYBY)));\r" +
-                "\nSELECT ID, MAYDS, KY, NAM, TODS, NAME, FULLNAME, [1_F1S], [1_F1D], [1_F2S], [1_" +
-                "F2D], [1_F3S], [1_F3D], [1_FTONG], [2_NF1S], [2_N1P], [2_N1D], [2_N2S], [2_N2P]," +
-                " [2_N2D], [2_N3S], [2_N3P], [2_N3D], [2_NTONG], [3_K1S], [3_K1P], [3_K1D], [3_K2" +
-                "S], [3_K2P], [3_K2D], [3_K3S], [3_K3P], [3_K3D], [3_KTONG], [4_DS], [4_DD], [4_D" +
-                "TONG], [5_TCKGT], [5_SLKGT], [5_SLGT], [5_DGT], [5_KNTONG], [6_KTC], [6_DKTC], [" +
-                "6_TCTONG], [7_GLC], [7_GLTC], [7_GLTONG], [8_TNN], [8_TNNS], [8_DNN], [8_DNNS], " +
-                "[8_NNTONG], [9_DSCS], [9_DSCSS], [9_DSTONG], [10_TONG], TONGDIEM, CREATEDATE, CR" +
-                "EATEBY, MODIFYDATE, MODIFYBY FROM TB_BANGCHAMCONG_DANHGIA WHERE (KY = @KY) AND (" +
-                "MAYDS = @MAYDS) AND (NAM = @NAM)";
+                "NG] = @p145, [10_TONG] = @p148, [DIEMCUOIKY] = @DIEMCUOIKY, [CREATEDATE] = @CREA" +
+                "TEDATE, [CREATEBY] = @CREATEBY, [MODIFYDATE] = @MODIFYDATE, [MODIFYBY] = @MODIFY" +
+                "BY WHERE (([ID] = @Original_ID) AND ([MAYDS] = @Original_MAYDS) AND ([KY] = @Ori" +
+                "ginal_KY) AND ([NAM] = @Original_NAM) AND ((@IsNull_TODS = 1 AND [TODS] IS NULL)" +
+                " OR ([TODS] = @Original_TODS)) AND ((@p3 = 1 AND [1_F1S] IS NULL) OR ([1_F1S] = " +
+                "@p2)) AND ((@p6 = 1 AND [1_F1D] IS NULL) OR ([1_F1D] = @p5)) AND ((@p9 = 1 AND [" +
+                "1_F2S] IS NULL) OR ([1_F2S] = @p8)) AND ((@p12 = 1 AND [1_F2D] IS NULL) OR ([1_F" +
+                "2D] = @p11)) AND ((@p15 = 1 AND [1_F3S] IS NULL) OR ([1_F3S] = @p14)) AND ((@p18" +
+                " = 1 AND [1_F3D] IS NULL) OR ([1_F3D] = @p17)) AND ((@p21 = 1 AND [1_FTONG] IS N" +
+                "ULL) OR ([1_FTONG] = @p20)) AND ((@p24 = 1 AND [2_NF1S] IS NULL) OR ([2_NF1S] = " +
+                "@p23)) AND ((@p27 = 1 AND [2_N1P] IS NULL) OR ([2_N1P] = @p26)) AND ((@p30 = 1 A" +
+                "ND [2_N1D] IS NULL) OR ([2_N1D] = @p29)) AND ((@p33 = 1 AND [2_N2S] IS NULL) OR " +
+                "([2_N2S] = @p32)) AND ((@p36 = 1 AND [2_N2P] IS NULL) OR ([2_N2P] = @p35)) AND (" +
+                "(@p39 = 1 AND [2_N2D] IS NULL) OR ([2_N2D] = @p38)) AND ((@p42 = 1 AND [2_N3S] I" +
+                "S NULL) OR ([2_N3S] = @p41)) AND ((@p45 = 1 AND [2_N3P] IS NULL) OR ([2_N3P] = @" +
+                "p44)) AND ((@p48 = 1 AND [2_N3D] IS NULL) OR ([2_N3D] = @p47)) AND ((@p51 = 1 AN" +
+                "D [2_NTONG] IS NULL) OR ([2_NTONG] = @p50)) AND ((@p54 = 1 AND [3_K1S] IS NULL) " +
+                "OR ([3_K1S] = @p53)) AND ((@p57 = 1 AND [3_K1P] IS NULL) OR ([3_K1P] = @p56)) AN" +
+                "D ((@p60 = 1 AND [3_K1D] IS NULL) OR ([3_K1D] = @p59)) AND ((@p63 = 1 AND [3_K2S" +
+                "] IS NULL) OR ([3_K2S] = @p62)) AND ((@p66 = 1 AND [3_K2P] IS NULL) OR ([3_K2P] " +
+                "= @p65)) AND ((@p69 = 1 AND [3_K2D] IS NULL) OR ([3_K2D] = @p68)) AND ((@p72 = 1" +
+                " AND [3_K3S] IS NULL) OR ([3_K3S] = @p71)) AND ((@p75 = 1 AND [3_K3P] IS NULL) O" +
+                "R ([3_K3P] = @p74)) AND ((@p78 = 1 AND [3_K3D] IS NULL) OR ([3_K3D] = @p77)) AND" +
+                " ((@p81 = 1 AND [3_KTONG] IS NULL) OR ([3_KTONG] = @p80)) AND ((@p84 = 1 AND [4_" +
+                "DS] IS NULL) OR ([4_DS] = @p83)) AND ((@p87 = 1 AND [4_DD] IS NULL) OR ([4_DD] =" +
+                " @p86)) AND ((@p90 = 1 AND [4_DTONG] IS NULL) OR ([4_DTONG] = @p89)) AND ((@p93 " +
+                "= 1 AND [5_TCKGT] IS NULL) OR ([5_TCKGT] = @p92)) AND ((@p96 = 1 AND [5_SLKGT] I" +
+                "S NULL) OR ([5_SLKGT] = @p95)) AND ((@p99 = 1 AND [5_SLGT] IS NULL) OR ([5_SLGT]" +
+                " = @p98)) AND ((@p102 = 1 AND [5_DGT] IS NULL) OR ([5_DGT] = @p101)) AND ((@p105" +
+                " = 1 AND [5_KNTONG] IS NULL) OR ([5_KNTONG] = @p104)) AND ((@p108 = 1 AND [6_KTC" +
+                "] IS NULL) OR ([6_KTC] = @p107)) AND ((@p111 = 1 AND [6_DKTC] IS NULL) OR ([6_DK" +
+                "TC] = @p110)) AND ((@p114 = 1 AND [6_TCTONG] IS NULL) OR ([6_TCTONG] = @p113)) A" +
+                "ND ((@p117 = 1 AND [7_GLC] IS NULL) OR ([7_GLC] = @p116)) AND ((@p120 = 1 AND [7" +
+                "_GLTC] IS NULL) OR ([7_GLTC] = @p119)) AND ((@p123 = 1 AND [7_GLTONG] IS NULL) O" +
+                "R ([7_GLTONG] = @p122)) AND ((@p126 = 1 AND [8_TNN] IS NULL) OR ([8_TNN] = @p125" +
+                ")) AND ((@p129 = 1 AND [8_TNNS] IS NULL) OR ([8_TNNS] = @p128)) AND ((@p132 = 1 " +
+                "AND [8_DNN] IS NULL) OR ([8_DNN] = @p131)) AND ((@p135 = 1 AND [8_DNNS] IS NULL)" +
+                " OR ([8_DNNS] = @p134)) AND ((@p138 = 1 AND [8_NNTONG] IS NULL) OR ([8_NNTONG] =" +
+                " @p137)) AND ((@p141 = 1 AND [9_DSCS] IS NULL) OR ([9_DSCS] = @p140)) AND ((@p14" +
+                "4 = 1 AND [9_DSCSS] IS NULL) OR ([9_DSCSS] = @p143)) AND ((@p147 = 1 AND [9_DSTO" +
+                "NG] IS NULL) OR ([9_DSTONG] = @p146)) AND ((@p150 = 1 AND [10_TONG] IS NULL) OR " +
+                "([10_TONG] = @p149)) AND ((@IsNull_DIEMCUOIKY = 1 AND [DIEMCUOIKY] IS NULL) OR (" +
+                "[DIEMCUOIKY] = @Original_DIEMCUOIKY)) AND ((@IsNull_CREATEDATE = 1 AND [CREATEDA" +
+                "TE] IS NULL) OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@IsNull_CREATEBY = " +
+                "1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) AND ((@IsNull_MO" +
+                "DIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Original_MODIFYDATE))" +
+                " AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYBY] = @Original_M" +
+                "ODIFYBY)));\r\nSELECT ID, MAYDS, KY, NAM, TODS, NAME, FULLNAME, [1_F1S], [1_F1D], " +
+                "[1_F2S], [1_F2D], [1_F3S], [1_F3D], [1_FTONG], [2_NF1S], [2_N1P], [2_N1D], [2_N2" +
+                "S], [2_N2P], [2_N2D], [2_N3S], [2_N3P], [2_N3D], [2_NTONG], [3_K1S], [3_K1P], [3" +
+                "_K1D], [3_K2S], [3_K2P], [3_K2D], [3_K3S], [3_K3P], [3_K3D], [3_KTONG], [4_DS], " +
+                "[4_DD], [4_DTONG], [5_TCKGT], [5_SLKGT], [5_SLGT], [5_DGT], [5_KNTONG], [6_KTC]," +
+                " [6_DKTC], [6_TCTONG], [7_GLC], [7_GLTC], [7_GLTONG], [8_TNN], [8_TNNS], [8_DNN]" +
+                ", [8_DNNS], [8_NNTONG], [9_DSCS], [9_DSCSS], [9_DSTONG], [10_TONG], DIEMCUOIKY, " +
+                "CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM TB_BANGCHAMCONG_DANHGIA WHERE (K" +
+                "Y = @KY) AND (MAYDS = @MAYDS) AND (NAM = @NAM)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAYDS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAYDS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KY", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18401,7 +18401,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p142", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "9_DSCSS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p145", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "9_DSTONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p148", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "10_TONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TONGDIEM", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TONGDIEM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIEMCUOIKY", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEMCUOIKY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREATEBY", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEBY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MODIFYDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MODIFYDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18512,8 +18512,8 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p146", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "9_DSTONG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p150", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "10_TONG", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p149", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "10_TONG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TONGDIEM", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TONGDIEM", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TONGDIEM", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TONGDIEM", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DIEMCUOIKY", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEMCUOIKY", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIEMCUOIKY", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEMCUOIKY", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CREATEDATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CREATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CREATEBY", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CREATEBY", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -18537,7 +18537,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, MAYDS, KY, NAM, TODS, NAME, FULLNAME, [1_F1S], [1_F1D], [1_F2S], [1_F2D], [1_F3S], [1_F3D], [1_FTONG], [2_NF1S], [2_N1P], [2_N1D], [2_N2S], [2_N2P], [2_N2D], [2_N3S], [2_N3P], [2_N3D], [2_NTONG], [3_K1S], [3_K1P], [3_K1D], [3_K2S], [3_K2P], [3_K2D], [3_K3S], [3_K3P], [3_K3D], [3_KTONG], [4_DS], [4_DD], [4_DTONG], [5_TCKGT], [5_SLKGT], [5_SLGT], [5_DGT], [5_KNTONG], [6_KTC], [6_DKTC], [6_TCTONG], [7_GLC], [7_GLTC], [7_GLTONG], [8_TNN], [8_TNNS], [8_DNN], [8_DNNS], [8_NNTONG], [9_DSCS], [9_DSCSS], [9_DSTONG], [10_TONG], TONGDIEM, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM dbo.TB_BANGCHAMCONG_DANHGIA";
+            this._commandCollection[0].CommandText = @"SELECT ID, MAYDS, KY, NAM, TODS, NAME, FULLNAME, [1_F1S], [1_F1D], [1_F2S], [1_F2D], [1_F3S], [1_F3D], [1_FTONG], [2_NF1S], [2_N1P], [2_N1D], [2_N2S], [2_N2P], [2_N2D], [2_N3S], [2_N3P], [2_N3D], [2_NTONG], [3_K1S], [3_K1P], [3_K1D], [3_K2S], [3_K2P], [3_K2D], [3_K3S], [3_K3P], [3_K3D], [3_KTONG], [4_DS], [4_DD], [4_DTONG], [5_TCKGT], [5_SLKGT], [5_SLGT], [5_DGT], [5_KNTONG], [6_KTC], [6_DKTC], [6_TCTONG], [7_GLC], [7_GLTC], [7_GLTONG], [8_TNN], [8_TNNS], [8_DNN], [8_DNNS], [8_NNTONG], [9_DSCS], [9_DSCSS], [9_DSTONG], [10_TONG], DIEMCUOIKY, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY FROM dbo.TB_BANGCHAMCONG_DANHGIA";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18654,7 +18654,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                     global::System.Nullable<int> p143, 
                     string p146, 
                     string p149, 
-                    string Original_TONGDIEM, 
+                    string Original_DIEMCUOIKY, 
                     global::System.Nullable<global::System.DateTime> Original_CREATEDATE, 
                     string Original_CREATEBY, 
                     global::System.Nullable<global::System.DateTime> Original_MODIFYDATE, 
@@ -19071,13 +19071,13 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                 this.Adapter.DeleteCommand.Parameters[104].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[105].Value = ((string)(p149));
             }
-            if ((Original_TONGDIEM == null)) {
+            if ((Original_DIEMCUOIKY == null)) {
                 this.Adapter.DeleteCommand.Parameters[106].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[107].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[106].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[107].Value = ((string)(Original_TONGDIEM));
+                this.Adapter.DeleteCommand.Parameters[107].Value = ((string)(Original_DIEMCUOIKY));
             }
             if ((Original_CREATEDATE.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[108].Value = ((object)(0));
@@ -19188,7 +19188,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                     global::System.Nullable<int> p142, 
                     string p145, 
                     string p148, 
-                    string TONGDIEM, 
+                    string DIEMCUOIKY, 
                     global::System.Nullable<global::System.DateTime> CREATEDATE, 
                     string CREATEBY, 
                     global::System.Nullable<global::System.DateTime> MODIFYDATE, 
@@ -19514,11 +19514,11 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
             else {
                 this.Adapter.InsertCommand.Parameters[55].Value = ((string)(p148));
             }
-            if ((TONGDIEM == null)) {
+            if ((DIEMCUOIKY == null)) {
                 this.Adapter.InsertCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[56].Value = ((string)(TONGDIEM));
+                this.Adapter.InsertCommand.Parameters[56].Value = ((string)(DIEMCUOIKY));
             }
             if ((CREATEDATE.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[57].Value = ((System.DateTime)(CREATEDATE.Value));
@@ -19621,7 +19621,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                     global::System.Nullable<int> p142, 
                     string p145, 
                     string p148, 
-                    string TONGDIEM, 
+                    string DIEMCUOIKY, 
                     global::System.Nullable<global::System.DateTime> CREATEDATE, 
                     string CREATEBY, 
                     global::System.Nullable<global::System.DateTime> MODIFYDATE, 
@@ -19681,7 +19681,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                     global::System.Nullable<int> p143, 
                     string p146, 
                     string p149, 
-                    string Original_TONGDIEM, 
+                    string Original_DIEMCUOIKY, 
                     global::System.Nullable<global::System.DateTime> Original_CREATEDATE, 
                     string Original_CREATEBY, 
                     global::System.Nullable<global::System.DateTime> Original_MODIFYDATE, 
@@ -20007,11 +20007,11 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
             else {
                 this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(p148));
             }
-            if ((TONGDIEM == null)) {
+            if ((DIEMCUOIKY == null)) {
                 this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(TONGDIEM));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(DIEMCUOIKY));
             }
             if ((CREATEDATE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[57].Value = ((System.DateTime)(CREATEDATE.Value));
@@ -20449,13 +20449,13 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                 this.Adapter.UpdateCommand.Parameters[165].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[166].Value = ((string)(p149));
             }
-            if ((Original_TONGDIEM == null)) {
+            if ((Original_DIEMCUOIKY == null)) {
                 this.Adapter.UpdateCommand.Parameters[167].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[168].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[167].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[168].Value = ((string)(Original_TONGDIEM));
+                this.Adapter.UpdateCommand.Parameters[168].Value = ((string)(Original_DIEMCUOIKY));
             }
             if ((Original_CREATEDATE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[169].Value = ((object)(0));
@@ -20563,7 +20563,7 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                     global::System.Nullable<int> p142, 
                     string p145, 
                     string p148, 
-                    string TONGDIEM, 
+                    string DIEMCUOIKY, 
                     global::System.Nullable<global::System.DateTime> CREATEDATE, 
                     string CREATEBY, 
                     global::System.Nullable<global::System.DateTime> MODIFYDATE, 
@@ -20623,12 +20623,12 @@ SELECT TODS, TENTO, KN_60, KN_61, KN_62, KN_63, KN_64, KN_65, KN_66, KN_54, KN_5
                     global::System.Nullable<int> p143, 
                     string p146, 
                     string p149, 
-                    string Original_TONGDIEM, 
+                    string Original_DIEMCUOIKY, 
                     global::System.Nullable<global::System.DateTime> Original_CREATEDATE, 
                     string Original_CREATEBY, 
                     global::System.Nullable<global::System.DateTime> Original_MODIFYDATE, 
                     string Original_MODIFYBY) {
-            return this.Update(Original_MAYDS, Original_KY, Original_NAM, TODS, NAME, FULLNAME, p1, p4, p7, p10, p13, p16, p19, p22, p25, p28, p31, p34, p37, p40, p43, p46, p49, p52, p55, p58, p61, p64, p67, p70, p73, p76, p79, p82, p85, p88, p91, p94, p97, p100, p103, p106, p109, p112, p115, p118, p121, p124, p127, p130, p133, p136, p139, p142, p145, p148, TONGDIEM, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY, Original_ID, Original_MAYDS, Original_KY, Original_NAM, Original_TODS, p2, p5, p8, p11, p14, p17, p20, p23, p26, p29, p32, p35, p38, p41, p44, p47, p50, p53, p56, p59, p62, p65, p68, p71, p74, p77, p80, p83, p86, p89, p92, p95, p98, p101, p104, p107, p110, p113, p116, p119, p122, p125, p128, p131, p134, p137, p140, p143, p146, p149, Original_TONGDIEM, Original_CREATEDATE, Original_CREATEBY, Original_MODIFYDATE, Original_MODIFYBY);
+            return this.Update(Original_MAYDS, Original_KY, Original_NAM, TODS, NAME, FULLNAME, p1, p4, p7, p10, p13, p16, p19, p22, p25, p28, p31, p34, p37, p40, p43, p46, p49, p52, p55, p58, p61, p64, p67, p70, p73, p76, p79, p82, p85, p88, p91, p94, p97, p100, p103, p106, p109, p112, p115, p118, p121, p124, p127, p130, p133, p136, p139, p142, p145, p148, DIEMCUOIKY, CREATEDATE, CREATEBY, MODIFYDATE, MODIFYBY, Original_ID, Original_MAYDS, Original_KY, Original_NAM, Original_TODS, p2, p5, p8, p11, p14, p17, p20, p23, p26, p29, p32, p35, p38, p41, p44, p47, p50, p53, p56, p59, p62, p65, p68, p71, p74, p77, p80, p83, p86, p89, p92, p95, p98, p101, p104, p107, p110, p113, p116, p119, p122, p125, p128, p131, p134, p137, p140, p143, p146, p149, Original_DIEMCUOIKY, Original_CREATEDATE, Original_CREATEBY, Original_MODIFYDATE, Original_MODIFYBY);
         }
     }
     
