@@ -67,7 +67,7 @@ namespace CAPNUOCTANHOA
                     {
                         cmdBaoThay.Visible=false;
                         menuKiemTra.Visible=false;
-                        yeucaukiemtra.Visible = false;
+                        ttKH.Visible = false;
                         menuDieuChinhKH.Visible = true;
                         btLoTrinh.Visible = true;
                         handHeld.Visible = false;
@@ -75,7 +75,7 @@ namespace CAPNUOCTANHOA
                         cmdBaoThay.Visible = true;
                         menuKiemTra.Visible = true;
                         btLoTrinh.Visible = true; 
-                        yeucaukiemtra.Visible = true;
+                        ttKH.Visible = true;
                         handHeld.Visible = true;
                     } if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
@@ -110,7 +110,7 @@ namespace CAPNUOCTANHOA
 
                     cmdBaoThay.Visible = false;
                     menuKiemTra.Visible = false;
-                    yeucaukiemtra.Visible = false;
+                    ttKH.Visible = false;
                     menuDieuChinhKH.Visible = false;
                     btLoTrinh.Visible = false;
                     handHeld.Visible = false;
@@ -324,7 +324,7 @@ namespace CAPNUOCTANHOA
         {
             PanelContent.Controls.Clear();
             // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
-            frm_PhieuKiemTra baothay = new frm_PhieuKiemTra();
+            frmTTKhachHang baothay = new frmTTKhachHang("DS");
             //baothay.Height = PanelContent.Size.Height - 20;
             //baothay.Width = PanelContent.Size.Width - 20;
             baothay.Height = PanelContent.Size.Height - 5;

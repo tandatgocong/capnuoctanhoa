@@ -158,22 +158,22 @@ ORDER BY  KHU ASC
 --------------
 -- THEO QUAN PHUONG
 SELECT kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG,P.TENPHUONG, q.TENQUAN, ds.GB, ds.DM, kh.HIEUDH, kh.CODH, YEAR(kh.NGAYTHAY) AS NAM, nv.NAME 
-FROM  HOADON_TA.dbo.HOADON ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv, PHUONG p, QUAN q
+FROM  [SERVER9].[HOADON_TA].[dbo].[HOADON] ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv, PHUONG p, QUAN q
 WHERE ds.DANHBA = kh.DANHBO AND CONVERT(int,SUBSTRING(kh.LOTRINH,3,2))= nv.MAYDS AND kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG 
 AND ds.TIEUTHU=0 AND ds.KY=8 and ds.NAM=2013
 ORDER BY  q.MAQUAN  ASC,P.MAPHUONG ASC, nv.NAME ASC,kh.LOTRINH ASC
 
 
 SELECT SUBSTRING(kh.LOTRINH,1,2), kh.LOTRINH, kh.DANHBO, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG,P.TENPHUONG, q.TENQUAN, ds.GB, ds.DM,kh.HIEUDH, kh.CODH, YEAR(kh.NGAYTHAY) AS NAM, nv.NAME , ds.TIEUTHU
-FROM  HOADON_TA.dbo.HOADON ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv, PHUONG p, QUAN q
+FROM  [SERVER9].[HOADON_TA].[dbo].[HOADON] ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv, PHUONG p, QUAN q
 WHERE ds.DANHBA = kh.DANHBO AND CONVERT(int,SUBSTRING(kh.LOTRINH,3,2))= nv.MAYDS AND kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG 
 AND ds.TIEUTHU=0 AND ds.KY=12 and ds.NAM=2012
 ORDER BY kh.LOTRINH ASC, nv.NAME ASC
 
-select * from HOADON_TA.dbo.HOADON ds where ds.TIEUTHU=0 and ds.KY=7 and ds.NAM=2012
+select * from [SERVER9].[HOADON_TA].[dbo].[HOADON] ds where ds.TIEUTHU=0 and ds.KY=7 and ds.NAM=2012
 
 SELECT  q.MAQUAN,p.MAPHUONG ,P.TENPHUONG , q.TENQUAN, COUNT(*) as TONGCONG 
-FROM  HOADON_TA.dbo.HOADON ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv, PHUONG p, QUAN q
+FROM  [SERVER9].[HOADON_TA].[dbo].[HOADON] ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv, PHUONG p, QUAN q
 WHERE ds.DANHBA = kh.DANHBO AND CONVERT(int,SUBSTRING(kh.LOTRINH,3,2))= nv.MAYDS AND kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG 
  AND ds.KY=7 and ds.NAM=2012
 GROUP BY  q.MAQUAN,p.MAPHUONG ,P.TENPHUONG , q.TENQUAN
@@ -192,7 +192,7 @@ SELECT * FROM TB_DULIEUKHACHHANG kh WHERE kh.KY<=7 and kh.NAM=2012 AND kh.PHUONG
 UPDATE TB_DULIEUKHACHHANG set PHUONG='10' where DANHBO='12142100690'
 
 SELECT  q.MAQUAN,p.MAPHUONG ,P.TENPHUONG , q.TENQUAN, COUNT(*) as TONGCONG 
-FROM  HOADON_TA.dbo.HOADON ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv, PHUONG p, QUAN q
+FROM  [SERVER9].[HOADON_TA].[dbo].[HOADON] ds , TB_DULIEUKHACHHANG kh, TB_NHANVIENDOCSO nv, PHUONG p, QUAN q
 WHERE ds.DANHBA = kh.DANHBO AND CONVERT(int,SUBSTRING(kh.LOTRINH,3,2))= nv.MAYDS AND kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG 
 AND ds.TIEUTHU>0 and ds.TIEUTHU<=4 AND ds.KY=7 and ds.NAM=2012
 GROUP BY  q.MAQUAN,p.MAPHUONG ,P.TENPHUONG , q.TENQUAN
@@ -324,4 +324,34 @@ WHERE   LEFT(Field54,4)='2016'
  ORDER BY  KHU ASC
  
  
- SELECT 
+SELECT     DANHBO, LOTRINH, HOTEN, HOPDONG, SONHA + ' ' + TENDUONG AS DIACHI,PHUONG,QUAN,GIABIEU,DINHMUC,CODH,
+                          (SELECT     TOP (1) CODE
+                            FROM          [SERVER9].[HOADON_TA].[dbo].[HOADON] AS ds
+                            WHERE      (ds.DANHBA = kh.DANHBO) AND NAM=2016 AND (KY = 12) ) AS CODEKY1,
+                          (SELECT     TOP (1) CSMOI
+                            FROM          [SERVER9].[HOADON_TA].[dbo].[HOADON] AS ds
+                            WHERE      (ds.DANHBA = kh.DANHBO) AND NAM=2016 AND (KY = 12) AND (CODE NOT LIKE '%M%')) AS CSKY1,
+                          (SELECT     TOP (1) TIEUTHU
+                           FROM          [SERVER9].[HOADON_TA].[dbo].[HOADON] AS ds
+                            WHERE      (ds.DANHBA = kh.DANHBO) AND NAM=2016 AND (KY = 12) AND (CODE NOT LIKE '%M%')) AS TTKY1,
+                          (SELECT     TOP (1) CODE
+                            FROM          [SERVER9].[HOADON_TA].[dbo].[HOADON] AS ds
+                            WHERE      (ds.DANHBA = kh.DANHBO) AND NAM=2017 AND (KY = 1) ) AS CODEKY2,                            
+                          (SELECT     TOP (1) CSMOI
+                            FROM          [SERVER9].[HOADON_TA].[dbo].[HOADON] AS ds
+                            WHERE      (ds.DANHBA = kh.DANHBO) AND NAM=2017 AND (KY = 1)  ) AS CSKY2,
+                          (SELECT     TOP (1) TIEUTHU
+                           FROM          [SERVER9].[HOADON_TA].[dbo].[HOADON] AS ds
+                            WHERE      (ds.DANHBA = kh.DANHBO) AND NAM=2017 AND (KY = 1)  ) AS TTKY2,
+                          (SELECT     TOP (1) CODE
+                            FROM          [SERVER9].[HOADON_TA].[dbo].[HOADON] AS ds
+                            WHERE      (ds.DANHBA = kh.DANHBO) AND NAM=2017 AND (KY = 2) ) AS CODEKY3,
+                          (SELECT     TOP (1) CSMOI
+                            FROM          [SERVER9].[HOADON_TA].[dbo].[HOADON] AS ds
+                            WHERE      (ds.DANHBA = kh.DANHBO) AND NAM=2017 AND (KY = 2)  ) AS CSKY3,
+                          (SELECT     TOP (1) TIEUTHU
+                            FROM          [SERVER9].[HOADON_TA].[dbo].[HOADON] AS ds
+                            WHERE      (ds.DANHBA = kh.DANHBO) AND NAM=2017 AND (KY = 2)  ) AS TTKY3                           
+FROM         dbo.TB_DULIEUKHACHHANG AS kh
+WHERE CODH>=40
+ORDER BY LOTRINH ASC

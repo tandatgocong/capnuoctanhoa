@@ -84,10 +84,10 @@
             this.menuKiemTra = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdBaoThay = new System.Windows.Forms.ToolStripMenuItem();
             this.btLoTrinh = new System.Windows.Forms.ToolStripMenuItem();
-            this.yeucaukiemtra = new System.Windows.Forms.ToolStripMenuItem();
             this.handHeld = new System.Windows.Forms.ToolStripMenuItem();
             this.mnHoaDon0 = new System.Windows.Forms.ToolStripMenuItem();
             this.baocaoTongKet = new System.Windows.Forms.ToolStripMenuItem();
+            this.ttKH = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel8 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip8 = new System.Windows.Forms.MenuStrip();
             this.dmaBaoThay = new System.Windows.Forms.ToolStripMenuItem();
@@ -687,10 +687,10 @@
             this.menuKiemTra,
             this.cmdBaoThay,
             this.btLoTrinh,
-            this.yeucaukiemtra,
             this.handHeld,
             this.mnHoaDon0,
-            this.baocaoTongKet});
+            this.baocaoTongKet,
+            this.ttKH});
             this.menuStrip1.Location = new System.Drawing.Point(3, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1172, 27);
@@ -735,16 +735,6 @@
             this.btLoTrinh.Text = "Lộ Trình Đọc Số";
             this.btLoTrinh.Click += new System.EventHandler(this.btChuyenBK_Click);
             // 
-            // yeucaukiemtra
-            // 
-            this.yeucaukiemtra.ForeColor = System.Drawing.Color.Black;
-            this.yeucaukiemtra.Image = global::CAPNUOCTANHOA.Properties.Resources.Stats2;
-            this.yeucaukiemtra.Name = "yeucaukiemtra";
-            this.yeucaukiemtra.Size = new System.Drawing.Size(144, 23);
-            this.yeucaukiemtra.Text = "Y.Cầu Kiểm Tra";
-            this.yeucaukiemtra.Visible = false;
-            this.yeucaukiemtra.Click += new System.EventHandler(this.yeucaukiemtra_Click);
-            // 
             // handHeld
             // 
             this.handHeld.ForeColor = System.Drawing.Color.Black;
@@ -772,6 +762,15 @@
             this.baocaoTongKet.Size = new System.Drawing.Size(95, 23);
             this.baocaoTongKet.Text = "Báo Cáo";
             this.baocaoTongKet.Click += new System.EventHandler(this.baocaoTongKet_Click);
+            // 
+            // ttKH
+            // 
+            this.ttKH.ForeColor = System.Drawing.Color.Black;
+            this.ttKH.Image = global::CAPNUOCTANHOA.Properties.Resources.Stats2;
+            this.ttKH.Name = "ttKH";
+            this.ttKH.Size = new System.Drawing.Size(197, 23);
+            this.ttKH.Text = "Trung Tâm Khách Hàng";
+            this.ttKH.Click += new System.EventHandler(this.yeucaukiemtra_Click);
             // 
             // ribbonPanel8
             // 
@@ -1289,7 +1288,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuDieuChinhKH;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel5;
         private DevComponents.DotNetBar.RibbonTabItem tbTraCuuThongTin;
-        private System.Windows.Forms.ToolStripMenuItem yeucaukiemtra;
+        private System.Windows.Forms.ToolStripMenuItem ttKH;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel6;
         private DevComponents.DotNetBar.RibbonTabItem banKTKS;
         private System.Windows.Forms.MenuStrip menuStrip5;

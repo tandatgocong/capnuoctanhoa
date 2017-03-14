@@ -119,5 +119,16 @@ namespace CAPNUOCTANHOA.Properties {
                 return ((string)(this["DocSo_PHTConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP_G7\\KD;Initial Catalog=CallCenter;Persist Security Info=True;User I" +
+            "D=sa;Password=123@tanhoa")]
+        public string CallCenterConnectionString {
+            get {
+                return ((string)(this["CallCenterConnectionString"]));
+            }
+        }
     }
 }

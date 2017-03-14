@@ -143,6 +143,7 @@
     <Compile Include="DAL\BANKTKS\C_DinhMucChungCu.cs" />
     <Compile Include="DAL\BANKTKS\C_GiamHoaDon.cs" />
     <Compile Include="DAL\BANKTKS\C_TheoDoiDM.cs" />
+    <Compile Include="DAL\CCallCenter.cs" />
     <Compile Include="DAL\LinQConnectionDSTH.cs" />
     <Compile Include="DAL\LinQConnectionTT.cs" />
     <Compile Include="DAL\DoiTCTB\C_DonGiaVatTu.cs" />
@@ -717,6 +718,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TLKDUTCHITAHN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frmTTKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\frmTTKhachHang.Designer.cs">
+      <DependentUpon>frmTTKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QLDHN\frm_NhapDanhGia.cs">
       <SubType>Form</SubType>
@@ -1485,6 +1492,11 @@
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </Compile>
     <Compile Include="DAL\OledbConnection.cs" />
+    <Compile Include="LinQ\dbCallCenter.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbCallCenter.dbml</DependentUpon>
+    </Compile>
     <Compile Include="LinQ\DocSo.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2128,6 +2140,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_TONGKETSOLIEU.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\frmTTKhachHang.resx">
+      <DependentUpon>frmTTKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\frm_NhapDanhGia.resx">
       <DependentUpon>frm_NhapDanhGia.cs</DependentUpon>
     </EmbeddedResource>
@@ -2505,6 +2520,11 @@
     <EmbeddedResource Include="Forms\TimKiem\LayDuLieu\frm_baothay_lay.resx">
       <DependentUpon>frm_baothay_lay.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="LinQ\dbCallCenter.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbCallCenter.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="LinQ\DocSo.dbml.layout">
       <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
@@ -2529,6 +2549,9 @@
     </None>
     <None Include="LinQ\DocSoTH.dbml.layout">
       <DependentUpon>DocSoTH.dbml</DependentUpon>
+    </None>
+    <None Include="LinQ\dbCallCenter.dbml.layout">
+      <DependentUpon>dbCallCenter.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
