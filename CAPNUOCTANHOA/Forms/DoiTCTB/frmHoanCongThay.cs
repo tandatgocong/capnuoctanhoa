@@ -286,6 +286,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                     DAL.LinQConnection.ExecuteCommand_(update);
 
                     thaydh.HCT_TRONGAI = true;
+                    thaydh.XLT_XULY = true;
                     thaydh.HCT_NGAYGAN = txtNgayGan.Value.Date;
                     thaydh.HCT_LYDOTRONGAI = this.txtLyDoTroNgai.Text;
                     if ("".Equals(thaydh.HCT_CREATEBY + ""))
@@ -325,6 +326,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                         thaydh.HCT_CHITHAN = txtChiThan.Text.ToUpper();
                         thaydh.HCT_CHIGOC = txtChiGoc.Text.ToUpper();
                         thaydh.HCT_TRONGAI = false;
+                        thaydh.XLT_XULY = false;
                         thaydh.HCT_LYDOTRONGAI = "";
                         if ("".Equals(thaydh.HCT_CREATEBY + ""))
                         {
@@ -521,7 +523,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
 
                                 // xóa trở ngại thay
 
-                                string update = "UPDATE TB_THAYDHN SET  HCT_TRONGAI=NULL,HCT_LYDOTRONGAI=NULL ,HCT_MODIFYBY=GETDATE() WHERE DHN_DANHBO='" + this.txtSoDanhBo.Text.Replace("-", "") +"' ";
+                                string update = "UPDATE TB_THAYDHN SET   XLT_XULY =NULL WHERE DHN_DANHBO='" + this.txtSoDanhBo.Text.Replace("-", "") + "' ";
                                 DAL.LinQConnection.ExecuteCommand_(update);
 
                                 ///
@@ -777,7 +779,7 @@ namespace CAPNUOCTANHOA.Forms.DoiTCTB
                 {
                     string ID_BAOTHAY = lbResult.Text.Replace("ID:", "");
                     string update = "UPDATE TB_THAYDHN SET HCT_CHISOGO=NULL,HCT_SOTHANGO=NULL,HCT_HIEUDHNGAN=NULL,HCT_CODHNGAN=NULL,HCT_SOTHANGAN=NULL,HCT_CAP=NULL,HCT_CHISOGAN=NULL,";
-                    update += " HCT_LOAIDHGAN=NULL,HCT_NGAYGAN=NULL,HCT_CHITHAN=NULL,HCT_CHIGOC=NULL,HCT_TRONGAI=NULL,HCT_LYDOTRONGAI=NULL,HCT_CREATEDATE=NULL,HCT_NGAYKIEMDINH=NULL, ";
+                    update += " HCT_LOAIDHGAN=NULL,HCT_NGAYGAN=NULL,HCT_CHITHAN=NULL,HCT_CHIGOC=NULL,HCT_TRONGAI=NULL,XLT_XULY=NULL,HCT_LYDOTRONGAI=NULL,HCT_CREATEDATE=NULL,HCT_NGAYKIEMDINH=NULL, ";
                     update += " HCT_CREATEBY=NULL,HCT_MODIFYDATE=NULL,HCT_MODIFYBY=NULL WHERE ID_BAOTHAY=" + ID_BAOTHAY;
                     DAL.LinQConnection.ExecuteCommand_(update);
 

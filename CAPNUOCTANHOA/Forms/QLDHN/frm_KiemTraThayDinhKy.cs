@@ -129,7 +129,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             for (int i = 0; i < dataGrid.Rows.Count; i++)
             {
                 string sql = " SELECT TOP(1)  N'TRỞ NGẠI (' + CONVERT(varchar(10),HCT_NGAYGAN,103) + '): '  + HCT_LYDOTRONGAI  + ' - ['  + ISNULL(XLT_KETQUA,'') + ']'  ";
-                sql += " FROM TB_THAYDHN  WHERE HCT_TRONGAI='True' AND DHN_DANHBO='" + (dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "' ORDER BY DHN_NGAYBAOTHAY DESC ";
+                sql += " FROM TB_THAYDHN  WHERE XLT_XULY='True' AND DHN_DANHBO='" + (dataGrid.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "' ORDER BY DHN_NGAYBAOTHAY DESC ";
                 DataTable table = DAL.LinQConnection.getDataTable(sql);
 
                 if (table.Rows.Count > 0)
