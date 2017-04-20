@@ -176,13 +176,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 string DHN_CHISO = dataBangKe.Rows[e.RowIndex].Cells["G_CHISO"].Value + "";
                 string DHN_LYDOTHAY = dataBangKe.Rows[e.RowIndex].Cells["G_LYDO"].Value + "";
                 string DHN_GHICHU = dataBangKe.Rows[e.RowIndex].Cells["DHN_GHICHU"].Value + "";
-
+                string DHN_NGAYCHUYEN = dataBangKe.Rows[e.RowIndex].Cells["DHN_NGAYCHUYEN"].Value + "";
                 cbLoaiBangKe.SelectedValue = DHN_LOAIBANGKE;
               //  txtSoBangKe.Text = DHN_SOBANGKE;
                 txtSoDanhBo.Text = DHN_DANHBO.Replace(" ", "");
                 txtTenKH.Text = HOTEN;
                 txtDiaChi.Text = DIACHI;
                 txtNgayGan.ValueObject = DHN_NGAYGAN;
+                KIEMDINH.ValueObject = DHN_NGAYCHUYEN;
                 txtHieu.Text = DHN_HIEUDHN;
                 txtCo.Text = DHN_CODH;
                 txtSoThan.Text = DHN_SOTHAN;

@@ -29,7 +29,7 @@
     <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>128</ApplicationRevision>
+    <ApplicationRevision>130</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -851,6 +851,18 @@
       <DependentUpon>rpt_TroNgai_HD_0.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\QLDHN\Mess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\Mess.designer.cs">
+      <DependentUpon>Mess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QLDHN\MessChuaXL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QLDHN\MessChuaXL.designer.cs">
+      <DependentUpon>MessChuaXL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QLDHN\PHIEUTAILAPDANHBO.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1492,11 +1504,6 @@
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </Compile>
     <Compile Include="DAL\OledbConnection.cs" />
-    <Compile Include="LinQ\dbCallCenter.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbCallCenter.dbml</DependentUpon>
-    </Compile>
     <Compile Include="LinQ\DocSo.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2216,6 +2223,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_TroNgai_HD_01.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\Mess.resx">
+      <DependentUpon>Mess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QLDHN\MessChuaXL.resx">
+      <DependentUpon>MessChuaXL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QLDHN\SODOCSO\rpt_SoDocSo_mavach.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_SoDocSo_mavach.cs</LastGenOutput>
@@ -2520,11 +2533,6 @@
     <EmbeddedResource Include="Forms\TimKiem\LayDuLieu\frm_baothay_lay.resx">
       <DependentUpon>frm_baothay_lay.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="LinQ\dbCallCenter.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbCallCenter.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="LinQ\DocSo.dbml.layout">
       <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
@@ -2549,9 +2557,6 @@
     </None>
     <None Include="LinQ\DocSoTH.dbml.layout">
       <DependentUpon>DocSoTH.dbml</DependentUpon>
-    </None>
-    <None Include="LinQ\dbCallCenter.dbml.layout">
-      <DependentUpon>dbCallCenter.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -2620,6 +2625,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\CAPNUOCTANHOA.vshost.exe" />
+    <Content Include="bin\Debug\Windows Ringin.wav" />
     <Content Include="lib\CrystalDecisions.CrystalReports.Engine.dll" />
     <Content Include="lib\DevComponents.DotNetBar2.dll" />
     <Content Include="lib\icon.ico" />
@@ -2630,6 +2636,7 @@
     <Content Include="lib\String_Indentity.dll" />
     <Content Include="lib\String_Indentity_.dll" />
     <Content Include="lib\VniToUnicode.dll" />
+    <Content Include="lib\Windows Ringin.wav" />
     <Content Include="O %2852%29.ico" />
     <None Include="Resources\24.png" />
     <Content Include="Resources\Arrow2 Left.png" />

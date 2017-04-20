@@ -11,7 +11,7 @@ namespace CAPNUOCTANHOA.DAL
 {
     class CCallCenter
     {
-        protected static dbCallCenterDataContext _db = new dbCallCenterDataContext();
+        protected static KTKSDataContext _db = new KTKSDataContext();
 
         public DataTable LINQToDataTable<T>(IEnumerable<T> varlist)
         {
@@ -62,7 +62,7 @@ namespace CAPNUOCTANHOA.DAL
 
         public void Refresh()
         {
-            _db = new dbCallCenterDataContext();
+            _db = new KTKSDataContext();
         }
         public static int ExecuteCommand(string sql)
         {

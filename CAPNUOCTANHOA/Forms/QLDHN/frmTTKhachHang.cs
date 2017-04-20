@@ -13,6 +13,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
     public partial class frmTTKhachHang : UserControl
     {
         string phong = "";
+        int _ticks = 0;
         public frmTTKhachHang(string phongban)
         {
             InitializeComponent();
@@ -20,15 +21,39 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             dateDenNgay.ValueObject = DateTime.Now.Date;
             phong = phongban;
             pLoad();
+            timer1.Start();
+            alrt2();
         }
+
+        public void alrt2()
+        {
+
+            string sql = " SELECT tn.SoHoSo,DienThoai,DanhBo,lt.TenLoai,NgayNhan, GhiChu,CreateBy,ChuyenHS,DonViChuyen,NgayChuyen,NgayXuLy,KetQuaXuLy,NhanVienXuLy,TenKH,(SoNha + ' ' + TenDuong ) as DiaChi ";
+            sql += "   FROM TTKH_TiepNhan tn, TTKH_LoaiTiepNhan lt ";
+            sql += "   WHERE tn.LoaiHs=lt.ID  AND MaDVChuyen='" + phong + "' ";
+            sql += " AND  DATEDIFF(DD,NgayNhan,GETDATE())>3 ";
+            sql += "  AND NgayXuLy IS  NULL ";
+            sql += " ORDER BY NgayNhan DESC";
+
+
+            DataTable tb = CCallCenter.getDataTable(sql);
+            if (tb.Rows.Count > 0)
+            {
+                MessChuaXL of = new MessChuaXL(tb);
+                of.ShowDialog();
+                //if (of.ShowDialog() == System.Windows.Forms.DialogResult.OK  )
+                //    timer1.Start();
+            }
+        }
+
 
         public void pLoad()
         {
             string sql = " SELECT tn.SoHoSo,DienThoai,DanhBo,lt.TenLoai,NgayNhan, GhiChu,CreateBy,ChuyenHS,DonViChuyen,NgayChuyen,NgayXuLy,KetQuaXuLy,NhanVienXuLy,TenKH,(SoNha + ' ' + TenDuong ) as DiaChi ";
-            sql += "   FROM TiepNhan tn, LoaiTiepNhan lt ";
+            sql += "   FROM TTKH_TiepNhan tn, TTKH_LoaiTiepNhan lt ";
             sql += "   WHERE tn.LoaiHs=lt.ID  ";
             sql += " AND CONVERT(DATE,NgayNhan,103) BETWEEN CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateTuNgay.Value.Date) + "',103) AND CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateDenNgay.Value.Date) + "',103) ";
-            sql += " AND DonViChuyen='" + phong + "'";
+            sql += " AND MaDVChuyen='" + phong + "'";
 
             if (ckChuaChuyen.Checked)
                 sql += " AND (ChuyenHS is NULL OR ChuyenHS='False')";
@@ -82,7 +107,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE TiepNhan SET NgayXuLy=GETDATE(),KetQuaXuLy=N'" + txtKetQuaXL.Text + "',NhanVienXuLy=N'" + DAL.SYS.C_USERS._fullName + "'  WHERE SoHoSo='" + txtSoHoSo.Text + "'";
+            string sql = "UPDATE TTKH_TiepNhan SET NgayXuLy=GETDATE(),KetQuaXuLy=N'" + txtKetQuaXL.Text + "',NhanVienXuLy=N'" + DAL.SYS.C_USERS._fullName + "'  WHERE SoHoSo='" + txtSoHoSo.Text + "'";
             if (CCallCenter.ExecuteCommand_(sql) > 0)
             { MessageBox.Show(this, "Cập Nhật Xử Lý Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information); pLoad(); }
             else
@@ -119,6 +144,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
 
         }
+
+
+        public void alrt()
+        {
+
+            string sql2 = " SELECT tn.SoHoSo,DienThoai,DanhBo,lt.TenLoai,NgayNhan, GhiChu,CreateBy ";
+            sql2 += "   FROM TTKH_TiepNhan tn, TTKH_LoaiTiepNhan lt ";
+            sql2 += "   WHERE tn.LoaiHs=lt.ID  ";
+            //sql2 += " AND CONVERT(DATE,NgayNhan,103) BETWEEN CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateTuNgay.Value.Date) + "',103) AND CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateDenNgay.Value.Date) + "',103) ";
+            sql2 += " AND MaDVChuyen='1' AND Mess='True' ";
+            DataTable tb = CCallCenter.getDataTable(sql2);
+            if (tb.Rows.Count > 0)
+            {
+                Mess of = new Mess(tb);
+                timer1.Stop();
+                if (of.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    timer1.Start();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            _ticks++;
+            if (_ticks % 2 == 0)
+                alrt();
+        }
+
 
     }
 }

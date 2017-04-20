@@ -22,7 +22,7 @@ namespace CAPNUOCTANHOA
 {
     public partial class frm_Main : Form
     {
-      private static readonly ILog log = LogManager.GetLogger(typeof(frm_Main).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(frm_Main).Name);
         public frm_Main()
         {
             InitializeComponent();
@@ -65,16 +65,18 @@ namespace CAPNUOCTANHOA
 
                     if ("GM,TH".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
-                        cmdBaoThay.Visible=false;
-                        menuKiemTra.Visible=false;
+                        cmdBaoThay.Visible = false;
+                        menuKiemTra.Visible = false;
                         ttKH.Visible = false;
                         menuDieuChinhKH.Visible = true;
                         btLoTrinh.Visible = true;
                         handHeld.Visible = false;
-                    }else{
+                    }
+                    else
+                    {
                         cmdBaoThay.Visible = true;
                         menuKiemTra.Visible = true;
-                        btLoTrinh.Visible = true; 
+                        btLoTrinh.Visible = true;
                         ttKH.Visible = true;
                         handHeld.Visible = true;
                     } if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
@@ -141,7 +143,7 @@ namespace CAPNUOCTANHOA
         private void frm_Main_Load(object sender, EventArgs e)
         {
             this.Show();
-            dangnhap();            
+            dangnhap();
         }
 
         private void caculator_Click(object sender, EventArgs e)
@@ -186,7 +188,7 @@ namespace CAPNUOCTANHOA
         {
             PanelContent.Controls.Clear();
             frm_BaoThayVaXuLy baothay = new frm_BaoThayVaXuLy();
-            baothay.Height = PanelContent.Size.Height-20;
+            baothay.Height = PanelContent.Size.Height - 20;
             baothay.Width = PanelContent.Size.Width - 20;
             PanelContent.Controls.Add(baothay);
         }
@@ -195,10 +197,10 @@ namespace CAPNUOCTANHOA
         {
             PanelContent.Controls.Clear();
             frmHoanCongThay baothay = new frmHoanCongThay();
-            baothay.Height = PanelContent.Size.Height-20;
+            baothay.Height = PanelContent.Size.Height - 20;
             baothay.Width = PanelContent.Size.Width - 20;
             PanelContent.Controls.Add(baothay);
-            
+
         }
 
         private void menuKiemTra_Click(object sender, EventArgs e)
@@ -299,12 +301,12 @@ namespace CAPNUOCTANHOA
         private void menuDieuChinhKH_Click(object sender, EventArgs e)
         {
             PanelContent.Controls.Clear();
-           // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
+            // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
             frm_DieuChinhThongTin baothay = new frm_DieuChinhThongTin();
             //baothay.Height = PanelContent.Size.Height - 20;
             //baothay.Width = PanelContent.Size.Width - 20;
-            baothay.Height = PanelContent.Size.Height-5;
-            baothay.Width = PanelContent.Size.Width-5;
+            baothay.Height = PanelContent.Size.Height - 5;
+            baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
         }
 
@@ -324,7 +326,7 @@ namespace CAPNUOCTANHOA
         {
             PanelContent.Controls.Clear();
             // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
-            frmTTKhachHang baothay = new frmTTKhachHang("DS");
+            frmTTKhachHang baothay = new frmTTKhachHang("3");
             //baothay.Height = PanelContent.Size.Height - 20;
             //baothay.Width = PanelContent.Size.Width - 20;
             baothay.Height = PanelContent.Size.Height - 5;
@@ -343,8 +345,8 @@ namespace CAPNUOCTANHOA
 
         private void menuInPhieuTieuTHu_Click(object sender, EventArgs e)
         {
-             PanelContent.Controls.Clear();
-             frmPhieuChepTieuThu baothay = new frmPhieuChepTieuThu();
+            PanelContent.Controls.Clear();
+            frmPhieuChepTieuThu baothay = new frmPhieuChepTieuThu();
             baothay.Height = PanelContent.Size.Height - 20;
             baothay.Width = PanelContent.Size.Width - 20;
             PanelContent.Controls.Add(baothay);
@@ -455,12 +457,12 @@ namespace CAPNUOCTANHOA
 
         private void menuTheoDoiDM_Click(object sender, EventArgs e)
         {
-             PanelContent.Controls.Clear();
-             frm_TheoDoiDM baothay = new frm_TheoDoiDM();
+            PanelContent.Controls.Clear();
+            frm_TheoDoiDM baothay = new frm_TheoDoiDM();
             baothay.Height = PanelContent.Size.Height - 5;
             baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
-            
+
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
@@ -549,8 +551,8 @@ namespace CAPNUOCTANHOA
         private void DMAHoanCong_Click(object sender, EventArgs e)
         {
             PanelContent.Controls.Clear();
-          //  frmHoanCongThay_DA baothay = new frmHoanCongThay_DA();
-            frm_SangOngNganh baothay = new frm_SangOngNganh();            
+            //  frmHoanCongThay_DA baothay = new frmHoanCongThay_DA();
+            frm_SangOngNganh baothay = new frm_SangOngNganh();
             baothay.Height = PanelContent.Size.Height - 5;
             baothay.Width = PanelContent.Size.Width - 5;
             PanelContent.Controls.Add(baothay);
@@ -583,11 +585,19 @@ namespace CAPNUOCTANHOA
             PanelContent.Controls.Add(baothay);
         }
 
-      
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
 
-       
+        }
 
-        
-        
+        private void ttkh(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            frmTTKhachHang baothay = new frmTTKhachHang("1");
+            baothay.Height = PanelContent.Size.Height - 20;
+            baothay.Width = PanelContent.Size.Width - 20;
+            PanelContent.Controls.Add(baothay);
+        }
     }
+
 }

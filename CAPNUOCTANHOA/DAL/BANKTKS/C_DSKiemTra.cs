@@ -154,7 +154,7 @@ namespace CAPNUOCTANHOA.DAL.BANKTKS
         public static DataSet getReport(string ngay,string sort)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT kt.ID, kt.DANHBO, kt.LOTRINH, kt.HOTEN, kt.DIACHI, kt.HOPDONG, kt.HIEUDHN, kt.CODHN, kt.SOTHAN, kt.GB, kt.DM, kt.CHISO, CONGDUNG, NGAYLAP, kt.CREATEDATE, kt.CREATEBY, kt.MODIFYDATE,kh.VITRIDHN  AS 'MODIFYBY' ";
+            string query = " SELECT kt.ID, kt.DANHBO, kh.LOTRINH, kh.HOTEN, (kh.SONHA + ' '  +TENDUONG) as DIACHI, kh.HOPDONG, kh.HIEUDH as HIEUDHN, kh.CODH as CODHN, kh.SOTHANDH as SOTHAN, kh.GIABIEU as GB, kh.DINHMUC as DM, kh.CHISOKYTRUOC  as CHISO, CONGDUNG, NGAYLAP, kt.CREATEDATE, kt.CREATEBY, kt.MODIFYDATE,kh.VITRIDHN  AS 'MODIFYBY' ";
             query += " FROM KTKS_DANHSACHKT kt,TB_DULIEUKHACHHANG kh where kh.DANHBO=kt.DANHBO AND kt.NGAYLAP='" + ngay + "' AND kt.CREATEBY='" + DAL.SYS.C_USERS._userName + "' ORDER BY kt." + sort + " ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);

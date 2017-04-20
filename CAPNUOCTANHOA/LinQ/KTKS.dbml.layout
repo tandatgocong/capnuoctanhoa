@@ -1,11 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="KTKS">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.375" name="KTKS">
   <DataContextMoniker Name="/KTKSDataContext" />
   <nestedChildShapes>
     <classShape Id="8c2aaca2-c531-423d-a8f9-dcce880e1a78" absoluteBounds="2.25, 1.25, 2, 6.7707340494791657">
       <DataClassMoniker Name="/KTKSDataContext/CTBamChi" />
       <nestedChildShapes>
         <elementListCompartment Id="15d5b7cd-0c16-4c11-a1f0-c05847a7d3b5" absoluteBounds="2.265, 1.71, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ffdf3292-51ed-4c81-9ab6-e06159bb4401" absoluteBounds="5.375, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/KTKSDataContext/TTKH_LoaiTiepNhan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cff37a1-6f66-4fc7-a81f-0794d6aa9207" absoluteBounds="5.39, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="368993e9-1df9-4d45-ac92-edc6fff8191e" absoluteBounds="5.375, 3.75, 2, 5.4246240234374987">
+      <DataClassMoniker Name="/KTKSDataContext/TTKH_TiepNhan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7332e931-c5ed-4823-b844-d75bef139387" absoluteBounds="5.39, 4.21, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
