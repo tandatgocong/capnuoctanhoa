@@ -144,12 +144,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             //    tento = "TỔ TÂN PHÚ 02";
             //}
 
-            rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong(txtNam.Text.Trim(), ky, tods));
-            rp.SetParameterValue("TODS", tento);
-            rp.SetParameterValue("KYDS", ky);
-            rp.SetParameterValue("TONGDHN", 12563);
-            rp.SetParameterValue("TONGDC", txtNam.Text.Trim());
-            crystalReportViewer1.ReportSource = rp;
+            if (rdHoaDon.Checked == false)
+            {
+                rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCong(txtNam.Text.Trim(), ky, tods));
+                rp.SetParameterValue("TODS", tento);
+                rp.SetParameterValue("KYDS", ky);
+                rp.SetParameterValue("TONGDHN", 12563);
+                rp.SetParameterValue("TONGDC", txtNam.Text.Trim());
+                crystalReportViewer1.ReportSource = rp;
+            }
+            else if (rdHoaDon.Checked == true)
+            {
+                rp.SetDataSource(DAL.QLDHN.C_QuanLyDongHoNuoc.reportChamCongHD(txtNam.Text.Trim(), ky, tods));
+                rp.SetParameterValue("TODS", tento);
+                rp.SetParameterValue("KYDS", ky);
+                rp.SetParameterValue("TONGDHN", 12563);
+                rp.SetParameterValue("TONGDC", txtNam.Text.Trim());
+                crystalReportViewer1.ReportSource = rp;
+            }
+
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
@@ -196,6 +209,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
         {
             frm_NhapDanhGia frm = new frm_NhapDanhGia();
             frm.ShowDialog();
+        }
+
+        private void rdHoaDon_CheckedChanged(object sender, EventArgs e)
+        {
+            int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+            string sql = "SELECT MAX(DOT)  FROM HOADON_TH kh WHERE kh.NAM=" + txtNam.Text.Trim() + " AND kh.KY=" + ky;
+            rdHoaDon.Text = "Theo Hóa Đơn ( Hiện có " + DAL.LinQConnection.ExecuteCommand(sql) + " đợt )";
         }
 
     }

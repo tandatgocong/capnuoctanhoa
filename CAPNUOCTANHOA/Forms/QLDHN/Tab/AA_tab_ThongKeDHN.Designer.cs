@@ -60,9 +60,12 @@
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.rdHoaDon = new System.Windows.Forms.RadioButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboItem12
@@ -146,6 +149,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.rdHoaDon);
             this.splitContainer1.Panel1.Controls.Add(this.labelX2);
             this.splitContainer1.Panel1.Controls.Add(this.cbKyDS);
             this.splitContainer1.Panel1.Controls.Add(this.btThem);
@@ -155,6 +159,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel2.Controls.Add(this.crystalReportViewer1);
             this.splitContainer1.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.SplitterDistance = 80;
@@ -271,7 +276,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.Crimson;
-            this.btThem.Location = new System.Drawing.Point(437, 45);
+            this.btThem.Location = new System.Drawing.Point(826, 42);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(163, 27);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -323,6 +328,27 @@
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
+            // rdHoaDon
+            // 
+            this.rdHoaDon.AutoSize = true;
+            this.rdHoaDon.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.rdHoaDon.Location = new System.Drawing.Point(435, 45);
+            this.rdHoaDon.Name = "rdHoaDon";
+            this.rdHoaDon.Size = new System.Drawing.Size(137, 24);
+            this.rdHoaDon.TabIndex = 44;
+            this.rdHoaDon.Text = "Theo Hóa Đơn";
+            this.rdHoaDon.UseVisualStyleBackColor = true;
+            this.rdHoaDon.CheckedChanged += new System.EventHandler(this.rdHoaDon_CheckedChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1108, 546);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // AA_tab_ThongKeDHN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -335,8 +361,10 @@
             this.Name = "AA_tab_ThongKeDHN";
             this.Size = new System.Drawing.Size(1108, 630);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,5 +403,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtNam;
         private DevComponents.DotNetBar.Controls.ReflectionLabel title;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.RadioButton rdHoaDon;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

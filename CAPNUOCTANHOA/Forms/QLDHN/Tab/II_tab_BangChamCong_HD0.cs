@@ -91,6 +91,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             crystalReportViewer1.ReportSource = rp;
         }
 
+        private void rdHoaDon_CheckedChanged(object sender, EventArgs e)
+        {
+            int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
+            string sql = "SELECT MAX(DOT)  FROM HOADON_TH kh WHERE kh.NAM=" + txtNam.Text.Trim() + " AND kh.KY=" + ky;
+            rdHoaDon.Text = "Theo Hóa Đơn ( Hiện có " + DAL.LinQConnection.ExecuteCommand(sql) + " đợt )";
+        }
+
         //private void buttonX2_Click(object sender, EventArgs e)
         //{
         //    frm_NhapTangCuong frm = new frm_NhapTangCuong();

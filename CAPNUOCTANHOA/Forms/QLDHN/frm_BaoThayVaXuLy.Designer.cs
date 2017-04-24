@@ -32,6 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl2 = new DevComponents.DotNetBar.TabControl();
+            this.tabDieuChinhKH = new DevComponents.DotNetBar.TabControlPanel();
+            this.panelBaoThay = new System.Windows.Forms.Panel();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.panelTroNgai = new System.Windows.Forms.Panel();
             this.dateInDSDutChi = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -67,15 +70,13 @@
             this.txtSoBangKe = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabDieuChinh = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabDieuChinhKH = new DevComponents.DotNetBar.TabControlPanel();
-            this.panelBaoThay = new System.Windows.Forms.Panel();
-            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuChuyenKT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCapNhatKetQua = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
             this.tabControl2.SuspendLayout();
+            this.tabDieuChinhKH.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.panelTroNgai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateInDSDutChi)).BeginInit();
@@ -87,7 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay)).BeginInit();
             this.tabControlPanel4.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
-            this.tabDieuChinhKH.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,6 +125,41 @@
             this.tabControl2.Tabs.Add(this.tabItem3);
             this.tabControl2.Tabs.Add(this.tabDieuChinh);
             this.tabControl2.Text = "tabControl2";
+            // 
+            // tabDieuChinhKH
+            // 
+            this.tabDieuChinhKH.Controls.Add(this.panelBaoThay);
+            this.tabDieuChinhKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabDieuChinhKH.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.tabDieuChinhKH.Location = new System.Drawing.Point(0, 28);
+            this.tabDieuChinhKH.Name = "tabDieuChinhKH";
+            this.tabDieuChinhKH.Padding = new System.Windows.Forms.Padding(1);
+            this.tabDieuChinhKH.Size = new System.Drawing.Size(1295, 581);
+            this.tabDieuChinhKH.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
+            this.tabDieuChinhKH.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
+            this.tabDieuChinhKH.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabDieuChinhKH.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabDieuChinhKH.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabDieuChinhKH.Style.GradientAngle = 90;
+            this.tabDieuChinhKH.TabIndex = 1;
+            this.tabDieuChinhKH.TabItem = this.tabItem3;
+            // 
+            // panelBaoThay
+            // 
+            this.panelBaoThay.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelBaoThay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBaoThay.Location = new System.Drawing.Point(1, 1);
+            this.panelBaoThay.Name = "panelBaoThay";
+            this.panelBaoThay.Size = new System.Drawing.Size(1293, 579);
+            this.panelBaoThay.TabIndex = 1;
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabDieuChinhKH;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "BẢNG KÊ BÁO THAY ĐHN";
+            this.tabItem3.Visible = false;
             // 
             // tabControlPanel1
             // 
@@ -619,41 +654,6 @@
             this.tabDieuChinh.Name = "tabDieuChinh";
             this.tabDieuChinh.Text = "XỬ LÝ TRỞ NGẠI THAY";
             // 
-            // tabDieuChinhKH
-            // 
-            this.tabDieuChinhKH.Controls.Add(this.panelBaoThay);
-            this.tabDieuChinhKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabDieuChinhKH.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.tabDieuChinhKH.Location = new System.Drawing.Point(0, 28);
-            this.tabDieuChinhKH.Name = "tabDieuChinhKH";
-            this.tabDieuChinhKH.Padding = new System.Windows.Forms.Padding(1);
-            this.tabDieuChinhKH.Size = new System.Drawing.Size(1295, 581);
-            this.tabDieuChinhKH.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
-            this.tabDieuChinhKH.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
-            this.tabDieuChinhKH.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabDieuChinhKH.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabDieuChinhKH.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabDieuChinhKH.Style.GradientAngle = 90;
-            this.tabDieuChinhKH.TabIndex = 1;
-            this.tabDieuChinhKH.TabItem = this.tabItem3;
-            // 
-            // panelBaoThay
-            // 
-            this.panelBaoThay.BackColor = System.Drawing.Color.AliceBlue;
-            this.panelBaoThay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBaoThay.Location = new System.Drawing.Point(1, 1);
-            this.panelBaoThay.Name = "panelBaoThay";
-            this.panelBaoThay.Size = new System.Drawing.Size(1293, 579);
-            this.panelBaoThay.TabIndex = 1;
-            // 
-            // tabItem3
-            // 
-            this.tabItem3.AttachedControl = this.tabDieuChinhKH;
-            this.tabItem3.Name = "tabItem3";
-            this.tabItem3.Text = "BẢNG KÊ BÁO THAY ĐHN";
-            this.tabItem3.Visible = false;
-            // 
             // tabItem2
             // 
             this.tabItem2.Name = "tabItem2";
@@ -700,6 +700,7 @@
             this.Size = new System.Drawing.Size(1295, 609);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).EndInit();
             this.tabControl2.ResumeLayout(false);
+            this.tabDieuChinhKH.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.panelTroNgai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateInDSDutChi)).EndInit();
@@ -711,7 +712,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay)).EndInit();
             this.tabControlPanel4.ResumeLayout(false);
             this.tabControlPanel3.ResumeLayout(false);
-            this.tabDieuChinhKH.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
