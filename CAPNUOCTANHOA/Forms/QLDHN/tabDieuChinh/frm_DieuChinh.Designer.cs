@@ -37,7 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.txtTenKH = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -83,6 +82,8 @@
             this.txtLoTrinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.TXTid = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSoBangKe = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +92,7 @@
             // 
             this.title.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.Crimson;
-            this.title.Location = new System.Drawing.Point(48, 23);
+            this.title.Location = new System.Drawing.Point(48, -3);
             this.title.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.title.Name = "title";
             this.title.ReflectionEnabled = false;
@@ -107,15 +108,6 @@
             this.labelX3.Size = new System.Drawing.Size(125, 22);
             this.labelX3.TabIndex = 6;
             this.labelX3.Text = "SỐ DANH BỘ";
-            // 
-            // labelX4
-            // 
-            this.labelX4.Font = new System.Drawing.Font("Wingdings 2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.labelX4.Location = new System.Drawing.Point(275, 54);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(126, 26);
-            this.labelX4.TabIndex = 3;
-            this.labelX4.Text = "";
             // 
             // labelX5
             // 
@@ -694,12 +686,36 @@
             this.TXTid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TXTid.Visible = false;
             // 
+            // txtSoBangKe
+            // 
+            // 
+            // 
+            // 
+            this.txtSoBangKe.Border.Class = "TextBoxBorder";
+            this.txtSoBangKe.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoBangKe.Location = new System.Drawing.Point(145, 44);
+            this.txtSoBangKe.Name = "txtSoBangKe";
+            this.txtSoBangKe.Size = new System.Drawing.Size(143, 27);
+            this.txtSoBangKe.TabIndex = 623;
+            this.txtSoBangKe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoBangKe_KeyPress);
+            // 
+            // labelX14
+            // 
+            this.labelX14.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX14.Location = new System.Drawing.Point(17, 45);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(125, 22);
+            this.labelX14.TabIndex = 622;
+            this.labelX14.Text = "SỐ BẢNG KÊ";
+            // 
             // frm_DieuChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtSoBangKe);
+            this.Controls.Add(this.labelX14);
             this.Controls.Add(this.TXTid);
             this.Controls.Add(this.txtToDS);
             this.Controls.Add(this.txtLoTrinh);
@@ -731,7 +747,6 @@
             this.Controls.Add(this.labelX13);
             this.Controls.Add(this.labelX12);
             this.Controls.Add(this.labelX6);
-            this.Controls.Add(this.labelX4);
             this.Controls.Add(this.title);
             this.Controls.Add(this.labelX10);
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -750,7 +765,6 @@
 
         private DevComponents.DotNetBar.Controls.ReflectionLabel title;
         private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTenKH;
@@ -796,5 +810,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TTBQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn CONGDUNG;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTid;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSoBangKe;
+        private DevComponents.DotNetBar.LabelX labelX14;
     }
 }

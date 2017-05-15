@@ -424,7 +424,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
             }
             ReportDocument rp = new rpt_PhieuChuyenDinhMuc();
-            rp.SetDataSource(DAL.QLDHN.C_ChuyenDinhMuc.getReport(this.txtNgayGan.Value.ToShortDateString()));
+           // rp.SetDataSource(DAL.QLDHN.C_ChuyenDinhMuc.getReport(this.txtNgayGan.Value.ToShortDateString()));
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
 

@@ -279,6 +279,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Controls.Add(this.dataBangKe);
             this.splitContainer1.Size = new System.Drawing.Size(1181, 561);
             this.splitContainer1.SplitterDistance = 166;
@@ -411,6 +412,7 @@
             // 
             // NGAYKIEMDINH
             // 
+            this.NGAYKIEMDINH.DataPropertyName = "NGAYKIEMDINH";
             this.NGAYKIEMDINH.Frozen = true;
             this.NGAYKIEMDINH.HeaderText = "NGAYKIEMDINH";
             this.NGAYKIEMDINH.Name = "NGAYKIEMDINH";

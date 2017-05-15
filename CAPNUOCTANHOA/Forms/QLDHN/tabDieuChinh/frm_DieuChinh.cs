@@ -11,6 +11,7 @@ using log4net;
 using CAPNUOCTANHOA.Forms.QLDHN.BC;
 using CrystalDecisions.CrystalReports.Engine;
 using CAPNUOCTANHOA.Forms.Reports;
+using System.Configuration;
 
 namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
 {
@@ -23,11 +24,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             InitializeComponent();
             // this.cbLoaiBangKe.Focus(); 
             formLoad();
+            loadSoBangeKe();
             //  MessageBox.Show(this, DAL.SYS.C_USERS._tenDocSo);
             //     MessageBox.Show(this, DAL.QLDHN.C_BaoThay.getMaxBangKe() + "");
 
         }
 
+        public void loadSoBangeKe()
+        {
+            try
+            {
+                string balap = DateTime.Now.Year.ToString().Substring(2) + "001";
+                int max = DAL.QLDHN.C_BaoThay.getMaxBangKe_DM();
+                if (max >= int.Parse(balap))
+                {
+                    txtSoBangKe.Text = (DAL.QLDHN.C_BaoThay.getMaxBangKe_DM() + 1) + "";
+                }
+                else
+                {
+                    txtSoBangKe.Text = balap;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
         void formLoad()
         {
 
@@ -45,7 +68,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
              
                 ReportDocument rp = new rpt_PhieuChuyenDinhMuc();                         
-                rp.SetDataSource(DAL.QLDHN.C_ChuyenDinhMuc.getReport(this.txtNgayGan.Value.ToShortDateString()));
+                rp.SetDataSource(DAL.QLDHN.C_ChuyenDinhMuc.getReport(this.txtNgayGan.Value.ToShortDateString(), txtSoBangKe.Text));
+                rp.SetParameterValue("bk", txtSoBangKe.Text);
                 frm_Reports frm = new frm_Reports(rp);
                 frm.ShowDialog();
             
@@ -56,7 +80,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
-                dataBangKe.DataSource = DAL.QLDHN.C_ChuyenDinhMuc.getListDCByDate(this.txtNgayGan.Value.ToShortDateString());
+                dataBangKe.DataSource = DAL.QLDHN.C_ChuyenDinhMuc.getListDCByDate(this.txtNgayGan.Value.ToShortDateString(),txtSoBangKe.Text);
                 Utilities.DataGridV.formatRows(dataBangKe);
               //  setSTT();
             }
@@ -158,6 +182,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
 
             TB_CHUYENDINHMUC chuyendm = new TB_CHUYENDINHMUC();
+            chuyendm.SOBANGKE =int.Parse(txtSoBangKe.Text);
             chuyendm.KY = int.Parse(txtKY.Text);
             chuyendm.DOT = int.Parse(txtDot.Text);
             chuyendm.NAM = DateTime.Now.Date.Year;
@@ -203,12 +228,18 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
             try
             {
+                int mep =int.Parse(ConfigurationManager.AppSettings["recordDM"].ToString());
+
+                if (dataBangKe.Rows.Count <= mep-1)
+                {
+
+                }
                 string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
                 TB_CHUYENDINHMUC dc = DAL.QLDHN.C_ChuyenDinhMuc.findByTB_CHUYENDINHMUC_khacgnay(sodanhbo.Replace(" ", ""), this.txtNgayGan.Value.Date);
                 if (dc != null)
                 {
                     string ngay = Utilities.DateToString.NgayVNVN(dc.NGAYLAP.Value);
-                    string mess = "Danh Bộ " + Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtSoDanhBo.Text, "-") + " đã báo ngày " + ngay + " , Báo tiếp ?";
+                    string mess = "Danh Bộ " +  this.txtSoDanhBo.Text  + " đã báo ngày " + ngay + ", Bảng kê : " + dc.SOBANGKE + " , Báo tiếp ?";
                     if (MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Add();
@@ -339,6 +370,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
 
             CLEAR();
+            loadSoBangeKe();
             
         }
 
@@ -356,5 +388,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
         {
 
         }
+
+       
     }
 }

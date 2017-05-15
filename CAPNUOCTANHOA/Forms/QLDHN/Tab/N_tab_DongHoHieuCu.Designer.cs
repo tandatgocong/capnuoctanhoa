@@ -41,6 +41,7 @@
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cbLoai = new System.Windows.Forms.ComboBox();
             this.txtGB = new System.Windows.Forms.TextBox();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.txtCode = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.title = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.cbLoai = new System.Windows.Forms.ComboBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -162,6 +162,19 @@
             this.splitContainer1.SplitterDistance = 80;
             this.splitContainer1.TabIndex = 0;
             // 
+            // cbLoai
+            // 
+            this.cbLoai.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
+            this.cbLoai.ForeColor = System.Drawing.Color.Crimson;
+            this.cbLoai.FormattingEnabled = true;
+            this.cbLoai.Items.AddRange(new object[] {
+            "ĐỘI",
+            "TỔ ĐS"});
+            this.cbLoai.Location = new System.Drawing.Point(538, 3);
+            this.cbLoai.Name = "cbLoai";
+            this.cbLoai.Size = new System.Drawing.Size(121, 39);
+            this.cbLoai.TabIndex = 39;
+            // 
             // txtGB
             // 
             this.txtGB.Location = new System.Drawing.Point(648, 48);
@@ -215,18 +228,23 @@
             "ACT",
             "AIC",
             "ASA",
+            "B-M",
             "BAD",
             "BAY",
+            "ELS",
             "FLO",
             "HER",
             "HYD",
             "INV",
+            "ITA",
             "ITR",
             "KEN",
             "LUG",
+            "MAG",
             "MEI",
             "MUL",
             "PRE",
+            "REC",
             "ROC",
             "SEN",
             "TAC",
@@ -297,19 +315,6 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(1108, 546);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            // 
-            // cbLoai
-            // 
-            this.cbLoai.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
-            this.cbLoai.ForeColor = System.Drawing.Color.Crimson;
-            this.cbLoai.FormattingEnabled = true;
-            this.cbLoai.Items.AddRange(new object[] {
-            "ĐỘI",
-            "TỔ ĐS"});
-            this.cbLoai.Location = new System.Drawing.Point(538, 3);
-            this.cbLoai.Name = "cbLoai";
-            this.cbLoai.Size = new System.Drawing.Size(121, 39);
-            this.cbLoai.TabIndex = 39;
             // 
             // N_tab_DongHoHieuCu
             // 

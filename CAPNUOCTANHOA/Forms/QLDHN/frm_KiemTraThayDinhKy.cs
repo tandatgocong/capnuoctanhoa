@@ -184,7 +184,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, ex.Message);
+              //  MessageBox.Show(this, ex.Message);
             }
 
         }

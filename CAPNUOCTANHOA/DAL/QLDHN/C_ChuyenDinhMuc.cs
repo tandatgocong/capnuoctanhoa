@@ -43,7 +43,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             try
             {
-                var query = from q in db.TB_CHUYENDINHMUCs where q.DANHBO == danhbo && q.NGAYLAP != ngayyc orderby q.NGAYLAP descending select q;
+                ///&& q.NGAYLAP != ngayyc
+                var query = from q in db.TB_CHUYENDINHMUCs where q.DANHBO == danhbo  orderby q.NGAYLAP descending select q;
                 return query.ToList()[0];
             }
             catch (Exception ex)
@@ -62,7 +63,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             //    na = (DateTime.Now.Year + 1) + "";
 
             //}
-            string sql = "SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1 AS MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,ds.GB ,ds.DM, ds.TBTT as TBTHU";
+            string sql = "SELECT TOP(1) ds.KY,ds.DOT,ds.Nam AS 'NAM', ds.TODS, DANHBO, ds.MLT1 AS MALOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,kh.HOPDONG,kh.GIABIEU AS  GB ,kh.DINHMUC AS DM, ds.TBTT as TBTHU";
             sql += " FROM DocSoTH.dbo.DocSo AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
             sql += "  WHERE  ds.DANHBA=kh.DANHBO AND  ds.DANHBA ='" + danhbo + "' ORDER BY ds.Nam  DESC,ds.KY DESC ";
 
@@ -78,8 +79,8 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             //}
              return tb;
         }
-        public static DataTable getListDCByDate(string ngay) {
-            string sql = " SELECT ID, KY, DOT, DANHBO, LOTRINH, HOTEN, DIACHI, HOPDONG, GB, DM,TTBQ , CONGDUNG  FROM TB_CHUYENDINHMUC WHERE NGAYLAP='" + ngay + "' AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DANHBO ASC ";
+        public static DataTable getListDCByDate(string ngay, string sobangke) {
+            string sql = " SELECT ID, KY, DOT, DANHBO, LOTRINH, HOTEN, DIACHI, HOPDONG, GB, DM,TTBQ , CONGDUNG  FROM TB_CHUYENDINHMUC WHERE SOBANGKE="+sobangke+" AND NGAYLAP='" + ngay + "' AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DANHBO ASC ";
             return LinQConnection.getDataTable(sql);
         
         }
@@ -115,10 +116,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         }
 
 
-        public static DataSet getReport(string ngay)
+        public static DataSet getReport(string ngay,string sobangke)
         {
             DataSet ds = new DataSet();
-            string query = " SELECT *  FROM TB_CHUYENDINHMUC WHERE NGAYLAP='" + ngay + "' AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DANHBO ASC ";
+            string query = " SELECT *  FROM TB_CHUYENDINHMUC WHERE SOBANGKE=" + sobangke + " AND NGAYLAP='" + ngay + "' AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' ORDER BY DANHBO ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "TB_CHUYENDINHMUC");
             

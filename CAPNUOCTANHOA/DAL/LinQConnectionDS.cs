@@ -45,6 +45,38 @@ namespace CAPNUOCTANHOA.DAL
             return result;
         }
 
+        public static string ExecuteCommand_(string sql)
+        {
+            string result = "";
+            DocSoDataContext db = new DocSoDataContext();
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToString(cmd.ExecuteNonQuery());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection ExecuteCommand : " + sql);
+                log.Error("LinQConnection ExecuteCommand : " + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
+        }
+
 
         public static DataTable getDataTable(string sql)
         {

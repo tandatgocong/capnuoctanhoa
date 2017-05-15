@@ -38,7 +38,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             {
                 log.Error(ex.Message);
             }
-            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) as 'DIACHI',NGAYTHAY,TB_HIEUDONGHO.TENDONGHO as 'HIEUDH',CODH,SOTHANDH,'CON' as 'CHITHAN','CON' as 'CHIGOC',CHISOKYTRUOC,DOT,N'ĐỊNH KỲ' as 'GHICHU', NGAYKIEMDINH";
+            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) as 'DIACHI',NGAYTHAY,TB_HIEUDONGHO.TENDONGHO as 'HIEUDH',CODH,SOTHANDH,'CON' as 'CHITHAN','CON' as 'CHIGOC',CHISOKYTRUOC,DOT,N'ĐỊNH KỲ' as 'GHICHU', NGAYKIEMDINH ";
             sql += "FROM  TB_DULIEUKHACHHANG, TB_HIEUDONGHO WHERE TB_HIEUDONGHO.HIEUDH=LEFT(TB_DULIEUKHACHHANG.HIEUDH,3) AND DANHBO IN (" + listDanhBo + ") ORDER BY LOTRINH ASC ";
 
             dataBangKe.DataSource = DAL.LinQConnection.getDataTable(sql);
@@ -151,7 +151,25 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 thaydh.TENKH = dataBangKe.Rows[i].Cells["G_TENKH"].Value + "";
                 thaydh.DIACHI = dataBangKe.Rows[i].Cells["G_DIACHI"].Value + "";
                 thaydh.T_LOTRINH = dataBangKe.Rows[i].Cells["LOTRINH"].Value + "";
-                thaydh.DHN_NGAYCHUYEN= DateTime.Parse(dataBangKe.Rows[i].Cells["NGAYKIEMDINH"].Value + "");
+               
+                try
+                {
+                    thaydh.DHN_NGAYCHUYEN = DateTime.Parse(dataBangKe.Rows[i].Cells["NGAYKIEMDINH"].Value + "");
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        thaydh.DHN_NGAYCHUYEN = DAL.DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo).NGAYKIEMDINH;
+                    }
+                    catch (Exception)
+                    {
+                        
+                    }
+                    
+                }
+                
+                
                 DAL.QLDHN.C_BaoThay.Insert(thaydh);
                 DAL.DULIEUKH.C_DuLieuKhachHang.UpdateBaoThay(sodanhbo, "True");
                // LoadData();
