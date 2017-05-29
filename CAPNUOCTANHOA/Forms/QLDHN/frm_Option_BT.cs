@@ -140,7 +140,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 thaydh.DHN_LANTHAY = DAL.QLDHN.C_BaoThay.getMaxLanThay(sodanhbo) + 1;
                 thaydh.DHN_LOAIBANGKE = this.cbLoaiBangKe.SelectedValue + "";
                 thaydh.DHN_LYDOTHAY = dataBangKe.Rows[i].Cells["G_LYDO"].Value + "";
-                thaydh.DHN_NGAYBAOTHAY = DateTime.Now.Date;
+                thaydh.DHN_NGAYBAOTHAY = DateTime.Now;
                 thaydh.DHN_NGAYGAN = DateTime.Parse(dataBangKe.Rows[i].Cells["NGAYTHAY"].Value + "");
                 thaydh.DHN_SOBANGKE = int.Parse(this.txtSoBangKe.Text);
                 thaydh.DHN_CAP = "";

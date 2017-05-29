@@ -286,7 +286,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             thaydh.DHN_LANTHAY = histotyThay.Rows.Count+1;
             thaydh.DHN_LOAIBANGKE = this.cbLoaiBangKe.SelectedValue + "";
             thaydh.DHN_LYDOTHAY = this.txtLyDo.Text.ToUpper();
-            thaydh.DHN_NGAYBAOTHAY = DateTime.Now.Date;
+            thaydh.DHN_NGAYBAOTHAY = DateTime.Now;
             thaydh.DHN_NGAYGAN = txtNgayGan.Value;
             thaydh.DHN_SOBANGKE = int.Parse(this.txtSoBangKe.Text.Trim());
             thaydh.DHN_SOTHAN = this.txtSoThan.Text.ToUpper();
@@ -306,7 +306,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             
             
             thaydh.DHN_CREATEBY = DAL.SYS.C_USERS._userName;
-            thaydh.DHN_CREATEDATE = DateTime.Now.Date;
+            thaydh.DHN_CREATEDATE = DateTime.Now;
             thaydh.TENKH = this.txtTenKH.Text;
             thaydh.DIACHI = this.txtDiaChi.Text;
             thaydh.T_LOTRINH = this.txtMaLoTrinh.Text;
@@ -415,7 +415,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     thaydh.DHN_LOAIBANGKE = this.cbLoaiBangKe.SelectedValue + "";
                     thaydh.DHN_GHICHU = this.txtGhiChu.Text;
                     thaydh.DHN_LYDOTHAY = this.txtLyDo.Text;
-                    thaydh.DHN_NGAYBAOTHAY = DateTime.Now.Date;
+                   // thaydh.DHN_NGAYBAOTHAY = DateTime.Now.Date;
                     thaydh.DHN_NGAYGAN = txtNgayGan.Value;
                     thaydh.DHN_SOTHAN = this.txtSoThan.Text;
                     thaydh.DHN_MODIFYBY = DAL.SYS.C_USERS._userName;

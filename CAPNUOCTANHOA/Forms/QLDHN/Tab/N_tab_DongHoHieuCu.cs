@@ -30,7 +30,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
         }
 
-        public DataSet getTheoDoiBienDocChiSo(string nam)
+        public DataSet getTheoDoiBienDocChiSo(string nam )
         {
             DataSet ds = new DataSet();
             CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
@@ -60,8 +60,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             {
                 query += " AND GIABIEU = '" + this.txtGB.Text.Replace(" ", "") + "'";
             }
-            
-            query+= DAL.SYS.C_USERS._gioihan + " ORDER BY LOTRINH ASC ";
+            if (cbLoai.SelectedIndex == 1)
+                query += DAL.SYS.C_USERS._gioihan;
+            query+= " ORDER BY LOTRINH ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
             adapter.Fill(ds, "W_DH_HIEUCU");

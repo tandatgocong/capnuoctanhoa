@@ -326,7 +326,7 @@ namespace CAPNUOCTANHOA
         {
             PanelContent.Controls.Clear();
             // frm_LayDuLieuGanMoi_Ky baothay = new frm_LayDuLieuGanMoi_Ky();
-            frmTTKhachHang baothay = new frmTTKhachHang("3");
+            frmTTKhachHang baothay = new frmTTKhachHang("2");
             //baothay.Height = PanelContent.Size.Height - 20;
             //baothay.Width = PanelContent.Size.Width - 20;
             baothay.Height = PanelContent.Size.Height - 5;
