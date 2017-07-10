@@ -129,7 +129,7 @@ namespace CAPNUOCTANHOA.DAL
             return null;
         }
 
-        public static void ExecuteStoredProcedure(string storedNam, int ky, int nam)
+        public static void ExecuteStoredProcedure(string storedNam, int ky, int nam,string dma)
         {
             HoaDonDataContext db = new HoaDonDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
@@ -151,6 +151,11 @@ namespace CAPNUOCTANHOA.DAL
                 SqlParameter _nam = cmd.Parameters.Add("@NAM", SqlDbType.Int);
                 _nam.Direction = ParameterDirection.Input;
                 _nam.Value = nam;
+
+                SqlParameter _dma = cmd.Parameters.Add("@MaDMA", SqlDbType.NVarChar);
+                _dma.Direction = ParameterDirection.Input;
+                _dma.Value = dma;
+
 
                 cmd.ExecuteNonQuery();
             }

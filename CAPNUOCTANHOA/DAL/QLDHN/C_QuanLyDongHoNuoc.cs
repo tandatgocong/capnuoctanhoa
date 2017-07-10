@@ -107,7 +107,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
 
         public static DataSet getThongKeDHN_HD(int ky, int nam, string tods)
         {
-            LinQConnectionTT.ExecuteStoredProcedure("UPDATEHIEUDHN") ;
+            LinQConnectionTT.ExecuteStoredProcedure("UPDATEHIEUDHN", ky, nam);
 
             string updatedhn = "UPDATE TB_THONGKEDHN    SET CO15 = 0 ,CO20 =0 ,CO25 = 0 ,CO40 = 0 ,CO50 = 0 ,CO80 = 0 ,CO100 =0 ,CO150 = 0 ";
             updatedhn += " ,CO200 = 0 ,NHOCO15 = 0 ,NHOCO20 = 0 ,NHOCO25 = 0 ,NHOCO40 = 0 ,NHOCO50 = 0 ,NHOCO80 = 0 ";

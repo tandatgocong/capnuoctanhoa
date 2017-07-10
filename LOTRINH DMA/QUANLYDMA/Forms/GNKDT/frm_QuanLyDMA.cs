@@ -80,12 +80,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             string madma = cbMaDMA.SelectedValue.ToString();
 
             // UPDATE 
-            string sql2 = " UPDATE HOADON SET Quan=DLKH_HUY.QUAN  ,Phuong=DLKH_HUY.PHUONG ,CoDH=DLKH_HUY.CODH ,MaDMA=DLKH_HUY.MADMA,HIEULUC=DLKH_HUY.HIEULUCHUY, NAMLD=YEAR(DLKH_HUY.NGAYTHAY),HIEUDH=DLKH_HUY.HIEUDH  FROM DLKH_HUY WHERE DLKH_HUY.MADMA ='" + madma + "' AND HOADON.DANHBA= DLKH_HUY.DANHBO AND HOADON.KY=" + ky + " and HOADON.NAM=" + nam;
-            DAL.LinQConnectionHD.ExecuteCommand_(sql2);
+            //string sql2 = " UPDATE HOADON SET Quan=DLKH_HUY.QUAN  ,Phuong=DLKH_HUY.PHUONG ,CoDH=DLKH_HUY.CODH ,MaDMA=DLKH_HUY.MADMA,HIEULUC=DLKH_HUY.HIEULUCHUY, NAMLD=YEAR(DLKH_HUY.NGAYTHAY),HIEUDH=DLKH_HUY.HIEUDH  FROM DLKH_HUY WHERE DLKH_HUY.MADMA ='" + madma + "' AND HOADON.DANHBA= DLKH_HUY.DANHBO AND HOADON.KY=" + ky + " and HOADON.NAM=" + nam;
+            //DAL.LinQConnectionHD.ExecuteCommand_(sql2);
 
-            string sql1 = "  UPDATE HOADON SET Quan=DLKH.QUAN ,Phuong=DLKH.PHUONG ,CoDH=DLKH.CODH  ,MaDMA=DLKH.MADMA,HIEULUC=(CONVERT(VARCHAR,DLKH.KY)+'/'+CONVERT(VARCHAR,DLKH.NAM) ), NAMLD=YEAR(DLKH.NGAYTHAY),HIEUDH=DLKH.HIEUDH    FROM DLKH WHERE DLKH.MADMA='" + madma + "'  AND   HOADON.DANHBA= DLKH.DANHBO AND  HOADON.KY=" + ky + " and HOADON.NAM=" + nam;
-            DAL.LinQConnectionHD.ExecuteCommand_(sql1);// AND HOADON.MaDMA<>DLKH.MADMA
-           
+            //string sql1 = "  UPDATE HOADON SET Quan=DLKH.QUAN ,Phuong=DLKH.PHUONG ,CoDH=DLKH.CODH  ,MaDMA=DLKH.MADMA,HIEULUC=(CONVERT(VARCHAR,DLKH.KY)+'/'+CONVERT(VARCHAR,DLKH.NAM) ), NAMLD=YEAR(DLKH.NGAYTHAY),HIEUDH=DLKH.HIEUDH    FROM DLKH WHERE DLKH.MADMA='" + madma + "'  AND   HOADON.DANHBA= DLKH.DANHBO AND  HOADON.KY=" + ky + " and HOADON.NAM=" + nam;
+            //DAL.LinQConnectionHD.ExecuteCommand_(sql1);// AND HOADON.MaDMA<>DLKH.MADMA
+
+            DAL.LinQConnectionHD.ExecuteStoredProcedure("TH_DMA", int.Parse(ky), int.Parse(nam), madma);
 
             Load_(ky, nam, madma);
             

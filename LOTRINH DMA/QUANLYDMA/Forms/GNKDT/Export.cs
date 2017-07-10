@@ -101,6 +101,66 @@ namespace CAPNUOCTANHOA.Forms.GNKDT
             //System.Runtime.InteropServices.Marshal.ReleaseComObject(exApp);
             return path;
         }
+
+        public static string exportThay(DataGridView dataGridView1, string tungay, string denngay )
+        {
+            ExcelCOM.Application exApp = new ExcelCOM.Application();
+            string workbookPath = AppDomain.CurrentDomain.BaseDirectory + @"\THAY.xls";
+            ExcelCOM.Workbook exBook = exApp.Workbooks.Open(workbookPath,
+        0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "",
+        true, false, 0, true, false, false);
+            ExcelCOM.Worksheet exSheet = (ExcelCOM.Worksheet)exBook.Worksheets[1];
+
+            //exSheet.Name = ky + "." + nam;
+            //exSheet.Cells[4, 5] = "TP.Hồ Chí Minh, ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
+            exSheet.Cells[1, 1] = "THỐNG KÊ THAY DHN TRONG DMA TỪ NGÀY  " + tungay + " ĐẾN NGÀY " +   denngay;
+            int rows = 4;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                string STT = dataGridView1.Rows[i].Cells["STT"].Value + "";
+                string MADMA = dataGridView1.Rows[i].Cells["MADMA"].Value + "";
+                string SOLUONG = dataGridView1.Rows[i].Cells["SOLUONG"].Value + "";
+
+                exSheet.Cells[rows, 1] = STT;
+                exSheet.Cells[rows, 2] = MADMA;
+                exSheet.Cells[rows, 3] = SOLUONG;
+
+                rows++;
+
+            }
+
+            string file = "THAY TRONG DMA " + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString() + ".xls";
+            exApp.Visible = false;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.InitialDirectory = @"C:\";
+            saveFileDialog1.Title = "Save text Files";
+            saveFileDialog1.FileName = file;
+            saveFileDialog1.DefaultExt = ".xls";
+            saveFileDialog1.Filter = "All files (*.*)|*.*";
+            string path = "";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                path = saveFileDialog1.FileName; ;
+                exBook.SaveAs(path, ExcelCOM.XlFileFormat.xlWorkbookNormal,
+                    null, null, false, false,
+                    ExcelCOM.XlSaveAsAccessMode.xlExclusive,
+                    false, false, false, false, false);
+            }
+
+
+            exBook.Close(false, false, false);
+            exApp.Visible = false;
+            //string path = "C:\\ThayDoiPhienLoTrinh." + ky + "." + nam + ".xls";
+            //exBook.SaveAs(path.Replace("\\\\", "\\"), ExcelCOM.XlFileFormat.xlWorkbookNormal,
+            //    null, null, false, false,
+            //    ExcelCOM.XlSaveAsAccessMode.xlExclusive,
+            //    false, false, false, false, false);
+            //exBook.Close(false, false, false);
+            //exApp.Quit();
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(exBook);
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(exApp);
+            return path;
+        }
     
     }
 }

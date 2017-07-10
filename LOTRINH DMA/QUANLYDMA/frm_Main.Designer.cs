@@ -82,6 +82,7 @@
             this.menuStrip7 = new System.Windows.Forms.MenuStrip();
             this.toolPhanTich = new System.Windows.Forms.ToolStripMenuItem();
             this.toolQuanLyDMA = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonGNKDT = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
@@ -620,7 +621,8 @@
             this.menuStrip7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.menuStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolPhanTich,
-            this.toolQuanLyDMA});
+            this.toolQuanLyDMA,
+            this.toolStripMenuItem1});
             this.menuStrip7.Location = new System.Drawing.Point(3, 0);
             this.menuStrip7.Name = "menuStrip7";
             this.menuStrip7.Size = new System.Drawing.Size(1083, 27);
@@ -648,6 +650,17 @@
             this.toolQuanLyDMA.Size = new System.Drawing.Size(142, 23);
             this.toolQuanLyDMA.Text = "Theo Dõi DMA";
             this.toolQuanLyDMA.Click += new System.EventHandler(this.toolQuanLyDMA_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
+            this.toolStripMenuItem1.Image = global::CAPNUOCTANHOA.Properties.Resources.Applications;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(114, 23);
+            this.toolStripMenuItem1.Text = "Thay DMA";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // ribbonGNKDT
             // 
@@ -776,6 +789,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem toolPhanTich;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 
 
     }

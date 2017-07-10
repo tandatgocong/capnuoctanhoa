@@ -301,7 +301,7 @@ namespace CAPNUOCTANHOA.DAL.DULIEUKH
 
         public static DataTable lisGhiChu(string danhbo)
         {
-            string sql = "SELECT ID,NOIDUNG,DONVI,CREATEDATE FROM TB_GHICHU WHERE DANHBO='" + danhbo + "'  ORDER BY CREATEDATE DESC";
+            string sql = "SELECT ID,NOIDUNG,DONVI,CREATEDATE,HIENTHI FROM TB_GHICHU WHERE DANHBO='" + danhbo + "'  ORDER BY CREATEDATE DESC";
             return LinQConnection.getDataTable(sql);
         }
         public static DataTable lisGhiChu_TT(string danhbo)

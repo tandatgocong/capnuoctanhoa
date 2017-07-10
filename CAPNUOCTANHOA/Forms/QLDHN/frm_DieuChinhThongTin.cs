@@ -982,6 +982,50 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             panel9.Controls.Clear();
             panel9.Controls.Add(new frm_ThuMoiiiiiiiiiiii());
         }
+
+        private void checkHienThi_Click(object sender, EventArgs e)
+        {
+            string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
+            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_GHICHU SET HIENTHI=(CASE WHEN HIENTHI= 'False' THEN 'True' ELSE CASE WHEN HIENTHI= 'True' THEN 'False' END END) WHERE ID='" + ID_ + "' AND DONVI='" + DAL.SYS.C_USERS._maphong + "'");
+            string sodanhbo = this.txtDanhBo.Text.Replace("-", "");
+            loadghichu(sodanhbo);
+        }
+
+        private void lichsuGhiCHu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex == -1) return;
+            //if (e.ColumnIndex == 4)
+            //{
+            //    //if (lichsuGhiCHu.Rows[e.RowIndex].Cells[0].Value == null)
+            //    //{
+            //    //    lichsuGhiCHu.Rows[e.RowIndex].Cells[0].Value = true;
+            //    //}
+            //    //else
+            //    //{
+            //    //    bool bChecked = (bool)DG_SDV.Rows[e.RowIndex].Cells[0].Value;
+            //    //    DG_SDV.Rows[e.RowIndex].Cells[0].Value = !bChecked;
+            //    //}
+            //    string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
+            //    DAL.LinQConnection.ExecuteCommand_("UPDATE TB_GHICHU SET HIENTHI=(CASE WHEN HIENTHI= 'False' THEN 'True' ELSE CASE WHEN HIENTHI= 'True' THEN 'False' END END) WHERE ID='" + ID_ + "' AND DONVI='" + DAL.SYS.C_USERS._maphong + "'");
+        
+                  
+            //}
+        }
+
+        private void lichsuGhiCHu_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
+                DAL.LinQConnection.ExecuteCommand_("UPDATE TB_GHICHU SET HIENTHI=(CASE WHEN HIENTHI= 'False' THEN 'True' ELSE CASE WHEN HIENTHI= 'True' THEN 'False' END END) WHERE ID='" + ID_ + "' AND DONVI='" + DAL.SYS.C_USERS._maphong + "'");
+       
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(this,"Lỗi");
+            }
+              
+        }
     }
 }
 

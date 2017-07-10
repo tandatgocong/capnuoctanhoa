@@ -26,7 +26,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             _ticks++;
             if (_ticks % 2 == 0)
             {
-                string file =AppDomain.CurrentDomain.BaseDirectory + @"\Windows Ringin.wav" ;
+                string file =  @"c:\Windows\Media\Windows Ringin.wav";
                 SoundPlayer simpleSound = new SoundPlayer(file);
                 simpleSound.Play();
             }
