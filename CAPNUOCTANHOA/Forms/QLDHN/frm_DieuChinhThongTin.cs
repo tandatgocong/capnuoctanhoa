@@ -222,6 +222,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                         ghichu.NOIDUNG = txtGhiChu.Text;
                         ghichu.DONVI = DAL.SYS.C_USERS._maphong;
                         ghichu.CREATEDATE = DateTime.Now.Date;
+                        ghichu.HIENTHI = false; 
                         ghichu.CREATEBY = DAL.SYS.C_USERS._userName;
                         DAL.DULIEUKH.C_DuLieuKhachHang.InsertGHICHU(ghichu);
                         loadghichu(khachhang.DANHBO);
@@ -986,7 +987,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         private void checkHienThi_Click(object sender, EventArgs e)
         {
             string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
-            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_GHICHU SET HIENTHI=(CASE WHEN HIENTHI= 'False' THEN 'True' ELSE CASE WHEN HIENTHI= 'True' THEN 'False' END END) WHERE ID='" + ID_ + "' AND DONVI='" + DAL.SYS.C_USERS._maphong + "'");
+            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_GHICHU SET HIENTHI=(CASE WHEN HIENTHI= 'False' OR HIENTHI= '0' OR HIENTHI IS NULL    THEN 'True' ELSE CASE WHEN HIENTHI= 'True' OR HIENTHI= '1' THEN 'False' END END) WHERE ID='" + ID_ + "' ");
             string sodanhbo = this.txtDanhBo.Text.Replace("-", "");
             loadghichu(sodanhbo);
         }
@@ -1017,7 +1018,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             try
             {
                 string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
-                DAL.LinQConnection.ExecuteCommand_("UPDATE TB_GHICHU SET HIENTHI=(CASE WHEN HIENTHI= 'False' THEN 'True' ELSE CASE WHEN HIENTHI= 'True' THEN 'False' END END) WHERE ID='" + ID_ + "' AND DONVI='" + DAL.SYS.C_USERS._maphong + "'");
+                DAL.LinQConnection.ExecuteCommand_("UPDATE TB_GHICHU SET HIENTHI=(CASE WHEN HIENTHI= 'False' OR HIENTHI= '0' OR HIENTHI IS NULL    THEN 'True' ELSE CASE WHEN HIENTHI= 'True' OR HIENTHI= '1' THEN 'False' END END) WHERE ID='" + ID_ + "' ");
        
             }
             catch (Exception)
