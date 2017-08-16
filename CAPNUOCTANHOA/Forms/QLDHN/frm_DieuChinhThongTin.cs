@@ -19,6 +19,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
     public partial class frm_DieuChinhThongTin : UserControl
     {
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
+        static int f_ghichu = 0;
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_DieuChinhThongTin).Name);
         public frm_DieuChinhThongTin()
         {
@@ -42,6 +43,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             if (e.KeyChar == 13)
             {
                 LoadThongTinDB();
+                f_ghichu = 0;
             }
         }
         TB_DULIEUKHACHHANG khachhang = null;
@@ -213,7 +215,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 if (DAL.DULIEUKH.C_DuLieuKhachHang.Update())
                 {
                     //cap nhat handheld
-                    DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), HIEUDH.Text.Substring(0, 3), SOTHAN.Text, CHITHAN.Text.ToUpper(), CHIGOC.Text.ToUpper(), VITRI.Text);
+                     DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), HIEUDH.Text.Substring(0, 3), SOTHAN.Text, CHITHAN.Text.ToUpper(), CHIGOC.Text.ToUpper(), VITRI.Text);
                     //cap nhat ghi chu
                     if ("".Equals(txtGhiChu.Text.Replace(" ", "")) == false)
                     {
@@ -231,6 +233,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                     }
                     //
+                    DAL.LinQConnection.ExecuteCommand("UPDATE TB_DULIEUKHACHHANG SET MODIFYDATE=GETDATE(),MODIFYBY=N'" + DAL.SYS.C_USERS._userName + "' WHERE DANHBO='" + khachhang.DANHBO + "'");
                     MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtGhiChu.Text = "";
                     txtDanhBo.Focus();
@@ -241,6 +244,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 }
 
             }
+            f_ghichu = 0;
         }
 
         private void tabItem2_Click(object sender, EventArgs e)
@@ -992,8 +996,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             loadghichu(sodanhbo);
         }
 
+        
         private void lichsuGhiCHu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            f_ghichu = 1;
             //if (e.RowIndex == -1) return;
             //if (e.ColumnIndex == 4)
             //{
@@ -1015,16 +1021,33 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
         private void lichsuGhiCHu_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if ("GM,TH,TK".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
-                string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
-                DAL.LinQConnection.ExecuteCommand_("UPDATE TB_GHICHU SET HIENTHI=(CASE WHEN HIENTHI= 'False' OR HIENTHI= '0' OR HIENTHI IS NULL    THEN 'True' ELSE CASE WHEN HIENTHI= 'True' OR HIENTHI= '1' THEN 'False' END END) WHERE ID='" + ID_ + "' ");
-       
+                if (f_ghichu == 1)
+                {
+                    int record = DAL.LinQConnection.ExecuteCommand("SELECT COUNT(*) FROM TB_GHICHU WHERE HIENTHI='True' and DANHBO='"+khachhang.DANHBO+"'");
+                    if (record <= 2)
+                    {
+                        try
+                        {
+                            string ID_ = this.lichsuGhiCHu.Rows[lichsuGhiCHu.CurrentRow.Index].Cells["ID"].Value + "";
+                            DAL.LinQConnection.ExecuteCommand_("UPDATE TB_GHICHU SET HIENTHI=(CASE WHEN HIENTHI= 'False' OR HIENTHI= '0' OR HIENTHI IS NULL    THEN 'True' ELSE CASE WHEN HIENTHI= 'True' OR HIENTHI= '1' THEN 'False' END END) WHERE ID='" + ID_ + "' ");
+
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show(this, "Lỗi");
+                        }
+                    }
+                    else
+                    { MessageBox.Show(this, " Ghi Chú Hiển Thị Tối Đa 2 dòng "); }
+                }
+                else
+                {
+                    MessageBox.Show(this, "Chọn Ghi Chú Hiển Thị");
+                }
             }
-            catch (Exception)
-            {
-                MessageBox.Show(this,"Lỗi");
-            }
+            
               
         }
     }

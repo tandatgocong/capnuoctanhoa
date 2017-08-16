@@ -295,7 +295,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 if (dc != null)
                 {
                     string ngay= Utilities.DateToString.NgayVNVN(dc.NGAYBAO.Value);
-                    string bk = dc.SOBANGKE+"";
+                    string bk = dc.SOBANGKE+" [Chì "+ (dc.TYPE==0?"Thân":"Góc") +"]";
                     string mess = "Danh Bộ " + this.txtSoDanhBo.Text + " đã báo đứt chì ngày " + ngay + " BK : " + bk + " , Báo Lần 2 chọn Yes, Báo Lần 1 Chọn No  ?";
                     DialogResult dr =MessageBox.Show(this, mess, "..: Thông Báo :..", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)

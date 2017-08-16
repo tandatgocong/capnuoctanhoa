@@ -72,13 +72,6 @@
             this.txtLoTrinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lichsuGhiCHu = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CREATEDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KINHGUI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VEVIEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BANGKE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOIDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONVICN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
@@ -89,6 +82,13 @@
             this.kg = new System.Windows.Forms.ComboBox();
             this.vv = new System.Windows.Forms.ComboBox();
             this.txtTods = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CREATEDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KINHGUI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BANGKE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOIDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONVICN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEVIEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataBangKe)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lichsuGhiCHu)).BeginInit();
@@ -593,70 +593,16 @@
             this.dataGridViewTextBoxColumn1,
             this.CREATEDATE,
             this.KINHGUI,
-            this.VEVIEC,
             this.BANGKE,
             this.NOIDUNG,
-            this.DONVICN});
+            this.DONVICN,
+            this.VEVIEC});
             this.lichsuGhiCHu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lichsuGhiCHu.Location = new System.Drawing.Point(3, 3);
             this.lichsuGhiCHu.Name = "lichsuGhiCHu";
             this.lichsuGhiCHu.RowHeadersWidth = 20;
             this.lichsuGhiCHu.Size = new System.Drawing.Size(673, 171);
             this.lichsuGhiCHu.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // CREATEDATE
-            // 
-            this.CREATEDATE.DataPropertyName = "NGAYLAP";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.CREATEDATE.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CREATEDATE.HeaderText = "NGÀY";
-            this.CREATEDATE.Name = "CREATEDATE";
-            // 
-            // KINHGUI
-            // 
-            this.KINHGUI.DataPropertyName = "KINHGUI";
-            this.KINHGUI.HeaderText = "GỬI";
-            this.KINHGUI.Name = "KINHGUI";
-            this.KINHGUI.Width = 120;
-            // 
-            // VEVIEC
-            // 
-            this.VEVIEC.DataPropertyName = "VEVIEC";
-            this.VEVIEC.HeaderText = "VỀ VIỆC";
-            this.VEVIEC.Name = "VEVIEC";
-            this.VEVIEC.Width = 120;
-            // 
-            // BANGKE
-            // 
-            this.BANGKE.DataPropertyName = "BANGKE";
-            this.BANGKE.HeaderText = "BẢNG KÊ";
-            this.BANGKE.Name = "BANGKE";
-            this.BANGKE.Width = 120;
-            // 
-            // NOIDUNG
-            // 
-            this.NOIDUNG.DataPropertyName = "VANBANG";
-            this.NOIDUNG.HeaderText = "VĂN BẢN";
-            this.NOIDUNG.Name = "NOIDUNG";
-            this.NOIDUNG.Width = 200;
-            // 
-            // DONVICN
-            // 
-            this.DONVICN.DataPropertyName = "CONGDUNG";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DONVICN.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DONVICN.HeaderText = "GHI CHÚ";
-            this.DONVICN.Name = "DONVICN";
-            this.DONVICN.Width = 320;
             // 
             // tabControl1
             // 
@@ -770,6 +716,60 @@
             this.txtTods.WatermarkColor = System.Drawing.Color.Transparent;
             this.txtTods.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoBangKe_KeyPress);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // CREATEDATE
+            // 
+            this.CREATEDATE.DataPropertyName = "NGAYLAP";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.CREATEDATE.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CREATEDATE.HeaderText = "NGÀY";
+            this.CREATEDATE.Name = "CREATEDATE";
+            // 
+            // KINHGUI
+            // 
+            this.KINHGUI.DataPropertyName = "KINHGUI";
+            this.KINHGUI.HeaderText = "GỬI";
+            this.KINHGUI.Name = "KINHGUI";
+            this.KINHGUI.Width = 120;
+            // 
+            // BANGKE
+            // 
+            this.BANGKE.DataPropertyName = "BANGKE";
+            this.BANGKE.HeaderText = "BẢNG KÊ";
+            this.BANGKE.Name = "BANGKE";
+            this.BANGKE.Width = 120;
+            // 
+            // NOIDUNG
+            // 
+            this.NOIDUNG.DataPropertyName = "VANBANG";
+            this.NOIDUNG.HeaderText = "VĂN BẢN";
+            this.NOIDUNG.Name = "NOIDUNG";
+            this.NOIDUNG.Width = 200;
+            // 
+            // DONVICN
+            // 
+            this.DONVICN.DataPropertyName = "CONGDUNG";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DONVICN.DefaultCellStyle = dataGridViewCellStyle4;
+            this.DONVICN.HeaderText = "GHI CHÚ";
+            this.DONVICN.Name = "DONVICN";
+            this.DONVICN.Width = 320;
+            // 
+            // VEVIEC
+            // 
+            this.VEVIEC.DataPropertyName = "VEVIEC";
+            this.VEVIEC.HeaderText = "VỀ VIỆC";
+            this.VEVIEC.Name = "VEVIEC";
+            this.VEVIEC.Width = 120;
+            // 
             // frm_PhieuChuyennnnn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -880,15 +880,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CREATEDATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KINHGUI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VEVIEC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BANGKE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOIDUNG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DONVICN;
         private System.Windows.Forms.ComboBox kg;
         private System.Windows.Forms.ComboBox vv;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTods;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CREATEDATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KINHGUI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BANGKE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOIDUNG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DONVICN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VEVIEC;
     }
 }

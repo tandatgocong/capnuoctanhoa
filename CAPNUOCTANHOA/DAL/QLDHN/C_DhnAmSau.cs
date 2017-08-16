@@ -132,7 +132,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         {
             try
             {
-                var query = from q in db.TB_TLKDUTCHIs where q.DANHBO == danhbo && q.NGAYBAO != ngayyc orderby q.NGAYBAO descending select q;
+                var query = from q in db.TB_TLKDUTCHIs where q.DANHBO == danhbo && q.NGAYBAO <= ngayyc orderby q.NGAYBAO descending select q;
                 return query.ToList()[0];
             }
             catch (Exception ex)

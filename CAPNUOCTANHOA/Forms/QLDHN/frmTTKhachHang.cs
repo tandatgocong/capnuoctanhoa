@@ -153,7 +153,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             sql2 += "   FROM TTKH_TiepNhan tn, TTKH_LoaiTiepNhan lt ";
             sql2 += "   WHERE tn.LoaiHs=lt.ID  ";
             //sql2 += " AND CONVERT(DATE,NgayNhan,103) BETWEEN CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateTuNgay.Value.Date) + "',103) AND CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateDenNgay.Value.Date) + "',103) ";
-            sql2 += " AND MaDVChuyen='1' AND Mess='True' ";
+            sql2 += " AND MaDVChuyen='" + phong + "'  AND NgayXuLy IS NULL  AND Mess='True' ";
             DataTable tb = CCallCenter.getDataTable(sql2);
             if (tb.Rows.Count > 0)
             {
