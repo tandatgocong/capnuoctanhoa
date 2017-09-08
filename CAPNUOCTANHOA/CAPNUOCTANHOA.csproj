@@ -29,7 +29,7 @@
     <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>172</ApplicationRevision>
+    <ApplicationRevision>173</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -249,6 +249,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TheoDoiCamKet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frmHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BanKTKS\frmHinh.Designer.cs">
+      <DependentUpon>frmHinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BanKTKS\frmPdf.cs">
       <SubType>Form</SubType>
@@ -1930,6 +1936,9 @@
     <EmbeddedResource Include="Forms\BanKTKS\BC\rpt_DSTheoDoiDM.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DSTheoDoiDM.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BanKTKS\frmHinh.resx">
+      <DependentUpon>frmHinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanKTKS\frmPdf.resx">
       <DependentUpon>frmPdf.cs</DependentUpon>

@@ -221,10 +221,10 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
         public static DataTable getListDutChiByDate_SoBK(string ngay, int type, int lan, int sobk)
         {
             string sql = "";
-            if (type == 1)
-                sql = " SELECT ID,DANHBO ,LOTRINH ,HOTEN ,DIACHI ,HOPDONG ,GB,DM,HIEU,CO,SOTHAN,GHICHU  FROM TB_TLKDUTCHI  WHERE  TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND NGAYBAO='" + ngay + "' AND [TYPE]='" + type + "' AND LAN=" + lan + " ORDER BY DANHBO ASC ";
+            //if (type == 1)
+            //    sql = " SELECT ID,DANHBO ,LOTRINH ,HOTEN ,DIACHI ,HOPDONG ,GB,DM,HIEU,CO,SOTHAN,GHICHU  FROM TB_TLKDUTCHI  WHERE  TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND NGAYBAO='" + ngay + "' AND [TYPE]='" + type + "' AND LAN=" + lan + " ORDER BY DANHBO ASC ";
 
-            else
+            //else
                 sql = " SELECT ID,DANHBO ,LOTRINH ,HOTEN ,DIACHI ,HOPDONG ,GB,DM,HIEU,CO,SOTHAN,GHICHU  FROM TB_TLKDUTCHI  WHERE SOBANGKE=" + sobk + " AND TODS='" + DAL.SYS.C_USERS._toDocSo + "' AND NGAYBAO='" + ngay + "' AND [TYPE]='" + type + "' AND LAN=" + lan + " ORDER BY DANHBO ASC ";
             return LinQConnection.getDataTable(sql);
         }

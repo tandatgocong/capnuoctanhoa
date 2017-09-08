@@ -571,9 +571,9 @@
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Blue;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(483, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(480, 17);
             this.toolStripStatusLabel1.Text = "© Copyright  2012 - TAN HOA WATER SUPPLY JSC. Developed by Lê Tấn Đạt - 090993339" +
-    "7";
+                "7";
             // 
             // label1
             // 
@@ -606,7 +606,7 @@
             this.lb3.Size = new System.Drawing.Size(624, 34);
             this.lb3.TabIndex = 32;
             this.lb3.Text = " <font size=\"+6\"><font color=\"#B02B2C\">CÔNG TY CỔ PHẦN CẤP NƯỚC TÂN HÒA</font></f" +
-    "ont>";
+                "ont>";
             // 
             // lb2
             // 
@@ -617,7 +617,7 @@
             this.lb2.Size = new System.Drawing.Size(656, 34);
             this.lb2.TabIndex = 31;
             this.lb2.Text = "<b><font size=\"+6\"><font color=\"#B02B2C\">TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN </fon" +
-    "t></font></b>";
+                "t></font></b>";
             // 
             // lb1
             // 
@@ -628,16 +628,16 @@
             this.lb1.Size = new System.Drawing.Size(526, 34);
             this.lb1.TabIndex = 30;
             this.lb1.Text = "<font size=\"+6\"><font color=\"#B02B2C\">TỔNG CÔNG TY CẤP NƯỚC SÀI GÒN </font></font" +
-    ">";
+                ">";
             // 
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel6);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel8);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel7);
@@ -967,6 +967,7 @@
             this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel5.Size = new System.Drawing.Size(1178, 30);
             this.ribbonPanel5.TabIndex = 7;
+            this.ribbonPanel5.Visible = false;
             // 
             // menuStrip6
             // 

@@ -49,6 +49,22 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             }
         }
         TB_DULIEUKHACHHANG khachhang = null;
+        public void loadghichu(string danhbo)
+        {
+            lichsuGhiCHu.DataSource = DAL.DULIEUKH.C_DuLieuKhachHang.lisGhiChu(danhbo);
+            for (int i = 0; i < lichsuGhiCHu.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    lichsuGhiCHu.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(217)))));
+                }
+                else
+                {
+                    lichsuGhiCHu.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                }
+            }
+        }
+
         void LoadThongTinDB()
         {
             string sodanhbo = this.txtDanhBo.Text.Replace("-", "");
@@ -95,6 +111,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 int ky = int.Parse(txtKy.Text);
                 int nam = int.Parse(txtNam.Text);
                 LoadPhieuTieuTHU(txtDanhBo.Text.Replace("-", ""), nam, ky);
+                loadghichu(khachhang.DANHBO);
             }
             else
             {
@@ -195,9 +212,12 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
 
         private void cbSoLuong_SelectedValueChanged(object sender, EventArgs e)
         {
-            int ky = int.Parse(txtKy.Text);
-            int nam = int.Parse(txtNam.Text);
-            LoadPhieuTieuTHU(txtDanhBo.Text.Replace("-", ""), nam, ky);
+            if (!txtDanhBo.Text.Replace("-", "").Replace(" ","").Equals(""))
+            {
+                int ky = int.Parse(txtKy.Text);
+                int nam = int.Parse(txtNam.Text);
+                LoadPhieuTieuTHU(txtDanhBo.Text.Replace("-", ""), nam, ky);
+            }
         }
 
         public DataSet getListHoaDonReport_BC(string danhba, int nam, int ky)
@@ -366,6 +386,12 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 MessageBox.Show(this, "Hồ sơ gốc chưa được cập nhật !","..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void btHinhChup_Click(object sender, EventArgs e)
+        {
+            frmHinh F = new frmHinh(txtDanhBo.Text.Replace("-", ""));
+            F.ShowDialog();
         }
     }
 }
