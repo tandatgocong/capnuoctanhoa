@@ -15,7 +15,7 @@
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\HP_G7\dhn- share\QUAN LY DONG HO NUOC\QUAN_LY_DHN_2016\</PublishUrl>
+    <PublishUrl>\\HP_G7\dhn%24\QUAN LY DONG HO NUOC\QUAN_LY_DHN_2016\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,17 +25,17 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\HP_G7\dhn- share\QUAN LY DONG HO NUOC\QUAN_LY_DHN_2016\</UpdateUrl>
+    <UpdateUrl>\\HP_G7\dhn%24\QUAN LY DONG HO NUOC\QUAN_LY_DHN_2016\</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>173</ApplicationRevision>
+    <ApplicationRevision>176</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsUrl>\\HP_G7\dhn- share\QUAN LY DONG HO NUOC\QUAN_LY_DHN_2016</BootstrapperComponentsUrl>
+    <BootstrapperComponentsUrl>\\HP_G7\dhn%24\QUAN LY DONG HO NUOC\QUAN_LY_DHN_2016\</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
