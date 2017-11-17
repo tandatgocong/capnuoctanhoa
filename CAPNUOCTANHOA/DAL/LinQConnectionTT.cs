@@ -131,5 +131,23 @@ namespace CAPNUOCTANHOA.DAL
             }
             return table;
         }
+
+
+        public static HOADON findHoaDon(string danhbo)
+        {
+            try
+            {
+                HoaDonDataContext db = new HoaDonDataContext();
+                var query = (from q in db.HOADONs where q.DANHBA == danhbo select q).OrderByDescending(q => q.ID_HOADON).Take(1);
+             //   var firstAndLast = myValues.OrderBy(x => values.DataTime).Take(1)
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
     }
 }

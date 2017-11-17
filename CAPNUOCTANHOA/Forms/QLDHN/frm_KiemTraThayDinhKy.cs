@@ -104,7 +104,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
 
 
-                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,NGAYKIEMDINH,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + "  AND NGAYKIEMDINH <= '" + date.ToShortDateString() + "'  " + dot;
+                sql = "SELECT CODE,CHISOKYTRUOC, DANHBO,LOTRINH,DOT, HOTEN, (SONHA +' '+ TENDUONG) AS 'DIACHI',NGAYTHAY,NGAYKIEMDINH,LEFT(HIEUDH,3) as 'HIEUDH',SOTHANDH,CODH,' ' as GBAOTHAY FROM  TB_DULIEUKHACHHANG WHERE (BAOTHAY!=1 OR BAOTHAY IS NULL)  " + quan + " AND CODH" + codh + "  AND ISNULL(NGAYKIEMDINH,NGAYTHAY) <= '" + date.ToShortDateString() + "'  " + dot;
                 //DataTable table = DAL.LinQConnection.getDataTable(sql);
                 //dataGrid.DataSource = table;
                 //Utilities.DataGridV.formatRows(dataGrid);
@@ -116,7 +116,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             if (!"".Equals(txtLoaiBo.Text.Replace(" ", ""))) {
 
-                string bo = "AND CODE NOT IN ('" + txtLoaiBo.Text.Replace(",", "','").ToUpper() + "') ";
+                string bo = "AND CODE NOT IN ('" + txtLoaiBo.Text.Replace(",", "','").ToUpper() + "')  ";
                 sql += " " + bo;
             }
             sql += " ORDER BY  LOTRINH ASC ";

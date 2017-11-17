@@ -58,7 +58,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             query += " COUNT(case when (SUBSTRING(MLT1,1,2)='19')  then 1 else null end) AS DOT19, ";
             query += " COUNT(case when (SUBSTRING(MLT1,1,2)='20')  then 1 else null end) AS DOT20 ";
             query += " FROM [DocSoTH].[dbo].[DocSo] ";
-            query += " WHERE NAM=" + nam + " AND KY=" + ky + " AND GhiChuDS LIKE N'%GIẾ%'";
+            query += " WHERE NAM=" + nam + " AND KY=" + ky + " AND GiengMoi='1' ";
             query += " GROUP BY (case when (TODS=1)  then 'TB01' else case when (TODS=2)  then 'TB02' else case when (TODS=3)  then 'TP01' else 'TP02' end end end)";
         
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);

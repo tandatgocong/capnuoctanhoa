@@ -105,6 +105,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.txtSoBangKe = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.chkTNThay = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayGan)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewL2)).BeginInit();
@@ -520,7 +521,7 @@
             this.txtGhiCHu.ForeColor = System.Drawing.Color.Red;
             this.txtGhiCHu.Location = new System.Drawing.Point(173, 170);
             this.txtGhiCHu.Name = "txtGhiCHu";
-            this.txtGhiCHu.Size = new System.Drawing.Size(652, 27);
+            this.txtGhiCHu.Size = new System.Drawing.Size(539, 27);
             this.txtGhiCHu.TabIndex = 617;
             this.txtGhiCHu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -539,7 +540,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1215, 358);
+            this.tabPage2.Size = new System.Drawing.Size(1215, 343);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Lần 2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -581,7 +582,7 @@
             this.dataGridViewL2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewL2.RowTemplate.Height = 28;
             this.dataGridViewL2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewL2.Size = new System.Drawing.Size(1209, 352);
+            this.dataGridViewL2.Size = new System.Drawing.Size(1209, 337);
             this.dataGridViewL2.TabIndex = 101;
             this.dataGridViewL2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewL2_CellClick);
             // 
@@ -892,12 +893,25 @@
             this.txtSoBangKe.TabIndex = 621;
             this.txtSoBangKe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoBangKe_KeyPress_1);
             // 
+            // chkTNThay
+            // 
+            this.chkTNThay.AutoSize = true;
+            this.chkTNThay.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTNThay.ForeColor = System.Drawing.Color.Red;
+            this.chkTNThay.Location = new System.Drawing.Point(735, 172);
+            this.chkTNThay.Name = "chkTNThay";
+            this.chkTNThay.Size = new System.Drawing.Size(157, 23);
+            this.chkTNThay.TabIndex = 622;
+            this.chkTNThay.Text = "Do Trở Ngại Thay";
+            this.chkTNThay.UseVisualStyleBackColor = true;
+            // 
             // frm_DUTCHITHAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.chkTNThay);
             this.Controls.Add(this.txtSoBangKe);
             this.Controls.Add(this.labelX14);
             this.Controls.Add(this.txtGhiCHu);
@@ -1015,5 +1029,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSoBangKe;
+        private System.Windows.Forms.CheckBox chkTNThay;
     }
 }

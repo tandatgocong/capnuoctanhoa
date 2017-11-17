@@ -184,7 +184,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             query = "SELECT   TOP(" + slTiep + ")    ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+'/' + CONVERT(VARCHAR(20),H.NAM)) NAM, H.CODE,cast(H.CSCU as int) as CSCU, cast(H.CSMOI as int) as CSMOI,cast(H.TIEUTHU as int) AS LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON ";
             query += " FROM HOADON H ";
             query += " WHERE H.DANHBA ='" + danhba + "'  ";
-            query += " ORDER BY H.DENNGAY DESC ";
+            query += " ORDER BY H.Nam desc,CAST(H.KY as int) DESC  ";
             DataTable TB_HD = DAL.LinQConnectionTT.getDataTable(query);
 
             ds.Tables["TIEUTHU"].Merge(TB_HD);
@@ -195,7 +195,7 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
                 query = "SELECT   TOP(" + scl + ")    ( CASE WHEN H.KY<10 THEN '0'+ CONVERT(VARCHAR(20),H.KY) ELSE CONVERT(VARCHAR(20),H.KY) END+'/' + CONVERT(VARCHAR(20),H.NAM)) NAM, H.CODE,cast(H.CSCU as int) as CSCU, cast(H.CSMOI as int) as CSMOI,cast(H.TIEUTHU as int) AS LNCC , CONVERT(NCHAR(10), H.DENNGAY, 103) AS DENNGAY, H.SOHOADON ";
                 query += " FROM TT_HoaDonCu H ";
                 query += " WHERE H.DANHBA ='" + danhba + "'  ";
-                query += " ORDER BY H.DENNGAY DESC ";
+                query += " ORDER BY H.Nam desc,CAST(H.KY as int) DESC ";
                 DataTable b_Old = DAL.LinQConnectionTT.getDataTable(query);
 
                 ds.Tables["TIEUTHU"].Merge(b_Old);
@@ -265,6 +265,19 @@ namespace CAPNUOCTANHOA.Forms.BanKTKS
             catch (Exception) { }
 
             query2 = " SELECT TOP(1)  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, kh.HOTEN, kh.SONHA, kh.TENDUONG, kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM ";
+            
+            if (ckTTHoadon.Checked)
+            {
+                HOADON hd = DAL.LinQConnectionTT.findHoaDon(danhba);
+                if (hd != null)
+                {
+                    query2 = " SELECT TOP(1)  kh.ID, kh.KHU, kh.DOT, kh.CUON_GCS, kh.CUON_STT, kh.LOTRINH, kh.DANHBO, kh.NGAYGANDH, kh.HOPDONG, '" + hd.TENKH + "' as 'HOTEN', '" + hd.SO + "' as 'SONHA', '" + hd.DUONG + "' as 'TENDUONG', kh.PHUONG, kh.QUAN, kh.CHUKY, kh.CODE, kh.CODEFU, kh.GIABIEU, kh.DINHMUC, SH, HCSN, SX, DV, CODH, HIEUDH, SOTHANDH, CAP, CHITHAN, CHIGOC, VITRIDHN, SODHN, kh.NGAYTHAY, NGAYKIEMDINH, MSTHUE, SOHO, kh.CHISOKYTRUOC, kh.BAOTHAY, kh.CREATEDATE, kh.DIENTHOAI AS 'MODIFYBY', kh.MODIFYDATE,  kh.KY, kh.NAM ";
+                }
+            }
+
+          //  danhba= hd.DANHBA;
+
+            
             query2 += " , ds.DOT as 'DOTDS',ds.TODS,ds.May,nv.NhanVienID as TENNHANVIEN  ";
             query2 += " FROM DocSo AS ds, CAPNUOCTANHOA.dbo.TB_DULIEUKHACHHANG as kh,DocSoTH.dbo.MayDS nv ";
             query2 += " WHERE nv.MAY=ds.MAY AND ds.DANHBA=kh.DANHBO AND ds.DANHBA='" + danhba + "' ";

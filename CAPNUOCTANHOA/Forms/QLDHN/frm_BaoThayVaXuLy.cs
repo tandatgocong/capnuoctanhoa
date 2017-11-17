@@ -313,5 +313,113 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 Utilities.DataGridV.setSTT(dataGridLoi, "G_STT");
             }
         }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+
+        }
+        public void TheoDoiTroNgaiThay()
+        {
+            string sql = "SELECT ROW_NUMBER() OVER (ORDER BY kh.LOTRINH  ASC) [STT],  dhn.TODS, dhn.DOT, dhn.LOTRINH, dhn.DANHBO, dhn.HD, dhn.HOTEN, dhn.SONHA, dhn.TENDUONG, dhn.HIEUDH, dhn.CODH, dhn.SOTHAN, dhn.NGAYTHAY, dhn.CODE, dhn.NGAYKD, dhn.GHICHU, dhn.QUIUOC  FROM DHNTRONGAITHAY dhn, TB_DULIEUKHACHHANG kh WHERE dhn.DANHBO = kh.DANHBO ";
+            if(checkChuaThay.Checked)
+                sql += " AND  CAST(RIGHT(dhn.NGAYTHAY,4) as int) <= year(kh.NGAYTHAY) ";
+            if (checkDaThay.Checked)
+                sql += " AND  CAST(RIGHT(dhn.NGAYTHAY,4) as int) > year(kh.NGAYTHAY) ";
+
+            sql += " ORDER BY kh.LOTRINH ASC";
+            DataTable tb = DAL.LinQConnection.getDataTable(sql);
+            dataTinhHinhThay.DataSource = tb;
+
+            lbTongCong.Text = "Tổng số " + tb.Rows.Count +" địa chỉ !";
+        }
+
+        private void tabItem6_Click(object sender, EventArgs e)
+        {
+            TheoDoiTroNgaiThay();
+        }
+
+        private void checkChuaThay_CheckedChanged(object sender, EventArgs e)
+        {
+            TheoDoiTroNgaiThay();
+        }
+
+        private void dataTinhHinhThay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                string DANHBO = dataTinhHinhThay.Rows[e.RowIndex].Cells["DANHBO"].Value + "";
+                string HOTEN = dataTinhHinhThay.Rows[e.RowIndex].Cells["HOTEN"].Value + "";
+                string SONHA = dataTinhHinhThay.Rows[e.RowIndex].Cells["SONHA"].Value + "";
+                string TENDUONG = dataTinhHinhThay.Rows[e.RowIndex].Cells["TENDUONG"].Value + "";
+                string NGAYGAN = dataTinhHinhThay.Rows[e.RowIndex].Cells["NGAYTHAY"].Value + "";
+                string HIEUDH = dataTinhHinhThay.Rows[e.RowIndex].Cells["HIEUDH"].Value + "";
+                string GHICHU = dataTinhHinhThay.Rows[e.RowIndex].Cells["GHICHU"].Value + "";
+
+                //  txtSoBangKe.Text = DHN_SOBANGKE;
+                txtSoDanhBo.Text = DANHBO.Replace(" ", "");
+               // txtTenKH.Text = HOTEN;
+
+                txtLyDo.Text = GHICHU;
+
+             //   btThem.Enabled = true;
+              //  btcapNhat.Enabled = true;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void btcapNhat_Click(object sender, EventArgs e)
+        {
+            string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+            DataTable tb = DAL.LinQConnection.getDataTable("SELECT * FROM DHNTRONGAITHAY WHERE DANHBO='" + sodanhbo + "' ");
+            if (tb.Rows.Count > 0)
+            {
+                DAL.LinQConnection.ExecuteCommand("UPDATE DHNTRONGAITHAY SET GHICHU=N'" + this.txtLyDo.Text + "' WHERE  DANHBO='" + sodanhbo + "' ");
+            }
+            else
+            {
+
+                string sql = "INSERT INTO [CAPNUOCTANHOA].[dbo].[DHNTRONGAITHAY] ([TODS],[DOT],[LOTRINH],[DANHBO],[HD],[HOTEN],[SONHA],[TENDUONG],[HIEUDH],[CODH],[SOTHAN],[NGAYTHAY],[CODE],[NGAYKD],[GHICHU],[QUIUOC] ) ";
+                sql += " SELECT  CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15')  ";
+                sql += "         THEN 'TB01' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30')  ";
+                sql += "         THEN 'TB02' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50')  ";
+                sql += "        THEN 'TP01' ELSE 'TP02' END END END AS TODS, DOT, LOTRINH, DANHBO, HOPDONG AS HD, HOTEN, SONHA, TENDUONG, HIEUDH, CODH, SOTHANDH AS SOTHAN, ";
+                sql += "        CONVERT(varchar(50), NGAYTHAY,103) AS  NGAYTHAY, CODE, CONVERT(varchar(50),NGAYKIEMDINH,103) AS NGAYKD, N'"+txtLyDo.Text+"' AS  GHICHU, '' AS QUIUOC ";
+                sql += " FROM TB_DULIEUKHACHHANG WHERE DANHBO='" + sodanhbo + "'";//13222900540
+
+                DAL.LinQConnection.ExecuteCommand(sql);
+            }
+
+            TheoDoiTroNgaiThay();
+        }
+
+        private void buttonX2_Click_1(object sender, EventArgs e)
+        {
+            string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+            DAL.LinQConnection.ExecuteCommand("DELETE FROM DHNTRONGAITHAY   WHERE  DANHBO='" + sodanhbo + "' ");
+
+            TheoDoiTroNgaiThay();
+        }
+
+        private void txtSoDanhBo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == 13)
+            {
+                string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+                DataTable tb = DAL.LinQConnection.getDataTable("SELECT * FROM DHNTRONGAITHAY WHERE DANHBO='" + sodanhbo + "' ");
+                if (tb.Rows.Count > 0)
+                {
+                    this.txtLyDo.Text = tb.Rows[0]["GHICHU"].ToString();
+                    //DAL.LinQConnection.ExecuteCommand("UPDATE DHNTRONGAITHAY SET GHICHU=N'" + this.txtLyDo.Text + "' WHERE  DANHBO='" + sodanhbo + "' ");
+                }
+                else {
+                    this.txtLyDo.Text = "";
+                }
+            }
+        }
     }
 }

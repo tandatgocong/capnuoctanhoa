@@ -314,6 +314,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                     Add(sodanhbo,1);
                 }
 
+                if (chkTNThay.Checked)
+                {
+                }
+                chkTNThay.Checked = false;
+
+
             }
             catch (Exception ex)
             {
