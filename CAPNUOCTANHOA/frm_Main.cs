@@ -72,6 +72,18 @@ namespace CAPNUOCTANHOA
                         btLoTrinh.Visible = true;
                         handHeld.Visible = false;
                     }
+                    if ("TP".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    {
+                        cmdBaoThay.Visible = false;
+                        menuKiemTra.Visible = false;
+                        ttKH.Visible = false;
+                        menuDieuChinhKH.Visible = true;
+                        btLoTrinh.Visible = false;
+                        handHeld.Visible = false;
+                        mnHoaDon0.Visible = false;
+                        baocaoTongKet.Visible = false;
+                        ttKH.Visible = false;
+                    }
                     else
                     {
                         cmdBaoThay.Visible = true;
@@ -79,7 +91,8 @@ namespace CAPNUOCTANHOA
                         btLoTrinh.Visible = true;
                         ttKH.Visible = true;
                         handHeld.Visible = true;
-                    } if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
+                    } 
+                    if ("GM".Contains(DAL.SYS.C_USERS._roles.Trim()))
                     {
                         menuDieuChinhKH.Visible = false;
                     } if ("TK".Contains(DAL.SYS.C_USERS._roles.Trim()))

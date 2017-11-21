@@ -354,7 +354,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "    W_BAOCAO_CODE_DETAIL.KN_67 = t2.KN_67, W_BAOCAO_CODE_DETAIL.KN_68= t2.KN_68, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_54 = t2.KN_54, W_BAOCAO_CODE_DETAIL.KN_58= t2.KN_58, ";
             sql += "    W_BAOCAO_CODE_DETAIL.KN_F1 = t2.KN_F1, W_BAOCAO_CODE_DETAIL.KN_F2= t2.KN_F2, ";
-            sql += "    W_BAOCAO_CODE_DETAIL.KN_F3 = t2.KN_F3, W_BAOCAO_CODE_DETAIL.KN_F5= t2.KN_F5";
+            sql += "    W_BAOCAO_CODE_DETAIL.KN_F3 = t2.KN_F3,W_BAOCAO_CODE_DETAIL.KN_F4 = t2.KN_F4, W_BAOCAO_CODE_DETAIL.KN_F5= t2.KN_F5";
             sql += "   FROM W_BAOCAO_CODE_DETAIL INNER JOIN ";
             sql += "   ( ";
             sql += "   SELECT TODS,";
@@ -372,6 +372,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "   COUNT(case when CodeMoi='F1' then 1 else null end) AS KN_F1,";
             sql += "   COUNT(case when CodeMoi='F2' then 1 else null end) AS KN_F2,";
             sql += "   COUNT(case when CodeMoi='F3' then 1 else null end) AS KN_F3,";
+            sql += "   COUNT(case when CodeMoi='F4' then 1 else null end) AS KN_F4,";
             sql += "   COUNT(case when CodeMoi='F5' then 1 else null end) AS KN_F5";
             sql += "   FROM DocSoTH.dbo.DocSo  t  ";
             sql += "   WHERE  KY=" + ky + " AND NAM="+nam ;
@@ -400,7 +401,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += "  W_BAOCAO_CODE_DETAIL.KT_67 = t2.KT_67, W_BAOCAO_CODE_DETAIL.KT_68= t2.KT_68, ";
             sql += " W_BAOCAO_CODE_DETAIL.KT_54 = t2.KT_54, W_BAOCAO_CODE_DETAIL.KT_58= t2.KT_58, ";
             sql += " W_BAOCAO_CODE_DETAIL.KT_F1 = t2.KT_F1, W_BAOCAO_CODE_DETAIL.KT_F2= t2.KT_F2, ";
-            sql += " W_BAOCAO_CODE_DETAIL.KT_F3 = t2.KT_F3, W_BAOCAO_CODE_DETAIL.KT_F5= t2.KT_F5";
+            sql += " W_BAOCAO_CODE_DETAIL.KT_F3 = t2.KT_F3,W_BAOCAO_CODE_DETAIL.KT_F4 = t2.KT_F4, W_BAOCAO_CODE_DETAIL.KT_F5= t2.KT_F5";
             sql += " FROM W_BAOCAO_CODE_DETAIL INNER JOIN ";
             sql += " ( ";
             sql += " SELECT TODS, ";
@@ -418,6 +419,7 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             sql += " COUNT(case when CodeMoi='F1' then 1 else null end) AS KT_F1,";
             sql += " COUNT(case when CodeMoi='F2' then 1 else null end) AS KT_F2,";
             sql += " COUNT(case when CodeMoi='F3' then 1 else null end) AS KT_F3,";
+            sql += " COUNT(case when CodeMoi='F4' then 1 else null end) AS KT_F4,";
             sql += " COUNT(case when CodeMoi='F5' then 1 else null end) AS KT_F5";
             sql += "   FROM DocSoTH.dbo.DocSo  t  ";
             sql += "   WHERE  KY=" + ky + " AND NAM="+nam ;

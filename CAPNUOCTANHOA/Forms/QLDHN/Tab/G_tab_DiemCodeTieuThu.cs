@@ -638,30 +638,31 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             int ky = int.Parse(cbKyDS.Items[cbKyDS.SelectedIndex].ToString());
             int nam = int.Parse(txtNam.Text.Trim());
             ReportDocument rp = new rpt_DanhSachCode();
-            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.CODE IN (" + config + ") ";
+            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CodeMoi as CODE, ds.CSCU, ds.CSMOI   ";
+            sql += " FROM DocSoTH.dbo.DocSo AS ds, dbo.TB_DULIEUKHACHHANG as kh  ";
+            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.NAM=" + nam + " AND ds.CodeMoi IN (" + this.txtCode.Text + ") ";
             sql += " ORDER BY DANHBO ASC";
             rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "DANHSACHCODE"));
+            rp.SetParameterValue("code", this.txtCode.Text);
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
         }
 
-        private void buttonX2_Click(object sender, EventArgs e)
-        {
-            int ky = int.Parse(cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString());
-            int nam = int.Parse(txtNam_dot.Text.Trim());
-            int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
-            ReportDocument rp = new rpt_DanhSachCode();
-            string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
-            sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
-            sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DOT =" + dot + " AND ds.CODE IN (" + config + ") ";
-            sql += " ORDER BY DANHBO ASC";
-            rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "DANHSACHCODE"));
-            frm_Reports frm = new frm_Reports(rp);
-            frm.ShowDialog();
+        //private void buttonX2_Click(object sender, EventArgs e)
+        //{
+        //    int ky = int.Parse(cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString());
+        //    int nam = int.Parse(txtNam_dot.Text.Trim());
+        //    int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
+        //    ReportDocument rp = new rpt_DanhSachCode();
+        //    string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
+        //    sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
+        //    sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DOT =" + dot + " AND ds.CODE IN (" + config + ") ";
+        //    sql += " ORDER BY DANHBO ASC";
+        //    rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "DANHSACHCODE"));
+        //    frm_Reports frm = new frm_Reports(rp);
+        //    frm.ShowDialog();
           
-        }
+        //}
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -678,6 +679,21 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
             frm_Reports frm = new frm_Reports(rp);
             frm.ShowDialog();
 
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            //int ky = int.Parse(cbKyDS_dot.Items[cbKyDS.SelectedIndex].ToString());
+            //int nam = int.Parse(txtNam_dot.Text.Trim());
+            //int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
+            //ReportDocument rp = new rpt_DanhSachCode();
+            //string sql = "SELECT DANHBO,LOTRINH,HOTEN,(SONHA+' '+TENDUONG) AS DIACHI,(QUAN+PHUONG) AS MAQP,ds.CODE, ds.CSCU, ds.CSMOI ";
+            //sql += " FROM DocSo_PHT.dbo.DS" + nam + " AS ds, dbo.TB_DULIEUKHACHHANG as kh ";
+            //sql += "  WHERE  ds.DANHBA=kh.DANHBO AND ds.KY=" + ky + " AND ds.DOT =" + dot + " AND ds.CODE IN (" + config + ") ";
+            //sql += " ORDER BY DANHBO ASC";
+            //rp.SetDataSource(DAL.QLDHN.C_tab_BaoCao.tb_Report(sql, "DANHSACHCODE"));
+            //frm_Reports frm = new frm_Reports(rp);
+            //frm.ShowDialog();
         }
     }
 }

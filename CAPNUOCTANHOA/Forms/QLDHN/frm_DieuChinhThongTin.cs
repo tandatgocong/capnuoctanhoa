@@ -35,7 +35,30 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             HIEUDH.AutoCompleteSource = AutoCompleteSource.CustomSource;
             HIEUDH.AutoCompleteCustomSource = namesCollection;
             dateNgayCV.Value = DateTime.Now.Date;
-          
+            if ("TP".Contains(DAL.SYS.C_USERS._roles.Trim()))
+            {
+                tabDieuChinh.Visible = false;
+                ganhopBV.Visible = false;
+                tabItem1.Visible = false;
+                tabItem4.Visible = false;
+                tabItem2.Visible = false;
+                tabItem6.Visible = false;
+                tbCongVan.Visible = false;
+                tabItem5.Visible = false;
+                this.NGAYGAN.Enabled = false;
+                this.KIEMDINH.Enabled = false;
+                this.HIEUDH.Enabled = false;
+                this.GIABIEU.Enabled = false;
+                this.DINHMUC.Enabled = false;
+                this.CO.Enabled = false;
+                this.CAP.Enabled = false;
+                this.SOTHAN.Enabled = false;
+                this.HOPDONG.Enabled = false;
+                this.CHITHAN.Enabled = false;
+                this.CHIGOC.Enabled = false;
+            }
+
+            
         }
 
         private void txtDanhBo_KeyPress(object sender, KeyPressEventArgs e)
@@ -186,65 +209,142 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         }
         private void btCapNhatThongTin_Click(object sender, EventArgs e)
         {
-            if (khachhang != null)
+            if ("TP".Contains(DAL.SYS.C_USERS._roles.Trim()))
             {
-                khachhang.HOPDONG = HOPDONG.Text.ToUpper();
-                khachhang.HOTEN = HOTEN.Text.ToUpper();
-                khachhang.SONHA = SONHA.Text.ToUpper();
-                khachhang.TENDUONG = TENDUONG.Text.ToUpper();
-                khachhang.DIENTHOAI = txtDienThoai.Text;
-                if (!"".Equals(this.NGAYGAN.ValueObject + ""))
+                if (khachhang != null)
                 {
-                    khachhang.NGAYTHAY = this.NGAYGAN.Value;
-                }
-                if (!"".Equals(this.KIEMDINH.ValueObject + ""))
-                {
-                    khachhang.NGAYKIEMDINH = this.KIEMDINH.Value;
-                }
-                khachhang.HIEUDH = HIEUDH.Text.ToUpper();
-                khachhang.GIABIEU = GIABIEU.Text;
-                khachhang.DINHMUC = DINHMUC.Text;
-                khachhang.CODH = CO.Text;
-                khachhang.CAP = CAP.Text;
-                khachhang.SOTHANDH = SOTHAN.Text;
-                khachhang.VITRIDHN = VITRI.Text;
-                khachhang.CHITHAN = CHITHAN.Text;
-                khachhang.CHIGOC = CHIGOC.Text;
-                khachhang.MODIFYBY = DAL.SYS.C_USERS._userName;
-                khachhang.MODIFYDATE = DateTime.Now;
-                if (DAL.DULIEUKH.C_DuLieuKhachHang.Update())
-                {
-                    //cap nhat handheld
-                     DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), HIEUDH.Text.Substring(0, 3), SOTHAN.Text, CHITHAN.Text.ToUpper(), CHIGOC.Text.ToUpper(), VITRI.Text);
-                    //cap nhat ghi chu
-                    if ("".Equals(txtGhiChu.Text.Replace(" ", "")) == false)
-                    {
-                        TB_GHICHU ghichu = new TB_GHICHU();
-                        ghichu.DANHBO = khachhang.DANHBO;
-                        ghichu.NOIDUNG = txtGhiChu.Text;
-                        ghichu.DONVI = DAL.SYS.C_USERS._maphong;
-                        ghichu.CREATEDATE = DateTime.Now.Date;
-                        ghichu.HIENTHI = false; 
-                        ghichu.CREATEBY = DAL.SYS.C_USERS._userName;
-                        DAL.DULIEUKH.C_DuLieuKhachHang.InsertGHICHU(ghichu);
-                        loadghichu(khachhang.DANHBO);
-                        // CAPNHAT GHICU HANDHELD
-                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatGhiChu(this.txtDanhBo.Text.Replace("-", ""), txtGhiChu.Text);
+                    //khachhang.HOPDONG = HOPDONG.Text.ToUpper();
+                    khachhang.HOTEN = HOTEN.Text.ToUpper();
+                    khachhang.SONHA = SONHA.Text.ToUpper();
+                    khachhang.TENDUONG = TENDUONG.Text.ToUpper();
+                    khachhang.DIENTHOAI = txtDienThoai.Text;
+                    khachhang.VITRIDHN = VITRI.Text;
+                    
+                    //if (!"".Equals(this.NGAYGAN.ValueObject + ""))
+                    //{
+                    //    khachhang.NGAYTHAY = this.NGAYGAN.Value;
+                    //}
+                    this.NGAYGAN.Enabled = true;
+                    //if (!"".Equals(this.KIEMDINH.ValueObject + ""))
+                    //{
+                    //    khachhang.NGAYKIEMDINH = this.KIEMDINH.Value;
+                    //}
+                    this.KIEMDINH.Enabled = true;
+                    this.HIEUDH.Enabled = true;
+                    this.GIABIEU.Enabled = true;
+                    this.DINHMUC.Enabled = true;
+                    this.CO.Enabled = true;
+                    this.CAP.Enabled = true;
+                    this.SOTHAN.Enabled = true;
+                    // khachhang.HIEUDH = HIEUDH.Text.ToUpper();
+                    // khachhang.GIABIEU = GIABIEU.Text;
+                    //  khachhang.DINHMUC = DINHMUC.Text;
+                   // khachhang.CODH = CO.Text;
+                   // khachhang.CAP = CAP.Text;
+                   // khachhang.SOTHANDH = SOTHAN.Text;
+                    khachhang.VITRIDHN = VITRI.Text;
+                    // khachhang.CHITHAN = CHITHAN.Text;
+                    //  khachhang.CHIGOC = CHIGOC.Text;
 
+                    khachhang.MODIFYBY = DAL.SYS.C_USERS._userName;
+                    khachhang.MODIFYDATE = DateTime.Now;
+                    if (DAL.DULIEUKH.C_DuLieuKhachHang.Update())
+                    {
+                        //cap nhat handheld
+                       // DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), HIEUDH.Text.Substring(0, 3), SOTHAN.Text, CHITHAN.Text.ToUpper(), CHIGOC.Text.ToUpper(), VITRI.Text);
+                        //cap nhat ghi chu
+                        //if ("".Equals(txtGhiChu.Text.Replace(" ", "")) == false)
+                        //{
+                        //    TB_GHICHU ghichu = new TB_GHICHU();
+                        //    ghichu.DANHBO = khachhang.DANHBO;
+                        //    ghichu.NOIDUNG = txtGhiChu.Text;
+                        //    ghichu.DONVI = DAL.SYS.C_USERS._maphong;
+                        //    ghichu.CREATEDATE = DateTime.Now.Date;
+                        //    ghichu.HIENTHI = false;
+                        //    ghichu.CREATEBY = DAL.SYS.C_USERS._userName;
+                        //    DAL.DULIEUKH.C_DuLieuKhachHang.InsertGHICHU(ghichu);
+                        //    loadghichu(khachhang.DANHBO);
+                        //    // CAPNHAT GHICU HANDHELD
+                        //    DAL.DULIEUKH.C_PhienLoTrinh.CapNhatGhiChu(this.txtDanhBo.Text.Replace("-", ""), txtGhiChu.Text);
+
+                        //}
+                        //
+                        DAL.LinQConnection.ExecuteCommand("UPDATE TB_DULIEUKHACHHANG SET MODIFYDATE=GETDATE(),MODIFYBY=N'" + DAL.SYS.C_USERS._userName + "' WHERE DANHBO='" + khachhang.DANHBO + "'");
+                        MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //    txtGhiChu.Text = "";
+                        txtDanhBo.Focus();
                     }
-                    //
-                    DAL.LinQConnection.ExecuteCommand("UPDATE TB_DULIEUKHACHHANG SET MODIFYDATE=GETDATE(),MODIFYBY=N'" + DAL.SYS.C_USERS._userName + "' WHERE DANHBO='" + khachhang.DANHBO + "'");
-                    MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtGhiChu.Text = "";
-                    txtDanhBo.Focus();
-                }
-                else
-                {
-                    MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
 
             }
-            f_ghichu = 0;
+            else
+            {
+                if (khachhang != null)
+                {
+                    khachhang.HOPDONG = HOPDONG.Text.ToUpper();
+                    khachhang.HOTEN = HOTEN.Text.ToUpper();
+                    khachhang.SONHA = SONHA.Text.ToUpper();
+                    khachhang.TENDUONG = TENDUONG.Text.ToUpper();
+                    khachhang.DIENTHOAI = txtDienThoai.Text;
+                    if (!"".Equals(this.NGAYGAN.ValueObject + ""))
+                    {
+                        khachhang.NGAYTHAY = this.NGAYGAN.Value;
+                    }
+                    if (!"".Equals(this.KIEMDINH.ValueObject + ""))
+                    {
+                        khachhang.NGAYKIEMDINH = this.KIEMDINH.Value;
+                    }
+                    khachhang.HIEUDH = HIEUDH.Text.ToUpper();
+                    khachhang.GIABIEU = GIABIEU.Text;
+                    khachhang.DINHMUC = DINHMUC.Text;
+                    khachhang.CODH = CO.Text;
+                    khachhang.CAP = CAP.Text;
+                    khachhang.SOTHANDH = SOTHAN.Text;
+                    khachhang.VITRIDHN = VITRI.Text;
+                    khachhang.CHITHAN = CHITHAN.Text;
+                    khachhang.CHIGOC = CHIGOC.Text;
+                    khachhang.MODIFYBY = DAL.SYS.C_USERS._userName;
+                    khachhang.MODIFYDATE = DateTime.Now;
+                    if (DAL.DULIEUKH.C_DuLieuKhachHang.Update())
+                    {
+                        //cap nhat handheld
+                        DAL.DULIEUKH.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), HIEUDH.Text.Substring(0, 3), SOTHAN.Text, CHITHAN.Text.ToUpper(), CHIGOC.Text.ToUpper(), VITRI.Text);
+                        //cap nhat ghi chu
+                        if ("".Equals(txtGhiChu.Text.Replace(" ", "")) == false)
+                        {
+                            TB_GHICHU ghichu = new TB_GHICHU();
+                            ghichu.DANHBO = khachhang.DANHBO;
+                            ghichu.NOIDUNG = txtGhiChu.Text;
+                            ghichu.DONVI = DAL.SYS.C_USERS._maphong;
+                            ghichu.CREATEDATE = DateTime.Now.Date;
+                            ghichu.HIENTHI = false;
+                            ghichu.CREATEBY = DAL.SYS.C_USERS._userName;
+                            DAL.DULIEUKH.C_DuLieuKhachHang.InsertGHICHU(ghichu);
+                            loadghichu(khachhang.DANHBO);
+                            // CAPNHAT GHICU HANDHELD
+                            DAL.DULIEUKH.C_PhienLoTrinh.CapNhatGhiChu(this.txtDanhBo.Text.Replace("-", ""), txtGhiChu.Text);
+
+                        }
+                        //
+                        DAL.LinQConnection.ExecuteCommand("UPDATE TB_DULIEUKHACHHANG SET MODIFYDATE=GETDATE(),MODIFYBY=N'" + DAL.SYS.C_USERS._userName + "' WHERE DANHBO='" + khachhang.DANHBO + "'");
+                        MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtGhiChu.Text = "";
+                        txtDanhBo.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                f_ghichu = 0;
+            }
+          
         }
 
         private void tabItem2_Click(object sender, EventArgs e)
