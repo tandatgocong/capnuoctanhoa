@@ -177,6 +177,26 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             }
         }
 
+        public void TroNgaiThay()
+        {
+            string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
+            if (chkTNThay.Checked)
+            {
+                string noidung = "Đã báo Âm sâu Ngày " + this.txtNgayGan.Value.Date;
+                string sql = "INSERT INTO [CAPNUOCTANHOA].[dbo].[DHNTRONGAITHAY] ([TODS],[DOT],[LOTRINH],[DANHBO],[HD],[HOTEN],[SONHA],[TENDUONG],[HIEUDH],[CODH],[SOTHAN],[NGAYTHAY],[CODE],[NGAYKD],[GHICHU],[QUIUOC],NGUOITAO,NGAYTAO ) ";
+                sql += " SELECT  CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15')  ";
+                sql += "         THEN 'TB01' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30')  ";
+                sql += "         THEN 'TB02' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50')  ";
+                sql += "        THEN 'TP01' ELSE 'TP02' END END END AS TODS, DOT, LOTRINH, DANHBO, HOPDONG AS HD, HOTEN, SONHA, TENDUONG, HIEUDH, CODH, SOTHANDH AS SOTHAN, ";
+                sql += "        CONVERT(varchar(50), NGAYTHAY,103) AS  NGAYTHAY, CODE, CONVERT(varchar(50),NGAYKIEMDINH,103) AS NGAYKD, N'" + noidung + "' AS  GHICHU, '' AS QUIUOC, '" + DAL.SYS.C_USERS._userName + "' as NGUOITAO,GETDATE() as NGAYTAO ";
+                sql += " FROM TB_DULIEUKHACHHANG WHERE DANHBO='" + sodanhbo + "'";//13222900540
+
+                DAL.LinQConnection.ExecuteCommand(sql);
+            }
+            chkTNThay.Checked = false;
+
+        }
+
         public void Add()
         {
             string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
@@ -201,6 +221,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                     chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
 
                     DAL.QLDHN.C_DhnAmSau.Insert(chuyendm);
+                    TroNgaiThay();
                 }
             }
             else
@@ -221,6 +242,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
                 chuyendm.CREATEBY = DAL.SYS.C_USERS._userName;
 
                 DAL.QLDHN.C_DhnAmSau.Insert(chuyendm);
+                TroNgaiThay();
             }
             // DAL.DULIEUKH.C_DuLieuKhachHang.UpdateBaoThay(this.txtSoDanhBo.Text.Replace("-", ""), "True");
             LoadData();
@@ -251,21 +273,6 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh
             try
             {
                 Add();
-                 string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
-                if (chkTNThay.Checked)
-                {
-                    string noidung = "Đã báo Âm sâu Ngày " + this.txtNgayGan.Value.Date  ;
-                    string sql = "INSERT INTO [CAPNUOCTANHOA].[dbo].[DHNTRONGAITHAY] ([TODS],[DOT],[LOTRINH],[DANHBO],[HD],[HOTEN],[SONHA],[TENDUONG],[HIEUDH],[CODH],[SOTHAN],[NGAYTHAY],[CODE],[NGAYKD],[GHICHU],[QUIUOC],NGUOITAO,NGAYTAO ) ";
-                    sql += " SELECT  CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15')  ";
-                    sql += "         THEN 'TB01' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30')  ";
-                    sql += "         THEN 'TB02' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50')  ";
-                    sql += "        THEN 'TP01' ELSE 'TP02' END END END AS TODS, DOT, LOTRINH, DANHBO, HOPDONG AS HD, HOTEN, SONHA, TENDUONG, HIEUDH, CODH, SOTHANDH AS SOTHAN, ";
-                    sql += "        CONVERT(varchar(50), NGAYTHAY,103) AS  NGAYTHAY, CODE, CONVERT(varchar(50),NGAYKIEMDINH,103) AS NGAYKD, N'" + noidung + "' AS  GHICHU, '' AS QUIUOC, " + DAL.SYS.C_USERS._userName + " as NGUOITAO,GETDATE() as NGAYTAO ";
-                    sql += " FROM TB_DULIEUKHACHHANG WHERE DANHBO='" + sodanhbo + "'";//13222900540
-
-                    DAL.LinQConnection.ExecuteCommand(sql);
-                }
-                chkTNThay.Checked = false;
 
 
             }

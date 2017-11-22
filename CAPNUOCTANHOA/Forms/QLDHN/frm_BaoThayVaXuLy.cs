@@ -400,6 +400,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         {
             string sodanhbo = this.txtSoDanhBo.Text.Replace("-", "");
             DAL.LinQConnection.ExecuteCommand("DELETE FROM DHNTRONGAITHAY   WHERE  DANHBO='" + sodanhbo + "' ");
+            this.txtSoDanhBo.Text = "";
+            txtLyDo.Text = "";
 
             TheoDoiTroNgaiThay();
         }

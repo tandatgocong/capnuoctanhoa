@@ -4009,8 +4009,8 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                         double KN_68, 
                         double KT_67, 
                         double KT_68, 
-                        string KN_F4, 
-                        string KT_F4) {
+                        double KN_F4, 
+                        double KT_F4) {
                 W_BAOCAO_CODE_DETAILRow rowW_BAOCAO_CODE_DETAILRow = ((W_BAOCAO_CODE_DETAILRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TODS,
@@ -4179,9 +4179,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
                 base.Columns.Add(this.columnKT_67);
                 this.columnKT_68 = new global::System.Data.DataColumn("KT_68", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKT_68);
-                this.columnKN_F4 = new global::System.Data.DataColumn("KN_F4", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnKN_F4 = new global::System.Data.DataColumn("KN_F4", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKN_F4);
-                this.columnKT_F4 = new global::System.Data.DataColumn("KT_F4", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnKT_F4 = new global::System.Data.DataColumn("KT_F4", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKT_F4);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTODS}, true));
@@ -9186,10 +9186,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string KN_F4 {
+            public double KN_F4 {
                 get {
                     try {
-                        return ((string)(this[this.tableW_BAOCAO_CODE_DETAIL.KN_F4Column]));
+                        return ((double)(this[this.tableW_BAOCAO_CODE_DETAIL.KN_F4Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'KN_F4\' in table \'W_BAOCAO_CODE_DETAIL\' is DBNull.", e);
@@ -9202,10 +9202,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab.TabBC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string KT_F4 {
+            public double KT_F4 {
                 get {
                     try {
-                        return ((string)(this[this.tableW_BAOCAO_CODE_DETAIL.KT_F4Column]));
+                        return ((double)(this[this.tableW_BAOCAO_CODE_DETAIL.KT_F4Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'KT_F4\' in table \'W_BAOCAO_CODE_DETAIL\' is DBNull.", e);

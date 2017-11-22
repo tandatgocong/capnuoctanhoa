@@ -101,20 +101,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.Tab
 
             if ("".Equals(this.txtTieuThu.Text.Replace(" ", "")))
             {
-                string title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + "   KỲ " + ky;
+                string title_ = "DANH SÁCH ĐỒNG HỒ NƯỚC CODE " + code + "   KỲ " + ky;
                 if (dot != 0)
                 {
-                    title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + "   ĐỢT " + dot + "   KỲ " + ky;
+                    title_ = "DANH SÁCH ĐỒNG HỒ NƯỚC CODE " + code + "   ĐỢT " + dot + "   KỲ " + ky;
                 }
                 rp.SetDataSource(getTheoDoiBienDocChiSo((int)this.nMay.Value, dot, ky, nam, code));
                 rp.SetParameterValue("title", title_);
                 crystalReportViewer1.ReportSource = rp;
             }
             else {
-                string title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + " TIÊU THỤ =" + this.txtTieuThu.Text + "M3  KỲ " + ky;
+                string title_ = "DANH SÁCH ĐỒNG HỒ NƯỚC CODE " + code + " TIÊU THỤ =" + this.txtTieuThu.Text + "M3  KỲ " + ky;
                 if (dot != 0)
                 {
-                    title_ = "DANH SÁCH ĐỒNG HỒ CODE " + code + " TIÊU THỤ =" + this.txtTieuThu.Text + "M3 ĐỢT " + dot + "   KỲ " + ky;
+                    title_ = "DANH SÁCH ĐỒNG HỒ NƯỚC CODE " + code + " TIÊU THỤ =" + this.txtTieuThu.Text + "M3 ĐỢT " + dot + "   KỲ " + ky;
                 }
                 rp.SetDataSource(getTheoDoiBienDocChiSo_LNCC((int)this.nMay.Value, dot, ky, nam, code, lncc));
                 rp.SetParameterValue("title", title_);

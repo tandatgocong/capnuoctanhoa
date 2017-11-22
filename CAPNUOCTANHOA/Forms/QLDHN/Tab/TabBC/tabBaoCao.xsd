@@ -1674,8 +1674,8 @@ SELECT ID, MAYDS, KY, NAM, TODS, NAME, FULLNAME, [1_F1S], [1_F1D], [1_F2S], [1_F
               <xs:element name="KN_68" msprop:Generator_ColumnVarNameInTable="columnKN_68" msprop:Generator_ColumnPropNameInRow="KN_68" msprop:Generator_ColumnPropNameInTable="KN_68Column" msprop:Generator_UserColumnName="KN_68" type="xs:double" minOccurs="0" />
               <xs:element name="KT_67" msprop:Generator_ColumnVarNameInTable="columnKT_67" msprop:Generator_ColumnPropNameInRow="KT_67" msprop:Generator_ColumnPropNameInTable="KT_67Column" msprop:Generator_UserColumnName="KT_67" type="xs:double" minOccurs="0" />
               <xs:element name="KT_68" msdata:Caption="KT_67" msprop:Generator_ColumnVarNameInTable="columnKT_68" msprop:Generator_ColumnPropNameInRow="KT_68" msprop:Generator_ColumnPropNameInTable="KT_68Column" msprop:Generator_UserColumnName="KT_68" type="xs:double" minOccurs="0" />
-              <xs:element name="KN_F4" msprop:Generator_ColumnVarNameInTable="columnKN_F4" msprop:Generator_ColumnPropNameInRow="KN_F4" msprop:Generator_ColumnPropNameInTable="KN_F4Column" msprop:Generator_UserColumnName="KN_F4" type="xs:string" minOccurs="0" />
-              <xs:element name="KT_F4" msprop:Generator_ColumnVarNameInTable="columnKT_F4" msprop:Generator_ColumnPropNameInRow="KT_F4" msprop:Generator_ColumnPropNameInTable="KT_F4Column" msprop:Generator_UserColumnName="KT_F4" type="xs:string" minOccurs="0" />
+              <xs:element name="KN_F4" msprop:Generator_ColumnVarNameInTable="columnKN_F4" msprop:Generator_ColumnPropNameInRow="KN_F4" msprop:Generator_ColumnPropNameInTable="KN_F4Column" msprop:Generator_UserColumnName="KN_F4" type="xs:double" minOccurs="0" />
+              <xs:element name="KT_F4" msprop:Generator_ColumnVarNameInTable="columnKT_F4" msprop:Generator_ColumnPropNameInRow="KT_F4" msprop:Generator_ColumnPropNameInTable="KT_F4Column" msprop:Generator_UserColumnName="KT_F4" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
