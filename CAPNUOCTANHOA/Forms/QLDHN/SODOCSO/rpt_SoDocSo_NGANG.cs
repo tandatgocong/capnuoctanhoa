@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_SoDocSo : ReportClass {
+    public class rpt_SoDocSo_NGANG : ReportClass {
         
-        public rpt_SoDocSo() {
+        public rpt_SoDocSo_NGANG() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_SoDocSo.rpt";
+                return "rpt_SoDocSo_NGANG.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.SODOCSO.rpt_SoDocSo.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.SODOCSO.rpt_SoDocSo_NGANG.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_SoDocSo : Component, ICachedReport {
+    public class Cachedrpt_SoDocSo_NGANG : Component, ICachedReport {
         
-        public Cachedrpt_SoDocSo() {
+        public Cachedrpt_SoDocSo_NGANG() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_SoDocSo rpt = new rpt_SoDocSo();
+            rpt_SoDocSo_NGANG rpt = new rpt_SoDocSo_NGANG();
             rpt.Site = this.Site;
             return rpt;
         }

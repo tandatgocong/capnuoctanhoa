@@ -44,3 +44,6 @@ G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhi
 G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Form1.resources
 G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.Properties.Resources.resources
 G:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.csproj.GenerateResource.Cache
+D:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\bin\Debug\HoTroChoPhienLoTrinh.exe.config
+D:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.exe
+D:\DATA\TAN HOA\PROJECT\capnuoctanhoa.git\trunk\HoTroChoPhienLoTrinh\HoTroChoPhienLoTrinh\obj\x86\Debug\HoTroChoPhienLoTrinh.pdb

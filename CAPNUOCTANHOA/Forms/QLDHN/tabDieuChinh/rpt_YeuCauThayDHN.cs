@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO {
+namespace CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_SoDocSo : ReportClass {
+    public class rpt_YeuCauThayDHN : ReportClass {
         
-        public rpt_SoDocSo() {
+        public rpt_YeuCauThayDHN() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_SoDocSo.rpt";
+                return "rpt_YeuCauThayDHN.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO {
         
         public override string FullResourceName {
             get {
-                return "CAPNUOCTANHOA.Forms.QLDHN.SODOCSO.rpt_SoDocSo.rpt";
+                return "CAPNUOCTANHOA.Forms.QLDHN.tabDieuChinh.rpt_YeuCauThayDHN.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,20 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_loai {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_SoDocSo : Component, ICachedReport {
+    public class Cachedrpt_YeuCauThayDHN : Component, ICachedReport {
         
-        public Cachedrpt_SoDocSo() {
+        public Cachedrpt_YeuCauThayDHN() {
         }
         
         [Browsable(false)]
@@ -129,7 +137,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN.SODOCSO {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_SoDocSo rpt = new rpt_SoDocSo();
+            rpt_YeuCauThayDHN rpt = new rpt_YeuCauThayDHN();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -111,7 +111,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             }
             else
             {
-                ReportDocument rp = new rpt_SoDocSo();
+                 ReportDocument rp = new rpt_SoDocSo();
+                 if (ckNgang.Checked)
+                     rp = new rpt_SoDocSo_NGANG();
+               
                 rp.SetDataSource(DAL.DULIEUKH.C_DuLieuKhachHang.SoDocSo(sods_LoTrinh.Text));
                 crystalReportViewer1.ReportSource = rp;
                 this.crystalReportViewer1.Visible = true;

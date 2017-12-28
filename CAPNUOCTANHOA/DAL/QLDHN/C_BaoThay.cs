@@ -208,6 +208,25 @@ namespace CAPNUOCTANHOA.DAL.QLDHN
             return null;
         }
 
+        public static DataSet YCbAOtHAY(string danhbo)
+        {
+            DataSet ds = new DataSet();
+            if (db.Connection.State == ConnectionState.Open)
+            {
+                db.Connection.Close();
+            }
+            db.Connection.Open();
+            string query = "select DANHBO FROM z_THEODOICODEk where DANHBO IN (" + danhbo + ")  ORDER BY DANHBO ASC";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "YCBAOTHAY");
+
+           
+
+            return ds;
+        }
+
+
         //public static DataTable getBaoThayDinhKy() {
         //    string sql = " SELECT TOP(300) DANHBO, HOTEN, (SONHA +''+ TENDUONG) AS 'DIACHI',NGAYTHAY FROM  TB_DULIEUKHACHHANG ";
         //    return LinQConnection.getDataTable(sql);

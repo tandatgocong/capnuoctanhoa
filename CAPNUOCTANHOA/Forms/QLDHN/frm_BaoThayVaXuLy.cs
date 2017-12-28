@@ -41,6 +41,10 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             dateTuNgay.ValueObject = DateTime.Now.Date;
             dateDenNgay.ValueObject = DateTime.Now.Date;
             dateInDSDutChi.ValueObject = DateTime.Now.Date;
+
+            this.txtNam.Text = DateTime.Now.Year.ToString();
+            cbKyDS.SelectedIndex = DateTime.Now.Month - 1;
+
         }
 
         private void btXemThongTin_Click(object sender, EventArgs e)
@@ -297,13 +301,13 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 sql_trongai = " SELECT ID_BAOTHAY,XLT_XULY,XLT_TRAKQ,(DHN_TODS+'-'+CONVERT(VARCHAR(20),DHN_SOBANGKE)) as 'SOBANGKE',thay.DHN_DANHBO, kh.HOTEN,(kh.SONHA+' ' +kh.TENDUONG) AS 'DIACHI',thay.XLT_KETQUA as 'TENBANGKE' ";
                 sql_trongai += " , CONVERT(VARCHAR(20),DHN_NGAYBAOTHAY,103) AS 'NGAYBAO' , HCT_LYDOTRONGAI as 'TRONGAI' ";
                 sql_trongai += " FROM TB_THAYDHN thay, TB_LOAIBANGKE loai,TB_DULIEUKHACHHANG kh ";
-                sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' "; 
+                sql_trongai += " WHERE thay.DHN_DANHBO=kh.DANHBO AND thay.DHN_LOAIBANGKE=loai.LOAIBK  AND HCT_TRONGAI ='1' ";
                 sql_chuyenkt = sql_trongai + " AND XLT_CHUYENXL='BANKTKS' ";
                 sql_chuyentt = sql_trongai + " AND XLT_CHUYENXL='TOTRUONG' ";
 
-                sql_trongai += " AND DHN_DANHBO='"+this.txtDanhB0.Text +"'";
-                sql_chuyenkt += " AND DHN_DANHBO='"+this.txtDanhB0.Text +"'";
-                sql_chuyentt += " AND DHN_DANHBO='"+this.txtDanhB0.Text +"'";
+                sql_trongai += " AND DHN_DANHBO='" + this.txtDanhB0.Text + "'";
+                sql_chuyenkt += " AND DHN_DANHBO='" + this.txtDanhB0.Text + "'";
+                sql_chuyentt += " AND DHN_DANHBO='" + this.txtDanhB0.Text + "'";
 
                 sql_trongai += " ORDER BY DHN_NGAYBAOTHAY DESC, DHN_DANHBO DESC ";
                 dataGridLoi.DataSource = DAL.LinQConnection.getDataTable(sql_trongai);
@@ -321,7 +325,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
         public void TheoDoiTroNgaiThay()
         {
             string sql = "SELECT ROW_NUMBER() OVER (ORDER BY kh.LOTRINH  ASC) [STT],  dhn.TODS, dhn.DOT, dhn.LOTRINH, dhn.DANHBO, dhn.HD, dhn.HOTEN, dhn.SONHA, dhn.TENDUONG, dhn.HIEUDH, dhn.CODH, dhn.SOTHAN, dhn.NGAYTHAY, dhn.CODE, dhn.NGAYKD, dhn.GHICHU, dhn.QUIUOC  FROM DHNTRONGAITHAY dhn, TB_DULIEUKHACHHANG kh WHERE dhn.DANHBO = kh.DANHBO ";
-            if(checkChuaThay.Checked)
+            if (checkChuaThay.Checked)
                 sql += " AND  CAST(RIGHT(dhn.NGAYTHAY,4) as int) <= year(kh.NGAYTHAY) ";
             if (checkDaThay.Checked)
                 sql += " AND  CAST(RIGHT(dhn.NGAYTHAY,4) as int) > year(kh.NGAYTHAY) ";
@@ -330,7 +334,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
             DataTable tb = DAL.LinQConnection.getDataTable(sql);
             dataTinhHinhThay.DataSource = tb;
 
-            lbTongCong.Text = "Tổng số " + tb.Rows.Count +" địa chỉ !";
+            lbTongCong.Text = "Tổng số " + tb.Rows.Count + " địa chỉ !";
         }
 
         private void tabItem6_Click(object sender, EventArgs e)
@@ -358,12 +362,12 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
 
                 //  txtSoBangKe.Text = DHN_SOBANGKE;
                 txtSoDanhBo.Text = DANHBO.Replace(" ", "");
-               // txtTenKH.Text = HOTEN;
+                // txtTenKH.Text = HOTEN;
 
                 txtLyDo.Text = GHICHU;
 
-             //   btThem.Enabled = true;
-              //  btcapNhat.Enabled = true;
+                //   btThem.Enabled = true;
+                //  btcapNhat.Enabled = true;
             }
             catch (Exception)
             {
@@ -387,7 +391,7 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                 sql += "         THEN 'TB01' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30')  ";
                 sql += "         THEN 'TB02' ELSE CASE WHEN SUBSTRING(LOTRINH, 3, 2) IN ('31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50')  ";
                 sql += "        THEN 'TP01' ELSE 'TP02' END END END AS TODS, DOT, LOTRINH, DANHBO, HOPDONG AS HD, HOTEN, SONHA, TENDUONG, HIEUDH, CODH, SOTHANDH AS SOTHAN, ";
-                sql += "        CONVERT(varchar(50), NGAYTHAY,103) AS  NGAYTHAY, CODE, CONVERT(varchar(50),NGAYKIEMDINH,103) AS NGAYKD, N'"+txtLyDo.Text+"' AS  GHICHU, '' AS QUIUOC ";
+                sql += "        CONVERT(varchar(50), NGAYTHAY,103) AS  NGAYTHAY, CODE, CONVERT(varchar(50),NGAYKIEMDINH,103) AS NGAYKD, N'" + txtLyDo.Text + "' AS  GHICHU, '' AS QUIUOC ";
                 sql += " FROM TB_DULIEUKHACHHANG WHERE DANHBO='" + sodanhbo + "'";//13222900540
 
                 DAL.LinQConnection.ExecuteCommand(sql);
@@ -418,9 +422,124 @@ namespace CAPNUOCTANHOA.Forms.QLDHN
                     this.txtLyDo.Text = tb.Rows[0]["GHICHU"].ToString();
                     //DAL.LinQConnection.ExecuteCommand("UPDATE DHNTRONGAITHAY SET GHICHU=N'" + this.txtLyDo.Text + "' WHERE  DANHBO='" + sodanhbo + "' ");
                 }
-                else {
+                else
+                {
                     this.txtLyDo.Text = "";
                 }
+            }
+        }
+
+        private void tabTheoDoiCodeK_Click(object sender, EventArgs e)
+        {
+
+            DataTable tb = DAL.LinQConnection.getDataTable("SELECT DANHBO FROM z_THEODOICODEk WHERE BAOTHAY='False' ORDER BY  DANHBO ASC");
+            dataGridCodeK.DataSource = tb;
+        }
+
+        private void dataGridCodeK_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(dataGridCodeK.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 4);
+            }
+        }
+
+        private void btCodeK_Click(object sender, EventArgs e)
+        {
+            string sql = " SELECT CASE WHEN SUBSTRING(ds.MLT1, 3, 2) IN ('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15')  ";
+            sql += " THEN 'TB01' ELSE CASE WHEN SUBSTRING(ds.MLT1, 3, 2) IN ('16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30') ";
+            sql += " THEN 'TB02' ELSE CASE WHEN SUBSTRING(ds.MLT1, 3, 2) IN ('31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50') ";
+            sql += " THEN 'TP01' ELSE 'TP02' END END END AS TODS,t.DANHBO, [CSMoi],[CodeMoi],TieuThuMoi ";
+            sql += " FROM [DocSoTH].[dbo].[DocSo] ds,z_THEODOICODEk  t  ";
+            sql += " WHERE BAOTHAY='False' AND ds.DanhBa=t.DANHBO AND Ky='" + cbKyDS.Items[cbKyDS.SelectedIndex].ToString() + "' AND Nam='" + txtNam.Text.Trim() + "'  ORDER BY t.DANHBO ASC";
+            DataTable tb = DAL.LinQConnection.getDataTable(sql);
+            dataGridCodeK.DataSource = tb;
+        }
+
+        private void dataGridCodeK_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            try
+            {
+                string tt = this.dataGridCodeK.Rows[e.RowIndex].Cells["TieuThu"].Value.ToString();
+                if (!tt.Equals("0"))
+                    dataGridCodeK.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Beige;
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void dataGridCodeK_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip2.Show(dataGridCodeK, new Point(e.X, e.Y));
+
+            }
+        }
+
+        private void dafaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string listDanhBa = "";
+                string tods = "";
+                //try
+                //{
+
+                int flag = 0;
+                for (int i = 0; i < dataGridCodeK.Rows.Count; i++)
+                {
+                    if ("True".Equals(this.dataGridCodeK.Rows[i].Cells["checkChon"].Value + ""))
+                    {
+                        flag++;
+                        listDanhBa += ("'" + (this.dataGridCodeK.Rows[i].Cells["G_DANHBO"].Value + "").Replace(" ", "") + "',");
+
+                        tods = this.dataGridCodeK.Rows[i].Cells["TODSS"].Value + "";
+                    }
+                }
+
+
+                ReportDocument rp = new rpt_YeuCauThayDHN();
+                rp.SetDataSource(DAL.QLDHN.C_BaoThay.YCbAOtHAY(listDanhBa.Remove(listDanhBa.Length - 1, 1)));
+                rp.SetParameterValue("loai", tods);
+                frm_Reports frm = new frm_Reports(rp);
+                frm.ShowDialog();
+
+                    string sql = "UPDATE z_THEODOICODEk SET BAOTHAY='True',NGUOICAPNHAT='" + DAL.SYS.C_USERS._userName + "',NGAYCN=GETDATE()  WHERE DANHBO IN (" + listDanhBa.Remove(listDanhBa.Length - 1, 1) + ") ";
+                    DAL.LinQConnection.ExecuteCommand(sql);
+
+                    btCodeK.PerformClick();
+               
+
+                //if (flag <= int.Parse(Utilities.Files.numberRecord))
+                //{
+                //    frm_Option_BT frm = new frm_Option_BT(listDanhBa.Remove(listDanhBa.Length - 1, 1));
+                //    if (frm.ShowDialog() == DialogResult.OK)
+                //    {
+                //        btXemThongTin_Click(sender, e);
+                //    }
+                //}
+                //else
+                //{
+                //    MessageBox.Show(this, "Bảng Kê Báo Thay <= " + Utilities.Files.numberRecord + " Danh Bộ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+
+                //  MessageBox.Show(this,listDanhBa.Remove(listDanhBa.Length-1,1)+ "--" +flag);
+
+
+                //}
+                //catch (Exception)
+                //{
+
+
+                //}
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
             }
         }
     }
